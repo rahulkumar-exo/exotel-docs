@@ -30,17 +30,18 @@ const config: Config = {
     locales: ['en'],
   },
 
-  plugins: [
+  themes: [
     [
-      'docusaurus-plugin-chat-page',
+      '@easyops-cn/docusaurus-search-local',
       {
-        path: 'chat',
-        openai: {
-          apiKey: process.env.OPENAI_API_KEY,
-        },
-        development: {
-          mockData: !process.env.OPENAI_API_KEY,
-        },
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: '/docs',
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 8,
+        searchBarShortcutHint: true,
+        language: ['en'],
       },
     ],
   ],
@@ -80,11 +81,6 @@ const config: Config = {
           sidebarId: 'voiceApiSidebar',
           position: 'left',
           label: 'Voice API',
-        },
-        {
-          to: '/chat',
-          label: '🤖 Ask AI',
-          position: 'left',
         },
         {
           href: 'https://my.exotel.com/auth/register',
