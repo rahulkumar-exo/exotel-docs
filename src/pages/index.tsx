@@ -37,6 +37,48 @@ const products = [
     link: '/docs/campaigns/overview',
     available: true,
   },
+  {
+    title: 'SMS Campaigns',
+    description: 'Create and manage bulk SMS campaigns with scheduling and personalization.',
+    link: '/docs/sms-campaigns/overview',
+    available: true,
+  },
+  {
+    title: 'ExoPhones',
+    description: 'Browse, purchase, and manage virtual phone numbers across countries.',
+    link: '/docs/exophones/overview',
+    available: true,
+  },
+  {
+    title: 'Lead Assist',
+    description: 'Privacy-protected communication with PIN verification and virtual numbers.',
+    link: '/docs/lead-assist/overview',
+    available: true,
+  },
+  {
+    title: 'Contact Center',
+    description: 'Build custom agent interfaces with outbound calling and call management.',
+    link: '/docs/contact-center/overview',
+    available: true,
+  },
+  {
+    title: 'Users API',
+    description: 'Manage contact center agents, devices, roles, and SIP configurations.',
+    link: '/docs/users/overview',
+    available: true,
+  },
+  {
+    title: 'Gen AI',
+    description: 'AI-powered call analysis — transcription, sentiment, summarization.',
+    link: '/docs/gen-ai/overview',
+    available: true,
+  },
+  {
+    title: 'Heartbeat',
+    description: 'Real-time ExoPhone health monitoring with webhook notifications.',
+    link: '/docs/heartbeat/overview',
+    available: true,
+  },
 ];
 
 const quickLinks = [

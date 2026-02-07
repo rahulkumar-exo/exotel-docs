@@ -78,14 +78,46 @@ const config: Config = {
       items: [
         {
           type: 'dropdown',
-          label: 'API Docs',
+          label: 'Voice',
           position: 'left',
           items: [
             { type: 'docSidebar', sidebarId: 'voiceApiSidebar', label: 'Voice API' },
+            { type: 'docSidebar', sidebarId: 'exophonesSidebar', label: 'ExoPhones' },
+            { type: 'docSidebar', sidebarId: 'heartbeatSidebar', label: 'Heartbeat' },
+            { type: 'docSidebar', sidebarId: 'contactCenterSidebar', label: 'Contact Center' },
+          ],
+        },
+        {
+          type: 'dropdown',
+          label: 'Messaging',
+          position: 'left',
+          items: [
             { type: 'docSidebar', sidebarId: 'smsApiSidebar', label: 'SMS API' },
             { type: 'docSidebar', sidebarId: 'whatsappApiSidebar', label: 'WhatsApp API' },
-            { type: 'docSidebar', sidebarId: 'exoverifyApiSidebar', label: 'ExoVerify' },
+            { type: 'docSidebar', sidebarId: 'urlShorteningSidebar', label: 'URL Shortening' },
+          ],
+        },
+        {
+          type: 'dropdown',
+          label: 'Campaigns',
+          position: 'left',
+          items: [
             { type: 'docSidebar', sidebarId: 'campaignsSidebar', label: 'Call Campaigns' },
+            { type: 'docSidebar', sidebarId: 'smsCampaignsSidebar', label: 'SMS Campaigns' },
+            { type: 'docSidebar', sidebarId: 'campaignListsSidebar', label: 'Campaign Lists' },
+          ],
+        },
+        {
+          type: 'dropdown',
+          label: 'More',
+          position: 'left',
+          items: [
+            { type: 'docSidebar', sidebarId: 'exoverifyApiSidebar', label: 'ExoVerify' },
+            { type: 'docSidebar', sidebarId: 'leadAssistSidebar', label: 'Lead Assist' },
+            { type: 'docSidebar', sidebarId: 'usersSidebar', label: 'Users' },
+            { type: 'docSidebar', sidebarId: 'genAiSidebar', label: 'Gen AI' },
+            { type: 'docSidebar', sidebarId: 'mcpServerSidebar', label: 'MCP Server' },
+            { type: 'docSidebar', sidebarId: 'faqsSidebar', label: 'FAQs' },
           ],
         },
         {
@@ -111,6 +143,11 @@ const config: Config = {
             { label: 'WhatsApp API', to: '/docs/whatsapp-api/overview' },
             { label: 'ExoVerify', to: '/docs/exoverify-api/overview' },
             { label: 'Call Campaigns', to: '/docs/campaigns/overview' },
+            { label: 'SMS Campaigns', to: '/docs/sms-campaigns/overview' },
+            { label: 'ExoPhones', to: '/docs/exophones/overview' },
+            { label: 'Lead Assist', to: '/docs/lead-assist/overview' },
+            { label: 'Contact Center', to: '/docs/contact-center/overview' },
+            { label: 'Gen AI', to: '/docs/gen-ai/overview' },
           ],
         },
         {

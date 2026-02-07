@@ -1,0 +1,61 @@
+---
+id: available-numbers
+title: Available ExoPhones
+sidebar_label: Available Numbers
+---
+
+# Get Available ExoPhones
+
+Search for available phone numbers by country and type that can be purchased for your account.
+
+## HTTP Request
+
+```
+GET /v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/<iso_country_code>/<number_type>
+```
+
+## Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `iso_country_code` | Two-letter country code (e.g., `IN`, `MY`, `SG`) |
+| `number_type` | `Landline`, `Mobile`, or `TollFree` |
+
+## Query Parameters
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `IncomingSMS` | No | Filter numbers that support incoming SMS |
+| `InRegion` | No | Filter by telecom circle (e.g., `IN`, `AP`, `DL`, `KA`) |
+| `Contains` | No | Filter by substring match in the number |
+
+## Response
+
+```json
+[
+  {
+    "friendly_name": "+60XXXXXXX1",
+    "phone_number": "+60XXXXXXXX1",
+    "capabilities": {
+      "sms": false,
+      "voice": true
+    },
+    "country": "MY",
+    "region": "MY",
+    "number_type": "Landline",
+    "rental_price": "0.000000"
+  }
+]
+```
+
+### Response Fields
+
+| Field | Description |
+|-------|-------------|
+| `friendly_name` | Human-readable phone number |
+| `phone_number` | Full phone number in E.164 format |
+| `capabilities` | Object with `sms` and `voice` boolean flags |
+| `country` | Country code |
+| `region` | Telecom region/circle |
+| `number_type` | Type of number |
+| `rental_price` | Monthly rental price |
