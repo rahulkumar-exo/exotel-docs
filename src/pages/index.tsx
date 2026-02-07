@@ -15,21 +15,27 @@ const products = [
   },
   {
     title: 'SMS API',
-    description: 'Send and receive SMS messages, run campaigns, and manage templates.',
-    link: '#',
-    available: false,
+    description: 'Send single and bulk SMS with DLT compliance, URL shortening, and delivery tracking.',
+    link: '/docs/sms-api/overview',
+    available: true,
   },
   {
     title: 'WhatsApp API',
-    description: 'Send WhatsApp messages, manage templates, and handle conversations.',
-    link: '#',
-    available: false,
+    description: 'Send text, media, templates, and interactive messages via WhatsApp Business.',
+    link: '/docs/whatsapp-api/overview',
+    available: true,
   },
   {
     title: 'ExoVerify',
-    description: 'Verify phone numbers with flash calls and OTP for secure authentication.',
-    link: '#',
-    available: false,
+    description: 'Verify phone numbers with SMS OTP for secure user authentication.',
+    link: '/docs/exoverify-api/overview',
+    available: true,
+  },
+  {
+    title: 'Call Campaigns',
+    description: 'Run outbound call campaigns with IVR flows, retries, scheduling, and reporting.',
+    link: '/docs/campaigns/overview',
+    available: true,
   },
 ];
 
@@ -45,24 +51,24 @@ const quickLinks = [
     link: '/docs/voice-api/api-reference/make-a-call',
   },
   {
-    title: 'Call Details',
-    description: 'Retrieve call status and recordings',
-    link: '/docs/voice-api/api-reference/call-details',
+    title: 'Send SMS',
+    description: 'Send single or bulk SMS messages',
+    link: '/docs/sms-api/api-reference/send-sms',
   },
   {
-    title: 'Applets',
-    description: 'Build IVR flows with modular components',
-    link: '/docs/voice-api/applets/greeting',
+    title: 'Send WhatsApp Message',
+    description: 'Text, media, and template messages',
+    link: '/docs/whatsapp-api/api-reference/send-message',
   },
   {
-    title: 'StatusCallback',
-    description: 'Get real-time call completion webhooks',
-    link: '/docs/voice-api/api-reference/status-callback',
+    title: 'Verify Phone (OTP)',
+    description: 'SMS OTP verification in 2 API calls',
+    link: '/docs/exoverify-api/overview',
   },
   {
-    title: 'ExoPhone',
-    description: 'Manage your virtual phone numbers',
-    link: '/docs/voice-api/api-reference/exophone',
+    title: 'Create Campaign',
+    description: 'Outbound call campaigns with IVR',
+    link: '/docs/campaigns/api-reference/create-campaign',
   },
 ];
 

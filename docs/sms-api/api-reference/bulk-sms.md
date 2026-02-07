@@ -1,0 +1,158 @@
+---
+id: bulk-sms
+title: Bulk SMS
+sidebar_label: Bulk SMS
+sidebar_position: 3
+---
+
+# Bulk SMS
+
+Send the same message to multiple recipients, or unique messages to different recipients in a single API call.
+
+## Static Bulk SMS (Same Message)
+
+Send an identical message to multiple phone numbers.
+
+### Endpoint
+
+```
+POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/Sms/send
+```
+
+### Parameters
+
+Same as [Send SMS](/docs/sms-api/api-reference/send-sms), except `To` accepts comma-separated numbers:
+
+| Parameter | Required  | Description |
+|-----------|-----------|-------------|
+| `To`      | Mandatory | Comma-separated phone numbers |
+
+### cURL Example
+
+```bash
+curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/send \
+  -d "From=EXOTEL" \
+  -d "To=+919876543210,+919876543211,+919876543212" \
+  -d "Body=Flash sale! 50% off all items today." \
+  -d "DltEntityId=1234567890"
+```
+
+---
+
+## Dynamic Bulk SMS (Unique Messages)
+
+Send personalized messages to different recipients in a single request. Maximum **100 messages per request**.
+
+### Endpoint
+
+```
+POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/Sms/bulksend
+```
+
+### Request Body (JSON)
+
+```json
+{
+  "sms": [
+    {
+      "From": "EXOTEL",
+      "To": "+919876543210",
+      "Body": "Hi Rahul, your order #1234 has shipped.",
+      "DltEntityId": "1234567890"
+    },
+    {
+      "From": "EXOTEL",
+      "To": "+919876543211",
+      "Body": "Hi Priya, your order #5678 has shipped.",
+      "DltEntityId": "1234567890"
+    }
+  ]
+}
+```
+
+### cURL Example
+
+```bash
+curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/bulksend \
+  -H "Content-Type: application/json" \
+  -d '{
+    "sms": [
+      {
+        "From": "EXOTEL",
+        "To": "+919876543210",
+        "Body": "Hi Rahul, your order #1234 has shipped.",
+        "DltEntityId": "1234567890"
+      },
+      {
+        "From": "EXOTEL",
+        "To": "+919876543211",
+        "Body": "Hi Priya, your order #5678 has shipped.",
+        "DltEntityId": "1234567890"
+      }
+    ]
+  }'
+```
+
+### Python Example
+
+```python
+import requests
+import json
+
+payload = {
+    "sms": [
+        {
+            "From": "EXOTEL",
+            "To": "+919876543210",
+            "Body": "Hi Rahul, your order #1234 has shipped.",
+            "DltEntityId": "1234567890"
+        },
+        {
+            "From": "EXOTEL",
+            "To": "+919876543211",
+            "Body": "Hi Priya, your order #5678 has shipped.",
+            "DltEntityId": "1234567890"
+        }
+    ]
+}
+
+response = requests.post(
+    'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/bulksend',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps(payload)
+)
+
+print(response.json())
+```
+
+## Response
+
+Returns an array of SMS message objects, one for each recipient:
+
+```json
+{
+  "SMSMessages": [
+    {
+      "Sid": "sms_sid_1",
+      "Status": "queued",
+      "To": "+919876543210"
+    },
+    {
+      "Sid": "sms_sid_2",
+      "Status": "queued",
+      "To": "+919876543211"
+    }
+  ]
+}
+```
+
+## Limits
+
+| Limit                     | Value          |
+|---------------------------|----------------|
+| Max per dynamic request   | 100 messages   |
+| API rate limit            | 200 requests/min |
+
+:::note
+Each message in a bulk request is processed independently. Individual messages may succeed or fail without affecting others.
+:::

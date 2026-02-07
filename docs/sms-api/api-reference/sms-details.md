@@ -1,0 +1,92 @@
+---
+id: sms-details
+title: SMS Details
+sidebar_label: SMS Details
+sidebar_position: 2
+---
+
+# SMS Details
+
+Retrieve the details and delivery status of a specific SMS message.
+
+## Endpoint
+
+```
+GET https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/SMS/Messages/<SmsSid>
+```
+
+## Path Parameters
+
+| Parameter  | Required  | Description |
+|------------|-----------|-------------|
+| `SmsSid`   | Mandatory | The unique SMS identifier returned when the message was sent |
+
+## Code Examples
+
+### cURL
+
+```bash
+curl https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/SMS/Messages/<SmsSid>.json
+```
+
+### Python
+
+```python
+import requests
+
+response = requests.get(
+    'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/SMS/Messages/<SmsSid>.json'
+)
+
+print(response.json())
+```
+
+### Node.js
+
+```javascript
+const request = require('request');
+
+request.get(
+  'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/SMS/Messages/<SmsSid>.json',
+  function (error, response, body) {
+    if (!error) {
+      console.log(body);
+    }
+  }
+);
+```
+
+## Response
+
+```json
+{
+  "SMSMessage": {
+    "Sid": "sms_sid_value",
+    "AccountSid": "your_sid",
+    "From": "EXOTEL",
+    "To": "+919876543210",
+    "Body": "Your OTP is 123456",
+    "Status": "sent",
+    "DetailedStatusCode": 20005,
+    "DetailedStatus": "DELIVERED_TO_HANDSET",
+    "DateCreated": "2024-01-15 10:30:00",
+    "DateUpdated": "2024-01-15 10:30:05",
+    "DateSent": "2024-01-15 10:30:02",
+    "Price": 0.18,
+    "Uri": "/v1/Accounts/your_sid/SMS/Messages/sms_sid_value"
+  }
+}
+```
+
+## Response Fields
+
+| Field                | Type     | Description |
+|----------------------|----------|-------------|
+| `Sid`                | String   | Unique SMS identifier |
+| `Status`             | String   | High-level status: `queued`, `sending`, `submitted`, `sent`, `failed`, `failed-dnd` |
+| `DetailedStatusCode` | Integer  | Numeric status code (see [Status Codes](/docs/sms-api/api-reference/status-codes)) |
+| `DetailedStatus`     | String   | Human-readable status description |
+| `DateCreated`        | DateTime | When the request was received |
+| `DateSent`           | DateTime | When the SMS was sent to the operator |
+| `DateUpdated`        | DateTime | Last status update timestamp |
+| `Price`              | Double   | Amount charged |

@@ -43,6 +43,65 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+
+  smsApiSidebar: [
+    'sms-api/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'sms-api/api-reference/send-sms',
+        'sms-api/api-reference/sms-details',
+        'sms-api/api-reference/bulk-sms',
+        'sms-api/api-reference/status-codes',
+        'sms-api/api-reference/url-shortening',
+      ],
+    },
+  ],
+
+  whatsappApiSidebar: [
+    'whatsapp-api/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'whatsapp-api/api-reference/send-message',
+        'whatsapp-api/api-reference/templates',
+        'whatsapp-api/api-reference/bulk-messages',
+        'whatsapp-api/api-reference/status-codes',
+      ],
+    },
+  ],
+
+  exoverifyApiSidebar: [
+    'exoverify-api/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'exoverify-api/api-reference/start-verification',
+        'exoverify-api/api-reference/verify-otp',
+      ],
+    },
+  ],
+
+  campaignsSidebar: [
+    'campaigns/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'campaigns/api-reference/create-campaign',
+        'campaigns/api-reference/manage-campaign',
+        'campaigns/api-reference/campaign-call-details',
+        'campaigns/api-reference/webhooks',
+      ],
+    },
+  ],
 };
 
 export default sidebars;

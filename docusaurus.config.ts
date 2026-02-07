@@ -77,10 +77,16 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'voiceApiSidebar',
+          type: 'dropdown',
+          label: 'API Docs',
           position: 'left',
-          label: 'Voice API',
+          items: [
+            { type: 'docSidebar', sidebarId: 'voiceApiSidebar', label: 'Voice API' },
+            { type: 'docSidebar', sidebarId: 'smsApiSidebar', label: 'SMS API' },
+            { type: 'docSidebar', sidebarId: 'whatsappApiSidebar', label: 'WhatsApp API' },
+            { type: 'docSidebar', sidebarId: 'exoverifyApiSidebar', label: 'ExoVerify' },
+            { type: 'docSidebar', sidebarId: 'campaignsSidebar', label: 'Call Campaigns' },
+          ],
         },
         {
           href: 'https://my.exotel.com/auth/register',
@@ -98,20 +104,13 @@ const config: Config = {
       style: 'light',
       links: [
         {
-          title: 'Voice API',
+          title: 'Products',
           items: [
-            {
-              label: 'Getting Started',
-              to: '/docs/voice-api/getting-started/overview',
-            },
-            {
-              label: 'API Reference',
-              to: '/docs/voice-api/api-reference/make-a-call',
-            },
-            {
-              label: 'Applets',
-              to: '/docs/voice-api/applets/greeting',
-            },
+            { label: 'Voice API', to: '/docs/voice-api/getting-started/overview' },
+            { label: 'SMS API', to: '/docs/sms-api/overview' },
+            { label: 'WhatsApp API', to: '/docs/whatsapp-api/overview' },
+            { label: 'ExoVerify', to: '/docs/exoverify-api/overview' },
+            { label: 'Call Campaigns', to: '/docs/campaigns/overview' },
           ],
         },
         {
