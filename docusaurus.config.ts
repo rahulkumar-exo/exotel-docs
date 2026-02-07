@@ -73,7 +73,7 @@ const config: Config = {
       title: 'Developers',
       logo: {
         alt: 'Exotel Logo',
-        src: 'img/logo.svg',
+        src: 'img/exotel-logo.png',
       },
       items: [
         {

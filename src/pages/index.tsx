@@ -78,7 +78,7 @@ function HeroBanner() {
     <header className={styles.heroBanner}>
       <div className="container">
         <div className={styles.heroLogo}>
-          <img src="/img/logo.svg" alt="Exotel" className={styles.heroLogoImg} />
+          <img src="/img/exotel-logo.png" alt="Exotel" className={styles.heroLogoImg} />
         </div>
         <Heading as="h1" className={styles.heroTitle}>
           Developer Documentation

@@ -44,8 +44,9 @@
 }
 
 .navbar__logo img {
-  height: 28px;
+  height: 32px;
   width: auto;
+  margin-right: 4px;
 }
 
 .navbar__title {
