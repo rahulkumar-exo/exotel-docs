@@ -6,8 +6,17 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
+.heroLogo {
+  margin-bottom: 1.5rem;
+}
+
+.heroLogoImg {
+  height: 48px;
+  width: auto;
+}
+
 .heroTitle {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #1a202c;
   margin-bottom: 0.75rem;
@@ -202,8 +211,12 @@
     padding: 3rem 1rem 2.5rem;
   }
 
+  .heroLogoImg {
+    height: 36px;
+  }
+
   .heroTitle {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .heroSubtitle {

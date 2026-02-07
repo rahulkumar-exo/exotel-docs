@@ -43,6 +43,11 @@
   box-shadow: none;
 }
 
+.navbar__logo img {
+  height: 28px;
+  width: auto;
+}
+
 .navbar__title {
   font-weight: 700;
   font-size: 1.1rem;
