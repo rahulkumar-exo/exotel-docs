@@ -5,13 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --ifm-color-primary: #2563eb;
-  --ifm-color-primary-dark: #1d4ed8;
-  --ifm-color-primary-darker: #1e40af;
-  --ifm-color-primary-darkest: #1e3a8a;
-  --ifm-color-primary-light: #3b82f6;
-  --ifm-color-primary-lighter: #60a5fa;
-  --ifm-color-primary-lightest: #93bbfd;
+  --ifm-color-primary: #39b54a;
+  --ifm-color-primary-dark: #33a343;
+  --ifm-color-primary-darker: #2f9a3f;
+  --ifm-color-primary-darkest: #277f34;
+  --ifm-color-primary-light: #4dbd5c;
+  --ifm-color-primary-lighter: #5cc46a;
+  --ifm-color-primary-lightest: #7dd389;
+
+  --exotel-green: #39b54a;
+  --exotel-dark-green: #277f34;
+  --exotel-purple: #887fe2;
+  --exotel-dark-purple: #9b51e1;
 
   --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -29,7 +34,7 @@
   --ifm-navbar-height: 60px;
   --ifm-navbar-shadow: 0 1px 0 0 #e2e8f0;
 
-  --docusaurus-highlighted-code-line-bg: rgba(37, 99, 235, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(57, 181, 74, 0.08);
 }
 
 /* ─── Navbar ─── */
@@ -59,7 +64,7 @@
 }
 
 .menu__link--active:not(.menu__link--sublist) {
-  background: rgba(37, 99, 235, 0.08);
+  background: rgba(57, 181, 74, 0.08);
   color: var(--ifm-color-primary);
   font-weight: 600;
 }

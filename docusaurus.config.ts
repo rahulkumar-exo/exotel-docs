@@ -70,7 +70,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'Exotel Developers',
+      title: 'Developers',
       logo: {
         alt: 'Exotel Logo',
         src: 'img/logo.svg',

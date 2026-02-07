@@ -2,7 +2,7 @@
 .heroBanner {
   padding: 5rem 0 4rem;
   text-align: center;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #f5f0ff 100%);
+  background: linear-gradient(135deg, #edf9ef 0%, #e8f5ea 50%, #f0faf1 100%);
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -35,7 +35,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background: #2563eb;
+  background: #39b54a;
   color: #fff;
   border-radius: 8px;
   font-weight: 600;
@@ -45,7 +45,7 @@
 }
 
 .primaryButton:hover {
-  background: #1d4ed8;
+  background: #2f9a3f;
   color: #fff;
   text-decoration: none;
   transform: translateY(-1px);
@@ -56,7 +56,7 @@
   align-items: center;
   padding: 0.75rem 1.5rem;
   background: #fff;
-  color: #2563eb;
+  color: #39b54a;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-weight: 600;
@@ -66,8 +66,8 @@
 }
 
 .secondaryButton:hover {
-  border-color: #2563eb;
-  color: #1d4ed8;
+  border-color: #39b54a;
+  color: #2f9a3f;
   text-decoration: none;
   transform: translateY(-1px);
 }
@@ -101,8 +101,8 @@
 }
 
 .productCard:hover {
-  border-color: #2563eb;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+  border-color: #39b54a;
+  box-shadow: 0 4px 12px rgba(57, 181, 74, 0.08);
 }
 
 .productCardDisabled {
@@ -144,12 +144,12 @@
 .productCardLink {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #2563eb;
+  color: #39b54a;
   text-decoration: none;
 }
 
 .productCardLink:hover {
-  color: #1d4ed8;
+  color: #2f9a3f;
   text-decoration: none;
 }
 
@@ -176,8 +176,8 @@
 }
 
 .quickLinkCard:hover {
-  border-color: #2563eb;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  border-color: #39b54a;
+  box-shadow: 0 2px 8px rgba(57, 181, 74, 0.08);
   text-decoration: none;
   transform: translateY(-2px);
 }
