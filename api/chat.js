@@ -117,26 +117,50 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
       ? `Based on the following Exotel documentation:\n\n${context}\n\n---\n\nUser question: ${question}`
       : `The user is asking about Exotel APIs. I couldn't find specific documentation for their question, but answer based on general knowledge of Exotel if possible.\n\nUser question: ${question}`;
 
-    // Call Gemini
+    // Call Gemini — try multiple models with fallback
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+    const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite'];
 
     const chatHistory = history.map(msg => ({
       role: msg.role === 'assistant' ? 'model' : 'user',
       parts: [{ text: msg.content }],
     }));
 
-    const chat = model.startChat({
-      history: [
-        { role: 'user', parts: [{ text: 'You are an Exotel developer docs assistant. ' + systemPrompt }] },
-        { role: 'model', parts: [{ text: 'Understood! I\'m ready to help developers with Exotel\'s API documentation. I\'ll provide accurate, concise answers based on the documentation, including code examples and API endpoints where relevant. How can I help you today?' }] },
-        ...chatHistory,
-      ],
-    });
+    let answer = null;
+    let usedModel = null;
 
-    const result = await chat.sendMessage(userMessage);
-    const response = result.response;
-    const answer = response.text();
+    for (const modelName of modelsToTry) {
+      try {
+        const model = genAI.getGenerativeModel({ model: modelName });
+
+        const chat = model.startChat({
+          history: [
+            { role: 'user', parts: [{ text: 'You are an Exotel developer docs assistant. ' + systemPrompt }] },
+            { role: 'model', parts: [{ text: 'Understood! I\'m ready to help developers with Exotel\'s API documentation. I\'ll provide accurate, concise answers based on the documentation, including code examples and API endpoints where relevant. How can I help you today?' }] },
+            ...chatHistory,
+          ],
+        });
+
+        const result = await chat.sendMessage(userMessage);
+        answer = result.response.text();
+        usedModel = modelName;
+        break; // Success — stop trying
+      } catch (modelError) {
+        console.error(`Model ${modelName} failed:`, modelError.message);
+        // If it's a rate limit error, try next model
+        if (modelError.message && (modelError.message.includes('429') || modelError.message.includes('quota'))) {
+          continue;
+        }
+        // For non-rate-limit errors, throw immediately
+        throw modelError;
+      }
+    }
+
+    if (!answer) {
+      return res.status(429).json({
+        error: 'AI service is temporarily busy. Please try again in a minute.',
+      });
+    }
 
     // Extract source URLs from relevant chunks
     const sources = [...new Set(relevantChunks.map(c => ({
@@ -148,7 +172,7 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
     return res.status(200).json({
       answer,
       sources,
-      model: 'gemini-2.0-flash',
+      model: usedModel,
     });
   } catch (error) {
     console.error('Chat API error:', error);

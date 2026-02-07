@@ -79,14 +79,14 @@ export default function AiChat(): JSX.Element {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
       const data = await response.json();
 
-      if (data.error) {
-        throw new Error(data.error);
+      if (!response.ok || data.error) {
+        const errMsg = data.error || `HTTP ${response.status}`;
+        if (response.status === 429 || errMsg.includes('busy')) {
+          throw new Error('RATE_LIMIT');
+        }
+        throw new Error(errMsg);
       }
 
       const assistantMessage: Message = { role: 'assistant', content: data.answer };
@@ -96,9 +96,12 @@ export default function AiChat(): JSX.Element {
         setSources(data.sources);
       }
     } catch (error) {
+      const isRateLimit = error instanceof Error && error.message === 'RATE_LIMIT';
       const errorMessage: Message = {
         role: 'assistant',
-        content: 'Sorry, I encountered an error processing your question. Please try again or use the search bar above for keyword-based search.',
+        content: isRateLimit
+          ? 'The AI service is temporarily busy due to high usage. Please wait a moment and try again. In the meantime, you can use the **search bar** at the top for keyword-based search.'
+          : 'Sorry, I encountered an error processing your question. Please try again or use the search bar above for keyword-based search.',
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
