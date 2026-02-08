@@ -1,22 +1,28 @@
 /**
  * Exotel Developer Docs — Custom Theme (Light Mode Only)
+ * Color scheme matches www.exotel.com brand
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --ifm-color-primary: #39b54a;
-  --ifm-color-primary-dark: #33a343;
-  --ifm-color-primary-darker: #2f9a3f;
-  --ifm-color-primary-darkest: #277f34;
-  --ifm-color-primary-light: #4dbd5c;
-  --ifm-color-primary-lighter: #5cc46a;
-  --ifm-color-primary-lightest: #7dd389;
+  --ifm-color-primary: #9b42f1;
+  --ifm-color-primary-dark: #8a3bd8;
+  --ifm-color-primary-darker: #7e36c5;
+  --ifm-color-primary-darkest: #6b2da6;
+  --ifm-color-primary-light: #ab5ef3;
+  --ifm-color-primary-lighter: #b873f5;
+  --ifm-color-primary-lightest: #d4a8f9;
 
-  --exotel-green: #39b54a;
-  --exotel-dark-green: #277f34;
-  --exotel-purple: #887fe2;
-  --exotel-dark-purple: #9b51e1;
+  --exotel-purple: #9b42f1;
+  --exotel-dark-purple: #7e36c5;
+  --exotel-blue: #0074e8;
+  --exotel-teal: #00eac3;
+  --exotel-black: #231f20;
+  --exotel-grey-1: #eff0f1;
+  --exotel-grey-2: #e8eaf3;
+  --exotel-grey-3: #c6c9d8;
+  --exotel-grey-4: #808285;
 
   --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -26,15 +32,15 @@
   --ifm-code-font-size: 90%;
   --ifm-code-border-radius: 6px;
   --ifm-global-radius: 8px;
-  --ifm-border-color: #e2e8f0;
+  --ifm-border-color: #e8eaf3;
 
   --ifm-heading-font-weight: 700;
   --ifm-font-weight-semibold: 600;
 
   --ifm-navbar-height: 60px;
-  --ifm-navbar-shadow: 0 1px 0 0 #e2e8f0;
+  --ifm-navbar-shadow: 0 1px 0 0 #e8eaf3;
 
-  --docusaurus-highlighted-code-line-bg: rgba(57, 181, 74, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(155, 66, 241, 0.08);
 }
 
 /* ─── Navbar ─── */
@@ -70,7 +76,7 @@
 }
 
 .menu__link--active:not(.menu__link--sublist) {
-  background: rgba(57, 181, 74, 0.08);
+  background: rgba(155, 66, 241, 0.08);
   color: var(--ifm-color-primary);
   font-weight: 600;
 }
@@ -80,7 +86,7 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #64748b;
+  color: #808285;
 }
 
 /* ─── Doc Content ─── */
@@ -115,7 +121,7 @@ table {
 }
 
 table th {
-  background: #f8fafc;
+  background: #eff0f1;
   font-weight: 600;
   text-align: left;
   padding: 0.75rem 1rem;
@@ -140,8 +146,8 @@ table tr:last-child td {
 }
 
 code {
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
+  background: #eff0f1;
+  border: 1px solid #e8eaf3;
   border-radius: 4px;
   padding: 0.15rem 0.4rem;
   font-size: 0.875em;
@@ -155,22 +161,26 @@ code {
 
 /* ─── Footer ─── */
 .footer {
-  background: #f8fafc;
-  border-top: 1px solid var(--ifm-border-color);
+  background: #231f20;
+  border-top: none;
 }
 
 .footer__title {
   font-weight: 700;
-  color: #1a202c;
+  color: #ffffff;
 }
 
 .footer__link-item {
-  color: #64748b;
+  color: #c6c9d8;
   font-size: 0.9rem;
 }
 
 .footer__link-item:hover {
-  color: var(--ifm-color-primary);
+  color: #00eac3;
+}
+
+.footer__copyright {
+  color: #808285;
 }
 
 /* ─── Breadcrumbs ─── */
@@ -210,10 +220,10 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #c6c9d8;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #808285;
 }
