@@ -44,6 +44,20 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  voiceV1Sidebar: [
+    'voice-v1/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'voice-v1/api-reference/connect-two-numbers',
+        'voice-v1/api-reference/connect-to-flow',
+        'voice-v1/api-reference/call-details',
+      ],
+    },
+  ],
+
   smsApiSidebar: [
     'sms-api/overview',
     {
@@ -71,6 +85,18 @@ const sidebars: SidebarsConfig = {
         'whatsapp-api/api-reference/templates',
         'whatsapp-api/api-reference/bulk-messages',
         'whatsapp-api/api-reference/status-codes',
+      ],
+    },
+  ],
+
+  whatsappTemplatesSidebar: [
+    'whatsapp-api/templates-api/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'whatsapp-api/templates-api/manage-templates',
       ],
     },
   ],
@@ -119,6 +145,18 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  campaignsContactsSidebar: [
+    'campaigns-contacts/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'campaigns-contacts/api-reference/manage-contacts',
+      ],
+    },
+  ],
+
   exophonesSidebar: [
     'exophones/overview',
     {
@@ -149,6 +187,22 @@ const sidebars: SidebarsConfig = {
         'lead-assist/api-reference/delete-allocation',
       ],
     },
+  ],
+
+  leadAssistGreenVnSidebar: [
+    'lead-assist-greenvn/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'lead-assist-greenvn/api-reference/manage-allocations',
+      ],
+    },
+  ],
+
+  leadAssistSettingsSidebar: [
+    'lead-assist-settings/overview',
   ],
 
   usersSidebar: [
@@ -208,6 +262,35 @@ const sidebars: SidebarsConfig = {
         'contact-center/api-reference/call-details',
       ],
     },
+  ],
+
+  contactCenterV4Sidebar: [
+    'contact-center-v4/overview',
+  ],
+
+  legsSidebar: [
+    'legs/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'legs/api-reference/create-leg',
+        'legs/api-reference/manage-legs',
+      ],
+    },
+  ],
+
+  ipPstnWebrtcSidebar: [
+    'ip-pstn-webrtc/overview',
+  ],
+
+  whatsappOnboardingSidebar: [
+    'whatsapp-api/onboarding/overview',
+  ],
+
+  rcsOmnichannelSidebar: [
+    'rcs-omnichannel/overview',
   ],
 
   genAiSidebar: [

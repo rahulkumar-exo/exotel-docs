@@ -81,10 +81,21 @@ const config: Config = {
           label: 'Voice',
           position: 'left',
           items: [
-            { type: 'docSidebar', sidebarId: 'voiceApiSidebar', label: 'Voice API' },
+            { type: 'docSidebar', sidebarId: 'voiceApiSidebar', label: 'Voice API (v2)' },
+            { type: 'docSidebar', sidebarId: 'voiceV1Sidebar', label: 'Voice v1 (Legacy)' },
             { type: 'docSidebar', sidebarId: 'exophonesSidebar', label: 'ExoPhones' },
             { type: 'docSidebar', sidebarId: 'heartbeatSidebar', label: 'Heartbeat' },
-            { type: 'docSidebar', sidebarId: 'contactCenterSidebar', label: 'Contact Center' },
+            { type: 'docSidebar', sidebarId: 'legsSidebar', label: 'Legs & Bridges' },
+            { type: 'docSidebar', sidebarId: 'ipPstnWebrtcSidebar', label: 'IP-PSTN / WebRTC' },
+          ],
+        },
+        {
+          type: 'dropdown',
+          label: 'Contact Center',
+          position: 'left',
+          items: [
+            { type: 'docSidebar', sidebarId: 'contactCenterSidebar', label: 'Contact Center APIs (v6)' },
+            { type: 'docSidebar', sidebarId: 'contactCenterV4Sidebar', label: 'Contact Center APIs (v4)' },
           ],
         },
         {
@@ -94,6 +105,9 @@ const config: Config = {
           items: [
             { type: 'docSidebar', sidebarId: 'smsApiSidebar', label: 'SMS API' },
             { type: 'docSidebar', sidebarId: 'whatsappApiSidebar', label: 'WhatsApp API' },
+            { type: 'docSidebar', sidebarId: 'whatsappTemplatesSidebar', label: 'WhatsApp Templates' },
+            { type: 'docSidebar', sidebarId: 'whatsappOnboardingSidebar', label: 'WhatsApp Onboarding' },
+            { type: 'docSidebar', sidebarId: 'rcsOmnichannelSidebar', label: 'RCS Omnichannel' },
             { type: 'docSidebar', sidebarId: 'urlShorteningSidebar', label: 'URL Shortening' },
           ],
         },
@@ -105,6 +119,7 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'campaignsSidebar', label: 'Call Campaigns' },
             { type: 'docSidebar', sidebarId: 'smsCampaignsSidebar', label: 'SMS Campaigns' },
             { type: 'docSidebar', sidebarId: 'campaignListsSidebar', label: 'Campaign Lists' },
+            { type: 'docSidebar', sidebarId: 'campaignsContactsSidebar', label: 'Campaign Contacts' },
           ],
         },
         {
@@ -113,7 +128,9 @@ const config: Config = {
           position: 'left',
           items: [
             { type: 'docSidebar', sidebarId: 'exoverifyApiSidebar', label: 'ExoVerify' },
-            { type: 'docSidebar', sidebarId: 'leadAssistSidebar', label: 'Lead Assist' },
+            { type: 'docSidebar', sidebarId: 'leadAssistSidebar', label: 'Lead Assist (GreenPin)' },
+            { type: 'docSidebar', sidebarId: 'leadAssistGreenVnSidebar', label: 'Lead Assist (GreenVN)' },
+            { type: 'docSidebar', sidebarId: 'leadAssistSettingsSidebar', label: 'Lead Assist Settings' },
             { type: 'docSidebar', sidebarId: 'usersSidebar', label: 'Users' },
             { type: 'docSidebar', sidebarId: 'genAiSidebar', label: 'Gen AI' },
             { type: 'docSidebar', sidebarId: 'mcpServerSidebar', label: 'MCP Server' },
@@ -139,15 +156,17 @@ const config: Config = {
           title: 'Products',
           items: [
             { label: 'Voice API', to: '/docs/voice-api/getting-started/overview' },
+            { label: 'Voice v1 (Legacy)', to: '/docs/voice-v1/overview' },
             { label: 'SMS API', to: '/docs/sms-api/overview' },
             { label: 'WhatsApp API', to: '/docs/whatsapp-api/overview' },
             { label: 'ExoVerify', to: '/docs/exoverify-api/overview' },
+            { label: 'Contact Center', to: '/docs/contact-center/overview' },
             { label: 'Call Campaigns', to: '/docs/campaigns/overview' },
             { label: 'SMS Campaigns', to: '/docs/sms-campaigns/overview' },
             { label: 'ExoPhones', to: '/docs/exophones/overview' },
             { label: 'Lead Assist', to: '/docs/lead-assist/overview' },
-            { label: 'Contact Center', to: '/docs/contact-center/overview' },
             { label: 'Gen AI', to: '/docs/gen-ai/overview' },
+            { label: 'Legs & Bridges', to: '/docs/legs/overview' },
           ],
         },
         {
