@@ -2,7 +2,6 @@
 id: incoming-call
 title: Incoming Call
 sidebar_label: Incoming Call
-sidebar_position: 3
 ---
 
 # Incoming Call
@@ -28,13 +27,13 @@ To set up or modify the call flow for your ExoPhone:
 
 | Applet | Purpose |
 |--------|---------|
-| [Greeting](/docs/voice-api/applets/greeting) | Play a recorded voice message or text-to-speech greeting |
-| [Connect](/docs/voice-api/applets/connect) | Route the call to a group or list of phone numbers |
-| [Passthru](/docs/voice-api/applets/passthru) | Send call details to your application URL for dynamic routing |
-| [Transfer](/docs/voice-api/applets/transfer) | Transfer between multiple call flows |
-| [IVR Menu](/docs/voice-api/applets/ivr-menu) | Present an interactive voice menu with DTMF input |
-| [Voicemail](/docs/voice-api/applets/voicemail) | Allow callers to leave a voice message |
-| [Hangup](/docs/voice-api/applets/hangup) | Terminate the call |
+| [Greeting](/docs/voice-v1/applets/greeting) | Play a recorded voice message or text-to-speech greeting |
+| [Connect](/docs/voice-v1/applets/connect) | Route the call to a group or list of phone numbers |
+| [Passthru](/docs/voice-v1/applets/passthru) | Send call details to your application URL for dynamic routing |
+| [Transfer](/docs/voice-v1/applets/transfer) | Transfer between multiple call flows |
+| [IVR Menu](/docs/voice-v1/applets/ivr-menu) | Present an interactive voice menu with DTMF input |
+| [Voicemail](/docs/voice-v1/applets/voicemail) | Allow callers to leave a voice message |
+| [Hangup](/docs/voice-v1/applets/hangup) | Terminate the call |
 
 ## Example Flow
 
@@ -47,5 +46,5 @@ Incoming Call → Greeting ("Welcome to Acme Corp")
 ```
 
 :::tip
-For detailed configuration of each applet, see the [Applets documentation](/docs/voice-api/applets/greeting).
+For detailed configuration of each applet, see the [Applets documentation](/docs/voice-v1/applets/greeting).
 :::

@@ -5,54 +5,35 @@ sidebar_label: Call Details
 sidebar_position: 4
 ---
 
-# Call Details
+# Call Details (v2)
 
-Retrieve detailed information about a specific call, including status, duration, pricing, and recording URL.
+Retrieve detailed information about a specific call made via the Voice v2 (CCM) API.
 
 ## Endpoint
 
 ```
-GET https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/Calls/<CallSid>
+GET /v2/accounts/<account_sid>/calls/<call_sid>
 ```
 
-Append `.json` for JSON response format.
+### Regional URLs
+
+| Region | URL |
+|--------|-----|
+| Singapore | `https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>` |
+| Mumbai | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>` |
 
 ## Path Parameters
 
-| Parameter      | Required  | Description |
-|----------------|-----------|-------------|
-| `<CallSid>`    | Mandatory | The unique alpha-numeric identifier for the call |
-
-## Query Parameters
-
-| Parameter             | Required | Description |
-|-----------------------|----------|-------------|
-| `details`             | Optional | Set to `true` to get leg-wise call details |
-| `RecordingUrlValidity`| Optional | TTL for the pre-signed recording URL in minutes. Range: `5` to `60`. |
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `call_sid` | Yes | The unique call identifier from the Make Call response |
 
 ## Code Examples
 
 ### cURL
 
 ```bash
-curl https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/<CallSid>.json
-```
-
-### Node.js
-
-```javascript
-const request = require('request');
-
-const options = {
-  url: 'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/<CallSid>.json',
-  method: 'GET'
-};
-
-request(options, function (error, response, body) {
-  if (!error) {
-    console.log(body);
-  }
-});
+curl 'https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>'
 ```
 
 ### Python
@@ -61,111 +42,101 @@ request(options, function (error, response, body) {
 import requests
 
 response = requests.get(
-    'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/<CallSid>.json'
+    f"https://ccm-api.exotel.com/v2/accounts/{account_sid}/calls/{call_sid}",
+    auth=(api_key, api_token)
 )
 
 print(response.json())
 ```
 
-### PHP
+### Node.js
 
-```php
-<?php
-$ch = curl_init('https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/<CallSid>.json');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+```javascript
+const axios = require('axios');
 
-$response = curl_exec($ch);
-curl_close($ch);
+const response = await axios.get(
+  `https://ccm-api.exotel.com/v2/accounts/${accountSid}/calls/${callSid}`,
+  { auth: { username: apiKey, password: apiToken } }
+);
 
-echo $response;
-?>
-```
-
-### Ruby
-
-```ruby
-require 'net/http'
-require 'uri'
-
-uri = URI.parse('https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/<CallSid>.json')
-response = Net::HTTP.get(uri)
-
-puts response
+console.log(response.data);
 ```
 
 ## Response
 
 ```json
 {
-  "Call": {
-    "Sid": "80bfbec2d78bbbf10fb851f4fa165211",
-    "ParentCallSid": null,
-    "DateCreated": "2017-03-03 12:30:24",
-    "DateUpdated": "2017-03-03 12:35:10",
-    "AccountSid": "your_sid",
-    "To": "09123456789",
-    "From": "09876543210",
-    "PhoneNumberSid": "0XXXXXX4890",
-    "Status": "completed",
-    "StartTime": "2017-03-03 12:30:27",
-    "EndTime": "2017-03-03 12:35:10",
-    "Duration": 283,
-    "Price": 1.5,
-    "Direction": "outbound-api",
-    "AnsweredBy": null,
-    "ForwardedFrom": null,
-    "CallerName": null,
-    "Uri": "/v1/Accounts/your_sid/Calls.json/80bfbec2d78bbbf10fb851f4fa165211",
-    "RecordingUrl": "https://s3-ap-southeast-1.amazonaws.com/...",
-    "PreSignedRecordingUrl": "https://s3-ap-southeast-1.amazonaws.com/...?X-Amz-..."
+  "request_id": "req_abc123",
+  "method": "GET",
+  "http_code": 200,
+  "response": {
+    "call_details": {
+      "sid": "unique_call_identifier",
+      "direction": "outbound-api",
+      "virtual_number": "+911234567890",
+      "state": "terminal",
+      "status": "completed",
+      "assigned_agent_details": {
+        "user_id": "agent-uuid",
+        "contact_uri": "sip:agent@exotel.com"
+      },
+      "customer_details": {
+        "number": "+919876543210"
+      },
+      "created_time": "2024-06-15T10:30:00.000Z",
+      "updated_time": "2024-06-15T10:35:05.000Z",
+      "start_time": "2024-06-15T10:30:01.000Z",
+      "end_time": "2024-06-15T10:35:00.000Z",
+      "total_duration": 300,
+      "total_talk_time": 280,
+      "recording": {
+        "available": true,
+        "url": "https://s3-ap-southeast-1.amazonaws.com/.../recording.mp3"
+      },
+      "custom_field": "ticket_12345",
+      "legs": "/v2/accounts/<account_sid>/calls/<call_sid>/legs"
+    }
   }
 }
 ```
 
 ## Response Fields
 
-| Field                   | Type     | Description |
-|-------------------------|----------|-------------|
-| `Sid`                   | String   | Unique call identifier |
-| `ParentCallSid`         | String   | Parent call SID (for nested calls) |
-| `DateCreated`           | DateTime | When the call was created |
-| `DateUpdated`           | DateTime | Last status update timestamp |
-| `AccountSid`            | String   | Your Exotel Account SID |
-| `To`                    | String   | Destination phone number |
-| `From`                  | String   | Originating phone number |
-| `PhoneNumberSid`        | String   | The ExoPhone used |
-| `Status`                | String   | `queued`, `ringing`, `in-progress`, `completed`, `failed`, `busy`, `no-answer` |
-| `StartTime`             | DateTime | When the call started ringing |
-| `EndTime`               | DateTime | When the call ended |
-| `Duration`              | Integer  | Total call duration in seconds |
-| `Price`                 | Double   | Amount charged (INR/USD) |
-| `Direction`             | String   | `inbound`, `outbound-dial`, `outbound-api` |
-| `RecordingUrl`          | String   | Permanent recording URL |
-| `PreSignedRecordingUrl` | String   | Time-limited pre-signed AWS recording URL |
+| Field | Type | Description |
+|-------|------|-------------|
+| `sid` | String | Unique call identifier |
+| `direction` | String | `inbound`, `outbound-dial`, `outbound-api` |
+| `virtual_number` | String | ExoPhone used |
+| `state` | String | `active` or `terminal` |
+| `status` | String | Call status (see below) |
+| `assigned_agent_details` | Object | Agent user_id and contact_uri |
+| `customer_details` | Object | Customer phone number |
+| `created_time` | DateTime | API request timestamp |
+| `updated_time` | DateTime | Last status update |
+| `start_time` | DateTime | Call start time |
+| `end_time` | DateTime | Call end time |
+| `total_duration` | Integer | Total duration in seconds |
+| `total_talk_time` | Integer | Customer conversation time in seconds |
+| `recording` | Object | Recording availability and URL |
+| `custom_field` | String | Custom metadata |
+| `legs` | String | URL to fetch call leg details |
 
-## Detailed Call Information
+## Call States & Statuses
 
-Append `?details=true` to get leg-specific data for multi-party calls:
+### States
 
-| Field                  | Type    | Description |
-|------------------------|---------|-------------|
-| `ConversationDuration` | Integer | Seconds both parties were connected |
-| `Leg1Status`           | String  | Status of the first call leg |
-| `Leg2Status`           | String  | Status of the second call leg |
-| `OnCallDuration`       | Integer | Duration per leg in seconds |
+| State | Description |
+|-------|-------------|
+| `active` | Call is ongoing or post-call processing pending |
+| `terminal` | Call completed and all data processed |
 
-### Call Status Values
+### Statuses
 
-| Status        | Description |
-|---------------|-------------|
-| `queued`      | Call is in the queue |
-| `ringing`     | Call is ringing |
-| `in-progress` | Call is active |
-| `completed`   | Call completed successfully |
-| `failed`      | Call failed |
-| `busy`        | Called party was busy |
-| `no-answer`   | Called party did not answer |
-
-:::note
-Duration and pricing fields are updated asynchronously — typically within ~2 minutes after the call ends.
-:::
+| Status | Description |
+|--------|-------------|
+| `completed` | Call connected and ended normally |
+| `agent_unanswered` | Agent did not answer |
+| `customer_unanswered` | Customer did not answer |
+| `agent_canceled` | Agent canceled the call |
+| `customer_no_dial` | Could not dial customer |
+| `agent_no_dial` | Could not dial agent |

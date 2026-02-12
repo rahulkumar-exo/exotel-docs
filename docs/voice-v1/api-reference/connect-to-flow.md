@@ -4,28 +4,124 @@ title: Connect to Call Flow
 sidebar_label: Connect to Flow
 ---
 
-# Connect to Call Flow
+# Connect Number to Call Flow
 
-Call a number and route them to an applet/IVR flow after they answer.
+Call a phone number and connect them to an applet/IVR flow after they answer. Unlike Connect Two Numbers, this API uses a flow URL instead of a `To` number.
 
 ## HTTP Request
 
 ```
-POST /v1/Accounts/<account_sid>/Calls/connect
+POST /v1/Accounts/<your_sid>/Calls/connect
 ```
+
+### Regional Endpoints
+
+| Region | URL |
+|--------|-----|
+| Singapore | `https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
+| Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
 
 ## Request Parameters
 
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `From` | Yes | The phone number to call |
-| `CallerId` | Yes | Your ExoPhone |
-| `Url` | Yes | The flow URL (applet/IVR) to connect to |
-| `CallType` | No | `trans` or `promo` |
-| `TimeLimit` | No | Max call duration in seconds |
-| `TimeOut` | No | Ring timeout in seconds |
-| `StatusCallback` | No | Webhook URL for status updates |
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `From` | Yes | String | The phone number to call first. |
+| `CallerId` | Yes | String | Your ExoPhone/virtual number. |
+| `Url` | Yes | String | Flow URL: `http://my.exotel.com/{your_sid}/exoml/start_voice/{app_id}` |
+| `CallType` | No | String | `trans` for transactional calls. |
+| `TimeLimit` | No | Integer | Max call duration in seconds. Max: `14400` (4 hours). |
+| `TimeOut` | No | Integer | Ring timeout in seconds. |
+| `StatusCallback` | No | String | Webhook URL for call status updates. |
+| `StatusCallbackEvents` | No | Array | `terminal`, `answered`, or both. |
+| `CustomField` | No | String | Metadata passed to the applet via Passthru. |
+
+:::info
+The `Url` parameter should point to a call flow (applet) configured in your Exotel dashboard. The `app_id` is the flow ID found in **App Bazaar > My Apps**.
+:::
+
+## Code Examples
+
+### cURL
+
+```bash
+curl -X POST 'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect' \
+  -d 'From=+919876543210' \
+  -d 'CallerId=0XXXXXX4890' \
+  -d 'Url=http://my.exotel.com/<your_sid>/exoml/start_voice/<app_id>' \
+  -d 'CallType=trans' \
+  -d 'StatusCallback=https://yoururl.com/callback'
+```
+
+### Python
+
+```python
+import requests
+
+data = {
+    'From': '+919876543210',
+    'CallerId': '0XXXXXX4890',
+    'Url': 'http://my.exotel.com/<your_sid>/exoml/start_voice/<app_id>',
+    'CallType': 'trans',
+    'StatusCallback': 'https://yoururl.com/callback'
+}
+
+response = requests.post(
+    'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect',
+    data=data
+)
+
+print(response.json())
+```
+
+### Node.js
+
+```javascript
+const request = require('request');
+
+const options = {
+  url: 'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect',
+  method: 'POST',
+  form: {
+    From: '+919876543210',
+    CallerId: '0XXXXXX4890',
+    Url: 'http://my.exotel.com/<your_sid>/exoml/start_voice/<app_id>',
+    CallType: 'trans'
+  }
+};
+
+request(options, function (error, response, body) {
+  if (!error) {
+    console.log(body);
+  }
+});
+```
 
 ## Response
 
-Returns a Call object with the `CallSid` and call status.
+```json
+{
+  "Call": {
+    "Sid": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+    "ParentCallSid": null,
+    "DateCreated": "2017-03-03 12:30:24",
+    "DateUpdated": "2017-03-03 12:30:27",
+    "AccountSid": "your_sid",
+    "To": null,
+    "From": "09876543210",
+    "PhoneNumberSid": "0XXXXXX4890",
+    "Status": "in-progress",
+    "StartTime": "2017-03-03 12:30:27",
+    "EndTime": null,
+    "Duration": null,
+    "Price": null,
+    "Direction": "outbound-api",
+    "AnsweredBy": null,
+    "Uri": "/v1/Accounts/your_sid/Calls.json/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+    "RecordingUrl": null
+  }
+}
+```
+
+:::note
+When using a flow URL, the `To` field in the response will be `null` since the destination is a flow rather than a phone number. The call proceeds to the applet after the `From` party answers.
+:::

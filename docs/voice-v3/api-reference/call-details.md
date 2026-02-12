@@ -6,152 +6,224 @@ sidebar_label: Call Details
 
 # Call Details (Beta)
 
-Retrieve enhanced call detail records with richer metadata including leg-level information, recording details, and custom fields.
+Retrieve enhanced call detail records with richer metadata including leg-level information, recording details, DTMF digits, and flow information.
 
-## Get Single Call Details
+## Endpoint
 
 ```
 GET /v3/accounts/<account_sid>/calls/<call_sid>
 ```
 
-### Path Parameters
+### Regional URLs
+
+| Region | URL |
+|--------|-----|
+| Singapore | `https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>` |
+| Mumbai | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>` |
+
+## Path Parameters
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `account_sid` | String | Your Exotel account SID |
-| `call_sid` | String | Unique identifier of the call |
+| `call_sid` | String | Unique call identifier (from Make Call API response) |
 
-### Example Request
+## Code Examples
+
+### cURL
 
 ```bash
 curl -X GET \
-  'https://<api_key>:<api_token>@api.exotel.com/v3/accounts/<account_sid>/calls/abc123def456' \
+  'https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
   -H 'Content-Type: application/json'
 ```
 
-### Response
+### Python
+
+```python
+import requests
+
+url = f"https://ccm-api.exotel.com/v3/accounts/{account_sid}/calls/{call_sid}"
+headers = {"Content-Type": "application/json"}
+
+response = requests.get(
+    url,
+    auth=(api_key, api_token),
+    headers=headers
+)
+
+print(response.json())
+```
+
+### Node.js
+
+```javascript
+const request = require('request');
+
+const options = {
+  method: 'GET',
+  url: `https://${apiKey}:${apiToken}@ccm-api.exotel.com/v3/accounts/${accountSid}/calls/${callSid}`,
+  headers: { 'Content-Type': 'application/json' }
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+  console.log(body);
+});
+```
+
+### PHP
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+### Go
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+## Response — Active Call
 
 ```json
 {
-  "request_id": "a1b2c3d4e5f6",
+  "request_id": "62bd4015e8c04ecea3a5fbd7272f95ae",
   "method": "GET",
   "http_code": 200,
   "response": {
-    "call": {
-      "sid": "abc123def456",
-      "date_created": "2024-06-15T10:30:00.000Z",
-      "date_updated": "2024-06-15T10:35:00.000Z",
-      "account_sid": "your_account_sid",
-      "to": "+919876543210",
-      "from": "+911234567890",
-      "phone_number_sid": "exophone_sid",
-      "status": "completed",
-      "start_time": "2024-06-15T10:30:05.000Z",
-      "end_time": "2024-06-15T10:35:00.000Z",
-      "duration": 295,
-      "price": 1.50,
-      "direction": "outbound-api",
-      "answered_by": "human",
-      "recording_url": "https://s3-ap-southeast-1.amazonaws.com/...",
-      "recording_duration": 290,
-      "legs": [
-        {
-          "leg_sid": "leg_001",
-          "contact_uri": "+919876543210",
-          "direction": "outbound",
-          "status": "completed",
-          "duration": 295,
-          "network_type": "pstn"
-        }
-      ],
-      "custom_field": "order_id_12345"
+    "code": 200,
+    "status": "success",
+    "call_details": {
+      "sid": "cabfb1dfa8c5e1c7f2c458423b7716b3",
+      "direction": "outbound",
+      "virtual_number": "+911414941199",
+      "state": "active",
+      "status": null,
+      "created_time": "2022-11-03 22:54:40+05:30",
+      "updated_time": "2022-11-03 22:54:58+05:30",
+      "start_time": "2022-11-03 22:54:57+05:30",
+      "end_time": "1970-01-01 05:30:00+05:30"
     }
   }
 }
 ```
 
----
-
-## Get Bulk Call Details
-
-Retrieve multiple call records with filtering and pagination.
-
-```
-GET /v3/accounts/<account_sid>/calls
-```
-
-### Query Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `start_time` | String | No | Filter by start time (ISO 8601) |
-| `end_time` | String | No | Filter by end time (ISO 8601) |
-| `status` | String | No | Filter by call status: `queued`, `ringing`, `in-progress`, `completed`, `failed`, `busy`, `no-answer` |
-| `direction` | String | No | `inbound`, `outbound-api`, `outbound-dial` |
-| `to` | String | No | Filter by destination number |
-| `from` | String | No | Filter by source number |
-| `limit` | Integer | No | Results per page (default: 20, max: 200) |
-| `offset` | Integer | No | Pagination offset |
-| `sort_by` | String | No | Sort field and direction, e.g., `date_created:desc` |
-
-### Example Request
-
-```bash
-curl -X GET \
-  'https://<api_key>:<api_token>@api.exotel.com/v3/accounts/<account_sid>/calls?status=completed&limit=50&sort_by=date_created:desc' \
-  -H 'Content-Type: application/json'
-```
-
-### Response
+## Response — Completed Call
 
 ```json
 {
-  "request_id": "req_abc123",
+  "request_id": "9107ba6bdfc5493e806b7ea82706f2e0",
   "method": "GET",
   "http_code": 200,
-  "metadata": {
-    "total": 1250,
-    "limit": 50,
-    "offset": 0,
-    "has_next": true
-  },
   "response": {
-    "calls": [
-      {
-        "sid": "call_001",
-        "to": "+919876543210",
-        "from": "+911234567890",
-        "status": "completed",
-        "duration": 180,
-        "direction": "outbound-api",
-        "date_created": "2024-06-15T10:30:00.000Z"
-      },
-      {
-        "sid": "call_002",
-        "to": "+919876543211",
-        "from": "+911234567890",
-        "status": "completed",
-        "duration": 45,
-        "direction": "inbound",
-        "date_created": "2024-06-15T10:25:00.000Z"
-      }
-    ]
+    "code": 200,
+    "status": "success",
+    "call_details": {
+      "sid": "cabfb1dfa8c5e1c7f2c458423b7716b3",
+      "direction": "outbound",
+      "virtual_number": "+911414941199",
+      "state": "terminal",
+      "status": "completed",
+      "legs": "/v3/accounts/<account_sid>/calls/cabfb1dfa8c5e1c7f2c458423b7716b3/legs",
+      "created_time": "2022-11-03 22:54:40+05:30",
+      "updated_time": "2022-11-03 22:56:04+05:30",
+      "start_time": "2022-11-03 22:54:57+05:30",
+      "end_time": "2022-11-03 22:56:04+05:30",
+      "total_duration": 84,
+      "total_talk_time": 59,
+      "custom_field": null,
+      "app_id": null,
+      "app_name": null,
+      "digits": null,
+      "recordings": [
+        {
+          "url": "https://s3-ap-south-1.amazonaws.com/exotel-mum1-recordings/Exotel/cabfb1dfa8c5e1c7f2c458423b7716b3.mp3"
+        }
+      ]
+    }
   }
 }
 ```
 
-## Call Status Values
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `request_id` | String | Unique request identifier for debugging |
+| `method` | String | HTTP method used (GET) |
+| `http_code` | Integer | HTTP status code |
+| `response.code` | Integer | Response code |
+| `response.status` | String | `success` or `failure` |
+| `response.call_details.sid` | String | Unique call identifier |
+| `response.call_details.direction` | String | `inbound`, `outbound-dial`, or `outbound-api` |
+| `response.call_details.virtual_number` | String | ExoPhone/virtual number used |
+| `response.call_details.state` | String | `active` or `terminal` |
+| `response.call_details.status` | String | Call status (see below) |
+| `response.call_details.legs` | String | URL to fetch leg-level details |
+| `response.call_details.created_time` | DateTime | Request initiation time (`YYYY-MM-DD HH:mm:ss+hh:mm`) |
+| `response.call_details.updated_time` | DateTime | Last status update time |
+| `response.call_details.start_time` | DateTime | Call start time |
+| `response.call_details.end_time` | DateTime | Call completion time |
+| `response.call_details.total_duration` | Integer | Total duration in seconds |
+| `response.call_details.total_talk_time` | Integer | Conversation duration in seconds |
+| `response.call_details.custom_field` | String | Custom data passed during the call request |
+| `response.call_details.app_id` | String | Flow ID used (null if no flow) |
+| `response.call_details.app_name` | String | Flow name used (null if no flow) |
+| `response.call_details.digits` | String | DTMF digits pressed (hyphen-separated, null if none) |
+| `response.call_details.recordings` | Array | Array of recording objects with `url` field |
+
+## Call States & Statuses
+
+### States
+
+| State | Description |
+|-------|-------------|
+| `active` | Call is ongoing or post-call processing pending |
+| `terminal` | Call completed and all data processed |
+
+### Statuses
 
 | Status | Description |
 |--------|-------------|
-| `queued` | Call is queued for processing |
-| `ringing` | Endpoint is ringing |
-| `in-progress` | Call is active |
-| `completed` | Call ended normally |
-| `failed` | Call failed to connect |
-| `busy` | Endpoint was busy |
-| `no-answer` | No answer within timeout |
-| `canceled` | Call was canceled before connection |
+| `completed` | Call connected and ended normally |
+| `from_leg_unanswered` | From-leg (agent) did not answer |
+| `to_leg_unanswered` | To-leg (customer) did not answer |
+| `from_leg_cancelled` | From-leg canceled the call |
+| `to_leg_no_dial` | Could not dial the to-leg |
+| `from_leg_no_dial` | Could not dial the from-leg |
 
 ## HTTP Status Codes
 
@@ -163,3 +235,9 @@ curl -X GET \
 | `404` | Not Found — Call SID doesn't exist |
 | `429` | Rate Limited — Too many requests |
 | `500` | Server Error |
+
+:::note
+- When the call is in `active` state, fields like `total_duration`, `total_talk_time`, `recordings`, and `status` may be null or incomplete.
+- The `total_talk_time` accumulates across multiple leg transfers.
+- Recording URLs are temporary pre-signed URLs.
+:::

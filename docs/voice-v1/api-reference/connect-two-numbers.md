@@ -6,29 +6,185 @@ sidebar_label: Connect Two Numbers
 
 # Connect Two Numbers
 
-Connect a `From` number to a `To` number. The platform calls the `From` number first, then connects to the `To` number once answered.
+Make an outbound call that connects two phone numbers. The platform calls the `From` number first, and once they answer, the `To` number is dialed and connected.
 
 ## HTTP Request
 
 ```
-POST /v1/Accounts/<account_sid>/Calls/connect
+POST /v1/Accounts/<your_sid>/Calls/connect
 ```
+
+### Regional Endpoints
+
+| Region | URL |
+|--------|-----|
+| Singapore | `https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
+| Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
 
 ## Request Parameters
 
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `From` | Yes | The phone number to call first |
-| `To` | Yes | The phone number to connect to |
-| `CallerId` | Yes | Your ExoPhone |
-| `CallType` | No | `trans` (transactional) or `promo` (promotional) |
-| `TimeLimit` | No | Max call duration in seconds |
-| `TimeOut` | No | Ring timeout in seconds |
-| `StatusCallback` | No | Webhook URL for call status updates |
-| `Record` | No | `true` to record the call |
-| `RecordingChannels` | No | `single` or `dual` |
-| `CustomField` | No | Custom metadata |
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `From` | Yes | String | Phone number called first. Preferably in E.164 format. |
+| `To` | Yes | String | Customer phone number. Preferably in E.164 format. |
+| `CallerId` | Yes | String | Your ExoPhone/virtual number. |
+| `CallType` | No | String | `trans` for transactional calls. |
+| `TimeLimit` | No | Integer | Max call duration in seconds. Max: `14400` (4 hours). |
+| `TimeOut` | No | Integer | Ring timeout in seconds. |
+| `WaitUrl` | No | String | Audio URL (WAV) played while waiting. Recommended: under 2MB. |
+| `Record` | No | Boolean | `true` to record the conversation. |
+| `RecordingChannels` | No | String | `single` (default) or `dual`. |
+| `RecordingFormat` | No | String | `mp3` (default) or `mp3-hq`. |
+| `StreamUrl` | No | String | WebSocket URL for real-time audio streaming. |
+| `StreamBegin` | No | String | `at Leg1Connect` or `at Leg2Connect`. |
+| `CustomField` | No | String | Metadata (max 128 chars). Passed to StatusCallback and applets. |
+| `StartPlaybackToNew` | No | String | `Callee` (default) or `Both`. |
+| `StartPlaybackValueNew` | No | String | Audio URL for pre-call playback. |
+| `StatusCallback` | No | String | Webhook URL for call status updates. |
+| `StatusCallbackEvents` | No | Array | `terminal`, `answered`, or both. |
+| `StatusCallbackContentType` | No | String | `multipart/form-data` or `application/json`. |
+
+## Code Examples
+
+### cURL
+
+```bash
+curl -X POST 'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect' \
+  -d 'From=+91XXXXXXXXXX' \
+  -d 'To=+91XXXXXXXXXX' \
+  -d 'CallerId=XXXXXXXXXX' \
+  -d 'Record=true' \
+  -d 'StatusCallback=https://yoururl.com/callback'
+```
+
+### Node.js
+
+```javascript
+const request = require('request');
+
+const options = {
+  url: 'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect',
+  method: 'POST',
+  form: {
+    From: '+919876543210',
+    To: '+919123456789',
+    CallerId: '0XXXXXX4890',
+    Record: 'true'
+  }
+};
+
+request(options, function (error, response, body) {
+  if (!error) {
+    console.log(body);
+  }
+});
+```
+
+### Python
+
+```python
+import requests
+
+data = {
+    'From': '+919876543210',
+    'To': '+919123456789',
+    'CallerId': '0XXXXXX4890',
+    'Record': 'true'
+}
+
+response = requests.post(
+    'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect',
+    data=data
+)
+
+print(response.json())
+```
+
+### PHP
+
+```php
+<?php
+$data = array(
+    'From' => '+919876543210',
+    'To' => '+919123456789',
+    'CallerId' => '0XXXXXX4890',
+    'Record' => 'true'
+);
+
+$ch = curl_init('https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+```
 
 ## Response
 
-Returns a Call object with `CallSid`, status, and call details.
+```json
+{
+  "Call": {
+    "Sid": "c5797dcbaaeed7678c4062a4a3ed2f8a",
+    "ParentCallSid": null,
+    "DateCreated": "2017-03-03 10:48:33",
+    "DateUpdated": "2017-03-03 10:48:33",
+    "AccountSid": "Exotel",
+    "To": "0XXXXX38847",
+    "From": "0XXXXX30240",
+    "PhoneNumberSid": "0XXXXXX4890",
+    "Status": "in-progress",
+    "StartTime": "2017-03-03 10:48:33",
+    "EndTime": null,
+    "Duration": null,
+    "Price": null,
+    "Direction": "outbound-api",
+    "AnsweredBy": null,
+    "ForwardedFrom": null,
+    "CallerName": null,
+    "Uri": "/v1/Accounts/Exotel/Calls.json/c5797dcbaaeed7678c4062a4a3ed2f8a",
+    "RecordingUrl": null
+  }
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Sid` | String | Unique alpha-numeric call identifier |
+| `DateCreated` | DateTime | When the API request was initiated |
+| `DateUpdated` | DateTime | Last status update timestamp |
+| `AccountSid` | String | Your Exotel Account SID |
+| `To` | String | The destination phone number |
+| `From` | String | The number called first |
+| `PhoneNumberSid` | String | The ExoPhone used |
+| `Status` | String | `queued`, `in-progress`, `completed`, `failed`, `busy`, `no-answer` |
+| `StartTime` | DateTime | When call was sent to operator |
+| `EndTime` | DateTime | When call ended |
+| `Duration` | Integer | Total duration in seconds |
+| `Price` | Double | Amount charged (INR/USD) |
+| `Direction` | String | `inbound`, `outbound-dial`, `outbound-api` |
+| `RecordingUrl` | String | Recording URL (if enabled) |
+
+## Call Status Values
+
+| Status | Description |
+|--------|-------------|
+| `queued` | Waiting to be sent to operator |
+| `in-progress` | Call is active |
+| `completed` | Ended normally |
+| `failed` | Could not be completed |
+| `busy` | Busy signal received |
+| `no-answer` | Not answered within timeout |
+
+:::note
+`Duration`, `Price`, and `EndTime` update asynchronously (~2 minutes after call ends). Use StatusCallback or Call Details API for final values.
+:::
+
+:::info
+Audio file URLs for `WaitUrl` are cached. Use unique URLs (e.g., add a query parameter) when updating audio files.
+:::

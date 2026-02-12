@@ -2,7 +2,6 @@
 id: number-metadata
 title: Number Metadata
 sidebar_label: Number Metadata
-sidebar_position: 6
 ---
 
 # Number Metadata
@@ -12,16 +11,23 @@ Retrieve telecom information about Indian phone numbers, including the telecom c
 ## Endpoint
 
 ```
-GET https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/Numbers/<phone_number>
+GET /v1/Accounts/<your_sid>/Numbers/<phone_number>
 ```
+
+### Regional URLs
+
+| Region | URL |
+|--------|-----|
+| Singapore | `https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Numbers/<phone_number>.json` |
+| Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com/v1/Accounts/<your_sid>/Numbers/<phone_number>.json` |
 
 Append `.json` for JSON response format.
 
 ## Path Parameters
 
-| Parameter        | Required  | Description |
-|------------------|-----------|-------------|
-| `<phone_number>` | Mandatory | The Indian phone number to look up |
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `phone_number` | Yes | The Indian phone number to look up |
 
 ## Code Examples
 
@@ -43,17 +49,48 @@ response = requests.get(
 print(response.json())
 ```
 
+### Node.js
+
+```javascript
+const request = require('request');
+
+request.get(
+  'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Numbers/09876543210.json',
+  function (error, response, body) {
+    if (!error) {
+      console.log(body);
+    }
+  }
+);
+```
+
+## Response
+
+```json
+{
+  "Numbers": {
+    "PhoneNumber": "0XXXXX30240",
+    "Circle": "GJ",
+    "CircleName": "Gujarat Telecom Circle",
+    "Type": "Mobile",
+    "Operator": "R",
+    "OperatorName": "Reliance",
+    "DND": "Yes"
+  }
+}
+```
+
 ## Response Fields
 
-| Field          | Type   | Description |
-|----------------|--------|-------------|
-| `PhoneNumber`  | String | Reformatted phone number |
-| `Circle`       | String | Two-character telecom circle code |
-| `CircleName`   | String | Human-readable circle name |
-| `Type`         | String | `Mobile` or `Landline` |
-| `Operator`     | String | Telecom operator code |
+| Field | Type | Description |
+|-------|------|-------------|
+| `PhoneNumber` | String | Reformatted phone number |
+| `Circle` | String | Two-character telecom circle code |
+| `CircleName` | String | Human-readable circle name |
+| `Type` | String | `Mobile` or `Landline` |
+| `Operator` | String | Telecom operator code |
 | `OperatorName` | String | Full operator name |
-| `DND`          | String | `Yes`, `No`, or `Unavailable` |
+| `DND` | String | `Yes`, `No`, or `Unavailable` |
 
 ## Telecom Circles (India)
 

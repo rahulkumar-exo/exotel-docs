@@ -5,42 +5,87 @@ sidebar_label: Overview
 sidebar_position: 1
 ---
 
-# Voice API Overview
+# Voice v2 API (CCM)
 
-Exotel's Voice API lets you programmatically make and receive phone calls, build interactive voice response (IVR) systems, and manage call flows using a simple REST API.
+Voice v2 APIs use the Contact Center Management (CCM) platform to make calls with **agent/user context**. Unlike Voice v1 (which works without user context), Voice v2 requires users to be added as co-workers in the Exotel dashboard.
 
-## What You Can Do
+:::info Deprecated
+Voice v2 is deprecated. For new integrations, use [Voice v3](/docs/voice-v3/overview) for enhanced call details. Existing v2 integrations continue to work.
+:::
 
-- **Make outbound calls** — Connect two phone numbers or route a call to an IVR flow
-- **Handle inbound calls** — Configure call flows on your ExoPhones using applets
-- **Get call details** — Retrieve call status, duration, recordings, and pricing
-- **Manage ExoPhones** — Provision, configure, and release virtual phone numbers
-- **Build IVR flows** — Combine applets (Greeting, Connect, Passthru, Transfer, etc.) to create complex call workflows
-- **Receive webhooks** — Get real-time notifications when calls complete via StatusCallback
+## Key Differences from Voice v1
+
+| Feature | Voice v1 | Voice v2 (CCM) |
+|---------|----------|-----------------|
+| **Endpoint prefix** | `/v1/Accounts/` | `/v2/accounts/` |
+| **Base domain** | `api.exotel.com` | `ccm-api.exotel.com` |
+| **User context** | Not required | Required — agents must be in dashboard |
+| **Agent devices** | N/A | Phone, SIP, or WebRTC |
+| **Request format** | Form-encoded | JSON |
+| **Call direction** | Agent→Customer (From→To) | Agent→Customer (from→to as JSON objects) |
 
 ## Base URL
 
-All API requests use HTTP Basic authentication and are made to one of the following regional endpoints:
-
-| Region    | Subdomain              |
-|-----------|------------------------|
-| Singapore | `@api.exotel.com`      |
-| Mumbai    | `@api.in.exotel.com`   |
-
 ```
-https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/
+https://<api_key>:<api_token>@<ccm_subdomain>/v2/accounts/<account_sid>/
 ```
 
-## Rate Limits
+### Regional Endpoints
 
-Voice APIs are rate-limited to **200 requests per minute**. Exceeding this limit returns HTTP `429 Too Many Requests`.
+| Region | CCM Subdomain |
+|--------|---------------|
+| Singapore | `ccm-api.exotel.com` |
+| Mumbai | `ccm-api.in.exotel.com` |
 
-## Response Formats
+## Authentication
 
-All endpoints support both **JSON** and **XML** responses. Append `.json` to the endpoint URL for JSON format.
+HTTP Basic Authentication using your API key and token from **Exotel Dashboard > Settings > API Settings**.
 
-## Next Steps
+## Prerequisites
 
-- [Set up authentication](/docs/voice-api/getting-started/authentication) to make your first API call
-- [Make a call](/docs/voice-api/api-reference/make-a-call) to connect two phone numbers
-- Learn about [Applets](/docs/voice-api/applets/greeting) to build IVR call flows
+1. Users must be added as **co-workers** in the Exotel dashboard
+2. Agent devices must be **ON** and in **available** status (not busy)
+3. Phone numbers must be in **E.164 format**
+4. Audio files should be **WAV format**, recommended under 2MB
+
+## API Reference
+
+| API | Method | Description |
+|-----|--------|-------------|
+| [Make a Call](/docs/voice-api/api-reference/make-a-call) | POST | Connect an agent to a customer |
+| [Call Details](/docs/voice-api/api-reference/call-details) | GET | Get call details by call SID |
+
+## Call States
+
+| State | Description |
+|-------|-------------|
+| `active` | Call is ongoing or post-call processing pending |
+| `terminal` | Call completed and all data processed |
+
+## Call Statuses
+
+| Status | Description |
+|--------|-------------|
+| `completed` | Call connected and ended normally |
+| `agent_unanswered` | Agent did not answer |
+| `customer_unanswered` | Customer did not answer |
+| `agent_canceled` | Agent canceled the call |
+| `customer_no_dial` | Could not dial customer |
+| `agent_no_dial` | Could not dial agent |
+
+## Error Codes
+
+| HTTP Code | Error Code | Description |
+|-----------|-----------|-------------|
+| `401` | `1010` | Authentication failed |
+| `404` | `10731` | User not found |
+| `409` | `1012` | User device unavailable |
+| `409` | `10705` | User device unverified |
+| `409` | `10706` | User device busy |
+| `404` | `10716` | Virtual number not found |
+| `500` | `1100` | Internal Server Error |
+
+## Related APIs
+
+- [Voice v1](/docs/voice-v1/overview) — Legacy voice APIs (no user context required)
+- [Voice v3 (Beta)](/docs/voice-v3/overview) — Enhanced call details

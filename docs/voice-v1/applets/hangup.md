@@ -27,5 +27,5 @@ Incoming Call → Greeting → IVR Menu
 ## When to Use
 
 - At the end of every call flow branch to ensure calls are properly terminated
-- After a [Greeting applet](/docs/voice-api/applets/greeting) that plays a final message
+- After a [Greeting applet](/docs/voice-v1/applets/greeting) that plays a final message
 - As a fallback for unhandled IVR inputs

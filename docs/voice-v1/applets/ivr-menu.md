@@ -38,4 +38,4 @@ Incoming Call → Greeting ("Welcome to Acme Corp")
 - Keep menus simple — no more than 4-5 options
 - Always provide a fallback for invalid input or no input
 - Put the most common option first
-- Use the [Greeting applet](/docs/voice-api/applets/greeting) before the IVR Menu to welcome callers
+- Use the [Greeting applet](/docs/voice-v1/applets/greeting) before the IVR Menu to welcome callers

@@ -37,7 +37,7 @@ For detailed documentation on the URL response format, refer to the [Connect app
 
 ## Call Recording
 
-When recording is enabled, combine the Connect applet with a [Greeting applet](/docs/voice-api/applets/greeting) to inform callers that their conversation is being recorded for quality assurance.
+When recording is enabled, combine the Connect applet with a [Greeting applet](/docs/voice-v1/applets/greeting) to inform callers that their conversation is being recorded for quality assurance.
 
 ## Example Flow
 

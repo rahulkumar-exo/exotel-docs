@@ -20,14 +20,14 @@ The Voicemail applet allows callers to leave a recorded voice message when no on
 
 - **Route to groups or users** — Send voicemail notifications to specific teams or individuals
 - **Tracking** — All voicemails are traced and tracked in the system
-- **Integration** — Combine with the [Email applet](/docs/voice-api/applets/email) to send voicemail notifications
+- **Integration** — Combine with the [Email applet](/docs/voice-v1/applets/email) to send voicemail notifications
 
 ## Configuration
 
 1. In the Exotel Dashboard, open your call flow editor
 2. Drag the **Voicemail** applet into your flow
 3. Configure the recipient group or user
-4. Optionally add a [Greeting applet](/docs/voice-api/applets/greeting) before it with a custom prompt
+4. Optionally add a [Greeting applet](/docs/voice-v1/applets/greeting) before it with a custom prompt
 
 ## Example Flow
 

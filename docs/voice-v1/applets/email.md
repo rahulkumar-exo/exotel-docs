@@ -41,5 +41,5 @@ Incoming Call → Connect (to sales) → Email (send call details to CRM inbox)
 ## Best Practices
 
 - Use Email applets after Connect failures to ensure missed calls are tracked
-- Combine with [Voicemail](/docs/voice-api/applets/voicemail) for a complete missed-call workflow
+- Combine with [Voicemail](/docs/voice-v1/applets/voicemail) for a complete missed-call workflow
 - Send emails to shared inboxes or ticketing systems for better tracking
