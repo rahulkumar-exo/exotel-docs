@@ -2,6 +2,8 @@ backend:
   name: github
   repo: rahulkumar-exo/exotel-docs
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 media_folder: static/img/uploads
 public_folder: /img/uploads
