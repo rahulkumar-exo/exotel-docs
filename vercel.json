@@ -11,10 +11,5 @@
     "api/callback.js": {
       "maxDuration": 10
     }
-  },
-  "rewrites": [
-    { "source": "/api/auth", "destination": "/api/auth" },
-    { "source": "/api/callback", "destination": "/api/callback" },
-    { "source": "/api/chat", "destination": "/api/chat" }
-  ]
+  }
 }
