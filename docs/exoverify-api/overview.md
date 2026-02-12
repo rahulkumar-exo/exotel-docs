@@ -1,6 +1,6 @@
 ---
 id: overview
-title: ExoVerify Overview
+title: ExoVerify
 sidebar_label: Overview
 sidebar_position: 1
 ---

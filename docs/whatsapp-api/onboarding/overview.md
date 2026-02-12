@@ -1,6 +1,6 @@
 ---
 id: overview
-title: WhatsApp Onboarding
+title: WhatsApp - Onboarding APIs
 sidebar_label: Overview
 slug: /whatsapp-api/onboarding/overview
 ---

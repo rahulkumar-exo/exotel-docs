@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Campaign Contacts
+title: Contacts
 sidebar_label: Overview
 slug: /campaigns-contacts/overview
 ---

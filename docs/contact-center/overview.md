@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Contact Center
+title: Contact Center APIs v6
 sidebar_label: Overview
 slug: /contact-center/overview
 ---

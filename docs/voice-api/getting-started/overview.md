@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Voice API Overview
+title: Voice v2
 sidebar_label: Overview
 sidebar_position: 1
 ---

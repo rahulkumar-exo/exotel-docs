@@ -1,6 +1,6 @@
 ---
 id: overview
-title: WhatsApp API Overview
+title: WhatsApp - Messaging API
 sidebar_label: Overview
 sidebar_position: 1
 ---

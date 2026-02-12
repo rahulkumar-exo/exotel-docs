@@ -1,0 +1,106 @@
+---
+id: token-generation
+title: Token Generation
+sidebar_label: Token Generation
+---
+
+# Token Generation
+
+Generate authentication tokens for Contact Center API access. This API creates a session token using basic authentication credentials.
+
+## HTTP Request
+
+```
+POST /v2/accounts/<account_sid>/configuration/basicauth
+```
+
+### Base URL
+
+| Data Center | Base URL |
+|------------|----------|
+| Singapore | `https://ccm-api.exotel.com` |
+| Mumbai | `https://ccm-api.in.exotel.com` |
+
+## Request Headers
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `application/json` |
+| `Authorization` | `Basic <base64(api_key:api_token)>` |
+
+## Example Request
+
+```bash
+curl -X POST \
+  'https://ccm-api.exotel.com/v2/accounts/<account_sid>/configuration/basicauth' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Basic <base64_encoded_credentials>'
+```
+
+```python
+import requests
+import base64
+
+api_key = "your_api_key"
+api_token = "your_api_token"
+account_sid = "your_account_sid"
+
+credentials = base64.b64encode(f"{api_key}:{api_token}".encode()).decode()
+
+response = requests.post(
+    f"https://ccm-api.exotel.com/v2/accounts/{account_sid}/configuration/basicauth",
+    headers={
+        "Content-Type": "application/json",
+        "Authorization": f"Basic {credentials}"
+    }
+)
+
+print(response.json())
+```
+
+## Response
+
+```json
+{
+  "request_id": "abc123-def456",
+  "method": "POST",
+  "http_code": 200,
+  "response": {
+    "code": 200,
+    "status": "success",
+    "data": {
+      "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "token_type": "Bearer",
+      "expires_in": 86400
+    }
+  }
+}
+```
+
+### Response Fields
+
+| Field | Description |
+|-------|-------------|
+| `access_token` | JWT token to use in subsequent API calls |
+| `token_type` | Token type — always `Bearer` |
+| `expires_in` | Token validity in seconds (default: 86400 = 24 hours) |
+
+## Using the Token
+
+After generating a token, include it in subsequent API requests:
+
+```bash
+curl -X GET \
+  'https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls' \
+  -H 'Authorization: Bearer <access_token>'
+```
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `200` | Success — Token generated |
+| `401` | Unauthorized — Invalid API key or token |
+| `403` | Forbidden — Account not authorized for CCM |
+| `429` | Rate Limited |
+| `500` | Internal Server Error |

@@ -1,0 +1,156 @@
+---
+id: upload-contacts
+title: Upload Contacts via CSV
+sidebar_label: Upload Contacts
+---
+
+# Upload Contacts via CSV
+
+Upload contacts in bulk using a CSV file for use in contact center campaigns and call queues.
+
+## HTTP Request
+
+```
+POST /v2/accounts/<account_sid>/contacts/upload
+```
+
+### Base URL
+
+| Data Center | Base URL |
+|------------|----------|
+| Singapore | `https://ccm-api.exotel.com` |
+| Mumbai | `https://ccm-api.in.exotel.com` |
+
+## Request Headers
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `multipart/form-data` |
+| `Authorization` | `Bearer <access_token>` or Basic Auth |
+
+## Request Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `file` | File | Yes | CSV file containing contact data |
+| `list_id` | String | No | Associate contacts with a specific list |
+| `duplicate_action` | String | No | How to handle duplicates: `skip`, `update`, or `create_new` (default: `skip`) |
+
+## CSV Format
+
+The CSV file should contain the following columns:
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| `phone_number` | Yes | Contact phone number in E.164 format |
+| `first_name` | No | Contact's first name |
+| `last_name` | No | Contact's last name |
+| `email` | No | Contact's email address |
+| `company` | No | Company name |
+| `tag` | No | Contact tag/category |
+| `custom_field_1` | No | Custom data field |
+
+### Sample CSV
+
+```csv
+phone_number,first_name,last_name,email,company,tag
++919876543210,John,Doe,john@example.com,Acme Inc,premium
++919876543211,Jane,Smith,jane@example.com,Beta Corp,standard
++919876543212,Bob,Wilson,bob@example.com,Gamma Ltd,premium
+```
+
+## Example Request
+
+```bash
+curl -X POST \
+  'https://ccm-api.exotel.com/v2/accounts/<account_sid>/contacts/upload' \
+  -H 'Authorization: Bearer <access_token>' \
+  -F 'file=@contacts.csv' \
+  -F 'duplicate_action=skip'
+```
+
+```python
+import requests
+
+url = f"https://ccm-api.exotel.com/v2/accounts/{account_sid}/contacts/upload"
+
+files = {
+    'file': ('contacts.csv', open('contacts.csv', 'rb'), 'text/csv')
+}
+
+data = {
+    'duplicate_action': 'skip'
+}
+
+response = requests.post(
+    url,
+    headers={"Authorization": f"Bearer {access_token}"},
+    files=files,
+    data=data
+)
+
+print(response.json())
+```
+
+## Response
+
+```json
+{
+  "request_id": "upload_req_001",
+  "method": "POST",
+  "http_code": 202,
+  "response": {
+    "code": 202,
+    "status": "accepted",
+    "data": {
+      "upload_id": "upload_abc123",
+      "total_records": 3,
+      "status": "processing",
+      "estimated_time_seconds": 30
+    }
+  }
+}
+```
+
+## Check Upload Status
+
+```
+GET /v2/accounts/<account_sid>/contacts/upload/<upload_id>
+```
+
+### Response
+
+```json
+{
+  "response": {
+    "data": {
+      "upload_id": "upload_abc123",
+      "status": "completed",
+      "total_records": 3,
+      "successful": 2,
+      "failed": 1,
+      "duplicates_skipped": 0,
+      "error_file_id": "error_file_001"
+    }
+  }
+}
+```
+
+## Upload Limits
+
+| Limit | Value |
+|-------|-------|
+| Maximum file size | 10 MB |
+| Maximum records per file | 50,000 |
+| Supported formats | `.csv` |
+| Maximum concurrent uploads | 5 |
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `202` | Accepted — Upload is being processed |
+| `400` | Bad Request — Invalid CSV format |
+| `401` | Unauthorized |
+| `413` | File too large |
+| `429` | Rate Limited |

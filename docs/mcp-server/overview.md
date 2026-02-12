@@ -1,6 +1,6 @@
 ---
 id: overview
-title: MCP Server
+title: Exotel MCP Server
 sidebar_label: Overview
 slug: /mcp-server/overview
 ---

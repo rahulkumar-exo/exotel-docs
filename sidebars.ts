@@ -58,6 +58,20 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  voiceV3Sidebar: [
+    'voice-v3/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'voice-v3/api-reference/call-details',
+        'voice-v3/api-reference/voice-log-download',
+        'voice-v3/api-reference/active-stream-monitoring',
+      ],
+    },
+  ],
+
   smsApiSidebar: [
     'sms-api/overview',
     {
@@ -82,8 +96,11 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'whatsapp-api/api-reference/send-message',
+        'whatsapp-api/api-reference/receive-messages',
         'whatsapp-api/api-reference/templates',
         'whatsapp-api/api-reference/bulk-messages',
+        'whatsapp-api/api-reference/payment-messages',
+        'whatsapp-api/api-reference/flows',
         'whatsapp-api/api-reference/status-codes',
       ],
     },
@@ -258,14 +275,29 @@ const sidebars: SidebarsConfig = {
       label: 'API Reference',
       collapsed: false,
       items: [
+        'contact-center/api-reference/token-generation',
         'contact-center/api-reference/make-call',
         'contact-center/api-reference/call-details',
+        'contact-center/api-reference/upload-contacts',
+        'contact-center/api-reference/error-file-retrieval',
+        'contact-center/api-reference/agent-presence',
       ],
     },
   ],
 
   contactCenterV4Sidebar: [
     'contact-center-v4/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'contact-center-v4/api-reference/login',
+        'contact-center-v4/api-reference/manage-users',
+        'contact-center-v4/api-reference/customer-callbacks',
+        'contact-center-v4/api-reference/voicelogs',
+      ],
+    },
   ],
 
   legsSidebar: [
@@ -283,6 +315,20 @@ const sidebars: SidebarsConfig = {
 
   ipPstnWebrtcSidebar: [
     'ip-pstn-webrtc/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'ip-pstn-webrtc/api-reference/authentication',
+        'ip-pstn-webrtc/api-reference/applications',
+        'ip-pstn-webrtc/api-reference/app-settings',
+        'ip-pstn-webrtc/api-reference/users',
+        'ip-pstn-webrtc/api-reference/device-management',
+        'ip-pstn-webrtc/api-reference/call-notifications',
+        'ip-pstn-webrtc/api-reference/customer-management',
+      ],
+    },
   ],
 
   whatsappOnboardingSidebar: [

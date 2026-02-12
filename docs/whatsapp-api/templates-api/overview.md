@@ -1,6 +1,6 @@
 ---
 id: overview
-title: WhatsApp Template Management
+title: WhatsApp - Template Management APIs
 sidebar_label: Overview
 slug: /whatsapp-api/templates-api/overview
 ---

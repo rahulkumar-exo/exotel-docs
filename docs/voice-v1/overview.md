@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Voice v1 (Legacy)
+title: Voice v1
 sidebar_label: Overview
 slug: /voice-v1/overview
 ---

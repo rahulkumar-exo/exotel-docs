@@ -1,0 +1,154 @@
+---
+id: authentication
+title: Authentication Token
+sidebar_label: Authentication
+sidebar_position: 1
+---
+
+# Create Authentication Token
+
+Generate a bearer token for authenticating subsequent API calls. Tokens are valid for **90 days**.
+
+## Endpoint
+
+```
+POST https://integrationscore.mum1.exotel.com/v2/integrations/token
+```
+
+## Headers
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `application/json` |
+
+## Request Parameters
+
+| Parameter | Required | Type   | Description |
+|-----------|----------|--------|-------------|
+| `Id`      | Yes      | String | Entity identifier -- CustomerID or AppID |
+| `Secret`  | Yes      | String | Entity credential -- CustomerSecret or AppSecret |
+| `Entity`  | Yes      | String | `"customer"` or `"app"`. Determines which entity type is authenticating. |
+
+## Code Examples
+
+### cURL
+
+```bash
+curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/integrations/token' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "Id": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
+    "Secret": "5b8215f7-8595-42c0-9b63-404bcc474f94",
+    "Entity": "customer"
+}'
+```
+
+### Node.js
+
+```javascript
+const request = require('request');
+
+const options = {
+  method: 'POST',
+  url: 'https://integrationscore.mum1.exotel.com/v2/integrations/token',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    Id: '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0',
+    Secret: '5b8215f7-8595-42c0-9b63-404bcc474f94',
+    Entity: 'customer'
+  })
+};
+
+request(options, function (error, response, body) {
+  if (!error) {
+    console.log(body);
+  }
+});
+```
+
+### Python
+
+```python
+import requests
+import json
+
+url = "https://integrationscore.mum1.exotel.com/v2/integrations/token"
+
+payload = json.dumps({
+    "Id": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
+    "Secret": "5b8215f7-8595-42c0-9b63-404bcc474f94",
+    "Entity": "customer"
+})
+
+headers = {
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.json())
+```
+
+### PHP
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://integrationscore.mum1.exotel.com/v2/integrations/token',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS => json_encode(array(
+    'Id' => '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0',
+    'Secret' => '5b8215f7-8595-42c0-9b63-404bcc474f94',
+    'Entity' => 'customer'
+  )),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+echo $response;
+?>
+```
+
+## Response
+
+```json
+{
+    "RequestId": "f4f76061-3c01-410e-be49-55a17049cf35",
+    "Status": "Success",
+    "Code": 200,
+    "Error": "",
+    "Data": "OTlmYTk4YTEtMmNlMC00NTdjLTkzNzEtMGQzYTAxZWI2ZWYw"
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `RequestId` | String | Unique request identifier |
+| `Status` | String | `"Success"` or `"Failed"` |
+| `Code` | Integer | HTTP status code |
+| `Error` | String | Error message (empty on success) |
+| `Data` | String | The bearer token to use in `Authorization` header for subsequent requests |
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `200` | Token generated successfully |
+| `400` | Invalid input parameters |
+| `401` | Invalid credentials |
+| `500` | Server error |
+
+:::note
+- Use `Entity: "customer"` to get a customer-level token for managing applications
+- Use `Entity: "app"` to get an app-level token for managing users, settings, and making calls
+- Tokens expire after **90 days**
+:::

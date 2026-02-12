@@ -1,0 +1,115 @@
+---
+id: login
+title: Login
+sidebar_label: Login
+---
+
+# Login API
+
+Authenticate and create a session for Contact Center v4 API access.
+
+## HTTP Request
+
+```
+POST /v4/accounts/<account_sid>/login
+```
+
+### Base URL
+
+| Data Center | Base URL |
+|------------|----------|
+| Singapore | `https://ccm-api.exotel.com` |
+| Mumbai | `https://ccm-api.in.exotel.com` |
+
+## Request Headers
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `application/json` |
+
+## Request Body
+
+```json
+{
+  "username": "your_api_key",
+  "password": "your_api_token",
+  "account_sid": "your_account_sid"
+}
+```
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `username` | String | Yes | API key from Exotel Dashboard |
+| `password` | String | Yes | API token from Exotel Dashboard |
+| `account_sid` | String | Yes | Your Exotel account SID |
+
+## Example Request
+
+```bash
+curl -X POST \
+  'https://ccm-api.exotel.com/v4/accounts/<account_sid>/login' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "username": "your_api_key",
+    "password": "your_api_token",
+    "account_sid": "your_account_sid"
+  }'
+```
+
+```python
+import requests
+
+response = requests.post(
+    f"https://ccm-api.exotel.com/v4/accounts/{account_sid}/login",
+    json={
+        "username": api_key,
+        "password": api_token,
+        "account_sid": account_sid
+    }
+)
+
+session_token = response.json()["response"]["data"]["session_token"]
+```
+
+## Response
+
+```json
+{
+  "request_id": "req_login_001",
+  "method": "POST",
+  "http_code": 200,
+  "response": {
+    "code": 200,
+    "status": "success",
+    "data": {
+      "session_token": "sess_abc123def456...",
+      "expires_at": "2024-06-16T10:30:00.000Z",
+      "user": {
+        "user_id": "user_001",
+        "name": "Admin User",
+        "role": "admin"
+      }
+    }
+  }
+}
+```
+
+## Using the Session Token
+
+Include the session token in subsequent v4 API calls:
+
+```bash
+curl -X GET \
+  'https://ccm-api.exotel.com/v4/accounts/<account_sid>/users' \
+  -H 'Authorization: Bearer <session_token>'
+```
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `200` | Success — Authenticated |
+| `401` | Unauthorized — Invalid credentials |
+| `403` | Forbidden — Account not enabled for CCM |
+| `429` | Rate Limited |
+| `500` | Internal Server Error |

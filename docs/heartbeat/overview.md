@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Heartbeat API
+title: Heartbeat
 sidebar_label: Overview
 slug: /heartbeat/overview
 ---

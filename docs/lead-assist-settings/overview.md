@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Lead Assist - Settings
+title: ExoBridge (Lead Assist) - Settings
 sidebar_label: Overview
 slug: /lead-assist-settings/overview
 ---

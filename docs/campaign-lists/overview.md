@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Campaign Lists
+title: Campaigns - Lists
 sidebar_label: Overview
 slug: /campaign-lists/overview
 ---

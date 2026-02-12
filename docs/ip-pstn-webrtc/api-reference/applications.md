@@ -1,0 +1,309 @@
+---
+id: applications
+title: Application Management
+sidebar_label: Applications
+sidebar_position: 2
+---
+
+# Application Management
+
+Register, retrieve, list, and delete WebRTC calling applications.
+
+---
+
+## Register Application
+
+Create a new WebRTC calling application.
+
+### Endpoint
+
+```
+POST https://integrationscore.mum1.exotel.com/v2/integrations/app
+```
+
+### Headers
+
+| Header | Value |
+|--------|-------|
+| `Authorization` | Bearer token (entity=customer) |
+| `Content-Type` | `application/json` |
+
+### Request Parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `AppName` | Yes | String | Name for the application |
+| `ExotelAccountSid` | Yes | String | Your Exotel Account SID from the dashboard |
+| `ExotelApiKey` | Yes | String | Your Exotel API key from the dashboard |
+| `ExotelApiToken` | Yes | String | Your Exotel API token from the dashboard |
+| `ExotelDomain` | Yes | String | Region domain: `"mumbai"` or `"singapore"` |
+| `IsActive` | Yes | Boolean | Set to `true` to enable the app for calling |
+
+### Code Examples
+
+#### cURL
+
+```bash
+curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/integrations/app' \
+--header 'Authorization: NmUxNGIyN2ItY2YzYy00MzRhLThlNzItYWNjMWFiNWQzY2Vi' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "AppName": "WebRTC",
+   "ExotelAccountSid": "exoteldemo",
+   "ExotelApiKey": "your_api_key",
+   "ExotelApiToken": "your_api_token",
+   "ExotelDomain": "mumbai",
+   "IsActive": true
+}'
+```
+
+#### Python
+
+```python
+import requests
+import json
+
+url = "https://integrationscore.mum1.exotel.com/v2/integrations/app"
+
+payload = json.dumps({
+    "AppName": "WebRTC",
+    "ExotelAccountSid": "exoteldemo",
+    "ExotelApiKey": "your_api_key",
+    "ExotelApiToken": "your_api_token",
+    "ExotelDomain": "mumbai",
+    "IsActive": True
+})
+
+headers = {
+    'Authorization': '<customer_auth_token>',
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.json())
+```
+
+#### Node.js
+
+```javascript
+const request = require('request');
+
+const options = {
+  method: 'POST',
+  url: 'https://integrationscore.mum1.exotel.com/v2/integrations/app',
+  headers: {
+    'Authorization': '<customer_auth_token>',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    AppName: 'WebRTC',
+    ExotelAccountSid: 'exoteldemo',
+    ExotelApiKey: 'your_api_key',
+    ExotelApiToken: 'your_api_token',
+    ExotelDomain: 'mumbai',
+    IsActive: true
+  })
+};
+
+request(options, function (error, response, body) {
+  if (!error) {
+    console.log(body);
+  }
+});
+```
+
+### Response
+
+```json
+{
+    "RequestId": "2405acfd-1ad3-486b-92d5-233965d8c204",
+    "Status": "Success",
+    "Code": 200,
+    "Error": "",
+    "Data": {
+        "AppID": "2e6440ed-ff62-49d7-bb00-5494b313a863",
+        "AppSecret": "61b1f4c2-30d5-4819-9a5c-006ed9784313",
+        "CustomerID": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
+        "AppName": "WebRTC",
+        "ExotelAccountSid": "exoteldemo",
+        "ExotelApiKey": "your_api_key",
+        "ExotelApiToken": "your_api_token",
+        "ExotelDomain": "mumbai",
+        "IsActive": true,
+        "CreatedAt": "2023-03-23T11:47:46+05:30",
+        "UpdatedAt": "2023-03-23T11:47:46+05:30"
+    }
+}
+```
+
+:::note
+Save the `AppID` and `AppSecret` from the response. You will need them to generate an app-level authentication token.
+:::
+
+---
+
+## Get Application Details
+
+Retrieve details of a specific application using an app-level token.
+
+### Endpoint
+
+```
+GET https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=app
+```
+
+### Headers
+
+| Header | Value |
+|--------|-------|
+| `Authorization` | Bearer token (entity=app) |
+
+### Code Examples
+
+#### cURL
+
+```bash
+curl --location --request GET 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=app' \
+--header 'Authorization: <app_auth_token>'
+```
+
+#### Python
+
+```python
+import requests
+
+url = "https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=app"
+
+headers = {
+    'Authorization': '<app_auth_token>'
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+### Response
+
+```json
+{
+    "RequestId": "c0897a32-372e-4f82-ac18-eaa2d3451d52",
+    "Status": "Success",
+    "Code": 200,
+    "Error": "",
+    "Data": {
+        "AppID": "2e6440ed-ff62-49d7-bb00-5494b313a863",
+        "CustomerID": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
+        "AppName": "WebRTC",
+        "ExotelAccountSid": "exoteldemo",
+        "ExotelDomain": "mumbai",
+        "IsActive": true,
+        "CreatedAt": "2023-03-23T11:47:46+05:30",
+        "UpdatedAt": "2023-03-23T11:47:46+05:30"
+    }
+}
+```
+
+---
+
+## List All Applications
+
+List all applications registered under a customer.
+
+### Endpoint
+
+```
+GET https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer
+```
+
+### Headers
+
+| Header | Value |
+|--------|-------|
+| `Authorization` | Bearer token (entity=customer) |
+
+### Code Examples
+
+#### cURL
+
+```bash
+curl --location --request GET 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer' \
+--header 'Authorization: <customer_auth_token>'
+```
+
+### Response
+
+```json
+{
+    "RequestId": "1b13a16a-ad03-443e-83e7-0bb1b9297578",
+    "Status": "Success",
+    "Code": 200,
+    "Error": "",
+    "Data": [
+        {
+            "AppID": "2e6440ed-ff62-49d7-bb00-5494b313a863",
+            "CustomerID": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
+            "AppName": "WebRTC",
+            "ExotelAccountSid": "exoteldemo",
+            "ExotelDomain": "mumbai",
+            "IsActive": true,
+            "CreatedAt": "2023-03-23T11:47:46+05:30",
+            "UpdatedAt": "2023-03-23T11:47:46+05:30"
+        }
+    ]
+}
+```
+
+---
+
+## Delete Application
+
+Delete a registered application. This action is irreversible.
+
+### Endpoint
+
+```
+DELETE https://integrationscore.mum1.exotel.com/v2/integrations/app
+```
+
+### Headers
+
+| Header | Value |
+|--------|-------|
+| `Authorization` | Bearer token (entity=app) |
+
+### Code Examples
+
+#### cURL
+
+```bash
+curl --location --request DELETE 'https://integrationscore.mum1.exotel.com/v2/integrations/app' \
+--header 'Authorization: <app_auth_token>'
+```
+
+### Response
+
+```json
+{
+    "RequestId": "0e8beb2c-5682-4718-a4ba-b3b7aa2d3c72",
+    "Status": "Success",
+    "Code": 200,
+    "Error": "",
+    "Data": "Deleted Successfully"
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `AppID` | String (UUID) | Unique application identifier |
+| `AppSecret` | String (UUID) | Application secret (only returned on creation) |
+| `CustomerID` | String (UUID) | Parent customer identifier |
+| `AppName` | String | Application display name |
+| `ExotelAccountSid` | String | Linked Exotel account SID |
+| `ExotelApiKey` | String | Linked API key (only on creation) |
+| `ExotelApiToken` | String | Linked API token (only on creation) |
+| `ExotelDomain` | String | Region: `"mumbai"` or `"singapore"` |
+| `IsActive` | Boolean | Whether the app is active for calling |
+| `CreatedAt` | DateTime | Creation timestamp (ISO 8601) |
+| `UpdatedAt` | DateTime | Last update timestamp (ISO 8601) |

@@ -1,0 +1,187 @@
+---
+id: voicelogs
+title: Voicelogs
+sidebar_label: Voicelogs
+---
+
+# Voicelogs
+
+Retrieve voice call logs and recordings for Contact Center v4 calls. Access call history, recordings, and detailed call analytics.
+
+## Get Call Voicelogs
+
+```
+GET /v4/accounts/<account_sid>/voicelogs
+```
+
+### Query Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `start_time` | String | No | Start of time range (ISO 8601) |
+| `end_time` | String | No | End of time range (ISO 8601) |
+| `agent_id` | String | No | Filter by agent |
+| `direction` | String | No | `inbound`, `outbound` |
+| `status` | String | No | `completed`, `missed`, `abandoned` |
+| `limit` | Integer | No | Results per page (default: 20, max: 100) |
+| `offset` | Integer | No | Pagination offset |
+| `sort_by` | String | No | Sort field: `date:asc` or `date:desc` |
+
+### Example Request
+
+```bash
+curl -X GET \
+  'https://ccm-api.exotel.com/v4/accounts/<account_sid>/voicelogs?start_time=2024-06-01T00:00:00Z&end_time=2024-06-30T23:59:59Z&limit=50' \
+  -H 'Authorization: Bearer <session_token>'
+```
+
+```python
+import requests
+
+response = requests.get(
+    f"https://ccm-api.exotel.com/v4/accounts/{account_sid}/voicelogs",
+    headers={"Authorization": f"Bearer {session_token}"},
+    params={
+        "start_time": "2024-06-01T00:00:00Z",
+        "end_time": "2024-06-30T23:59:59Z",
+        "status": "completed",
+        "limit": 50
+    }
+)
+```
+
+### Response
+
+```json
+{
+  "request_id": "req_vlog_001",
+  "method": "GET",
+  "http_code": 200,
+  "response": {
+    "code": 200,
+    "status": "success",
+    "data": {
+      "voicelogs": [
+        {
+          "call_sid": "call_001",
+          "direction": "outbound",
+          "status": "completed",
+          "agent": {
+            "user_id": "agent_001",
+            "name": "John Agent"
+          },
+          "customer": {
+            "number": "+919876543210",
+            "name": "Customer A"
+          },
+          "exophone": "+911234567890",
+          "start_time": "2024-06-15T10:30:00.000Z",
+          "end_time": "2024-06-15T10:35:00.000Z",
+          "duration": 300,
+          "talk_time": 280,
+          "hold_time": 20,
+          "recording": {
+            "available": true,
+            "url": "https://s3-ap-southeast-1.amazonaws.com/.../call_001.mp3",
+            "duration": 280,
+            "channels": "dual"
+          },
+          "disposition": "resolved",
+          "custom_field": "ticket_12345"
+        },
+        {
+          "call_sid": "call_002",
+          "direction": "inbound",
+          "status": "missed",
+          "agent": null,
+          "customer": {
+            "number": "+919876543211",
+            "name": null
+          },
+          "exophone": "+911234567890",
+          "start_time": "2024-06-15T10:40:00.000Z",
+          "end_time": "2024-06-15T10:40:30.000Z",
+          "duration": 30,
+          "talk_time": 0,
+          "hold_time": 0,
+          "recording": {
+            "available": false
+          },
+          "disposition": null,
+          "custom_field": null
+        }
+      ]
+    },
+    "metadata": {
+      "total": 450,
+      "limit": 50,
+      "offset": 0,
+      "has_next": true
+    }
+  }
+}
+```
+
+---
+
+## Get Single Call Voicelog
+
+```
+GET /v4/accounts/<account_sid>/voicelogs/<call_sid>
+```
+
+Returns detailed call log including all legs, transfers, and conference events.
+
+### Response
+
+```json
+{
+  "response": {
+    "data": {
+      "call_sid": "call_001",
+      "direction": "outbound",
+      "status": "completed",
+      "agent": {
+        "user_id": "agent_001",
+        "name": "John Agent"
+      },
+      "customer": {
+        "number": "+919876543210"
+      },
+      "timeline": [
+        {"event": "call_initiated", "time": "2024-06-15T10:30:00.000Z"},
+        {"event": "agent_ringing", "time": "2024-06-15T10:30:01.000Z"},
+        {"event": "agent_answered", "time": "2024-06-15T10:30:05.000Z"},
+        {"event": "customer_ringing", "time": "2024-06-15T10:30:06.000Z"},
+        {"event": "customer_answered", "time": "2024-06-15T10:30:15.000Z"},
+        {"event": "call_bridged", "time": "2024-06-15T10:30:16.000Z"},
+        {"event": "call_ended", "time": "2024-06-15T10:35:00.000Z"}
+      ],
+      "recording": {
+        "available": true,
+        "url": "https://s3-ap-southeast-1.amazonaws.com/.../call_001.mp3",
+        "duration": 280
+      }
+    }
+  }
+}
+```
+
+## Voicelog Status Values
+
+| Status | Description |
+|--------|-------------|
+| `completed` | Call connected and ended normally |
+| `missed` | Call was not answered |
+| `abandoned` | Customer hung up before agent connected |
+| `failed` | Technical failure |
+| `busy` | Agent or customer was busy |
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `200` | Success |
+| `401` | Unauthorized |
+| `404` | Not Found |
+| `429` | Rate Limited |

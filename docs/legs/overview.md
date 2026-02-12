@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Legs & Bridges
+title: Legs
 sidebar_label: Overview
 slug: /legs/overview
 ---

@@ -1,6 +1,6 @@
 ---
 id: overview
-title: SMS API Overview
+title: SMS
 sidebar_label: Overview
 sidebar_position: 1
 ---

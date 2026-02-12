@@ -1,0 +1,203 @@
+---
+id: agent-presence
+title: Agent Presence Monitoring
+sidebar_label: Agent Presence
+---
+
+# Agent Presence Monitoring
+
+Monitor real-time agent availability and status in the contact center. Track which agents are available, on calls, or offline.
+
+## Get Agent Presence
+
+```
+GET /v2/accounts/<account_sid>/agents/presence
+```
+
+### Base URL
+
+| Data Center | Base URL |
+|------------|----------|
+| Singapore | `https://ccm-api.exotel.com` |
+| Mumbai | `https://ccm-api.in.exotel.com` |
+
+### Query Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `status` | String | No | Filter by agent status: `available`, `busy`, `on-call`, `offline`, `after-call-work` |
+| `team_id` | String | No | Filter by team |
+| `limit` | Integer | No | Results per page (default: 20, max: 100) |
+| `offset` | Integer | No | Pagination offset |
+
+### Example Request
+
+```bash
+curl -X GET \
+  'https://ccm-api.exotel.com/v2/accounts/<account_sid>/agents/presence?status=available' \
+  -H 'Authorization: Bearer <access_token>' \
+  -H 'Content-Type: application/json'
+```
+
+```python
+import requests
+
+url = f"https://ccm-api.exotel.com/v2/accounts/{account_sid}/agents/presence"
+
+response = requests.get(
+    url,
+    headers={"Authorization": f"Bearer {access_token}"},
+    params={"status": "available", "limit": 50}
+)
+
+print(response.json())
+```
+
+### Response
+
+```json
+{
+  "request_id": "req_presence_001",
+  "method": "GET",
+  "http_code": 200,
+  "response": {
+    "code": 200,
+    "status": "success",
+    "data": {
+      "agents": [
+        {
+          "user_id": "agent_001",
+          "name": "John Agent",
+          "email": "john@company.com",
+          "status": "available",
+          "status_since": "2024-06-15T09:00:00.000Z",
+          "device": {
+            "type": "softphone",
+            "contact_uri": "sip:john@company.com"
+          },
+          "team": {
+            "team_id": "sales_team",
+            "name": "Sales"
+          },
+          "stats": {
+            "calls_handled_today": 15,
+            "avg_handle_time": 240,
+            "total_talk_time": 3600
+          }
+        },
+        {
+          "user_id": "agent_002",
+          "name": "Jane Support",
+          "email": "jane@company.com",
+          "status": "available",
+          "status_since": "2024-06-15T09:30:00.000Z",
+          "device": {
+            "type": "phone",
+            "contact_uri": "+919876543210"
+          },
+          "team": {
+            "team_id": "support_team",
+            "name": "Support"
+          },
+          "stats": {
+            "calls_handled_today": 22,
+            "avg_handle_time": 180,
+            "total_talk_time": 3960
+          }
+        }
+      ],
+      "summary": {
+        "total_agents": 25,
+        "available": 12,
+        "on_call": 8,
+        "busy": 2,
+        "after_call_work": 1,
+        "offline": 2
+      }
+    },
+    "metadata": {
+      "total": 12,
+      "limit": 20,
+      "offset": 0
+    }
+  }
+}
+```
+
+---
+
+## Get Single Agent Presence
+
+```
+GET /v2/accounts/<account_sid>/agents/<user_id>/presence
+```
+
+### Response
+
+```json
+{
+  "response": {
+    "data": {
+      "user_id": "agent_001",
+      "name": "John Agent",
+      "status": "on-call",
+      "status_since": "2024-06-15T10:30:00.000Z",
+      "current_call": {
+        "call_sid": "call_active_123",
+        "direction": "outbound",
+        "customer_number": "+919876543210",
+        "duration": 120
+      }
+    }
+  }
+}
+```
+
+---
+
+## Update Agent Status
+
+```
+PUT /v2/accounts/<account_sid>/agents/<user_id>/presence
+```
+
+### Request Body
+
+```json
+{
+  "status": "available"
+}
+```
+
+### Valid Status Transitions
+
+| From | To |
+|------|----|
+| `offline` | `available` |
+| `available` | `busy`, `offline` |
+| `after-call-work` | `available`, `offline` |
+| `busy` | `available`, `offline` |
+
+:::info
+Status changes to/from `on-call` are managed automatically by the system during active calls.
+:::
+
+## Agent Status Values
+
+| Status | Description |
+|--------|-------------|
+| `available` | Agent is ready to receive calls |
+| `on-call` | Agent is on an active call (system-managed) |
+| `busy` | Agent is busy (manually set) |
+| `after-call-work` | Agent is completing post-call tasks |
+| `offline` | Agent is not available |
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `200` | Success |
+| `400` | Bad Request — Invalid status transition |
+| `401` | Unauthorized |
+| `404` | Not Found — Agent doesn't exist |
+| `429` | Rate Limited |

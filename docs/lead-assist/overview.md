@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Lead Assist (GreenPin)
+title: ExoBridge (Lead Assist) - GreenPin
 sidebar_label: Overview
 slug: /lead-assist/overview
 ---
