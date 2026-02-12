@@ -1,0 +1,360 @@
+backend:
+  name: github
+  repo: rahulkumar-exo/exotel-docs
+  branch: main
+
+media_folder: static/img/uploads
+public_folder: /img/uploads
+
+publish_mode: editorial_workflow
+
+collections:
+  # ─── Voice v1 ───────────────────────────────────────────
+  - name: voice-v1
+    label: "Voice v1"
+    folder: docs/voice-v1
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Voice v2 (CCM) ────────────────────────────────────
+  - name: voice-v2
+    label: "Voice v2 (CCM)"
+    folder: docs/voice-api
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Voice v3 ───────────────────────────────────────────
+  - name: voice-v3
+    label: "Voice v3"
+    folder: docs/voice-v3
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── SMS API ────────────────────────────────────────────
+  - name: sms-api
+    label: "SMS"
+    folder: docs/sms-api
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── ExoPhones ──────────────────────────────────────────
+  - name: exophones
+    label: "ExoPhones"
+    folder: docs/exophones
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Heartbeat ──────────────────────────────────────────
+  - name: heartbeat
+    label: "Heartbeat"
+    folder: docs/heartbeat
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Call Campaigns ─────────────────────────────────────
+  - name: campaigns
+    label: "Call Campaigns"
+    folder: docs/campaigns
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── SMS Campaigns ──────────────────────────────────────
+  - name: sms-campaigns
+    label: "SMS Campaigns"
+    folder: docs/sms-campaigns
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Campaigns - Contacts ───────────────────────────────
+  - name: campaigns-contacts
+    label: "Campaigns - Contacts"
+    folder: docs/campaigns-contacts
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Campaigns - Lists ──────────────────────────────────
+  - name: campaign-lists
+    label: "Campaigns - Lists"
+    folder: docs/campaign-lists
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Lead Assist (GreenPin) ─────────────────────────────
+  - name: lead-assist
+    label: "Lead Assist (ExoBridge - GreenPin)"
+    folder: docs/lead-assist
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Lead Assist (GreenVN) ──────────────────────────────
+  - name: lead-assist-greenvn
+    label: "Lead Assist (ExoBridge - GreenVN)"
+    folder: docs/lead-assist-greenvn
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Lead Assist (Settings) ─────────────────────────────
+  - name: lead-assist-settings
+    label: "Lead Assist (ExoBridge - Settings)"
+    folder: docs/lead-assist-settings
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Users ──────────────────────────────────────────────
+  - name: users
+    label: "Users"
+    folder: docs/users
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── ExoVerify ──────────────────────────────────────────
+  - name: exoverify-api
+    label: "ExoVerify"
+    folder: docs/exoverify-api
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── WhatsApp - Messaging API ───────────────────────────
+  - name: whatsapp-api
+    label: "WhatsApp - Messaging API"
+    folder: docs/whatsapp-api
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── RCS - Omnichannel ──────────────────────────────────
+  - name: rcs-omnichannel
+    label: "RCS - Omnichannel APIs"
+    folder: docs/rcs-omnichannel
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── URL Shortening ─────────────────────────────────────
+  - name: url-shortening
+    label: "URL Shortening"
+    folder: docs/url-shortening
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Contact Center APIs v6 ─────────────────────────────
+  - name: contact-center
+    label: "Contact Center APIs v6"
+    folder: docs/contact-center
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Contact Center APIs v4 ─────────────────────────────
+  - name: contact-center-v4
+    label: "Contact Center APIs v4"
+    folder: docs/contact-center-v4
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── IP-PSTN WebRTC ─────────────────────────────────────
+  - name: ip-pstn-webrtc
+    label: "IP-PSTN WebRTC SDK"
+    folder: docs/ip-pstn-webrtc
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Legs ───────────────────────────────────────────────
+  - name: legs
+    label: "Legs"
+    folder: docs/legs
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── Gen AI ─────────────────────────────────────────────
+  - name: gen-ai
+    label: "Gen AI"
+    folder: docs/gen-ai
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── MCP Server ─────────────────────────────────────────
+  - name: mcp-server
+    label: "Exotel MCP Server"
+    folder: docs/mcp-server
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── FAQs ───────────────────────────────────────────────
+  - name: faqs
+    label: "FAQs"
+    folder: docs/faqs
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
