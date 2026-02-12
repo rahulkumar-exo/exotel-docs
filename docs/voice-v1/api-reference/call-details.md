@@ -1,12 +1,11 @@
 ---
-id: call-details
 title: Call Details & Bulk Calls
+id: call-details
 sidebar_label: Call Details
 ---
-
 # Call Details API (v1)
 
-Retrieve details of a specific call, or query bulk call records with filters.
+#### test Retrieve details of a specific call, or query bulk call records with filters.
 
 ## Single Call Details
 
@@ -16,8 +15,8 @@ GET /v1/Accounts/<your_sid>/Calls/<CallSid>
 
 ### Optional Query Parameter
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
 | `details` | Set to `true` to include leg-level information |
 
 ### Example Request
@@ -70,7 +69,7 @@ curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/
 }
 ```
 
----
+- - -
 
 ## Bulk Call Details
 
@@ -80,22 +79,22 @@ GET /v1/Accounts/<your_sid>/Calls
 
 ### Query Filters
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `Sid` | String | Single or comma-separated call SIDs (max 100) |
-| `DateCreated` | Range | `gte:2019-01-01 00:00:00;lte:2019-01-31 23:59:59` |
-| `To` | String | E.164 format, max 5 comma-separated numbers |
-| `From` | String | E.164 format, max 5 comma-separated numbers |
-| `Status` | String | `completed`, `failed`, `busy`, `no-answer` |
-| `Duration` | Range | `gte:10s;lte:45s` or `eq:30s` |
-| `Price` | Range | `gte:0.10;lte:1.0` |
-| `Direction` | String | `inbound`, `outbound-dial`, `outbound-api` |
-| `PhoneNumber` | String | Virtual number, max 5 comma-separated |
-| `PageSize` | Integer | Default 50, max 100 |
-| `SortBy` | String | `DateCreated:asc` (default: `desc`) |
-| `Before` | String | Cursor from `PrevPageUri` |
-| `After` | String | Cursor from `NextPageUri` |
-| `RecordingUrlValidity` | Integer | 5–60 minutes for pre-signed recording URL |
+| Parameter              | Type    | Description                                       |
+| ---------------------- | ------- | ------------------------------------------------- |
+| `Sid`                  | String  | Single or comma-separated call SIDs (max 100)     |
+| `DateCreated`          | Range   | `gte:2019-01-01 00:00:00;lte:2019-01-31 23:59:59` |
+| `To`                   | String  | E.164 format, max 5 comma-separated numbers       |
+| `From`                 | String  | E.164 format, max 5 comma-separated numbers       |
+| `Status`               | String  | `completed`, `failed`, `busy`, `no-answer`        |
+| `Duration`             | Range   | `gte:10s;lte:45s` or `eq:30s`                     |
+| `Price`                | Range   | `gte:0.10;lte:1.0`                                |
+| `Direction`            | String  | `inbound`, `outbound-dial`, `outbound-api`        |
+| `PhoneNumber`          | String  | Virtual number, max 5 comma-separated             |
+| `PageSize`             | Integer | Default 50, max 100                               |
+| `SortBy`               | String  | `DateCreated:asc` (default: `desc`)               |
+| `Before`               | String  | Cursor from `PrevPageUri`                         |
+| `After`                | String  | Cursor from `NextPageUri`                         |
+| `RecordingUrlValidity` | Integer | 5–60 minutes for pre-signed recording URL         |
 
 ### Example Request
 
@@ -131,11 +130,12 @@ curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls.
 ```
 
 :::note
-- Query up to **6 months** of historical data with a maximum **1-month range** per request.
-- Use cursor-based pagination (`Before`/`After` from `PrevPageUri`/`NextPageUri`) for large result sets.
-:::
 
----
+* Query up to **6 months** of historical data with a maximum **1-month range** per request.
+* Use cursor-based pagination (`Before`/`After` from `PrevPageUri`/`NextPageUri`) for large result sets.
+  :::
+
+- - -
 
 ## Number Metadata
 
@@ -169,47 +169,47 @@ curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Number
 
 ### Circle Codes (India)
 
-| Code | Circle |
-|------|--------|
-| `AP` | Andhra Pradesh | `AS` | Assam | `BR` | Bihar |
-| `CH` | Chennai | `DL` | Delhi | `GJ` | Gujarat |
-| `HP` | Himachal Pradesh | `HR` | Haryana | `JK` | Jammu & Kashmir |
-| `KL` | Kerala | `KA` | Karnataka | `KO` | Kolkata |
-| `MH` | Maharashtra | `MP` | Madhya Pradesh | `MU` | Mumbai |
-| `NE` | North East | `OR` | Orissa | `PB` | Punjab |
-| `RJ` | Rajasthan | `TN` | Tamil Nadu | `UE` | UP (East) |
-| `UW` | UP (West) | `WB` | West Bengal |
+| Code | Circle           |      |                |      |                 |
+| ---- | ---------------- | ---- | -------------- | ---- | --------------- |
+| `AP` | Andhra Pradesh   | `AS` | Assam          | `BR` | Bihar           |
+| `CH` | Chennai          | `DL` | Delhi          | `GJ` | Gujarat         |
+| `HP` | Himachal Pradesh | `HR` | Haryana        | `JK` | Jammu & Kashmir |
+| `KL` | Kerala           | `KA` | Karnataka      | `KO` | Kolkata         |
+| `MH` | Maharashtra      | `MP` | Madhya Pradesh | `MU` | Mumbai          |
+| `NE` | North East       | `OR` | Orissa         | `PB` | Punjab          |
+| `RJ` | Rajasthan        | `TN` | Tamil Nadu     | `UE` | UP (East)       |
+| `UW` | UP (West)        | `WB` | West Bengal    |      |                 |
 
 ### Operator Codes
 
-| Code | Operator |
-|------|----------|
-| `A` | Airtel | `V` | Vodafone | `I` | Idea |
-| `VI` | Vodafone-Idea | `R` | Reliance | `B` | BSNL |
-| `MT` | MTNL | `T` | Tata | `AL` | Aircel |
+| Code | Operator      |     |          |      |        |
+| ---- | ------------- | --- | -------- | ---- | ------ |
+| `A`  | Airtel        | `V` | Vodafone | `I`  | Idea   |
+| `VI` | Vodafone-Idea | `R` | Reliance | `B`  | BSNL   |
+| `MT` | MTNL          | `T` | Tata     | `AL` | Aircel |
 
----
+- - -
 
 ## Status Callback Webhook
 
 When you set `StatusCallback` while making a call, Exotel sends a POST to your URL with these parameters:
 
-| Parameter | Description |
-|-----------|-------------|
-| `CallSid` | Unique call identifier |
-| `DateUpdated` | Last update timestamp |
-| `Status` | `completed`, `failed`, `busy`, `no-answer` |
-| `RecordingUrl` | Recording link (if recording enabled) |
-| `EventType` | `terminal` or `answered` |
-| `DateCreated` | API request timestamp |
-| `To` | Called party number |
-| `From` | Calling party number |
-| `PhoneNumberSid` | ExoPhone identifier |
-| `StartTime` | Call initiation time |
-| `EndTime` | Call completion time |
+| Parameter              | Description                                    |
+| ---------------------- | ---------------------------------------------- |
+| `CallSid`              | Unique call identifier                         |
+| `DateUpdated`          | Last update timestamp                          |
+| `Status`               | `completed`, `failed`, `busy`, `no-answer`     |
+| `RecordingUrl`         | Recording link (if recording enabled)          |
+| `EventType`            | `terminal` or `answered`                       |
+| `DateCreated`          | API request timestamp                          |
+| `To`                   | Called party number                            |
+| `From`                 | Calling party number                           |
+| `PhoneNumberSid`       | ExoPhone identifier                            |
+| `StartTime`            | Call initiation time                           |
+| `EndTime`              | Call completion time                           |
 | `ConversationDuration` | Duration both parties were connected (seconds) |
-| `Direction` | `inbound`, `outbound-dial`, `outbound-api` |
-| `CustomField` | Custom data from original request |
+| `Direction`            | `inbound`, `outbound-dial`, `outbound-api`     |
+| `CustomField`          | Custom data from original request              |
 
 ### Leg Information in Callback
 
@@ -232,18 +232,18 @@ When you set `StatusCallback` while making a call, Exotel sends a POST to your U
 
 ### AnsweredBy Values
 
-| Value | Description |
-|-------|-------------|
-| `Human` | Answered by a person |
-| `Machine` | Answered by voicemail/IVR |
-| `NotSure` | Could not determine |
-| `NA` | Not applicable (first leg) |
+| Value     | Description                |
+| --------- | -------------------------- |
+| `Human`   | Answered by a person       |
+| `Machine` | Answered by voicemail/IVR  |
+| `NotSure` | Could not determine        |
+| `NA`      | Not applicable (first leg) |
 
 ## HTTP Status Codes
 
-| Code | Meaning |
-|------|---------|
-| `200` | Success |
+| Code  | Meaning                          |
+| ----- | -------------------------------- |
+| `200` | Success                          |
 | `400` | Bad Request — Invalid parameters |
-| `401` | Unauthorized |
-| `429` | Rate limit exceeded |
+| `401` | Unauthorized                     |
+| `429` | Rate limit exceeded              |
