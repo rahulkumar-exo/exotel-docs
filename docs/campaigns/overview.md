@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Campaigns
+title: Call Campaigns
 sidebar_label: Overview
 sidebar_position: 1
 ---

@@ -1,6 +1,6 @@
 ---
 id: overview
-title: ExoBridge (Lead Assist) - GreenVN
+title: Lead Assist (ExoBridge - GreenVN)
 sidebar_label: Overview
 slug: /lead-assist-greenvn/overview
 ---
