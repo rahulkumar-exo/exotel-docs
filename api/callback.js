@@ -12,8 +12,8 @@ module.exports = async function handler(req, res) {
     return res.status(400).send('Missing code parameter');
   }
 
-  const clientId = process.env.OAUTH_GITHUB_CLIENT_ID;
-  const clientSecret = process.env.OAUTH_GITHUB_CLIENT_SECRET;
+  const clientId = (process.env.OAUTH_GITHUB_CLIENT_ID || '').trim();
+  const clientSecret = (process.env.OAUTH_GITHUB_CLIENT_SECRET || '').trim();
 
   try {
     // Exchange code for access token
