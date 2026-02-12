@@ -5,6 +5,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Exotel Docs — Content Manager</title>
+  <style>
+    /* Custom branding for Decap CMS */
+    :root {
+      --accent-color: #6C3EC1;
+    }
+
+    /* Login screen */
+    [class*="LoginPage"] {
+      background: linear-gradient(135deg, #6C3EC1 0%, #4A1A9E 100%) !important;
+    }
+    [class*="LoginButton"] {
+      background-color: #fff !important;
+      color: #6C3EC1 !important;
+      font-weight: 600 !important;
+      border-radius: 8px !important;
+      padding: 12px 32px !important;
+      font-size: 16px !important;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15) !important;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+    [class*="LoginButton"]:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
+    }
+    [class*="LoginLogo"] {
+      display: none !important;
+    }
+
+    /* Add custom logo/header to login */
+    [class*="LoginPage"]::before {
+      content: "Exotel Developer Docs";
+      display: block;
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    [class*="LoginPage"]::after {
+      content: "Content Management System";
+      display: block;
+      text-align: center;
+      color: rgba(255,255,255,0.75);
+      font-size: 16px;
+      font-weight: 400;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin-bottom: 32px;
+    }
+
+    /* Top navbar */
+    [class*="AppHeader"] {
+      background: #6C3EC1 !important;
+    }
+    [class*="AppHeader"] a,
+    [class*="AppHeader"] button {
+      color: white !important;
+    }
+
+    /* Sidebar improvements */
+    [class*="SidebarNavList"] {
+      padding: 8px 0 !important;
+    }
+    [class*="SidebarNavLink"] {
+      border-radius: 6px !important;
+      margin: 2px 8px !important;
+      padding: 10px 16px !important;
+      font-size: 14px !important;
+      transition: background 0.15s !important;
+    }
+    [class*="SidebarNavLink"]:hover {
+      background: rgba(108, 62, 193, 0.08) !important;
+    }
+    [class*="SidebarNavLinkActive"] {
+      background: rgba(108, 62, 193, 0.12) !important;
+      color: #6C3EC1 !important;
+      font-weight: 600 !important;
+    }
+
+    /* Collection cards on home screen */
+    [class*="CollectionTop"] {
+      border-radius: 12px !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+      transition: box-shadow 0.2s, transform 0.2s !important;
+      border: 1px solid #eee !important;
+    }
+    [class*="CollectionTop"]:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Editor toolbar */
+    [class*="ToolbarToggle"] {
+      border-radius: 6px !important;
+    }
+
+    /* Publish button */
+    [class*="PublishButton"],
+    [class*="ToolbarButton"] {
+      border-radius: 6px !important;
+    }
+    [class*="PublishButton"] {
+      background: #6C3EC1 !important;
+      border-color: #6C3EC1 !important;
+    }
+    [class*="PublishButton"]:hover {
+      background: #5A2FB0 !important;
+    }
+
+    /* Entry listing table */
+    [class*="EntryListing"] {
+      border-radius: 8px !important;
+    }
+    [class*="ListCard"] {
+      border-radius: 8px !important;
+      margin-bottom: 4px !important;
+      transition: background 0.15s !important;
+    }
+    [class*="ListCard"]:hover {
+      background: #f8f6ff !important;
+    }
+
+    /* General polish */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !important;
+      -webkit-font-smoothing: antialiased !important;
+    }
+
+    /* Markdown editor improvements */
+    [class*="ControlPaneContainer"] {
+      max-width: 900px !important;
+    }
+    [class*="PreviewPaneFrame"] {
+      background: #fafafa !important;
+    }
+
+    /* Status badges */
+    [class*="StatusButton"] {
+      border-radius: 20px !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+    }
+
+    /* Workflow board columns */
+    [class*="BoardColumn"] {
+      border-radius: 12px !important;
+      background: #f8f8fa !important;
+    }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
