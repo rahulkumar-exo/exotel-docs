@@ -2,6 +2,7 @@ backend:
   name: github
   repo: rahulkumar-exo/exotel-docs
   branch: main
+  site_domain: phenomenal-mochi-4a3e58.netlify.app
   base_url: https://api.netlify.com
   auth_endpoint: auth
 
