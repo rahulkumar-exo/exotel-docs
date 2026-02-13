@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
+  <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
   <title>Exotel Docs — Content Manager</title>
   <style>
     /* Custom branding for Decap CMS */
@@ -327,16 +328,12 @@
      */
 
     // The localStorage key Decap CMS v3 (CDN bundle) uses
-    var DECAP_STORAGE_KEY = 'netlify-cms-user';
+    // Verified by searching the actual CDN source: storageKey = "decap-cms-user"
+    var DECAP_STORAGE_KEY = 'decap-cms-user';
 
     // Check if Decap already has a valid session
     var existingUser = null;
     try { existingUser = JSON.parse(localStorage.getItem(DECAP_STORAGE_KEY)); } catch(e) {}
-
-    // Also check the newer key name (Decap v4+)
-    if (!existingUser) {
-      try { existingUser = JSON.parse(localStorage.getItem('decap-cms-user')); } catch(e) {}
-    }
 
     // Our own key for tracking email-based logins
     var EMAIL_TOKEN_KEY = 'cms-simple-auth-token';
@@ -435,8 +432,6 @@
         };
 
         localStorage.setItem(DECAP_STORAGE_KEY, JSON.stringify(userData));
-        // Also set the newer key in case the CMS version uses it
-        localStorage.setItem('decap-cms-user', JSON.stringify(userData));
 
         // Reload so Decap CMS picks up the stored auth on initialization
         window.location.reload();
@@ -445,7 +440,6 @@
         // Token is invalid — clear everything and show login
         localStorage.removeItem(EMAIL_TOKEN_KEY);
         localStorage.removeItem(DECAP_STORAGE_KEY);
-        localStorage.removeItem('decap-cms-user');
         showLoginScreen();
         var loginError = document.getElementById('loginError');
         loginError.textContent = 'Authentication failed: ' + err.message;
@@ -473,7 +467,6 @@
           // Clear all auth tokens
           localStorage.removeItem(EMAIL_TOKEN_KEY);
           localStorage.removeItem(DECAP_STORAGE_KEY);
-          localStorage.removeItem('decap-cms-user');
           // Show our custom login instead
           var loginOverlay = document.getElementById('customLogin');
           if (loginOverlay.style.display === 'none') {
