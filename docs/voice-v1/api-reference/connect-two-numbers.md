@@ -3,9 +3,9 @@ title: Connect Two Numbers
 id: connect-two-numbers
 sidebar_label: Connect Two Numbers
 ---
-# Connect Two Numbers - test
+# Connect Two Numbers
 
-Make an outbound call that connects two phone numbers. The platform calls the `From` number first, and once they answer, the `To` number is dialed and connected. test test test
+Make an outbound call that connects two phone numbers. The platform calls the `From` number first, and once they answer, the `To` number is dialed and connected.
 
 ## HTTP Request
 
