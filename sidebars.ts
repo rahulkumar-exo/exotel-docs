@@ -8,7 +8,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         { type: 'link', label: '→ Voice v1', href: '/docs/voice-v1/overview' },
-        { type: 'link', label: '→ Voice v2 (Current)', href: '/docs/voice-api/getting-started/overview' },
+        { type: 'link', label: '→ Voice v2', href: '/docs/voice-api/getting-started/overview' },
         { type: 'link', label: '→ Voice v3', href: '/docs/voice-v3/overview' },
       ],
     },
@@ -24,7 +24,7 @@ const sidebars: SidebarsConfig = {
       label: '🔀 Switch Voice Version',
       collapsed: false,
       items: [
-        { type: 'link', label: '→ Voice v1 (Current)', href: '/docs/voice-v1/overview' },
+        { type: 'link', label: '→ Voice v1', href: '/docs/voice-v1/overview' },
         { type: 'link', label: '→ Voice v2', href: '/docs/voice-api/getting-started/overview' },
         { type: 'link', label: '→ Voice v3', href: '/docs/voice-v3/overview' },
       ],
@@ -63,7 +63,7 @@ const sidebars: SidebarsConfig = {
       items: [
         { type: 'link', label: '→ Voice v1', href: '/docs/voice-v1/overview' },
         { type: 'link', label: '→ Voice v2', href: '/docs/voice-api/getting-started/overview' },
-        { type: 'link', label: '→ Voice v3 (Current)', href: '/docs/voice-v3/overview' },
+        { type: 'link', label: '→ Voice v3', href: '/docs/voice-v3/overview' },
       ],
     },
     'voice-v3/overview',

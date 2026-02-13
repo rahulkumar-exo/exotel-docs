@@ -10,7 +10,7 @@ const products = [
   {
     title: 'Voice API',
     description: 'Make and receive calls, build IVR flows, and manage phone numbers programmatically.',
-    link: '/docs/voice-api/getting-started/overview',
+    link: '/docs/voice-v1/overview',
     available: true,
   },
   {
@@ -85,12 +85,12 @@ const quickLinks = [
   {
     title: 'Authentication',
     description: 'Set up your API credentials',
-    link: '/docs/voice-api/getting-started/authentication',
+    link: '/docs/voice-v1/overview',
   },
   {
     title: 'Make a Call',
     description: 'Connect two phone numbers via API',
-    link: '/docs/voice-api/api-reference/make-a-call',
+    link: '/docs/voice-v1/api-reference/connect-two-numbers',
   },
   {
     title: 'Send SMS',
@@ -127,11 +127,11 @@ function HeroBanner() {
         </Heading>
         <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
         <div className={styles.heroButtons}>
-          <Link className={styles.primaryButton} to="/docs/voice-api/getting-started/overview">
+          <Link className={styles.primaryButton} to="/docs/voice-v1/overview">
             Get Started with Voice API
           </Link>
-          <Link className={styles.secondaryButton} to="/docs/voice-api/api-reference/make-a-call">
-            API Reference
+          <Link className={styles.secondaryButton} to="/docs/sms-api/overview">
+            Explore SMS API
           </Link>
         </div>
       </div>
