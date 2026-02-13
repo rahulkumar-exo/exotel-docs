@@ -263,10 +263,20 @@
     }
   </style>
 </head>
-<body class="custom-login-active">
+<body>
+  <!--
+    Auth strategy:
+    1. If Decap CMS's own localStorage key already has user data → CMS loads directly (returning session).
+    2. If our email token is in localStorage but Decap's key is missing → we fetch the GitHub user,
+       populate Decap's localStorage key with proper user data, then reload. CMS sees it and skips login.
+    3. If nothing is stored → show our custom login overlay.
+    4. GitHub OAuth button → hide overlay, let Decap handle the normal OAuth popup flow.
+    5. Email/password → call /api/simple-auth, get GitHub token, fetch GitHub user info,
+       store in Decap's localStorage format, reload page.
+  -->
 
-  <!-- Custom login overlay -->
-  <div class="custom-login-overlay" id="customLogin">
+  <!-- Custom login overlay (hidden by default; script below decides whether to show it) -->
+  <div class="custom-login-overlay" id="customLogin" style="display:none;">
     <div class="custom-login-box">
       <div class="custom-login-header">
         <h1>Exotel Developer Docs</h1>
@@ -297,75 +307,67 @@
     </div>
   </div>
 
-  <!-- Load Decap CMS first — let it fully initialize and load config.yml -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
   <script>
-    (function() {
+    /**
+     * AUTHENTICATION FLOW — runs BEFORE Decap CMS is loaded.
+     *
+     * Decap CMS v3 stores authenticated user data in localStorage under
+     * the key "netlify-cms-user". On load it checks that key — if present
+     * and containing a valid token, it skips the login screen entirely.
+     *
+     * Our approach:
+     *   - Email login → call /api/simple-auth → get a GitHub PAT
+     *   - Use that PAT to call GitHub's /user API → get login & name
+     *   - Write the user object into "netlify-cms-user" in the exact
+     *     format Decap expects: { token, name, login, backendName }
+     *   - Reload the page → Decap finds the stored user and authenticates.
+     *
+     * This avoids ALL window.open interception, OAuth popup hijacking,
+     * and race conditions with CMS initialization.
+     */
+
+    // The localStorage key Decap CMS v3 (CDN bundle) uses
+    var DECAP_STORAGE_KEY = 'netlify-cms-user';
+
+    // Check if Decap already has a valid session
+    var existingUser = null;
+    try { existingUser = JSON.parse(localStorage.getItem(DECAP_STORAGE_KEY)); } catch(e) {}
+
+    // Also check the newer key name (Decap v4+)
+    if (!existingUser) {
+      try { existingUser = JSON.parse(localStorage.getItem('decap-cms-user')); } catch(e) {}
+    }
+
+    // Our own key for tracking email-based logins
+    var EMAIL_TOKEN_KEY = 'cms-simple-auth-token';
+    var savedEmailToken = localStorage.getItem(EMAIL_TOKEN_KEY);
+
+    if (existingUser && existingUser.token) {
+      // Case 1: Decap already has a session — just load the CMS, nothing to do
+      loadDecapCMS();
+    } else if (savedEmailToken) {
+      // Case 2: We have an email-login token but Decap's key is missing
+      // (e.g., user cleared Decap storage or first load after email login).
+      // Populate Decap's storage and reload.
+      populateDecapAuth(savedEmailToken);
+    } else {
+      // Case 3: No auth at all — show our custom login
+      showLoginScreen();
+    }
+
+    function showLoginScreen() {
       var loginOverlay = document.getElementById('customLogin');
+      loginOverlay.style.display = 'flex';
+
       var loginError = document.getElementById('loginError');
       var emailForm = document.getElementById('emailLoginForm');
       var submitBtn = document.getElementById('emailSubmitBtn');
       var githubBtn = document.getElementById('githubLoginBtn');
 
-      // Helper: Wait for Decap CMS login button to appear (means CMS has loaded config)
-      function waitForCmsReady(callback) {
-        var attempts = 0;
-        var check = setInterval(function() {
-          attempts++;
-          var loginBtn = document.querySelector('[class*="LoginButton"]');
-          if (loginBtn) {
-            clearInterval(check);
-            callback(loginBtn);
-          }
-          if (attempts > 100) { // 20 seconds timeout
-            clearInterval(check);
-          }
-        }, 200);
-      }
-
-      // Helper: Inject token into CMS by intercepting the OAuth popup
-      function authenticateWithToken(token) {
-        waitForCmsReady(function(loginBtn) {
-          // Temporarily intercept window.open
-          var origOpen = window.open;
-          window.open = function(url) {
-            if (url && url.indexOf('github.com/login/oauth') !== -1) {
-              // Don't open popup — send token directly
-              setTimeout(function() {
-                window.postMessage(
-                  'authorization:github:success:' + JSON.stringify({ token: token, provider: 'github' }),
-                  window.location.origin
-                );
-              }, 200);
-              return { closed: false, close: function() { this.closed = true; } };
-            }
-            return origOpen.apply(window, arguments);
-          };
-
-          // Click the login button to trigger the OAuth flow (which we intercept)
-          loginBtn.click();
-
-          // Restore original window.open
-          setTimeout(function() { window.open = origOpen; }, 5000);
-        });
-      }
-
-      // On page load: if we have a saved token, hide our login and auto-auth
-      var savedToken = localStorage.getItem('cms-simple-auth-token');
-      if (savedToken) {
-        loginOverlay.style.display = 'none';
-        document.body.classList.remove('custom-login-active');
-        authenticateWithToken(savedToken);
-      }
-
-      // GitHub OAuth login — hide our overlay and let Decap handle it
+      // GitHub OAuth login — load CMS normally and let Decap handle it
       githubBtn.addEventListener('click', function() {
         loginOverlay.style.display = 'none';
-        document.body.classList.remove('custom-login-active');
-        waitForCmsReady(function(loginBtn) {
-          loginBtn.click();
-        });
+        loadDecapCMS();
       });
 
       // Email/password login
@@ -385,16 +387,22 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: email, password: password })
         })
-        .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+        .then(function(res) {
+          return res.json().then(function(data) { return { ok: res.ok, data: data }; });
+        })
         .then(function(result) {
           if (!result.ok) {
             throw new Error(result.data.error || 'Login failed');
           }
-          // Save token and authenticate — no reload needed
-          localStorage.setItem('cms-simple-auth-token', result.data.token);
-          loginOverlay.style.display = 'none';
-          document.body.classList.remove('custom-login-active');
-          authenticateWithToken(result.data.token);
+
+          var token = result.data.token;
+
+          // Save our token for session persistence
+          localStorage.setItem(EMAIL_TOKEN_KEY, token);
+
+          // Now populate Decap's auth and reload
+          submitBtn.textContent = 'Loading CMS...';
+          populateDecapAuth(token);
         })
         .catch(function(err) {
           loginError.textContent = err.message;
@@ -403,29 +411,78 @@
           submitBtn.textContent = 'Sign In';
         });
       });
+    }
 
-      // Watch for logout — if Decap login page reappears, clear token and show our login
-      var logoutCheckActive = false;
+    /**
+     * Fetch GitHub user info using the token, then store it in
+     * Decap CMS's localStorage format and reload the page.
+     */
+    function populateDecapAuth(token) {
+      fetch('https://api.github.com/user', {
+        headers: { 'Authorization': 'token ' + token }
+      })
+      .then(function(res) {
+        if (!res.ok) throw new Error('Invalid GitHub token');
+        return res.json();
+      })
+      .then(function(ghUser) {
+        // Store in Decap's expected format
+        var userData = {
+          token: token,
+          name: ghUser.name || ghUser.login,
+          login: ghUser.login,
+          backendName: 'github'
+        };
+
+        localStorage.setItem(DECAP_STORAGE_KEY, JSON.stringify(userData));
+        // Also set the newer key in case the CMS version uses it
+        localStorage.setItem('decap-cms-user', JSON.stringify(userData));
+
+        // Reload so Decap CMS picks up the stored auth on initialization
+        window.location.reload();
+      })
+      .catch(function(err) {
+        // Token is invalid — clear everything and show login
+        localStorage.removeItem(EMAIL_TOKEN_KEY);
+        localStorage.removeItem(DECAP_STORAGE_KEY);
+        localStorage.removeItem('decap-cms-user');
+        showLoginScreen();
+        var loginError = document.getElementById('loginError');
+        loginError.textContent = 'Authentication failed: ' + err.message;
+        loginError.classList.add('visible');
+      });
+    }
+
+    /**
+     * Dynamically load the Decap CMS script.
+     * Called only after auth is resolved (either existing session or after GitHub button click).
+     */
+    function loadDecapCMS() {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
+      document.body.appendChild(script);
+    }
+
+    // Watch for logout — if Decap's login page appears while CMS is loaded,
+    // it means the user logged out. Clear our tokens and show custom login.
+    setTimeout(function() {
       var observer = new MutationObserver(function() {
-        if (logoutCheckActive) return;
-        if (loginOverlay.style.display === 'none') {
-          var loginPage = document.querySelector('[class*="LoginPage"]');
-          if (loginPage && loginPage.offsetHeight > 0 && getComputedStyle(loginPage).display !== 'none') {
-            // Only show our login if there's no saved token (means user actively logged out)
-            if (!localStorage.getItem('cms-simple-auth-token')) {
-              logoutCheckActive = true;
-              loginOverlay.style.display = 'flex';
-              document.body.classList.add('custom-login-active');
-              setTimeout(function() { logoutCheckActive = false; }, 1000);
-            }
+        var loginPage = document.querySelector('[class*="LoginPage"]');
+        if (loginPage && loginPage.offsetHeight > 0 && getComputedStyle(loginPage).display !== 'none') {
+          // Decap showed its login page — user has logged out
+          // Clear all auth tokens
+          localStorage.removeItem(EMAIL_TOKEN_KEY);
+          localStorage.removeItem(DECAP_STORAGE_KEY);
+          localStorage.removeItem('decap-cms-user');
+          // Show our custom login instead
+          var loginOverlay = document.getElementById('customLogin');
+          if (loginOverlay.style.display === 'none') {
+            loginOverlay.style.display = 'flex';
           }
         }
       });
-      // Start observing after CMS has had time to initialize
-      setTimeout(function() {
-        observer.observe(document.body, { childList: true, subtree: true });
-      }, 5000);
-    })();
+      observer.observe(document.body, { childList: true, subtree: true });
+    }, 5000);
   </script>
 </body>
 </html>
