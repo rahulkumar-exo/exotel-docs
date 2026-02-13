@@ -5,7 +5,7 @@ sidebar_label: Connect Two Numbers
 ---
 # Connect Two Numbers - test
 
-Make an outbound call that connects two phone numbers. The platform calls the `From` number first, and once they answer, the `To` number is dialed and connected.
+Make an outbound call that connects two phone numbers. The platform calls the `From` number first, and once they answer, the `To` number is dialed and connected. test test test
 
 ## HTTP Request
 
