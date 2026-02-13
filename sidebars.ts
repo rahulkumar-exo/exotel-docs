@@ -2,35 +2,41 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   voiceApiSidebar: [
-    'voice-api/getting-started/overview',
-    'voice-api/getting-started/authentication',
     {
       type: 'category',
-      label: 'API Reference',
+      label: '🔀 Switch Voice Version',
       collapsed: false,
       items: [
-        'voice-api/api-reference/make-a-call',
-        'voice-api/api-reference/call-details',
+        { type: 'link', label: '→ Voice v1', href: '/docs/voice-v1/overview' },
+        { type: 'link', label: '→ Voice v2 (Current)', href: '/docs/voice-api/getting-started/overview' },
+        { type: 'link', label: '→ Voice v3', href: '/docs/voice-v3/overview' },
       ],
     },
+    'voice-api/getting-started/overview',
+    'voice-api/getting-started/authentication',
+    'voice-api/api-reference/make-a-call',
+    'voice-api/api-reference/call-details',
   ],
 
   voiceV1Sidebar: [
-    'voice-v1/overview',
     {
       type: 'category',
-      label: 'API Reference',
+      label: '🔀 Switch Voice Version',
       collapsed: false,
       items: [
-        'voice-v1/api-reference/connect-two-numbers',
-        'voice-v1/api-reference/connect-to-flow',
-        'voice-v1/api-reference/outgoing-call-to-flow',
-        'voice-v1/api-reference/call-details',
-        'voice-v1/api-reference/number-metadata',
-        'voice-v1/api-reference/incoming-call',
-        'voice-v1/api-reference/status-callback',
+        { type: 'link', label: '→ Voice v1 (Current)', href: '/docs/voice-v1/overview' },
+        { type: 'link', label: '→ Voice v2', href: '/docs/voice-api/getting-started/overview' },
+        { type: 'link', label: '→ Voice v3', href: '/docs/voice-v3/overview' },
       ],
     },
+    'voice-v1/overview',
+    'voice-v1/api-reference/connect-two-numbers',
+    'voice-v1/api-reference/connect-to-flow',
+    'voice-v1/api-reference/outgoing-call-to-flow',
+    'voice-v1/api-reference/call-details',
+    'voice-v1/api-reference/number-metadata',
+    'voice-v1/api-reference/incoming-call',
+    'voice-v1/api-reference/status-callback',
     {
       type: 'category',
       label: 'Applets',
@@ -50,17 +56,20 @@ const sidebars: SidebarsConfig = {
   ],
 
   voiceV3Sidebar: [
-    'voice-v3/overview',
     {
       type: 'category',
-      label: 'API Reference',
+      label: '🔀 Switch Voice Version',
       collapsed: false,
       items: [
-        'voice-v3/api-reference/call-details',
-        'voice-v3/api-reference/voice-log-download',
-        'voice-v3/api-reference/active-stream-monitoring',
+        { type: 'link', label: '→ Voice v1', href: '/docs/voice-v1/overview' },
+        { type: 'link', label: '→ Voice v2', href: '/docs/voice-api/getting-started/overview' },
+        { type: 'link', label: '→ Voice v3 (Current)', href: '/docs/voice-v3/overview' },
       ],
     },
+    'voice-v3/overview',
+    'voice-v3/api-reference/call-details',
+    'voice-v3/api-reference/voice-log-download',
+    'voice-v3/api-reference/active-stream-monitoring',
   ],
 
   smsApiSidebar: [

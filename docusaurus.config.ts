@@ -82,7 +82,7 @@ const config: Config = {
           position: 'left',
           items: [
             { type: 'docSidebar', sidebarId: 'voiceV1Sidebar', label: 'Voice v1' },
-            { type: 'docSidebar', sidebarId: 'voiceApiSidebar', label: 'Voice v2' },
+            { type: 'docSidebar', sidebarId: 'voiceApiSidebar', label: 'Voice v2 (Deprecated)' },
             { type: 'docSidebar', sidebarId: 'voiceV3Sidebar', label: 'Voice v3' },
             { type: 'docSidebar', sidebarId: 'ipPstnWebrtcSidebar', label: 'IP-PSTN intermix: WebRTC SDK integration' },
             { type: 'docSidebar', sidebarId: 'legsSidebar', label: 'Legs' },
