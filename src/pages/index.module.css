@@ -121,6 +121,188 @@
   border-color: rgba(155, 66, 241, 0.3);
 }
 
+/* Inline AI Response */
+.heroAiResponse {
+  margin-top: 1.25rem;
+  background: #fff;
+  border: 1px solid #e8eaf3;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(155, 66, 241, 0.08);
+  animation: fadeInUp 0.3s ease;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroAiResponseHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.heroAiLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9b42f1;
+}
+
+.heroAiActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.heroAiNewQuestion {
+  font-size: 0.8rem;
+  color: #9b42f1;
+  background: rgba(155, 66, 241, 0.08);
+  border: 1px solid rgba(155, 66, 241, 0.15);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.heroAiNewQuestion:hover {
+  background: rgba(155, 66, 241, 0.15);
+}
+
+.heroAiQuestion {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #231f20;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f0f3;
+}
+
+.heroAiAnswerContent {
+  font-size: 0.9rem;
+  color: #3c3c43;
+  line-height: 1.7;
+}
+
+.heroAiAnswerContent pre {
+  background: #f6f7f9;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  font-size: 0.82rem;
+}
+
+.heroAiAnswerContent code {
+  background: #f0edfe;
+  color: #7c3aed;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.heroAiAnswerContent pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+.heroAiAnswerContent a {
+  color: #9b42f1;
+  text-decoration: underline;
+}
+
+.heroAiAnswerContent strong {
+  color: #231f20;
+}
+
+.heroAiSources {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f3;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.heroAiSourcesLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #808285;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.heroAiSourceLink {
+  font-size: 0.8rem;
+  color: #9b42f1;
+  background: #f8f5fe;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.heroAiSourceLink:hover {
+  background: #f0edfe;
+  text-decoration: none;
+}
+
+.heroAiError {
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.heroAiLoading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 0;
+}
+
+.heroAiLoading span {
+  width: 8px;
+  height: 8px;
+  background: #9b42f1;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.heroAiLoading span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.heroAiLoading span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.4);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Section Title */
 .sectionTitle {
   font-size: 1.75rem;

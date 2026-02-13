@@ -1,10 +1,26 @@
-import {type ReactNode, useState} from 'react';
+import {type ReactNode, useState, useRef} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+
+interface AiSource {
+  title: string;
+  url: string;
+  product: string;
+}
+
+function formatMarkdown(text: string): string {
+  return text
+    .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre><code class="language-$1">$2</code></pre>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\n/g, '<br />');
+}
 
 const products = [
   {
@@ -117,20 +133,59 @@ const quickLinks = [
 function HeroBanner() {
   const {siteConfig} = useDocusaurusContext();
   const [heroQuery, setHeroQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [answer, setAnswer] = useState('');
+  const [askedQuestion, setAskedQuestion] = useState('');
+  const [sources, setSources] = useState<AiSource[]>([]);
+  const [error, setError] = useState('');
+  const responseRef = useRef<HTMLDivElement>(null);
 
-  const handleAskAi = () => {
-    const query = heroQuery.trim();
-    if (!query) return;
-    // Dispatch a custom event that the AiChat component will listen for
-    window.dispatchEvent(new CustomEvent('open-ai-chat', { detail: { question: query } }));
+  const askQuestion = async (question: string) => {
+    if (!question.trim() || isLoading) return;
+    setIsLoading(true);
+    setAnswer('');
+    setAskedQuestion(question.trim());
+    setSources([]);
+    setError('');
     setHeroQuery('');
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: question.trim(), history: [] }),
+      });
+      const data = await response.json();
+      if (!response.ok || data.error) {
+        throw new Error(data.error || `HTTP ${response.status}`);
+      }
+      setAnswer(data.answer || '');
+      if (data.sources?.length) {
+        setSources(data.sources);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+      // Scroll to response
+      setTimeout(() => {
+        responseRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      handleAskAi();
+      askQuestion(heroQuery);
     }
+  };
+
+  const clearResponse = () => {
+    setAnswer('');
+    setAskedQuestion('');
+    setSources([]);
+    setError('');
   };
 
   return (
@@ -155,28 +210,87 @@ function HeroBanner() {
               value={heroQuery}
               onChange={(e) => setHeroQuery(e.target.value)}
               onKeyDown={handleKeyDown}
+              disabled={isLoading}
             />
             <button
               className={styles.heroSearchButton}
-              onClick={handleAskAi}
-              disabled={!heroQuery.trim()}
+              onClick={() => askQuestion(heroQuery)}
+              disabled={!heroQuery.trim() || isLoading}
             >
-              Ask AI
+              {isLoading ? 'Thinking...' : 'Ask AI'}
             </button>
           </div>
-          <div className={styles.heroSearchHints}>
-            {['How do I make a call?', 'Send SMS via API', 'WhatsApp templates'].map((hint) => (
-              <button
-                key={hint}
-                className={styles.heroSearchHint}
-                onClick={() => {
-                  window.dispatchEvent(new CustomEvent('open-ai-chat', { detail: { question: hint } }));
-                }}
-              >
-                {hint}
-              </button>
-            ))}
-          </div>
+
+          {/* Suggestion chips — only show when no response */}
+          {!answer && !isLoading && !error && (
+            <div className={styles.heroSearchHints}>
+              {['How do I make a call?', 'Send SMS via API', 'WhatsApp templates'].map((hint) => (
+                <button
+                  key={hint}
+                  className={styles.heroSearchHint}
+                  onClick={() => askQuestion(hint)}
+                >
+                  {hint}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Loading indicator */}
+          {isLoading && (
+            <div className={styles.heroAiResponse} ref={responseRef}>
+              <div className={styles.heroAiResponseHeader}>
+                <span className={styles.heroAiLabel}>AI is answering...</span>
+              </div>
+              <div className={styles.heroAiLoading}>
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          )}
+
+          {/* AI Response */}
+          {!isLoading && answer && (
+            <div className={styles.heroAiResponse} ref={responseRef}>
+              <div className={styles.heroAiResponseHeader}>
+                <span className={styles.heroAiLabel}>AI Answer</span>
+                <div className={styles.heroAiActions}>
+                  <button className={styles.heroAiNewQuestion} onClick={clearResponse}>
+                    Ask another question
+                  </button>
+                </div>
+              </div>
+              <div className={styles.heroAiQuestion}>
+                {askedQuestion}
+              </div>
+              <div
+                className={styles.heroAiAnswerContent}
+                dangerouslySetInnerHTML={{ __html: formatMarkdown(answer) }}
+              />
+              {sources.length > 0 && (
+                <div className={styles.heroAiSources}>
+                  <span className={styles.heroAiSourcesLabel}>Sources:</span>
+                  {sources.map((source, i) => (
+                    <a key={i} href={source.url} className={styles.heroAiSourceLink}>
+                      {source.title}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Error */}
+          {!isLoading && error && (
+            <div className={styles.heroAiResponse} ref={responseRef}>
+              <div className={styles.heroAiResponseHeader}>
+                <span className={styles.heroAiLabel}>Error</span>
+                <button className={styles.heroAiNewQuestion} onClick={clearResponse}>
+                  Try again
+                </button>
+              </div>
+              <p className={styles.heroAiError}>{error}</p>
+            </div>
+          )}
         </div>
       </div>
     </header>
