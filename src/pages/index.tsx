@@ -131,6 +131,7 @@ const quickLinks = [
 ];
 
 function HeroBanner() {
+  const {siteConfig} = useDocusaurusContext();
   const [heroQuery, setHeroQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [answer, setAnswer] = useState('');
@@ -190,6 +191,13 @@ function HeroBanner() {
   return (
     <header className={styles.heroBanner}>
       <div className="container">
+        <div className={styles.heroLogo}>
+          <img src="/img/exotel-logo.png" alt="Exotel" className={styles.heroLogoImg} />
+        </div>
+        <Heading as="h1" className={styles.heroTitle}>
+          Developer Documentation
+        </Heading>
+        <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
         <div className={styles.heroSearchContainer}>
           <div className={styles.heroSearchBox}>
             <svg className={styles.heroSearchIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
