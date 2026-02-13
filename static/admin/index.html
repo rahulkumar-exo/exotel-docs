@@ -297,51 +297,9 @@
     </div>
   </div>
 
-  <!-- STEP 1: Before CMS loads, intercept window.open if we have a saved token -->
-  <script>
-    (function() {
-      var savedToken = localStorage.getItem('cms-simple-auth-token');
-      if (savedToken) {
-        // Hide the custom login immediately
-        document.getElementById('customLogin').style.display = 'none';
-        document.body.classList.remove('custom-login-active');
-
-        // Intercept window.open BEFORE the CMS script loads
-        // When Decap CMS tries to open the OAuth popup, we fake it
-        var origOpen = window.open;
-        window.open = function(url) {
-          // Only intercept GitHub auth popups
-          if (url && url.indexOf('github.com/login/oauth') !== -1) {
-            setTimeout(function() {
-              window.postMessage(
-                'authorization:github:success:' + JSON.stringify({ token: savedToken, provider: 'github' }),
-                window.location.origin
-              );
-            }, 100);
-            return { closed: false, close: function() { this.closed = true; } };
-          }
-          return origOpen.apply(window, arguments);
-        };
-
-        // Auto-click the Decap login button once it appears
-        var waitForLogin = setInterval(function() {
-          var loginBtn = document.querySelector('[class*="LoginButton"]');
-          if (loginBtn) {
-            clearInterval(waitForLogin);
-            loginBtn.click();
-            // Restore original window.open after auth completes
-            setTimeout(function() { window.open = origOpen; }, 3000);
-          }
-        }, 300);
-        setTimeout(function() { clearInterval(waitForLogin); window.open = origOpen; }, 20000);
-      }
-    })();
-  </script>
-
-  <!-- STEP 2: Load Decap CMS -->
+  <!-- Load Decap CMS first — let it fully initialize and load config.yml -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-  <!-- STEP 3: Handle login interactions -->
   <script>
     (function() {
       var loginOverlay = document.getElementById('customLogin');
@@ -350,18 +308,64 @@
       var submitBtn = document.getElementById('emailSubmitBtn');
       var githubBtn = document.getElementById('githubLoginBtn');
 
+      // Helper: Wait for Decap CMS login button to appear (means CMS has loaded config)
+      function waitForCmsReady(callback) {
+        var attempts = 0;
+        var check = setInterval(function() {
+          attempts++;
+          var loginBtn = document.querySelector('[class*="LoginButton"]');
+          if (loginBtn) {
+            clearInterval(check);
+            callback(loginBtn);
+          }
+          if (attempts > 100) { // 20 seconds timeout
+            clearInterval(check);
+          }
+        }, 200);
+      }
+
+      // Helper: Inject token into CMS by intercepting the OAuth popup
+      function authenticateWithToken(token) {
+        waitForCmsReady(function(loginBtn) {
+          // Temporarily intercept window.open
+          var origOpen = window.open;
+          window.open = function(url) {
+            if (url && url.indexOf('github.com/login/oauth') !== -1) {
+              // Don't open popup — send token directly
+              setTimeout(function() {
+                window.postMessage(
+                  'authorization:github:success:' + JSON.stringify({ token: token, provider: 'github' }),
+                  window.location.origin
+                );
+              }, 200);
+              return { closed: false, close: function() { this.closed = true; } };
+            }
+            return origOpen.apply(window, arguments);
+          };
+
+          // Click the login button to trigger the OAuth flow (which we intercept)
+          loginBtn.click();
+
+          // Restore original window.open
+          setTimeout(function() { window.open = origOpen; }, 5000);
+        });
+      }
+
+      // On page load: if we have a saved token, hide our login and auto-auth
+      var savedToken = localStorage.getItem('cms-simple-auth-token');
+      if (savedToken) {
+        loginOverlay.style.display = 'none';
+        document.body.classList.remove('custom-login-active');
+        authenticateWithToken(savedToken);
+      }
+
       // GitHub OAuth login — hide our overlay and let Decap handle it
       githubBtn.addEventListener('click', function() {
         loginOverlay.style.display = 'none';
         document.body.classList.remove('custom-login-active');
-        var waitForLogin = setInterval(function() {
-          var loginBtn = document.querySelector('[class*="LoginButton"]');
-          if (loginBtn) {
-            clearInterval(waitForLogin);
-            loginBtn.click();
-          }
-        }, 100);
-        setTimeout(function() { clearInterval(waitForLogin); }, 8000);
+        waitForCmsReady(function(loginBtn) {
+          loginBtn.click();
+        });
       });
 
       // Email/password login
@@ -386,9 +390,11 @@
           if (!result.ok) {
             throw new Error(result.data.error || 'Login failed');
           }
-          // Save token and reload — the STEP 1 script will auto-auth on reload
+          // Save token and authenticate — no reload needed
           localStorage.setItem('cms-simple-auth-token', result.data.token);
-          window.location.reload();
+          loginOverlay.style.display = 'none';
+          document.body.classList.remove('custom-login-active');
+          authenticateWithToken(result.data.token);
         })
         .catch(function(err) {
           loginError.textContent = err.message;
@@ -399,24 +405,26 @@
       });
 
       // Watch for logout — if Decap login page reappears, clear token and show our login
+      var logoutCheckActive = false;
       var observer = new MutationObserver(function() {
-        if (loginOverlay.style.display === 'none' && !localStorage.getItem('cms-simple-auth-token')) {
+        if (logoutCheckActive) return;
+        if (loginOverlay.style.display === 'none') {
           var loginPage = document.querySelector('[class*="LoginPage"]');
           if (loginPage && loginPage.offsetHeight > 0 && getComputedStyle(loginPage).display !== 'none') {
-            loginOverlay.style.display = 'flex';
-            document.body.classList.add('custom-login-active');
+            // Only show our login if there's no saved token (means user actively logged out)
+            if (!localStorage.getItem('cms-simple-auth-token')) {
+              logoutCheckActive = true;
+              loginOverlay.style.display = 'flex';
+              document.body.classList.add('custom-login-active');
+              setTimeout(function() { logoutCheckActive = false; }, 1000);
+            }
           }
         }
       });
-      observer.observe(document.body, { childList: true, subtree: true, attributes: true });
-
-      // Also handle if user logs out from CMS
-      window.addEventListener('storage', function(e) {
-        if (e.key === 'cms-simple-auth-token' && !e.newValue) {
-          loginOverlay.style.display = 'flex';
-          document.body.classList.add('custom-login-active');
-        }
-      });
+      // Start observing after CMS has had time to initialize
+      setTimeout(function() {
+        observer.observe(document.body, { childList: true, subtree: true });
+      }, 5000);
     })();
   </script>
 </body>
