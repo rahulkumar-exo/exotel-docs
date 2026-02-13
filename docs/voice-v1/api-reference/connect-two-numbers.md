@@ -1,10 +1,9 @@
 ---
-id: connect-two-numbers
 title: Connect Two Numbers
+id: connect-two-numbers
 sidebar_label: Connect Two Numbers
 ---
-
-# Connect Two Numbers
+# Connect Two Numbers - test
 
 Make an outbound call that connects two phone numbers. The platform calls the `From` number first, and once they answer, the `To` number is dialed and connected.
 
@@ -16,33 +15,33 @@ POST /v1/Accounts/<your_sid>/Calls/connect
 
 ### Regional Endpoints
 
-| Region | URL |
-|--------|-----|
-| Singapore | `https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
-| Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
+| Region    | URL                                                                                    |
+| --------- | -------------------------------------------------------------------------------------- |
+| Singapore | `https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect`    |
+| Mumbai    | `https://<api_key>:<api_token>@api.in.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
 
 ## Request Parameters
 
-| Parameter | Required | Type | Description |
-|-----------|----------|------|-------------|
-| `From` | Yes | String | Phone number called first. Preferably in E.164 format. |
-| `To` | Yes | String | Customer phone number. Preferably in E.164 format. |
-| `CallerId` | Yes | String | Your ExoPhone/virtual number. |
-| `CallType` | No | String | `trans` for transactional calls. |
-| `TimeLimit` | No | Integer | Max call duration in seconds. Max: `14400` (4 hours). |
-| `TimeOut` | No | Integer | Ring timeout in seconds. |
-| `WaitUrl` | No | String | Audio URL (WAV) played while waiting. Recommended: under 2MB. |
-| `Record` | No | Boolean | `true` to record the conversation. |
-| `RecordingChannels` | No | String | `single` (default) or `dual`. |
-| `RecordingFormat` | No | String | `mp3` (default) or `mp3-hq`. |
-| `StreamUrl` | No | String | WebSocket URL for real-time audio streaming. |
-| `StreamBegin` | No | String | `at Leg1Connect` or `at Leg2Connect`. |
-| `CustomField` | No | String | Metadata (max 128 chars). Passed to StatusCallback and applets. |
-| `StartPlaybackToNew` | No | String | `Callee` (default) or `Both`. |
-| `StartPlaybackValueNew` | No | String | Audio URL for pre-call playback. |
-| `StatusCallback` | No | String | Webhook URL for call status updates. |
-| `StatusCallbackEvents` | No | Array | `terminal`, `answered`, or both. |
-| `StatusCallbackContentType` | No | String | `multipart/form-data` or `application/json`. |
+| Parameter                   | Required | Type    | Description                                                     |
+| --------------------------- | -------- | ------- | --------------------------------------------------------------- |
+| `From`                      | Yes      | String  | Phone number called first. Preferably in E.164 format.          |
+| `To`                        | Yes      | String  | Customer phone number. Preferably in E.164 format.              |
+| `CallerId`                  | Yes      | String  | Your ExoPhone/virtual number.                                   |
+| `CallType`                  | No       | String  | `trans` for transactional calls.                                |
+| `TimeLimit`                 | No       | Integer | Max call duration in seconds. Max: `14400` (4 hours).           |
+| `TimeOut`                   | No       | Integer | Ring timeout in seconds.                                        |
+| `WaitUrl`                   | No       | String  | Audio URL (WAV) played while waiting. Recommended: under 2MB.   |
+| `Record`                    | No       | Boolean | `true` to record the conversation.                              |
+| `RecordingChannels`         | No       | String  | `single` (default) or `dual`.                                   |
+| `RecordingFormat`           | No       | String  | `mp3` (default) or `mp3-hq`.                                    |
+| `StreamUrl`                 | No       | String  | WebSocket URL for real-time audio streaming.                    |
+| `StreamBegin`               | No       | String  | `at Leg1Connect` or `at Leg2Connect`.                           |
+| `CustomField`               | No       | String  | Metadata (max 128 chars). Passed to StatusCallback and applets. |
+| `StartPlaybackToNew`        | No       | String  | `Callee` (default) or `Both`.                                   |
+| `StartPlaybackValueNew`     | No       | String  | Audio URL for pre-call playback.                                |
+| `StatusCallback`            | No       | String  | Webhook URL for call status updates.                            |
+| `StatusCallbackEvents`      | No       | Array   | `terminal`, `answered`, or both.                                |
+| `StatusCallbackContentType` | No       | String  | `multipart/form-data` or `application/json`.                    |
 
 ## Code Examples
 
@@ -153,33 +152,33 @@ echo $response;
 
 ## Response Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `Sid` | String | Unique alpha-numeric call identifier |
-| `DateCreated` | DateTime | When the API request was initiated |
-| `DateUpdated` | DateTime | Last status update timestamp |
-| `AccountSid` | String | Your Exotel Account SID |
-| `To` | String | The destination phone number |
-| `From` | String | The number called first |
-| `PhoneNumberSid` | String | The ExoPhone used |
-| `Status` | String | `queued`, `in-progress`, `completed`, `failed`, `busy`, `no-answer` |
-| `StartTime` | DateTime | When call was sent to operator |
-| `EndTime` | DateTime | When call ended |
-| `Duration` | Integer | Total duration in seconds |
-| `Price` | Double | Amount charged (INR/USD) |
-| `Direction` | String | `inbound`, `outbound-dial`, `outbound-api` |
-| `RecordingUrl` | String | Recording URL (if enabled) |
+| Field            | Type     | Description                                                         |
+| ---------------- | -------- | ------------------------------------------------------------------- |
+| `Sid`            | String   | Unique alpha-numeric call identifier                                |
+| `DateCreated`    | DateTime | When the API request was initiated                                  |
+| `DateUpdated`    | DateTime | Last status update timestamp                                        |
+| `AccountSid`     | String   | Your Exotel Account SID                                             |
+| `To`             | String   | The destination phone number                                        |
+| `From`           | String   | The number called first                                             |
+| `PhoneNumberSid` | String   | The ExoPhone used                                                   |
+| `Status`         | String   | `queued`, `in-progress`, `completed`, `failed`, `busy`, `no-answer` |
+| `StartTime`      | DateTime | When call was sent to operator                                      |
+| `EndTime`        | DateTime | When call ended                                                     |
+| `Duration`       | Integer  | Total duration in seconds                                           |
+| `Price`          | Double   | Amount charged (INR/USD)                                            |
+| `Direction`      | String   | `inbound`, `outbound-dial`, `outbound-api`                          |
+| `RecordingUrl`   | String   | Recording URL (if enabled)                                          |
 
 ## Call Status Values
 
-| Status | Description |
-|--------|-------------|
-| `queued` | Waiting to be sent to operator |
-| `in-progress` | Call is active |
-| `completed` | Ended normally |
-| `failed` | Could not be completed |
-| `busy` | Busy signal received |
-| `no-answer` | Not answered within timeout |
+| Status        | Description                    |
+| ------------- | ------------------------------ |
+| `queued`      | Waiting to be sent to operator |
+| `in-progress` | Call is active                 |
+| `completed`   | Ended normally                 |
+| `failed`      | Could not be completed         |
+| `busy`        | Busy signal received           |
+| `no-answer`   | Not answered within timeout    |
 
 :::note
 `Duration`, `Price`, and `EndTime` update asynchronously (~2 minutes after call ends). Use StatusCallback or Call Details API for final values.
