@@ -10,6 +10,9 @@
     },
     "api/callback.js": {
       "maxDuration": 10
+    },
+    "api/simple-auth.js": {
+      "maxDuration": 10
     }
   }
 }

@@ -11,7 +11,169 @@
       --accent-color: #6C3EC1;
     }
 
-    /* Login screen */
+    /* Hide the default Decap login screen when our custom login is showing */
+    body.custom-login-active [class*="LoginPage"] {
+      display: none !important;
+    }
+
+    /* Custom login overlay */
+    .custom-login-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #6C3EC1 0%, #4A1A9E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .custom-login-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      width: 420px;
+      max-width: 90vw;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .custom-login-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .custom-login-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #231f20;
+      margin: 0 0 4px;
+    }
+
+    .custom-login-header p {
+      font-size: 14px;
+      color: #808285;
+      margin: 0;
+    }
+
+    .custom-login-divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .custom-login-divider::before,
+    .custom-login-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #e8eaf3;
+    }
+
+    .custom-login-divider span {
+      padding: 0 12px;
+    }
+
+    /* GitHub button */
+    .login-github-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px 20px;
+      background: #24292e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .login-github-btn:hover {
+      background: #1b1f23;
+      transform: translateY(-1px);
+    }
+
+    .login-github-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    /* Email/password form */
+    .login-form-group {
+      margin-bottom: 16px;
+    }
+
+    .login-form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .login-form-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+
+    .login-form-group input:focus {
+      border-color: #6C3EC1;
+      box-shadow: 0 0 0 3px rgba(108, 62, 193, 0.1);
+    }
+
+    .login-submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px 20px;
+      background: #6C3EC1;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 4px;
+    }
+
+    .login-submit-btn:hover {
+      background: #5A2FB0;
+      transform: translateY(-1px);
+    }
+
+    .login-submit-btn:disabled {
+      background: #c6c9d8;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .login-error {
+      background: #fef2f2;
+      color: #dc2626;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 16px;
+      display: none;
+    }
+
+    .login-error.visible {
+      display: block;
+    }
+
+    /* Login screen - Decap default (fallback) */
     [class*="LoginPage"] {
       background: linear-gradient(135deg, #6C3EC1 0%, #4A1A9E 100%) !important;
     }
@@ -23,37 +185,9 @@
       padding: 12px 32px !important;
       font-size: 16px !important;
       box-shadow: 0 4px 14px rgba(0,0,0,0.15) !important;
-      transition: transform 0.2s, box-shadow 0.2s !important;
-    }
-    [class*="LoginButton"]:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
     }
     [class*="LoginLogo"] {
       display: none !important;
-    }
-
-    /* Add custom logo/header to login */
-    [class*="LoginPage"]::before {
-      content: "Exotel Developer Docs";
-      display: block;
-      text-align: center;
-      color: white;
-      font-size: 28px;
-      font-weight: 700;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-    [class*="LoginPage"]::after {
-      content: "Content Management System";
-      display: block;
-      text-align: center;
-      color: rgba(255,255,255,0.75);
-      font-size: 16px;
-      font-weight: 400;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin-bottom: 32px;
     }
 
     /* Top navbar */
@@ -66,15 +200,11 @@
     }
 
     /* Sidebar improvements */
-    [class*="SidebarNavList"] {
-      padding: 8px 0 !important;
-    }
     [class*="SidebarNavLink"] {
       border-radius: 6px !important;
       margin: 2px 8px !important;
       padding: 10px 16px !important;
       font-size: 14px !important;
-      transition: background 0.15s !important;
     }
     [class*="SidebarNavLink"]:hover {
       background: rgba(108, 62, 193, 0.08) !important;
@@ -85,11 +215,10 @@
       font-weight: 600 !important;
     }
 
-    /* Collection cards on home screen */
+    /* Collection cards */
     [class*="CollectionTop"] {
       border-radius: 12px !important;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
-      transition: box-shadow 0.2s, transform 0.2s !important;
       border: 1px solid #eee !important;
     }
     [class*="CollectionTop"]:hover {
@@ -97,32 +226,16 @@
       transform: translateY(-2px) !important;
     }
 
-    /* Editor toolbar */
-    [class*="ToolbarToggle"] {
-      border-radius: 6px !important;
-    }
-
     /* Publish button */
-    [class*="PublishButton"],
-    [class*="ToolbarButton"] {
-      border-radius: 6px !important;
-    }
     [class*="PublishButton"] {
       background: #6C3EC1 !important;
       border-color: #6C3EC1 !important;
-    }
-    [class*="PublishButton"]:hover {
-      background: #5A2FB0 !important;
+      border-radius: 6px !important;
     }
 
-    /* Entry listing table */
-    [class*="EntryListing"] {
-      border-radius: 8px !important;
-    }
+    /* Entry listing */
     [class*="ListCard"] {
       border-radius: 8px !important;
-      margin-bottom: 4px !important;
-      transition: background 0.15s !important;
     }
     [class*="ListCard"]:hover {
       background: #f8f6ff !important;
@@ -134,29 +247,175 @@
       -webkit-font-smoothing: antialiased !important;
     }
 
-    /* Markdown editor improvements */
     [class*="ControlPaneContainer"] {
       max-width: 900px !important;
     }
-    [class*="PreviewPaneFrame"] {
-      background: #fafafa !important;
-    }
 
-    /* Status badges */
     [class*="StatusButton"] {
       border-radius: 20px !important;
       font-size: 12px !important;
       font-weight: 600 !important;
     }
 
-    /* Workflow board columns */
     [class*="BoardColumn"] {
       border-radius: 12px !important;
       background: #f8f8fa !important;
     }
   </style>
 </head>
-<body>
+<body class="custom-login-active">
+
+  <!-- Custom login overlay -->
+  <div class="custom-login-overlay" id="customLogin">
+    <div class="custom-login-box">
+      <div class="custom-login-header">
+        <h1>Exotel Developer Docs</h1>
+        <p>Content Management System</p>
+      </div>
+
+      <!-- GitHub login -->
+      <button class="login-github-btn" id="githubLoginBtn">
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        Login with GitHub
+      </button>
+
+      <div class="custom-login-divider"><span>or sign in with email</span></div>
+
+      <!-- Email/password form -->
+      <div class="login-error" id="loginError"></div>
+      <form id="emailLoginForm">
+        <div class="login-form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="you@exotel.com" required autocomplete="email" />
+        </div>
+        <div class="login-form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="login-submit-btn" id="emailSubmitBtn">Sign In</button>
+      </form>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    (function() {
+      var loginOverlay = document.getElementById('customLogin');
+      var loginError = document.getElementById('loginError');
+      var emailForm = document.getElementById('emailLoginForm');
+      var submitBtn = document.getElementById('emailSubmitBtn');
+      var githubBtn = document.getElementById('githubLoginBtn');
+
+      // Check if already authenticated via email login
+      var savedToken = localStorage.getItem('cms-simple-auth-token');
+      if (savedToken) {
+        injectTokenAndHideLogin(savedToken);
+      }
+
+      // GitHub OAuth login — hide our overlay and let Decap handle it
+      githubBtn.addEventListener('click', function() {
+        loginOverlay.style.display = 'none';
+        document.body.classList.remove('custom-login-active');
+        // Wait for CMS login button to appear, then click it
+        var waitForLogin = setInterval(function() {
+          var loginBtn = document.querySelector('[class*="LoginButton"]');
+          if (loginBtn) {
+            clearInterval(waitForLogin);
+            loginBtn.click();
+          }
+        }, 100);
+        setTimeout(function() { clearInterval(waitForLogin); }, 8000);
+      });
+
+      // Email/password login
+      emailForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('loginEmail').value.trim();
+        var password = document.getElementById('loginPassword').value;
+
+        if (!email || !password) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Signing in...';
+        loginError.classList.remove('visible');
+
+        fetch('/api/simple-auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, password: password })
+        })
+        .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+        .then(function(result) {
+          if (!result.ok) {
+            throw new Error(result.data.error || 'Login failed');
+          }
+          localStorage.setItem('cms-simple-auth-token', result.data.token);
+          injectTokenAndHideLogin(result.data.token);
+        })
+        .catch(function(err) {
+          loginError.textContent = err.message;
+          loginError.classList.add('visible');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Sign In';
+        });
+      });
+
+      function injectTokenAndHideLogin(token) {
+        loginOverlay.style.display = 'none';
+        document.body.classList.remove('custom-login-active');
+
+        // Wait for Decap CMS login button to appear
+        var waitForCms = setInterval(function() {
+          var loginBtn = document.querySelector('[class*="LoginButton"]');
+          if (loginBtn) {
+            clearInterval(waitForCms);
+
+            // Click the login button — this opens a popup for OAuth
+            // We intercept the popup and provide our token instead
+            var origOpen = window.open;
+            window.open = function() {
+              // Don't actually open a popup
+              // Instead, simulate the OAuth callback
+              setTimeout(function() {
+                window.postMessage(
+                  'authorization:github:success:' + JSON.stringify({ token: token, provider: 'github' }),
+                  window.location.origin
+                );
+              }, 100);
+
+              // Return a fake window object so CMS doesn't error
+              return {
+                closed: false,
+                close: function() { this.closed = true; }
+              };
+            };
+
+            loginBtn.click();
+
+            // Restore original window.open after a delay
+            setTimeout(function() {
+              window.open = origOpen;
+            }, 2000);
+          }
+        }, 200);
+
+        setTimeout(function() { clearInterval(waitForCms); }, 15000);
+      }
+
+      // Watch for logout — if login page reappears, show our custom login
+      var observer = new MutationObserver(function() {
+        if (loginOverlay.style.display === 'none') {
+          var loginPage = document.querySelector('[class*="LoginPage"]');
+          if (loginPage && loginPage.offsetHeight > 0 && getComputedStyle(loginPage).display !== 'none') {
+            localStorage.removeItem('cms-simple-auth-token');
+            loginOverlay.style.display = 'flex';
+            document.body.classList.add('custom-login-active');
+          }
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+    })();
+  </script>
 </body>
 </html>
