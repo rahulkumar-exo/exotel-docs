@@ -59,6 +59,28 @@ export default function AiChat(): JSX.Element {
     }
   }, [isOpen]);
 
+  // Store sendMessage in a ref so the event listener always has the latest version
+  const sendMessageRef = useRef<(q?: string) => void>();
+
+  // Listen for hero search bar "open-ai-chat" events
+  useEffect(() => {
+    const handleOpenAiChat = (e: Event) => {
+      const customEvent = e as CustomEvent<{ question: string }>;
+      const question = customEvent.detail?.question;
+      if (question) {
+        setIsOpen(true);
+        // Small delay to ensure panel is rendered
+        setTimeout(() => {
+          sendMessageRef.current?.(question);
+        }, 150);
+      }
+    };
+    window.addEventListener('open-ai-chat', handleOpenAiChat);
+    return () => {
+      window.removeEventListener('open-ai-chat', handleOpenAiChat);
+    };
+  }, []);
+
   const sendMessage = async (questionText?: string) => {
     const question = questionText || input.trim();
     if (!question || isLoading) return;
@@ -108,6 +130,9 @@ export default function AiChat(): JSX.Element {
       setIsLoading(false);
     }
   };
+
+  // Keep sendMessage ref up to date
+  sendMessageRef.current = sendMessage;
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {

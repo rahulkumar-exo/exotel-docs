@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import {type ReactNode, useState} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
@@ -116,6 +116,23 @@ const quickLinks = [
 
 function HeroBanner() {
   const {siteConfig} = useDocusaurusContext();
+  const [heroQuery, setHeroQuery] = useState('');
+
+  const handleAskAi = () => {
+    const query = heroQuery.trim();
+    if (!query) return;
+    // Dispatch a custom event that the AiChat component will listen for
+    window.dispatchEvent(new CustomEvent('open-ai-chat', { detail: { question: query } }));
+    setHeroQuery('');
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleAskAi();
+    }
+  };
+
   return (
     <header className={styles.heroBanner}>
       <div className="container">
@@ -126,13 +143,40 @@ function HeroBanner() {
           Developer Documentation
         </Heading>
         <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
-        <div className={styles.heroButtons}>
-          <Link className={styles.primaryButton} to="/docs/voice-v1/overview">
-            Get Started with Voice API
-          </Link>
-          <Link className={styles.secondaryButton} to="/docs/sms-api/overview">
-            Explore SMS API
-          </Link>
+        <div className={styles.heroSearchContainer}>
+          <div className={styles.heroSearchBox}>
+            <svg className={styles.heroSearchIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <input
+              type="text"
+              className={styles.heroSearchInput}
+              placeholder="Ask AI anything about Exotel APIs..."
+              value={heroQuery}
+              onChange={(e) => setHeroQuery(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
+            <button
+              className={styles.heroSearchButton}
+              onClick={handleAskAi}
+              disabled={!heroQuery.trim()}
+            >
+              Ask AI
+            </button>
+          </div>
+          <div className={styles.heroSearchHints}>
+            {['How do I make a call?', 'Send SMS via API', 'WhatsApp templates'].map((hint) => (
+              <button
+                key={hint}
+                className={styles.heroSearchHint}
+                onClick={() => {
+                  window.dispatchEvent(new CustomEvent('open-ai-chat', { detail: { question: hint } }));
+                }}
+              >
+                {hint}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </header>
