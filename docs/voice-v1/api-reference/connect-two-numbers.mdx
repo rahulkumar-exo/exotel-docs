@@ -3,6 +3,8 @@ title: Connect Two Numbers
 id: connect-two-numbers
 sidebar_label: Connect Two Numbers
 ---
+import ApiConsole from '@site/src/components/ApiConsole';
+
 # Connect Two Numbers
 
 Make an outbound call that connects two phone numbers. The platform calls the `From` number first, and once they answer, the `To` number is dialed and connected.
@@ -187,3 +189,21 @@ echo $response;
 :::info
 Audio file URLs for `WaitUrl` are cached. Use unique URLs (e.g., add a query parameter) when updating audio files.
 :::
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v1/Accounts/{account_sid}/Calls/connect"
+  params={[
+    { name: 'From', required: true, type: 'string', description: 'Phone number called first (E.164 format)', placeholder: '+919876543210' },
+    { name: 'To', required: true, type: 'string', description: 'Customer phone number (E.164 format)', placeholder: '+919123456789' },
+    { name: 'CallerId', required: true, type: 'string', description: 'Your ExoPhone/virtual number', placeholder: '0XXXXXXX' },
+    { name: 'CallType', required: false, type: 'string', description: 'Set to "trans" for transactional calls', placeholder: 'trans' },
+    { name: 'TimeLimit', required: false, type: 'number', description: 'Max call duration in seconds (max 14400)', placeholder: '300' },
+    { name: 'TimeOut', required: false, type: 'number', description: 'Ring timeout in seconds', placeholder: '30' },
+    { name: 'Record', required: false, type: 'boolean', description: 'Set to true to record the conversation' },
+    { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://yoururl.com/callback' },
+    { name: 'CustomField', required: false, type: 'string', description: 'Custom metadata (max 128 chars)', placeholder: 'order_123' },
+  ]}
+/>

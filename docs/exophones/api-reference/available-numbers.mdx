@@ -3,6 +3,7 @@ id: available-numbers
 title: Available ExoPhones
 sidebar_label: Available Numbers
 ---
+import ApiConsole from '@site/src/components/ApiConsole';
 
 # Get Available ExoPhones
 
@@ -59,3 +60,16 @@ GET /v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/<iso_country_code>/<nu
 | `region` | Telecom region/circle |
 | `number_type` | Type of number |
 | `rental_price` | Monthly rental price |
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v2_beta/Accounts/{account_sid}/AvailablePhoneNumbers/{iso_country_code}/{number_type}"
+  params={[
+    { name: 'iso_country_code', required: true, type: 'string', description: 'Two-letter country code (replaces {iso_country_code} in URL)', placeholder: 'IN' },
+    { name: 'number_type', required: true, type: 'select', description: 'Type of phone number (replaces {number_type} in URL)', options: ['Landline', 'Mobile', 'TollFree'] },
+    { name: 'InRegion', required: false, type: 'string', description: 'Filter by telecom circle', placeholder: 'DL' },
+    { name: 'Contains', required: false, type: 'string', description: 'Filter by substring in the number', placeholder: '9876' },
+  ]}
+/>

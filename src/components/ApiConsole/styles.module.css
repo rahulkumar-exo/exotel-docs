@@ -1,0 +1,382 @@
+/* API Console Container */
+.console {
+  margin: 1.5rem 0;
+  border: 1px solid #e2e4ea;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Toggle Button */
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: #f8f9fb;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.toggleBtn:hover {
+  background: #f0f1f5;
+}
+
+.toggleBtnOpen {
+  border-bottom: 1px solid #e2e4ea;
+}
+
+.toggleIcon {
+  font-size: 12px;
+  color: #9ca3af;
+  width: 14px;
+}
+
+.methodBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.methodBadge[data-method="GET"] {
+  background: #10b981;
+}
+
+.methodBadge[data-method="POST"] {
+  background: #3b82f6;
+}
+
+.methodBadge[data-method="PUT"] {
+  background: #f59e0b;
+}
+
+.methodBadge[data-method="DELETE"] {
+  background: #ef4444;
+}
+
+/* Panel */
+.panel {
+  padding: 16px;
+}
+
+/* Credentials Section */
+.credsSection {
+  margin-bottom: 16px;
+}
+
+.credsToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid #e2e4ea;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #6b7280;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: border-color 0.15s;
+}
+
+.credsToggle:hover {
+  border-color: #9b42f1;
+}
+
+.credsChevron {
+  margin-left: auto;
+  font-size: 11px;
+}
+
+.credsForm {
+  margin-top: 12px;
+  padding: 16px;
+  background: #fafbfc;
+  border-radius: 6px;
+  border: 1px solid #e8eaf3;
+}
+
+.credsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.credsRow:last-of-type {
+  margin-bottom: 8px;
+}
+
+.credsField label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.credsField input,
+.credsField select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.credsField input:focus,
+.credsField select:focus {
+  border-color: #9b42f1;
+  box-shadow: 0 0 0 2px rgba(155, 66, 241, 0.1);
+}
+
+.credsHint {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.credsHint a {
+  color: #9b42f1;
+}
+
+/* Parameters Section */
+.paramsSection {
+  margin-bottom: 16px;
+}
+
+.sectionLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.paramsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.paramRow {
+  padding: 12px;
+  background: #fafbfc;
+  border-radius: 6px;
+  border: 1px solid #eef0f4;
+}
+
+.paramHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.paramName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  background: #e8eaf3;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.requiredBadge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #dc2626;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.paramType {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.paramDesc {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.paramInput {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.paramInput:focus {
+  border-color: #9b42f1;
+  box-shadow: 0 0 0 2px rgba(155, 66, 241, 0.1);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tryBtn {
+  padding: 9px 24px;
+  background: #9b42f1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.tryBtn:hover:not(:disabled) {
+  background: #8231d6;
+}
+
+.tryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.clearBtn {
+  padding: 9px 16px;
+  background: #fff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.clearBtn:hover {
+  border-color: #9ca3af;
+}
+
+/* Response Section */
+.responseSection {
+  border: 1px solid #e2e4ea;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.responseTabs {
+  display: flex;
+  align-items: center;
+  background: #f3f4f6;
+  border-bottom: 1px solid #e2e4ea;
+  padding: 0 4px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab:hover {
+  color: #374151;
+}
+
+.tabActive {
+  color: #9b42f1;
+  border-bottom-color: #9b42f1;
+}
+
+.statusBadge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.statusBadge[data-status="success"] {
+  background: #10b981;
+}
+
+.statusBadge[data-status="error"] {
+  background: #ef4444;
+}
+
+.copyBtn {
+  margin-left: auto;
+  padding: 4px 10px;
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.copyBtn:hover {
+  border-color: #9b42f1;
+  color: #9b42f1;
+}
+
+.responseBody {
+  margin: 0;
+  padding: 16px;
+  background: #1e1e2e;
+  color: #cdd6f4;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: auto;
+  max-height: 400px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Loading animation */
+.loadingDots span {
+  animation: blink 1.4s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .credsRow {
+    grid-template-columns: 1fr;
+  }
+}

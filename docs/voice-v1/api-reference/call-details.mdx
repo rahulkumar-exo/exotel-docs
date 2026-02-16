@@ -3,6 +3,8 @@ title: Call Details & Bulk Calls
 id: call-details
 sidebar_label: Call Details
 ---
+import ApiConsole from '@site/src/components/ApiConsole';
+
 # Call Details API (v1)
 
 #### test Retrieve details of a specific call, or query bulk call records with filters.
@@ -247,3 +249,24 @@ When you set `StatusCallback` while making a call, Exotel sends a POST to your U
 | `400` | Bad Request — Invalid parameters |
 | `401` | Unauthorized                     |
 | `429` | Rate limit exceeded              |
+
+## Try It — Single Call Details
+
+<ApiConsole
+  method="GET"
+  path="/v1/Accounts/{account_sid}/Calls/{CallSid}.json"
+  params={[
+    { name: 'CallSid', required: true, type: 'string', description: 'Unique call identifier (replaces {CallSid} in URL)', placeholder: 'c5797dcbaaeed7678c4062a4a3ed2f8a' },
+    { name: 'details', required: false, type: 'boolean', description: 'Set to true to include leg-level information' },
+  ]}
+/>
+
+## Try It — Number Metadata
+
+<ApiConsole
+  method="GET"
+  path="/v1/Accounts/{account_sid}/Numbers/{phone_number}.json"
+  params={[
+    { name: 'phone_number', required: true, type: 'string', description: 'Indian phone number (replaces {phone_number} in URL)', placeholder: '09876543210' },
+  ]}
+/>

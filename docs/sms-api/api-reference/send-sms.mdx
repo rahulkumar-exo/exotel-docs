@@ -4,6 +4,7 @@ title: Send SMS
 sidebar_label: Send SMS
 sidebar_position: 1
 ---
+import ApiConsole from '@site/src/components/ApiConsole';
 
 # Send SMS
 
@@ -179,3 +180,21 @@ puts response.body
 :::note
 A 200 response means the SMS request was accepted, not that it was delivered. Use the `StatusCallback` webhook or the [SMS Details](/docs/sms-api/api-reference/sms-details) endpoint to confirm delivery.
 :::
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v1/Accounts/{account_sid}/Sms/send"
+  params={[
+    { name: 'From', required: true, type: 'string', description: 'ExoPhone or approved Sender ID', placeholder: 'EXOTEL' },
+    { name: 'To', required: true, type: 'string', description: 'Recipient mobile number (E.164 format)', placeholder: '+919876543210' },
+    { name: 'Body', required: true, type: 'string', description: 'Message content, max 2000 characters', placeholder: 'Your OTP is 123456' },
+    { name: 'DltEntityId', required: true, type: 'string', description: 'DLT entity registration ID (mandatory for India)', placeholder: '1234567890' },
+    { name: 'DltTemplateId', required: false, type: 'string', description: 'DLT-approved template ID', placeholder: '9876543210' },
+    { name: 'EncodingType', required: false, type: 'select', description: 'Message encoding type', options: ['plain', 'unicode'] },
+    { name: 'SmsType', required: false, type: 'select', description: 'SMS category', options: ['transactional', 'transactional_opt_in', 'promotional'] },
+    { name: 'Priority', required: false, type: 'select', description: 'Message priority', options: ['normal', 'high'] },
+    { name: 'StatusCallback', required: false, type: 'string', description: 'URL to receive delivery status notifications', placeholder: 'https://yoururl.com/sms-callback' },
+  ]}
+/>
