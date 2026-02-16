@@ -5,6 +5,9 @@ sidebar_label: Start Verification
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Start Verification
 
 Send an SMS OTP to a phone number to begin the verification process.
@@ -32,7 +35,8 @@ POST https://exoverify.exotel.com/v2/accounts/{account_sid}/verifications/sms
 
 ## Code Examples
 
-### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST "https://exoverify.exotel.com/v2/accounts/<account_sid>/verifications/sms" \
@@ -44,7 +48,8 @@ curl -X POST "https://exoverify.exotel.com/v2/accounts/<account_sid>/verificatio
   }'
 ```
 
-### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -67,7 +72,8 @@ response = requests.post(
 print(response.json())
 ```
 
-### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const axios = require('axios');
@@ -88,6 +94,9 @@ axios.post(
   }
 ).then(res => console.log(res.data));
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

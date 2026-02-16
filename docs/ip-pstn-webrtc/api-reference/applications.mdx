@@ -5,6 +5,9 @@ sidebar_label: Applications
 sidebar_position: 2
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Application Management
 
 Register, retrieve, list, and delete WebRTC calling applications.
@@ -41,7 +44,8 @@ POST https://integrationscore.mum1.exotel.com/v2/integrations/app
 
 ### Code Examples
 
-#### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/integrations/app' \
@@ -57,7 +61,8 @@ curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/inte
 }'
 ```
 
-#### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -83,7 +88,8 @@ response = requests.post(url, headers=headers, data=payload)
 print(response.json())
 ```
 
-#### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const request = require('request');
@@ -111,6 +117,9 @@ request(options, function (error, response, body) {
   }
 });
 ```
+
+</TabItem>
+</Tabs>
 
 ### Response
 
@@ -160,14 +169,16 @@ GET https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=app
 
 ### Code Examples
 
-#### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl --location --request GET 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=app' \
 --header 'Authorization: <app_auth_token>'
 ```
 
-#### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -181,6 +192,9 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.json())
 ```
+
+</TabItem>
+</Tabs>
 
 ### Response
 
@@ -223,12 +237,16 @@ GET https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer
 
 ### Code Examples
 
-#### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl --location --request GET 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer' \
 --header 'Authorization: <customer_auth_token>'
 ```
+
+</TabItem>
+</Tabs>
 
 ### Response
 
@@ -273,12 +291,16 @@ DELETE https://integrationscore.mum1.exotel.com/v2/integrations/app
 
 ### Code Examples
 
-#### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl --location --request DELETE 'https://integrationscore.mum1.exotel.com/v2/integrations/app' \
 --header 'Authorization: <app_auth_token>'
 ```
+
+</TabItem>
+</Tabs>
 
 ### Response
 

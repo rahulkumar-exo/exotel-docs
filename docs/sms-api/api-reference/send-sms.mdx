@@ -4,6 +4,8 @@ title: Send SMS
 sidebar_label: Send SMS
 sidebar_position: 1
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 
 # Send SMS
@@ -33,7 +35,8 @@ POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/Sms/send
 
 ## Code Examples
 
-### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/send \
@@ -44,7 +47,8 @@ curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/
   -d "DltTemplateId=9876543210"
 ```
 
-### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const request = require('request');
@@ -68,7 +72,8 @@ request(options, function (error, response, body) {
 });
 ```
 
-### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -89,7 +94,8 @@ response = requests.post(
 print(response.json())
 ```
 
-### PHP
+</TabItem>
+<TabItem value="php" label="PHP">
 
 ```php
 <?php
@@ -109,7 +115,8 @@ $response = Requests::post(
 ?>
 ```
 
-### Ruby
+</TabItem>
+<TabItem value="ruby" label="Ruby">
 
 ```ruby
 require 'net/http'
@@ -131,6 +138,9 @@ end
 
 puts response.body
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

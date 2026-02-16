@@ -3,6 +3,8 @@ id: voicelogs
 title: Voicelogs
 sidebar_label: Voicelogs
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Voicelogs
 
@@ -29,11 +31,17 @@ GET /v4/accounts/<account_sid>/voicelogs
 
 ### Example Request
 
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
 ```bash
 curl -X GET \
   'https://ccm-api.exotel.com/v4/accounts/<account_sid>/voicelogs?start_time=2024-06-01T00:00:00Z&end_time=2024-06-30T23:59:59Z&limit=50' \
   -H 'Authorization: Bearer <session_token>'
 ```
+
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -49,6 +57,9 @@ response = requests.get(
     }
 )
 ```
+
+</TabItem>
+</Tabs>
 
 ### Response
 

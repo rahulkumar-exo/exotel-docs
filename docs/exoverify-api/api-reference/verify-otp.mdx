@@ -5,6 +5,9 @@ sidebar_label: Verify OTP
 sidebar_position: 2
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Verify OTP
 
 Validate the OTP code entered by the user against the verification that was started.
@@ -30,7 +33,8 @@ POST https://exoverify.exotel.com/v2/accounts/{account_sid}/verifications/sms/{v
 
 ## Code Examples
 
-### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST "https://exoverify.exotel.com/v2/accounts/<account_sid>/verifications/sms/<verification_id>" \
@@ -39,7 +43,8 @@ curl -X POST "https://exoverify.exotel.com/v2/accounts/<account_sid>/verificatio
   -d '{ "OTP": "123456" }'
 ```
 
-### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -59,7 +64,8 @@ response = requests.post(
 print(response.json())
 ```
 
-### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const axios = require('axios');
@@ -77,6 +83,9 @@ axios.post(
   }
 ).then(res => console.log(res.data));
 ```
+
+</TabItem>
+</Tabs>
 
 ## Success Response
 

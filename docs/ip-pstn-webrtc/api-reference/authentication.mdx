@@ -5,6 +5,9 @@ sidebar_label: Authentication
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Create Authentication Token
 
 Generate a bearer token for authenticating subsequent API calls. Tokens are valid for **90 days**.
@@ -31,7 +34,8 @@ POST https://integrationscore.mum1.exotel.com/v2/integrations/token
 
 ## Code Examples
 
-### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/integrations/token' \
@@ -43,7 +47,8 @@ curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/inte
 }'
 ```
 
-### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const request = require('request');
@@ -68,7 +73,8 @@ request(options, function (error, response, body) {
 });
 ```
 
-### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -90,7 +96,8 @@ response = requests.post(url, headers=headers, data=payload)
 print(response.json())
 ```
 
-### PHP
+</TabItem>
+<TabItem value="php" label="PHP">
 
 ```php
 <?php
@@ -115,6 +122,9 @@ curl_close($curl);
 echo $response;
 ?>
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

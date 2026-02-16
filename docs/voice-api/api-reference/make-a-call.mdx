@@ -5,6 +5,9 @@ sidebar_label: Make a Call
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Make a Call — Agent to Customer
 
 Initiate an outbound call connecting an agent (user) to a customer. The agent is called first on their configured device (phone/SIP), then the customer is dialed.
@@ -83,7 +86,8 @@ POST /v2/accounts/<account_sid>/calls
 
 ## Code Examples
 
-### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST 'https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<account_sid>/calls' \
@@ -97,7 +101,8 @@ curl -X POST 'https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<acco
   }'
 ```
 
-### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -125,7 +130,8 @@ response = requests.post(
 print(response.json())
 ```
 
-### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const axios = require('axios');
@@ -149,6 +155,9 @@ const response = await axios.post(
 
 console.log(response.data);
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

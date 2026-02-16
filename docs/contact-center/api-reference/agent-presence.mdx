@@ -3,6 +3,8 @@ id: agent-presence
 title: Agent Presence Monitoring
 sidebar_label: Agent Presence
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Agent Presence Monitoring
 
@@ -32,12 +34,18 @@ GET /v2/accounts/<account_sid>/agents/presence
 
 ### Example Request
 
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
 ```bash
 curl -X GET \
   'https://ccm-api.exotel.com/v2/accounts/<account_sid>/agents/presence?status=available' \
   -H 'Authorization: Bearer <access_token>' \
   -H 'Content-Type: application/json'
 ```
+
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -52,6 +60,9 @@ response = requests.get(
 
 print(response.json())
 ```
+
+</TabItem>
+</Tabs>
 
 ### Response
 

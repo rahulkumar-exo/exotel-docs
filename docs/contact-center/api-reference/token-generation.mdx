@@ -3,6 +3,8 @@ id: token-generation
 title: Token Generation
 sidebar_label: Token Generation
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Token Generation
 
@@ -30,12 +32,18 @@ POST /v2/accounts/<account_sid>/configuration/basicauth
 
 ## Example Request
 
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
 ```bash
 curl -X POST \
   'https://ccm-api.exotel.com/v2/accounts/<account_sid>/configuration/basicauth' \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Basic <base64_encoded_credentials>'
 ```
+
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -57,6 +65,9 @@ response = requests.post(
 
 print(response.json())
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

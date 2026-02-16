@@ -5,6 +5,9 @@ sidebar_label: Send Message
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Send WhatsApp Message
 
 Send text, media, template, or interactive messages via WhatsApp.
@@ -78,7 +81,8 @@ POST https://<api_key>:<api_token><subdomain>/v2/accounts/<account_sid>/messages
 
 ## Code Examples
 
-### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST "https://<your_api_key>:<your_api_token>@api.exotel.com/v2/accounts/<your_sid>/messages" \
@@ -95,7 +99,8 @@ curl -X POST "https://<your_api_key>:<your_api_token>@api.exotel.com/v2/accounts
   }'
 ```
 
-### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -121,7 +126,8 @@ response = requests.post(
 print(response.json())
 ```
 
-### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const axios = require('axios');
@@ -142,6 +148,9 @@ axios.post(
   payload
 ).then(res => console.log(res.data));
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

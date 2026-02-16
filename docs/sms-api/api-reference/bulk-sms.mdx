@@ -5,6 +5,9 @@ sidebar_label: Bulk SMS
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Bulk SMS
 
 Send the same message to multiple recipients, or unique messages to different recipients in a single API call.
@@ -27,7 +30,8 @@ Same as [Send SMS](/docs/sms-api/api-reference/send-sms), except `To` accepts co
 |-----------|-----------|-------------|
 | `To`      | Mandatory | Comma-separated phone numbers |
 
-### cURL Example
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/send \
@@ -36,6 +40,9 @@ curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/
   -d "Body=Flash sale! 50% off all items today." \
   -d "DltEntityId=1234567890"
 ```
+
+</TabItem>
+</Tabs>
 
 ---
 
@@ -70,7 +77,8 @@ POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/Sms/bulk
 }
 ```
 
-### cURL Example
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/bulksend \
@@ -93,7 +101,8 @@ curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/
   }'
 ```
 
-### Python Example
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -124,6 +133,9 @@ response = requests.post(
 
 print(response.json())
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

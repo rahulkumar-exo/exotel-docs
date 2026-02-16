@@ -3,6 +3,8 @@ id: upload-contacts
 title: Upload Contacts via CSV
 sidebar_label: Upload Contacts
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Upload Contacts via CSV
 
@@ -61,6 +63,9 @@ phone_number,first_name,last_name,email,company,tag
 
 ## Example Request
 
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
 ```bash
 curl -X POST \
   'https://ccm-api.exotel.com/v2/accounts/<account_sid>/contacts/upload' \
@@ -68,6 +73,9 @@ curl -X POST \
   -F 'file=@contacts.csv' \
   -F 'duplicate_action=skip'
 ```
+
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -91,6 +99,9 @@ response = requests.post(
 
 print(response.json())
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

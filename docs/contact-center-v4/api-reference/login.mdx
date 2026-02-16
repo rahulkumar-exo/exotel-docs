@@ -3,6 +3,8 @@ id: login
 title: Login
 sidebar_label: Login
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Login API
 
@@ -45,6 +47,9 @@ POST /v4/accounts/<account_sid>/login
 
 ## Example Request
 
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
 ```bash
 curl -X POST \
   'https://ccm-api.exotel.com/v4/accounts/<account_sid>/login' \
@@ -55,6 +60,9 @@ curl -X POST \
     "account_sid": "your_account_sid"
   }'
 ```
+
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -70,6 +78,9 @@ response = requests.post(
 
 session_token = response.json()["response"]["data"]["session_token"]
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

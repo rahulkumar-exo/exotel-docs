@@ -4,6 +4,9 @@ title: Outgoing Call to a Call Flow
 sidebar_label: Call to Flow
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Outgoing Call to a Call Flow
 
 Make an outbound call and connect the recipient to an IVR flow or applet instead of another phone number. The `From` number is called first, and once they answer, they are routed to the specified call flow.
@@ -40,7 +43,8 @@ The `Url` parameter should point to a call flow (applet) configured in your Exot
 
 ## Code Examples
 
-### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST 'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect' \
@@ -49,7 +53,8 @@ curl -X POST 'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts
   -d 'Url=http://my.exotel.com/<your_sid>/exoml/start_voice/926'
 ```
 
-### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -70,7 +75,8 @@ response = requests.post(
 print(response.json())
 ```
 
-### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const request = require('request');
@@ -92,7 +98,8 @@ request(options, function (error, response, body) {
 });
 ```
 
-### PHP
+</TabItem>
+<TabItem value="php" label="PHP">
 
 ```php
 <?php
@@ -113,6 +120,9 @@ curl_close($ch);
 echo $response;
 ?>
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

@@ -359,6 +359,12 @@ const sidebars: SidebarsConfig = {
   faqsSidebar: [
     'faqs/overview',
   ],
+
+  referencesSidebar: [
+    'references/error-codes',
+    'references/webhooks',
+    'references/changelog',
+  ],
 };
 
 export default sidebars;

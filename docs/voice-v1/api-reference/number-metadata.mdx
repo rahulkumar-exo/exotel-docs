@@ -4,6 +4,9 @@ title: Number Metadata
 sidebar_label: Number Metadata
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Number Metadata
 
 Retrieve telecom information about Indian phone numbers, including the telecom circle, operator, number type, and DND (Do Not Disturb) status.
@@ -31,13 +34,15 @@ Append `.json` for JSON response format.
 
 ## Code Examples
 
-### cURL
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl "https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Numbers/09876543210.json"
 ```
 
-### Python
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -49,7 +54,8 @@ response = requests.get(
 print(response.json())
 ```
 
-### Node.js
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
 
 ```javascript
 const request = require('request');
@@ -63,6 +69,9 @@ request.get(
   }
 );
 ```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

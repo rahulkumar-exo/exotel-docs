@@ -121,6 +121,7 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'rcsOmnichannelSidebar', label: 'RCS Omnichannel' },
             { type: 'docSidebar', sidebarId: 'urlShorteningSidebar', label: 'URL Shortening' },
             { type: 'docSidebar', sidebarId: 'mcpServerSidebar', label: 'Exotel MCP Server' },
+            { type: 'docSidebar', sidebarId: 'referencesSidebar', label: 'Error Codes & Webhooks' },
             { type: 'docSidebar', sidebarId: 'faqsSidebar', label: 'FAQs' },
           ],
         },
@@ -192,7 +193,7 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      additionalLanguages: ['bash', 'json', 'php', 'ruby', 'python'],
+      additionalLanguages: ['bash', 'json', 'php', 'ruby', 'python', 'go'],
     },
   } satisfies Preset.ThemeConfig,
 };

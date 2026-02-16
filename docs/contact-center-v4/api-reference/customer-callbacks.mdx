@@ -3,6 +3,8 @@ id: customer-callbacks
 title: Customer Callbacks
 sidebar_label: Customer Callbacks
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Customer Callbacks
 
@@ -47,6 +49,9 @@ POST /v4/accounts/<account_sid>/callbacks
 
 ### Example Request
 
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
 ```bash
 curl -X POST \
   'https://ccm-api.exotel.com/v4/accounts/<account_sid>/callbacks' \
@@ -59,6 +64,9 @@ curl -X POST \
     "team_id": "support_team"
   }'
 ```
+
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python
 import requests
@@ -77,6 +85,9 @@ response = requests.post(
     }
 )
 ```
+
+</TabItem>
+</Tabs>
 
 ### Response
 
