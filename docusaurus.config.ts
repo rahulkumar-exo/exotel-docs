@@ -126,6 +126,12 @@ const config: Config = {
           ],
         },
         {
+          type: 'doc',
+          docId: 'references/changelog',
+          label: 'Changelog',
+          position: 'right',
+        },
+        {
           href: 'https://my.exotel.com/auth/register',
           label: 'Create Account',
           position: 'right',

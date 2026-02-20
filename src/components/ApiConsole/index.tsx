@@ -211,7 +211,7 @@ export default function ApiConsole({ method, path, params, contentType = 'form' 
   const hasRequiredCreds = creds.apiKey && creds.apiToken && creds.accountSid;
 
   return (
-    <div className={styles.console}>
+    <div className={styles.console} id="try-it">
       <button
         className={`${styles.toggleBtn} ${isOpen ? styles.toggleBtnOpen : ''}`}
         onClick={() => setIsOpen(!isOpen)}
