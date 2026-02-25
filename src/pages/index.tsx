@@ -99,19 +99,19 @@ const products = [
 
 const quickLinks = [
   {
-    title: 'Authentication',
-    description: 'Set up your API credentials',
-    link: '/docs/voice-v1/overview',
+    title: '🚀 Send Your First SMS',
+    description: '5-minute quickstart guide',
+    link: '/docs/sms-api/quickstart',
   },
   {
-    title: 'Make a Call',
-    description: 'Connect two phone numbers via API',
-    link: '/docs/voice-v1/api-reference/connect-two-numbers',
+    title: '📞 Make Your First Call',
+    description: '5-minute quickstart guide',
+    link: '/docs/voice-v1/quickstart',
   },
   {
-    title: 'Send SMS',
-    description: 'Send single or bulk SMS messages',
-    link: '/docs/sms-api/api-reference/send-sms',
+    title: '🔐 Authentication',
+    description: 'API credentials & security',
+    link: '/docs/references/authentication',
   },
   {
     title: 'Send WhatsApp Message',
@@ -124,9 +124,9 @@ const quickLinks = [
     link: '/docs/exoverify-api/overview',
   },
   {
-    title: 'Create Campaign',
-    description: 'Outbound call campaigns with IVR',
-    link: '/docs/campaigns/api-reference/create-campaign',
+    title: 'Error Codes & Webhooks',
+    description: 'Troubleshoot errors, webhook payloads',
+    link: '/docs/references/error-codes',
   },
 ];
 
