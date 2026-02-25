@@ -79,23 +79,29 @@ print(response.json())
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const request = require('request');
+const apiKey = '<your_api_key>';
+const apiToken = '<your_api_token>';
+const accountSid = '<your_sid>';
 
-const options = {
-  url: 'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect',
-  method: 'POST',
-  form: {
-    From: '09876543210',
-    CallerId: '0XXXXXX4890',
-    Url: 'http://my.exotel.com/<your_sid>/exoml/start_voice/926'
-  }
-};
+const url = `https://api.exotel.com/v1/Accounts/${accountSid}/Calls/connect`;
 
-request(options, function (error, response, body) {
-  if (!error) {
-    console.log(body);
-  }
+const params = new URLSearchParams({
+  From: '09876543210',
+  CallerId: '0XXXXXX4890',
+  Url: `http://my.exotel.com/${accountSid}/exoml/start_voice/926`,
 });
+
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  body: params,
+});
+
+const data = await response.json();
+console.log(data);
 ```
 
 </TabItem>

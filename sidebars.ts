@@ -29,6 +29,7 @@ const sidebars: SidebarsConfig = {
         { type: 'link', label: '→ Voice v3', href: '/docs/voice-v3/overview' },
       ],
     },
+    'voice-v1/quickstart',
     'voice-v1/overview',
     'voice-v1/api-reference/connect-two-numbers',
     'voice-v1/api-reference/connect-to-flow',
@@ -73,6 +74,7 @@ const sidebars: SidebarsConfig = {
   ],
 
   smsApiSidebar: [
+    'sms-api/quickstart',
     'sms-api/overview',
     {
       type: 'category',
@@ -361,6 +363,7 @@ const sidebars: SidebarsConfig = {
   ],
 
   referencesSidebar: [
+    'references/authentication',
     'references/error-codes',
     'references/webhooks',
     'references/changelog',

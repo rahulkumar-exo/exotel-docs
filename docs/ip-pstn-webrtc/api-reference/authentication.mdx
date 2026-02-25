@@ -51,26 +51,20 @@ curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/inte
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const request = require('request');
+const url = 'https://integrationscore.mum1.exotel.com/v2/integrations/token';
 
-const options = {
+const response = await fetch(url, {
   method: 'POST',
-  url: 'https://integrationscore.mum1.exotel.com/v2/integrations/token',
-  headers: {
-    'Content-Type': 'application/json'
-  },
+  headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     Id: '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0',
     Secret: '5b8215f7-8595-42c0-9b63-404bcc474f94',
-    Entity: 'customer'
-  })
-};
-
-request(options, function (error, response, body) {
-  if (!error) {
-    console.log(body);
-  }
+    Entity: 'customer',
+  }),
 });
+
+const data = await response.json();
+console.log(data);
 ```
 
 </TabItem>

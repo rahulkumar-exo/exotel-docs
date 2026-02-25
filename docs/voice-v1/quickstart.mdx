@@ -1,0 +1,247 @@
+---
+id: quickstart
+title: "Quickstart: Make Your First Call"
+sidebar_label: Quickstart
+sidebar_position: 0
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Make Your First Call
+
+Connect two phone numbers with Exotel in under 5 minutes. This guide walks you through making a click-to-call API request that calls one phone first, then connects it to another.
+
+## How It Works
+
+1. You make a **POST** request to Exotel's API
+2. Exotel calls the **From** number first (e.g., your agent)
+3. When they pick up, Exotel dials the **To** number (e.g., the customer)
+4. Both parties are connected through your **ExoPhone** (virtual number)
+
+:::info Why click-to-call?
+This pattern is ideal for: sales teams calling leads, delivery agents calling customers, and support callbacks. The customer sees your ExoPhone number — not the agent's personal number.
+:::
+
+## Prerequisites
+
+- An Exotel account ([Sign up here](https://my.exotel.com/auth/register))
+- API credentials (API Key, API Token, Account SID) — see [Authentication](/docs/references/authentication)
+- An ExoPhone (virtual phone number) — purchase from [Dashboard](https://my.exotel.com) or via [ExoPhones API](/docs/exophones/overview)
+
+## Step 1: Set Up Your Credentials
+
+Store your credentials as environment variables:
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="macOS / Linux">
+
+```bash
+export EXOTEL_API_KEY="your_api_key"
+export EXOTEL_API_TOKEN="your_api_token"
+export EXOTEL_ACCOUNT_SID="your_account_sid"
+export EXOTEL_SUBDOMAIN="api.exotel.com"
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Windows">
+
+```bash
+set EXOTEL_API_KEY=your_api_key
+set EXOTEL_API_TOKEN=your_api_token
+set EXOTEL_ACCOUNT_SID=your_account_sid
+set EXOTEL_SUBDOMAIN=api.exotel.com
+```
+
+</TabItem>
+</Tabs>
+
+:::info Which subdomain?
+Use `api.exotel.com` (Singapore) for most accounts, or `api.in.exotel.com` (Mumbai) for India-based accounts.
+:::
+
+## Step 2: Make Your First Call
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -X POST "https://$EXOTEL_API_KEY:$EXOTEL_API_TOKEN@$EXOTEL_SUBDOMAIN/v1/Accounts/$EXOTEL_ACCOUNT_SID/Calls/connect" \
+  -d "From=+919876543210" \
+  -d "To=+919123456789" \
+  -d "CallerId=YOUR_EXOPHONE" \
+  -d "Record=true" \
+  -d "StatusCallback=https://your-server.com/call-status" \
+  -d "StatusCallbackContentType=application/json"
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+// make-call.js — Requires Node.js 18+
+const apiKey = process.env.EXOTEL_API_KEY;
+const apiToken = process.env.EXOTEL_API_TOKEN;
+const accountSid = process.env.EXOTEL_ACCOUNT_SID;
+const subdomain = process.env.EXOTEL_SUBDOMAIN || 'api.exotel.com';
+
+async function makeCall() {
+  const url = `https://${subdomain}/v1/Accounts/${accountSid}/Calls/connect`;
+
+  const params = new URLSearchParams({
+    From: '+919876543210',       // Agent's number (called first)
+    To: '+919123456789',         // Customer's number (called second)
+    CallerId: 'YOUR_EXOPHONE',   // Your virtual phone number
+    Record: 'true',              // Enable call recording
+    StatusCallback: 'https://your-server.com/call-status',
+    StatusCallbackEvents: 'terminal,answered',
+    StatusCallbackContentType: 'application/json',
+  });
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: params,
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log('Call initiated!');
+      console.log('Call SID:', data.Call.Sid);
+      console.log('Status:', data.Call.Status);
+    } else {
+      console.error('Failed:', data);
+    }
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+makeCall();
+```
+
+Run with:
+```bash
+node make-call.js
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+# make_call.py
+import os
+import requests
+
+api_key = os.environ['EXOTEL_API_KEY']
+api_token = os.environ['EXOTEL_API_TOKEN']
+account_sid = os.environ['EXOTEL_ACCOUNT_SID']
+subdomain = os.environ.get('EXOTEL_SUBDOMAIN', 'api.exotel.com')
+
+url = f'https://{subdomain}/v1/Accounts/{account_sid}/Calls/connect'
+
+data = {
+    'From': '+919876543210',       # Agent's number (called first)
+    'To': '+919123456789',         # Customer's number (called second)
+    'CallerId': 'YOUR_EXOPHONE',    # Your virtual phone number
+    'Record': 'true',               # Enable call recording
+    'StatusCallback': 'https://your-server.com/call-status',
+    'StatusCallbackContentType': 'application/json',
+}
+
+response = requests.post(url, data=data, auth=(api_key, api_token))
+
+if response.ok:
+    result = response.json()
+    print('Call initiated!')
+    print('Call SID:', result['Call']['Sid'])
+    print('Status:', result['Call']['Status'])
+else:
+    print('Failed:', response.text)
+```
+
+Run with:
+```bash
+pip install requests
+python make_call.py
+```
+
+</TabItem>
+</Tabs>
+
+## Step 3: Check the Response
+
+A successful request returns:
+
+```json
+{
+  "Call": {
+    "Sid": "c5797dcbaaeed7678c4062a4a3ed2f8a",
+    "DateCreated": "2026-02-25 10:48:33",
+    "AccountSid": "your_sid",
+    "To": "+919123456789",
+    "From": "+919876543210",
+    "PhoneNumberSid": "YOUR_EXOPHONE",
+    "Status": "in-progress",
+    "Direction": "outbound-api",
+    "RecordingUrl": null
+  }
+}
+```
+
+| Field | What it means |
+|-------|--------------|
+| `Sid` | Your unique Call ID — save this to check status later |
+| `Status` | `in-progress` means the call is being dialed |
+| `RecordingUrl` | Populated after the call ends (if `Record=true`) |
+
+:::note Call lifecycle
+The call goes through these states: `queued` → `in-progress` → `completed` (or `failed` / `busy` / `no-answer`). Use [Call Details](/docs/voice-v1/api-reference/call-details) or [StatusCallback](/docs/references/webhooks#voice-call-statuscallback) for the final status.
+:::
+
+## Step 4: Check Call Details (Optional)
+
+After the call ends, retrieve the final status and recording:
+
+```bash
+curl "https://$EXOTEL_API_KEY:$EXOTEL_API_TOKEN@$EXOTEL_SUBDOMAIN/v1/Accounts/$EXOTEL_ACCOUNT_SID/Calls/YOUR_CALL_SID.json"
+```
+
+## Step 5: Handle Status Callbacks (Optional)
+
+If you set a `StatusCallback` URL, Exotel sends a webhook when the call completes:
+
+```json
+{
+  "CallSid": "c5797dcbaaeed7678c4062a4a3ed2f8a",
+  "Status": "completed",
+  "From": "+919876543210",
+  "To": "+919123456789",
+  "Direction": "outbound-api",
+  "Duration": "45",
+  "RecordingUrl": "https://s3-ap-southeast-1.amazonaws.com/...",
+  "StartTime": "2026-02-25 10:48:33",
+  "EndTime": "2026-02-25 10:49:18"
+}
+```
+
+See [Voice Webhooks](/docs/references/webhooks#voice-call-statuscallback) for the full payload reference.
+
+## Enable Call Recording
+
+- Set `Record=true` in your request
+- Recording URL appears in the response and webhook as `RecordingUrl`
+- Use `RecordingChannels=dual` for separate agent/customer audio tracks
+- Formats available: `mp3` (default) or `mp3-hq` for higher quality
+
+## What's Next?
+
+- [Connect Two Numbers — Full API Reference](/docs/voice-v1/api-reference/connect-two-numbers) — All 19 parameters explained
+- [Connect to Flow — Build IVR Systems](/docs/voice-v1/api-reference/connect-to-flow) — Route calls to IVR flows
+- [Call Details — Check Call Status](/docs/voice-v1/api-reference/call-details) — Retrieve call details and recordings
+- [Voice Webhooks](/docs/references/webhooks#voice-call-statuscallback) — Real-time call status updates
+- [Applets — Build Call Flows](/docs/voice-v1/applets/greeting) — IVR menu, voicemail, transfers

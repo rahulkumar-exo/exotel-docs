@@ -64,18 +64,22 @@ print(response.json())
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const request = require('request');
+const apiKey = '<your_api_key>';
+const apiToken = '<your_api_token>';
+const accountSid = '<your_account_sid>';
+const callSid = '<call_sid>';
 
-const options = {
-  method: 'GET',
-  url: `https://${apiKey}:${apiToken}@ccm-api.exotel.com/v3/accounts/${accountSid}/calls/${callSid}`,
-  headers: { 'Content-Type': 'application/json' }
-};
+const url = `https://ccm-api.exotel.com/v3/accounts/${accountSid}/calls/${callSid}`;
 
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-  console.log(body);
+const response = await fetch(url, {
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
 });
+
+const data = await response.json();
+console.log(data);
 ```
 
 </TabItem>

@@ -92,14 +92,13 @@ print(response.json())
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const request = require('request');
+const url = 'https://integrationscore.mum1.exotel.com/v2/integrations/app';
 
-const options = {
+const response = await fetch(url, {
   method: 'POST',
-  url: 'https://integrationscore.mum1.exotel.com/v2/integrations/app',
   headers: {
     'Authorization': '<customer_auth_token>',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   },
   body: JSON.stringify({
     AppName: 'WebRTC',
@@ -107,15 +106,12 @@ const options = {
     ExotelApiKey: 'your_api_key',
     ExotelApiToken: 'your_api_token',
     ExotelDomain: 'mumbai',
-    IsActive: true
-  })
-};
-
-request(options, function (error, response, body) {
-  if (!error) {
-    console.log(body);
-  }
+    IsActive: true,
+  }),
 });
+
+const data = await response.json();
+console.log(data);
 ```
 
 </TabItem>
