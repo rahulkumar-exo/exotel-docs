@@ -8,16 +8,15 @@ interface TryItBannerProps {
 
 export default function TryItBanner({ method, endpoint }: TryItBannerProps) {
   const handleClick = () => {
+    // Dispatch event to tell ApiConsole to open itself
+    window.dispatchEvent(new CustomEvent('tryit-open'));
+
     const el = document.getElementById('try-it');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Auto-expand the console after scrolling
+      // Small delay so the panel renders before we scroll
       setTimeout(() => {
-        const btn = el.querySelector('button');
-        if (btn && !el.querySelector('[class*="panel"]')) {
-          btn.click();
-        }
-      }, 500);
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
   };
 

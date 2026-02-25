@@ -60,6 +60,15 @@ export default function ApiConsole({ method, path, params, contentType = 'form' 
     }
   }, [isOpen]);
 
+  // Listen for "Try it live" banner click to auto-open
+  useEffect(() => {
+    const handleTryItOpen = () => {
+      setIsOpen(true);
+    };
+    window.addEventListener('tryit-open', handleTryItOpen);
+    return () => window.removeEventListener('tryit-open', handleTryItOpen);
+  }, []);
+
   // Initialize default param values
   useEffect(() => {
     const defaults: Record<string, string> = {};
