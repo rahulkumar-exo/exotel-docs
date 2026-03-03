@@ -195,6 +195,10 @@ function HeroBanner() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: question.trim(), history: [] }),
       });
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('AI service is temporarily unavailable. Please try again.');
+      }
       const data = await response.json();
       if (!response.ok || data.error) {
         throw new Error(data.error || `HTTP ${response.status}`);
@@ -513,6 +517,10 @@ function NewsletterSignup() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim() }),
       });
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('Newsletter service is temporarily unavailable. Please try again.');
+      }
       const data = await response.json();
       if (!response.ok) {
         throw new Error(data.error || 'Subscription failed');

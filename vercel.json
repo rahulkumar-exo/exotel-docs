@@ -75,8 +75,6 @@
     { "source": "/faqs", "destination": "/docs/faqs/overview", "permanent": true },
     { "source": "/faq", "destination": "/docs/faqs/overview", "permanent": true },
 
-    { "source": "/api-console", "destination": "/docs/voice-v1/overview", "permanent": true },
-
-    { "source": "/api/:path*", "destination": "/docs/:path*", "permanent": true }
+    { "source": "/api-console", "destination": "/docs/voice-v1/overview", "permanent": true }
   ]
 }
