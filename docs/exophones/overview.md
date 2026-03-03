@@ -1,6 +1,7 @@
 ---
 id: overview
 title: ExoPhones
+description: "Manage Exotel virtual phone numbers. Browse, purchase, assign to flows, and manage ExoPhones via API."
 sidebar_label: Overview
 slug: /exophones/overview
 ---

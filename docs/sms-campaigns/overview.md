@@ -1,6 +1,7 @@
 ---
 id: overview
 title: SMS Campaigns
+description: "Exotel SMS Campaigns API — create and manage bulk SMS campaigns with scheduling and personalization."
 sidebar_label: Overview
 slug: /sms-campaigns/overview
 ---

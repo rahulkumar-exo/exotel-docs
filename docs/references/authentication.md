@@ -1,6 +1,7 @@
 ---
 id: authentication
 title: Authentication & Security
+description: "Exotel API authentication guide. HTTP Basic Auth, API credentials, regional endpoints, and security best practices."
 sidebar_label: Authentication
 sidebar_position: 0
 ---

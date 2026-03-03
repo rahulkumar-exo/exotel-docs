@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Call Campaigns
+description: "Exotel Call Campaigns API — run outbound call campaigns with IVR flows, retries, scheduling, and reporting."
 sidebar_label: Overview
 sidebar_position: 1
 ---

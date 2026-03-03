@@ -1,6 +1,7 @@
 ---
 id: overview
 title: SMS
+description: "Exotel SMS API — send transactional, promotional, and OTP messages with DLT compliance for India."
 sidebar_label: Overview
 sidebar_position: 1
 ---

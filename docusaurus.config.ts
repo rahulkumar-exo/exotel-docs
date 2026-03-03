@@ -42,6 +42,8 @@ const config: Config = {
         searchResultLimits: 8,
         searchBarShortcutHint: true,
         language: ['en'],
+        searchResultContextMaxLength: 50,
+        explicitSearchResultPath: true,
       },
     ],
   ],
@@ -62,7 +64,30 @@ const config: Config = {
     ],
   ],
 
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: { property: 'og:type', content: 'website' },
+    },
+    {
+      tagName: 'meta',
+      attributes: { property: 'og:site_name', content: 'Exotel Developer Docs' },
+    },
+    {
+      tagName: 'meta',
+      attributes: { property: 'twitter:card', content: 'summary_large_image' },
+    },
+    {
+      tagName: 'link',
+      attributes: { rel: 'canonical', href: 'https://developer.exotel.com' },
+    },
+  ],
+
   themeConfig: {
+    metadata: [
+      { name: 'keywords', content: 'Exotel API, Voice API, SMS API, WhatsApp API, cloud telephony, CPaaS, developer documentation' },
+      { name: 'robots', content: 'index, follow' },
+    ],
     image: 'img/exotel-social-card.jpg',
     colorMode: {
       defaultMode: 'light',

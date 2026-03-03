@@ -20,5 +20,63 @@
     "api/newsletter.ts": {
       "maxDuration": 10
     }
-  }
+  },
+  "redirects": [
+    { "source": "/api/", "destination": "/docs/voice-v1/overview", "permanent": true },
+    { "source": "/api/voice", "destination": "/docs/voice-v1/overview", "permanent": true },
+    { "source": "/api/voice/overview", "destination": "/docs/voice-v1/overview", "permanent": true },
+    { "source": "/api/voice/make-a-call", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
+    { "source": "/api/voice/connect-to-flow", "destination": "/docs/voice-v1/api-reference/connect-to-flow", "permanent": true },
+    { "source": "/api/voice/call-details", "destination": "/docs/voice-v1/api-reference/call-details", "permanent": true },
+    { "source": "/api/voice/incoming-calls", "destination": "/docs/voice-v1/api-reference/incoming-call", "permanent": true },
+    { "source": "/api/voice/status-callback", "destination": "/docs/voice-v1/api-reference/status-callback", "permanent": true },
+    { "source": "/api/voice/number-metadata", "destination": "/docs/voice-v1/api-reference/number-metadata", "permanent": true },
+
+    { "source": "/api/applets/greeting", "destination": "/docs/voice-v1/applets/greeting", "permanent": true },
+    { "source": "/api/applets/connect", "destination": "/docs/voice-v1/applets/connect", "permanent": true },
+    { "source": "/api/applets/passthru", "destination": "/docs/voice-v1/applets/passthru", "permanent": true },
+    { "source": "/api/applets/transfer", "destination": "/docs/voice-v1/applets/transfer", "permanent": true },
+    { "source": "/api/applets/ivr-menu", "destination": "/docs/voice-v1/applets/ivr-menu", "permanent": true },
+    { "source": "/api/applets/voicemail", "destination": "/docs/voice-v1/applets/voicemail", "permanent": true },
+    { "source": "/api/applets/hangup", "destination": "/docs/voice-v1/applets/hangup", "permanent": true },
+    { "source": "/api/applets/sms", "destination": "/docs/voice-v1/applets/sms", "permanent": true },
+    { "source": "/api/applets/email", "destination": "/docs/voice-v1/applets/email", "permanent": true },
+
+    { "source": "/api/sms", "destination": "/docs/sms-api/overview", "permanent": true },
+    { "source": "/api/sms/send-sms", "destination": "/docs/sms-api/api-reference/send-sms", "permanent": true },
+    { "source": "/api/sms/sms-details", "destination": "/docs/sms-api/api-reference/sms-details", "permanent": true },
+    { "source": "/api/sms/bulk-sms", "destination": "/docs/sms-api/api-reference/bulk-sms", "permanent": true },
+
+    { "source": "/api/whatsapp", "destination": "/docs/whatsapp-api/overview", "permanent": true },
+    { "source": "/api/whatsapp/send-message", "destination": "/docs/whatsapp-api/api-reference/send-message", "permanent": true },
+
+    { "source": "/api/exoverify", "destination": "/docs/exoverify-api/overview", "permanent": true },
+
+    { "source": "/api/exophones", "destination": "/docs/exophones/overview", "permanent": true },
+
+    { "source": "/api/heartbeat", "destination": "/docs/heartbeat/overview", "permanent": true },
+
+    { "source": "/api/campaigns", "destination": "/docs/campaigns/overview", "permanent": true },
+    { "source": "/api/sms-campaigns", "destination": "/docs/sms-campaigns/overview", "permanent": true },
+
+    { "source": "/api/leadassist", "destination": "/docs/lead-assist/overview", "permanent": true },
+    { "source": "/api/lead-assist", "destination": "/docs/lead-assist/overview", "permanent": true },
+
+    { "source": "/api/users", "destination": "/docs/users/overview", "permanent": true },
+
+    { "source": "/api/ccm", "destination": "/docs/contact-center/overview", "permanent": true },
+    { "source": "/api/contact-center", "destination": "/docs/contact-center/overview", "permanent": true },
+
+    { "source": "/api/authentication", "destination": "/docs/references/authentication", "permanent": true },
+
+    { "source": "/usecase", "destination": "/docs/use-cases/overview", "permanent": true },
+    { "source": "/use-cases", "destination": "/docs/use-cases/overview", "permanent": true },
+
+    { "source": "/faqs", "destination": "/docs/faqs/overview", "permanent": true },
+    { "source": "/faq", "destination": "/docs/faqs/overview", "permanent": true },
+
+    { "source": "/api-console", "destination": "/docs/voice-v1/overview", "permanent": true },
+
+    { "source": "/api/:path*", "destination": "/docs/:path*", "permanent": true }
+  ]
 }

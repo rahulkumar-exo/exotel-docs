@@ -518,7 +518,7 @@ function NewsletterSignup() {
         throw new Error(data.error || 'Subscription failed');
       }
       setStatus('success');
-      setMessage('Thanks for subscribing! Check your inbox for confirmation.');
+      setMessage(data.message || 'Thanks for subscribing! You\'ll receive developer updates and API announcements.');
       setEmail('');
     } catch (err) {
       setStatus('error');

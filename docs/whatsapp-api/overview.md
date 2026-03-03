@@ -1,6 +1,7 @@
 ---
 id: overview
 title: WhatsApp - Messaging API
+description: "Exotel WhatsApp Business API — send text, media, templates, and interactive messages programmatically."
 sidebar_label: Overview
 sidebar_position: 1
 ---

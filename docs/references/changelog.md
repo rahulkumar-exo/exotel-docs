@@ -1,6 +1,7 @@
 ---
 id: changelog
 title: Changelog
+description: "Exotel API changelog — monthly updates, new features, and platform improvements."
 sidebar_label: Changelog
 sidebar_position: 3
 ---

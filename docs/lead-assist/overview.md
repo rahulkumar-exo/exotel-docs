@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Lead Assist (ExoBridge - GreenPin)
+description: "Exotel Lead Assist (GreenPin) — privacy-protected communication with PIN verification and virtual numbers."
 sidebar_label: Overview
 slug: /lead-assist/overview
 ---

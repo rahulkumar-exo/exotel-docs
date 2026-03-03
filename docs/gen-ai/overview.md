@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Gen AI
+description: "Exotel Gen AI — AI-powered call analysis with transcription, sentiment analysis, and summarization."
 sidebar_label: Overview
 slug: /gen-ai/overview
 ---

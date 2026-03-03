@@ -1,6 +1,7 @@
 ---
 id: error-codes
 title: Error Code Dictionary
+description: "Exotel API error codes — HTTP, Voice, SMS, WhatsApp, and Contact Center error reference with fixes."
 sidebar_label: Error Codes
 sidebar_position: 1
 ---

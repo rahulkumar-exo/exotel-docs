@@ -1,6 +1,7 @@
 ---
 id: webhooks
 title: Webhooks & Callbacks
+description: "Exotel webhook reference — Voice, SMS, WhatsApp, Campaign, and Heartbeat event payloads and configuration."
 sidebar_label: Webhooks & Callbacks
 sidebar_position: 2
 ---

@@ -1,6 +1,7 @@
 ---
 id: overview
 title: ExoVerify
+description: "Exotel ExoVerify API — verify phone numbers with SMS OTP in 2 API calls. Secure user authentication."
 sidebar_label: Overview
 sidebar_position: 1
 ---

@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Contact Center APIs v6
+description: "Exotel Contact Center v6 API — build custom agent interfaces with outbound calling and call management."
 sidebar_label: Overview
 slug: /contact-center/overview
 ---

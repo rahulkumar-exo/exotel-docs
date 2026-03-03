@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Users
+description: "Manage Exotel contact center agents, devices, roles, and SIP configurations via the Users API."
 sidebar_label: Overview
 slug: /users/overview
 ---

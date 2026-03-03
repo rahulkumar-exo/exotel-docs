@@ -1,6 +1,7 @@
 ---
 sidebar_label: Overview
 title: "Use Cases & Implementation Guides"
+description: "Exotel implementation guides — dashboards, dialers, campaigns, and interactive SMS with code examples."
 sidebar_position: 0
 ---
 

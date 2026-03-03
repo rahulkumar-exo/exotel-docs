@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Voice v1
+description: "Exotel Voice v1 API — make calls, build IVR flows, connect numbers, and manage call routing programmatically."
 sidebar_label: Overview
 slug: /voice-v1/overview
 ---

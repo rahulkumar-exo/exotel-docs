@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Heartbeat
+description: "Exotel Heartbeat API — real-time ExoPhone health monitoring with webhook notifications."
 sidebar_label: Overview
 slug: /heartbeat/overview
 ---
