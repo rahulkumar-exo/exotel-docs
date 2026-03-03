@@ -16,6 +16,9 @@
     },
     "api/proxy.js": {
       "maxDuration": 15
+    },
+    "api/newsletter.ts": {
+      "maxDuration": 10
     }
   }
 }

@@ -1,0 +1,724 @@
+---
+sidebar_label: Call Monitoring & Visualization
+title: "Call Monitoring & Visualization"
+sidebar_position: 2
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Call Monitoring & Visualization
+
+Build a plug-and-play reporting solution for monitoring sales, support, and campaign call performance with real-time data from Exotel APIs.
+
+**Tags:** Data, Call Monitoring
+
+## What You'll Build
+
+A call monitoring system that:
+
+- Fetches call details with date range, status, and direction filters
+- Parses call dispositions (completed, busy, no-answer, failed) for reporting
+- Generates chart-ready data: calls per agent, average handle time, call disposition breakdown
+- Receives real-time call status updates via webhooks
+
+```
+┌────────────────────────────────────────────────────────────┐
+│  Call Performance Report — Jan 15, 2025                    │
+│                                                            │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
+│  │  Completed   │  │  No Answer   │  │    Failed    │     │
+│  │    1,024     │  │     189      │  │      34      │     │
+│  └──────────────┘  └──────────────┘  └──────────────┘     │
+│                                                            │
+│  Agent Performance        │  Avg Handle Time by Hour       │
+│  Agent A: 142 calls       │  9AM: 3m 12s                   │
+│  Agent B: 128 calls       │  10AM: 2m 45s                  │
+│  Agent C: 115 calls       │  11AM: 4m 03s                  │
+└────────────────────────────────────────────────────────────┘
+```
+
+## Prerequisites
+
+- An Exotel account ([Sign up here](https://my.exotel.com/auth/register))
+- API credentials (API Key, API Token, Account SID) — see [Authentication](/docs/references/authentication)
+- Node.js 18+ or Python 3.7+
+- A publicly accessible URL for status callback webhooks (use [ngrok](https://ngrok.com) for development)
+
+## Step 1: Fetch Call Details with Filters
+
+Query the Bulk Call Details API to retrieve call records for a specific date range. The API supports filtering by status, direction, duration, and phone number.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const API_KEY = process.env.EXOTEL_API_KEY;
+const API_TOKEN = process.env.EXOTEL_API_TOKEN;
+const ACCOUNT_SID = process.env.EXOTEL_ACCOUNT_SID;
+const SUBDOMAIN = process.env.EXOTEL_SUBDOMAIN || 'api.exotel.com';
+
+const authHeader = 'Basic ' + Buffer.from(API_KEY + ':' + API_TOKEN).toString('base64');
+
+async function fetchCallsByDateRange(startDate, endDate, filters = {}) {
+  const params = new URLSearchParams({
+    DateCreated: `gte:${startDate} 00:00:00;lte:${endDate} 23:59:59`,
+    PageSize: '100',
+    SortBy: 'DateCreated:desc',
+  });
+
+  // Apply optional filters
+  if (filters.status) params.set('Status', filters.status);
+  if (filters.direction) params.set('Direction', filters.direction);
+  if (filters.phoneNumber) params.set('PhoneNumber', filters.phoneNumber);
+  if (filters.minDuration) params.set('Duration', `gte:${filters.minDuration}s`);
+
+  const url = `https://${SUBDOMAIN}/v1/Accounts/${ACCOUNT_SID}/Calls.json?${params}`;
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: { 'Authorization': authHeader },
+  });
+
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+
+  return response.json();
+}
+
+// Paginate through all results
+async function fetchAllCallsPaginated(startDate, endDate, filters = {}) {
+  let allCalls = [];
+  const params = new URLSearchParams({
+    DateCreated: `gte:${startDate} 00:00:00;lte:${endDate} 23:59:59`,
+    PageSize: '100',
+  });
+
+  if (filters.status) params.set('Status', filters.status);
+  if (filters.direction) params.set('Direction', filters.direction);
+
+  let url = `https://${SUBDOMAIN}/v1/Accounts/${ACCOUNT_SID}/Calls.json?${params}`;
+
+  while (url) {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: { 'Authorization': authHeader },
+    });
+    const data = await response.json();
+    allCalls = allCalls.concat(data.Calls || []);
+
+    url = data.Metadata?.NextPageUri
+      ? `https://${SUBDOMAIN}${data.Metadata.NextPageUri}`
+      : null;
+  }
+
+  return allCalls;
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import os
+import requests
+
+API_KEY = os.environ["EXOTEL_API_KEY"]
+API_TOKEN = os.environ["EXOTEL_API_TOKEN"]
+ACCOUNT_SID = os.environ["EXOTEL_ACCOUNT_SID"]
+SUBDOMAIN = os.environ.get("EXOTEL_SUBDOMAIN", "api.exotel.com")
+
+def fetch_calls_by_date_range(start_date, end_date, filters=None):
+    """Fetch call records for a date range with optional filters."""
+    filters = filters or {}
+    url = f"https://{SUBDOMAIN}/v1/Accounts/{ACCOUNT_SID}/Calls.json"
+    params = {
+        "DateCreated": f"gte:{start_date} 00:00:00;lte:{end_date} 23:59:59",
+        "PageSize": 100,
+        "SortBy": "DateCreated:desc",
+    }
+
+    if filters.get("status"):
+        params["Status"] = filters["status"]
+    if filters.get("direction"):
+        params["Direction"] = filters["direction"]
+    if filters.get("phone_number"):
+        params["PhoneNumber"] = filters["phone_number"]
+    if filters.get("min_duration"):
+        params["Duration"] = f"gte:{filters['min_duration']}s"
+
+    response = requests.get(url, auth=(API_KEY, API_TOKEN), params=params)
+    response.raise_for_status()
+    return response.json()
+
+def fetch_all_calls_paginated(start_date, end_date, filters=None):
+    """Fetch all call records using cursor-based pagination."""
+    filters = filters or {}
+    all_calls = []
+    url = f"https://{SUBDOMAIN}/v1/Accounts/{ACCOUNT_SID}/Calls.json"
+    params = {
+        "DateCreated": f"gte:{start_date} 00:00:00;lte:{end_date} 23:59:59",
+        "PageSize": 100,
+    }
+
+    if filters.get("status"):
+        params["Status"] = filters["status"]
+    if filters.get("direction"):
+        params["Direction"] = filters["direction"]
+
+    while url:
+        response = requests.get(url, auth=(API_KEY, API_TOKEN), params=params)
+        response.raise_for_status()
+        data = response.json()
+        all_calls.extend(data.get("Calls", []))
+
+        next_page = data.get("Metadata", {}).get("NextPageUri")
+        url = f"https://{SUBDOMAIN}{next_page}" if next_page else None
+        params = None  # Cursor URL includes params
+
+    return all_calls
+```
+
+</TabItem>
+</Tabs>
+
+### Available Filters
+
+| Parameter | Example | Description |
+|-----------|---------|-------------|
+| `Status` | `completed` | `completed`, `failed`, `busy`, `no-answer` |
+| `Direction` | `inbound` | `inbound`, `outbound-dial`, `outbound-api` |
+| `Duration` | `gte:10s;lte:300s` | Filter by call duration range |
+| `PhoneNumber` | `0XXXXXX4890` | Filter by ExoPhone number |
+
+## Step 2: Parse Call Status for Reporting
+
+Build a reporting layer that categorizes calls by disposition and computes key performance indicators (KPIs).
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+function generateCallReport(calls) {
+  const report = {
+    summary: { completed: 0, busy: 0, noAnswer: 0, failed: 0, total: 0 },
+    agentMetrics: {},       // Calls grouped by From number (agent)
+    hourlyBreakdown: {},    // Calls grouped by hour
+    durationBuckets: { short: 0, medium: 0, long: 0 },
+  };
+
+  for (const call of calls) {
+    report.summary.total++;
+
+    // Status distribution
+    switch (call.Status) {
+      case 'completed': report.summary.completed++; break;
+      case 'busy': report.summary.busy++; break;
+      case 'no-answer': report.summary.noAnswer++; break;
+      case 'failed': report.summary.failed++; break;
+    }
+
+    // Agent-level metrics (grouped by From number)
+    const agent = call.From;
+    if (!report.agentMetrics[agent]) {
+      report.agentMetrics[agent] = {
+        totalCalls: 0,
+        completed: 0,
+        totalDuration: 0,
+      };
+    }
+    report.agentMetrics[agent].totalCalls++;
+    if (call.Status === 'completed') {
+      report.agentMetrics[agent].completed++;
+      report.agentMetrics[agent].totalDuration += parseInt(call.Duration || '0', 10);
+    }
+
+    // Hourly breakdown
+    const hour = new Date(call.DateCreated).getHours();
+    const hourKey = `${hour.toString().padStart(2, '0')}:00`;
+    if (!report.hourlyBreakdown[hourKey]) {
+      report.hourlyBreakdown[hourKey] = { total: 0, completed: 0, totalDuration: 0 };
+    }
+    report.hourlyBreakdown[hourKey].total++;
+    if (call.Status === 'completed') {
+      report.hourlyBreakdown[hourKey].completed++;
+      report.hourlyBreakdown[hourKey].totalDuration += parseInt(call.Duration || '0', 10);
+    }
+
+    // Duration buckets (for completed calls)
+    if (call.Status === 'completed') {
+      const duration = parseInt(call.Duration || '0', 10);
+      if (duration < 60) report.durationBuckets.short++;
+      else if (duration < 300) report.durationBuckets.medium++;
+      else report.durationBuckets.long++;
+    }
+  }
+
+  // Compute average handle time per agent
+  for (const [agent, data] of Object.entries(report.agentMetrics)) {
+    data.avgHandleTime = data.completed > 0
+      ? Math.round(data.totalDuration / data.completed)
+      : 0;
+  }
+
+  // Compute average handle time per hour
+  for (const [hour, data] of Object.entries(report.hourlyBreakdown)) {
+    data.avgHandleTime = data.completed > 0
+      ? Math.round(data.totalDuration / data.completed)
+      : 0;
+  }
+
+  return report;
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from datetime import datetime
+from collections import defaultdict
+
+def generate_call_report(calls):
+    report = {
+        "summary": {"completed": 0, "busy": 0, "no_answer": 0, "failed": 0, "total": 0},
+        "agent_metrics": defaultdict(lambda: {
+            "total_calls": 0, "completed": 0, "total_duration": 0
+        }),
+        "hourly_breakdown": defaultdict(lambda: {
+            "total": 0, "completed": 0, "total_duration": 0
+        }),
+        "duration_buckets": {"short": 0, "medium": 0, "long": 0},
+    }
+
+    status_map = {
+        "completed": "completed",
+        "busy": "busy",
+        "no-answer": "no_answer",
+        "failed": "failed",
+    }
+
+    for call in calls:
+        report["summary"]["total"] += 1
+        status = call.get("Status", "")
+
+        # Status distribution
+        if status in status_map:
+            report["summary"][status_map[status]] += 1
+
+        # Agent-level metrics
+        agent = call.get("From", "unknown")
+        report["agent_metrics"][agent]["total_calls"] += 1
+
+        duration = int(call.get("Duration", 0))
+
+        if status == "completed":
+            report["agent_metrics"][agent]["completed"] += 1
+            report["agent_metrics"][agent]["total_duration"] += duration
+
+        # Hourly breakdown
+        created = call.get("DateCreated", "")
+        if created:
+            hour = datetime.strptime(created, "%Y-%m-%d %H:%M:%S").hour
+            hour_key = f"{hour:02d}:00"
+            report["hourly_breakdown"][hour_key]["total"] += 1
+            if status == "completed":
+                report["hourly_breakdown"][hour_key]["completed"] += 1
+                report["hourly_breakdown"][hour_key]["total_duration"] += duration
+
+        # Duration buckets
+        if status == "completed":
+            if duration < 60:
+                report["duration_buckets"]["short"] += 1
+            elif duration < 300:
+                report["duration_buckets"]["medium"] += 1
+            else:
+                report["duration_buckets"]["long"] += 1
+
+    # Compute averages
+    for agent, data in report["agent_metrics"].items():
+        data["avg_handle_time"] = (
+            round(data["total_duration"] / data["completed"])
+            if data["completed"] > 0 else 0
+        )
+
+    for hour, data in report["hourly_breakdown"].items():
+        data["avg_handle_time"] = (
+            round(data["total_duration"] / data["completed"])
+            if data["completed"] > 0 else 0
+        )
+
+    return report
+```
+
+</TabItem>
+</Tabs>
+
+## Step 3: Build Chart-Ready Data Structures
+
+Transform the raw report into data structures that frontend charting libraries (Chart.js, Recharts, etc.) can consume directly.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+function buildChartData(report) {
+  // Pie chart: Call disposition
+  const dispositionChart = {
+    labels: ['Completed', 'No Answer', 'Busy', 'Failed'],
+    datasets: [{
+      data: [
+        report.summary.completed,
+        report.summary.noAnswer,
+        report.summary.busy,
+        report.summary.failed,
+      ],
+      backgroundColor: ['#22c55e', '#f59e0b', '#ef4444', '#6b7280'],
+    }],
+  };
+
+  // Bar chart: Calls per agent
+  const agents = Object.entries(report.agentMetrics)
+    .sort((a, b) => b[1].totalCalls - a[1].totalCalls);
+
+  const agentChart = {
+    labels: agents.map(([agent]) => agent),
+    datasets: [
+      {
+        label: 'Completed',
+        data: agents.map(([, data]) => data.completed),
+        backgroundColor: '#22c55e',
+      },
+      {
+        label: 'Other',
+        data: agents.map(([, data]) => data.totalCalls - data.completed),
+        backgroundColor: '#e5e7eb',
+      },
+    ],
+  };
+
+  // Line chart: Average handle time by hour
+  const hours = Object.entries(report.hourlyBreakdown)
+    .sort(([a], [b]) => a.localeCompare(b));
+
+  const handleTimeChart = {
+    labels: hours.map(([hour]) => hour),
+    datasets: [{
+      label: 'Avg Handle Time (seconds)',
+      data: hours.map(([, data]) => data.avgHandleTime),
+      borderColor: '#3b82f6',
+      tension: 0.3,
+    }],
+  };
+
+  return { dispositionChart, agentChart, handleTimeChart };
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+def build_chart_data(report):
+    # Pie chart: Call disposition
+    disposition_chart = {
+        "labels": ["Completed", "No Answer", "Busy", "Failed"],
+        "datasets": [{
+            "data": [
+                report["summary"]["completed"],
+                report["summary"]["no_answer"],
+                report["summary"]["busy"],
+                report["summary"]["failed"],
+            ],
+            "backgroundColor": ["#22c55e", "#f59e0b", "#ef4444", "#6b7280"],
+        }],
+    }
+
+    # Bar chart: Calls per agent
+    agents = sorted(
+        report["agent_metrics"].items(),
+        key=lambda x: x[1]["total_calls"],
+        reverse=True,
+    )
+
+    agent_chart = {
+        "labels": [agent for agent, _ in agents],
+        "datasets": [
+            {
+                "label": "Completed",
+                "data": [data["completed"] for _, data in agents],
+                "backgroundColor": "#22c55e",
+            },
+            {
+                "label": "Other",
+                "data": [data["total_calls"] - data["completed"] for _, data in agents],
+                "backgroundColor": "#e5e7eb",
+            },
+        ],
+    }
+
+    # Line chart: Average handle time by hour
+    hours = sorted(report["hourly_breakdown"].items())
+
+    handle_time_chart = {
+        "labels": [hour for hour, _ in hours],
+        "datasets": [{
+            "label": "Avg Handle Time (seconds)",
+            "data": [data["avg_handle_time"] for _, data in hours],
+            "borderColor": "#3b82f6",
+        }],
+    }
+
+    return {
+        "disposition_chart": disposition_chart,
+        "agent_chart": agent_chart,
+        "handle_time_chart": handle_time_chart,
+    }
+```
+
+</TabItem>
+</Tabs>
+
+## Step 4: Set Up Status Callback Webhooks
+
+For real-time monitoring, configure status callbacks when making calls. Exotel sends a POST request to your URL whenever a call status changes.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Store for real-time call events
+const recentCallEvents = [];
+
+// Status callback webhook receiver
+app.post('/webhook/call-status', (req, res) => {
+  const event = {
+    callSid: req.body.CallSid,
+    status: req.body.Status,           // completed, failed, busy, no-answer
+    eventType: req.body.EventType,     // terminal or answered
+    from: req.body.From,
+    to: req.body.To,
+    direction: req.body.Direction,
+    duration: req.body.ConversationDuration,
+    startTime: req.body.StartTime,
+    endTime: req.body.EndTime,
+    customField: req.body.CustomField,
+    receivedAt: new Date().toISOString(),
+  };
+
+  recentCallEvents.push(event);
+
+  // Keep only the last 1000 events in memory
+  if (recentCallEvents.length > 1000) {
+    recentCallEvents.shift();
+  }
+
+  console.log(`[Call ${event.eventType}] ${event.callSid}: ${event.status}`);
+  res.status(200).json({ received: true });
+});
+
+// Expose real-time events for dashboard
+app.get('/api/live-events', (req, res) => {
+  const limit = parseInt(req.query.limit || '50', 10);
+  res.json(recentCallEvents.slice(-limit));
+});
+
+// When making calls, include the StatusCallback URL
+async function makeCallWithCallback(from, to, callerId) {
+  const url = `https://${SUBDOMAIN}/v1/Accounts/${ACCOUNT_SID}/Calls/connect`;
+
+  const params = new URLSearchParams({
+    From: from,
+    To: to,
+    CallerId: callerId,
+    StatusCallback: 'https://your-server.com/webhook/call-status',
+    StatusCallbackEvents: ['terminal', 'answered'],
+    StatusCallbackContentType: 'application/json',
+  });
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Authorization': authHeader,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: params.toString(),
+  });
+
+  return response.json();
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from flask import Flask, request, jsonify
+from datetime import datetime
+from collections import deque
+
+app = Flask(__name__)
+
+# Store for real-time call events (last 1000)
+recent_call_events = deque(maxlen=1000)
+
+@app.route("/webhook/call-status", methods=["POST"])
+def call_status_webhook():
+    data = request.form if request.content_type == "application/x-www-form-urlencoded" else request.get_json()
+
+    event = {
+        "call_sid": data.get("CallSid"),
+        "status": data.get("Status"),
+        "event_type": data.get("EventType"),
+        "from": data.get("From"),
+        "to": data.get("To"),
+        "direction": data.get("Direction"),
+        "duration": data.get("ConversationDuration"),
+        "start_time": data.get("StartTime"),
+        "end_time": data.get("EndTime"),
+        "custom_field": data.get("CustomField"),
+        "received_at": datetime.utcnow().isoformat(),
+    }
+
+    recent_call_events.append(event)
+    print(f"[Call {event['event_type']}] {event['call_sid']}: {event['status']}")
+
+    return jsonify({"received": True}), 200
+
+@app.route("/api/live-events", methods=["GET"])
+def live_events():
+    limit = int(request.args.get("limit", 50))
+    events = list(recent_call_events)[-limit:]
+    return jsonify(events)
+
+def make_call_with_callback(from_number, to_number, caller_id):
+    """Make a call with status callback enabled."""
+    url = f"https://{SUBDOMAIN}/v1/Accounts/{ACCOUNT_SID}/Calls/connect"
+
+    response = requests.post(
+        url,
+        auth=(API_KEY, API_TOKEN),
+        data={
+            "From": from_number,
+            "To": to_number,
+            "CallerId": caller_id,
+            "StatusCallback": "https://your-server.com/webhook/call-status",
+            "StatusCallbackEvents": ["terminal", "answered"],
+            "StatusCallbackContentType": "application/json",
+        },
+    )
+    response.raise_for_status()
+    return response.json()
+```
+
+</TabItem>
+</Tabs>
+
+### Status Callback Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `CallSid` | Unique call identifier |
+| `Status` | `completed`, `failed`, `busy`, `no-answer` |
+| `EventType` | `terminal` or `answered` |
+| `ConversationDuration` | Duration both parties were connected (seconds) |
+| `Direction` | `inbound`, `outbound-dial`, `outbound-api` |
+| `CustomField` | Custom metadata from the original request |
+
+:::tip
+Set `StatusCallbackContentType` to `application/json` for easier parsing. If not specified, Exotel defaults to `multipart/form-data`.
+:::
+
+## Step 5: Combine Into a Reporting API
+
+Wire everything together into a complete reporting endpoint.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+app.get('/api/report', async (req, res) => {
+  try {
+    const { start, end, direction, agent } = req.query;
+
+    if (!start || !end) {
+      return res.status(400).json({ error: 'start and end params required (YYYY-MM-DD)' });
+    }
+
+    const filters = {};
+    if (direction) filters.direction = direction;
+    if (agent) filters.phoneNumber = agent;
+
+    const calls = await fetchAllCallsPaginated(start, end, filters);
+    const report = generateCallReport(calls);
+    const charts = buildChartData(report);
+
+    res.json({
+      dateRange: { start, end },
+      summary: report.summary,
+      charts,
+      agentMetrics: report.agentMetrics,
+      hourlyBreakdown: report.hourlyBreakdown,
+      durationBuckets: report.durationBuckets,
+      generatedAt: new Date().toISOString(),
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+@app.route("/api/report", methods=["GET"])
+def report():
+    start = request.args.get("start")
+    end = request.args.get("end")
+    direction = request.args.get("direction")
+    agent = request.args.get("agent")
+
+    if not start or not end:
+        return jsonify({"error": "start and end params required (YYYY-MM-DD)"}), 400
+
+    filters = {}
+    if direction:
+        filters["direction"] = direction
+    if agent:
+        filters["phone_number"] = agent
+
+    calls = fetch_all_calls_paginated(start, end, filters)
+    report_data = generate_call_report(calls)
+    charts = build_chart_data(report_data)
+
+    return jsonify({
+        "date_range": {"start": start, "end": end},
+        "summary": report_data["summary"],
+        "charts": charts,
+        "agent_metrics": dict(report_data["agent_metrics"]),
+        "hourly_breakdown": dict(report_data["hourly_breakdown"]),
+        "duration_buckets": report_data["duration_buckets"],
+        "generated_at": datetime.utcnow().isoformat(),
+    })
+```
+
+</TabItem>
+</Tabs>
+
+:::info
+For production dashboards, cache the API responses and refresh on a schedule (e.g., every 5 minutes) rather than querying Exotel on every dashboard page load. This reduces API calls and improves response times.
+:::
+
+## Next Steps
+
+- **[Call Details API Reference](/docs/voice-v1/api-reference/call-details)** — Full API documentation for filtering and pagination
+- **[Status Callback Reference](/docs/voice-v1/api-reference/call-details#status-callback-webhook)** — Webhook payload details
+- **[Business Monitoring Dashboard](/docs/use-cases/business-monitoring-dashboard)** — Add Heartbeat health monitoring
+- **[Legs API](/docs/legs/overview)** — Get detailed leg-level information for each call

@@ -358,6 +358,15 @@ const sidebars: SidebarsConfig = {
     'mcp-server/overview',
   ],
 
+  useCasesSidebar: [
+    'use-cases/overview',
+    'use-cases/business-monitoring-dashboard',
+    'use-cases/call-monitoring-visualization',
+    'use-cases/dynamic-caller-id-campaigns',
+    'use-cases/progressive-dialer',
+    'use-cases/interactive-sms',
+  ],
+
   faqsSidebar: [
     'faqs/overview',
   ],

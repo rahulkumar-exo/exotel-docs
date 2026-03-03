@@ -1,0 +1,774 @@
+---
+sidebar_label: Progressive Dialer
+title: "Progressive Dialer using APIs"
+sidebar_position: 4
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Progressive Dialer using APIs
+
+Build a progressive dialer to enhance agent productivity by automatically connecting available agents to the next customer in the queue — reaching maximum customers in less time.
+
+**Tags:** Contact Center v6, Auto Dialer
+
+## What You'll Build
+
+A progressive dialer that:
+
+- Maintains a call queue and processes contacts sequentially
+- Checks agent availability before initiating each call
+- Uses the Connect Two Numbers API to bridge agent and customer
+- Handles call outcomes (answered, busy, no-answer, failed) with automatic retry logic
+- Tracks dialer performance metrics
+
+```
+┌─────────────────────────────────────────────────────┐
+│                  Progressive Dialer                  │
+│                                                      │
+│  Queue: 150 remaining    Dialed: 350    Retries: 42  │
+│                                                      │
+│  ┌────────────┐     ┌──────────┐     ┌────────────┐ │
+│  │   Queue    │     │  Check   │     │  Connect   │ │
+│  │  Contact   │────►│  Agent   │────►│  Two       │ │
+│  │  List      │     │  Status  │     │  Numbers   │ │
+│  └────────────┘     └──────────┘     └─────┬──────┘ │
+│                                            │        │
+│                     ┌──────────┐     ┌─────▼──────┐ │
+│                     │  Retry   │◄────│  Handle    │ │
+│                     │  Queue   │     │  Outcome   │ │
+│                     └──────────┘     └────────────┘ │
+└─────────────────────────────────────────────────────┘
+```
+
+## Prerequisites
+
+- An Exotel account ([Sign up here](https://my.exotel.com/auth/register))
+- API credentials (API Key, API Token, Account SID) — see [Authentication](/docs/references/authentication)
+- At least one ExoPhone (virtual phone number)
+- Node.js 18+ or Python 3.7+
+- A publicly accessible URL for status callbacks
+
+:::info
+A **progressive dialer** only dials the next contact when an agent becomes available. This prevents abandoned calls (where a customer picks up but no agent is free) — unlike a predictive dialer which dials ahead based on estimated availability.
+:::
+
+## Architecture
+
+```
+┌────────────────────────────────────────────────────────────┐
+│                     Dialer Engine                           │
+│                                                            │
+│  1. Dequeue next contact from the call queue               │
+│  2. Check if an agent is available (idle/ready)            │
+│  3. Initiate call via Connect Two Numbers API              │
+│     - From = Agent phone number                            │
+│     - To = Customer phone number                           │
+│     - CallerId = ExoPhone                                  │
+│  4. Exotel calls the agent first                           │
+│  5. When agent answers, Exotel dials the customer          │
+│  6. Receive status callback with call outcome              │
+│  7. On failure: add to retry queue with backoff            │
+│  8. Repeat from step 1                                     │
+└────────────────────────────────────────────────────────────┘
+```
+
+## Step 1: Set Up the Call Queue
+
+Create a queue manager that holds contacts to dial and supports retry logic.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const API_KEY = process.env.EXOTEL_API_KEY;
+const API_TOKEN = process.env.EXOTEL_API_TOKEN;
+const ACCOUNT_SID = process.env.EXOTEL_ACCOUNT_SID;
+const SUBDOMAIN = process.env.EXOTEL_SUBDOMAIN || 'api.exotel.com';
+
+const authHeader = 'Basic ' + Buffer.from(API_KEY + ':' + API_TOKEN).toString('base64');
+
+class CallQueue {
+  constructor(options = {}) {
+    this.queue = [];
+    this.retryQueue = [];
+    this.completed = [];
+    this.maxRetries = options.maxRetries || 3;
+    this.retryDelayMs = options.retryDelayMs || 300000; // 5 minutes
+  }
+
+  // Load contacts into the queue
+  loadContacts(contacts) {
+    for (const contact of contacts) {
+      this.queue.push({
+        phoneNumber: contact.phoneNumber,
+        name: contact.name || '',
+        metadata: contact.metadata || {},
+        attempts: 0,
+        lastAttempt: null,
+      });
+    }
+    console.log(`Loaded ${contacts.length} contacts into queue`);
+  }
+
+  // Get the next contact to dial
+  getNext() {
+    // First, check retry queue for contacts ready to be retried
+    const now = Date.now();
+    const retryIndex = this.retryQueue.findIndex(
+      (c) => now - c.lastAttempt >= this.retryDelayMs,
+    );
+
+    if (retryIndex !== -1) {
+      return this.retryQueue.splice(retryIndex, 1)[0];
+    }
+
+    // Then, pull from the main queue
+    return this.queue.shift() || null;
+  }
+
+  // Handle call outcome
+  handleOutcome(contact, status) {
+    contact.attempts++;
+    contact.lastAttempt = Date.now();
+    contact.lastStatus = status;
+
+    if (status === 'completed') {
+      this.completed.push(contact);
+      return;
+    }
+
+    // Retry on busy, no-answer, or failed (up to max retries)
+    if (contact.attempts < this.maxRetries && ['busy', 'no-answer', 'failed'].includes(status)) {
+      this.retryQueue.push(contact);
+      console.log(`Retry queued: ${contact.phoneNumber} (attempt ${contact.attempts}/${this.maxRetries})`);
+    } else {
+      contact.finalStatus = status;
+      this.completed.push(contact);
+    }
+  }
+
+  // Get queue stats
+  getStats() {
+    return {
+      queued: this.queue.length,
+      retryPending: this.retryQueue.length,
+      completed: this.completed.length,
+      totalProcessed: this.completed.length,
+    };
+  }
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import os
+import time
+import requests
+from collections import deque
+
+API_KEY = os.environ["EXOTEL_API_KEY"]
+API_TOKEN = os.environ["EXOTEL_API_TOKEN"]
+ACCOUNT_SID = os.environ["EXOTEL_ACCOUNT_SID"]
+SUBDOMAIN = os.environ.get("EXOTEL_SUBDOMAIN", "api.exotel.com")
+
+class CallQueue:
+    def __init__(self, max_retries=3, retry_delay_seconds=300):
+        self.queue = deque()
+        self.retry_queue = deque()
+        self.completed = []
+        self.max_retries = max_retries
+        self.retry_delay_seconds = retry_delay_seconds
+
+    def load_contacts(self, contacts):
+        """Load contacts into the dial queue."""
+        for contact in contacts:
+            self.queue.append({
+                "phone_number": contact["phone_number"],
+                "name": contact.get("name", ""),
+                "metadata": contact.get("metadata", {}),
+                "attempts": 0,
+                "last_attempt": None,
+            })
+        print(f"Loaded {len(contacts)} contacts into queue")
+
+    def get_next(self):
+        """Get the next contact to dial (retries first, then main queue)."""
+        now = time.time()
+
+        # Check retry queue first
+        for i, contact in enumerate(self.retry_queue):
+            if now - contact["last_attempt"] >= self.retry_delay_seconds:
+                self.retry_queue.remove(contact)
+                return contact
+
+        # Pull from main queue
+        return self.queue.popleft() if self.queue else None
+
+    def handle_outcome(self, contact, status):
+        """Process the outcome of a call attempt."""
+        contact["attempts"] += 1
+        contact["last_attempt"] = time.time()
+        contact["last_status"] = status
+
+        if status == "completed":
+            self.completed.append(contact)
+            return
+
+        # Retry on retryable statuses
+        if (
+            contact["attempts"] < self.max_retries
+            and status in ("busy", "no-answer", "failed")
+        ):
+            self.retry_queue.append(contact)
+            print(
+                f"Retry queued: {contact['phone_number']} "
+                f"(attempt {contact['attempts']}/{self.max_retries})"
+            )
+        else:
+            contact["final_status"] = status
+            self.completed.append(contact)
+
+    def get_stats(self):
+        return {
+            "queued": len(self.queue),
+            "retry_pending": len(self.retry_queue),
+            "completed": len(self.completed),
+        }
+```
+
+</TabItem>
+</Tabs>
+
+## Step 2: Check Agent Availability
+
+Before dialing, verify that an agent is available. This can be done by maintaining an in-memory agent pool or integrating with the Contact Center API.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+class AgentPool {
+  constructor(agents) {
+    // agents: [{ id, phoneNumber, name }]
+    this.agents = agents.map((agent) => ({
+      ...agent,
+      status: 'available',   // available, on_call, unavailable
+      currentCallSid: null,
+    }));
+  }
+
+  // Get the next available agent
+  getAvailable() {
+    return this.agents.find((a) => a.status === 'available') || null;
+  }
+
+  // Mark agent as busy (on a call)
+  markBusy(agentId, callSid) {
+    const agent = this.agents.find((a) => a.id === agentId);
+    if (agent) {
+      agent.status = 'on_call';
+      agent.currentCallSid = callSid;
+    }
+  }
+
+  // Mark agent as available again
+  markAvailable(agentId) {
+    const agent = this.agents.find((a) => a.id === agentId);
+    if (agent) {
+      agent.status = 'available';
+      agent.currentCallSid = null;
+    }
+  }
+
+  // Get pool status
+  getStatus() {
+    return {
+      total: this.agents.length,
+      available: this.agents.filter((a) => a.status === 'available').length,
+      onCall: this.agents.filter((a) => a.status === 'on_call').length,
+      unavailable: this.agents.filter((a) => a.status === 'unavailable').length,
+    };
+  }
+}
+
+// Initialize agent pool
+const agentPool = new AgentPool([
+  { id: 'agent-1', phoneNumber: '+919876500001', name: 'Agent A' },
+  { id: 'agent-2', phoneNumber: '+919876500002', name: 'Agent B' },
+  { id: 'agent-3', phoneNumber: '+919876500003', name: 'Agent C' },
+]);
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+class AgentPool:
+    def __init__(self, agents):
+        self.agents = []
+        for agent in agents:
+            self.agents.append({
+                **agent,
+                "status": "available",
+                "current_call_sid": None,
+            })
+
+    def get_available(self):
+        """Get the next available agent."""
+        for agent in self.agents:
+            if agent["status"] == "available":
+                return agent
+        return None
+
+    def mark_busy(self, agent_id, call_sid):
+        """Mark an agent as busy (on a call)."""
+        for agent in self.agents:
+            if agent["id"] == agent_id:
+                agent["status"] = "on_call"
+                agent["current_call_sid"] = call_sid
+                break
+
+    def mark_available(self, agent_id):
+        """Mark an agent as available."""
+        for agent in self.agents:
+            if agent["id"] == agent_id:
+                agent["status"] = "available"
+                agent["current_call_sid"] = None
+                break
+
+    def get_status(self):
+        return {
+            "total": len(self.agents),
+            "available": sum(1 for a in self.agents if a["status"] == "available"),
+            "on_call": sum(1 for a in self.agents if a["status"] == "on_call"),
+            "unavailable": sum(1 for a in self.agents if a["status"] == "unavailable"),
+        }
+
+# Initialize agent pool
+agent_pool = AgentPool([
+    {"id": "agent-1", "phone_number": "+919876500001", "name": "Agent A"},
+    {"id": "agent-2", "phone_number": "+919876500002", "name": "Agent B"},
+    {"id": "agent-3", "phone_number": "+919876500003", "name": "Agent C"},
+])
+```
+
+</TabItem>
+</Tabs>
+
+:::tip
+For production systems, integrate with the **Contact Center v6 API** to get real-time agent presence (ready, busy, after-call-work, offline) rather than managing state locally. See the [Contact Center Overview](/docs/contact-center/overview) for details.
+:::
+
+## Step 3: Connect Agent to Customer
+
+Use the Connect Two Numbers API to bridge the call. Exotel calls the agent first; once they answer, the customer is dialed.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const EXOPHONE = process.env.EXOTEL_EXOPHONE; // Your ExoPhone number
+
+async function connectAgentToCustomer(agent, customer) {
+  const url = `https://${SUBDOMAIN}/v1/Accounts/${ACCOUNT_SID}/Calls/connect`;
+
+  const params = new URLSearchParams({
+    From: agent.phoneNumber,           // Agent is called first
+    To: customer.phoneNumber,          // Then customer is dialed
+    CallerId: EXOPHONE,                // Your ExoPhone (visible to customer)
+    Record: 'true',                    // Record for quality monitoring
+    TimeOut: '30',                     // Ring timeout: 30 seconds
+    StatusCallback: 'https://your-server.com/webhook/dialer-callback',
+    StatusCallbackEvents: ['terminal', 'answered'],
+    StatusCallbackContentType: 'application/json',
+    CustomField: JSON.stringify({
+      agentId: agent.id,
+      customerPhone: customer.phoneNumber,
+      contactName: customer.name,
+    }),
+  });
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Authorization': authHeader,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: params.toString(),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Call failed: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.Call?.Sid;
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import json
+
+EXOPHONE = os.environ["EXOTEL_EXOPHONE"]
+
+def connect_agent_to_customer(agent, customer):
+    """Initiate a call connecting agent to customer."""
+    url = f"https://{SUBDOMAIN}/v1/Accounts/{ACCOUNT_SID}/Calls/connect"
+
+    response = requests.post(
+        url,
+        auth=(API_KEY, API_TOKEN),
+        data={
+            "From": agent["phone_number"],
+            "To": customer["phone_number"],
+            "CallerId": EXOPHONE,
+            "Record": "true",
+            "TimeOut": "30",
+            "StatusCallback": "https://your-server.com/webhook/dialer-callback",
+            "StatusCallbackEvents": ["terminal", "answered"],
+            "StatusCallbackContentType": "application/json",
+            "CustomField": json.dumps({
+                "agent_id": agent["id"],
+                "customer_phone": customer["phone_number"],
+                "contact_name": customer.get("name", ""),
+            }),
+        },
+    )
+    response.raise_for_status()
+    data = response.json()
+    return data.get("Call", {}).get("Sid")
+```
+
+</TabItem>
+</Tabs>
+
+## Step 4: Handle Call Outcomes
+
+Set up the status callback webhook to process call outcomes and feed results back into the dialer.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+
+// Track active calls: CallSid -> { agent, contact }
+const activeCalls = new Map();
+
+app.post('/webhook/dialer-callback', (req, res) => {
+  const { CallSid, Status, EventType, ConversationDuration, CustomField } = req.body;
+
+  // Parse the custom metadata
+  let meta = {};
+  try {
+    meta = JSON.parse(CustomField || '{}');
+  } catch (e) {
+    // Ignore parse errors
+  }
+
+  console.log(`[Dialer Callback] ${CallSid}: ${Status} (${EventType})`);
+
+  if (EventType === 'answered') {
+    // Call connected — agent and customer are talking
+    console.log(`Agent ${meta.agentId} connected to ${meta.customerPhone}`);
+  }
+
+  if (EventType === 'terminal') {
+    // Call ended — process the outcome
+    const callInfo = activeCalls.get(CallSid);
+
+    if (callInfo) {
+      // Mark agent as available
+      agentPool.markAvailable(callInfo.agent.id);
+
+      // Handle the call outcome in the queue
+      callQueue.handleOutcome(callInfo.contact, Status);
+
+      activeCalls.delete(CallSid);
+
+      console.log(
+        `Call complete: ${meta.customerPhone} → ${Status}, ` +
+        `duration: ${ConversationDuration || 0}s`,
+      );
+    }
+
+    // Trigger next call in the dialer loop
+    processNextCall();
+  }
+
+  res.status(200).json({ received: true });
+});
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from flask import Flask, request, jsonify
+import json
+
+app = Flask(__name__)
+
+# Track active calls
+active_calls = {}
+
+@app.route("/webhook/dialer-callback", methods=["POST"])
+def dialer_callback():
+    data = request.get_json() if request.is_json else request.form.to_dict()
+
+    call_sid = data.get("CallSid")
+    status = data.get("Status")
+    event_type = data.get("EventType")
+    duration = data.get("ConversationDuration", 0)
+
+    meta = {}
+    try:
+        meta = json.loads(data.get("CustomField", "{}"))
+    except (json.JSONDecodeError, TypeError):
+        pass
+
+    print(f"[Dialer Callback] {call_sid}: {status} ({event_type})")
+
+    if event_type == "answered":
+        print(f"Agent {meta.get('agent_id')} connected to {meta.get('customer_phone')}")
+
+    if event_type == "terminal":
+        call_info = active_calls.pop(call_sid, None)
+
+        if call_info:
+            agent_pool.mark_available(call_info["agent"]["id"])
+            call_queue.handle_outcome(call_info["contact"], status)
+
+            print(
+                f"Call complete: {meta.get('customer_phone')} -> {status}, "
+                f"duration: {duration}s"
+            )
+
+        # Trigger next call
+        process_next_call()
+
+    return jsonify({"received": True}), 200
+```
+
+</TabItem>
+</Tabs>
+
+## Step 5: Build the Dialer Engine
+
+Combine all components into the main dialer loop that continuously processes the queue.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const callQueue = new CallQueue({ maxRetries: 3, retryDelayMs: 300000 });
+
+async function processNextCall() {
+  // Check if there is an available agent
+  const agent = agentPool.getAvailable();
+  if (!agent) {
+    console.log('[Dialer] No agents available, waiting...');
+    return;
+  }
+
+  // Get next contact from queue
+  const contact = callQueue.getNext();
+  if (!contact) {
+    console.log('[Dialer] Queue empty, dialer idle');
+    return;
+  }
+
+  try {
+    console.log(`[Dialer] Connecting ${agent.name} to ${contact.phoneNumber}`);
+
+    // Mark agent as busy
+    agentPool.markBusy(agent.id, null);
+
+    // Initiate the call
+    const callSid = await connectAgentToCustomer(agent, contact);
+
+    // Track the active call
+    activeCalls.set(callSid, { agent, contact });
+    agentPool.markBusy(agent.id, callSid);
+
+    console.log(`[Dialer] Call initiated: ${callSid}`);
+  } catch (error) {
+    console.error(`[Dialer] Call failed: ${error.message}`);
+
+    // Mark agent available again and retry the contact
+    agentPool.markAvailable(agent.id);
+    callQueue.handleOutcome(contact, 'failed');
+
+    // Try the next contact
+    processNextCall();
+  }
+}
+
+// Start the dialer
+function startDialer(contacts) {
+  callQueue.loadContacts(contacts);
+
+  // Process calls for all available agents
+  const availableCount = agentPool.getStatus().available;
+  for (let i = 0; i < availableCount; i++) {
+    processNextCall();
+  }
+
+  // Periodic check for retry-eligible contacts
+  setInterval(() => {
+    const stats = callQueue.getStats();
+    const poolStatus = agentPool.getStatus();
+
+    console.log(
+      `[Dialer Stats] Queue: ${stats.queued} | Retries: ${stats.retryPending} | ` +
+      `Completed: ${stats.completed} | Agents available: ${poolStatus.available}`,
+    );
+
+    if (poolStatus.available > 0 && (stats.queued > 0 || stats.retryPending > 0)) {
+      processNextCall();
+    }
+  }, 10000); // Check every 10 seconds
+}
+
+// Usage
+startDialer([
+  { phoneNumber: '+919876543210', name: 'Customer A' },
+  { phoneNumber: '+919876543211', name: 'Customer B' },
+  { phoneNumber: '+919876543212', name: 'Customer C' },
+  // ... more contacts
+]);
+
+app.listen(3000, () => console.log('Progressive dialer running on :3000'));
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import time
+import threading
+
+call_queue = CallQueue(max_retries=3, retry_delay_seconds=300)
+
+def process_next_call():
+    """Process the next contact in the queue."""
+    agent = agent_pool.get_available()
+    if not agent:
+        print("[Dialer] No agents available, waiting...")
+        return
+
+    contact = call_queue.get_next()
+    if not contact:
+        print("[Dialer] Queue empty, dialer idle")
+        return
+
+    try:
+        print(f"[Dialer] Connecting {agent['name']} to {contact['phone_number']}")
+
+        agent_pool.mark_busy(agent["id"], None)
+
+        call_sid = connect_agent_to_customer(agent, contact)
+
+        active_calls[call_sid] = {"agent": agent, "contact": contact}
+        agent_pool.mark_busy(agent["id"], call_sid)
+
+        print(f"[Dialer] Call initiated: {call_sid}")
+
+    except Exception as e:
+        print(f"[Dialer] Call failed: {e}")
+        agent_pool.mark_available(agent["id"])
+        call_queue.handle_outcome(contact, "failed")
+        process_next_call()
+
+def start_dialer(contacts):
+    """Start the progressive dialer."""
+    call_queue.load_contacts(contacts)
+
+    # Kick off calls for all available agents
+    available_count = agent_pool.get_status()["available"]
+    for _ in range(available_count):
+        process_next_call()
+
+    # Periodic check for retries and available agents
+    def monitor():
+        while True:
+            stats = call_queue.get_stats()
+            pool_status = agent_pool.get_status()
+
+            print(
+                f"[Dialer Stats] Queue: {stats['queued']} | "
+                f"Retries: {stats['retry_pending']} | "
+                f"Completed: {stats['completed']} | "
+                f"Agents available: {pool_status['available']}"
+            )
+
+            if pool_status["available"] > 0 and (
+                stats["queued"] > 0 or stats["retry_pending"] > 0
+            ):
+                process_next_call()
+
+            time.sleep(10)
+
+    thread = threading.Thread(target=monitor, daemon=True)
+    thread.start()
+
+# Usage
+start_dialer([
+    {"phone_number": "+919876543210", "name": "Customer A"},
+    {"phone_number": "+919876543211", "name": "Customer B"},
+    {"phone_number": "+919876543212", "name": "Customer C"},
+])
+
+if __name__ == "__main__":
+    app.run(port=3000)
+```
+
+</TabItem>
+</Tabs>
+
+:::warning
+Rate limits apply. The default call capacity is **60 calls/minute**. Ensure your dialer respects this limit. Add a delay between calls or implement a token-bucket rate limiter. Contact Exotel support to increase your capacity.
+:::
+
+## Dialer Metrics Example
+
+```json
+{
+  "queue": {
+    "queued": 42,
+    "retryPending": 8,
+    "completed": 350
+  },
+  "agents": {
+    "total": 3,
+    "available": 1,
+    "onCall": 2,
+    "unavailable": 0
+  },
+  "performance": {
+    "totalDialed": 400,
+    "connected": 310,
+    "noAnswer": 52,
+    "busy": 23,
+    "failed": 15,
+    "connectRate": "77.5%",
+    "avgHandleTime": "3m 24s"
+  }
+}
+```
+
+## Next Steps
+
+- **[Connect Two Numbers API](/docs/voice-v1/api-reference/connect-two-numbers)** — Full API reference for connecting calls
+- **[Contact Center Overview](/docs/contact-center/overview)** — Real-time agent presence and routing
+- **[Call Details API](/docs/voice-v1/api-reference/call-details)** — Retrieve detailed call records
+- **[Dynamic Caller ID Campaigns](/docs/use-cases/dynamic-caller-id-campaigns)** — Run campaigns at scale with regional caller IDs

@@ -1,0 +1,744 @@
+---
+sidebar_label: Dynamic Caller ID Campaigns
+title: "Dynamic Caller ID Campaigns"
+sidebar_position: 3
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Dynamic Caller ID Campaigns
+
+Run outbound call campaigns with dynamic caller IDs per region and intelligent pacing based on call completion percentage.
+
+**Tags:** Blended APIs, Automation, Collections, Sales
+
+## What You'll Build
+
+A campaign management system that:
+
+- Creates call campaigns with region-specific caller IDs for higher answer rates
+- Implements pacing logic that adjusts call rate based on completion percentage
+- Monitors campaign progress in real-time and adjusts parameters
+- Handles campaign lifecycle: create, start, pause, resume, and complete
+
+```
+┌──────────────────────────────────────────────────────────┐
+│  Campaign: January Collections Drive                     │
+│  Status: InProgress     Progress: 67%                    │
+│                                                          │
+│  Region     │ Caller ID      │ Calls │ Completed │ Rate  │
+│  ───────────┼────────────────┼───────┼───────────┼────── │
+│  Mumbai     │ 022-XXXXX890   │  500  │    340    │ 68%   │
+│  Delhi      │ 011-XXXXX234   │  450  │    298    │ 66%   │
+│  Bangalore  │ 080-XXXXX567   │  300  │    201    │ 67%   │
+│                                                          │
+│  Pacing: 45 calls/min (adjusted from 60 — completion <70%)│
+└──────────────────────────────────────────────────────────┘
+```
+
+## Prerequisites
+
+- An Exotel account ([Sign up here](https://my.exotel.com/auth/register))
+- API credentials (API Key, API Token, Account SID) — see [Authentication](/docs/references/authentication)
+- Multiple ExoPhones assigned to your account (one per region)
+- A configured IVR flow (App ID) for the campaign
+- Node.js 18+ or Python 3.7+
+
+:::info
+The Campaign API uses **v2** endpoints. The base URL is:
+```
+https://<subdomain>/v2/accounts/<account_sid>/campaigns
+```
+:::
+
+## Step 1: Organize Contacts by Region
+
+Before creating campaigns, segment your contact list by region and assign a local caller ID to each segment for higher answer rates.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const API_KEY = process.env.EXOTEL_API_KEY;
+const API_TOKEN = process.env.EXOTEL_API_TOKEN;
+const ACCOUNT_SID = process.env.EXOTEL_ACCOUNT_SID;
+const SUBDOMAIN = process.env.EXOTEL_SUBDOMAIN || 'api.exotel.com';
+
+const authHeader = 'Basic ' + Buffer.from(API_KEY + ':' + API_TOKEN).toString('base64');
+
+// Define region-to-caller-ID mapping
+const regionCallerIds = {
+  mumbai: '022XXXXX890',
+  delhi: '011XXXXX234',
+  bangalore: '080XXXXX567',
+  chennai: '044XXXXX123',
+  kolkata: '033XXXXX456',
+};
+
+// Segment contacts by region
+function segmentContactsByRegion(contacts) {
+  const segments = {};
+
+  for (const contact of contacts) {
+    const region = contact.region || 'default';
+    if (!segments[region]) {
+      segments[region] = {
+        callerId: regionCallerIds[region] || regionCallerIds.mumbai,
+        numbers: [],
+      };
+    }
+    segments[region].numbers.push(contact.phoneNumber);
+  }
+
+  return segments;
+}
+
+// Example contact list
+const contacts = [
+  { phoneNumber: '+919876543210', region: 'mumbai' },
+  { phoneNumber: '+919876543211', region: 'mumbai' },
+  { phoneNumber: '+919123456789', region: 'delhi' },
+  { phoneNumber: '+919234567890', region: 'bangalore' },
+];
+
+const segments = segmentContactsByRegion(contacts);
+// Result: { mumbai: { callerId: '022XXXXX890', numbers: [...] }, ... }
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import os
+import requests
+from collections import defaultdict
+
+API_KEY = os.environ["EXOTEL_API_KEY"]
+API_TOKEN = os.environ["EXOTEL_API_TOKEN"]
+ACCOUNT_SID = os.environ["EXOTEL_ACCOUNT_SID"]
+SUBDOMAIN = os.environ.get("EXOTEL_SUBDOMAIN", "api.exotel.com")
+
+# Define region-to-caller-ID mapping
+REGION_CALLER_IDS = {
+    "mumbai": "022XXXXX890",
+    "delhi": "011XXXXX234",
+    "bangalore": "080XXXXX567",
+    "chennai": "044XXXXX123",
+    "kolkata": "033XXXXX456",
+}
+
+def segment_contacts_by_region(contacts):
+    """Group contacts by region and assign caller IDs."""
+    segments = defaultdict(lambda: {"caller_id": REGION_CALLER_IDS.get("mumbai"), "numbers": []})
+
+    for contact in contacts:
+        region = contact.get("region", "default")
+        segments[region]["caller_id"] = REGION_CALLER_IDS.get(region, REGION_CALLER_IDS["mumbai"])
+        segments[region]["numbers"].append(contact["phone_number"])
+
+    return dict(segments)
+
+# Example contact list
+contacts = [
+    {"phone_number": "+919876543210", "region": "mumbai"},
+    {"phone_number": "+919876543211", "region": "mumbai"},
+    {"phone_number": "+919123456789", "region": "delhi"},
+    {"phone_number": "+919234567890", "region": "bangalore"},
+]
+
+segments = segment_contacts_by_region(contacts)
+```
+
+</TabItem>
+</Tabs>
+
+## Step 2: Create a Campaign per Region
+
+Create a separate campaign for each region, each with its own local caller ID. The Campaign API (v2) supports up to 5,000 numbers per campaign.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+async function createCampaign(name, callerId, numbers, appId, options = {}) {
+  const url = `https://${SUBDOMAIN}/v2/accounts/${ACCOUNT_SID}/campaigns`;
+
+  const body = {
+    name: name,
+    caller_id: callerId,
+    type: 'static',
+    numbers: numbers,
+    app_id: appId,
+    call_schedule: options.schedule || {
+      start_time: '09:00:00',
+      end_time: '18:00:00',
+      timezone: 'Asia/Kolkata',
+    },
+    retries: {
+      max: options.maxRetries || 2,
+      interval_mins: options.retryInterval || 30,
+      on_status: ['busy', 'no-answer', 'failed'],
+    },
+    call_status_callback: options.callbackUrl || 'https://your-server.com/webhook/campaign-status',
+  };
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Authorization': authHeader,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    throw new Error(`Campaign creation failed: ${response.status} - ${error}`);
+  }
+
+  return response.json();
+}
+
+// Create campaigns for each region
+async function createRegionalCampaigns(segments, appId) {
+  const campaigns = {};
+
+  for (const [region, data] of Object.entries(segments)) {
+    console.log(`Creating campaign for ${region} with caller ID ${data.callerId}`);
+
+    const campaign = await createCampaign(
+      `Collections Drive - ${region.charAt(0).toUpperCase() + region.slice(1)}`,
+      data.callerId,
+      data.numbers,
+      appId,
+    );
+
+    campaigns[region] = {
+      id: campaign.id,
+      callerId: data.callerId,
+      totalNumbers: data.numbers.length,
+    };
+
+    console.log(`Campaign created: ${campaign.id} (${data.numbers.length} numbers)`);
+  }
+
+  return campaigns;
+}
+
+// Usage
+const APP_ID = 'your_ivr_app_id';
+const campaigns = await createRegionalCampaigns(segments, APP_ID);
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import json
+
+def create_campaign(name, caller_id, numbers, app_id, options=None):
+    """Create a new call campaign."""
+    options = options or {}
+    url = f"https://{SUBDOMAIN}/v2/accounts/{ACCOUNT_SID}/campaigns"
+
+    body = {
+        "name": name,
+        "caller_id": caller_id,
+        "type": "static",
+        "numbers": numbers,
+        "app_id": app_id,
+        "call_schedule": options.get("schedule", {
+            "start_time": "09:00:00",
+            "end_time": "18:00:00",
+            "timezone": "Asia/Kolkata",
+        }),
+        "retries": {
+            "max": options.get("max_retries", 2),
+            "interval_mins": options.get("retry_interval", 30),
+            "on_status": ["busy", "no-answer", "failed"],
+        },
+        "call_status_callback": options.get(
+            "callback_url", "https://your-server.com/webhook/campaign-status"
+        ),
+    }
+
+    response = requests.post(
+        url,
+        auth=(API_KEY, API_TOKEN),
+        headers={"Content-Type": "application/json"},
+        json=body,
+    )
+    response.raise_for_status()
+    return response.json()
+
+def create_regional_campaigns(segments, app_id):
+    """Create one campaign per region with local caller IDs."""
+    campaigns = {}
+
+    for region, data in segments.items():
+        print(f"Creating campaign for {region} with caller ID {data['caller_id']}")
+
+        campaign = create_campaign(
+            name=f"Collections Drive - {region.capitalize()}",
+            caller_id=data["caller_id"],
+            numbers=data["numbers"],
+            app_id=app_id,
+        )
+
+        campaigns[region] = {
+            "id": campaign["id"],
+            "caller_id": data["caller_id"],
+            "total_numbers": len(data["numbers"]),
+        }
+        print(f"Campaign created: {campaign['id']} ({len(data['numbers'])} numbers)")
+
+    return campaigns
+
+# Usage
+APP_ID = "your_ivr_app_id"
+campaigns = create_regional_campaigns(segments, APP_ID)
+```
+
+</TabItem>
+</Tabs>
+
+:::warning
+Each campaign supports a maximum of **5,000 phone numbers**. If a region has more contacts, split them into multiple campaigns with the same caller ID.
+:::
+
+## Step 3: Monitor Campaign Progress
+
+Poll the campaign status endpoint to track progress and get real-time completion metrics.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+async function getCampaignStatus(campaignId) {
+  const url = `https://${SUBDOMAIN}/v2/accounts/${ACCOUNT_SID}/campaigns/${campaignId}`;
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: { 'Authorization': authHeader },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to get campaign status: ${response.status}`);
+  }
+
+  return response.json();
+}
+
+async function getCampaignCallDetails(campaignId) {
+  const url = `https://${SUBDOMAIN}/v2/accounts/${ACCOUNT_SID}/campaigns/${campaignId}/calls`;
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: { 'Authorization': authHeader },
+  });
+
+  return response.json();
+}
+
+// Compute completion metrics
+function computeCampaignMetrics(campaignData) {
+  const total = campaignData.total_numbers || 0;
+  const completed = campaignData.completed_calls || 0;
+  const failed = campaignData.failed_calls || 0;
+  const pending = total - completed - failed;
+
+  return {
+    total,
+    completed,
+    failed,
+    pending,
+    completionRate: total > 0 ? ((completed / total) * 100).toFixed(1) : '0.0',
+    failureRate: total > 0 ? ((failed / total) * 100).toFixed(1) : '0.0',
+    status: campaignData.status,
+  };
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+def get_campaign_status(campaign_id):
+    """Get current status and progress of a campaign."""
+    url = f"https://{SUBDOMAIN}/v2/accounts/{ACCOUNT_SID}/campaigns/{campaign_id}"
+
+    response = requests.get(url, auth=(API_KEY, API_TOKEN))
+    response.raise_for_status()
+    return response.json()
+
+def get_campaign_call_details(campaign_id):
+    """Get individual call records for a campaign."""
+    url = f"https://{SUBDOMAIN}/v2/accounts/{ACCOUNT_SID}/campaigns/{campaign_id}/calls"
+
+    response = requests.get(url, auth=(API_KEY, API_TOKEN))
+    response.raise_for_status()
+    return response.json()
+
+def compute_campaign_metrics(campaign_data):
+    """Compute completion metrics from campaign data."""
+    total = campaign_data.get("total_numbers", 0)
+    completed = campaign_data.get("completed_calls", 0)
+    failed = campaign_data.get("failed_calls", 0)
+    pending = total - completed - failed
+
+    return {
+        "total": total,
+        "completed": completed,
+        "failed": failed,
+        "pending": pending,
+        "completion_rate": round((completed / total) * 100, 1) if total > 0 else 0.0,
+        "failure_rate": round((failed / total) * 100, 1) if total > 0 else 0.0,
+        "status": campaign_data.get("status"),
+    }
+```
+
+</TabItem>
+</Tabs>
+
+## Step 4: Implement Pacing Logic
+
+Dynamically adjust the call rate based on completion percentage. If the completion rate drops below a threshold, reduce pacing to avoid overwhelming agents or burning through contacts with low answer rates.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const PACING_CONFIG = {
+  maxCallsPerMinute: 60,    // Maximum call rate
+  minCallsPerMinute: 10,    // Minimum call rate
+  targetCompletionRate: 70,  // Target completion percentage
+  checkIntervalMs: 60000,    // Check every 60 seconds
+};
+
+async function adjustCampaignPacing(campaignId) {
+  const status = await getCampaignStatus(campaignId);
+  const metrics = computeCampaignMetrics(status);
+
+  let newRate;
+  const completionRate = parseFloat(metrics.completionRate);
+
+  if (completionRate >= PACING_CONFIG.targetCompletionRate) {
+    // Good completion rate: increase pacing
+    newRate = Math.min(
+      PACING_CONFIG.maxCallsPerMinute,
+      Math.round(PACING_CONFIG.maxCallsPerMinute * (completionRate / 100)),
+    );
+  } else {
+    // Low completion rate: reduce pacing
+    newRate = Math.max(
+      PACING_CONFIG.minCallsPerMinute,
+      Math.round(PACING_CONFIG.maxCallsPerMinute * (completionRate / 100)),
+    );
+  }
+
+  console.log(
+    `[Pacing] Campaign ${campaignId}: completion=${metrics.completionRate}%, ` +
+    `rate adjusted to ${newRate} calls/min`,
+  );
+
+  return { campaignId, newRate, metrics };
+}
+
+// Pause a campaign when completion drops too low
+async function pauseCampaign(campaignId) {
+  const url = `https://${SUBDOMAIN}/v2/accounts/${ACCOUNT_SID}/campaigns/${campaignId}`;
+
+  const response = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Authorization': authHeader,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ status: 'paused' }),
+  });
+
+  return response.json();
+}
+
+// Resume a paused campaign
+async function resumeCampaign(campaignId) {
+  const url = `https://${SUBDOMAIN}/v2/accounts/${ACCOUNT_SID}/campaigns/${campaignId}`;
+
+  const response = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Authorization': authHeader,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ status: 'in_progress' }),
+  });
+
+  return response.json();
+}
+
+// Continuous pacing monitor
+async function startPacingMonitor(campaignIds) {
+  const monitor = setInterval(async () => {
+    for (const campaignId of campaignIds) {
+      try {
+        const result = await adjustCampaignPacing(campaignId);
+
+        // Pause if completion rate drops below 30%
+        if (parseFloat(result.metrics.completionRate) < 30) {
+          console.warn(`[ALERT] Pausing campaign ${campaignId}: completion too low`);
+          await pauseCampaign(campaignId);
+        }
+      } catch (error) {
+        console.error(`Pacing error for ${campaignId}:`, error.message);
+      }
+    }
+  }, PACING_CONFIG.checkIntervalMs);
+
+  return () => clearInterval(monitor);
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import time
+import threading
+
+PACING_CONFIG = {
+    "max_calls_per_minute": 60,
+    "min_calls_per_minute": 10,
+    "target_completion_rate": 70,
+    "check_interval_seconds": 60,
+}
+
+def adjust_campaign_pacing(campaign_id):
+    """Calculate adjusted pacing based on completion rate."""
+    status = get_campaign_status(campaign_id)
+    metrics = compute_campaign_metrics(status)
+
+    completion_rate = metrics["completion_rate"]
+
+    if completion_rate >= PACING_CONFIG["target_completion_rate"]:
+        new_rate = min(
+            PACING_CONFIG["max_calls_per_minute"],
+            round(PACING_CONFIG["max_calls_per_minute"] * (completion_rate / 100)),
+        )
+    else:
+        new_rate = max(
+            PACING_CONFIG["min_calls_per_minute"],
+            round(PACING_CONFIG["max_calls_per_minute"] * (completion_rate / 100)),
+        )
+
+    print(
+        f"[Pacing] Campaign {campaign_id}: "
+        f"completion={completion_rate}%, rate={new_rate} calls/min"
+    )
+
+    return {"campaign_id": campaign_id, "new_rate": new_rate, "metrics": metrics}
+
+def pause_campaign(campaign_id):
+    """Pause a running campaign."""
+    url = f"https://{SUBDOMAIN}/v2/accounts/{ACCOUNT_SID}/campaigns/{campaign_id}"
+
+    response = requests.put(
+        url,
+        auth=(API_KEY, API_TOKEN),
+        json={"status": "paused"},
+    )
+    response.raise_for_status()
+    return response.json()
+
+def resume_campaign(campaign_id):
+    """Resume a paused campaign."""
+    url = f"https://{SUBDOMAIN}/v2/accounts/{ACCOUNT_SID}/campaigns/{campaign_id}"
+
+    response = requests.put(
+        url,
+        auth=(API_KEY, API_TOKEN),
+        json={"status": "in_progress"},
+    )
+    response.raise_for_status()
+    return response.json()
+
+def start_pacing_monitor(campaign_ids):
+    """Continuously monitor and adjust pacing for campaigns."""
+    def monitor():
+        while True:
+            for campaign_id in campaign_ids:
+                try:
+                    result = adjust_campaign_pacing(campaign_id)
+
+                    if result["metrics"]["completion_rate"] < 30:
+                        print(f"[ALERT] Pausing campaign {campaign_id}: completion too low")
+                        pause_campaign(campaign_id)
+
+                except Exception as e:
+                    print(f"Pacing error for {campaign_id}: {e}")
+
+            time.sleep(PACING_CONFIG["check_interval_seconds"])
+
+    thread = threading.Thread(target=monitor, daemon=True)
+    thread.start()
+    return thread
+```
+
+</TabItem>
+</Tabs>
+
+:::tip
+Start with a conservative call rate (e.g., 30 calls/min) and increase as you observe completion rates stabilizing above your target. This prevents agent overload during peak hours.
+:::
+
+## Step 5: Campaign Lifecycle Management
+
+Manage the full campaign lifecycle with a control API that coordinates across all regional campaigns.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+class CampaignManager {
+  constructor(campaigns) {
+    this.campaigns = campaigns; // { region: { id, callerId, totalNumbers } }
+  }
+
+  async startAll() {
+    const results = [];
+    for (const [region, campaign] of Object.entries(this.campaigns)) {
+      console.log(`Starting campaign for ${region}: ${campaign.id}`);
+      const result = await resumeCampaign(campaign.id);
+      results.push({ region, ...result });
+    }
+    return results;
+  }
+
+  async pauseAll() {
+    const results = [];
+    for (const [region, campaign] of Object.entries(this.campaigns)) {
+      console.log(`Pausing campaign for ${region}: ${campaign.id}`);
+      const result = await pauseCampaign(campaign.id);
+      results.push({ region, ...result });
+    }
+    return results;
+  }
+
+  async getOverallProgress() {
+    const progress = {};
+    let totalNumbers = 0;
+    let totalCompleted = 0;
+
+    for (const [region, campaign] of Object.entries(this.campaigns)) {
+      const status = await getCampaignStatus(campaign.id);
+      const metrics = computeCampaignMetrics(status);
+
+      progress[region] = {
+        callerId: campaign.callerId,
+        ...metrics,
+      };
+
+      totalNumbers += metrics.total;
+      totalCompleted += metrics.completed;
+    }
+
+    return {
+      regions: progress,
+      overall: {
+        totalNumbers,
+        totalCompleted,
+        overallCompletionRate: totalNumbers > 0
+          ? ((totalCompleted / totalNumbers) * 100).toFixed(1) + '%'
+          : '0.0%',
+      },
+    };
+  }
+}
+
+// Usage
+const manager = new CampaignManager(campaigns);
+await manager.startAll();
+
+// Check progress
+const progress = await manager.getOverallProgress();
+console.log(JSON.stringify(progress, null, 2));
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+class CampaignManager:
+    def __init__(self, campaigns):
+        self.campaigns = campaigns  # { region: { id, caller_id, total_numbers } }
+
+    def start_all(self):
+        results = []
+        for region, campaign in self.campaigns.items():
+            print(f"Starting campaign for {region}: {campaign['id']}")
+            result = resume_campaign(campaign["id"])
+            results.append({"region": region, **result})
+        return results
+
+    def pause_all(self):
+        results = []
+        for region, campaign in self.campaigns.items():
+            print(f"Pausing campaign for {region}: {campaign['id']}")
+            result = pause_campaign(campaign["id"])
+            results.append({"region": region, **result})
+        return results
+
+    def get_overall_progress(self):
+        progress = {}
+        total_numbers = 0
+        total_completed = 0
+
+        for region, campaign in self.campaigns.items():
+            status = get_campaign_status(campaign["id"])
+            metrics = compute_campaign_metrics(status)
+
+            progress[region] = {
+                "caller_id": campaign["caller_id"],
+                **metrics,
+            }
+
+            total_numbers += metrics["total"]
+            total_completed += metrics["completed"]
+
+        return {
+            "regions": progress,
+            "overall": {
+                "total_numbers": total_numbers,
+                "total_completed": total_completed,
+                "overall_completion_rate": (
+                    f"{round((total_completed / total_numbers) * 100, 1)}%"
+                    if total_numbers > 0 else "0.0%"
+                ),
+            },
+        }
+
+# Usage
+manager = CampaignManager(campaigns)
+manager.start_all()
+progress = manager.get_overall_progress()
+print(json.dumps(progress, indent=2))
+```
+
+</TabItem>
+</Tabs>
+
+## Campaign Status Flow
+
+```
+Created --> InProgress --> Completed
+                       --> Paused --> Resumed --> Completed
+                                  --> Completed (force, marks remaining as failed)
+Completed --> Archived
+```
+
+## Next Steps
+
+- **[Campaigns Overview](/docs/campaigns/overview)** — Campaign types, rate limits, and capabilities
+- **[Create Campaign API](/docs/campaigns/api-reference/create-campaign)** — Full API reference for campaign creation
+- **[Campaign Call Details](/docs/campaigns/api-reference/campaign-call-details)** — Retrieve per-call records within a campaign
+- **[Campaign Webhooks](/docs/campaigns/api-reference/webhooks)** — Webhook reference for campaign status updates
+- **[Campaign Lists](/docs/campaign-lists/overview)** — Manage reusable contact lists for dynamic campaigns

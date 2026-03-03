@@ -427,6 +427,286 @@
   line-height: 1.4;
 }
 
+/* Platform Stats Section */
+.platformStats {
+  padding: 2.5rem 0;
+  background: linear-gradient(135deg, #f5ecfe 0%, #f0e6fd 50%, #ece4fb 100%);
+  border-bottom: 1px solid #e8eaf3;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #231f20;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #808285;
+  font-weight: 500;
+}
+
+/* Use Cases Section */
+.useCases {
+  padding: 4rem 0 5rem;
+  background: #fff;
+  border-top: 1px solid #e8eaf3;
+}
+
+.useCasesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.useCaseCard {
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #e8eaf3;
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+  display: flex;
+  flex-direction: column;
+}
+
+.useCaseCard:hover {
+  border-color: #9b42f1;
+  box-shadow: 0 4px 12px rgba(155, 66, 241, 0.08);
+  transform: translateY(-2px);
+}
+
+.useCaseTags {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.useCaseTag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: rgba(155, 66, 241, 0.08);
+  color: #9b42f1;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.useCaseTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #231f20;
+  margin-bottom: 0.5rem;
+}
+
+.useCaseDescription {
+  font-size: 0.88rem;
+  color: #808285;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.useCaseLink {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #9b42f1;
+  text-decoration: none;
+}
+
+.useCaseLink:hover {
+  color: #8a3bd8;
+  text-decoration: none;
+}
+
+/* Social Share Section */
+.socialShare {
+  padding: 2.5rem 0;
+  text-align: center;
+  border-top: 1px solid #e8eaf3;
+  background: #eff0f1;
+}
+
+.socialShareLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #808285;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.socialShareButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.socialShareBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #e8eaf3;
+  background: #fff;
+  color: #808285;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+  position: relative;
+}
+
+.socialShareBtn:hover {
+  border-color: #9b42f1;
+  color: #9b42f1;
+  box-shadow: 0 2px 8px rgba(155, 66, 241, 0.1);
+  transform: translateY(-1px);
+}
+
+.socialShareBtn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.copyTooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #231f20;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: fadeInUp 0.2s ease;
+}
+
+.copyTooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #231f20;
+}
+
+/* Newsletter Signup Section */
+.newsletter {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #9b42f1 0%, #7c3aed 50%, #6d28d9 100%);
+  text-align: center;
+}
+
+.newsletterTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.newsletterSubtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.newsletterForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.newsletterInput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletterInput:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.newsletterButton {
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #9b42f1;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.newsletterButton:hover {
+  background: #f5ecfe;
+  transform: translateY(-1px);
+}
+
+.newsletterButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.newsletterSuccess {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #d4ffd4;
+  font-weight: 600;
+}
+
+.newsletterError {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ffd4d4;
+  font-weight: 600;
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
   .heroBanner {
@@ -471,5 +751,34 @@
 
   .quickLinksGrid {
     grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 1.5rem;
+  }
+
+  .useCasesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+  }
+
+  .newsletterInput {
+    width: 100%;
+  }
+
+  .newsletterButton {
+    width: 100%;
+  }
+
+  .newsletterTitle {
+    font-size: 1.35rem;
   }
 }

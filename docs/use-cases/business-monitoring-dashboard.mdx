@@ -1,0 +1,672 @@
+---
+sidebar_label: Business Monitoring Dashboard
+title: "Business Monitoring Dashboard"
+sidebar_position: 1
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Business Monitoring Dashboard
+
+Build a real-time dashboard using the Bulk Call Details API and Heartbeat API to monitor business performance, track ExoPhone health, and analyze call metrics.
+
+**Tags:** Voice, Automation
+
+## What You'll Build
+
+A monitoring dashboard that:
+
+- Receives real-time ExoPhone health alerts via Heartbeat webhooks
+- Fetches and aggregates call logs from the Bulk Call Details API
+- Tracks answered vs. missed calls, average duration, and peak hours
+- Exposes a simple Express.js endpoint for dashboard consumption
+
+```
+┌─────────────────────────────────────────────────┐
+│              Monitoring Dashboard                │
+│                                                  │
+│  ExoPhone Health: ✓ OK     Calls Today: 1,247   │
+│  Answer Rate: 78.3%        Avg Duration: 2m 14s │
+│  Peak Hour: 11:00 AM       Missed: 271          │
+│                                                  │
+│  ┌─────────────────────────────────────────────┐ │
+│  │  Calls by Hour (bar chart)                  │ │
+│  │  ████ ██████ █████████ ██████ ████ ██       │ │
+│  └─────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────┘
+```
+
+## Prerequisites
+
+- An Exotel account ([Sign up here](https://my.exotel.com/auth/register))
+- API credentials (API Key, API Token, Account SID) — see [Authentication](/docs/references/authentication)
+- An ExoPhone (virtual phone number)
+- Node.js 18+ (for native `fetch`) or Python 3.7+
+- A publicly accessible URL for receiving Heartbeat webhooks (use [ngrok](https://ngrok.com) for development)
+
+## Architecture Overview
+
+```
+┌──────────────┐    Webhook POST     ┌──────────────────┐
+│   Exotel     │ ──────────────────► │  Your Server     │
+│  Heartbeat   │   Health Status     │  /webhook/health │
+└──────────────┘                     └────────┬─────────┘
+                                              │ Store
+┌──────────────┐    GET /Calls        ┌───────▼─────────┐
+│  Exotel      │ ◄────────────────── │   Dashboard      │
+│  Call Details │ ──────────────────► │   Aggregator     │
+│  API         │   Call Records      │   /api/metrics   │
+└──────────────┘                     └──────────────────┘
+```
+
+## Step 1: Set Up Heartbeat Webhooks
+
+Configure a webhook endpoint to receive ExoPhone health status from the Heartbeat API. Navigate to **Notifications Settings** in your Exotel Dashboard to register your endpoint URL.
+
+:::info
+Heartbeat monitors **all ExoPhones** in your account. You cannot subscribe to individual ExoPhones. Your endpoint must return `200 OK` to acknowledge receipt.
+:::
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+
+// In-memory store for health status (use Redis/DB in production)
+let exophoneHealth = {
+  status: 'OK',
+  lastUpdated: null,
+  details: [],
+};
+
+// Heartbeat webhook receiver
+app.post('/webhook/heartbeat', (req, res) => {
+  const payload = req.body;
+
+  exophoneHealth = {
+    status: payload.Status,            // OK, WARNING, or CRITICAL
+    lastUpdated: new Date().toISOString(),
+    details: payload.ExoPhones || [],
+  };
+
+  console.log(`[Heartbeat] Status: ${payload.Status}`);
+
+  if (payload.Status === 'WARNING' || payload.Status === 'CRITICAL') {
+    console.warn(`[ALERT] ExoPhone health issue detected: ${payload.Status}`);
+    // Trigger alerts: Slack, PagerDuty, email, etc.
+  }
+
+  res.status(200).json({ received: true });
+});
+
+// Expose health status for the dashboard
+app.get('/api/health', (req, res) => {
+  res.json(exophoneHealth);
+});
+
+app.listen(3000, () => console.log('Dashboard server running on :3000'));
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from flask import Flask, request, jsonify
+from datetime import datetime
+
+app = Flask(__name__)
+
+# In-memory store (use Redis/DB in production)
+exophone_health = {
+    "status": "OK",
+    "last_updated": None,
+    "details": [],
+}
+
+@app.route("/webhook/heartbeat", methods=["POST"])
+def heartbeat_webhook():
+    payload = request.get_json()
+
+    global exophone_health
+    exophone_health = {
+        "status": payload.get("Status", "UNKNOWN"),
+        "last_updated": datetime.utcnow().isoformat(),
+        "details": payload.get("ExoPhones", []),
+    }
+
+    print(f"[Heartbeat] Status: {payload.get('Status')}")
+
+    if payload.get("Status") in ("WARNING", "CRITICAL"):
+        print(f"[ALERT] ExoPhone health issue: {payload.get('Status')}")
+        # Trigger alerts: Slack, PagerDuty, email, etc.
+
+    return jsonify({"received": True}), 200
+
+@app.route("/api/health", methods=["GET"])
+def get_health():
+    return jsonify(exophone_health)
+
+if __name__ == "__main__":
+    app.run(port=3000)
+```
+
+</TabItem>
+</Tabs>
+
+The Heartbeat API sends payloads with these status values:
+
+| Status | Meaning |
+|--------|---------|
+| `OK` | All ExoPhones are healthy |
+| `WARNING` | One or more ExoPhones have issues |
+| `CRITICAL` | All ExoPhones are affected |
+
+## Step 2: Fetch Bulk Call Details
+
+Use the Bulk Call Details API to retrieve call records for a given date range. This data powers the dashboard metrics.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const API_KEY = process.env.EXOTEL_API_KEY;
+const API_TOKEN = process.env.EXOTEL_API_TOKEN;
+const ACCOUNT_SID = process.env.EXOTEL_ACCOUNT_SID;
+const SUBDOMAIN = process.env.EXOTEL_SUBDOMAIN || 'api.exotel.com';
+
+const authHeader = 'Basic ' + Buffer.from(API_KEY + ':' + API_TOKEN).toString('base64');
+
+async function fetchCallDetails(startDate, endDate, pageSize = 100) {
+  const dateFilter = `gte:${startDate} 00:00:00;lte:${endDate} 23:59:59`;
+  const url = `https://${SUBDOMAIN}/v1/Accounts/${ACCOUNT_SID}/Calls.json`
+    + `?DateCreated=${encodeURIComponent(dateFilter)}`
+    + `&PageSize=${pageSize}`;
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: { 'Authorization': authHeader },
+  });
+
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status} ${response.statusText}`);
+  }
+
+  return response.json();
+}
+
+// Fetch all pages using cursor-based pagination
+async function fetchAllCalls(startDate, endDate) {
+  let allCalls = [];
+  let url = `https://${SUBDOMAIN}/v1/Accounts/${ACCOUNT_SID}/Calls.json`
+    + `?DateCreated=${encodeURIComponent(`gte:${startDate} 00:00:00;lte:${endDate} 23:59:59`)}`
+    + `&PageSize=100`;
+
+  while (url) {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: { 'Authorization': authHeader },
+    });
+
+    const data = await response.json();
+    allCalls = allCalls.concat(data.Calls || []);
+
+    // Use cursor-based pagination
+    url = data.Metadata?.NextPageUri
+      ? `https://${SUBDOMAIN}${data.Metadata.NextPageUri}`
+      : null;
+  }
+
+  return allCalls;
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import os
+import requests
+from urllib.parse import quote
+
+API_KEY = os.environ["EXOTEL_API_KEY"]
+API_TOKEN = os.environ["EXOTEL_API_TOKEN"]
+ACCOUNT_SID = os.environ["EXOTEL_ACCOUNT_SID"]
+SUBDOMAIN = os.environ.get("EXOTEL_SUBDOMAIN", "api.exotel.com")
+
+def fetch_call_details(start_date, end_date, page_size=100):
+    """Fetch a single page of call details."""
+    date_filter = f"gte:{start_date} 00:00:00;lte:{end_date} 23:59:59"
+    url = f"https://{SUBDOMAIN}/v1/Accounts/{ACCOUNT_SID}/Calls.json"
+
+    response = requests.get(
+        url,
+        auth=(API_KEY, API_TOKEN),
+        params={
+            "DateCreated": date_filter,
+            "PageSize": page_size,
+        },
+    )
+    response.raise_for_status()
+    return response.json()
+
+def fetch_all_calls(start_date, end_date):
+    """Fetch all call records using cursor-based pagination."""
+    all_calls = []
+    date_filter = f"gte:{start_date} 00:00:00;lte:{end_date} 23:59:59"
+    url = f"https://{SUBDOMAIN}/v1/Accounts/{ACCOUNT_SID}/Calls.json"
+    params = {"DateCreated": date_filter, "PageSize": 100}
+
+    while url:
+        response = requests.get(url, auth=(API_KEY, API_TOKEN), params=params)
+        response.raise_for_status()
+        data = response.json()
+
+        all_calls.extend(data.get("Calls", []))
+
+        next_page = data.get("Metadata", {}).get("NextPageUri")
+        if next_page:
+            url = f"https://{SUBDOMAIN}{next_page}"
+            params = None  # Cursor URL includes all params
+        else:
+            url = None
+
+    return all_calls
+```
+
+</TabItem>
+</Tabs>
+
+:::warning
+The Bulk Call Details API allows querying up to **6 months** of historical data with a maximum **1-month range** per request. Use cursor-based pagination (`NextPageUri` / `PrevPageUri`) for large result sets.
+:::
+
+## Step 3: Aggregate Call Metrics
+
+Process the raw call data to compute dashboard metrics: answer rate, average duration, peak hours, and call status distribution.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+function aggregateCallMetrics(calls) {
+  const metrics = {
+    total: calls.length,
+    answered: 0,
+    missed: 0,
+    busy: 0,
+    failed: 0,
+    totalDuration: 0,
+    hourlyDistribution: new Array(24).fill(0),
+  };
+
+  for (const call of calls) {
+    // Count by status
+    switch (call.Status) {
+      case 'completed':
+        metrics.answered++;
+        metrics.totalDuration += parseInt(call.Duration || '0', 10);
+        break;
+      case 'no-answer':
+        metrics.missed++;
+        break;
+      case 'busy':
+        metrics.busy++;
+        break;
+      case 'failed':
+        metrics.failed++;
+        break;
+    }
+
+    // Track hourly distribution
+    const hour = new Date(call.DateCreated).getHours();
+    metrics.hourlyDistribution[hour]++;
+  }
+
+  // Compute derived metrics
+  metrics.answerRate = metrics.total > 0
+    ? ((metrics.answered / metrics.total) * 100).toFixed(1)
+    : '0.0';
+
+  metrics.avgDurationSeconds = metrics.answered > 0
+    ? Math.round(metrics.totalDuration / metrics.answered)
+    : 0;
+
+  metrics.avgDurationFormatted = formatDuration(metrics.avgDurationSeconds);
+
+  metrics.peakHour = metrics.hourlyDistribution.indexOf(
+    Math.max(...metrics.hourlyDistribution)
+  );
+
+  return metrics;
+}
+
+function formatDuration(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins}m ${secs}s`;
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from datetime import datetime
+from collections import Counter
+
+def aggregate_call_metrics(calls):
+    metrics = {
+        "total": len(calls),
+        "answered": 0,
+        "missed": 0,
+        "busy": 0,
+        "failed": 0,
+        "total_duration": 0,
+        "hourly_distribution": [0] * 24,
+    }
+
+    for call in calls:
+        status = call.get("Status", "")
+
+        if status == "completed":
+            metrics["answered"] += 1
+            metrics["total_duration"] += int(call.get("Duration", 0))
+        elif status == "no-answer":
+            metrics["missed"] += 1
+        elif status == "busy":
+            metrics["busy"] += 1
+        elif status == "failed":
+            metrics["failed"] += 1
+
+        # Track hourly distribution
+        created = call.get("DateCreated", "")
+        if created:
+            hour = datetime.strptime(created, "%Y-%m-%d %H:%M:%S").hour
+            metrics["hourly_distribution"][hour] += 1
+
+    # Derived metrics
+    total = metrics["total"]
+    answered = metrics["answered"]
+
+    metrics["answer_rate"] = round((answered / total) * 100, 1) if total > 0 else 0.0
+    metrics["avg_duration_seconds"] = (
+        round(metrics["total_duration"] / answered) if answered > 0 else 0
+    )
+    metrics["avg_duration_formatted"] = format_duration(metrics["avg_duration_seconds"])
+    metrics["peak_hour"] = metrics["hourly_distribution"].index(
+        max(metrics["hourly_distribution"])
+    )
+
+    return metrics
+
+def format_duration(seconds):
+    mins = seconds // 60
+    secs = seconds % 60
+    return f"{mins}m {secs}s"
+```
+
+</TabItem>
+</Tabs>
+
+## Step 4: Build the Dashboard Endpoint
+
+Combine health monitoring and call metrics into a single dashboard API.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+
+let exophoneHealth = { status: 'OK', lastUpdated: null, details: [] };
+
+// Heartbeat webhook (from Step 1)
+app.post('/webhook/heartbeat', (req, res) => {
+  exophoneHealth = {
+    status: req.body.Status,
+    lastUpdated: new Date().toISOString(),
+    details: req.body.ExoPhones || [],
+  };
+  res.status(200).json({ received: true });
+});
+
+// Dashboard metrics endpoint
+app.get('/api/dashboard', async (req, res) => {
+  try {
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+
+    const calls = await fetchAllCalls(today, today);
+    const metrics = aggregateCallMetrics(calls);
+
+    res.json({
+      health: exophoneHealth,
+      metrics: {
+        totalCalls: metrics.total,
+        answered: metrics.answered,
+        missed: metrics.missed,
+        busy: metrics.busy,
+        failed: metrics.failed,
+        answerRate: `${metrics.answerRate}%`,
+        avgDuration: metrics.avgDurationFormatted,
+        peakHour: `${metrics.peakHour}:00`,
+        hourlyDistribution: metrics.hourlyDistribution,
+      },
+      generatedAt: new Date().toISOString(),
+    });
+  } catch (error) {
+    console.error('Dashboard error:', error.message);
+    res.status(500).json({ error: 'Failed to generate dashboard data' });
+  }
+});
+
+// Daily summary with date range
+app.get('/api/dashboard/range', async (req, res) => {
+  try {
+    const { start, end } = req.query;
+    if (!start || !end) {
+      return res.status(400).json({ error: 'start and end query params required (YYYY-MM-DD)' });
+    }
+
+    const calls = await fetchAllCalls(start, end);
+    const metrics = aggregateCallMetrics(calls);
+
+    res.json({ metrics, generatedAt: new Date().toISOString() });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.listen(3000, () => console.log('Dashboard running on http://localhost:3000'));
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from flask import Flask, request, jsonify
+from datetime import datetime, date
+
+app = Flask(__name__)
+
+exophone_health = {"status": "OK", "last_updated": None, "details": []}
+
+@app.route("/webhook/heartbeat", methods=["POST"])
+def heartbeat_webhook():
+    global exophone_health
+    payload = request.get_json()
+    exophone_health = {
+        "status": payload.get("Status", "UNKNOWN"),
+        "last_updated": datetime.utcnow().isoformat(),
+        "details": payload.get("ExoPhones", []),
+    }
+    return jsonify({"received": True}), 200
+
+@app.route("/api/dashboard", methods=["GET"])
+def dashboard():
+    today = date.today().isoformat()
+
+    calls = fetch_all_calls(today, today)
+    metrics = aggregate_call_metrics(calls)
+
+    return jsonify({
+        "health": exophone_health,
+        "metrics": {
+            "total_calls": metrics["total"],
+            "answered": metrics["answered"],
+            "missed": metrics["missed"],
+            "busy": metrics["busy"],
+            "failed": metrics["failed"],
+            "answer_rate": f"{metrics['answer_rate']}%",
+            "avg_duration": metrics["avg_duration_formatted"],
+            "peak_hour": f"{metrics['peak_hour']}:00",
+            "hourly_distribution": metrics["hourly_distribution"],
+        },
+        "generated_at": datetime.utcnow().isoformat(),
+    })
+
+@app.route("/api/dashboard/range", methods=["GET"])
+def dashboard_range():
+    start = request.args.get("start")
+    end = request.args.get("end")
+    if not start or not end:
+        return jsonify({"error": "start and end params required (YYYY-MM-DD)"}), 400
+
+    calls = fetch_all_calls(start, end)
+    metrics = aggregate_call_metrics(calls)
+
+    return jsonify({
+        "metrics": metrics,
+        "generated_at": datetime.utcnow().isoformat(),
+    })
+
+if __name__ == "__main__":
+    app.run(port=3000)
+```
+
+</TabItem>
+</Tabs>
+
+## Step 5: Filter by Direction and Phone Number
+
+Enhance your dashboard by filtering calls by direction (inbound vs. outbound) and by specific ExoPhone numbers.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+async function fetchFilteredCalls(startDate, endDate, options = {}) {
+  const params = new URLSearchParams({
+    DateCreated: `gte:${startDate} 00:00:00;lte:${endDate} 23:59:59`,
+    PageSize: '100',
+  });
+
+  // Filter by direction: inbound, outbound-dial, outbound-api
+  if (options.direction) {
+    params.set('Direction', options.direction);
+  }
+
+  // Filter by ExoPhone number
+  if (options.phoneNumber) {
+    params.set('PhoneNumber', options.phoneNumber);
+  }
+
+  // Filter by call status
+  if (options.status) {
+    params.set('Status', options.status);
+  }
+
+  const url = `https://${SUBDOMAIN}/v1/Accounts/${ACCOUNT_SID}/Calls.json?${params}`;
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: { 'Authorization': authHeader },
+  });
+
+  return response.json();
+}
+
+// Example: Get today's inbound completed calls for a specific ExoPhone
+const inboundCalls = await fetchFilteredCalls('2025-01-15', '2025-01-15', {
+  direction: 'inbound',
+  status: 'completed',
+  phoneNumber: '0XXXXXX4890',
+});
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+def fetch_filtered_calls(start_date, end_date, direction=None, phone_number=None, status=None):
+    url = f"https://{SUBDOMAIN}/v1/Accounts/{ACCOUNT_SID}/Calls.json"
+    params = {
+        "DateCreated": f"gte:{start_date} 00:00:00;lte:{end_date} 23:59:59",
+        "PageSize": 100,
+    }
+
+    if direction:
+        params["Direction"] = direction  # inbound, outbound-dial, outbound-api
+
+    if phone_number:
+        params["PhoneNumber"] = phone_number
+
+    if status:
+        params["Status"] = status  # completed, failed, busy, no-answer
+
+    response = requests.get(url, auth=(API_KEY, API_TOKEN), params=params)
+    response.raise_for_status()
+    return response.json()
+
+# Example: Get today's inbound completed calls for a specific ExoPhone
+inbound_calls = fetch_filtered_calls(
+    "2025-01-15", "2025-01-15",
+    direction="inbound",
+    status="completed",
+    phone_number="0XXXXXX4890",
+)
+```
+
+</TabItem>
+</Tabs>
+
+:::tip
+Use the `Direction` filter to separate inbound and outbound call metrics on your dashboard. This helps identify whether missed calls are from customers trying to reach you (inbound) or failed outreach attempts (outbound).
+:::
+
+## Sample Dashboard Response
+
+```json
+{
+  "health": {
+    "status": "OK",
+    "lastUpdated": "2025-01-15T10:30:00.000Z",
+    "details": []
+  },
+  "metrics": {
+    "totalCalls": 1247,
+    "answered": 976,
+    "missed": 189,
+    "busy": 52,
+    "failed": 30,
+    "answerRate": "78.3%",
+    "avgDuration": "2m 14s",
+    "peakHour": "11:00",
+    "hourlyDistribution": [12, 8, 3, 2, 5, 18, 45, 89, 112, 134, 145, 152, 128, 98, 87, 65, 54, 42, 28, 12, 5, 2, 1, 0]
+  },
+  "generatedAt": "2025-01-15T14:22:33.000Z"
+}
+```
+
+## Next Steps
+
+- **[Call Details API Reference](/docs/voice-v1/api-reference/call-details)** — Full API documentation for single and bulk call details
+- **[Heartbeat Overview](/docs/heartbeat/overview)** — Configure ExoPhone health monitoring
+- **[Call Monitoring & Visualization](/docs/use-cases/call-monitoring-visualization)** — Build detailed reporting with status callbacks
+- **[ExoPhones API](/docs/exophones/overview)** — Manage your virtual phone numbers programmatically

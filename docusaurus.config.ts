@@ -121,6 +121,7 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'rcsOmnichannelSidebar', label: 'RCS Omnichannel' },
             { type: 'docSidebar', sidebarId: 'urlShorteningSidebar', label: 'URL Shortening' },
             { type: 'docSidebar', sidebarId: 'mcpServerSidebar', label: 'Exotel MCP Server' },
+            { type: 'docSidebar', sidebarId: 'useCasesSidebar', label: 'Use Cases' },
             { type: 'docSidebar', sidebarId: 'referencesSidebar', label: 'Error Codes & Webhooks' },
             { type: 'docSidebar', sidebarId: 'faqsSidebar', label: 'FAQs' },
           ],

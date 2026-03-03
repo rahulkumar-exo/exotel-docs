@@ -1,0 +1,715 @@
+---
+sidebar_label: Interactive SMS
+title: "Interactive SMS with Custom UI"
+sidebar_position: 5
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Interactive SMS with Custom UI
+
+Build interactive SMS workflows with two-way customer communication, status tracking, and a simple web UI for managing conversations.
+
+**Tags:** SMS, Integrations
+
+## What You'll Build
+
+An interactive SMS system that:
+
+- Sends SMS messages using the Exotel SMS API with DLT compliance
+- Tracks delivery status via status callbacks
+- Receives and processes incoming SMS replies via webhooks
+- Provides a simple web interface for managing SMS conversations
+
+```
+┌────────────────────────────────────────────────────────────┐
+│  SMS Conversations                                         │
+│                                                            │
+│  ┌──────────────────────────────────────────────────┐      │
+│  │ +919876543210 — Ravi Kumar               2 msgs  │      │
+│  │ Last: "Yes, I confirm my appointment"    2m ago  │      │
+│  ├──────────────────────────────────────────────────┤      │
+│  │ +919876543211 — Priya Sharma             3 msgs  │      │
+│  │ Last: "Can you reschedule to 4 PM?"      15m ago │      │
+│  ├──────────────────────────────────────────────────┤      │
+│  │ +919876543212 — Amit Patel               1 msg   │      │
+│  │ Last: Delivered (no reply)               1h ago  │      │
+│  └──────────────────────────────────────────────────┘      │
+│                                                            │
+│  [Send New Message]  [Export Conversations]                 │
+└────────────────────────────────────────────────────────────┘
+```
+
+## Prerequisites
+
+- An Exotel account ([Sign up here](https://my.exotel.com/auth/register))
+- API credentials (API Key, API Token, Account SID) — see [Authentication](/docs/references/authentication)
+- An ExoPhone or approved Sender ID
+- Node.js 18+ or Python 3.7+
+- A publicly accessible URL for receiving webhooks
+- **For India:** DLT Entity ID and registered templates (see [DLT Compliance](#dlt-compliance-for-india))
+
+## Step 1: Send SMS Messages
+
+Use the Exotel SMS API to send messages to customers. The API supports transactional, promotional, and OTP message types.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const API_KEY = process.env.EXOTEL_API_KEY;
+const API_TOKEN = process.env.EXOTEL_API_TOKEN;
+const ACCOUNT_SID = process.env.EXOTEL_ACCOUNT_SID;
+const SUBDOMAIN = process.env.EXOTEL_SUBDOMAIN || 'api.exotel.com';
+
+const authHeader = 'Basic ' + Buffer.from(API_KEY + ':' + API_TOKEN).toString('base64');
+
+async function sendSms({ to, body, from, dltEntityId, dltTemplateId, callbackUrl }) {
+  const url = `https://${SUBDOMAIN}/v1/Accounts/${ACCOUNT_SID}/Sms/send`;
+
+  const params = new URLSearchParams({
+    From: from || process.env.EXOTEL_SENDER_ID,
+    To: to,
+    Body: body,
+  });
+
+  // DLT parameters (mandatory for India)
+  if (dltEntityId) params.set('DltEntityId', dltEntityId);
+  if (dltTemplateId) params.set('DltTemplateId', dltTemplateId);
+
+  // Status callback URL
+  if (callbackUrl) params.set('StatusCallback', callbackUrl);
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Authorization': authHeader,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: params.toString(),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`SMS send failed: ${response.status} - ${errorText}`);
+  }
+
+  const data = await response.json();
+  return {
+    sid: data.SMSMessage?.Sid,
+    status: data.SMSMessage?.Status,
+    to: data.SMSMessage?.To,
+    dateCreated: data.SMSMessage?.DateCreated,
+  };
+}
+
+// Example: Send an appointment confirmation
+const result = await sendSms({
+  to: '+919876543210',
+  body: 'Your appointment is confirmed for Jan 20 at 3 PM. Reply YES to confirm or NO to cancel.',
+  from: 'EXOTEL',
+  dltEntityId: '1234567890123456789',
+  dltTemplateId: '9876543210987654321',
+  callbackUrl: 'https://your-server.com/webhook/sms-status',
+});
+
+console.log(`SMS sent: ${result.sid}`);
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import os
+import requests
+
+API_KEY = os.environ["EXOTEL_API_KEY"]
+API_TOKEN = os.environ["EXOTEL_API_TOKEN"]
+ACCOUNT_SID = os.environ["EXOTEL_ACCOUNT_SID"]
+SUBDOMAIN = os.environ.get("EXOTEL_SUBDOMAIN", "api.exotel.com")
+
+def send_sms(to, body, sender=None, dlt_entity_id=None, dlt_template_id=None, callback_url=None):
+    """Send a single SMS message."""
+    url = f"https://{SUBDOMAIN}/v1/Accounts/{ACCOUNT_SID}/Sms/send"
+
+    data = {
+        "From": sender or os.environ.get("EXOTEL_SENDER_ID", "EXOTEL"),
+        "To": to,
+        "Body": body,
+    }
+
+    # DLT parameters (mandatory for India)
+    if dlt_entity_id:
+        data["DltEntityId"] = dlt_entity_id
+    if dlt_template_id:
+        data["DltTemplateId"] = dlt_template_id
+
+    # Status callback
+    if callback_url:
+        data["StatusCallback"] = callback_url
+
+    response = requests.post(url, auth=(API_KEY, API_TOKEN), data=data)
+    response.raise_for_status()
+
+    result = response.json()
+    sms_data = result.get("SMSMessage", {})
+
+    return {
+        "sid": sms_data.get("Sid"),
+        "status": sms_data.get("Status"),
+        "to": sms_data.get("To"),
+        "date_created": sms_data.get("DateCreated"),
+    }
+
+# Example: Send an appointment confirmation
+result = send_sms(
+    to="+919876543210",
+    body="Your appointment is confirmed for Jan 20 at 3 PM. Reply YES to confirm or NO to cancel.",
+    sender="EXOTEL",
+    dlt_entity_id="1234567890123456789",
+    dlt_template_id="9876543210987654321",
+    callback_url="https://your-server.com/webhook/sms-status",
+)
+print(f"SMS sent: {result['sid']}")
+```
+
+</TabItem>
+</Tabs>
+
+## Step 2: Set Up SMS Status Callbacks
+
+Track delivery status in real-time by configuring a status callback URL. Exotel sends a POST request whenever the SMS status changes.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// In-memory conversation store (use a database in production)
+const conversations = new Map();
+
+function getOrCreateConversation(phoneNumber) {
+  if (!conversations.has(phoneNumber)) {
+    conversations.set(phoneNumber, {
+      phoneNumber,
+      messages: [],
+      lastActivity: null,
+    });
+  }
+  return conversations.get(phoneNumber);
+}
+
+// SMS status callback webhook
+app.post('/webhook/sms-status', (req, res) => {
+  const { SmsSid, To, Status, DetailedStatus, SmsType } = req.body;
+
+  console.log(`[SMS Status] ${SmsSid} to ${To}: ${Status} (${DetailedStatus})`);
+
+  // Update the message status in the conversation
+  const convo = getOrCreateConversation(To);
+  const message = convo.messages.find((m) => m.sid === SmsSid);
+
+  if (message) {
+    message.status = Status;
+    message.detailedStatus = DetailedStatus;
+    message.updatedAt = new Date().toISOString();
+  }
+
+  convo.lastActivity = new Date().toISOString();
+
+  res.status(200).json({ received: true });
+});
+
+// Send an outbound SMS and track it
+app.post('/api/sms/send', async (req, res) => {
+  try {
+    const { to, body, dltEntityId, dltTemplateId } = req.body;
+
+    const result = await sendSms({
+      to,
+      body,
+      dltEntityId,
+      dltTemplateId,
+      callbackUrl: 'https://your-server.com/webhook/sms-status',
+    });
+
+    // Store the outbound message in the conversation
+    const convo = getOrCreateConversation(to);
+    convo.messages.push({
+      sid: result.sid,
+      direction: 'outbound',
+      body,
+      status: result.status,
+      timestamp: new Date().toISOString(),
+    });
+    convo.lastActivity = new Date().toISOString();
+
+    res.json({ success: true, sid: result.sid });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+from flask import Flask, request, jsonify
+from datetime import datetime
+from collections import OrderedDict
+
+app = Flask(__name__)
+
+# In-memory conversation store (use a database in production)
+conversations = OrderedDict()
+
+def get_or_create_conversation(phone_number):
+    if phone_number not in conversations:
+        conversations[phone_number] = {
+            "phone_number": phone_number,
+            "messages": [],
+            "last_activity": None,
+        }
+    return conversations[phone_number]
+
+@app.route("/webhook/sms-status", methods=["POST"])
+def sms_status_callback():
+    data = request.form if request.content_type != "application/json" else request.get_json()
+
+    sms_sid = data.get("SmsSid")
+    to = data.get("To")
+    status = data.get("Status")
+    detailed_status = data.get("DetailedStatus")
+
+    print(f"[SMS Status] {sms_sid} to {to}: {status} ({detailed_status})")
+
+    convo = get_or_create_conversation(to)
+    for message in convo["messages"]:
+        if message.get("sid") == sms_sid:
+            message["status"] = status
+            message["detailed_status"] = detailed_status
+            message["updated_at"] = datetime.utcnow().isoformat()
+            break
+
+    convo["last_activity"] = datetime.utcnow().isoformat()
+
+    return jsonify({"received": True}), 200
+
+@app.route("/api/sms/send", methods=["POST"])
+def send_sms_endpoint():
+    data = request.get_json()
+    to = data.get("to")
+    body = data.get("body")
+
+    result = send_sms(
+        to=to,
+        body=body,
+        dlt_entity_id=data.get("dlt_entity_id"),
+        dlt_template_id=data.get("dlt_template_id"),
+        callback_url="https://your-server.com/webhook/sms-status",
+    )
+
+    convo = get_or_create_conversation(to)
+    convo["messages"].append({
+        "sid": result["sid"],
+        "direction": "outbound",
+        "body": body,
+        "status": result["status"],
+        "timestamp": datetime.utcnow().isoformat(),
+    })
+    convo["last_activity"] = datetime.utcnow().isoformat()
+
+    return jsonify({"success": True, "sid": result["sid"]})
+```
+
+</TabItem>
+</Tabs>
+
+### SMS Status Values
+
+| Status | Description |
+|--------|-------------|
+| `queued` | Message accepted and queued for delivery |
+| `sending` | Message is being sent to the carrier |
+| `submitted` | Message submitted to the carrier |
+| `sent` | Carrier accepted the message |
+| `delivered` | Message delivered to the recipient |
+| `failed` | Message delivery failed |
+| `failed-dnd` | Blocked due to DND (Do Not Disturb) |
+
+## Step 3: Handle Incoming SMS Replies
+
+Configure a webhook to receive incoming SMS replies from customers. Set this up in your Exotel Dashboard under the ExoPhone settings.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+// Incoming SMS webhook receiver
+app.post('/webhook/sms-incoming', (req, res) => {
+  const { From, To, Body, SmsSid, DateCreated } = req.body;
+
+  console.log(`[Incoming SMS] From: ${From}, Body: "${Body}"`);
+
+  // Store the incoming message in the conversation
+  const convo = getOrCreateConversation(From);
+  convo.messages.push({
+    sid: SmsSid,
+    direction: 'inbound',
+    body: Body,
+    from: From,
+    to: To,
+    status: 'received',
+    timestamp: DateCreated || new Date().toISOString(),
+  });
+  convo.lastActivity = new Date().toISOString();
+
+  // Process the reply (simple keyword matching)
+  const replyText = Body.trim().toUpperCase();
+
+  if (replyText === 'YES' || replyText === 'CONFIRM') {
+    handleConfirmation(From);
+  } else if (replyText === 'NO' || replyText === 'CANCEL') {
+    handleCancellation(From);
+  } else if (replyText === 'HELP') {
+    handleHelpRequest(From);
+  } else {
+    // Store as a general message for manual review
+    console.log(`[Unrecognized reply] From ${From}: "${Body}"`);
+  }
+
+  res.status(200).json({ received: true });
+});
+
+function handleConfirmation(phoneNumber) {
+  console.log(`[Confirmed] ${phoneNumber} confirmed their appointment`);
+  // Update your database, send confirmation SMS, etc.
+}
+
+function handleCancellation(phoneNumber) {
+  console.log(`[Cancelled] ${phoneNumber} cancelled their appointment`);
+  // Update your database, trigger rebooking flow, etc.
+}
+
+function handleHelpRequest(phoneNumber) {
+  console.log(`[Help] ${phoneNumber} requested help`);
+  // Send help SMS or route to agent
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+@app.route("/webhook/sms-incoming", methods=["POST"])
+def sms_incoming():
+    data = request.form if request.content_type != "application/json" else request.get_json()
+
+    from_number = data.get("From")
+    to_number = data.get("To")
+    body = data.get("Body", "")
+    sms_sid = data.get("SmsSid")
+    date_created = data.get("DateCreated")
+
+    print(f'[Incoming SMS] From: {from_number}, Body: "{body}"')
+
+    convo = get_or_create_conversation(from_number)
+    convo["messages"].append({
+        "sid": sms_sid,
+        "direction": "inbound",
+        "body": body,
+        "from": from_number,
+        "to": to_number,
+        "status": "received",
+        "timestamp": date_created or datetime.utcnow().isoformat(),
+    })
+    convo["last_activity"] = datetime.utcnow().isoformat()
+
+    # Process the reply
+    reply_text = body.strip().upper()
+
+    if reply_text in ("YES", "CONFIRM"):
+        handle_confirmation(from_number)
+    elif reply_text in ("NO", "CANCEL"):
+        handle_cancellation(from_number)
+    elif reply_text == "HELP":
+        handle_help_request(from_number)
+    else:
+        print(f'[Unrecognized reply] From {from_number}: "{body}"')
+
+    return jsonify({"received": True}), 200
+
+def handle_confirmation(phone_number):
+    print(f"[Confirmed] {phone_number} confirmed their appointment")
+
+def handle_cancellation(phone_number):
+    print(f"[Cancelled] {phone_number} cancelled their appointment")
+
+def handle_help_request(phone_number):
+    print(f"[Help] {phone_number} requested help")
+```
+
+</TabItem>
+</Tabs>
+
+:::info
+To receive incoming SMS, configure the **SMS URL** on your ExoPhone in the Exotel Dashboard. Navigate to **ExoPhones** > select your number > **SMS Settings** > set the incoming SMS webhook URL.
+:::
+
+## Step 4: Build the Conversation UI API
+
+Expose API endpoints that a frontend application can consume to display and manage SMS conversations.
+
+<Tabs groupId="programming-language">
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+// List all conversations
+app.get('/api/conversations', (req, res) => {
+  const convos = Array.from(conversations.values())
+    .map((convo) => ({
+      phoneNumber: convo.phoneNumber,
+      messageCount: convo.messages.length,
+      lastMessage: convo.messages[convo.messages.length - 1] || null,
+      lastActivity: convo.lastActivity,
+      hasUnread: convo.messages.some(
+        (m) => m.direction === 'inbound' && !m.read,
+      ),
+    }))
+    .sort((a, b) => new Date(b.lastActivity) - new Date(a.lastActivity));
+
+  res.json({ conversations: convos, total: convos.length });
+});
+
+// Get a single conversation with full message history
+app.get('/api/conversations/:phoneNumber', (req, res) => {
+  const { phoneNumber } = req.params;
+  const convo = conversations.get(phoneNumber);
+
+  if (!convo) {
+    return res.status(404).json({ error: 'Conversation not found' });
+  }
+
+  // Mark inbound messages as read
+  convo.messages.forEach((m) => {
+    if (m.direction === 'inbound') m.read = true;
+  });
+
+  res.json(convo);
+});
+
+// Send a reply within a conversation
+app.post('/api/conversations/:phoneNumber/reply', async (req, res) => {
+  try {
+    const { phoneNumber } = req.params;
+    const { body, dltEntityId, dltTemplateId } = req.body;
+
+    const result = await sendSms({
+      to: phoneNumber,
+      body,
+      dltEntityId,
+      dltTemplateId,
+      callbackUrl: 'https://your-server.com/webhook/sms-status',
+    });
+
+    const convo = getOrCreateConversation(phoneNumber);
+    convo.messages.push({
+      sid: result.sid,
+      direction: 'outbound',
+      body,
+      status: result.status,
+      timestamp: new Date().toISOString(),
+    });
+    convo.lastActivity = new Date().toISOString();
+
+    res.json({ success: true, sid: result.sid });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Bulk send to multiple recipients
+app.post('/api/sms/bulk', async (req, res) => {
+  const { recipients, body, dltEntityId, dltTemplateId } = req.body;
+
+  const results = [];
+  for (const to of recipients) {
+    try {
+      const result = await sendSms({
+        to,
+        body,
+        dltEntityId,
+        dltTemplateId,
+        callbackUrl: 'https://your-server.com/webhook/sms-status',
+      });
+      results.push({ to, success: true, sid: result.sid });
+    } catch (error) {
+      results.push({ to, success: false, error: error.message });
+    }
+  }
+
+  res.json({
+    total: recipients.length,
+    sent: results.filter((r) => r.success).length,
+    failed: results.filter((r) => !r.success).length,
+    results,
+  });
+});
+
+app.listen(3000, () => console.log('SMS service running on :3000'));
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+@app.route("/api/conversations", methods=["GET"])
+def list_conversations():
+    convos = []
+    for phone, convo in sorted(
+        conversations.items(),
+        key=lambda x: x[1].get("last_activity") or "",
+        reverse=True,
+    ):
+        messages = convo["messages"]
+        convos.append({
+            "phone_number": convo["phone_number"],
+            "message_count": len(messages),
+            "last_message": messages[-1] if messages else None,
+            "last_activity": convo["last_activity"],
+            "has_unread": any(
+                m["direction"] == "inbound" and not m.get("read")
+                for m in messages
+            ),
+        })
+
+    return jsonify({"conversations": convos, "total": len(convos)})
+
+@app.route("/api/conversations/<phone_number>", methods=["GET"])
+def get_conversation(phone_number):
+    convo = conversations.get(phone_number)
+    if not convo:
+        return jsonify({"error": "Conversation not found"}), 404
+
+    for m in convo["messages"]:
+        if m["direction"] == "inbound":
+            m["read"] = True
+
+    return jsonify(convo)
+
+@app.route("/api/conversations/<phone_number>/reply", methods=["POST"])
+def reply_to_conversation(phone_number):
+    data = request.get_json()
+    body = data.get("body")
+
+    result = send_sms(
+        to=phone_number,
+        body=body,
+        dlt_entity_id=data.get("dlt_entity_id"),
+        dlt_template_id=data.get("dlt_template_id"),
+        callback_url="https://your-server.com/webhook/sms-status",
+    )
+
+    convo = get_or_create_conversation(phone_number)
+    convo["messages"].append({
+        "sid": result["sid"],
+        "direction": "outbound",
+        "body": body,
+        "status": result["status"],
+        "timestamp": datetime.utcnow().isoformat(),
+    })
+    convo["last_activity"] = datetime.utcnow().isoformat()
+
+    return jsonify({"success": True, "sid": result["sid"]})
+
+@app.route("/api/sms/bulk", methods=["POST"])
+def bulk_send():
+    data = request.get_json()
+    recipients = data.get("recipients", [])
+    body = data.get("body")
+
+    results = []
+    for to in recipients:
+        try:
+            result = send_sms(
+                to=to,
+                body=body,
+                dlt_entity_id=data.get("dlt_entity_id"),
+                dlt_template_id=data.get("dlt_template_id"),
+                callback_url="https://your-server.com/webhook/sms-status",
+            )
+            results.append({"to": to, "success": True, "sid": result["sid"]})
+        except Exception as e:
+            results.append({"to": to, "success": False, "error": str(e)})
+
+    return jsonify({
+        "total": len(recipients),
+        "sent": sum(1 for r in results if r["success"]),
+        "failed": sum(1 for r in results if not r["success"]),
+        "results": results,
+    })
+
+if __name__ == "__main__":
+    app.run(port=3000)
+```
+
+</TabItem>
+</Tabs>
+
+## DLT Compliance for India
+
+If you are sending SMS to Indian phone numbers, DLT (Distributed Ledger Technology) registration is mandatory as per TRAI regulations.
+
+### What You Need
+
+| Requirement | Description |
+|-------------|-------------|
+| **DLT Entity ID** | Your registered entity ID from a DLT portal |
+| **DLT Template ID** | Approved template ID for each message format |
+| **Sender ID** | Approved header (e.g., "EXOTEL") registered with DLT |
+
+### Registration Steps
+
+1. Register on a DLT portal: Jio, Airtel, Vodafone-Idea, or BSNL
+2. Get your **Entity ID** approved
+3. Register your **Sender ID** (header)
+4. Submit **message templates** and get template IDs approved
+5. Pass `DltEntityId` and `DltTemplateId` in every SMS API request
+
+:::warning
+Without DLT registration, SMS to Indian numbers will be **blocked by telecom operators**. Ensure all your message templates are pre-approved before sending.
+:::
+
+### Template Example
+
+```
+DLT Template: "Your appointment is confirmed for {#var#} at {#var#}. Reply YES to confirm or NO to cancel."
+Template ID: 9876543210987654321
+```
+
+When sending, the `Body` must match the registered template format with variable values filled in.
+
+## API Endpoints Summary
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/sms/send` | Send a single SMS |
+| `POST` | `/api/sms/bulk` | Send SMS to multiple recipients |
+| `GET` | `/api/conversations` | List all conversations |
+| `GET` | `/api/conversations/:phone` | Get full conversation history |
+| `POST` | `/api/conversations/:phone/reply` | Reply within a conversation |
+| `POST` | `/webhook/sms-status` | SMS delivery status callback |
+| `POST` | `/webhook/sms-incoming` | Incoming SMS webhook |
+
+## Next Steps
+
+- **[Send SMS API Reference](/docs/sms-api/api-reference/send-sms)** — Full API documentation for sending SMS
+- **[SMS Overview](/docs/sms-api/overview)** — SMS types, rate limits, and DLT compliance details
+- **[Bulk SMS API](/docs/sms-api/api-reference/bulk-sms)** — Send bulk SMS with static or dynamic content
+- **[SMS Details API](/docs/sms-api/api-reference/sms-details)** — Retrieve SMS delivery records
