@@ -1,5 +1,6 @@
 ---
 title: Connect Applet
+description: Route incoming calls to phone numbers or groups using the Exotel Connect applet, with support for manual entry or dynamic URL-based dialing.
 id: connect
 sidebar_label: Connect
 sidebar_position: 2

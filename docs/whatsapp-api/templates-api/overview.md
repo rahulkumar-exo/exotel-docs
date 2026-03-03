@@ -1,6 +1,7 @@
 ---
 id: overview
 title: WhatsApp - Template Management APIs
+description: Create, retrieve, edit, and delete WhatsApp message templates for your WABA using the Exotel Template Management API.
 sidebar_label: Overview
 slug: /whatsapp-api/templates-api/overview
 ---

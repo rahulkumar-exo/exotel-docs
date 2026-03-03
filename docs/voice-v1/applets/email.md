@@ -1,6 +1,7 @@
 ---
 id: email
 title: Email Applet
+description: Send email notifications with call details using the Exotel Email applet. Alert your team about incoming, missed, or voicemail calls.
 sidebar_label: Email
 sidebar_position: 9
 ---

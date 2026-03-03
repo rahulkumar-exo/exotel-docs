@@ -1,6 +1,7 @@
 ---
 id: greeting
 title: Greeting Applet
+description: Play recorded voice messages or text-to-speech greetings to callers using the Exotel Greeting applet in your call flow.
 sidebar_label: Greeting
 sidebar_position: 1
 ---

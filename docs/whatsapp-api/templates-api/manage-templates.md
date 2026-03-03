@@ -1,6 +1,7 @@
 ---
 id: manage-templates
 title: Manage Templates
+description: Retrieve, upload samples, and manage WhatsApp message templates programmatically using the Exotel Template Management API.
 sidebar_label: Manage Templates
 ---
 

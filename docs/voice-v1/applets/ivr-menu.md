@@ -1,6 +1,7 @@
 ---
 id: ivr-menu
 title: IVR Menu Applet
+description: Build interactive voice menus with the Exotel IVR Menu applet. Route callers based on DTMF keypad input to different call flow branches.
 sidebar_label: IVR Menu
 sidebar_position: 5
 ---

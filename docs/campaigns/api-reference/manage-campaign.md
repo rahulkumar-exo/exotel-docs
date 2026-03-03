@@ -1,6 +1,7 @@
 ---
 id: manage-campaign
 title: Manage Campaign
+description: Get details, pause, resume, complete, archive, and delete campaigns using the Exotel Campaign API. Includes endpoints and request examples.
 sidebar_label: Manage Campaign
 sidebar_position: 2
 ---

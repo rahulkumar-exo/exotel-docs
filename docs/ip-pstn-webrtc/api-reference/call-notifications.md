@@ -1,6 +1,7 @@
 ---
 id: call-notifications
 title: Call Notifications
+description: Handle inbound and outbound call event webhooks for your Exotel WebRTC application, including payload formats and events.
 sidebar_label: Call Notifications
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: campaign-details
 title: Get Campaign Details
+description: Retrieve details and delivery statistics for a specific SMS campaign using the Exotel SMS Campaigns API.
 sidebar_label: Campaign Details
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: status-codes
 title: SMS Status Codes
+description: Complete reference of Exotel SMS API status codes including intermediate, success, and failure delivery statuses with descriptions.
 sidebar_label: Status Codes
 sidebar_position: 4
 ---

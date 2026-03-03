@@ -1,6 +1,7 @@
 ---
 id: transfer
 title: Transfer Applet
+description: Build modular call flows with the Exotel Transfer applet. Transfer calls between separate reusable flows instead of duplicating logic.
 sidebar_label: Transfer
 sidebar_position: 4
 ---

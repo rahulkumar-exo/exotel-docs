@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Lead Assist (ExoBridge - Settings)
+description: Manage webhook endpoints, PIN settings, and regional configurations for your Exotel ExoBridge Lead Assist account.
 sidebar_label: Overview
 slug: /lead-assist-settings/overview
 ---

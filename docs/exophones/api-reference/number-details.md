@@ -1,6 +1,7 @@
 ---
 id: number-details
 title: ExoPhone Details
+description: Get detailed configuration and metadata for a specific ExoPhone using the Exotel API. Retrieve capabilities, flow URLs, and number properties.
 sidebar_label: Number Details
 ---
 

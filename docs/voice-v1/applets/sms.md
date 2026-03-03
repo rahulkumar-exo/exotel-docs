@@ -1,6 +1,7 @@
 ---
 id: sms
 title: SMS Applet
+description: Send static or dynamic SMS messages during call flows using the Exotel SMS applet. Trigger confirmations and notifications from call events.
 sidebar_label: SMS
 sidebar_position: 8
 ---

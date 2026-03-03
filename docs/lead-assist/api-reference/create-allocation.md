@@ -1,6 +1,7 @@
 ---
 id: create-allocation
 title: Create Pin Allocation
+description: Generate a GreenPIN and map users to a virtual number for secure communication using the Exotel Lead Assist API.
 sidebar_label: Create Allocation
 ---
 

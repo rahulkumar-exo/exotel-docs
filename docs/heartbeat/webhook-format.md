@@ -1,6 +1,7 @@
 ---
 id: webhook-format
 title: Webhook Format
+description: Reference for the Exotel Heartbeat API webhook payload format, including health status fields and retry behavior.
 sidebar_label: Webhook Format
 ---
 

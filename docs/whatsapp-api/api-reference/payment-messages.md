@@ -1,6 +1,7 @@
 ---
 id: payment-messages
 title: Payment Messages
+description: Send payment request messages to customers via WhatsApp using the Exotel API. Collect payments through integrated payment gateway partners.
 sidebar_label: Payment Messages
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: create-campaign
 title: Create Campaign
+description: Create outbound call campaigns using the Exotel API. Configure IVR flows, greeting messages, scheduling, retry logic, and caller ID settings.
 sidebar_label: Create Campaign
 sidebar_position: 1
 ---

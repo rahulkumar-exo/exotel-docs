@@ -1,6 +1,7 @@
 ---
 id: templates
 title: Template Messages
+description: Send pre-approved WhatsApp message templates with dynamic parameters using the Exotel API. Includes text, media, and interactive templates.
 sidebar_label: Templates
 sidebar_position: 2
 ---

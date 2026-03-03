@@ -1,6 +1,7 @@
 ---
 id: app-settings
 title: App Settings
+description: Configure webhooks for call events, recording, and streaming in your Exotel WebRTC application using the App Settings API.
 sidebar_label: App Settings
 ---
 

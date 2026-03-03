@@ -1,6 +1,7 @@
 ---
 id: manage-contacts
 title: Manage Contacts
+description: Create, update, and delete campaign contacts using the Exotel API. Supports bulk operations with E.164 formatted numbers and multi-status responses.
 sidebar_label: Manage Contacts
 ---
 

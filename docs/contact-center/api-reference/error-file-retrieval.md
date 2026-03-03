@@ -1,6 +1,7 @@
 ---
 id: error-file-retrieval
 title: Error File Retrieval
+description: Download error details for failed CSV contact uploads using the Exotel Contact Center API. Identify which records failed and why during bulk imports.
 sidebar_label: Error File Retrieval
 ---
 

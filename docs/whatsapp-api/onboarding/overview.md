@@ -1,6 +1,7 @@
 ---
 id: overview
 title: WhatsApp - Onboarding APIs
+description: Exotel APIs for ISVs to create onboarding links and validate tokens for WhatsApp Business Account setup and customer provisioning.
 sidebar_label: Overview
 slug: /whatsapp-api/onboarding/overview
 ---

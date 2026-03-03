@@ -1,6 +1,7 @@
 ---
 id: create-list
 title: Create List
+description: Use the Exotel API to create a new contact list for campaigns. Learn about request parameters, endpoints, and how to add contacts to lists.
 sidebar_label: Create List
 ---
 

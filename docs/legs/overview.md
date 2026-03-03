@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Legs
+description: Overview of the Exotel Legs and Bridges API for creating and managing individual call legs across PSTN and VoIP networks.
 sidebar_label: Overview
 slug: /legs/overview
 ---

@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Contact Center APIs v4
+description: Overview of Exotel Contact Center APIs v4 (legacy) for call management, agent operations, recording, and queue management. Includes migration guidance.
 sidebar_label: Overview
 slug: /contact-center-v4/overview
 ---

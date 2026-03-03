@@ -1,6 +1,7 @@
 ---
 id: call-details
 title: Call Details
+description: Retrieve comprehensive details for a specific Exotel Contact Center call using the API. Access call state, duration, recordings, and metadata.
 sidebar_label: Call Details
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: bulk-campaign-details
 title: List All Campaigns
+description: Retrieve a paginated list of all SMS campaigns in your Exotel account with filtering by status, name, and sorting options.
 sidebar_label: List Campaigns
 ---
 

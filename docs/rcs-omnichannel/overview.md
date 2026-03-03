@@ -1,6 +1,7 @@
 ---
 id: overview
 title: RCS - Omnichannel APIs
+description: Overview of Exotel RCS Omnichannel APIs for sending rich media messages, carousels, and branded content with SMS fallback.
 sidebar_label: Overview
 slug: /rcs-omnichannel/overview
 ---

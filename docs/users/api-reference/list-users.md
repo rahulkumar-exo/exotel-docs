@@ -1,6 +1,7 @@
 ---
 id: list-users
 title: List Users
+description: Retrieve a paginated list of users in your Exotel account with optional filtering by email, phone number, and device details.
 sidebar_label: List Users
 ---
 

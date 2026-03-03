@@ -1,6 +1,7 @@
 ---
 id: incoming-call
 title: Incoming Call
+description: Learn how Exotel handles incoming calls on your ExoPhone, including call flow configuration using applets like Greeting, IVR Menu, and Connect.
 sidebar_label: Incoming Call
 ---
 

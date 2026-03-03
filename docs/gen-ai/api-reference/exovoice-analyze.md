@@ -1,6 +1,7 @@
 ---
 id: exovoice-analyze
 title: ExoVoiceAnalyze
+description: Analyze call recordings with the Exotel ExoVoiceAnalyze API to extract transcripts, summaries, sentiment, and categories.
 sidebar_label: ExoVoiceAnalyze
 ---
 

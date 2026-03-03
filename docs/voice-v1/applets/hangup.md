@@ -1,6 +1,7 @@
 ---
 id: hangup
 title: Hangup Applet
+description: Terminate calls cleanly using the Exotel Hangup applet. Place it at the end of call flow branches to properly disconnect calls.
 sidebar_label: Hangup
 sidebar_position: 7
 ---

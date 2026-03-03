@@ -1,6 +1,7 @@
 ---
 id: overview
 title: "IP-PSTN intermix: WebRTC SDK integration"
+description: Integrate browser-to-phone and browser-to-browser calling into your apps with the Exotel WebRTC SDK and IP-PSTN APIs.
 sidebar_label: Overview
 slug: /ip-pstn-webrtc/overview
 ---

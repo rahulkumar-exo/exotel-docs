@@ -1,6 +1,7 @@
 ---
 id: purchase-number
 title: Purchase ExoPhone
+description: Purchase a new ExoPhone and add it to your Exotel account using the API. Configure voice and SMS flow URLs during number provisioning.
 sidebar_label: Purchase Number
 ---
 

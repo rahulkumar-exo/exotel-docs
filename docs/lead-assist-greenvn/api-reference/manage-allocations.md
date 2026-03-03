@@ -1,6 +1,7 @@
 ---
 id: manage-allocations
 title: Manage VN Allocations
+description: Create, retrieve, update, and delete GreenVN virtual number allocations using the Exotel Lead Assist API.
 sidebar_label: Manage Allocations
 ---
 

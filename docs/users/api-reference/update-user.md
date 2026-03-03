@@ -1,6 +1,7 @@
 ---
 id: update-user
 title: Update User
+description: Update user details such as name and email for an existing user in your Exotel Contact Center account using the Users API.
 sidebar_label: Update User
 ---
 

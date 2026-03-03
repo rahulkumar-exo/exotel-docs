@@ -1,6 +1,7 @@
 ---
 id: device-management
 title: Device Management
+description: Toggle phone and SIP device status for users in your Exotel WebRTC application using the Device Management API.
 sidebar_label: Device Management
 ---
 

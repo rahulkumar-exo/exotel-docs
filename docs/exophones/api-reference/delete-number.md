@@ -1,6 +1,7 @@
 ---
 id: delete-number
 title: Delete ExoPhone
+description: Release and delete an ExoPhone from your Exotel account using the API. Remove phone numbers you no longer need with a single DELETE request.
 sidebar_label: Delete Number
 ---
 

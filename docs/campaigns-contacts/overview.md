@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Campaigns - Contacts
+description: Overview of the Exotel Campaign Contacts API for bulk contact management in call and SMS campaigns. Covers authentication, rate limits, and base URLs.
 sidebar_label: Overview
 slug: /campaigns-contacts/overview
 ---

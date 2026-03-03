@@ -1,6 +1,7 @@
 ---
 id: status-callback
 title: StatusCallback
+description: Configure Exotel StatusCallback webhooks to receive real-time HTTP POST notifications with call details when a call completes.
 sidebar_label: StatusCallback
 ---
 

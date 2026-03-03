@@ -1,6 +1,7 @@
 ---
 id: users
 title: Users
+description: Create, retrieve, list, and delete users with SIP credentials in your Exotel WebRTC application using the Users API.
 sidebar_label: Users
 ---
 

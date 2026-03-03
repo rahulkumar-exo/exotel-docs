@@ -1,6 +1,7 @@
 ---
 id: assign-to-flow
 title: Assign to Flow
+description: Assign an ExoPhone to a call or SMS flow using the Exotel API. Update voice and SMS routing URLs and friendly names for your phone numbers.
 sidebar_label: Assign to Flow
 ---
 

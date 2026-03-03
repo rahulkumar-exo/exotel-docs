@@ -1,6 +1,7 @@
 ---
 id: create-user
 title: Create User
+description: Add a new user to your Exotel Contact Center account using the Users API with role assignment and device configuration.
 sidebar_label: Create User
 ---
 

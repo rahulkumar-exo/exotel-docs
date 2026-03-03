@@ -1,6 +1,7 @@
 ---
 id: list-numbers
 title: List All ExoPhones
+description: Retrieve all ExoPhones in your Exotel account using the API. View phone numbers, capabilities, friendly names, and configuration details.
 sidebar_label: List Numbers
 ---
 

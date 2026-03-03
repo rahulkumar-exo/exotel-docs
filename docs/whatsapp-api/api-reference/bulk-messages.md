@@ -1,6 +1,7 @@
 ---
 id: bulk-messages
 title: Bulk WhatsApp Messages
+description: Send up to 100 WhatsApp messages to different recipients in a single Exotel API call. Supports text, media, and template message types.
 sidebar_label: Bulk Messages
 sidebar_position: 3
 ---

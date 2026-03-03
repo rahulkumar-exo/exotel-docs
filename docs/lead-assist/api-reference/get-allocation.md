@@ -1,6 +1,7 @@
 ---
 id: get-allocation
 title: Get Allocation Details
+description: Retrieve details of a specific GreenPIN allocation including virtual number, PIN, and party info via the Exotel Lead Assist API.
 sidebar_label: Get Allocation
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: passthru
 title: Passthru Applet
+description: Enable dynamic call routing with the Exotel Passthru applet. Send call details to your application URL and branch the flow based on your response.
 sidebar_label: Passthru
 sidebar_position: 3
 ---

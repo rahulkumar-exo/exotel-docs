@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Lead Assist (ExoBridge - GreenVN)
+description: Overview of Exotel ExoBridge GreenVN for privacy-protected call routing through virtual numbers without PINs.
 sidebar_label: Overview
 slug: /lead-assist-greenvn/overview
 ---

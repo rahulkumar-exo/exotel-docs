@@ -1,6 +1,7 @@
 ---
 id: delete-user
 title: Delete User
+description: Remove a user from your Exotel Contact Center account using the Users API DELETE endpoint with the user's UUID.
 sidebar_label: Delete User
 ---
 

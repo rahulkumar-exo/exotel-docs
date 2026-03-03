@@ -1,6 +1,7 @@
 ---
 id: flows
 title: Flows
+description: Create interactive multi-step WhatsApp experiences using Exotel WhatsApp Flows. Build forms, surveys, and structured interactions via API.
 sidebar_label: Flows
 ---
 

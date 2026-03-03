@@ -1,6 +1,7 @@
 ---
 id: manage-lists
 title: Manage Lists
+description: Update, delete, and query campaign lists using the Exotel API. Covers single and bulk list operations with request parameters and examples.
 sidebar_label: Manage Lists
 ---
 

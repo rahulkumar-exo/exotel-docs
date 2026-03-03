@@ -1,6 +1,7 @@
 ---
 id: create-campaign
 title: Create SMS Campaign
+description: Create a new SMS campaign with the Exotel API to send bulk static or dynamic messages to contact lists with DLT compliance.
 sidebar_label: Create Campaign
 ---
 

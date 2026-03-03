@@ -1,6 +1,7 @@
 ---
 id: update-allocation
 title: Update Allocation
+description: Update parameters of an active GreenPIN allocation using the Exotel Lead Assist API. Currently in beta.
 sidebar_label: Update Allocation
 ---
 

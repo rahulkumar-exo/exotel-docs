@@ -1,6 +1,7 @@
 ---
 id: manage-campaign
 title: Manage Campaign
+description: Pause, resume, complete, or archive an existing SMS campaign using the Exotel SMS Campaigns API management endpoint.
 sidebar_label: Manage Campaign
 ---
 

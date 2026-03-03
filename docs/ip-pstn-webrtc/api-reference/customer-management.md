@@ -1,6 +1,7 @@
 ---
 id: customer-management
 title: Customer Management
+description: Retrieve and manage customer account details for Exotel WebRTC integrations using the Customer Management API.
 sidebar_label: Customer Management
 ---
 

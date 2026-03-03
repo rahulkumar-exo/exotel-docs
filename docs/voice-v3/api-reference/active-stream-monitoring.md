@@ -1,6 +1,7 @@
 ---
 id: active-stream-monitoring
 title: Active Stream Monitoring
+description: Monitor and manage active call streams in real-time using the Exotel Voice v3 API. Retrieve ongoing call details and agent connection status.
 sidebar_label: Active Stream Monitoring
 ---
 

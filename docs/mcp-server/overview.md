@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Exotel MCP Server
+description: Set up the Exotel MCP Server to integrate Claude AI with Exotel SMS, voice calling, and status tracking APIs.
 sidebar_label: Overview
 slug: /mcp-server/overview
 ---

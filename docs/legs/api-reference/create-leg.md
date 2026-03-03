@@ -1,6 +1,7 @@
 ---
 id: create-leg
 title: Create Leg
+description: Create a new call leg to a phone number or SIP URI endpoint using the Exotel Legs API for PSTN and VoIP networks.
 sidebar_label: Create Leg
 ---
 

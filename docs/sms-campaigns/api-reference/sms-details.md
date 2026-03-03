@@ -1,6 +1,7 @@
 ---
 id: sms-details
 title: Campaign SMS Details
+description: Retrieve individual SMS delivery details for a specific campaign using the Exotel API with filtering by number and pagination.
 sidebar_label: SMS Details
 ---
 

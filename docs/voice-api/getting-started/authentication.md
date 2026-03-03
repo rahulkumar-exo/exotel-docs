@@ -1,6 +1,7 @@
 ---
 id: authentication
 title: Authentication
+description: Learn how to authenticate with the Exotel Voice API using HTTP Basic Auth credentials including API key, token, and account SID.
 sidebar_label: Authentication
 sidebar_position: 2
 ---

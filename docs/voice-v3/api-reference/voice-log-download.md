@@ -1,6 +1,7 @@
 ---
 id: voice-log-download
 title: Voice Log Download
+description: Download voice recordings and call logs programmatically using the Exotel Voice v3 API. Supports MP3, WAV, and dual-channel formats.
 sidebar_label: Voice Log Download
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: manage-legs
 title: Manage Legs & Bridges
+description: Get, update, and delete call legs and bridges using the Exotel Legs API. Manage recording, hold, DTMF, and audio playback.
 sidebar_label: Manage Legs & Bridges
 ---
 

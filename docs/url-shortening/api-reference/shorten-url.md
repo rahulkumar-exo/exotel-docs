@@ -1,6 +1,7 @@
 ---
 id: shorten-url
 title: Shorten URL
+description: Create short URLs with the Exotel URL Shortening API. Supports click tracking, custom domains, expiration, and DLT compliance.
 sidebar_label: Shorten URL
 ---
 

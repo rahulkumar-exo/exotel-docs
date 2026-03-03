@@ -1,6 +1,7 @@
 ---
 id: receive-messages
 title: Receive Messages
+description: Configure webhooks to receive incoming WhatsApp messages and delivery status updates in real-time using the Exotel WhatsApp API.
 sidebar_label: Receive Messages
 ---
 

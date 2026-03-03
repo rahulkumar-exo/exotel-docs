@@ -1,6 +1,7 @@
 ---
 id: exomind-tasker
 title: ExoMind Tasker
+description: Use the Exotel ExoMind Tasker API for AI-powered translation, transcription, summarization, and NLP queries via ExoML.
 sidebar_label: ExoMind Tasker
 ---
 

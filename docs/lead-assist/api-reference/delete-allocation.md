@@ -1,6 +1,7 @@
 ---
 id: delete-allocation
 title: Delete Allocation
+description: Delete a GreenPIN allocation to remove the PIN-mapping between users and a virtual number via the Exotel Lead Assist API.
 sidebar_label: Delete Allocation
 ---
 

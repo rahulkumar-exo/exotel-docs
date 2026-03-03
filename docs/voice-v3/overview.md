@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Voice v3
+description: Overview of the Exotel Voice v3 API (Beta) with enhanced call details, active stream monitoring, voice log downloads, and Legs API integration.
 sidebar_label: Overview
 slug: /voice-v3/overview
 ---

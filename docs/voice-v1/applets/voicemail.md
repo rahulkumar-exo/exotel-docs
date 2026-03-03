@@ -1,6 +1,7 @@
 ---
 id: voicemail
 title: Voicemail Applet
+description: Let callers leave recorded voice messages using the Exotel Voicemail applet. Route voicemails to specific groups or users for follow-up.
 sidebar_label: Voicemail
 sidebar_position: 6
 ---

@@ -1,6 +1,7 @@
 ---
 id: overview
 title: URL Shortening
+description: Overview of the Exotel URL Shortening API for creating trackable short links with click tracking, custom domains, and DLT support.
 sidebar_label: Overview
 slug: /url-shortening/overview
 ---

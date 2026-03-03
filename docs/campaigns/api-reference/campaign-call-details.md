@@ -1,6 +1,7 @@
 ---
 id: campaign-call-details
 title: Campaign Call Details
+description: Retrieve individual call records for a specific Exotel campaign. Filter by status, paginate results, and sort call details using the Campaign API.
 sidebar_label: Call Details
 sidebar_position: 3
 ---

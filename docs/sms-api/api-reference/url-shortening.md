@@ -1,6 +1,7 @@
 ---
 id: url-shortening
 title: URL Shortening & Click Tracking
+description: Shorten URLs in SMS messages and track click-through analytics using the Exotel SMS API with DLT-compliant short link parameters.
 sidebar_label: URL Shortening
 sidebar_position: 5
 ---

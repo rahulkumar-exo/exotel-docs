@@ -1,6 +1,7 @@
 ---
 id: make-call
 title: Make Call
+description: Initiate outbound calls connecting agents to customers using the Exotel Contact Center API. Configure recording, wait audio, timeouts, and webhooks.
 sidebar_label: Make Call
 ---
 

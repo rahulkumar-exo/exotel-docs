@@ -1,6 +1,7 @@
 ---
 id: status-codes
 title: WhatsApp Status Codes
+description: Reference guide for Exotel WhatsApp API delivery status codes and error codes returned via the status callback webhook.
 sidebar_label: Status Codes
 sidebar_position: 4
 ---

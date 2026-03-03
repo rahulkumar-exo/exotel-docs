@@ -1,6 +1,7 @@
 ---
 id: manage-devices
 title: Manage Devices
+description: Update user device settings including availability and SIP passwords using the Exotel Users API device management endpoint.
 sidebar_label: Manage Devices
 ---
 

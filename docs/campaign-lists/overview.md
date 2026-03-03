@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Campaigns - Lists
+description: Overview of the Exotel Campaign Lists API for creating and managing contact lists used in call and SMS campaigns, including CSV uploads and pagination.
 sidebar_label: Overview
 slug: /campaign-lists/overview
 ---

@@ -1,6 +1,7 @@
 ---
 id: webhooks
 title: Campaign Webhooks
+description: Receive real-time Exotel campaign notifications via webhooks for call status, call schedule, and campaign completion events with payload details.
 sidebar_label: Webhooks
 sidebar_position: 4
 ---
