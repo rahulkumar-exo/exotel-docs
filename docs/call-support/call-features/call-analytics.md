@@ -21,7 +21,7 @@ Exotel's call analytics provide real-time and historical insights into your call
 
 ### Via API
 
-Use the [Call Details API](/docs/voice-v1/api-reference/call-details) or [Call Logs API](/docs/voice-v1/api-reference/call-logs) to fetch call data programmatically for custom reporting and integration with your BI tools.
+Use the [Call Details API](/docs/voice-v1/api-reference/call-details) or [Call Logs API](/docs/voice-v1/overview) to fetch call data programmatically for custom reporting and integration with your BI tools.
 
 ## Key Metrics and KPIs
 
@@ -134,7 +134,7 @@ The call logs table provides a detailed record of every call:
 curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls.json?StartTime=2025-01-01&EndTime=2025-01-31&PageSize=50'
 ```
 
-See: [Call Logs API](/docs/voice-v1/api-reference/call-logs)
+See: [Call Logs API](/docs/voice-v1/overview)
 
 ## Custom Reports and Integrations
 
@@ -246,6 +246,6 @@ Do not rely solely on average metrics. A "good" average handle time can hide pro
 
 - [Call Recording](/docs/call-support/call-features/call-recording)
 - [Call Queue](/docs/call-support/call-features/call-queue)
-- [Voice v1 API -- Call Logs](/docs/voice-v1/api-reference/call-logs)
+- [Voice v1 API -- Call Logs](/docs/voice-v1/overview)
 - [Voice v1 API -- Call Details](/docs/voice-v1/api-reference/call-details)
 - [Status Callback](/docs/voice-v1/api-reference/status-callback)

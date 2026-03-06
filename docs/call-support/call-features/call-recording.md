@@ -140,7 +140,7 @@ Set `Record=false` in the API call, or configure the Connect applet with recordi
 
 ### Mid-Call Pause/Resume
 
-For compliance scenarios where sensitive information (e.g., credit card numbers) should not be recorded, use the [Recording Control API](/docs/voice-api/api-reference/recording-control) to pause and resume recording mid-call:
+For compliance scenarios where sensitive information (e.g., credit card numbers) should not be recorded, use the [Recording Control API](/docs/voice-api/getting-started/overview) to pause and resume recording mid-call:
 
 ```bash
 # Pause recording
@@ -200,6 +200,6 @@ Use the Greeting applet as the first step in every call flow to play a recording
 
 - [Call Analytics](/docs/call-support/call-features/call-analytics)
 - [Voice v1 API](/docs/voice-v1/overview)
-- [Voice v2 API -- Recording Control](/docs/voice-api/api-reference/recording-control)
+- [Voice v2 API -- Recording Control](/docs/voice-api/getting-started/overview)
 - [Call Details API](/docs/voice-v1/api-reference/call-details)
 - [Status Callback](/docs/voice-v1/api-reference/status-callback)

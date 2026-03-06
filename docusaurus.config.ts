@@ -222,9 +222,9 @@ const config: Config = {
           title: 'Support & Guides',
           items: [
             { label: 'Getting Started', to: '/docs/getting-started/overview' },
-            { label: 'Cloud Telephony', to: '/docs/call-support/basics/overview' },
+            { label: 'Cloud Telephony', to: '/docs/call-support/basics/cloud-telephony-overview' },
             { label: 'SMS Guide', to: '/docs/sms-support/overview' },
-            { label: 'WhatsApp Guide', to: '/docs/whatsapp-support/overview' },
+            { label: 'WhatsApp Guide', to: '/docs/whatsapp-support/whatsapp-overview' },
             { label: 'Campaign Guides', to: '/docs/campaign-guides/overview' },
             { label: 'App Bazaar', to: '/docs/app-bazaar/overview' },
             { label: 'Reporting', to: '/docs/reporting/overview' },
