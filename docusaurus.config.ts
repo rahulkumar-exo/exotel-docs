@@ -22,6 +22,7 @@ const config: Config = {
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn',
     },
   },
 
@@ -132,6 +133,9 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'contactCenterSidebar', label: 'Contact Center v6' },
             { type: 'docSidebar', sidebarId: 'contactCenterV4Sidebar', label: 'Contact Center v4' },
             { type: 'docSidebar', sidebarId: 'genAiSidebar', label: 'Gen AI' },
+            { type: 'docSidebar', sidebarId: 'agentStreamSidebar', label: 'AgentStream' },
+            { type: 'docSidebar', sidebarId: 'vsipSidebar', label: 'vSIP (SIP Trunking)' },
+            { type: 'docSidebar', sidebarId: 'chatbotSidebar', label: 'Chatbot Platform' },
           ],
         },
         {
@@ -150,6 +154,29 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'referencesSidebar', label: 'Error Codes & Webhooks' },
             { type: 'docSidebar', sidebarId: 'faqsSidebar', label: 'FAQs' },
           ],
+        },
+        {
+          type: 'dropdown',
+          label: 'Support',
+          position: 'left',
+          items: [
+            { type: 'docSidebar', sidebarId: 'gettingStartedSidebar', label: 'Getting Started' },
+            { type: 'docSidebar', sidebarId: 'callSupportSidebar', label: 'Cloud Telephony' },
+            { type: 'docSidebar', sidebarId: 'smsSupportSidebar', label: 'SMS Guide' },
+            { type: 'docSidebar', sidebarId: 'whatsappSupportSidebar', label: 'WhatsApp Guide' },
+            { type: 'docSidebar', sidebarId: 'campaignGuidesSidebar', label: 'Campaign Guides' },
+            { type: 'docSidebar', sidebarId: 'appBazaarSidebar', label: 'App Bazaar' },
+            { type: 'docSidebar', sidebarId: 'reportingSidebar', label: 'Reporting' },
+            { type: 'docSidebar', sidebarId: 'billingSidebar', label: 'Billing' },
+            { type: 'docSidebar', sidebarId: 'advancedConfigSidebar', label: 'Advanced Config' },
+            { type: 'docSidebar', sidebarId: 'faqsSidebar', label: 'FAQs & Regulations' },
+          ],
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'integrationsSidebar',
+          label: 'Integrations',
+          position: 'left',
         },
         {
           type: 'doc',
@@ -188,6 +215,21 @@ const config: Config = {
             { label: 'ExoVerify', to: '/docs/exoverify-api/overview' },
             { label: 'WhatsApp - Messaging API', to: '/docs/whatsapp-api/overview' },
             { label: 'URL Shortening', to: '/docs/sms-api/api-reference/url-shortening' },
+            { label: 'Integrations', to: '/docs/integrations/overview' },
+          ],
+        },
+        {
+          title: 'Support & Guides',
+          items: [
+            { label: 'Getting Started', to: '/docs/getting-started/overview' },
+            { label: 'Cloud Telephony', to: '/docs/call-support/basics/overview' },
+            { label: 'SMS Guide', to: '/docs/sms-support/overview' },
+            { label: 'WhatsApp Guide', to: '/docs/whatsapp-support/overview' },
+            { label: 'Campaign Guides', to: '/docs/campaign-guides/overview' },
+            { label: 'App Bazaar', to: '/docs/app-bazaar/overview' },
+            { label: 'Reporting', to: '/docs/reporting/overview' },
+            { label: 'Billing', to: '/docs/billing/overview' },
+            { label: 'FAQs', to: '/docs/faqs/overview' },
           ],
         },
         {
@@ -202,8 +244,12 @@ const config: Config = {
               href: 'https://my.exotel.com',
             },
             {
-              label: 'Support',
-              href: 'https://support.exotel.com',
+              label: 'Chatbot Platform',
+              to: '/docs/chatbot/overview',
+            },
+            {
+              label: 'vSIP Trunking',
+              to: '/docs/vsip/overview',
             },
           ],
         },
@@ -225,7 +271,7 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      additionalLanguages: ['bash', 'json', 'php', 'ruby', 'python', 'go'],
+      additionalLanguages: ['bash', 'json', 'php', 'ruby', 'python', 'go', 'ini'],
     },
   } satisfies Preset.ThemeConfig,
 };

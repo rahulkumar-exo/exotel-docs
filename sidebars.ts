@@ -354,6 +354,51 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  agentStreamSidebar: [
+    'agentstream/overview',
+    'agentstream/getting-started',
+    {
+      type: 'category',
+      label: 'Applets & Streaming',
+      collapsed: false,
+      items: [
+        'agentstream/passthru-applet',
+        'agentstream/stream-voicebot-applet',
+        'agentstream/stream-voicebot-extension',
+        'agentstream/bot-stream-legs-api',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Integrations',
+      collapsed: false,
+      items: [
+        'agentstream/omnidimension-integration',
+        'agentstream/livekit-integration',
+        'agentstream/elevenlabs-integration',
+        'agentstream/manage-exotrunks',
+      ],
+    },
+  ],
+
+  vsipSidebar: [
+    'vsip/overview',
+    'vsip/master-guide',
+    'vsip/flow-api-configuration',
+    {
+      type: 'category',
+      label: 'Integration Guides',
+      collapsed: false,
+      items: [
+        'vsip/tls-integration',
+        'vsip/tcp-integration',
+        'vsip/fqdn-integration',
+        'vsip/flow-integration',
+        'vsip/voicebot-integration',
+      ],
+    },
+  ],
+
   mcpServerSidebar: [
     'mcp-server/overview',
   ],
@@ -369,6 +414,47 @@ const sidebars: SidebarsConfig = {
 
   faqsSidebar: [
     'faqs/overview',
+    {
+      type: 'category',
+      label: 'General',
+      collapsed: false,
+      items: [
+        'faqs/account-setup',
+        'faqs/pricing-plans',
+        'faqs/number-types',
+        'faqs/security-compliance',
+        'faqs/billing-faqs',
+        'faqs/troubleshooting',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Product FAQs',
+      collapsed: true,
+      items: [
+        'faqs/api-faqs',
+        'faqs/voice-faqs',
+        'faqs/sms-faqs',
+        'faqs/whatsapp-faqs',
+        'faqs/campaign-faqs',
+        'faqs/integration-faqs',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Regulations & Compliance',
+      collapsed: true,
+      items: [
+        'faqs/trai-regulations',
+        'faqs/ndnc-dnd',
+        'faqs/dlt-compliance',
+        'faqs/tcccpr-2018',
+        'faqs/calling-hours',
+        'faqs/international-calling',
+        'faqs/data-privacy',
+        'faqs/spam-prevention',
+      ],
+    },
   ],
 
   referencesSidebar: [
@@ -376,6 +462,354 @@ const sidebars: SidebarsConfig = {
     'references/error-codes',
     'references/webhooks',
     'references/changelog',
+  ],
+
+  chatbotSidebar: [
+    'chatbot/overview',
+    'chatbot/getting-started',
+    {
+      type: 'category',
+      label: 'Building Your Bot',
+      collapsed: false,
+      items: [
+        'chatbot/workflows',
+        'chatbot/flow-builder',
+        'chatbot/bot-messages',
+        'chatbot/bot-prompts',
+        'chatbot/actions',
+        'chatbot/logic',
+        'chatbot/database',
+        'chatbot/api',
+        'chatbot/functions',
+        'chatbot/categories',
+      ],
+    },
+    'chatbot/settings',
+    'chatbot/integrations',
+    {
+      type: 'category',
+      label: 'Analytics & Reporting',
+      collapsed: false,
+      items: [
+        'chatbot/analytics',
+        'chatbot/combined-analytics',
+        'chatbot/conversion-analytics',
+        'chatbot/download-reports',
+      ],
+    },
+    'chatbot/ai-agents',
+  ],
+
+  callSupportSidebar: [
+    {
+      type: 'category',
+      label: 'Cloud Telephony Basics',
+      collapsed: false,
+      items: [
+        'call-support/basics/cloud-telephony-overview',
+        'call-support/basics/how-exotel-works',
+        'call-support/basics/terminologies',
+        'call-support/basics/services',
+        'call-support/basics/virtual-numbers',
+        'call-support/basics/getting-started',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Call Features',
+      collapsed: false,
+      items: [
+        'call-support/call-features/setting-up-call-flow',
+        'call-support/call-features/make-receive-calls',
+        'call-support/call-features/ivr-setup',
+        'call-support/call-features/call-recording',
+        'call-support/call-features/call-forwarding',
+        'call-support/call-features/sticky-agent',
+        'call-support/call-features/missed-call',
+        'call-support/call-features/call-queue',
+        'call-support/call-features/parallel-ringing',
+        'call-support/call-features/business-hours',
+        'call-support/call-features/outgoing-calls',
+        'call-support/call-features/voicemail',
+        'call-support/call-features/greeting-message',
+        'call-support/call-features/call-analytics',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced Features',
+      collapsed: true,
+      items: [
+        'call-support/advanced-features/number-masking',
+        'call-support/advanced-features/flow-builder',
+        'call-support/advanced-features/outbound-dialer',
+        'call-support/advanced-features/smart-routing',
+        'call-support/advanced-features/truecaller-verified-caller-id',
+        'call-support/advanced-features/multi-level-ivr',
+        'call-support/advanced-features/auto-retry',
+        'call-support/advanced-features/automated-calls',
+      ],
+    },
+  ],
+
+  smsSupportSidebar: [
+    'sms-support/overview',
+    {
+      type: 'category',
+      label: 'SMS Basics',
+      collapsed: false,
+      items: [
+        'sms-support/how-to-send-sms',
+        'sms-support/sms-templates',
+        'sms-support/sender-id',
+        'sms-support/transactional-sms',
+        'sms-support/promotional-sms',
+        'sms-support/sms-pricing',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced Features',
+      collapsed: true,
+      items: [
+        'sms-support/bulk-sms',
+        'sms-support/two-way-sms',
+        'sms-support/sms-webhooks',
+        'sms-support/unicode-sms',
+        'sms-support/long-sms',
+        'sms-support/sms-delivery-reports',
+        'sms-support/sms-status-codes',
+        'sms-support/sms-api-errors',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'DLT Compliance',
+      collapsed: true,
+      items: [
+        'sms-support/what-is-dlt',
+        'sms-support/dlt-registration',
+        'sms-support/dlt-guide',
+        'sms-support/dlt-entity-registration',
+        'sms-support/dlt-header-registration',
+        'sms-support/dlt-template-registration',
+        'sms-support/dlt-consent-template',
+      ],
+    },
+  ],
+
+  whatsappSupportSidebar: [
+    'whatsapp-support/whatsapp-overview',
+    {
+      type: 'category',
+      label: 'Getting Started',
+      collapsed: false,
+      items: [
+        'whatsapp-support/getting-started',
+        'whatsapp-support/business-verification',
+        'whatsapp-support/number-requirements',
+        'whatsapp-support/display-name-guidelines',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Messaging',
+      collapsed: false,
+      items: [
+        'whatsapp-support/message-types',
+        'whatsapp-support/template-messages',
+        'whatsapp-support/session-messages',
+        'whatsapp-support/interactive-messages',
+        'whatsapp-support/media-messages',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Templates & Compliance',
+      collapsed: true,
+      items: [
+        'whatsapp-support/creating-templates',
+        'whatsapp-support/template-guidelines',
+        'whatsapp-support/template-categories',
+        'whatsapp-support/quality-rating',
+        'whatsapp-support/messaging-limits',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced',
+      collapsed: true,
+      items: [
+        'whatsapp-support/webhooks',
+        'whatsapp-support/status-codes',
+        'whatsapp-support/commerce',
+        'whatsapp-support/catalog',
+        'whatsapp-support/flows',
+        'whatsapp-support/payments',
+      ],
+    },
+  ],
+
+  campaignGuidesSidebar: [
+    'campaign-guides/overview',
+    {
+      type: 'category',
+      label: 'Voice Campaigns',
+      collapsed: false,
+      items: [
+        'campaign-guides/creating-voice-campaign',
+        'campaign-guides/campaign-scheduling',
+        'campaign-guides/campaign-retry-logic',
+        'campaign-guides/campaign-reporting',
+        'campaign-guides/campaign-contacts-management',
+        'campaign-guides/campaign-best-practices',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'SMS Campaigns',
+      collapsed: false,
+      items: [
+        'campaign-guides/creating-sms-campaign',
+        'campaign-guides/sms-campaign-templates',
+        'campaign-guides/sms-campaign-reporting',
+      ],
+    },
+  ],
+
+  gettingStartedSidebar: [
+    'getting-started/overview',
+    'getting-started/create-account',
+    'getting-started/kyc-verification',
+    'getting-started/trial-account',
+    'getting-started/upgrade-account',
+    'getting-started/dashboard-overview',
+    'getting-started/exophone-setup',
+    'getting-started/first-call-flow',
+    'getting-started/team-management',
+    'getting-started/api-credentials',
+    'getting-started/testing-guide',
+  ],
+
+  billingSidebar: [
+    'billing/overview',
+    'billing/pricing-model',
+    'billing/plans-comparison',
+    'billing/add-credits',
+    'billing/usage-tracking',
+    'billing/invoices',
+    'billing/refund-policy',
+    'billing/enterprise-billing',
+    'billing/international-rates',
+  ],
+
+  reportingSidebar: [
+    'reporting/overview',
+    'reporting/call-logs',
+    'reporting/cdr-reports',
+    'reporting/sms-reports',
+    'reporting/real-time-dashboard',
+    'reporting/scheduled-reports',
+    'reporting/custom-reports',
+    'reporting/analytics-dashboard',
+    'reporting/recording-access',
+  ],
+
+  appBazaarSidebar: [
+    'app-bazaar/overview',
+    'app-bazaar/app-builder',
+    'app-bazaar/flow-builder-guide',
+    {
+      type: 'category',
+      label: 'Applet Guides',
+      collapsed: false,
+      items: [
+        'app-bazaar/greeting-applet-guide',
+        'app-bazaar/connect-applet-guide',
+        'app-bazaar/ivr-applet-guide',
+        'app-bazaar/passthru-applet-guide',
+        'app-bazaar/sms-applet-guide',
+      ],
+    },
+  ],
+
+  advancedConfigSidebar: [
+    'advanced-config/overview',
+    'advanced-config/webhooks-setup',
+    'advanced-config/ip-whitelisting',
+    'advanced-config/rate-limiting',
+    'advanced-config/high-availability',
+    'advanced-config/number-masking-setup',
+    'advanced-config/call-recording-config',
+    'advanced-config/tts-config',
+    'advanced-config/custom-caller-id',
+    'advanced-config/concurrent-calls',
+    'advanced-config/network-requirements',
+  ],
+
+  integrationsSidebar: [
+    'integrations/overview',
+    {
+      type: 'category',
+      label: 'Zoho',
+      collapsed: false,
+      items: [
+        'integrations/zoho-desk',
+        'integrations/zoho-crm',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Freshworks',
+      collapsed: false,
+      items: [
+        'integrations/freshdesk',
+        'integrations/freshchat',
+        'integrations/freshsales',
+        'integrations/freshdesk-secure-recording',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'HubSpot',
+      collapsed: false,
+      items: [
+        'integrations/hubspot',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'LeadSquared',
+      collapsed: false,
+      items: [
+        'integrations/leadsquared-utc',
+        'integrations/leadsquared-mobile',
+        'integrations/leadsquared-ip-pstn',
+        'integrations/leadsquared-whatsapp',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'SMS Integrations',
+      collapsed: false,
+      items: [
+        'integrations/clevertap-generic',
+        'integrations/clevertap-native',
+        'integrations/webengage',
+        'integrations/moengage',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Salesforce',
+      collapsed: false,
+      items: [
+        'integrations/salesforce',
+        'integrations/salesforce-secure-recording',
+      ],
+    },
+    'integrations/shopify',
+    'integrations/webrtc-sdk',
   ],
 };
 
