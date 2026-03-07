@@ -19,6 +19,9 @@
     },
     "api/newsletter.ts": {
       "maxDuration": 10
+    },
+    "api/ab-status.js": {
+      "maxDuration": 5
     }
   },
   "redirects": [

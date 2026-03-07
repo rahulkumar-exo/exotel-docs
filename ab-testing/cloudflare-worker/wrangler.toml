@@ -1,0 +1,21 @@
+name = "exotel-docs-ab-test"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Route configuration - intercept all traffic to developer.exotel.com
+# Uncomment and update the zone_id with your Cloudflare zone ID
+# routes = [
+#   { pattern = "developer.exotel.com/*", zone_id = "YOUR_ZONE_ID_HERE" }
+# ]
+
+# Environment variables (can also be set via Cloudflare dashboard)
+[vars]
+SPLIT_PERCENTAGE = "10"
+
+# Production environment
+[env.production]
+name = "exotel-docs-ab-test-prod"
+
+# Staging environment for testing
+[env.staging]
+name = "exotel-docs-ab-test-staging"
