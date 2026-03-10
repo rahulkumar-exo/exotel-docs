@@ -1,437 +1,456 @@
-# A/B Testing Deployment Guide
+# A/B Testing Deployment Guide (AWS Route 53)
 
-**Last Updated:** March 6, 2026
-**Time to Deploy:** ~2-4 hours (Cloudflare) or ~4-6 hours (Vercel Middleware)
-
----
-
-## Quick Decision: Which Approach?
-
-```
-Is developer.exotel.com on Cloudflare?
-├── YES ──> Use Approach A: Cloudflare Worker (recommended)
-├── NO, but can migrate ──> Migrate DNS to Cloudflare, then Approach A
-└── NO, can't migrate ──> Use Approach B: Vercel Edge Middleware
-```
+**Last Updated:** March 8, 2026
+**DNS Provider:** AWS Route 53
+**Problem Solved:** Session-consistent A/B testing (same user always sees same version)
 
 ---
 
-## Approach A: Cloudflare Worker (Recommended)
+## Why Not DNS-Level Splitting?
+
+Route 53 weighted routing splits at the **DNS layer** — it resolves the domain to different IPs. This means:
+
+- No cookies, no session awareness
+- Same user can see different versions on refresh
+- No way to force a specific user to a variant
+- Cache TTL causes unpredictable behavior
+
+**Both approaches below solve this** by splitting at the **application layer** with cookie-based sticky sessions.
+
+---
+
+## Side-by-Side Comparison
+
+| Factor | Approach A: Vercel Middleware | Approach B: CloudFront + Lambda@Edge |
+|--------|:---:|:---:|
+| **Where split happens** | Vercel Edge (global) | CloudFront Edge (global) |
+| **Session consistency** | Cookie-based (30 days) | Cookie-based (30 days) |
+| **Setup time** | ~2-3 hours | ~4-6 hours |
+| **AWS dependency** | Route 53 only (DNS change) | Route 53 + CloudFront + Lambda + IAM + ACM |
+| **Cost** | $0 (Vercel free tier) | ~$10-50/mo (CloudFront) + Lambda@Edge (minimal) |
+| **Rollback speed** | ~2 min (git push) | ~5 min (Lambda update + CF propagation) |
+| **Infra complexity** | Low (1 config change) | Medium (CloudFormation stack, 2 Lambdas) |
+| **Keeps everything in AWS** | No (DNS points to Vercel) | **Yes** |
+| **WordPress access during A/B** | Via backup domain | Via CloudFront (same domain) |
+| **Monitoring** | Vercel Analytics + custom headers | CloudWatch + CloudFront metrics + custom headers |
+| **Best for** | Teams comfortable with Vercel | Teams that prefer AWS-native solutions |
+
+### Recommendation
+
+- **Choose Vercel Middleware** if you want the simplest, fastest setup and are OK pointing DNS to Vercel
+- **Choose CloudFront + Lambda@Edge** if you want everything in AWS or need CloudFront caching/WAF features
+
+---
+
+## Approach A: Vercel Edge Middleware
+
+### Architecture
+
+```
+Internet
+   │
+   ▼
+developer.exotel.com
+   │ (Route 53 CNAME → cname.vercel-dns.com)
+   ▼
+┌─────────────────────────────────────┐
+│  Vercel Edge (global, <10ms)        │
+│                                     │
+│  Edge Middleware runs FIRST:        │
+│  ┌─────────────────────────────┐    │
+│  │ 1. Read exo_docs_variant    │    │
+│  │    cookie                   │    │
+│  │ 2. If no cookie → assign    │    │
+│  │    randomly (10/90 split)   │    │
+│  │ 3. Set sticky cookie        │    │
+│  │    (30 day expiry)          │    │
+│  │ 4. Route to variant         │    │
+│  └──────────┬──────────────────┘    │
+│             │                       │
+│       ┌─────┴─────┐                │
+│       │           │                 │
+│       ▼           ▼                 │
+│  ┌─────────┐ ┌─────────────┐       │
+│  │ Proxy   │ │ Serve from  │       │
+│  │ to WP   │ │ Docusaurus  │       │
+│  │ origin  │ │ (static)    │       │
+│  └─────────┘ └─────────────┘       │
+│     90%          10%                │
+└─────────────────────────────────────┘
+         │
+         ▼
+legacy-developer.exotel.com (WordPress)
+```
 
 ### Prerequisites
 
-- [ ] Cloudflare account with developer.exotel.com zone
-- [ ] Node.js 18+ installed
-- [ ] `wrangler` CLI installed (`npm install -g wrangler`)
-- [ ] Cloudflare API token with Worker permissions
+- [ ] Vercel project for exotel-docs (already set up)
+- [ ] WordPress accessible via a backup domain (e.g., `legacy-developer.exotel.com`)
+- [ ] AWS Route 53 access to update DNS records
 
-### Step 1: Authenticate Wrangler
+### Step 1: Create WordPress Backup Domain
+
+Before changing DNS, ensure WordPress remains accessible:
 
 ```bash
-wrangler login
-# This opens a browser for Cloudflare OAuth
+# In Route 53, create a new A record:
+# Name: legacy-developer.exotel.com
+# Type: A
+# Value: <current WordPress server IP>
+# TTL: 300
+
+# Verify WordPress loads on the backup domain:
+curl -sI https://legacy-developer.exotel.com
 ```
 
-### Step 2: Update Configuration
+**Important:** Update WordPress settings to accept the backup domain too (add to `WP_HOME` / `WP_SITEURL` or use a plugin that handles multiple domains).
 
-Edit `ab-testing/cloudflare-worker/wrangler.toml`:
+### Step 2: Update Middleware Config
 
-```toml
-name = "exotel-docs-ab-test"
-main = "worker.js"
-compatibility_date = "2024-01-01"
-
-# REQUIRED: Add your Cloudflare zone ID
-routes = [
-  { pattern = "developer.exotel.com/*", zone_id = "YOUR_ZONE_ID_HERE" }
-]
-```
-
-**To find your Zone ID:**
-1. Go to Cloudflare Dashboard > developer.exotel.com
-2. On the Overview page, find "Zone ID" in the right sidebar
-3. Copy and paste it into `wrangler.toml`
-
-### Step 3: Configure Traffic Split
-
-Edit `ab-testing/cloudflare-worker/worker.js`, line ~25:
+Edit `ab-testing/vercel-middleware/middleware-edge.js`:
 
 ```javascript
-const CONFIG = {
-  SPLIT_PERCENTAGE: 10,  // Start at 10% for Week 1
-  NEW_SITE_ORIGIN: 'https://exotel-docs.vercel.app',
-  // ... rest of config
-};
+const OLD_SITE_ORIGIN = 'https://legacy-developer.exotel.com';  // ← Your WordPress backup domain
+const SPLIT_PERCENTAGE = 10;  // Start at 10% for Week 1
 ```
 
-### Step 4: Test Locally
+### Step 3: Enable A/B Build
 
+Change the build command in `vercel.json`:
+
+```json
+{
+  "buildCommand": "bash scripts/build-with-ab.sh"
+}
+```
+
+Commit and push:
 ```bash
-cd ab-testing/cloudflare-worker
-wrangler dev
-# Worker runs at http://localhost:8787
-# Test: http://localhost:8787/?force_variant=new
-# Test: http://localhost:8787/?force_variant=old
-```
-
-### Step 5: Deploy to Production
-
-```bash
-# Deploy to staging first
-wrangler deploy --env staging
-
-# Verify staging works, then deploy to production
-wrangler deploy --env production
-```
-
-### Step 6: Verify Deployment
-
-```bash
-# Check response headers to confirm worker is active
-curl -sI https://developer.exotel.com | grep -i "x-docs"
-# Expected output:
-# X-Docs-Variant: old  (or 'new' if you're in the 10%)
-# X-Docs-Split: 10%
-
-# Force new variant to test
-curl -sI "https://developer.exotel.com?force_variant=new" | grep -i "x-docs"
-# X-Docs-Variant: new
-
-# Force old variant to test
-curl -sI "https://developer.exotel.com?force_variant=old" | grep -i "x-docs"
-# X-Docs-Variant: old
-```
-
-### Changing Traffic Split (Weekly)
-
-```bash
-# Edit worker.js, change SPLIT_PERCENTAGE
-# Week 1: 10, Week 2: 25, Week 3: 50, Week 4: 100
-
-cd ab-testing/cloudflare-worker
-# Edit SPLIT_PERCENTAGE in worker.js
-wrangler deploy --env production
-
-# Changes take effect in < 30 seconds globally
-```
-
-### Instant Rollback
-
-```bash
-# Set SPLIT_PERCENTAGE to 0 and redeploy
-# OR delete the worker entirely:
-wrangler delete --env production
-```
-
----
-
-## Approach B: Vercel Edge Middleware
-
-### Prerequisites
-
-- [ ] Vercel CLI installed (`npm install -g vercel`)
-- [ ] Ability to change DNS A/CNAME records for developer.exotel.com
-- [ ] WordPress site accessible via backup domain (e.g., old-developer.exotel.com)
-
-### Step 1: Add Custom Domain to Vercel
-
-```bash
-cd "/Users/rahul.kumar/Claude code/exotel-docs"
-vercel domains add developer.exotel.com
-```
-
-Vercel will provide DNS records. Add them:
-- **Option A (CNAME):** `developer.exotel.com` -> `cname.vercel-dns.com`
-- **Option B (A Record):** `developer.exotel.com` -> `76.76.21.21`
-
-### Step 2: Set Up WordPress Backup Domain
-
-Before changing DNS, ensure WordPress is accessible via a backup URL:
-
-1. Create a DNS record: `old-developer.exotel.com` -> (current WordPress server IP)
-2. Update WordPress `WP_HOME` and `WP_SITEURL` to accept the backup domain
-3. Verify WordPress loads at `https://old-developer.exotel.com`
-
-### Step 3: Install Middleware
-
-```bash
-# Copy middleware to project root
-cp ab-testing/vercel-middleware/middleware.ts middleware.ts
-```
-
-Edit `middleware.ts` to set the WordPress backup URL:
-
-```typescript
-const CONFIG = {
-  SPLIT_PERCENTAGE: 10,
-  OLD_SITE_ORIGIN: 'https://old-developer.exotel.com',  // <-- Your WordPress backup URL
-  // ...
-};
-```
-
-### Step 4: Deploy
-
-```bash
-cd "/Users/rahul.kumar/Claude code/exotel-docs"
-git add middleware.ts
-git commit -m "feat: add A/B test edge middleware"
+git add vercel.json ab-testing/vercel-middleware/middleware-edge.js
+git commit -m "feat: enable A/B testing middleware"
 git push origin main
-# Auto-deploys via Vercel
 ```
 
-### Step 5: Update DNS
+### Step 4: Add Custom Domain to Vercel
 
-Change DNS for `developer.exotel.com` to point to Vercel:
+```bash
+# Via Vercel CLI
+vercel domains add developer.exotel.com
 
+# Or via Vercel Dashboard:
+# Project Settings → Domains → Add Domain → developer.exotel.com
 ```
-Type: CNAME
-Name: developer
-Value: cname.vercel-dns.com
-TTL: 300 (5 minutes for faster propagation during rollout)
+
+Vercel will show you the DNS records to add.
+
+### Step 5: Update Route 53 DNS
+
+In AWS Route 53 console (or CLI):
+
+```bash
+# Change the existing developer.exotel.com record:
+# Type: CNAME
+# Value: cname.vercel-dns.com
+# TTL: 300
+
+# AWS CLI example:
+aws route53 change-resource-record-sets \
+  --hosted-zone-id YOUR_HOSTED_ZONE_ID \
+  --change-batch '{
+    "Changes": [{
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "developer.exotel.com",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [{ "Value": "cname.vercel-dns.com" }]
+      }
+    }]
+  }'
 ```
 
 ### Step 6: Verify
 
 ```bash
-# Wait for DNS propagation (5-60 minutes)
+# Wait 5-15 minutes for DNS propagation
 dig developer.exotel.com
 
-# Check headers
+# Check A/B headers
 curl -sI https://developer.exotel.com | grep -i "x-docs"
+# Expected: X-Docs-Variant: old (or new)  +  X-Docs-Split: 10%
+
+# Force new variant
+curl -sI "https://developer.exotel.com?force_variant=new" | grep -i "x-docs"
+
+# Force old variant
+curl -sI "https://developer.exotel.com?force_variant=old" | grep -i "x-docs"
 ```
 
-### Changing Traffic Split (Weekly)
+### Changing Traffic Split (Vercel)
 
 ```bash
-# Edit SPLIT_PERCENTAGE in middleware.ts
-# Commit and push - auto-deploys in ~2 minutes
+# Edit SPLIT_PERCENTAGE in ab-testing/vercel-middleware/middleware-edge.js
+# Commit and push — auto-deploys in ~2 minutes
+git commit -am "chore: advance A/B split to 25%" && git push
 ```
 
-### Instant Rollback
-
-**Option 1 (fastest):** Set `SPLIT_PERCENTAGE = 0` and push
-**Option 2 (nuclear):** Revert DNS to point back to WordPress
-
----
-
-## Monitoring Setup
-
-### 1. Response Header Verification
-
-Every response from the A/B test includes these headers:
-
-| Header | Value | Purpose |
-|--------|-------|---------|
-| `X-Docs-Variant` | `new` or `old` | Which version the user sees |
-| `X-Docs-Split` | `10%` | Current split percentage |
-
-### 2. Health Check Endpoint
+### Rollback (Vercel)
 
 ```bash
-# Check A/B test status
-curl "https://exotel-docs.vercel.app/api/ab-status?token=exotel-ab-monitor-2026"
-```
+# Option 1: Set split to 0%
+# Edit SPLIT_PERCENTAGE = 0 in middleware-edge.js, push
 
-Returns JSON with current configuration, health status, and content stats.
+# Option 2: Disable middleware entirely
+# Change vercel.json buildCommand back to "npm run build", push
 
-### 3. Set Up Uptime Monitoring
-
-Add these checks to your monitoring tool (UptimeRobot, Pingdom, etc.):
-
-| Check | URL | Expected |
-|-------|-----|----------|
-| New site health | `https://exotel-docs.vercel.app` | 200 OK |
-| AB status API | `https://exotel-docs.vercel.app/api/ab-status?token=...` | 200 OK |
-| Old site health | `https://developer.exotel.com?force_variant=old` | 200 OK |
-| New variant works | `https://developer.exotel.com?force_variant=new` | 200 OK |
-
-### 4. Google Analytics 4 Setup
-
-Add GA4 tracking to the new site. In `docusaurus.config.ts`:
-
-```typescript
-// Add to presets > classic > gtag
-presets: [
-  ['classic', {
-    gtag: {
-      trackingID: 'G-XXXXXXXXXX',  // Your GA4 Measurement ID
-      anonymizeIP: true,
-    },
-    // ... existing config
-  }],
-],
-```
-
-### 5. Custom Event Tracking
-
-Add to `src/theme/Root.tsx` to track A/B variant:
-
-```typescript
-useEffect(() => {
-  // Read variant cookie
-  const variant = document.cookie
-    .split(';')
-    .find(c => c.trim().startsWith('exo_docs_variant='))
-    ?.split('=')[1] || 'unknown';
-
-  // Send to GA4
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'docs_variant', {
-      variant: variant,
-      page_path: window.location.pathname,
-    });
-  }
-}, []);
+# Option 3: Revert DNS (nuclear)
+# Point developer.exotel.com back to WordPress IP in Route 53
 ```
 
 ---
 
-## Weekly Operations Runbook
+## Approach B: AWS CloudFront + Lambda@Edge
 
-### Daily Checks (5 minutes)
+### Architecture
+
+```
+Internet
+   │
+   ▼
+developer.exotel.com
+   │ (Route 53 Alias → CloudFront)
+   ▼
+┌──────────────────────────────────────────┐
+│  CloudFront Distribution (global edge)    │
+│                                          │
+│  Lambda@Edge: Viewer Request             │
+│  ┌────────────────────────────────┐      │
+│  │ 1. Read exo_docs_variant      │      │
+│  │    cookie from request         │      │
+│  │ 2. If no cookie → assign      │      │
+│  │    randomly (10/90 split)      │      │
+│  │ 3. Set origin dynamically:     │      │
+│  │    "new" → Vercel origin       │      │
+│  │    "old" → WordPress origin    │      │
+│  │ 4. Tag request for cookie      │      │
+│  └──────────┬─────────────────────┘      │
+│             │                            │
+│       ┌─────┴─────┐                     │
+│       │           │                      │
+│       ▼           ▼                      │
+│  WordPress    Vercel                     │
+│  Origin       Origin                     │
+│  (90%)        (10%)                      │
+│       │           │                      │
+│       └─────┬─────┘                     │
+│             ▼                            │
+│  Lambda@Edge: Origin Response            │
+│  ┌────────────────────────────────┐      │
+│  │ Read X-AB-Set-Cookie header    │      │
+│  │ → Set-Cookie: exo_docs_variant │      │
+│  │ → Add X-Docs-Variant header    │      │
+│  └────────────────────────────────┘      │
+│             │                            │
+└─────────────┼────────────────────────────┘
+              ▼
+          User Browser
+          (cookie persists 30 days)
+```
+
+### Prerequisites
+
+- [ ] AWS CLI configured with admin permissions
+- [ ] ACM certificate for `developer.exotel.com` in **us-east-1** (Lambda@Edge requirement)
+- [ ] Route 53 hosted zone for `developer.exotel.com`
+- [ ] WordPress accessible via backup domain
+
+### Step 1: Create ACM Certificate (if needed)
 
 ```bash
+# Must be in us-east-1 for CloudFront!
+aws acm request-certificate \
+  --region us-east-1 \
+  --domain-name developer.exotel.com \
+  --validation-method DNS \
+  --query 'CertificateArn' --output text
+
+# Follow DNS validation instructions from ACM
+# (add CNAME record to Route 53)
+```
+
+### Step 2: Create WordPress Backup Domain
+
+Same as Vercel approach — ensure WordPress is accessible at `legacy-developer.exotel.com`.
+
+### Step 3: Deploy CloudFormation Stack
+
+```bash
+cd ab-testing/aws-cloudfront
+./deploy.sh deploy
+
+# You'll be prompted for:
+# - WordPress origin domain (e.g., legacy-developer.exotel.com)
+# - ACM Certificate ARN
+# - Route 53 Hosted Zone ID
+```
+
+This creates:
+- CloudFront Distribution with 2 origins (WordPress + Vercel)
+- Lambda@Edge Viewer Request function (routes traffic)
+- Lambda@Edge Origin Response function (sets cookies)
+- IAM Role for Lambda execution
+- Route 53 A record pointing to CloudFront
+
+### Step 4: Upload Lambda Code
+
+```bash
+# The deploy.sh script does this automatically, but you can also run:
+./deploy.sh update-lambda
+```
+
+### Step 5: Verify
+
+```bash
+# Check deployment status
+./deploy.sh status
+
+# Test headers
+curl -sI https://developer.exotel.com | grep -i "x-docs"
+
+# Force variants
+curl -sI "https://developer.exotel.com?force_variant=new" | grep -i "x-docs"
+curl -sI "https://developer.exotel.com?force_variant=old" | grep -i "x-docs"
+```
+
+### Changing Traffic Split (AWS)
+
+```bash
+# One command to update the split:
+./deploy.sh update-split 25   # Week 2: 25%
+./deploy.sh update-split 50   # Week 3: 50%
+./deploy.sh update-split 100  # Week 4: 100%
+```
+
+### Rollback (AWS)
+
+```bash
+# Instant rollback — sets split to 0%
+./deploy.sh rollback
+
+# All traffic immediately goes to WordPress
+# Takes effect after CloudFront propagation (~5 min)
+```
+
+---
+
+## Monitoring (Both Approaches)
+
+### Response Headers
+
+Every response includes these headers for debugging:
+
+| Header | Example | Purpose |
+|--------|---------|---------|
+| `X-Docs-Variant` | `new` or `old` | Which version this user sees |
+| `X-Docs-Split` | `10%` | Current traffic split setting |
+
+### Daily Health Check (5 minutes)
+
+```bash
+#!/bin/bash
+# Save as: scripts/ab-health-check.sh
+
+echo "=== A/B Test Health Check ==="
+echo ""
+
 # 1. Check new site is up
-curl -so /dev/null -w "%{http_code}" https://exotel-docs.vercel.app
-# Expected: 200
+NEW_STATUS=$(curl -so /dev/null -w "%{http_code}" https://exotel-docs.vercel.app 2>/dev/null)
+echo "New site (Vercel):     HTTP $NEW_STATUS"
 
-# 2. Check AB headers are present
-curl -sI https://developer.exotel.com | grep "X-Docs"
-# Expected: X-Docs-Variant and X-Docs-Split headers
+# 2. Check old site is up
+OLD_STATUS=$(curl -so /dev/null -w "%{http_code}" https://legacy-developer.exotel.com 2>/dev/null)
+echo "Old site (WordPress):  HTTP $OLD_STATUS"
 
-# 3. Check AB status API
-curl -s "https://exotel-docs.vercel.app/api/ab-status?token=exotel-ab-monitor-2026" | python3 -m json.tool | head -20
+# 3. Check A/B routing
+HEADERS=$(curl -sI https://developer.exotel.com 2>/dev/null)
+VARIANT=$(echo "$HEADERS" | grep -i "x-docs-variant" | awk '{print $2}' | tr -d '\r')
+SPLIT=$(echo "$HEADERS" | grep -i "x-docs-split" | awk '{print $2}' | tr -d '\r')
+
+echo ""
+echo "A/B Test active:       $([ -n "$VARIANT" ] && echo 'YES' || echo 'NO')"
+echo "Current variant:       ${VARIANT:-N/A}"
+echo "Traffic split:         ${SPLIT:-N/A}"
+
+# 4. Test force variants
+NEW_OK=$(curl -so /dev/null -w "%{http_code}" "https://developer.exotel.com?force_variant=new" 2>/dev/null)
+OLD_OK=$(curl -so /dev/null -w "%{http_code}" "https://developer.exotel.com?force_variant=old" 2>/dev/null)
+echo ""
+echo "Force new variant:     HTTP $NEW_OK"
+echo "Force old variant:     HTTP $OLD_OK"
+
+# 5. Check AB status API
+AB_API=$(curl -so /dev/null -w "%{http_code}" "https://exotel-docs.vercel.app/api/ab-status?token=exotel-ab-monitor-2026" 2>/dev/null)
+echo "AB Status API:         HTTP $AB_API"
 ```
 
-### Weekly Review (Friday)
+### Weekly Review Checklist
 
-1. **Check GA4 dashboard** — Compare metrics by variant (use `docs_variant` custom dimension)
-2. **Check Vercel Analytics** — Core Web Vitals for the new site
-3. **Check support tickets** — Any increase in docs-related tickets?
-4. **Check 404 logs** — `vercel logs --filter "status=404"` or Vercel dashboard
-5. **Make Go/No-Go decision** — Advance to next split percentage or hold
+| # | Check | Tool | Action if Red |
+|---|-------|------|---------------|
+| 1 | Both origins returning 200 | Health check script | Investigate, consider rollback |
+| 2 | A/B headers present on responses | `curl -sI` | Check middleware/Lambda deployment |
+| 3 | Cookie being set on new visitors | Browser DevTools | Check middleware cookie logic |
+| 4 | Returning visitors get same variant | Clear cookie, revisit, check | Fix cookie path/domain settings |
+| 5 | 404 error rate < 1% | Vercel logs / CloudWatch | Fix broken links, add redirects |
+| 6 | Page load < 2s (new site) | Vercel Analytics | Investigate performance regression |
+| 7 | No increase in support tickets | Freshdesk | Review tickets, fix content gaps |
+| 8 | Core Web Vitals "Good" | PageSpeed Insights | Optimize LCP/CLS/FID |
 
-### Advancing Traffic Split
-
-```bash
-# Week 1 -> Week 2 (10% -> 25%)
-# Edit SPLIT_PERCENTAGE in worker.js (Cloudflare) or middleware.ts (Vercel)
-# Change: SPLIT_PERCENTAGE: 25
-
-# Cloudflare approach:
-cd ab-testing/cloudflare-worker
-wrangler deploy --env production
-
-# Vercel approach:
-git add middleware.ts && git commit -m "chore: advance A/B split to 25%" && git push
-```
-
-### Rollback Procedure
+### Traffic Split Schedule
 
 ```
-SEVERITY: CRITICAL (site down or data loss)
-├── Action: Set SPLIT_PERCENTAGE = 0 and deploy immediately
-├── Time: < 1 minute (Cloudflare) or < 2 minutes (Vercel)
-└── Notification: Slack #engineering + email to stakeholders
+Week 1: 10% new / 90% old
+  ├── Monitor daily
+  ├── Check 404 logs
+  └── Friday: Go/No-Go for 25%
 
-SEVERITY: HIGH (broken functionality, high 404 rate)
-├── Action: Set SPLIT_PERCENTAGE = 0, investigate
-├── Time: < 5 minutes
-└── Notification: Slack #engineering
+Week 2: 25% new / 75% old
+  ├── Monitor daily
+  ├── Compare GA4 metrics by variant
+  └── Friday: Go/No-Go for 50%
 
-SEVERITY: MEDIUM (degraded metrics but functional)
-├── Action: Hold current split, investigate
-├── Time: No rush
-└── Notification: Weekly review discussion
+Week 3: 50% new / 50% old
+  ├── Enable feedback banner
+  ├── Begin DNS cutover planning
+  └── Friday: Go/No-Go for 100%
 
-SEVERITY: LOW (minor issues)
-├── Action: Fix and continue
-├── Time: Next business day
-└── Notification: Add to weekly review notes
-```
-
----
-
-## Appendix: Architecture Diagrams
-
-### Cloudflare Worker Architecture
-
-```
-Internet
-   │
-   ▼
-developer.exotel.com (Cloudflare DNS)
-   │
-   ▼
-┌─────────────────────────────┐
-│   Cloudflare Worker         │
-│   (edge, <1ms overhead)    │
-│                             │
-│   1. Check cookie           │
-│   2. Assign variant         │
-│   3. Set sticky cookie      │
-│   4. Route request          │
-└──────────┬──────────────────┘
-           │
-     ┌─────┴─────┐
-     │           │
-     ▼           ▼
-┌─────────┐ ┌──────────────────┐
-│ WordPress│ │ Vercel Edge CDN  │
-│ Origin   │ │ (Docusaurus)     │
-│ (old)    │ │ (new, 302 pages) │
-└─────────┘ └──────────────────┘
-   90%           10%
-```
-
-### Vercel Middleware Architecture
-
-```
-Internet
-   │
-   ▼
-developer.exotel.com (DNS -> Vercel)
-   │
-   ▼
-┌─────────────────────────────┐
-│   Vercel Edge Middleware     │
-│   (runs before page render)  │
-│                             │
-│   1. Check cookie           │
-│   2. Assign variant         │
-│   3. Set sticky cookie      │
-│   4. Rewrite or next()      │
-└──────────┬──────────────────┘
-           │
-     ┌─────┴─────┐
-     │           │
-     ▼           ▼
-┌──────────┐ ┌──────────────────┐
-│ WordPress │ │ Docusaurus SSG   │
-│ (rewrite  │ │ (serve directly) │
-│  proxy)   │ │                  │
-└──────────┘ └──────────────────┘
-   90%           10%
+Week 4: 100% new / 0% old
+  ├── Full cutover
+  ├── Remove A/B infrastructure
+  └── Decommission WordPress
 ```
 
 ---
 
 ## FAQ
 
-**Q: What happens if the Cloudflare Worker crashes?**
-A: Cloudflare's default behavior is to pass requests through to the origin (WordPress). So a worker crash = all traffic goes to old site. This is fail-safe by design.
+**Q: Why do we need TWO Lambda functions for the AWS approach?**
+A: Lambda@Edge "Viewer Request" can modify the request (change origin, add headers) but CANNOT set response cookies. So we use "Origin Response" as a companion to translate a custom header into a Set-Cookie header.
 
-**Q: Will users see a flash/redirect?**
-A: No. Both approaches work at the network layer (proxy/rewrite). The user always sees `developer.exotel.com` in their browser. There is no visible redirect.
+**Q: What happens if the new site goes down?**
+A: Both approaches have built-in fallback. If Vercel is unreachable, the middleware/Lambda catches the error and routes to WordPress. Users may see a brief delay but won't see an error.
 
-**Q: How do I test a specific variant without affecting others?**
-A: Add `?force_variant=new` or `?force_variant=old` to any URL. This overrides the random assignment for your session only.
+**Q: Can I test a specific variant without affecting metrics?**
+A: Yes. Add `?force_variant=new` or `?force_variant=old` to any URL. This sets a cookie for your session without affecting the random assignment for other users.
 
-**Q: What about SEO during the A/B test?**
-A: Since the URL stays the same (`developer.exotel.com`), Google sees the same domain. The Worker/Middleware serves the same canonical URL. No SEO impact during the test. After full cutover, submit updated sitemap to Search Console.
+**Q: How do I clear my variant assignment?**
+A: Clear the `exo_docs_variant` cookie in your browser. On your next visit, you'll be randomly reassigned.
 
-**Q: Can I reset a user's variant assignment?**
-A: Users can clear their `exo_docs_variant` cookie, or you can change the cookie name in config to reset all assignments.
+**Q: What about Google crawlers during the A/B test?**
+A: Google respects cookies, so Googlebot will be assigned a variant and stay on it. Since both versions serve the same canonical URL (`developer.exotel.com`), there's no SEO impact. After full cutover, submit an updated sitemap.
 
-**Q: How long does a DNS change take to propagate?**
-A: With TTL set to 300 seconds, most users see the change within 5-15 minutes. Some ISPs may cache for up to 24 hours.
+**Q: How much does the CloudFront approach cost?**
+A: For a documentation site (~100K page views/month): CloudFront ~$5-10/mo, Lambda@Edge ~$1-2/mo. Total: ~$10-15/mo during the 4-week test period.
+
+**Q: Can we run both approaches simultaneously?**
+A: No. Both approaches require controlling the `developer.exotel.com` DNS. Choose one.

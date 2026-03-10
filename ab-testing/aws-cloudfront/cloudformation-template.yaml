@@ -1,0 +1,223 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Exotel Docs A/B Testing — CloudFront + Lambda@Edge
+  Deploys a CloudFront distribution with Lambda@Edge functions for
+  cookie-based A/B traffic splitting between WordPress and Vercel.
+
+# ============================================================
+# PARAMETERS — Fill these in when deploying the stack
+# ============================================================
+Parameters:
+  WordPressOriginDomain:
+    Type: String
+    Default: legacy-developer.exotel.com
+    Description: >
+      WordPress origin domain. This should be a backup domain/subdomain
+      pointing to your existing WordPress server, since developer.exotel.com
+      will be pointed to CloudFront.
+
+  VercelOriginDomain:
+    Type: String
+    Default: exotel-docs.vercel.app
+    Description: Vercel deployment domain for the new Docusaurus site.
+
+  DomainName:
+    Type: String
+    Default: developer.exotel.com
+    Description: The primary domain for the documentation site.
+
+  AcmCertificateArn:
+    Type: String
+    Description: >
+      ARN of the ACM certificate for developer.exotel.com.
+      Must be in us-east-1 region for CloudFront.
+    # Example: arn:aws:acm:us-east-1:123456789:certificate/abc-123
+
+  HostedZoneId:
+    Type: String
+    Description: Route 53 Hosted Zone ID for developer.exotel.com.
+
+# ============================================================
+# RESOURCES
+# ============================================================
+Resources:
+
+  # --- Lambda@Edge: Viewer Request (assigns variant, routes to origin) ---
+  ViewerRequestFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: exotel-docs-ab-viewer-request
+      Runtime: nodejs20.x
+      Handler: index.handler
+      MemorySize: 128
+      Timeout: 5
+      Role: !GetAtt LambdaEdgeRole.Arn
+      Code:
+        ZipFile: |
+          // See ab-testing/aws-cloudfront/lambda-at-edge.js for the full implementation
+          // This is a placeholder — deploy the actual code via aws lambda update-function-code
+          exports.handler = async (event) => event.Records[0].cf.request;
+
+  ViewerRequestFunctionVersion:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref ViewerRequestFunction
+      Description: Initial version for Lambda@Edge
+
+  # --- Lambda@Edge: Origin Response (sets the cookie) ---
+  OriginResponseFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: exotel-docs-ab-origin-response
+      Runtime: nodejs20.x
+      Handler: index.handler
+      MemorySize: 128
+      Timeout: 30
+      Role: !GetAtt LambdaEdgeRole.Arn
+      Code:
+        ZipFile: |
+          // See ab-testing/aws-cloudfront/lambda-origin-response.js for the full implementation
+          // This is a placeholder — deploy the actual code via aws lambda update-function-code
+          exports.handler = async (event) => event.Records[0].cf.response;
+
+  OriginResponseFunctionVersion:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref OriginResponseFunction
+      Description: Initial version for Lambda@Edge
+
+  # --- IAM Role for Lambda@Edge ---
+  LambdaEdgeRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: exotel-docs-ab-lambda-edge-role
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+                - edgelambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: CloudWatchLogs
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: arn:aws:logs:*:*:*
+
+  # --- CloudFront Distribution ---
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        Comment: 'Exotel Docs A/B Testing Distribution'
+        DefaultRootObject: ''
+        HttpVersion: http2and3
+        PriceClass: PriceClass_All
+
+        # Custom domain + SSL
+        Aliases:
+          - !Ref DomainName
+        ViewerCertificate:
+          AcmCertificateArn: !Ref AcmCertificateArn
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021
+
+        # Default origin (WordPress) — Lambda@Edge overrides this dynamically
+        Origins:
+          - Id: wordpress-origin
+            DomainName: !Ref WordPressOriginDomain
+            CustomOriginConfig:
+              HTTPSPort: 443
+              OriginProtocolPolicy: https-only
+              OriginSSLProtocols:
+                - TLSv1.2
+
+          - Id: vercel-origin
+            DomainName: !Ref VercelOriginDomain
+            CustomOriginConfig:
+              HTTPSPort: 443
+              OriginProtocolPolicy: https-only
+              OriginSSLProtocols:
+                - TLSv1.2
+
+        # Default cache behavior
+        DefaultCacheBehavior:
+          TargetOriginId: wordpress-origin  # Lambda@Edge overrides this
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          CachedMethods:
+            - GET
+            - HEAD
+          Compress: true
+
+          # Forward cookies so Lambda@Edge can read the variant cookie
+          ForwardedValues:
+            QueryString: true
+            Cookies:
+              Forward: whitelist
+              WhitelistedNames:
+                - exo_docs_variant
+            Headers:
+              - Host
+              - Origin
+              - Referer
+
+          # Cache policy (short TTL during A/B test)
+          MinTTL: 0
+          DefaultTTL: 300      # 5 minutes
+          MaxTTL: 3600         # 1 hour
+
+          # Lambda@Edge associations
+          LambdaFunctionAssociations:
+            - EventType: viewer-request
+              LambdaFunctionARN: !Ref ViewerRequestFunctionVersion
+              IncludeBody: false
+            - EventType: origin-response
+              LambdaFunctionARN: !Ref OriginResponseFunctionVersion
+              IncludeBody: false
+
+  # --- Route 53 DNS Record ---
+  DnsRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref HostedZoneId
+      Name: !Ref DomainName
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt CloudFrontDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2  # CloudFront's fixed hosted zone ID
+        EvaluateTargetHealth: false
+
+# ============================================================
+# OUTPUTS
+# ============================================================
+Outputs:
+  CloudFrontDistributionId:
+    Description: CloudFront Distribution ID
+    Value: !Ref CloudFrontDistribution
+
+  CloudFrontDomainName:
+    Description: CloudFront Domain Name
+    Value: !GetAtt CloudFrontDistribution.DomainName
+
+  ViewerRequestFunctionArn:
+    Description: Lambda@Edge Viewer Request Function ARN
+    Value: !GetAtt ViewerRequestFunction.Arn
+
+  OriginResponseFunctionArn:
+    Description: Lambda@Edge Origin Response Function ARN
+    Value: !GetAtt OriginResponseFunction.Arn
