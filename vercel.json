@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "bash scripts/build-with-ab.sh",
   "outputDirectory": "build",
   "functions": {
     "api/chat.js": {
