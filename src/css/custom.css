@@ -64,6 +64,37 @@
   font-weight: 500;
 }
 
+/* ─── Navbar Dropdown Section Headers ─── */
+.dropdown__menu .dropdown-section-label {
+  display: block;
+  padding: 6px 12px 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #808285;
+  pointer-events: none;
+  user-select: none;
+}
+
+.dropdown__menu .dropdown-separator {
+  display: block;
+  height: 1px;
+  background: var(--ifm-border-color);
+  margin: 4px 12px;
+}
+
+.dropdown__menu .dropdown__link {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+
+/* Make dropdown menus scrollable if too tall */
+.navbar__item.dropdown .dropdown__menu {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
 /* ─── Sidebar ─── */
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--ifm-border-color);
