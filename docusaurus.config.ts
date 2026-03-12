@@ -163,10 +163,10 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'mcpServerSidebar', label: 'MCP Server' },
           ],
         },
-        // ── Support ──
+        // ── Guides ──
         {
           type: 'dropdown',
-          label: 'Support',
+          label: 'Guides',
           position: 'left',
           items: [
             { type: 'docSidebar', sidebarId: 'gettingStartedSidebar', label: 'Getting Started' },
