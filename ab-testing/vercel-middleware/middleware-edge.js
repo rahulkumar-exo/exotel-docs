@@ -10,7 +10,7 @@
 // ============================================================
 // CONFIGURATION — Change SPLIT_PERCENTAGE to control traffic
 // ============================================================
-const SPLIT_PERCENTAGE = 10;  // Week 1: 10, Week 2: 25, Week 3: 50, Week 4: 100
+const SPLIT_PERCENTAGE = 2;   // Start at 2%, then ramp: 10 → 25 → 50 → 100
 const OLD_SITE_ORIGIN = 'https://legacy-developer.exotel.in';  // WordPress backup domain (same server: 167.71.226.61)
 const COOKIE_NAME = 'exo_docs_variant';
 const COOKIE_MAX_AGE = 30 * 24 * 60 * 60;  // 30 days

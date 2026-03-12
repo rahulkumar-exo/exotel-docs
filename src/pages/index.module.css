@@ -537,56 +537,56 @@
   text-decoration: none;
 }
 
-/* Social Share Section */
+/* Social Share Strip — thin bar just above footer */
 .socialShare {
-  padding: 2.5rem 0;
+  padding: 0.6rem 0;
   text-align: center;
-  border-top: 1px solid #e8eaf3;
-  background: #eff0f1;
+  background: #e8eaf3;
 }
 
 .socialShareLabel {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #808285;
-  margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  margin-bottom: 0;
+  display: inline;
+  margin-right: 0.75rem;
+  vertical-align: middle;
 }
 
 .socialShareButtons {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 0.4rem;
+  vertical-align: middle;
 }
 
 .socialShareBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  border: 1px solid #e8eaf3;
+  border: 1px solid #c6c9d8;
   background: #fff;
   color: #808285;
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+  transition: border-color 0.2s, color 0.2s;
   position: relative;
 }
 
 .socialShareBtn:hover {
   border-color: #9b42f1;
   color: #9b42f1;
-  box-shadow: 0 2px 8px rgba(155, 66, 241, 0.1);
-  transform: translateY(-1px);
 }
 
 .socialShareBtn svg {
-  width: 18px;
-  height: 18px;
+  width: 13px;
+  height: 13px;
 }
 
 .copyTooltip {

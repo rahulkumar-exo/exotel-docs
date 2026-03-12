@@ -584,8 +584,8 @@ export default function Home(): ReactNode {
         <ProductCards />
         <QuickLinks />
         <UseCasesSection />
-        <SocialShare />
         <NewsletterSignup />
+        <SocialShare />
       </main>
     </Layout>
   );
