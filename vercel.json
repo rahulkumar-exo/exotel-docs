@@ -1,5 +1,6 @@
 {
   "buildCommand": "bash scripts/build-with-ab.sh",
+  "outputDirectory": "build",
   "functions": {
     "api/chat.js": {
       "maxDuration": 30
