@@ -13,7 +13,7 @@ import { next } from '@vercel/edge';
 // CONFIGURATION — Change SPLIT_PERCENTAGE to control traffic
 // ============================================================
 const SPLIT_PERCENTAGE = 1;   // 1% new, 99% old. Ramp later: 5 → 10 → 25 → 50 → 100
-const OLD_SITE_ORIGIN = 'https://legacy-developer.exotel.in';
+const OLD_SITE_ORIGIN = 'http://167.71.226.61';  // WordPress server IP directly (avoids SSL/SNI issues)
 const COOKIE_NAME = 'exo_docs_variant';
 const COOKIE_MAX_AGE = 30 * 24 * 60 * 60;  // 30 days
 
