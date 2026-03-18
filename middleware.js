@@ -13,7 +13,7 @@ import { next } from '@vercel/edge';
 // CONFIGURATION — Change SPLIT_PERCENTAGE to control traffic
 // ============================================================
 const SPLIT_PERCENTAGE = 1;   // 1% new, 99% old. Ramp later: 5 → 10 → 25 → 50 → 100
-const OLD_SITE_ORIGIN = 'http://167.71.226.61';  // WordPress server IP directly (avoids SSL/SNI issues)
+const OLD_SITE_ORIGIN = 'https://developer.exotel.in';  // Original WordPress domain (resolves to 167.71.226.61)
 const COOKIE_NAME = 'exo_docs_variant';
 const COOKIE_MAX_AGE = 30 * 24 * 60 * 60;  // 30 days
 
@@ -130,10 +130,20 @@ async function proxyToOldSite(request, url) {
       headers: new Headers(proxyResponse.headers),
     });
 
+    // If WordPress returned a redirect, don't pass it through — serve new site instead
+    if (proxyResponse.status >= 300 && proxyResponse.status < 400) {
+      console.error('WordPress returned redirect:', proxyResponse.status, proxyResponse.headers.get('location'));
+      const fallback = next();
+      fallback.headers.set('X-Docs-Proxy-Error', `redirect-${proxyResponse.status}`);
+      return fallback;
+    }
+
     return response;
   } catch (error) {
     console.error('WordPress proxy failed:', error.message);
-    return next();
+    const fallback = next();
+    fallback.headers.set('X-Docs-Proxy-Error', error.message || 'unknown');
+    return fallback;
   }
 }
 
