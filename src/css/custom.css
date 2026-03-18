@@ -258,3 +258,226 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #808285;
 }
+
+/* ── Swagger UI Theme Overrides ── */
+/* Match Swagger UI to Exotel brand colours */
+
+.swagger-ui {
+  font-family: 'Inter', var(--ifm-font-family-base), sans-serif !important;
+}
+
+.swagger-ui .info .title {
+  color: #231f20 !important;
+  font-family: 'Inter', var(--ifm-font-family-base), sans-serif !important;
+}
+
+.swagger-ui .info p,
+.swagger-ui .info li,
+.swagger-ui .info table td,
+.swagger-ui .info table th {
+  color: #3c3c43 !important;
+  font-size: 0.9rem !important;
+}
+
+.swagger-ui .info a {
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Info description table styling */
+.swagger-ui .info table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+.swagger-ui .info table th,
+.swagger-ui .info table td {
+  border: 1px solid #e8eaf3 !important;
+  padding: 8px 12px !important;
+}
+
+.swagger-ui .info table th {
+  background: #f6f7f9 !important;
+  font-weight: 600 !important;
+}
+
+/* Section headers (Tools, Tool Testing, Knowledge Base) */
+.swagger-ui .opblock-tag {
+  color: #231f20 !important;
+  font-family: 'Inter', var(--ifm-font-family-base), sans-serif !important;
+  border-bottom: 1px solid #e8eaf3 !important;
+}
+
+.swagger-ui .opblock-tag small {
+  color: #808285 !important;
+}
+
+/* HTTP method badges — use Exotel purple accent */
+.swagger-ui .opblock.opblock-post {
+  border-color: #9b42f1 !important;
+  background: rgba(155, 66, 241, 0.05) !important;
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+  background: #9b42f1 !important;
+}
+
+.swagger-ui .opblock.opblock-get {
+  border-color: #6c63ff !important;
+  background: rgba(108, 99, 255, 0.05) !important;
+}
+
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+  background: #6c63ff !important;
+}
+
+.swagger-ui .opblock.opblock-put {
+  border-color: #e8a317 !important;
+  background: rgba(232, 163, 23, 0.05) !important;
+}
+
+.swagger-ui .opblock.opblock-put .opblock-summary-method {
+  background: #e8a317 !important;
+}
+
+.swagger-ui .opblock.opblock-delete {
+  border-color: #dc2626 !important;
+  background: rgba(220, 38, 38, 0.05) !important;
+}
+
+.swagger-ui .opblock.opblock-delete .opblock-summary-method {
+  background: #dc2626 !important;
+}
+
+/* Operation summary path & description text */
+.swagger-ui .opblock .opblock-summary-path {
+  color: #231f20 !important;
+}
+
+.swagger-ui .opblock .opblock-summary-description {
+  color: #808285 !important;
+}
+
+/* Expanded operation body */
+.swagger-ui .opblock-body pre {
+  background: #f6f7f9 !important;
+  border-radius: 8px !important;
+  color: #231f20 !important;
+}
+
+/* Parameters table */
+.swagger-ui table.parameters thead tr th {
+  color: #808285 !important;
+  font-size: 0.8rem !important;
+}
+
+.swagger-ui .parameter__name {
+  color: #231f20 !important;
+  font-weight: 600 !important;
+}
+
+.swagger-ui .parameter__name.required::after {
+  color: #dc2626 !important;
+}
+
+.swagger-ui .parameter__type {
+  color: #808285 !important;
+}
+
+/* Response status codes */
+.swagger-ui .responses-table .response-col_status {
+  color: #231f20 !important;
+  font-weight: 700 !important;
+}
+
+/* Authorize button */
+.swagger-ui .btn.authorize {
+  color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+.swagger-ui .btn.authorize svg {
+  fill: var(--ifm-color-primary) !important;
+}
+
+/* Execute button */
+.swagger-ui .btn.execute {
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+/* Try it out button */
+.swagger-ui .try-out__btn {
+  color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+/* Models/Schemas section */
+.swagger-ui section.models h4 {
+  color: #231f20 !important;
+  font-family: 'Inter', var(--ifm-font-family-base), sans-serif !important;
+}
+
+.swagger-ui .model-title {
+  color: #231f20 !important;
+}
+
+/* Server dropdown */
+.swagger-ui .scheme-container {
+  background: #f6f7f9 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #e8eaf3 !important;
+  padding: 1rem !important;
+}
+
+.swagger-ui .servers-title,
+.swagger-ui label[for="servers"] {
+  color: #231f20 !important;
+  font-weight: 600 !important;
+}
+
+/* Topbar hidden (we have our own nav) */
+.swagger-ui .topbar {
+  display: none !important;
+}
+
+/* Info section inline code */
+.swagger-ui .info code {
+  background: #f0edfe !important;
+  color: #7c3aed !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 0.85em !important;
+}
+
+/* Response body */
+.swagger-ui .highlight-code pre {
+  border-radius: 8px !important;
+}
+
+/* Hide redundant Swagger info header (title + version + OAS badge + yaml link) */
+/* We already have our own page title from the MDX */
+.swagger-ui .info hgroup,
+.swagger-ui .info > div > a[href$=".yaml"],
+.swagger-ui .info > div > a[href$=".json"] {
+  display: none !important;
+}
+
+/* Version & OAS badges — style them properly if they're still visible */
+.swagger-ui .info .version-stamp {
+  background: var(--ifm-color-primary) !important;
+  color: #fff !important;
+}
+
+.swagger-ui .info pre.base-url {
+  display: none !important;
+}
+
+/* Hide the raw spec URL link */
+.swagger-ui .info .url {
+  display: none !important;
+}
+
+/* Remove Swagger watermark link if present */
+.swagger-ui .info hgroup a {
+  color: var(--ifm-color-primary) !important;
+}
