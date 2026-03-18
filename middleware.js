@@ -110,11 +110,13 @@ async function proxyToOldSite(request, url) {
   const oldUrl = new URL(url.pathname + url.search, OLD_SITE_ORIGIN);
 
   try {
+    // Send Host: developer.exotel.com so WordPress doesn't 301 redirect.
+    // WordPress checks Host header against its siteurl config.
     const proxyResponse = await fetch(oldUrl.toString(), {
       method: request.method,
       headers: {
         ...Object.fromEntries(request.headers.entries()),
-        'Host': new URL(OLD_SITE_ORIGIN).host,
+        'Host': 'developer.exotel.com',
         'X-Forwarded-Host': url.host,
         'X-Forwarded-Proto': 'https',
       },
