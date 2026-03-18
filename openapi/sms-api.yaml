@@ -1,0 +1,343 @@
+openapi: 3.0.3
+info:
+  title: Exotel SMS API
+  version: "1.0"
+  description: |
+    Send single and bulk SMS messages programmatically. Supports transactional, promotional, and OTP messages with DLT compliance for India.
+
+    ## Regional Endpoints
+
+    | Region    | Base URL                    |
+    |-----------|----------------------------|
+    | Singapore | `https://api.exotel.com`    |
+    | Mumbai    | `https://api.in.exotel.com` |
+
+    ## Rate Limits
+
+    - **200 requests/minute** per account
+    - **100 messages max** per bulk SMS request
+
+    ## DLT Compliance (India)
+
+    For SMS to Indian numbers, you must register on a DLT portal and provide your `DltEntityId` and `DltTemplateId`.
+  contact:
+    name: Exotel Developer Support
+    url: https://developer.exotel.com
+    email: support@exotel.com
+  license:
+    name: Proprietary
+    url: https://exotel.com/terms
+
+servers:
+  - url: https://api.exotel.com
+    description: Singapore (Default)
+  - url: https://api.in.exotel.com
+    description: Mumbai (India)
+
+security:
+  - basicAuth: []
+
+tags:
+  - name: SMS
+    description: Send and retrieve SMS messages
+  - name: Bulk SMS
+    description: Send messages to multiple recipients
+
+paths:
+  /v1/Accounts/{account_sid}/Sms/send:
+    post:
+      operationId: sendSms
+      summary: Send SMS
+      description: Send a single SMS message to a phone number.
+      tags:
+        - SMS
+      parameters:
+        - $ref: "#/components/parameters/AccountSid"
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - From
+                - To
+                - Body
+              properties:
+                From:
+                  type: string
+                  description: ExoPhone or approved Sender ID (e.g., "EXOTEL")
+                  example: "EXOTEL"
+                To:
+                  type: string
+                  description: "Recipient mobile number in E.164 format. For bulk static SMS, pass comma-separated numbers."
+                  example: "+919876543210"
+                Body:
+                  type: string
+                  description: Message content, max 2000 characters
+                  example: "Your OTP is 123456"
+                EncodingType:
+                  type: string
+                  description: Text encoding — `plain` (default) or `unicode`
+                  enum:
+                    - plain
+                    - unicode
+                  default: plain
+                StatusCallback:
+                  type: string
+                  format: uri
+                  description: URL to receive delivery status webhook notifications
+                  example: "https://yourapp.com/sms-status"
+                DltEntityId:
+                  type: string
+                  description: DLT entity registration ID (mandatory for India)
+                  example: "1234567890"
+                DltTemplateId:
+                  type: string
+                  description: DLT-approved template ID
+                  example: "9876543210"
+                SmsType:
+                  type: string
+                  description: Type of SMS message
+                  enum:
+                    - transactional
+                    - transactional_opt_in
+                    - promotional
+                Priority:
+                  type: string
+                  description: Message priority
+                  enum:
+                    - normal
+                    - high
+                  default: normal
+                CustomField:
+                  type: string
+                  description: Reference identifier for your application
+      responses:
+        "200":
+          description: SMS sent successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SmsResponse"
+              example:
+                SMSMessage:
+                  Sid: "0b5e67c0f5c24caa8e430ae208c0a052"
+                  AccountSid: "exotel"
+                  From: "EXOTEL"
+                  To: "09876543210"
+                  DateCreated: "2025-03-15 12:30:00"
+                  DateUpdated: "2025-03-15 12:30:00"
+                  DateSent: null
+                  Body: "Your OTP is 123456"
+                  Status: "queued"
+                  Direction: "outbound-api"
+                  Price: null
+                  Uri: "/v1/Accounts/exotel/SMS/Messages/0b5e67c0f5c24caa8e430ae208c0a052.json"
+        "400":
+          description: Bad request — missing or invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Authentication failed
+        "429":
+          description: Rate limit exceeded
+
+  /v1/Accounts/{account_sid}/Sms/bulksend:
+    post:
+      operationId: sendDynamicBulkSms
+      summary: Send Dynamic Bulk SMS
+      description: |
+        Send unique messages to different recipients in a single API call. Maximum 100 messages per request.
+
+        Each message in the `Messages` array can have different content and recipients.
+      tags:
+        - Bulk SMS
+      parameters:
+        - $ref: "#/components/parameters/AccountSid"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - Messages
+              properties:
+                Messages:
+                  type: array
+                  description: Array of message objects (max 100)
+                  maxItems: 100
+                  items:
+                    type: object
+                    required:
+                      - To
+                      - Body
+                    properties:
+                      To:
+                        type: string
+                        description: Recipient phone number
+                        example: "+919876543210"
+                      Body:
+                        type: string
+                        description: Message content
+                        example: "Hi John, your order #1234 has shipped."
+                      From:
+                        type: string
+                        description: Sender ID (optional, uses account default)
+                      DltEntityId:
+                        type: string
+                      DltTemplateId:
+                        type: string
+            example:
+              Messages:
+                - To: "+919876543210"
+                  Body: "Hi John, your order #1234 has shipped."
+                  DltEntityId: "1234567890"
+                - To: "+919876543211"
+                  Body: "Hi Jane, your refund of Rs 500 has been processed."
+                  DltEntityId: "1234567890"
+      responses:
+        "200":
+          description: Bulk SMS request accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  BulkSMSResponse:
+                    type: object
+                    properties:
+                      BulkId:
+                        type: string
+                        description: Unique bulk request ID
+                      TotalMessages:
+                        type: integer
+                      Status:
+                        type: string
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Authentication failed
+
+  /v1/Accounts/{account_sid}/SMS/Messages/{sms_sid}:
+    get:
+      operationId: getSmsDetails
+      summary: Get SMS Details
+      description: Retrieve the details and delivery status of a specific SMS message.
+      tags:
+        - SMS
+      parameters:
+        - $ref: "#/components/parameters/AccountSid"
+        - name: sms_sid
+          in: path
+          required: true
+          description: The unique SMS identifier returned when the message was sent
+          schema:
+            type: string
+          example: "0b5e67c0f5c24caa8e430ae208c0a052"
+      responses:
+        "200":
+          description: SMS details retrieved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SmsResponse"
+        "404":
+          description: SMS not found
+        "401":
+          description: Authentication failed
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: |
+        Use your **API Key** as the username and **API Token** as the password.
+        Find these in your [Exotel Dashboard](https://my.exotel.com) under **Settings → API Settings**.
+
+  parameters:
+    AccountSid:
+      name: account_sid
+      in: path
+      required: true
+      description: Your Exotel account SID
+      schema:
+        type: string
+      example: "exotel"
+
+  schemas:
+    SmsResponse:
+      type: object
+      properties:
+        SMSMessage:
+          type: object
+          properties:
+            Sid:
+              type: string
+              description: Unique SMS identifier
+            AccountSid:
+              type: string
+            From:
+              type: string
+              description: Sender ID
+            To:
+              type: string
+              description: Recipient number
+            DateCreated:
+              type: string
+              format: date-time
+            DateUpdated:
+              type: string
+              format: date-time
+            DateSent:
+              type: string
+              format: date-time
+              nullable: true
+            Body:
+              type: string
+              description: Message content
+            Status:
+              type: string
+              description: Current delivery status
+              enum:
+                - queued
+                - sending
+                - sent
+                - failed-dnd
+                - failed
+            Direction:
+              type: string
+              enum:
+                - outbound-api
+                - inbound
+            Price:
+              type: number
+              nullable: true
+            Uri:
+              type: string
+              description: API URI for this message
+
+    ErrorResponse:
+      type: object
+      properties:
+        RestException:
+          type: object
+          properties:
+            Status:
+              type: integer
+              example: 400
+            Message:
+              type: string
+              example: "Invalid parameter: To"
+            Code:
+              type: integer
+            MoreInfo:
+              type: string

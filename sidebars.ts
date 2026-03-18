@@ -811,6 +811,12 @@ const sidebars: SidebarsConfig = {
     'integrations/shopify',
     'integrations/webrtc-sdk',
   ],
+
+  voicebotToolsSidebar: [
+    'voicebot-tools/overview',
+    'voicebot-tools/api-reference',
+    'voicebot-tools/mcp-integration',
+  ],
 };
 
 export default sidebars;

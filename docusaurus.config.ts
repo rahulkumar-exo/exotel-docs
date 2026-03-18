@@ -49,6 +49,23 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    function swaggerWebpackPlugin() {
+      return {
+        name: 'swagger-webpack-plugin',
+        configureWebpack() {
+          return {
+            resolve: {
+              fallback: {
+                stream: require.resolve('stream-browserify'),
+              },
+            },
+          };
+        },
+      };
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -151,6 +168,7 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'genAiSidebar', label: 'Gen AI' },
             { type: 'docSidebar', sidebarId: 'chatbotSidebar', label: 'Chatbot Platform' },
             { type: 'docSidebar', sidebarId: 'agentStreamSidebar', label: 'AgentStream' },
+            { type: 'docSidebar', sidebarId: 'voicebotToolsSidebar', label: 'VoiceBot Tools' },
             { type: 'docSidebar', sidebarId: 'vsipSidebar', label: 'vSIP Trunking' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
             { type: 'html', value: '<span class="dropdown-section-label">SDKs & Integrations</span>' },

@@ -1,0 +1,498 @@
+openapi: 3.0.3
+info:
+  title: Exotel VoiceBot Tools Server API
+  version: "1.0"
+  description: |
+    The Tools Server API allows you to create, test, manage, and deploy tools for the Exotel VoiceBot platform.
+
+    Tools are modular functions that VoiceBots can invoke during conversations. Three types are supported:
+
+    - **Python Tools** — Custom Python functions with defined parameters and return values
+    - **OpenAPI Tools** — External API integrations defined via OpenAPI 3.0 specs
+    - **Knowledge Base Tools** — RAG-powered tools backed by document corpora (via Vertex AI)
+
+    ## Environments
+
+    | Environment | URL |
+    |-------------|-----|
+    | UAT (India) | `https://tools-server-uat.mum1.exotel.com` |
+    | Production  | `https://tools-server.mum1.exotel.com` |
+
+    ## MCP Integration
+
+    The Tools Server internally uses MCP (Model Context Protocol) to communicate with the VoiceBot.
+    External integrations (Salesforce, CRM, etc.) should use MCP as the default integration path.
+
+  contact:
+    name: Exotel Developer Support
+    url: https://developer.exotel.com
+
+servers:
+  - url: https://tools-server-uat.mum1.exotel.com/tools/api/v1
+    description: UAT (India)
+  - url: https://tools-server.mum1.exotel.com/tools/api/v1
+    description: Production
+
+security:
+  - cookieAuth: []
+
+tags:
+  - name: Tools
+    description: Create, retrieve, activate, and manage tools
+  - name: Tool Testing
+    description: Test tool versions before activation
+  - name: Knowledge Base
+    description: Create and manage knowledge base corpora for RAG tools
+
+paths:
+  /tenants/{tenant_id}/tools:
+    post:
+      operationId: createTool
+      summary: Create Tool
+      description: |
+        Create a new tool. Supports three types:
+
+        - `python` — Inline Python function with parameters and return value
+        - `openapi` — External API defined via an OpenAPI 3.0 spec
+        - `knowledge_base` — RAG tool backed by a knowledge corpus
+      tags:
+        - Tools
+      parameters:
+        - $ref: "#/components/parameters/TenantId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateToolRequest"
+            examples:
+              python_tool:
+                summary: Python Tool
+                value:
+                  name: "add_numbers"
+                  description: "Adds two numbers x and y"
+                  type: "python"
+                  definition:
+                    body: "return x + y"
+                    parameters:
+                      x:
+                        type: "number"
+                        description: "First number"
+                      y:
+                        type: "number"
+                        description: "Second number"
+                    return_value:
+                      type: "number"
+                      description: "Sum of x and y"
+              openapi_tool:
+                summary: OpenAPI Tool
+                value:
+                  name: "get_order_details"
+                  description: "Get Reference IDs for a mobile number"
+                  type: "openapi"
+                  definition:
+                    openapi: "3.0.0"
+                    info:
+                      title: "Health API"
+                      version: "1.0.0"
+                    paths: {}
+              knowledge_base_tool:
+                summary: Knowledge Base Tool
+                value:
+                  name: "details_of_voicebot"
+                  description: "Voicebot Details"
+                  type: "knowledge_base"
+                  definition:
+                    knowledge_corpus_id: "c0368d05-67e1-442b-9c61-66fc389a80da"
+      responses:
+        "201":
+          description: Tool created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ToolResponse"
+        "400":
+          description: Bad request
+        "401":
+          description: Unauthorized
+
+  /tenants/{tenant_id}/tools/{tool_id}:
+    get:
+      operationId: getTool
+      summary: Retrieve Tool
+      description: Get details of a specific tool.
+      tags:
+        - Tools
+      parameters:
+        - $ref: "#/components/parameters/TenantId"
+        - $ref: "#/components/parameters/ToolId"
+      responses:
+        "200":
+          description: Tool details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ToolResponse"
+        "404":
+          description: Tool not found
+
+    put:
+      operationId: activateTool
+      summary: Activate Tool Version
+      description: Set the active version of a tool by providing the version ID and status.
+      tags:
+        - Tools
+      parameters:
+        - $ref: "#/components/parameters/TenantId"
+        - $ref: "#/components/parameters/ToolId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - status
+                - current_version_id
+              properties:
+                status:
+                  type: string
+                  enum: [active, inactive]
+                  description: Tool status
+                current_version_id:
+                  type: string
+                  format: uuid
+                  description: Version ID to activate
+            example:
+              status: "active"
+              current_version_id: "e3914816-8e5d-4606-8b7a-a66246b55abd"
+      responses:
+        "200":
+          description: Tool activated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ToolResponse"
+
+  /tenants/{tenant_id}/tools/{tool_id}/versions:
+    get:
+      operationId: listToolVersions
+      summary: List Tool Versions
+      description: Get all versions of a tool with pagination.
+      tags:
+        - Tools
+      parameters:
+        - $ref: "#/components/parameters/TenantId"
+        - $ref: "#/components/parameters/ToolId"
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+          description: Max results to return
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+          description: Pagination offset
+      responses:
+        "200":
+          description: List of versions
+
+  /tenants/{tenant_id}/tools/{tool_id}/versions/{version_id}:
+    get:
+      operationId: getToolVersion
+      summary: Retrieve Tool Version
+      description: Get a specific version of a tool, including its full definition.
+      tags:
+        - Tools
+      parameters:
+        - $ref: "#/components/parameters/TenantId"
+        - $ref: "#/components/parameters/ToolId"
+        - $ref: "#/components/parameters/VersionId"
+      responses:
+        "200":
+          description: Tool version with definition
+
+  /tenants/{tenant_id}/tools/{tool_id}/versions/{version_id}/tests:
+    post:
+      operationId: testToolVersion
+      summary: Test Tool Version
+      description: |
+        Execute a test run of a specific tool version with provided inputs.
+        Returns the test result including execution time and output.
+      tags:
+        - Tool Testing
+      parameters:
+        - $ref: "#/components/parameters/TenantId"
+        - $ref: "#/components/parameters/ToolId"
+        - $ref: "#/components/parameters/VersionId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - test_inputs
+              properties:
+                test_inputs:
+                  type: object
+                  description: Key-value pairs matching the tool's parameter definitions
+            examples:
+              python_test:
+                summary: Test Python Tool
+                value:
+                  test_inputs:
+                    x: 4
+                    y: 7
+              openapi_test:
+                summary: Test OpenAPI Tool
+                value:
+                  test_inputs:
+                    mobile_number: "595001001"
+                    language_preference: "English"
+                    outlet_name: "KFC"
+                    test_mode: "true"
+                    region: "KSA"
+                    call_sid: "1234567890987654321"
+              kb_test:
+                summary: Test Knowledge Base Tool
+                value:
+                  test_inputs:
+                    query: "What is the pricing of exotel voicebot"
+      responses:
+        "200":
+          description: Test executed successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestResponse"
+
+  /tenants/{tenant_id}/knowledgecorpora:
+    post:
+      operationId: createKnowledgeCorpus
+      summary: Create Knowledge Corpus
+      description: |
+        Upload documents to create a knowledge base corpus for RAG-powered tools.
+        Supports shared and isolated Vertex AI corpora.
+      tags:
+        - Knowledge Base
+      parameters:
+        - $ref: "#/components/parameters/TenantId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - metadata
+                - files
+              properties:
+                metadata:
+                  type: string
+                  description: 'JSON string with corpus config: name, description, rag_engine, isolate_vertex_db (optional)'
+                  example: '{"name":"Profile of Mira","description":"Brief info","rag_engine":"vertex_ai"}'
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                  description: Document files to upload
+      responses:
+        "202":
+          description: Corpus creation initiated (async)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorpusResponse"
+
+  /tenants/{tenant_id}/knowledgecorpora/{corpus_id}:
+    get:
+      operationId: getKnowledgeCorpus
+      summary: Get Knowledge Corpus
+      description: Retrieve the status and details of a knowledge corpus.
+      tags:
+        - Knowledge Base
+      parameters:
+        - $ref: "#/components/parameters/TenantId"
+        - name: corpus_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Corpus details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CorpusResponse"
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: access_token
+      description: |
+        Session token passed as a cookie. Use the same Exotel session tokens
+        from `api.exotel.com`.
+
+  parameters:
+    TenantId:
+      name: tenant_id
+      in: path
+      required: true
+      description: Your tenant/account identifier
+      schema:
+        type: string
+      example: "exotel_tenant"
+    ToolId:
+      name: tool_id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+      description: Unique tool identifier
+    VersionId:
+      name: version_id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+      description: Tool version identifier
+
+  schemas:
+    CreateToolRequest:
+      type: object
+      required:
+        - name
+        - description
+        - type
+        - definition
+      properties:
+        name:
+          type: string
+          description: Tool name (unique within tenant)
+        description:
+          type: string
+          description: What the tool does (used by the AI to decide when to invoke it)
+        type:
+          type: string
+          enum: [python, openapi, knowledge_base]
+          description: Tool type
+        definition:
+          type: object
+          description: Tool definition (structure depends on type)
+
+    ToolResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+        response:
+          type: object
+          properties:
+            http_code:
+              type: integer
+            data:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                name:
+                  type: string
+                description:
+                  type: string
+                type:
+                  type: string
+                  enum: [python, openapi, knowledge_base]
+                tenant_id:
+                  type: string
+                latest_version_id:
+                  type: string
+                  format: uuid
+                latest_version_number:
+                  type: integer
+                current_version_id:
+                  type: string
+                  format: uuid
+                  nullable: true
+                current_version_number:
+                  type: integer
+                  nullable: true
+                status:
+                  type: string
+                  enum: [active, inactive]
+                created_at:
+                  type: string
+                  format: date-time
+                updated_at:
+                  type: string
+                  format: date-time
+
+    TestResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+        response:
+          type: object
+          properties:
+            data:
+              type: object
+              properties:
+                test_id:
+                  type: string
+                  format: uuid
+                test_result:
+                  type: object
+                  description: Tool output (structure varies by tool type)
+                test_args:
+                  type: object
+                  description: The inputs that were tested
+                details:
+                  type: object
+                  properties:
+                    success:
+                      type: boolean
+                    execution_time_ms:
+                      type: integer
+                    error_message:
+                      type: string
+                      nullable: true
+
+    CorpusResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+        response:
+          type: object
+          properties:
+            data:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                name:
+                  type: string
+                description:
+                  type: string
+                status:
+                  type: string
+                  enum: [pending, ready, failed]
+                created_at:
+                  type: string
+                  format: date-time
+                updated_at:
+                  type: string
+                  format: date-time

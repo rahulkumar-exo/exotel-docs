@@ -1,0 +1,167 @@
+---
+id: mcp-integration
+title: Bring Your Own MCP
+description: "Integrate external systems with Exotel VoiceBot using MCP (Model Context Protocol) — the default integration path."
+sidebar_label: MCP Integration
+sidebar_position: 3
+---
+
+# Bring Your Own MCP Integration
+
+The Exotel VoiceBot platform uses **MCP (Model Context Protocol)** as the default method to integrate with external systems. Instead of building custom integrations for each platform (Salesforce, Freshdesk, etc.), you create MCP-compliant tools that the VoiceBot discovers and invokes automatically.
+
+## How It Works
+
+```
+┌─────────────┐     MCP      ┌──────────────┐     API      ┌──────────────┐
+│  VoiceBot   │ ──────────── │ Tools Server │ ──────────── │ Your System  │
+│  (AI Agent) │              │              │              │ (CRM, DB...) │
+└─────────────┘              └──────────────┘              └──────────────┘
+```
+
+1. **VoiceBot** receives a customer call and determines it needs external data
+2. **Tools Server** exposes your tool via MCP to the bot
+3. **Your system** receives the API call and returns data
+4. **VoiceBot** uses the response in the conversation
+
+## Creating an MCP-Compatible Tool
+
+### Option 1: OpenAPI Tool (Recommended)
+
+If your system already has an API, define it as an OpenAPI tool:
+
+```bash
+curl -X POST \
+  'https://tools-server-uat.mum1.exotel.com/tools/api/v1/tenants/<tenant_id>/tools' \
+  -H 'Content-Type: application/json' \
+  -H 'Cookie: access_token=<your_token>' \
+  -d '{
+    "name": "crm_lookup",
+    "description": "Look up customer details from CRM by phone number",
+    "type": "openapi",
+    "definition": {
+      "openapi": "3.0.0",
+      "info": { "title": "CRM API", "version": "1.0.0" },
+      "servers": [{ "url": "https://your-crm-api.example.com" }],
+      "paths": {
+        "/api/customers/lookup": {
+          "post": {
+            "summary": "Look up customer",
+            "operationId": "lookup_customer",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "required": ["phone_number"],
+                    "properties": {
+                      "phone_number": {
+                        "type": "string",
+                        "description": "Customer phone number"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": { "description": "Customer found" }
+            }
+          }
+        }
+      }
+    }
+  }'
+```
+
+### Option 2: Python Tool
+
+For custom logic that doesn't have an existing API:
+
+```bash
+curl -X POST \
+  'https://tools-server-uat.mum1.exotel.com/tools/api/v1/tenants/<tenant_id>/tools' \
+  -H 'Content-Type: application/json' \
+  -H 'Cookie: access_token=<your_token>' \
+  -d '{
+    "name": "calculate_emi",
+    "description": "Calculate monthly EMI for a loan amount",
+    "type": "python",
+    "definition": {
+      "body": "rate = annual_rate / 12 / 100\nemi = principal * rate * (1 + rate)**months / ((1 + rate)**months - 1)\nreturn round(emi, 2)",
+      "parameters": {
+        "principal": { "type": "number", "description": "Loan amount" },
+        "annual_rate": { "type": "number", "description": "Annual interest rate (%)" },
+        "months": { "type": "number", "description": "Loan tenure in months" }
+      },
+      "return_value": { "type": "number", "description": "Monthly EMI amount" }
+    }
+  }'
+```
+
+### Option 3: Knowledge Base Tool
+
+For FAQ-style lookups backed by documents:
+
+```bash
+# Step 1: Create a knowledge corpus with your documents
+curl -X POST \
+  'https://tools-server-uat.mum1.exotel.com/tools/api/v1/tenants/<tenant_id>/knowledgecorpora' \
+  -H 'Cookie: access_token=<your_token>' \
+  -F 'metadata={"name":"Product FAQ","description":"Product knowledge base","rag_engine":"vertex_ai"}' \
+  -F 'files=@product-faq.txt' \
+  -F 'files=@pricing.txt'
+
+# Step 2: Create a knowledge base tool pointing to the corpus
+curl -X POST \
+  'https://tools-server-uat.mum1.exotel.com/tools/api/v1/tenants/<tenant_id>/tools' \
+  -H 'Content-Type: application/json' \
+  -H 'Cookie: access_token=<your_token>' \
+  -d '{
+    "name": "product_faq",
+    "description": "Answer questions about our products and pricing",
+    "type": "knowledge_base",
+    "definition": {
+      "knowledge_corpus_id": "<corpus_id_from_step_1>"
+    }
+  }'
+```
+
+## Testing Your Tool
+
+Before activating, always test with sample inputs:
+
+```bash
+curl -X POST \
+  '.../tenants/<tenant_id>/tools/<tool_id>/versions/<version_id>/tests' \
+  -H 'Content-Type: application/json' \
+  -H 'Cookie: access_token=<your_token>' \
+  -d '{
+    "test_inputs": {
+      "phone_number": "+919876543210"
+    }
+  }'
+```
+
+## Activating Your Tool
+
+Once tested, activate it so VoiceBots can use it:
+
+```bash
+curl -X PUT \
+  '.../tenants/<tenant_id>/tools/<tool_id>' \
+  -H 'Content-Type: application/json' \
+  -H 'Cookie: access_token=<your_token>' \
+  -d '{
+    "status": "active",
+    "current_version_id": "<version_id>"
+  }'
+```
+
+## Best Practices
+
+1. **Write clear descriptions** — The AI uses the `description` field to decide when to invoke your tool
+2. **Define typed parameters** — Helps the AI extract the right values from conversation
+3. **Test before activating** — Always verify with the test endpoint first
+4. **Version your tools** — Each update creates a new version; activate only tested versions
+5. **Use OpenAPI tools for external APIs** — They're self-documenting and reusable

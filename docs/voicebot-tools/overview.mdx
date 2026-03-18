@@ -1,0 +1,53 @@
+---
+id: overview
+title: VoiceBot Tools Server
+description: "Create, test, and deploy tools for Exotel VoiceBot — Python functions, OpenAPI integrations, and Knowledge Base (RAG) tools."
+sidebar_label: Overview
+sidebar_position: 1
+---
+
+# VoiceBot Tools Server API
+
+Create, test, and deploy tools that your Exotel VoiceBot can invoke during conversations. Tools extend the bot's capabilities by connecting it to custom logic, external APIs, and knowledge bases.
+
+## Tool Types
+
+| Type | Description | Use Case |
+|------|-------------|----------|
+| **Python** | Inline Python functions with typed parameters | Custom logic, calculations, data transforms |
+| **OpenAPI** | External API integrations via OpenAPI 3.0 specs | CRM lookups, order status, third-party APIs |
+| **Knowledge Base** | RAG-powered tools backed by document corpora (Vertex AI) | FAQ answers, product info, policy lookups |
+
+## Environments
+
+| Environment | URL |
+|-------------|-----|
+| UAT (India) | `https://tools-server-uat.mum1.exotel.com` |
+| Production  | `https://tools-server.mum1.exotel.com` |
+
+## Authentication
+
+Uses the same session tokens as `api.exotel.com`. Pass your access token as a cookie:
+
+```
+Cookie: access_token=<your_session_token>
+```
+
+## Base URL Pattern
+
+```
+https://<server>/tools/api/v1/tenants/<tenant_id>/...
+```
+
+## Workflow
+
+1. **Create** a tool (Python, OpenAPI, or Knowledge Base)
+2. **Test** the tool version with sample inputs
+3. **Activate** the tool version to make it available to VoiceBots
+4. VoiceBot **invokes** the tool during conversations via MCP
+
+## MCP Integration
+
+The Tools Server uses **MCP (Model Context Protocol)** internally to communicate with the VoiceBot. This is the default integration path for connecting VoiceBots to external systems (Salesforce, CRM, databases, etc.).
+
+See the [Bring Your Own MCP](/docs/voicebot-tools/mcp-integration) guide for details on creating custom MCP integrations.
