@@ -78,6 +78,9 @@
     { "source": "/faqs", "destination": "/docs/faqs/overview", "permanent": true },
     { "source": "/faq", "destination": "/docs/faqs/overview", "permanent": true },
 
-    { "source": "/api-console", "destination": "/docs/voice-v1/overview", "permanent": true }
+    { "source": "/api-console", "destination": "/docs/voice-v1/overview", "permanent": true },
+
+    { "source": "/api/voicebot-api", "destination": "/docs/voicebot-tools/overview", "permanent": true },
+    { "source": "/api/voicebot-api/:path*", "destination": "/docs/voicebot-tools/overview", "permanent": true }
   ]
 }
