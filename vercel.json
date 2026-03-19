@@ -22,6 +22,12 @@
     },
     "api/ab-status.js": {
       "maxDuration": 5
+    },
+    "api/unsubscribe.ts": {
+      "maxDuration": 10
+    },
+    "api/send-newsletter.ts": {
+      "maxDuration": 30
     }
   },
   "redirects": [

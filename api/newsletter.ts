@@ -21,6 +21,7 @@ const SUBSCRIBERS_FILE_PATH = 'data/newsletter-subscribers.json';
 interface Subscriber {
   email: string;
   subscribedAt: string;
+  unsubscribeToken?: string;
 }
 
 interface GitHubFileResponse {
@@ -106,10 +107,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    // Add the new subscriber
+    // Add the new subscriber with unsubscribe token
     subscribers.push({
       email: normalizedEmail,
       subscribedAt: new Date().toISOString(),
+      unsubscribeToken: crypto.randomUUID(),
     });
 
     // Write the updated list back to GitHub
