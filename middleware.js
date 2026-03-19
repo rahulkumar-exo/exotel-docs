@@ -12,7 +12,7 @@ import { next, rewrite } from '@vercel/edge';
 // CONFIGURATION
 // ============================================================
 const SPLIT_PERCENTAGE = 1;   // 1% new, 99% old
-const OLD_SITE_ORIGIN = 'https://developer.exotel.in';
+const OLD_SITE_ORIGIN = 'http://167.71.226.61';
 const COOKIE_NAME = 'exo_docs_variant';
 const COOKIE_MAX_AGE = 30 * 24 * 60 * 60;  // 30 days
 
@@ -42,6 +42,11 @@ export const config = {
 export default function middleware(request) {
   const url = new URL(request.url);
   const path = url.pathname;
+
+  // 0. Only run A/B testing on developer.exotel.com — all other domains serve new site
+  if (url.hostname !== 'developer.exotel.com') {
+    return next();
+  }
 
   // 1. Skip static assets
   if (STATIC_EXTENSIONS.some(ext => path.endsWith(ext))) {
