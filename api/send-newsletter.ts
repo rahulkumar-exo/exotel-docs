@@ -53,15 +53,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // Authenticate
   const adminKey = (process.env.NEWSLETTER_ADMIN_KEY || '').trim();
-  if (!adminKey) {
-    console.error('[send-newsletter] NEWSLETTER_ADMIN_KEY not configured');
-    return res.status(500).json({ error: 'Server misconfiguration' });
-  }
-
   const authHeader = req.headers.authorization || '';
   const token = authHeader.replace(/^Bearer\s+/i, '').trim();
 
-  if (token !== adminKey) {
+  if (!adminKey || !token || token !== adminKey) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 

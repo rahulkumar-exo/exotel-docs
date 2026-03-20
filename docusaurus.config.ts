@@ -11,7 +11,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://developers.exotel.com',
+  url: 'https://developer.exotel.com',
   baseUrl: '/',
 
   organizationName: 'exotel',
