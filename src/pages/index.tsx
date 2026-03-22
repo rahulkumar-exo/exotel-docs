@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import WebMCPTools from '@site/src/components/WebMCP';
 
 import styles from './index.module.css';
 
@@ -424,15 +425,28 @@ function NewsletterSignup() {
           Get API updates, developer tools, platform announcements, and implementation guides.
         </p>
         {status !== 'success' ? (
-          <form className={styles.newsletterForm} onSubmit={handleSubmit}>
+          <form
+            className={styles.newsletterForm}
+            onSubmit={handleSubmit}
+            action="/api/newsletter"
+            method="POST"
+            {...{
+              'toolname': 'subscribe_newsletter',
+              'tooldescription': 'Subscribe to Exotel Developer Docs newsletter to receive API updates, platform announcements, and implementation guides',
+            } as any}
+          >
             <input
               type="email"
+              name="email"
               className={styles.newsletterInput}
               placeholder="you@company.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               disabled={status === 'loading'}
+              {...{
+                'toolparamdescription': 'Email address to subscribe for developer updates',
+              } as any}
             />
             <button
               type="submit"
@@ -460,6 +474,7 @@ export default function Home(): ReactNode {
     <Layout
       title="Home"
       description="Exotel Developer Documentation — Voice API, SMS API, WhatsApp API, and more.">
+      <WebMCPTools />
       <HeroBanner />
       <main>
         <PlatformStats />
