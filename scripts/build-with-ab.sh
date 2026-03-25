@@ -16,3 +16,4 @@ rm -rf .vercel/output
 
 echo "=== Build complete ==="
 echo "A/B testing via middleware.js (Vercel native edge middleware)"
+// GA: G-HWCFMYZ4FG
