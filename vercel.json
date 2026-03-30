@@ -31,6 +31,9 @@
     },
     "api/call-script.js": {
       "maxDuration": 5
+    },
+    "api/make-call.js": {
+      "maxDuration": 15
     }
   },
   "redirects": [
