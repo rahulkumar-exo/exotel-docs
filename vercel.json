@@ -28,6 +28,9 @@
     },
     "api/send-newsletter.ts": {
       "maxDuration": 30
+    },
+    "api/call-script.js": {
+      "maxDuration": 5
     }
   },
   "redirects": [
