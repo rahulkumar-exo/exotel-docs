@@ -6,7 +6,7 @@
 
 const SCRIPT_ENDPOINT = "https://exotel-docs.vercel.app/api/call-script";
 
-export default async function makeCall(req, res) {
+module.exports = async function makeCall(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
