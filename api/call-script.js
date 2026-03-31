@@ -16,12 +16,8 @@ module.exports = function callScript(req, res) {
     return res.status(405).send('Method Not Allowed');
   }
 
-  // If no text param, this is a Passthru "agent ready" ping — just return 200 OK
-  // so Exotel knows to proceed and connect to the To party
-  const text = req.query.text || req.body?.text;
-  if (!text) {
-    return res.status(200).json({ status: 'ready' });
-  }
+  // Get text from query param, POST body, or use a default test message
+  const text = req.query.text || req.body?.text || "Hello. This is a test call from the AI booking agent. The system is working correctly.";
 
   const lang = req.query.lang || 'en';
   const voice = req.query.voice === 'man' ? 'man' : 'woman';

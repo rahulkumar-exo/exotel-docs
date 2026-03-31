@@ -17,21 +17,23 @@ module.exports = async function makeCall(req, res) {
     return res.status(400).json({ error: "Missing required fields: to, from, script" });
   }
 
-  const { EXOTEL_API_KEY, EXOTEL_API_TOKEN, EXOTEL_SID } = process.env;
+  const { EXOTEL_API_KEY, EXOTEL_API_TOKEN, EXOTEL_SID, EXOTEL_APP_ID } = process.env;
 
-  if (!EXOTEL_API_KEY || !EXOTEL_API_TOKEN || !EXOTEL_SID) {
-    return res.status(500).json({ error: "Exotel credentials not configured on Vercel" });
+  if (!EXOTEL_API_KEY || !EXOTEL_API_TOKEN || !EXOTEL_SID || !EXOTEL_APP_ID) {
+    return res.status(500).json({ error: "Missing Exotel credentials — check Vercel env vars (EXOTEL_API_KEY, EXOTEL_API_TOKEN, EXOTEL_SID, EXOTEL_APP_ID)" });
   }
 
-  const scriptUrl = `${SCRIPT_ENDPOINT}?text=${encodeURIComponent(script)}`;
-
+  const appUrl = `http://my.exotel.com/${EXOTEL_SID}/exoml/start_voice/${EXOTEL_APP_ID}`;
   const apiUrl = `https://api.exotel.com/v1/Accounts/${EXOTEL_SID}/Calls/connect.json`;
 
+  // Store script for this call so Passthru webhook can retrieve it
+  const scriptUrl = `${SCRIPT_ENDPOINT}?text=${encodeURIComponent(script)}`;
+
   const params = new URLSearchParams();
-  params.append("From", from);
-  params.append("To", to);
-  params.append("CallerId", from);
-  params.append("Url", scriptUrl);
+  params.append("From", to);          // "From" = the number to CALL (restaurant/user)
+  params.append("CallerId", from);    // ExoPhone as CallerID
+  params.append("Url", appUrl);       // Exotel-hosted app (runs when called party answers)
+  params.append("StatusCallback", scriptUrl); // Pass script URL for Passthru to pick up
   params.append("TimeLimit", "120");
   params.append("Record", "true");
 
