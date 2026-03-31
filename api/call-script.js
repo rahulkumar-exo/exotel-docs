@@ -16,11 +16,12 @@ module.exports = function callScript(req, res) {
     return res.status(405).send('Method Not Allowed');
   }
 
-  // Pull script from query param or POST body
-  const text =
-    req.query.text ||
-    req.body?.text ||
-    'Hello. This is an automated call. Goodbye.';
+  // If no text param, this is a Passthru "agent ready" ping — just return 200 OK
+  // so Exotel knows to proceed and connect to the To party
+  const text = req.query.text || req.body?.text;
+  if (!text) {
+    return res.status(200).json({ status: 'ready' });
+  }
 
   const lang = req.query.lang || 'en';
   const voice = req.query.voice === 'man' ? 'man' : 'woman';
