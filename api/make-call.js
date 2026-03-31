@@ -25,8 +25,7 @@ export default async function makeCall(req, res) {
 
   const scriptUrl = `${SCRIPT_ENDPOINT}?text=${encodeURIComponent(script)}`;
 
-  // Use URL-embedded auth — Exotel's documented format
-  const apiUrl = `https://${EXOTEL_API_KEY}:${EXOTEL_API_TOKEN}@api.exotel.com/v1/Accounts/${EXOTEL_SID}/Calls/connect.json`;
+  const apiUrl = `https://api.exotel.com/v1/Accounts/${EXOTEL_SID}/Calls/connect.json`;
 
   const params = new URLSearchParams();
   params.append("From", from);
@@ -40,9 +39,14 @@ export default async function makeCall(req, res) {
   let exoStatus = 0;
 
   try {
+    const credentials = Buffer.from(`${EXOTEL_API_KEY}:${EXOTEL_API_TOKEN}`).toString("base64");
+
     const response = await fetch(apiUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": `Basic ${credentials}`,
+      },
       body: params.toString(),
     });
 
