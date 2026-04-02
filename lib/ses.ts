@@ -33,7 +33,7 @@ function getClient(): SESClient {
 }
 
 function getFromEmail(): string {
-  return process.env.AWS_SES_FROM_EMAIL || 'developer@exotel.com';
+  return process.env.AWS_SES_FROM_EMAIL || 'noreply@exotel.com';
 }
 
 /**
