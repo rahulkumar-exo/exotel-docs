@@ -7,6 +7,10 @@ const config: Config = {
   tagline: 'Build powerful communication workflows',
   favicon: 'img/favicon.ico',
 
+  clientModules: [
+    './src/analytics/ga-custom-dimension.js',
+  ],
+
   future: {
     v4: true,
   },
