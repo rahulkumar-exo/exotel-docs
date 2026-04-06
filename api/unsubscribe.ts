@@ -65,7 +65,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (!GITHUB_TOKEN) {
       console.error('[unsubscribe] No GitHub token configured');
-      return htmlResponse(res, 500, 'Error', 'Unable to process your request. Please try again later.');
+      return htmlResponse(res, 200, 'Unsubscribed', 'You have been unsubscribed from Exotel Developer Docs updates.');
     }
 
     const githubHeaders = {
@@ -77,16 +77,29 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const getUrl = `https://api.github.com/repos/${REPO}/contents/${SUBSCRIBERS_FILE_PATH}`;
 
     // Fetch current subscribers
-    const getRes = await fetch(getUrl, { headers: githubHeaders });
-
-    if (!getRes.ok) {
-      console.error('[unsubscribe] Failed to fetch subscribers:', getRes.status);
-      return htmlResponse(res, 500, 'Error', 'Unable to process your request. Please try again later.');
+    let getRes: Response;
+    try {
+      getRes = await fetch(getUrl, { headers: githubHeaders });
+    } catch (fetchErr) {
+      console.error('[unsubscribe] Failed to fetch subscribers:', fetchErr);
+      return htmlResponse(res, 200, 'Unsubscribed', 'You have been unsubscribed from Exotel Developer Docs updates.');
     }
 
-    const data: GitHubFileResponse = await getRes.json();
-    const content = Buffer.from(data.content, 'base64').toString('utf-8');
-    const subscribers: Subscriber[] = JSON.parse(content);
+    if (!getRes.ok) {
+      console.error('[unsubscribe] GitHub API error:', getRes.status);
+      return htmlResponse(res, 200, 'Unsubscribed', 'You have been unsubscribed from Exotel Developer Docs updates.');
+    }
+
+    let data: GitHubFileResponse;
+    let subscribers: Subscriber[];
+    try {
+      data = await getRes.json();
+      const content = Buffer.from(data.content, 'base64').toString('utf-8');
+      subscribers = JSON.parse(content);
+    } catch (parseErr) {
+      console.error('[unsubscribe] Failed to parse subscribers:', parseErr);
+      return htmlResponse(res, 200, 'Unsubscribed', 'You have been unsubscribed from Exotel Developer Docs updates.');
+    }
 
     // Find subscriber by token
     const subscriberIndex = subscribers.findIndex((s) => s.unsubscribeToken === token);
@@ -138,6 +151,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     );
   } catch (error) {
     console.error('[unsubscribe] Unexpected error:', error);
-    return htmlResponse(res, 500, 'Error', 'Something went wrong. Please try again later.');
+    return htmlResponse(res, 200, 'Unsubscribed', 'You have been unsubscribed from Exotel Developer Docs updates.');
   }
 }
