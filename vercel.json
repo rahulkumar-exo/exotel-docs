@@ -92,8 +92,8 @@
 
     { "source": "/api-console", "destination": "/docs/voice-v1/overview", "permanent": true },
 
-    { "source": "/api/voicebot-api", "destination": "/docs/voicebot-tools/overview", "permanent": true },
-    { "source": "/api/voicebot-api/:path*", "destination": "/docs/voicebot-tools/overview", "permanent": true },
+    { "source": "/api/voicebot-api", "destination": "/docs/voicebot-tools/voicebot-api", "permanent": true },
+    { "source": "/api/voicebot-api/:path*", "destination": "/docs/voicebot-tools/voicebot-api", "permanent": true },
 
     { "source": "/getting-started", "destination": "/docs/voice-v1/overview", "permanent": true },
     { "source": "/docs/whatsapp-support/overview", "destination": "/docs/whatsapp-support/whatsapp-overview", "permanent": true },

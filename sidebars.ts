@@ -814,6 +814,7 @@ const sidebars: SidebarsConfig = {
 
   voicebotToolsSidebar: [
     'voicebot-tools/overview',
+    'voicebot-tools/voicebot-api',
     'voicebot-tools/api-reference',
     'voicebot-tools/mcp-integration',
   ],

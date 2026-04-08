@@ -1,0 +1,413 @@
+---
+id: voicebot-api
+title: Voicebot API
+description: "Create bots, manage versions, retrieve conversations and analytics — the core Voicebot REST API."
+sidebar_label: Voicebot API
+sidebar_position: 2
+---
+
+# Voicebot API
+
+The Voicebot API lets you programmatically create bots from natural language, manage bot versions, and retrieve conversation data with transcripts, insights, and analytics.
+
+:::info Availability
+This API is chargeable and not accessible to all Exotel customers by default. Contact your account manager to enable it.
+:::
+
+## Base URL
+
+```
+https://voicebot.in.exotel.com/voicebot/api/v2
+```
+
+## Authentication
+
+Authentication is handled at the gateway level (internal service authentication). Account context is passed via the `{accountId}` path parameter.
+
+## Error Codes
+
+| HTTP Code | Meaning |
+|-----------|---------|
+| 200 | Success |
+| 201 | Accepted / Created |
+| 400 | Invalid request |
+| 401 | Unauthorized |
+| 404 | Resource not found |
+| 429 | Rate limit exceeded |
+| 500 | Internal error |
+
+---
+
+## 1. Build Bot via Text (Async)
+
+Generate a voicebot from a natural language description. This is an asynchronous operation — you create a generation job and poll for completion.
+
+### Create Bot Generation Job
+
+**`POST`** `/accounts/{accountId}/bot-generation`
+
+Creates an async bot generation job from a text description or script.
+
+**Headers**
+
+| Header | Value |
+|--------|-------|
+| Content-Type | `multipart/form-data` |
+
+**Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `text_content` | string | Yes | Natural language description or script for bot creation |
+
+**Example Request**
+
+```bash
+curl -X POST 'https://voicebot.in.exotel.com/voicebot/api/v2/accounts/{accountId}/bot-generation' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'text_content=Create a customer support bot that handles order inquiries and returns'
+```
+
+**Example Response** `201 Created`
+
+```json
+{
+  "id": "gen_abc123",
+  "content": {
+    "text_content": "Create a customer support bot that handles order inquiries and returns"
+  },
+  "status": "pending",
+  "account_id": "Exotel"
+}
+```
+
+---
+
+### Get Bot Generation Status
+
+**`GET`** `/accounts/{accountId}/bot-generation/{generation_id}`
+
+Poll the status of a bot generation job.
+
+**Path Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `accountId` | string | Yes | Your Exotel account ID |
+| `generation_id` | string | Yes | The generation job ID returned from the create call |
+
+**Status Values**
+
+| Status | Description |
+|--------|-------------|
+| `pending` | Job is queued |
+| `in_progress` | Bot generation is underway |
+| `completed` | Bot is ready — response includes `bot_id` |
+| `failed` | Generation failed |
+
+**Example Request**
+
+```bash
+curl -X GET 'https://voicebot.in.exotel.com/voicebot/api/v2/accounts/{accountId}/bot-generation/{generation_id}'
+```
+
+**Example Response** `200 OK` (completed)
+
+```json
+{
+  "id": "gen_abc123",
+  "status": "completed",
+  "bot_id": "bot_xyz789",
+  "account_id": "Exotel"
+}
+```
+
+---
+
+## 2. Update Voicebot (Create New Version)
+
+**`POST`** `/accounts/{accountId}/voicebots/{botId}/versions`
+
+Create a new version of an existing voicebot. Supports **partial updates** — send only the fields you want to change.
+
+**Path Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `accountId` | string | Yes | Your Exotel account ID |
+| `botId` | string | Yes | The bot ID to update |
+
+**Body Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `source_version` | string | Yes | Base version to create from (e.g., `"v1"`) |
+| `data` | object | Yes | Partial or full bot configuration |
+| `version_description` | string | No | Description of changes in this version |
+
+**Supported data fields:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | string | Bot display name |
+| `enable_greeting_interruption` | boolean | Allow users to interrupt the greeting |
+| `supported_languages` | array | List of supported language codes |
+
+**Example Request**
+
+```bash
+curl -X POST 'https://voicebot.in.exotel.com/voicebot/api/v2/accounts/{accountId}/voicebots/{botId}/versions' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "source_version": "v1",
+    "version_description": "Added Hindi support",
+    "data": {
+      "name": "Customer Support Bot",
+      "enable_greeting_interruption": true,
+      "supported_languages": ["en", "hi"]
+    }
+  }'
+```
+
+**Example Response** `200 OK`
+
+```json
+{
+  "bot_id": "bot_xyz789",
+  "version": "v2",
+  "date_created": "2026-04-08T10:30:00Z",
+  "name": "Customer Support Bot"
+}
+```
+
+---
+
+## 3. Get Voicebots
+
+### List All Bots
+
+**`GET`** `/accounts/{accountId}/voicebots`
+
+Retrieve a paginated list of all voicebots in your account.
+
+**Query Parameters**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `limit` | integer | 10 | Number of results per page (max 100) |
+| `offset` | integer | 0 | Pagination offset |
+| `startDate` | string | — | Filter by creation date (ISO 8601) |
+| `endDate` | string | — | Filter by creation date (ISO 8601) |
+
+**Example Request**
+
+```bash
+curl -X GET 'https://voicebot.in.exotel.com/voicebot/api/v2/accounts/{accountId}/voicebots?limit=20&offset=0'
+```
+
+**Example Response** `200 OK`
+
+```json
+{
+  "metadata": {
+    "total": 45,
+    "count": 20,
+    "offset": 0,
+    "limit": 20
+  },
+  "data": [
+    {
+      "bot_id": "bot_xyz789",
+      "name": "Customer Support Bot",
+      "version": "v2",
+      "date_created": "2026-04-08T10:30:00Z"
+    }
+  ]
+}
+```
+
+---
+
+### Get Single Bot
+
+**`GET`** `/accounts/{accountId}/voicebots/{botId}`
+
+Retrieve the latest active version of a specific bot.
+
+**Path Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `accountId` | string | Yes | Your Exotel account ID |
+| `botId` | string | Yes | The bot ID |
+
+**Example Request**
+
+```bash
+curl -X GET 'https://voicebot.in.exotel.com/voicebot/api/v2/accounts/{accountId}/voicebots/{botId}'
+```
+
+**Example Response** `200 OK`
+
+```json
+{
+  "bot_id": "bot_xyz789",
+  "name": "Customer Support Bot",
+  "version": "v2",
+  "enable_greeting_interruption": true,
+  "supported_languages": ["en", "hi"],
+  "date_created": "2026-04-08T10:30:00Z"
+}
+```
+
+---
+
+## 4. Bot Conversations & Analytics
+
+### List Conversations
+
+**`GET`** `/accounts/{accountId}/voicebot-conversations`
+
+Retrieve a list of all voicebot conversations. Transcripts and insights are only returned when explicitly requested via the `fields` parameter.
+
+**Query Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `fields` | string | Comma-separated list. Supports: `transcript`, `insights` |
+| `limit` | integer | Number of results per page |
+| `offset` | integer | Pagination offset |
+
+**Example Request**
+
+```bash
+# Basic list (no transcripts)
+curl -X GET 'https://voicebot.in.exotel.com/voicebot/api/v2/accounts/{accountId}/voicebot-conversations'
+
+# With transcripts and insights
+curl -X GET 'https://voicebot.in.exotel.com/voicebot/api/v2/accounts/{accountId}/voicebot-conversations?fields=transcript,insights'
+```
+
+---
+
+### Get Conversation by ID
+
+**`GET`** `/accounts/{accountId}/voicebot-conversations/{conversation_id}`
+
+Retrieve full details of a specific conversation, including call metadata, speaker-segmented transcript, AI-generated insights, recording URL, and outcome.
+
+**Path Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `accountId` | string | Yes | Your Exotel account ID |
+| `conversation_id` | string | Yes | The conversation ID |
+
+**Example Request**
+
+```bash
+curl -X GET 'https://voicebot.in.exotel.com/voicebot/api/v2/accounts/{accountId}/voicebot-conversations/{conversation_id}'
+```
+
+**Example Response** `200 OK`
+
+```json
+{
+  "conversation_id": "conv_abc123",
+  "bot_id": "bot_xyz789",
+  "call_metadata": {
+    "from": "+919876543210",
+    "to": "+911234567890",
+    "duration_seconds": 180,
+    "recording_url": "https://..."
+  },
+  "transcript": [
+    {
+      "speaker": "bot",
+      "text": "Hello! How can I help you today?",
+      "timestamp": "00:00:01"
+    },
+    {
+      "speaker": "user",
+      "text": "I want to check my order status",
+      "timestamp": "00:00:04"
+    }
+  ],
+  "insights": {
+    "sentiment": "neutral",
+    "intent": "order_status_inquiry",
+    "outcome": "resolved"
+  }
+}
+```
+
+---
+
+## 5. Assistant Versioning API
+
+**`POST`** `/api/v2/accounts/{tenant_id}/assistants/{assistant_id}/versions`
+
+Advanced versioning endpoint for assistants — supports instruction updates, LLM configuration, multi-agent definitions, and persona association.
+
+**Path Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `tenant_id` | string | Yes | Your tenant/account ID |
+| `assistant_id` | string | Yes | The assistant ID |
+
+**Body Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `source_version` | string | Yes | Base version to branch from |
+| `mark_as_stable` | boolean | No | Mark this version as the stable/active version |
+| `instruction` | string | No | System prompt for the assistant |
+| `llm_config` | object | No | Model and inference configuration |
+| `agents` | array | No | Sub-agent definitions with roles |
+
+**Example Request**
+
+```bash
+curl -X POST 'https://voicebot.in.exotel.com/api/v2/accounts/{tenant_id}/assistants/{assistant_id}/versions' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "source_version": "v1",
+    "mark_as_stable": true,
+    "instruction": "You are a helpful customer support assistant for Acme Corp.",
+    "llm_config": {
+      "model": "gpt-4",
+      "temperature": 0.7,
+      "max_tokens": 1024
+    },
+    "agents": [
+      {
+        "role": "order_handler",
+        "instruction": "Handle order-related queries"
+      },
+      {
+        "role": "returns_handler",
+        "instruction": "Process return and refund requests"
+      }
+    ]
+  }'
+```
+
+**Example Response** `200 OK`
+
+```json
+{
+  "assistant_id": "asst_abc123",
+  "version": "v2",
+  "mark_as_stable": true,
+  "date_created": "2026-04-08T12:00:00Z"
+}
+```
+
+---
+
+## Related
+
+- [VoiceBot Tools Server](/docs/voicebot-tools/overview) — Create and manage tools your VoiceBot can invoke
+- [Tools API Reference](/docs/voicebot-tools/api-reference) — Interactive Swagger UI for the Tools Server API
+- [MCP Integration](/docs/voicebot-tools/mcp-integration) — Connect VoiceBots to external systems via MCP
