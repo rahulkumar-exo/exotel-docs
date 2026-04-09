@@ -7,10 +7,14 @@ sidebar_label: Call to Flow
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Outgoing Call to a Call Flow
 
 Make an outbound call and connect the recipient to an IVR flow or applet instead of another phone number. The `From` number is called first, and once they answer, they are routed to the specified call flow.
+
+<TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Calls/connect" />
 
 ## Endpoint
 
@@ -166,3 +170,20 @@ When using a flow URL, the `To` field in the response will be the ExoPhone since
 :::note
 A `200 OK` response means the request was accepted — it does not confirm the call was successfully delivered. Use [StatusCallback](/docs/voice-v1/api-reference/call-details#status-callback-webhook) or the [Call Details API](/docs/voice-v1/api-reference/call-details) to verify the final call status.
 :::
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v1/Accounts/{account_sid}/Calls/connect"
+  params={[
+    { name: 'From', required: true, type: 'string', description: 'Phone number to call first (E.164 format)', placeholder: '+919876543210' },
+    { name: 'CallerId', required: true, type: 'string', description: 'Your ExoPhone/virtual number', placeholder: '0XXXXXXX4890' },
+    { name: 'Url', required: true, type: 'string', description: 'Call flow URL: http://my.exotel.com/{sid}/exoml/start_voice/{app_id}', placeholder: 'http://my.exotel.com/your_sid/exoml/start_voice/926' },
+    { name: 'CallType', required: false, type: 'string', description: 'Set to "trans" for transactional calls', placeholder: 'trans' },
+    { name: 'TimeLimit', required: false, type: 'number', description: 'Max call duration in seconds (max 14400)', placeholder: '14400' },
+    { name: 'TimeOut', required: false, type: 'number', description: 'Ring timeout in seconds', placeholder: '30' },
+    { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://yoururl.com/callback' },
+    { name: 'CustomField', required: false, type: 'string', description: 'Custom data passed to Passthru or Greeting applets', placeholder: 'order_123' },
+  ]}
+/>
