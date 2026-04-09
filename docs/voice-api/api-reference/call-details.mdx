@@ -8,10 +8,14 @@ sidebar_position: 4
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Call Details (v2)
 
 Retrieve detailed information about a specific call made via the Voice v2 (CCM) API.
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{sid}/calls/{call_sid}" />
 
 ## Endpoint
 
@@ -150,3 +154,14 @@ console.log(response.data);
 | `agent_canceled` | Agent canceled the call |
 | `customer_no_dial` | Could not dial customer |
 | `agent_no_dial` | Could not dial agent |
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v2/accounts/{account_sid}/calls/{call_sid}"
+  contentType="json"
+  params={[
+    { name: 'call_sid', required: true, type: 'string', description: 'The unique call identifier from the Make Call response', placeholder: 'unique_call_identifier' },
+  ]}
+/>

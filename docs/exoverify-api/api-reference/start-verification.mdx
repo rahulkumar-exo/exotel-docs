@@ -8,10 +8,14 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Start Verification
 
 Send an SMS OTP to a phone number to begin the verification process.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{sid}/verifications/sms" />
 
 ## Endpoint
 
@@ -137,3 +141,16 @@ axios.post(
 :::note
 The `verification_id` is required for the next step — [Verify OTP](/docs/exoverify-api/api-reference/verify-otp). Store it in your session or pass it to your frontend.
 :::
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/verifications/sms"
+  contentType="json"
+  params={[
+    { name: 'application_id', required: true, type: 'string', description: 'Your ExoVerify SMS App ID', placeholder: 'your_app_id' },
+    { name: 'phone_number', required: true, type: 'string', description: 'Phone number to verify (E.164 format)', placeholder: '+919876543210' },
+    { name: 'replace_vars', required: false, type: 'string', description: 'Array of strings for template variable substitution (JSON)', placeholder: '["value1","value2"]' },
+  ]}
+/>

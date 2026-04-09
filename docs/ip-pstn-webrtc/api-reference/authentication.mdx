@@ -8,10 +8,14 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Create Authentication Token
 
 Generate a bearer token for authenticating subsequent API calls. Tokens are valid for **90 days**.
+
+<TryItBanner method="POST" endpoint="/v2/integrations/token" />
 
 ## Endpoint
 
@@ -157,3 +161,16 @@ echo $response;
 - Use `Entity: "app"` to get an app-level token for managing users, settings, and making calls
 - Tokens expire after **90 days**
 :::
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/integrations/token"
+  contentType="json"
+  params={[
+    { name: 'Id', required: true, type: 'string', description: 'Entity identifier -- CustomerID or AppID', placeholder: '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0' },
+    { name: 'Secret', required: true, type: 'string', description: 'Entity credential -- CustomerSecret or AppSecret', placeholder: '5b8215f7-8595-42c0-9b63-404bcc474f94' },
+    { name: 'Entity', required: true, type: 'string', description: 'customer or app', placeholder: 'customer' },
+  ]}
+/>

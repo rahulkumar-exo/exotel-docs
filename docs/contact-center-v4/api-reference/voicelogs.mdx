@@ -6,10 +6,14 @@ sidebar_label: Voicelogs
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Voicelogs
 
 Retrieve voice call logs and recordings for Contact Center v4 calls. Access call history, recordings, and detailed call analytics.
+
+<TryItBanner method="GET" endpoint="/v4/accounts/{sid}/voicelogs" />
 
 ## Get Call Voicelogs
 
@@ -197,3 +201,20 @@ Returns detailed call log including all legs, transfers, and conference events.
 | `401` | Unauthorized |
 | `404` | Not Found |
 | `429` | Rate Limited |
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v4/accounts/{account_sid}/voicelogs"
+  contentType="json"
+  params={[
+    { name: 'start_time', required: false, type: 'string', description: 'Start of time range (ISO 8601)', placeholder: '2024-06-01T00:00:00Z' },
+    { name: 'end_time', required: false, type: 'string', description: 'End of time range (ISO 8601)', placeholder: '2024-06-30T23:59:59Z' },
+    { name: 'agent_id', required: false, type: 'string', description: 'Filter by agent', placeholder: 'agent_001' },
+    { name: 'direction', required: false, type: 'string', description: 'inbound or outbound', placeholder: 'outbound' },
+    { name: 'status', required: false, type: 'string', description: 'completed, missed, or abandoned', placeholder: 'completed' },
+    { name: 'limit', required: false, type: 'number', description: 'Results per page (default: 20, max: 100)', placeholder: '50' },
+    { name: 'offset', required: false, type: 'number', description: 'Pagination offset', placeholder: '0' },
+  ]}
+/>

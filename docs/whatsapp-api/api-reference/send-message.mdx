@@ -8,10 +8,14 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Send WhatsApp Message
 
 Send text, media, template, or interactive messages via WhatsApp.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{sid}/messages" />
 
 ## Endpoint
 
@@ -193,3 +197,18 @@ axios.post(
 | 403  | Access denied |
 | 404  | Resource not found |
 | 5xx  | Server error — retry the request |
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/messages"
+  contentType="json"
+  params={[
+    { name: 'from', required: true, type: 'string', description: 'Your WhatsApp-enabled phone number (E.164)', placeholder: '+919876500001' },
+    { name: 'to', required: true, type: 'string', description: 'Recipient phone number (E.164)', placeholder: '+919876543210' },
+    { name: 'content', required: true, type: 'string', description: 'Message content object (JSON string)', placeholder: '{"recipient_type":"individual","type":"text","text":{"body":"Hello!"}}' },
+    { name: 'status_callback', required: false, type: 'string', description: 'Webhook URL for delivery status updates', placeholder: 'https://your-server.com/wa-status' },
+    { name: 'custom_data', required: false, type: 'string', description: 'Application-specific metadata', placeholder: 'order_123' },
+  ]}
+/>

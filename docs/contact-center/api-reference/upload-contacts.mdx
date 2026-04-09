@@ -6,10 +6,14 @@ sidebar_label: Upload Contacts
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Upload Contacts via CSV
 
 Upload contacts in bulk using a CSV file for use in contact center campaigns and call queues.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{sid}/contacts/upload" />
 
 ## HTTP Request
 
@@ -166,3 +170,15 @@ GET /v2/accounts/<account_sid>/contacts/upload/<upload_id>
 | `401` | Unauthorized |
 | `413` | File too large |
 | `429` | Rate Limited |
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/contacts/upload"
+  params={[
+    { name: 'file', required: true, type: 'string', description: 'CSV file containing contact data', placeholder: 'contacts.csv' },
+    { name: 'list_id', required: false, type: 'string', description: 'Associate contacts with a specific list', placeholder: 'list_001' },
+    { name: 'duplicate_action', required: false, type: 'string', description: 'How to handle duplicates: skip, update, or create_new', placeholder: 'skip' },
+  ]}
+/>

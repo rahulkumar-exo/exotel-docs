@@ -6,10 +6,14 @@ sidebar_label: Login
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Login API
 
 Authenticate and create a session for Contact Center v4 API access.
+
+<TryItBanner method="POST" endpoint="/v4/accounts/{sid}/login" />
 
 ## HTTP Request
 
@@ -125,3 +129,16 @@ curl -X GET \
 | `403` | Forbidden — Account not enabled for CCM |
 | `429` | Rate Limited |
 | `500` | Internal Server Error |
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v4/accounts/{account_sid}/login"
+  contentType="json"
+  params={[
+    { name: 'username', required: true, type: 'string', description: 'API key from Exotel Dashboard', placeholder: 'your_api_key' },
+    { name: 'password', required: true, type: 'string', description: 'API token from Exotel Dashboard', placeholder: 'your_api_token' },
+    { name: 'account_sid', required: true, type: 'string', description: 'Your Exotel account SID', placeholder: 'your_account_sid' },
+  ]}
+/>

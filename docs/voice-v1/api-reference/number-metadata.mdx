@@ -7,10 +7,14 @@ sidebar_label: Number Metadata
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Number Metadata
 
 Retrieve telecom information about Indian phone numbers, including the telecom circle, operator, number type, and DND (Do Not Disturb) status.
+
+<TryItBanner method="GET" endpoint="/v1/Accounts/{sid}/Numbers/{phone_number}.json" />
 
 ## Endpoint
 
@@ -160,3 +164,13 @@ console.log(data);
 :::note
 This API is currently available for **Indian phone numbers only**.
 :::
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v1/Accounts/{account_sid}/Numbers/{phone_number}.json"
+  params={[
+    { name: 'phone_number', required: true, type: 'string', description: 'Indian phone number to look up', placeholder: '09876543210' },
+  ]}
+/>

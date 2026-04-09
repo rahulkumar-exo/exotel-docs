@@ -8,10 +8,14 @@ sidebar_position: 3
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Bulk SMS
 
 Send the same message to multiple recipients, or unique messages to different recipients in a single API call.
+
+<TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Sms/bulksend" />
 
 ## Static Bulk SMS (Same Message)
 
@@ -169,3 +173,16 @@ Returns an array of SMS message objects, one for each recipient:
 :::note
 Each message in a bulk request is processed independently. Individual messages may succeed or fail without affecting others.
 :::
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v1/Accounts/{account_sid}/Sms/bulksend"
+  params={[
+    { name: 'From', required: true, type: 'string', description: 'Sender ID or ExoPhone', placeholder: 'EXOTEL' },
+    { name: 'To', required: true, type: 'string', description: 'Comma-separated phone numbers (E.164)', placeholder: '+919876543210,+919876543211' },
+    { name: 'Body', required: true, type: 'string', description: 'Message content', placeholder: 'Flash sale! 50% off all items today.' },
+    { name: 'DltEntityId', required: false, type: 'string', description: 'DLT Entity ID for regulatory compliance', placeholder: '1234567890' },
+  ]}
+/>

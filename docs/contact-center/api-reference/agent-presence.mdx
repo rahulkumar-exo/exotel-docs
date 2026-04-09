@@ -6,10 +6,14 @@ sidebar_label: Agent Presence
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Agent Presence Monitoring
 
 Monitor real-time agent availability and status in the contact center. Track which agents are available, on calls, or offline.
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{sid}/agents/presence" />
 
 ## Get Agent Presence
 
@@ -213,3 +217,17 @@ Status changes to/from `on-call` are managed automatically by the system during 
 | `401` | Unauthorized |
 | `404` | Not Found — Agent doesn't exist |
 | `429` | Rate Limited |
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v2/accounts/{account_sid}/agents/presence"
+  contentType="json"
+  params={[
+    { name: 'status', required: false, type: 'string', description: 'Filter by agent status: available, busy, on-call, offline, after-call-work', placeholder: 'available' },
+    { name: 'team_id', required: false, type: 'string', description: 'Filter by team', placeholder: 'sales_team' },
+    { name: 'limit', required: false, type: 'number', description: 'Results per page (default: 20, max: 100)', placeholder: '20' },
+    { name: 'offset', required: false, type: 'number', description: 'Pagination offset', placeholder: '0' },
+  ]}
+/>

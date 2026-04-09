@@ -8,10 +8,14 @@ sidebar_position: 2
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Verify OTP
 
 Validate the OTP code entered by the user against the verification that was started.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{sid}/verifications/sms/{verification_id}" />
 
 ## Endpoint
 
@@ -125,3 +129,15 @@ Start Verification → User receives OTP → User enters OTP → Verify OTP
 :::note
 After a successful verification, the same `verification_id` cannot be used again. If you need to re-verify, call [Start Verification](/docs/exoverify-api/api-reference/start-verification) to get a new `verification_id`.
 :::
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/verifications/sms/{verification_id}"
+  contentType="json"
+  params={[
+    { name: 'verification_id', required: true, type: 'string', description: 'The verification ID from Start Verification', placeholder: 'ver_abc123def456' },
+    { name: 'OTP', required: true, type: 'string', description: 'The OTP code entered by the user', placeholder: '123456' },
+  ]}
+/>

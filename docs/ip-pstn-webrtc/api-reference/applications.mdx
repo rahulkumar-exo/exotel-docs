@@ -8,10 +8,14 @@ sidebar_position: 2
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Application Management
 
 Register, retrieve, list, and delete WebRTC calling applications.
+
+<TryItBanner method="POST" endpoint="/v2/integrations/app" />
 
 ---
 
@@ -326,3 +330,19 @@ curl --location --request DELETE 'https://integrationscore.mum1.exotel.com/v2/in
 | `IsActive` | Boolean | Whether the app is active for calling |
 | `CreatedAt` | DateTime | Creation timestamp (ISO 8601) |
 | `UpdatedAt` | DateTime | Last update timestamp (ISO 8601) |
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/integrations/app"
+  contentType="json"
+  params={[
+    { name: 'AppName', required: true, type: 'string', description: 'Name for the application', placeholder: 'WebRTC' },
+    { name: 'ExotelAccountSid', required: true, type: 'string', description: 'Your Exotel Account SID', placeholder: 'exoteldemo' },
+    { name: 'ExotelApiKey', required: true, type: 'string', description: 'Your Exotel API key', placeholder: 'your_api_key' },
+    { name: 'ExotelApiToken', required: true, type: 'string', description: 'Your Exotel API token', placeholder: 'your_api_token' },
+    { name: 'ExotelDomain', required: true, type: 'string', description: 'Region domain: mumbai or singapore', placeholder: 'mumbai' },
+    { name: 'IsActive', required: true, type: 'boolean', description: 'Set to true to enable the app for calling' },
+  ]}
+/>

@@ -8,10 +8,14 @@ sidebar_position: 2
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # SMS Details
 
 Retrieve the details and delivery status of a specific SMS message.
+
+<TryItBanner method="GET" endpoint="/v1/Accounts/{sid}/SMS/Messages/{SmsSid}" />
 
 ## Endpoint
 
@@ -104,3 +108,13 @@ console.log(data);
 | `DateSent`           | DateTime | When the SMS was sent to the operator |
 | `DateUpdated`        | DateTime | Last status update timestamp |
 | `Price`              | Double   | Amount charged |
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v1/Accounts/{account_sid}/SMS/Messages/{SmsSid}"
+  params={[
+    { name: 'SmsSid', required: true, type: 'string', description: 'Unique SMS identifier', placeholder: 'sms_sid_value' },
+  ]}
+/>

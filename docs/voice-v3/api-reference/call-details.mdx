@@ -7,10 +7,14 @@ sidebar_label: Call Details
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Call Details (Beta)
 
 Retrieve enhanced call detail records with richer metadata including leg-level information, recording details, DTMF digits, and flow information.
+
+<TryItBanner method="GET" endpoint="/v3/accounts/{sid}/calls/{call_sid}" />
 
 ## Endpoint
 
@@ -257,3 +261,14 @@ func main() {
 - The `total_talk_time` accumulates across multiple leg transfers.
 - Recording URLs are temporary pre-signed URLs.
 :::
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v3/accounts/{account_sid}/calls/{call_sid}"
+  contentType="json"
+  params={[
+    { name: 'call_sid', required: true, type: 'string', description: 'Unique call identifier from Make Call API response', placeholder: 'cabfb1dfa8c5e1c7f2c458423b7716b3' },
+  ]}
+/>

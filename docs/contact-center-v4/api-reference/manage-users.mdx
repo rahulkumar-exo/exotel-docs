@@ -6,10 +6,14 @@ sidebar_label: Manage Users
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
 
 # Manage Contact Center Users
 
 Create, update, retrieve, and delete users (agents) in the Contact Center v4 system.
+
+<TryItBanner method="POST" endpoint="/v4/accounts/{sid}/users" />
 
 ## Create User
 
@@ -216,3 +220,19 @@ Deleting a user is permanent. The user will be immediately logged out of any act
 | `404` | Not Found — User doesn't exist |
 | `409` | Conflict — Email already exists |
 | `429` | Rate Limited |
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v4/accounts/{account_sid}/users"
+  contentType="json"
+  params={[
+    { name: 'name', required: true, type: 'string', description: 'Full name of the user', placeholder: 'John Agent' },
+    { name: 'email', required: true, type: 'string', description: 'Email address (must be unique)', placeholder: 'john@company.com' },
+    { name: 'phone_number', required: true, type: 'string', description: 'Phone number in E.164 format', placeholder: '+919876543210' },
+    { name: 'role', required: true, type: 'string', description: 'agent, supervisor, or admin', placeholder: 'agent' },
+    { name: 'team_id', required: false, type: 'string', description: 'Team assignment', placeholder: 'sales_team' },
+    { name: 'device_type', required: false, type: 'string', description: 'softphone, phone, or sip', placeholder: 'softphone' },
+  ]}
+/>
