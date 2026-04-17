@@ -1,0 +1,132 @@
+---
+title: Assign/Unassign Users to Lead
+description: "Manage agent-lead assignments — assign or unassign users from campaign leads."
+sidebar_label: Assign Users to Lead
+---
+
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Assign/Unassign Users to Lead
+
+Update campaign lead user assignments. Use this endpoint to assign agents to leads (so they can dial those contacts) or unassign them.
+
+## Endpoint
+
+```
+PUT https://{Cms_Domain_Name}:{port}/cms/configuration/voice/campaignLeadUserMapping
+```
+
+## Authentication
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `application/json` |
+| `Accept` | `application/json` |
+| `Authorization` | `Basic {AuthToken}` |
+
+:::note
+This endpoint uses **Basic** authentication (Base64-encoded `username:password`), unlike other v6 endpoints that use Bearer tokens.
+:::
+
+## Request Body
+
+```json
+{
+  "leadId": 2,
+  "campaignId": 1,
+  "assignedUserIds": ["anav_agent"],
+  "unassignedUserIds": ["exe_gs", "madhur1"]
+}
+```
+
+## Request Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `leadId` | Integer | Yes | Lead identifier |
+| `campaignId` | Integer | Yes | Campaign identifier |
+| `assignedUserIds` | Array\<String\> | Yes | User IDs to assign to the lead (can be empty `[]`) |
+| `unassignedUserIds` | Array\<String\> | Yes | User IDs to remove from the lead (can be empty `[]`) |
+
+## Sample Request
+
+```bash
+curl -X 'PUT' \
+  'https://{Cms_Domain_Name}:{port}/cms/configuration/voice/campaignLeadUserMapping' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Basic {AuthToken}' \
+  -d '{
+    "leadId": 2,
+    "campaignId": 1,
+    "assignedUserIds": ["anav_agent"],
+    "unassignedUserIds": ["exe_gs", "madhur1"]
+  }'
+```
+
+## Sample Response
+
+```json
+{
+  "campaignLeadId": 1,
+  "assignedCampaignUserIds": [1],
+  "unassignedCampaignUserIds": [3817, 3802],
+  "leadId": 2,
+  "campaignId": 1,
+  "assignedUserIds": ["anav_agent"],
+  "unassignedUserIds": ["madhur1", "exe_gs"]
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `campaignLeadId` | Integer | Campaign-lead mapping ID |
+| `assignedCampaignUserIds` | Array\<Integer\> | Internal campaign user IDs that were assigned |
+| `unassignedCampaignUserIds` | Array\<Integer\> | Internal campaign user IDs that were unassigned |
+| `leadId` | Integer | Lead identifier (echo of request) |
+| `campaignId` | Integer | Campaign identifier (echo of request) |
+| `assignedUserIds` | Array\<String\> | User IDs that were assigned (echo of request) |
+| `unassignedUserIds` | Array\<String\> | User IDs that were unassigned (echo of request) |
+
+## Usage Notes
+
+- To **only assign** users, pass an empty array for `unassignedUserIds`
+- To **only unassign** users, pass an empty array for `assignedUserIds`
+- User IDs must correspond to existing users in the contact center
+- Changes take effect immediately — assigned agents can start dialing the lead's contacts
+
+## Error Responses
+
+| Status Code | Description |
+|-------------|-------------|
+| 400 | Bad Request — Invalid lead/campaign ID or user IDs |
+| 401 | Unauthorized — Missing or invalid credentials |
+| 403 | Forbidden — Insufficient permissions |
+| 404 | Not Found — Lead or campaign does not exist |
+| 500 | Internal Server Error |
+
+```json
+{
+  "statusCode": 404,
+  "status": "Not Found",
+  "errorCode": "CONF-1001",
+  "errorMessage": "Object doesn't exist"
+}
+```
+
+<TryItBanner />
+<ApiConsole
+  method="PUT"
+  path="/cms/configuration/voice/campaignLeadUserMapping"
+  baseUrl="https://{Cms_Domain_Name}"
+  description="Assign or unassign users from a campaign lead"
+  bodyType="json"
+  defaultBody={`{
+  "leadId": 2,
+  "campaignId": 1,
+  "assignedUserIds": ["agent_user_id"],
+  "unassignedUserIds": []
+}`}
+/>

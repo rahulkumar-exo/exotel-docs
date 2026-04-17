@@ -1,0 +1,110 @@
+---
+title: Get All Campaigns
+description: "Retrieve all campaigns configured within a contact center."
+sidebar_label: Get All Campaigns
+---
+
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Get All Campaigns
+
+Retrieve a list of all campaigns configured within a contact center. Campaigns sit within the Contact Center hierarchy: **Contact Center → Process → Campaign → Lead**.
+
+## Endpoint
+
+```
+GET https://{Cms_Domain_Name}:{port}/configuration/hierarchyconfig/campaign
+```
+
+## Authentication
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `application/json` |
+| `Accept` | `application/json` |
+| `Authorization` | `Bearer {AuthToken}` |
+
+:::info
+The `AuthToken` is obtained from the [Token Generation](/docs/contact-center/api-reference/token-generation) endpoint.
+:::
+
+## Query Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `contactCenterId` | Integer | Yes | Filter campaigns by contact center ID |
+
+## Sample Request
+
+```bash
+curl -X 'GET' \
+  'https://{Cms_Domain_Name}:443/configuration/hierarchyconfig/campaign?contactCenterId=1' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {AuthToken}'
+```
+
+## Sample Response
+
+```json
+[
+  {
+    "campaignContextId": 1,
+    "campaignContextName": "Mumbai Sales Dept",
+    "campaignContextType": "Interaction Campaign",
+    "contactCenterId": 1,
+    "processId": 1,
+    "description": "Campaign related to Sales Management",
+    "dateAdded": "2026-03-24T12:28:52.354Z",
+    "dateModified": "2026-03-24T12:28:52.354Z",
+    "ref": 0,
+    "version": 0
+  }
+]
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `campaignContextId` | Integer | Unique campaign identifier |
+| `campaignContextName` | String | Name of the campaign |
+| `campaignContextType` | String | Campaign type (e.g., `Interaction Campaign`) |
+| `contactCenterId` | Integer | Parent contact center ID |
+| `processId` | Integer | Parent process ID |
+| `description` | String | Description of the campaign |
+| `dateAdded` | String | ISO 8601 creation timestamp |
+| `dateModified` | String | ISO 8601 last modification timestamp |
+| `ref` | Integer | Reference counter |
+| `version` | Integer | Record version number |
+
+## Error Responses
+
+| Status Code | Description |
+|-------------|-------------|
+| 400 | Bad Request — Invalid or missing `contactCenterId` |
+| 401 | Unauthorized — Missing or invalid token |
+| 403 | Forbidden — Insufficient permissions |
+| 404 | Not Found — Contact center does not exist |
+| 500 | Internal Server Error |
+
+```json
+{
+  "statusCode": 404,
+  "status": "Not Found",
+  "errorCode": "CONF-1001",
+  "errorMessage": "Object doesn't exist"
+}
+```
+
+<TryItBanner />
+<ApiConsole
+  method="GET"
+  path="/configuration/hierarchyconfig/campaign"
+  baseUrl="https://{Cms_Domain_Name}"
+  description="List all campaigns in a contact center"
+  params={[
+    { name: 'contactCenterId', in: 'query', type: 'string', required: true, description: 'Contact center ID' },
+  ]}
+/>

@@ -1,0 +1,188 @@
+---
+title: Send RCS Message
+description: "Send RCS template messages with rich media, carousels, and SMS fallback."
+sidebar_label: Send Message
+---
+
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Send RCS Template Message
+
+Send an RCS message using a pre-approved template. Supports rich media, suggested actions, and automatic SMS fallback for non-RCS capable devices.
+
+## Endpoint
+
+```
+POST https://<api_key>:<api_token>@<subdomain>/v2/accounts/<your_sid>/messages
+```
+
+| Data Center | Subdomain |
+|------------|-----------|
+| Singapore | `api.exotel.com` |
+| Mumbai | `api.in.exotel.com` |
+
+## Authentication
+
+HTTP Basic Authentication using your API key and API token from the Exotel Dashboard.
+
+## Request Body
+
+```json
+{
+  "custom_data": "order_12345",
+  "status_callback": "https://your-server.com/rcs/callback",
+  "rcs": {
+    "from": "your_bot_id",
+    "to": "+919888888888",
+    "content": {
+      "name": "welcome_template",
+      "variables": {
+        "customer_name": "Rahul",
+        "order_id": "ORD-12345"
+      }
+    },
+    "fallback": {
+      "sms": {
+        "from": "ExoSMS",
+        "content": "Hi Rahul, your order ORD-12345 has been confirmed."
+      }
+    }
+  }
+}
+```
+
+## Request Parameters
+
+### Top-Level
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `custom_data` | String | No | Custom metadata passed through to status callbacks |
+| `status_callback` | String (URL) | No | Webhook URL for delivery receipt events |
+| `rcs` | Object | Yes | RCS channel configuration |
+
+### RCS Object
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `from` | String | Yes | BotID for sending (provided by Exotel) |
+| `to` | String | Yes | Recipient phone in E.164 format (e.g., `+919888888888`) |
+| `content` | Object | Yes | Template message content |
+| `fallback` | Object | No | SMS fallback configuration |
+
+### Content Object
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `name` | String | Yes | Pre-approved template identifier |
+| `variables` | Object | Yes | Key-value pairs for template variable substitution |
+
+### Fallback Object
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `sms.from` | String | Yes | SMS sender ID |
+| `sms.content` | String | Yes | Fallback SMS text (sent if RCS delivery fails) |
+
+## Sample Response
+
+**HTTP 202 — Accepted**
+
+```json
+{
+  "request_id": "f3217095-eddc-4ae8-a558-e4db0baef684",
+  "http_code": 202,
+  "metadata": {
+    "total": 1,
+    "success": 1,
+    "failed": 0
+  },
+  "response": {
+    "rcs": {
+      "messages": [
+        {
+          "code": 202,
+          "status": "success",
+          "data": {
+            "sid": "msg_abc123def456"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+## Status Callbacks (DLR)
+
+When a `status_callback` URL is provided, Exotel sends delivery events via POST:
+
+| Status Code | Event | Description |
+|-------------|-------|-------------|
+| `40001` | `EX_MESSAGE_SENT` | Message transmitted to the user's device |
+| `40002` | `EX_MESSAGE_DELIVERED` | Message received by the device |
+| `40003` | `EX_MESSAGE_SEEN` | User opened/read the message |
+| `40004` | `EX_SYSTEM_ERROR` | Delivery failed due to system error |
+
+### Callback Payload
+
+```json
+{
+  "sid": "msg_abc123def456",
+  "to": "+919888888888",
+  "exo_status_code": "40002",
+  "status": "EX_MESSAGE_DELIVERED",
+  "timestamp": "2026-04-17T10:30:00.000Z",
+  "custom_data": "order_12345"
+}
+```
+
+## Incoming Messages (Webhook)
+
+Configure an incoming webhook to receive messages from users. Supported content types:
+
+| Content Type | Fields |
+|-------------|--------|
+| **Text** | `text` — the message body |
+| **File** | `url`, `thumbnail_url`, `mime_type`, `size` |
+| **Location** | `latitude`, `longitude`, `label` |
+| **Suggested Reply** | `postback_data`, `text` |
+| **Suggested Action** | `postback_data`, `action_type` |
+
+## Error Responses
+
+| HTTP Code | Description |
+|-----------|-------------|
+| 400 | Malformed request or missing required fields |
+| 401 | Invalid API credentials |
+| 402 | Plan limits exceeded |
+| 403 | Insufficient permissions |
+| 404 | Resource not found |
+| 5xx | Server error — retry with backoff |
+
+<TryItBanner />
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/messages"
+  baseUrl="https://api.in.exotel.com"
+  description="Send an RCS template message"
+  bodyType="json"
+  defaultBody={`{
+  "custom_data": "order_12345",
+  "status_callback": "https://your-server.com/rcs/callback",
+  "rcs": {
+    "from": "your_bot_id",
+    "to": "+919888888888",
+    "content": {
+      "name": "template_name",
+      "variables": {
+        "key": "value"
+      }
+    }
+  }
+}`}
+  params={[
+    { name: 'account_sid', in: 'path', type: 'string', required: true, description: 'Your Exotel account SID' }
+  ]}
+/>

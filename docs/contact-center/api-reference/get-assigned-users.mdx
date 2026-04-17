@@ -1,0 +1,123 @@
+---
+title: Get Assigned Users
+description: "Retrieve user-lead mapping data showing which agents are assigned to a specific lead."
+sidebar_label: Get Assigned Users
+---
+
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Get Assigned Users
+
+Fetch the user-lead mapping for a specific lead within a campaign. Returns which agents are assigned and unassigned, useful for managing agent workload distribution.
+
+## Endpoint
+
+```
+GET https://{Cms_Domain_Name}:{port}/cms/configuration/cc/{contactCenterId}/process/{processId}/campaign/{campaignId}/lead-user
+```
+
+## Authentication
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `application/json` |
+| `Accept` | `application/json` |
+| `Authorization` | `Basic {AuthToken}` |
+
+:::note
+This endpoint uses **Basic** authentication (Base64-encoded `username:password`).
+:::
+
+## Path Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `contactCenterId` | Integer | Yes | Contact center ID |
+| `processId` | Integer | Yes | Process ID |
+| `campaignId` | Integer | Yes | Campaign ID |
+
+## Query Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `leadId` | Integer | Yes | Lead identifier to look up assignments for |
+| `limit` | Integer | Yes | Number of records to fetch |
+| `offset` | Integer | Yes | Pagination offset |
+
+## Sample Request
+
+```bash
+curl -X 'GET' \
+  'https://{Cms_Domain_Name}:{port}/cms/configuration/cc/1/process/1/campaign/1/lead-user?leadId=2&limit=100&offset=0' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Basic {AuthToken}'
+```
+
+## Sample Response
+
+```json
+{
+  "campaignLeadId": 1,
+  "assignedCampaignUserIds": [1],
+  "unassignedCampaignUserIds": [3817, 3802],
+  "leadId": 2,
+  "campaignId": 1,
+  "assignedUserIds": ["anav_agent"],
+  "unassignedUserIds": ["madhur1", "exe_gs"]
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `campaignLeadId` | Integer | Campaign-lead mapping ID |
+| `assignedCampaignUserIds` | Array\<Integer\> | Internal IDs of currently assigned campaign users |
+| `unassignedCampaignUserIds` | Array\<Integer\> | Internal IDs of unassigned campaign users |
+| `leadId` | Integer | Lead identifier |
+| `campaignId` | Integer | Campaign identifier |
+| `assignedUserIds` | Array\<String\> | User IDs (usernames) of assigned agents |
+| `unassignedUserIds` | Array\<String\> | User IDs (usernames) of unassigned agents |
+
+## Related Endpoints
+
+- [Assign/Unassign Users to Lead](/docs/contact-center/api-reference/assign-users-to-lead) — Modify user-lead assignments
+- [Get Campaign Leads](/docs/contact-center/api-reference/get-campaign-leads) — List all leads in a campaign
+- [Get All Campaigns](/docs/contact-center/api-reference/get-all-campaigns) — List all campaigns
+
+## Error Responses
+
+| Status Code | Description |
+|-------------|-------------|
+| 400 | Bad Request — Missing required query parameters |
+| 401 | Unauthorized — Missing or invalid credentials |
+| 403 | Forbidden — Insufficient permissions |
+| 404 | Not Found — Lead, campaign, or process does not exist |
+| 500 | Internal Server Error |
+
+```json
+{
+  "statusCode": 404,
+  "status": "Not Found",
+  "errorCode": "CONF-1001",
+  "errorMessage": "Object doesn't exist"
+}
+```
+
+<TryItBanner />
+<ApiConsole
+  method="GET"
+  path="/cms/configuration/cc/{contactCenterId}/process/{processId}/campaign/{campaignId}/lead-user"
+  baseUrl="https://{Cms_Domain_Name}"
+  description="Get assigned users for a lead"
+  params={[
+    { name: 'contactCenterId', in: 'path', type: 'string', required: true, description: 'Contact center ID' },
+    { name: 'processId', in: 'path', type: 'string', required: true, description: 'Process ID' },
+    { name: 'campaignId', in: 'path', type: 'string', required: true, description: 'Campaign ID' },
+    { name: 'leadId', in: 'query', type: 'string', required: true, description: 'Lead ID' },
+    { name: 'limit', in: 'query', type: 'string', required: true, description: 'Number of records' },
+    { name: 'offset', in: 'query', type: 'string', required: true, description: 'Pagination offset' },
+  ]}
+/>

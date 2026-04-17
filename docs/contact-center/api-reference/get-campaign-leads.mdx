@@ -1,0 +1,156 @@
+---
+title: Get Campaign Leads
+description: "Fetch leads assigned within a specific campaign, including user mappings and dialing configuration."
+sidebar_label: Get Campaign Leads
+---
+
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Get Campaign Leads
+
+Retrieve all leads associated with a specific campaign. Returns lead configuration including assigned user mappings, priority, weightage, and dialing settings.
+
+## Endpoint
+
+```
+GET https://{Cms_Domain_Name}:{port}/cms/configuration/cc/{contactCenterId}/process/{processId}/campaign/{campaignId}/campaign-lead
+```
+
+## Authentication
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `application/json` |
+| `Accept` | `application/json` |
+| `Authorization` | `Bearer {AuthToken}` |
+
+:::info
+The `AuthToken` is obtained from the [Token Generation](/docs/contact-center/api-reference/token-generation) endpoint.
+:::
+
+## Path Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `contactCenterId` | Integer | Yes | Contact center ID |
+| `processId` | Integer | Yes | Process ID (from [Get All Processes](/docs/contact-center/api-reference/get-all-processes)) |
+| `campaignId` | Integer | Yes | Campaign ID (from [Get All Campaigns](/docs/contact-center/api-reference/get-all-campaigns)) |
+
+## Sample Request
+
+```bash
+curl -X 'GET' \
+  'https://{Cms_Domain_Name}:443/cms/configuration/cc/1/process/1/campaign/1/campaign-lead' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {AuthToken}'
+```
+
+## Sample Response
+
+```json
+{
+  "http_code": 200,
+  "method": "GET",
+  "request_id": "a7f1e14d-4bc1-4d37-9d82-6e7443eb5c6c",
+  "response": [
+    {
+      "http_code": 200,
+      "error_data": null,
+      "data": {
+        "id": 1,
+        "campaignContextId": 1,
+        "leadId": 2,
+        "priority": 1,
+        "weightage": 1,
+        "enabled": true,
+        "maxAttempt": 10,
+        "churnCount": 0,
+        "fetchOrderDetails": [],
+        "leadDialingConfigurationEnabled": true,
+        "leadDialingEnabledAtAllTime": true,
+        "campaignLeadDialingConfigurations": [],
+        "campaignLeadUserMappings": [
+          {
+            "id": 29,
+            "campaignLeadId": 1,
+            "campaignUserId": 1
+          },
+          {
+            "id": 30,
+            "campaignLeadId": 1,
+            "campaignUserId": 3817
+          },
+          {
+            "id": 31,
+            "campaignLeadId": 1,
+            "campaignUserId": 3802
+          }
+        ],
+        "dateAdded": "2025-09-10T06:49:57.192+00:00",
+        "dateModified": "2026-03-23T10:43:01.523+00:00",
+        "ref": 1,
+        "version": 22
+      }
+    }
+  ]
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | Integer | Campaign-lead mapping ID |
+| `campaignContextId` | Integer | Parent campaign ID |
+| `leadId` | Integer | Lead list identifier |
+| `priority` | Integer | Lead priority (lower = higher priority) |
+| `weightage` | Integer | Lead weightage for distribution |
+| `enabled` | Boolean | Whether the lead is active |
+| `maxAttempt` | Integer | Maximum dialing attempts per contact |
+| `churnCount` | Integer | Number of churned contacts |
+| `fetchOrderDetails` | Array | Custom fetch order configuration |
+| `leadDialingConfigurationEnabled` | Boolean | Whether custom dialing config is active |
+| `leadDialingEnabledAtAllTime` | Boolean | Whether dialing is enabled 24/7 |
+| `campaignLeadDialingConfigurations` | Array | Time-based dialing rules |
+| `campaignLeadUserMappings` | Array | List of assigned agent mappings |
+| `campaignLeadUserMappings[].id` | Integer | Mapping record ID |
+| `campaignLeadUserMappings[].campaignLeadId` | Integer | Campaign-lead ID |
+| `campaignLeadUserMappings[].campaignUserId` | Integer | Campaign-user ID |
+| `dateAdded` | String | ISO 8601 creation timestamp |
+| `dateModified` | String | ISO 8601 last modification timestamp |
+| `ref` | Integer | Reference counter |
+| `version` | Integer | Record version number |
+
+## Error Responses
+
+| Status Code | Description |
+|-------------|-------------|
+| 400 | Bad Request — Invalid path parameters |
+| 401 | Unauthorized — Missing or invalid token |
+| 403 | Forbidden — Insufficient permissions |
+| 404 | Not Found — Campaign or process does not exist |
+| 500 | Internal Server Error |
+
+```json
+{
+  "statusCode": 404,
+  "status": "Not Found",
+  "errorCode": "CONF-1001",
+  "errorMessage": "Object doesn't exist"
+}
+```
+
+<TryItBanner />
+<ApiConsole
+  method="GET"
+  path="/cms/configuration/cc/{contactCenterId}/process/{processId}/campaign/{campaignId}/campaign-lead"
+  baseUrl="https://{Cms_Domain_Name}"
+  description="Get all leads in a campaign"
+  params={[
+    { name: 'contactCenterId', in: 'path', type: 'string', required: true, description: 'Contact center ID' },
+    { name: 'processId', in: 'path', type: 'string', required: true, description: 'Process ID' },
+    { name: 'campaignId', in: 'path', type: 'string', required: true, description: 'Campaign ID' },
+  ]}
+/>

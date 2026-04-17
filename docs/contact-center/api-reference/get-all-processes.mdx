@@ -1,0 +1,134 @@
+---
+title: Get All Processes
+description: "List all processes configured within a contact center."
+sidebar_label: Get All Processes
+---
+
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Get All Processes
+
+Retrieve a list of all processes configured within a specific contact center. Processes represent the top-level organizational unit in the Contact Center hierarchy: **Contact Center → Process → Campaign → Lead**.
+
+## Endpoint
+
+```
+GET https://{Cms_Domain_Name}:{port}/configuration/cc/{contactCenterId}/process
+```
+
+## Authentication
+
+| Header | Value |
+|--------|-------|
+| `Content-Type` | `application/json` |
+| `Accept` | `application/json` |
+| `Authorization` | `Bearer {AuthToken}` |
+
+:::info
+The `AuthToken` is obtained from the [Token Generation](/docs/contact-center/api-reference/token-generation) endpoint.
+:::
+
+## Path Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `contactCenterId` | Integer | Yes | The unique identifier of the contact center |
+
+## Query Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `limit` | Integer | No | 2 | Number of records per page (max: 10) |
+| `offset` | Integer | No | 0 | Pagination offset |
+| `sort_by` | String | No | — | Sorting criteria (e.g., `id:desc,name:asc`) |
+| `processName` | String | No | — | Filter by process name prefix |
+
+## Sample Request
+
+```bash
+curl -X 'GET' \
+  'https://{Cms_Domain_Name}:443/configuration/cc/1/process?limit=10&offset=0' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {AuthToken}'
+```
+
+## Sample Response
+
+```json
+{
+  "http_code": 200,
+  "method": "GET",
+  "request_id": "6da10c2e-1ef7-4206-98ce-410087c9a151",
+  "response": [
+    {
+      "processId": 1,
+      "processName": "Sales",
+      "contactCenterId": 1,
+      "processType": "Default",
+      "description": "Process related to Sales Management",
+      "dialingStateLevel": "Default",
+      "dateAdded": "2026-03-16T09:15:34.673Z",
+      "dateModified": "2026-03-16T09:15:34.673Z"
+    }
+  ],
+  "metadata": {
+    "total": "1",
+    "count": 1,
+    "offset": 0,
+    "limit": 2
+  }
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `processId` | Integer | Unique process identifier |
+| `processName` | String | Name of the process |
+| `contactCenterId` | Integer | Parent contact center ID |
+| `processType` | String | Type of process (e.g., `Default`) |
+| `description` | String | Description of the process |
+| `dialingStateLevel` | String | Dialing state configuration level |
+| `dateAdded` | String | ISO 8601 creation timestamp |
+| `dateModified` | String | ISO 8601 last modification timestamp |
+| `metadata.total` | String | Total number of matching records |
+| `metadata.count` | Integer | Number of records in current response |
+| `metadata.offset` | Integer | Current pagination offset |
+| `metadata.limit` | Integer | Current page size limit |
+
+## Error Responses
+
+| Status Code | Description |
+|-------------|-------------|
+| 400 | Bad Request — Invalid parameters |
+| 401 | Unauthorized — Missing or invalid token |
+| 403 | Forbidden — Insufficient permissions |
+| 404 | Not Found — Contact center does not exist |
+| 500 | Internal Server Error |
+
+```json
+{
+  "statusCode": 404,
+  "status": "Not Found",
+  "errorCode": "CONF-1001",
+  "errorMessage": "Object doesn't exist"
+}
+```
+
+<TryItBanner />
+<ApiConsole
+  method="GET"
+  path="/configuration/cc/{contactCenterId}/process"
+  baseUrl="https://{Cms_Domain_Name}"
+  description="List all processes in a contact center"
+  params={[
+    { name: 'contactCenterId', in: 'path', type: 'string', required: true, description: 'Contact center ID' },
+    { name: 'limit', in: 'query', type: 'string', required: false, description: 'Records per page (max 10)' },
+    { name: 'offset', in: 'query', type: 'string', required: false, description: 'Pagination offset' },
+    { name: 'sort_by', in: 'query', type: 'string', required: false, description: 'Sort criteria (e.g., id:desc)' },
+    { name: 'processName', in: 'query', type: 'string', required: false, description: 'Filter by process name prefix' },
+  ]}
+/>

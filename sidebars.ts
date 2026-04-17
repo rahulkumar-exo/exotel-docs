@@ -283,6 +283,11 @@ const sidebars: SidebarsConfig = {
         'contact-center/api-reference/upload-contacts',
         'contact-center/api-reference/error-file-retrieval',
         'contact-center/api-reference/agent-presence',
+        'contact-center/api-reference/get-all-processes',
+        'contact-center/api-reference/get-all-campaigns',
+        'contact-center/api-reference/get-campaign-leads',
+        'contact-center/api-reference/assign-users-to-lead',
+        'contact-center/api-reference/get-assigned-users',
       ],
     },
   ],
@@ -339,6 +344,14 @@ const sidebars: SidebarsConfig = {
 
   rcsOmnichannelSidebar: [
     'rcs-omnichannel/overview',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'rcs-omnichannel/api-reference/send-message',
+      ],
+    },
   ],
 
   genAiSidebar: [

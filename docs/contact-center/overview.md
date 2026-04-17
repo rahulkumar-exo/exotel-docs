@@ -21,6 +21,9 @@ The Contact Center API is currently in **Beta**.
 - **Status Callbacks** — Receive real-time call state updates via webhooks
 - **Agent Management** — Integrates with the Users API for agent setup
 - **Custom Metadata** — Attach application-specific data to calls
+- **Process & Campaign Management** — Configure the CC hierarchy: processes, campaigns, leads
+- **Lead User Assignment** — Assign and unassign agents to campaign leads
+- **Contact Upload** — Bulk upload leads via CSV with header mapping
 
 ## Base URL
 
