@@ -120,13 +120,11 @@ curl -X 'PUT' \
 <ApiConsole
   method="PUT"
   path="/cms/configuration/voice/campaignLeadUserMapping"
-  baseUrl="https://{Cms_Domain_Name}"
-  description="Assign or unassign users from a campaign lead"
-  bodyType="json"
-  defaultBody={`{
-  "leadId": 2,
-  "campaignId": 1,
-  "assignedUserIds": ["agent_user_id"],
-  "unassignedUserIds": []
-}`}
+  contentType="json"
+  params={[
+    { name: 'leadId', required: true, type: 'number', description: 'Lead identifier', placeholder: '2' },
+    { name: 'campaignId', required: true, type: 'number', description: 'Campaign identifier', placeholder: '1' },
+    { name: 'assignedUserIds', required: true, type: 'string', description: 'JSON array of user IDs to assign', placeholder: '["agent_user_id"]' },
+    { name: 'unassignedUserIds', required: true, type: 'string', description: 'JSON array of user IDs to unassign', placeholder: '[]' },
+  ]}
 />

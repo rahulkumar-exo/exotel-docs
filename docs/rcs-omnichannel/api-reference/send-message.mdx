@@ -165,24 +165,13 @@ Configure an incoming webhook to receive messages from users. Supported content 
 <ApiConsole
   method="POST"
   path="/v2/accounts/{account_sid}/messages"
-  baseUrl="https://api.in.exotel.com"
-  description="Send an RCS template message"
-  bodyType="json"
-  defaultBody={`{
-  "custom_data": "order_12345",
-  "status_callback": "https://your-server.com/rcs/callback",
-  "rcs": {
-    "from": "your_bot_id",
-    "to": "+919888888888",
-    "content": {
-      "name": "template_name",
-      "variables": {
-        "key": "value"
-      }
-    }
-  }
-}`}
+  contentType="json"
   params={[
-    { name: 'account_sid', in: 'path', type: 'string', required: true, description: 'Your Exotel account SID' }
+    { name: 'account_sid', required: true, type: 'string', description: 'Your Exotel account SID', placeholder: 'Exotel123abc' },
+    { name: 'rcs.from', required: true, type: 'string', description: 'BotID for sending', placeholder: 'your_bot_id' },
+    { name: 'rcs.to', required: true, type: 'string', description: 'Recipient phone in E.164 format', placeholder: '+919888888888' },
+    { name: 'rcs.content.name', required: true, type: 'string', description: 'Pre-approved template identifier', placeholder: 'template_name' },
+    { name: 'custom_data', required: false, type: 'string', description: 'Custom metadata for callbacks', placeholder: 'order_12345' },
+    { name: 'status_callback', required: false, type: 'string', description: 'Webhook URL for delivery events', placeholder: 'https://your-server.com/rcs/callback' },
   ]}
 />

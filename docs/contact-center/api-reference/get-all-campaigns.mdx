@@ -102,9 +102,7 @@ curl -X 'GET' \
 <ApiConsole
   method="GET"
   path="/configuration/hierarchyconfig/campaign"
-  baseUrl="https://{Cms_Domain_Name}"
-  description="List all campaigns in a contact center"
   params={[
-    { name: 'contactCenterId', in: 'query', type: 'string', required: true, description: 'Contact center ID' },
+    { name: 'contactCenterId', required: true, type: 'string', description: 'Contact center ID', placeholder: '1' },
   ]}
 />

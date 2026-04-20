@@ -146,11 +146,9 @@ curl -X 'GET' \
 <ApiConsole
   method="GET"
   path="/cms/configuration/cc/{contactCenterId}/process/{processId}/campaign/{campaignId}/campaign-lead"
-  baseUrl="https://{Cms_Domain_Name}"
-  description="Get all leads in a campaign"
   params={[
-    { name: 'contactCenterId', in: 'path', type: 'string', required: true, description: 'Contact center ID' },
-    { name: 'processId', in: 'path', type: 'string', required: true, description: 'Process ID' },
-    { name: 'campaignId', in: 'path', type: 'string', required: true, description: 'Campaign ID' },
+    { name: 'contactCenterId', required: true, type: 'string', description: 'Contact center ID', placeholder: '1' },
+    { name: 'processId', required: true, type: 'string', description: 'Process ID', placeholder: '1' },
+    { name: 'campaignId', required: true, type: 'string', description: 'Campaign ID', placeholder: '1' },
   ]}
 />

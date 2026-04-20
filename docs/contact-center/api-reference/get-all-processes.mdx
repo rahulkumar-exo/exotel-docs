@@ -122,13 +122,11 @@ curl -X 'GET' \
 <ApiConsole
   method="GET"
   path="/configuration/cc/{contactCenterId}/process"
-  baseUrl="https://{Cms_Domain_Name}"
-  description="List all processes in a contact center"
   params={[
-    { name: 'contactCenterId', in: 'path', type: 'string', required: true, description: 'Contact center ID' },
-    { name: 'limit', in: 'query', type: 'string', required: false, description: 'Records per page (max 10)' },
-    { name: 'offset', in: 'query', type: 'string', required: false, description: 'Pagination offset' },
-    { name: 'sort_by', in: 'query', type: 'string', required: false, description: 'Sort criteria (e.g., id:desc)' },
-    { name: 'processName', in: 'query', type: 'string', required: false, description: 'Filter by process name prefix' },
+    { name: 'contactCenterId', required: true, type: 'string', description: 'Contact center ID', placeholder: '1' },
+    { name: 'limit', required: false, type: 'string', description: 'Records per page (max 10)', placeholder: '10' },
+    { name: 'offset', required: false, type: 'string', description: 'Pagination offset', placeholder: '0' },
+    { name: 'sort_by', required: false, type: 'string', description: 'Sort criteria', placeholder: 'id:desc' },
+    { name: 'processName', required: false, type: 'string', description: 'Filter by process name prefix', placeholder: 'Sales' },
   ]}
 />

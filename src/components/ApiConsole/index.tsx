@@ -41,7 +41,7 @@ function saveCredentials(creds: Credentials) {
   } catch {}
 }
 
-export default function ApiConsole({ method, path, params, contentType = 'form' }: ApiConsoleProps) {
+export default function ApiConsole({ method, path, params = [], contentType = 'form' }: ApiConsoleProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [creds, setCreds] = useState<Credentials>(loadCredentials);
   const [showCreds, setShowCreds] = useState(false);
@@ -69,14 +69,19 @@ export default function ApiConsole({ method, path, params, contentType = 'form' 
     return () => window.removeEventListener('tryit-open', handleTryItOpen);
   }, []);
 
-  // Initialize default param values
+  // Initialize default param values (only once — deps-stable via JSON key)
+  const paramsKey = JSON.stringify(params.map((p) => [p.name, p.defaultValue]));
   useEffect(() => {
     const defaults: Record<string, string> = {};
     params.forEach((p) => {
       if (p.defaultValue) defaults[p.name] = p.defaultValue;
     });
-    setParamValues((prev) => ({ ...defaults, ...prev }));
-  }, [params]);
+    setParamValues((prev) => {
+      const next = { ...defaults, ...prev };
+      const changed = Object.keys(next).some((k) => next[k] !== prev[k]);
+      return changed ? next : prev;
+    });
+  }, [paramsKey]);
 
   const updateCreds = useCallback((field: keyof Credentials, value: string) => {
     setCreds((prev) => {
