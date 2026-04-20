@@ -11,24 +11,32 @@
  * every page navigation (not just the initial load).
  */
 
-// GA4 global config: attach site_variant to ALL future events
+// Push site_variant into dataLayer BEFORE gtag loads, so the very first
+// page_view and first_visit events carry the dimension. Using user_properties
+// makes this persist across all events for the user (not just the current one),
+// which requires the custom dimension to be registered at USER scope in GA4.
 if (typeof window !== 'undefined') {
-  // Set on initial load — gtag may not be ready immediately
+  window.dataLayer = window.dataLayer || [];
+
+  // 1. User property — sticks for the whole user lifetime (requires User-scoped dim)
+  window.dataLayer.push({
+    event: 'gtm.js',
+    user_properties: { site_variant: 'new_portal' },
+  });
+
+  // 2. Event-scope fallback — also attach to every future event
+  window.dataLayer.push(['set', { site_variant: 'new_portal' }]);
+
+  // 3. Configure once gtag loads (belt-and-braces, doesn't cause double page_view)
   const setGlobalDimension = () => {
     if (typeof gtag === 'function') {
-      // This makes site_variant appear on every subsequent event
+      gtag('set', 'user_properties', { site_variant: 'new_portal' });
       gtag('set', { site_variant: 'new_portal' });
-      // Also configure it at the config level for the tracking ID
-      gtag('config', 'G-HWCFMYZ4FG', {
-        site_variant: 'new_portal',
-        send_page_view: false, // Docusaurus gtag plugin already sends page views
-      });
       return true;
     }
     return false;
   };
 
-  // Try immediately, then retry every 500ms for up to 5s
   if (!setGlobalDimension()) {
     let attempts = 0;
     const interval = setInterval(() => {
@@ -36,7 +44,7 @@ if (typeof window !== 'undefined') {
       if (setGlobalDimension() || attempts >= 10) {
         clearInterval(interval);
       }
-    }, 500);
+    }, 250);
   }
 }
 
