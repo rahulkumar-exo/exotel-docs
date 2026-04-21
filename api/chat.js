@@ -7,6 +7,75 @@
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
+// ---------------------------------------------------------------------------
+// Search query logging
+// ---------------------------------------------------------------------------
+
+const LOG_REPO = 'rahulkumar-exo/exotel-docs';
+const LOG_FILE_PATH = 'data/ai-search-logs.json';
+const MAX_QUESTION_LEN = 500; // truncate very long questions
+
+/**
+ * Append a search query to data/ai-search-logs.json via the GitHub API.
+ * Fire-and-forget: caller should NOT await this to avoid adding latency
+ * to the chat response.
+ */
+async function logSearchQuery(entry) {
+  const token = (process.env.CMS_GITHUB_TOKEN || process.env.GITHUB_TOKEN || '').trim();
+  if (!token) return; // No token configured — skip silently
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    Accept: 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json',
+  };
+
+  const url = `https://api.github.com/repos/${LOG_REPO}/contents/${LOG_FILE_PATH}`;
+
+  // Retry up to 2 times to handle SHA conflicts from concurrent writes
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      // Read current file
+      let logs = [];
+      let sha;
+      const getRes = await fetch(url, { headers });
+      if (getRes.ok) {
+        const data = await getRes.json();
+        sha = data.sha;
+        try {
+          logs = JSON.parse(Buffer.from(data.content, 'base64').toString('utf-8'));
+        } catch {
+          logs = [];
+        }
+      }
+      // Append the new entry
+      logs.push(entry);
+
+      // Write back
+      const putBody = {
+        message: `ai-search-log: ${entry.question.slice(0, 60)}${entry.question.length > 60 ? '...' : ''}`,
+        content: Buffer.from(JSON.stringify(logs, null, 2) + '\n').toString('base64'),
+        committer: { name: 'AI Search Logger', email: 'ai-bot@exotel.com' },
+        ...(sha ? { sha } : {}),
+      };
+
+      const putRes = await fetch(url, {
+        method: 'PUT',
+        headers,
+        body: JSON.stringify(putBody),
+      });
+
+      if (putRes.ok) return; // success
+      if (putRes.status === 409 || putRes.status === 422) continue; // SHA conflict, retry
+      const errText = await putRes.text();
+      console.error('[ai-search-log] write error:', putRes.status, errText);
+      return;
+    } catch (err) {
+      console.error('[ai-search-log] attempt', attempt + 1, 'failed:', err.message);
+    }
+  }
+}
+
 // Simple text similarity for finding relevant chunks
 function getRelevantChunks(query, documents, topK = 8) {
   const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
@@ -67,6 +136,8 @@ module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  const startTime = Date.now();
 
   try {
     const { question, history = [] } = req.body;
@@ -169,6 +240,28 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
       product: c.product,
     })))].slice(0, 4);
 
+    // Build log entry — log BEFORE returning so the write completes reliably.
+    // Adds ~300-500ms to the request but ensures no queries are dropped.
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      question: question.slice(0, MAX_QUESTION_LEN),
+      question_length: question.length,
+      has_history: Array.isArray(history) && history.length > 0,
+      history_length: Array.isArray(history) ? history.length : 0,
+      model_used: usedModel,
+      response_time_ms: Date.now() - startTime,
+      relevant_chunks_found: relevantChunks.length,
+      source_pages: sources.map((s) => ({ title: s.title, product: s.product, url: s.url })),
+      answer_length: answer ? answer.length : 0,
+    };
+
+    // Log (errors don't fail the user response)
+    try {
+      await logSearchQuery(logEntry);
+    } catch (e) {
+      console.error('[ai-search-log] log failed:', e.message);
+    }
+
     return res.status(200).json({
       answer,
       sources,
@@ -176,6 +269,22 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
     });
   } catch (error) {
     console.error('Chat API error:', error);
+
+    // Log failed queries too so we can see what's breaking
+    if (req.body && req.body.question) {
+      const failEntry = {
+        timestamp: new Date().toISOString(),
+        question: String(req.body.question).slice(0, MAX_QUESTION_LEN),
+        question_length: String(req.body.question).length,
+        response_time_ms: Date.now() - startTime,
+        error: error.message || 'unknown',
+        failed: true,
+      };
+      try {
+        await logSearchQuery(failEntry);
+      } catch {}
+    }
+
     return res.status(500).json({
       error: 'Failed to generate response. Please try again.',
       details: error.message,
