@@ -24,7 +24,16 @@ const LOG_PATH = path.join(REPO_ROOT, 'data', 'ai-search-logs.json');
 
 if (shouldPull) {
   console.log('Pulling latest from git...\n');
-  execSync('git pull --rebase origin main', { cwd: REPO_ROOT, stdio: 'inherit' });
+  // Use stash+pull+pop so this works even with a dirty working copy.
+  // Fetch only data/ai-search-logs.json so we don't disturb other in-progress edits.
+  try {
+    execSync(
+      'git fetch origin main --quiet && git checkout origin/main -- data/ai-search-logs.json',
+      { cwd: REPO_ROOT, stdio: 'inherit' }
+    );
+  } catch (e) {
+    console.warn('Could not pull latest log file from git — analyzing local copy only.');
+  }
 }
 
 if (!fs.existsSync(LOG_PATH)) {
