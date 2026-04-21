@@ -21,6 +21,12 @@ const products = [
     available: true,
   },
   {
+    title: 'Voicebot API',
+    description: 'Build AI voicebots with natural language, manage versions, and pull conversation transcripts & insights.',
+    link: '/docs/voicebot-tools/voicebot-api',
+    available: true,
+  },
+  {
     title: 'WhatsApp API',
     description: 'Send text, media, templates, and interactive messages via WhatsApp Business.',
     link: '/docs/whatsapp-api/overview',
