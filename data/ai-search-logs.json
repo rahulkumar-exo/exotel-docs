@@ -179,5 +179,38 @@
       }
     ],
     "answer_length": 2664
+  },
+  {
+    "timestamp": "2026-04-21T08:50:45.281Z",
+    "question": "how to send auido to call",
+    "question_length": 25,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7467,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 1322
   }
 ]
