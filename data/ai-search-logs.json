@@ -311,5 +311,38 @@
       }
     ],
     "answer_length": 966
+  },
+  {
+    "timestamp": "2026-04-21T09:09:01.298Z",
+    "question": "is there a postman sample for whatsapp send message api",
+    "question_length": 55,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10772,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp - Messaging API",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/overview"
+      },
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 2303
   }
 ]
