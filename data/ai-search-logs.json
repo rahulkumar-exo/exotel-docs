@@ -31,5 +31,38 @@
       }
     ],
     "answer_length": 1123
+  },
+  {
+    "timestamp": "2026-04-21T05:08:47.521Z",
+    "question": "how can I whitelist a phone number using api",
+    "question_length": 44,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8380,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Custom Caller ID",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/custom-caller-id"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 1652
   }
 ]
