@@ -9,6 +9,18 @@ import styles from './index.module.css';
 
 const products = [
   {
+    title: 'Voicebot API',
+    description: 'Build AI voicebots with natural language, manage versions, and pull conversation transcripts & insights.',
+    link: '/docs/voicebot-tools/voicebot-api',
+    available: true,
+  },
+  {
+    title: 'Contact Center API',
+    description: 'Build custom agent interfaces with outbound calling, lead management, and campaign configuration.',
+    link: '/docs/contact-center/overview',
+    available: true,
+  },
+  {
     title: 'Voice API',
     description: 'Make and receive calls, build IVR flows, and manage phone numbers programmatically.',
     link: '/docs/voice-v1/overview',
@@ -18,12 +30,6 @@ const products = [
     title: 'SMS API',
     description: 'Send single and bulk SMS with DLT compliance, URL shortening, and delivery tracking.',
     link: '/docs/sms-api/overview',
-    available: true,
-  },
-  {
-    title: 'Voicebot API',
-    description: 'Build AI voicebots with natural language, manage versions, and pull conversation transcripts & insights.',
-    link: '/docs/voicebot-tools/voicebot-api',
     available: true,
   },
   {
@@ -60,12 +66,6 @@ const products = [
     title: 'Lead Assist',
     description: 'Privacy-protected communication with PIN verification and virtual numbers.',
     link: '/docs/lead-assist/overview',
-    available: true,
-  },
-  {
-    title: 'Contact Center',
-    description: 'Build custom agent interfaces with outbound calling and call management.',
-    link: '/docs/contact-center/overview',
     available: true,
   },
   {
