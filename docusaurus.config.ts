@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Exotel Developer Docs',
   tagline: 'Build powerful communication workflows',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon-256.png',
 
   clientModules: [
     './src/analytics/ga-custom-dimension.js',
@@ -106,6 +106,22 @@ const config: Config = {
     {
       tagName: 'link',
       attributes: { rel: 'canonical', href: 'https://developer.exotel.com' },
+    },
+    {
+      tagName: 'link',
+      attributes: { rel: 'icon', type: 'image/svg+xml', href: '/img/favicon.svg' },
+    },
+    {
+      tagName: 'link',
+      attributes: { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/img/favicon-32.png' },
+    },
+    {
+      tagName: 'link',
+      attributes: { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/img/favicon-192.png' },
+    },
+    {
+      tagName: 'link',
+      attributes: { rel: 'apple-touch-icon', sizes: '256x256', href: '/img/favicon-256.png' },
     },
   ],
 
