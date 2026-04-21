@@ -64,5 +64,38 @@
       }
     ],
     "answer_length": 1652
+  },
+  {
+    "timestamp": "2026-04-21T06:15:09.423Z",
+    "question": "What is the token generation endpoint for the Singapore region (api.exotel.com) for WebRTC integration? I have Client ID and Client Secret.",
+    "question_length": 139,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4060,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 519
   }
 ]
