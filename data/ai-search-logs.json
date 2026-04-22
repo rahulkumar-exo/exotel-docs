@@ -462,5 +462,17 @@
     "relevant_chunks_found": 0,
     "source_pages": [],
     "answer_length": 201
+  },
+  {
+    "timestamp": "2026-04-22T06:40:28.095Z",
+    "question": "hii",
+    "question_length": 3,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3409,
+    "relevant_chunks_found": 0,
+    "source_pages": [],
+    "answer_length": 264
   }
 ]
