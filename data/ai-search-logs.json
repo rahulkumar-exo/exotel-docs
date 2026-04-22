@@ -581,5 +581,28 @@
       }
     ],
     "answer_length": 3705
+  },
+  {
+    "timestamp": "2026-04-22T12:27:53.368Z",
+    "question": "hi'",
+    "question_length": 3,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1131,
+    "relevant_chunks_found": 2,
+    "source_pages": [
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      },
+      {
+        "title": "Dynamic Caller ID Campaigns",
+        "product": "use-cases",
+        "url": "/docs/use-cases/dynamic-caller-id-campaigns.mdx"
+      }
+    ],
+    "answer_length": 168
   }
 ]
