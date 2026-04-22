@@ -540,5 +540,13 @@
       }
     ],
     "answer_length": 1800
+  },
+  {
+    "timestamp": "2026-04-22T12:07:11.160Z",
+    "question": "connect 2 number in a flow",
+    "question_length": 26,
+    "response_time_ms": 756,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
