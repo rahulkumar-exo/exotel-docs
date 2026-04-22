@@ -426,5 +426,17 @@
     "response_time_ms": 1035,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-04-22T06:39:55.376Z",
+    "question": "hii",
+    "question_length": 3,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1571,
+    "relevant_chunks_found": 0,
+    "source_pages": [],
+    "answer_length": 130
   }
 ]
