@@ -385,5 +385,38 @@
       }
     ],
     "answer_length": 1970
+  },
+  {
+    "timestamp": "2026-04-22T04:37:56.833Z",
+    "question": "outgoing call to connect two number api",
+    "question_length": 39,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4281,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Voice v1",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/overview"
+      }
+    ],
+    "answer_length": 1773
   }
 ]
