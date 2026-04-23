@@ -826,5 +826,38 @@
       }
     ],
     "answer_length": 3240
+  },
+  {
+    "timestamp": "2026-04-23T06:59:34.620Z",
+    "question": "how do I update TTS provider in voicebots APIs",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5035,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Update Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      },
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Text-to-Speech Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/tts-config"
+      },
+      {
+        "title": "Update User",
+        "product": "users",
+        "url": "/docs/users/api-reference/update-user"
+      }
+    ],
+    "answer_length": 1241
   }
 ]
