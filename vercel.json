@@ -37,6 +37,7 @@
     }
   },
   "redirects": [
+    { "source": "/api", "destination": "/docs/voice-v1/overview", "permanent": true },
     { "source": "/api/", "destination": "/docs/voice-v1/overview", "permanent": true },
     { "source": "/api/voice", "destination": "/docs/voice-v1/overview", "permanent": true },
     { "source": "/api/voice/overview", "destination": "/docs/voice-v1/overview", "permanent": true },
