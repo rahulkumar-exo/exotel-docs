@@ -1002,5 +1002,13 @@
       }
     ],
     "answer_length": 3908
+  },
+  {
+    "timestamp": "2026-04-23T15:01:01.168Z",
+    "question": "Uh, you know what? I want to make a calling agent, so I want your, uh, API.I to make a call.So are you able to explain how I borrow this and how I use in free for trial and how it is work?",
+    "question_length": 188,
+    "response_time_ms": 2899,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
