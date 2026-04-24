@@ -128,7 +128,7 @@ const config: Config = {
   themeConfig: {
     announcementBar: {
       id: 'new_portal_2026',
-      content: '🚀 Welcome to the new Exotel Developer Portal! Faster, smarter, and now with AI-powered search. <a href="/docs/voice-v1/overview" style="color:#00eac3;font-weight:600;">Explore the docs →</a>',
+      content: '🚀 Welcome to the new Exotel Developer Portal! Faster, smarter, and now with AI-powered search. <a href="/docs/getting-started/overview" style="color:#00eac3;font-weight:600;">Explore the docs →</a>',
       backgroundColor: '#231f20',
       textColor: '#ffffff',
       isCloseable: true,
