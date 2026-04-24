@@ -1165,5 +1165,33 @@
       }
     ],
     "answer_length": 685
+  },
+  {
+    "timestamp": "2026-04-24T08:42:55.401Z",
+    "question": "ExoVoiceAnalyze",
+    "question_length": 15,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3821,
+    "relevant_chunks_found": 3,
+    "source_pages": [
+      {
+        "title": "ExoVoiceAnalyze",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/api-reference/exovoice-analyze"
+      },
+      {
+        "title": "ExoVoiceAnalyze",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/api-reference/exovoice-analyze"
+      },
+      {
+        "title": "Gen AI",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/overview"
+      }
+    ],
+    "answer_length": 2167
   }
 ]
