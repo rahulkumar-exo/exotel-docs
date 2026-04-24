@@ -1290,5 +1290,38 @@
       }
     ],
     "answer_length": 657
+  },
+  {
+    "timestamp": "2026-04-24T12:35:56.260Z",
+    "question": "Mobile did",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8145,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      },
+      {
+        "title": "Regions & Availability",
+        "product": "getting-started",
+        "url": "/docs/getting-started/regions-availability"
+      }
+    ],
+    "answer_length": 1407
   }
 ]
