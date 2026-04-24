@@ -1132,5 +1132,38 @@
     "relevant_chunks_found": 0,
     "source_pages": [],
     "answer_length": 325
+  },
+  {
+    "timestamp": "2026-04-24T08:39:45.213Z",
+    "question": "is there any api to send call transcripts",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3307,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 685
   }
 ]
