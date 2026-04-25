@@ -1661,5 +1661,38 @@
       }
     ],
     "answer_length": 717
+  },
+  {
+    "timestamp": "2026-04-25T17:15:47.579Z",
+    "question": "i want to list out my app bajar apps/flows",
+    "question_length": 42,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2979,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "Campaign Contact List Management",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-contacts-management"
+      }
+    ],
+    "answer_length": 778
   }
 ]
