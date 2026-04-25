@@ -1488,5 +1488,38 @@
       }
     ],
     "answer_length": 1819
+  },
+  {
+    "timestamp": "2026-04-25T09:26:11.230Z",
+    "question": "why it gives only outgoing calls",
+    "question_length": 32,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3557,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      }
+    ],
+    "answer_length": 1005
   }
 ]
