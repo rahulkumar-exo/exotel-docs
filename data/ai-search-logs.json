@@ -1554,5 +1554,38 @@
       }
     ],
     "answer_length": 3954
+  },
+  {
+    "timestamp": "2026-04-25T09:28:06.080Z",
+    "question": "https://ccm-api.exotel.com/   this one",
+    "question_length": 38,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4301,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integration FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/integration-faqs"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      }
+    ],
+    "answer_length": 928
   }
 ]
