@@ -1389,5 +1389,38 @@
       }
     ],
     "answer_length": 3209
+  },
+  {
+    "timestamp": "2026-04-25T05:56:41.201Z",
+    "question": "i need api for my development",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5770,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 2624
   }
 ]
