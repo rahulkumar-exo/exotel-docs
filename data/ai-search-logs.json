@@ -1455,5 +1455,38 @@
       }
     ],
     "answer_length": 4308
+  },
+  {
+    "timestamp": "2026-04-25T09:24:05.625Z",
+    "question": "https://ccm-api.exotel.com/",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8761,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Agent Presence Monitoring",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/agent-presence.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Customer Callbacks",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/customer-callbacks.mdx"
+      },
+      {
+        "title": "Login",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login.mdx"
+      }
+    ],
+    "answer_length": 1819
   }
 ]
