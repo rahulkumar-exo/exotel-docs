@@ -1628,5 +1628,38 @@
       }
     ],
     "answer_length": 1067
+  },
+  {
+    "timestamp": "2026-04-25T17:15:11.062Z",
+    "question": "can i get my list of flows i created",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3173,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Campaign Contact List Management",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-contacts-management"
+      },
+      {
+        "title": "WhatsApp Flows",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/flows"
+      }
+    ],
+    "answer_length": 717
   }
 ]
