@@ -1521,5 +1521,38 @@
       }
     ],
     "answer_length": 1005
+  },
+  {
+    "timestamp": "2026-04-25T09:27:30.069Z",
+    "question": "give me dodocumentation for this base url",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8051,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/overview"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "vSIP FQDN-based Integration Guide",
+        "product": "vsip",
+        "url": "/docs/vsip/fqdn-integration"
+      }
+    ],
+    "answer_length": 3954
   }
 ]
