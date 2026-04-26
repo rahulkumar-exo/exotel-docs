@@ -1727,5 +1727,38 @@
       }
     ],
     "answer_length": 2660
+  },
+  {
+    "timestamp": "2026-04-26T15:55:13.999Z",
+    "question": "Your ExoPhone/virtual number. where can i get",
+    "question_length": 45,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2291,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Create Your Exotel Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/create-account"
+      }
+    ],
+    "answer_length": 473
   }
 ]
