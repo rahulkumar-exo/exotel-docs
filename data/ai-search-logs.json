@@ -1793,5 +1793,38 @@
       }
     ],
     "answer_length": 3178
+  },
+  {
+    "timestamp": "2026-04-27T07:12:55.626Z",
+    "question": "How to Authenticate the account",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4921,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1431
   }
 ]
