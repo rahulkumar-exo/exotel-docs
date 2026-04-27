@@ -2129,5 +2129,38 @@
       }
     ],
     "answer_length": 662
+  },
+  {
+    "timestamp": "2026-04-27T20:48:56.839Z",
+    "question": "how to enable outbound voice for the SID",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9574,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "IVR Menu Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/ivr-menu"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 1628
   }
 ]
