@@ -2022,5 +2022,38 @@
       }
     ],
     "answer_length": 4650
+  },
+  {
+    "timestamp": "2026-04-27T12:32:42.876Z",
+    "question": "How can i can integrate in my existing multiple clients to have this feature to store the call recording of sales team in leads management software",
+    "question_length": 147,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14030,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      }
+    ],
+    "answer_length": 3576
   }
 ]
