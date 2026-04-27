@@ -1940,5 +1940,38 @@
       }
     ],
     "answer_length": 1863
+  },
+  {
+    "timestamp": "2026-04-27T09:12:07.578Z",
+    "question": "customer manager API",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4642,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Make a Call (Agent to Customer)",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/make-a-call.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Make a Call (Agent to Customer)",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/make-a-call.mdx"
+      }
+    ],
+    "answer_length": 1404
   }
 ]
