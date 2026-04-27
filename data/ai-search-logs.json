@@ -2055,5 +2055,38 @@
       }
     ],
     "answer_length": 3576
+  },
+  {
+    "timestamp": "2026-04-27T12:36:02.164Z",
+    "question": "I have multiple developer. each developer having its own sales team. so how it integrate for each developer. so each developer has its own phone number which i need to register and create an account for them? please guide it",
+    "question_length": 224,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13405,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 3638
   }
 ]
