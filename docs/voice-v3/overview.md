@@ -46,6 +46,28 @@ curl -X GET \
 | [Active Streams](/docs/voice-v3/api-reference/active-stream-monitoring) | GET | `/v3/accounts/{sid}/calls/active` | Monitor active call streams |
 | [Voice Logs](/docs/voice-v3/api-reference/voice-log-download) | GET | `/v3/accounts/{sid}/calls/{call_sid}/voice-logs` | Download voice recordings |
 
+## Outbound & Inbound Call APIs
+
+Voice v3 focuses on enhanced reporting and monitoring. For initiating outbound calls and handling inbound calls, use the existing Voice v1 endpoints — they remain the production-grade APIs and are fully compatible alongside v3 reporting.
+
+### Connect Two Numbers {#call-to-connect-two-numbers}
+
+To programmatically connect two phone numbers (e.g., agent ↔ customer), use the **Connect Two Numbers** API on Voice v1:
+
+→ **[POST /v1/Accounts/&#123;sid&#125;/Calls/connect](/docs/voice-v1/api-reference/connect-two-numbers)**
+
+Connect-to-Flow is also available if you want to drop the call into an App Bazaar IVR flow:
+
+→ **[POST /v1/Accounts/&#123;sid&#125;/Calls/connect (with `Url`)](/docs/voice-v1/api-reference/connect-to-flow)**
+
+### Incoming Calls {#call-incoming}
+
+To handle incoming calls (call routing, ExoML responses, agent forwarding), use the Voice v1 **Incoming Call** API:
+
+→ **[Incoming Call API](/docs/voice-v1/api-reference/incoming-call)**
+
+For real-time delivery status of incoming/outgoing calls, configure the [Status Callback](/docs/voice-v1/api-reference/status-callback) webhook.
+
 ## Call States
 
 | State | Description |
