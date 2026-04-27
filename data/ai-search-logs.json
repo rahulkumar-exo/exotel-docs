@@ -2096,5 +2096,38 @@
     "response_time_ms": 3159,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-04-27T13:04:16.821Z",
+    "question": "How to use applets",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3397,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      },
+      {
+        "title": "Create User",
+        "product": "users",
+        "url": "/docs/users/api-reference/create-user"
+      },
+      {
+        "title": "Create User",
+        "product": "users",
+        "url": "/docs/users/api-reference/create-user"
+      }
+    ],
+    "answer_length": 662
   }
 ]
