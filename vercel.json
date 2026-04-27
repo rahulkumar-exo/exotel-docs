@@ -146,6 +146,8 @@
     { "source": "/api/ccm-make-call-agent-connecting-to-a-number", "destination": "/docs/contact-center/api-reference/make-call", "permanent": true },
     { "source": "/api/ccm-calls", "destination": "/docs/contact-center/api-reference/make-call", "permanent": true },
     { "source": "/api/ccm-call-details", "destination": "/docs/contact-center/api-reference/call-details", "permanent": true },
+    { "source": "/api/balance", "destination": "/docs/voice-v1/api-reference/balance", "permanent": true },
+    { "source": "/api/account-balance", "destination": "/docs/voice-v1/api-reference/balance", "permanent": true },
 
     { "source": "/applet", "destination": "/docs/voice-v1/applets/connect", "permanent": true },
     { "source": "/applet/:path*", "destination": "/docs/voice-v1/applets/connect", "permanent": true },

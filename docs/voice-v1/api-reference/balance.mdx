@@ -1,0 +1,181 @@
+---
+id: balance
+title: Account Balance API
+description: Retrieve your Exotel account balance, currency, and pricing plan via the Balance API. Returns wallet credit available for Voice, SMS, and WhatsApp usage.
+sidebar_label: Balance
+keywords:
+  - Balance API
+  - Account Balance
+  - Wallet
+  - Credit
+  - Pricing Plan
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Account Balance API
+
+Retrieve your Exotel **account balance** programmatically. This API returns your current wallet credit (in INR), the configured pricing plan, and account currency. Useful for monitoring credit consumption, building low-balance alerts, and reconciling usage with billing.
+
+<TryItBanner method="GET" endpoint="/v1/Accounts/{sid}/Balance.json" />
+
+## Endpoint
+
+```
+GET /v1/Accounts/<your_sid>/Balance.json
+```
+
+### Regional URLs
+
+| Region | URL |
+|--------|-----|
+| Singapore | `https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Balance.json` |
+| Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com/v1/Accounts/<your_sid>/Balance.json` |
+
+Append `.json` for JSON response (recommended). Omit it for XML.
+
+## Authentication
+
+HTTP Basic Authentication using your **API Key** and **API Token** from the [Exotel Dashboard](https://my.exotel.com) → **Settings → API Settings → API Credentials**.
+
+## Path Parameters
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `your_sid` | Yes | Your Exotel Account SID (visible in the dashboard, e.g., `Exotel`) |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl "https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Balance.json"
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+from requests.auth import HTTPBasicAuth
+
+response = requests.get(
+    'https://api.exotel.com/v1/Accounts/<your_sid>/Balance.json',
+    auth=HTTPBasicAuth('<your_api_key>', '<your_api_token>')
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<your_api_key>';
+const apiToken = '<your_api_token>';
+const accountSid = '<your_sid>';
+
+const url = `https://api.exotel.com/v1/Accounts/${accountSid}/Balance.json`;
+
+const response = await fetch(url, {
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$apiKey = '<your_api_key>';
+$apiToken = '<your_api_token>';
+$accountSid = '<your_sid>';
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://api.exotel.com/v1/Accounts/{$accountSid}/Balance.json");
+curl_setopt($ch, CURLOPT_USERPWD, "{$apiKey}:{$apiToken}");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+print_r(json_decode($response, true));
+?>
+```
+
+</TabItem>
+</Tabs>
+
+## Sample Response
+
+```json
+{
+  "Account": {
+    "AccountSid": "Exotel",
+    "BalanceData": {
+      "Balance": "1543.75",
+      "Currency": "INR",
+      "PricingPlan": "Pay As You Go",
+      "DateUpdated": "2026-04-24 10:32:18"
+    }
+  }
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Account.AccountSid` | String | Your account SID (echo of request) |
+| `Account.BalanceData.Balance` | String (decimal) | Current wallet balance — credit available for Voice, SMS, WhatsApp |
+| `Account.BalanceData.Currency` | String | ISO 4217 currency code (typically `INR`) |
+| `Account.BalanceData.PricingPlan` | String | Configured pricing plan, e.g. `Pay As You Go`, `Postpaid`, `Enterprise` |
+| `Account.BalanceData.DateUpdated` | String (ISO-ish) | Timestamp of last balance update |
+
+## Common Use Cases
+
+- **Low-balance alerts**: Poll this endpoint hourly/daily and trigger Slack/SMS notifications when `Balance` falls below your threshold.
+- **Usage reconciliation**: Compare balance delta with `Call Details` / `SMS Details` over a window to validate billing.
+- **Pre-flight checks**: Before bulk SMS or large outbound campaigns, verify sufficient balance to complete the run.
+- **Internal dashboards**: Surface remaining credit alongside CDR analytics in your ops console.
+
+## Error Responses
+
+| Status Code | Description |
+|-------------|-------------|
+| 401 | Invalid API key/token |
+| 403 | API key does not have permission to read balance |
+| 404 | Account SID not found |
+| 429 | Rate limit exceeded — retry with exponential backoff |
+| 5xx | Server error — retry |
+
+```json
+{
+  "RestException": {
+    "Status": 401,
+    "Message": "Authentication failed",
+    "Code": 20003
+  }
+}
+```
+
+## Rate Limits
+
+This endpoint is subject to standard Exotel API rate limits. Avoid polling more frequently than once per minute — use webhooks/CDRs for real-time consumption tracking instead.
+
+<ApiConsole
+  method="GET"
+  path="/v1/Accounts/{your_sid}/Balance.json"
+  params={[
+    { name: 'your_sid', required: true, type: 'string', description: 'Your Exotel Account SID', placeholder: 'Exotel' },
+  ]}
+/>

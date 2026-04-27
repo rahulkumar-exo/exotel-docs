@@ -1,9 +1,22 @@
 ---
 id: authentication
-title: Authentication Token
-description: Generate a bearer token for authenticating Exotel WebRTC API calls. Tokens are valid for 90 days.
+title: WebRTC Token Generation API — Authentication
+description: Generate a bearer token for authenticating Exotel WebRTC SDK / IP-PSTN API calls. Includes Singapore and Mumbai region endpoints. Tokens are valid for 90 days.
 sidebar_label: Authentication
 sidebar_position: 1
+keywords:
+  - WebRTC token generation
+  - Token Generation API
+  - Bearer token
+  - Authentication
+  - Singapore region
+  - Mumbai region
+  - api.exotel.com
+  - WebRTC SDK
+  - Client ID
+  - Client Secret
+  - CustomerID
+  - AppID
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,17 +24,25 @@ import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
 
-# Create Authentication Token
+# WebRTC Token Generation — Create Authentication Token
 
-Generate a bearer token for authenticating subsequent API calls. Tokens are valid for **90 days**.
+Generate a bearer token for authenticating subsequent **Exotel WebRTC SDK** and IP-PSTN API calls. Tokens are valid for **90 days** and required for every WebRTC integration call.
+
+This is the **token generation endpoint** that you call with your **Client ID** (CustomerID or AppID) and **Client Secret** (CustomerSecret or AppSecret) to obtain the bearer token used in all subsequent WebRTC API calls.
 
 <TryItBanner method="POST" endpoint="/v2/integrations/token" />
 
 ## Endpoint
 
+WebRTC integrations APIs are served from a dedicated `integrationscore` host — this is **separate from** the standard Voice / SMS API host (`api.exotel.com` Singapore / `api.in.exotel.com` Mumbai). Use the WebRTC-specific endpoint below regardless of which Voice/SMS region you use.
+
 ```
 POST https://integrationscore.mum1.exotel.com/v2/integrations/token
 ```
+
+:::note Region availability
+If your Exotel account is provisioned in the **Singapore** region and you usually call `api.exotel.com` for Voice and SMS APIs, the **WebRTC token generation endpoint is *not* on `api.exotel.com`** — it lives on the dedicated `integrationscore` host shown above. Your Singapore Client ID / Client Secret will work against this URL. If you have been issued a region-specific WebRTC host, use that; otherwise reach out to your Exotel account manager for the right base URL for your account.
+:::
 
 ## Headers
 

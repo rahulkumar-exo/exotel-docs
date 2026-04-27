@@ -76,9 +76,48 @@ async function logSearchQuery(entry) {
   }
 }
 
+// API-developer keywords — when present in query, boost API reference docs
+// over end-customer support docs. Devs hitting the AI from the dev portal
+// almost always want API/code answers, not general "how does Exotel work" content.
+const DEV_INTENT_KEYWORDS = [
+  'api', 'endpoint', 'request', 'response', 'curl', 'header', 'param',
+  'parameter', 'body', 'json', 'xml', 'auth', 'token', 'sid', 'webhook',
+  'callback', 'sdk', 'integration', 'integrate', 'code', 'example',
+  'http', 'post', 'get', 'put', 'delete', 'method', 'status code',
+  'rate limit', 'webrtc', 'voicebot', 'applet', 'exoml',
+];
+
+function isDevIntent(query) {
+  const q = query.toLowerCase();
+  return DEV_INTENT_KEYWORDS.some((kw) => q.includes(kw));
+}
+
+function isApiReferenceDoc(doc) {
+  const url = (doc.url || '').toLowerCase();
+  return (
+    url.includes('/api-reference/') ||
+    url.includes('/api/') ||
+    url.endsWith('/quickstart') ||
+    url.endsWith('/quickstart.mdx')
+  );
+}
+
+function isEndCustomerSupportDoc(doc) {
+  const url = (doc.url || '').toLowerCase();
+  // /docs/call-support, /docs/sms-support, /docs/whatsapp-support are written
+  // for end-customers (dashboard users), not for API developers
+  return (
+    url.includes('/call-support/') ||
+    url.includes('/sms-support/') ||
+    url.includes('/whatsapp-support/') ||
+    url.includes('/faqs/')
+  );
+}
+
 // Simple text similarity for finding relevant chunks
 function getRelevantChunks(query, documents, topK = 8) {
   const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
+  const devIntent = isDevIntent(query);
 
   const scored = documents.map(doc => {
     const content = (doc.title + ' ' + doc.content + ' ' + doc.product).toLowerCase();
@@ -114,6 +153,24 @@ function getRelevantChunks(query, documents, topK = 8) {
       }
     }
 
+    // ---- Dev-intent re-ranking ----
+    // When the query has dev keywords (api, endpoint, curl, ...), strongly
+    // prefer API reference docs and de-emphasise end-customer support docs.
+    if (devIntent) {
+      if (isApiReferenceDoc(doc)) {
+        score += 15; // strong boost for API ref pages
+      }
+      if (isEndCustomerSupportDoc(doc)) {
+        score = Math.max(0, score - 8); // demote support/faq pages
+      }
+    } else {
+      // Even without explicit dev keywords, mildly prefer API ref pages on
+      // the dev portal since that's the audience.
+      if (isApiReferenceDoc(doc)) {
+        score += 4;
+      }
+    }
+
     return { ...doc, score };
   });
 
@@ -144,6 +201,59 @@ module.exports = async function handler(req, res) {
 
     if (!question || typeof question !== 'string') {
       return res.status(400).json({ error: 'Question is required' });
+    }
+
+    // ---------------------------------------------------------------------
+    // Input gating — reject junk before hitting Gemini.
+    // Saves quota, cleans the search log, and gives users a useful nudge.
+    // ---------------------------------------------------------------------
+    const trimmed = question.trim();
+    const lower = trimmed.toLowerCase();
+
+    // Pure-greeting / placeholder inputs
+    const greetings = new Set([
+      'hi', 'hii', 'hiii', 'hiiii', 'hiiiii', 'hello', 'hey', 'heyy',
+      'yo', 'hola', 'sup', 'test', 'testing', 'ok', 'okay', 'thanks',
+      'thank you', 'ty', 'bye', 'goodbye',
+    ]);
+
+    // Too short to be a real question
+    if (trimmed.length < 5) {
+      return res.status(400).json({
+        error: 'Please ask a more detailed question',
+        hint: 'Try: "How do I make an outbound call?" or "How to send WhatsApp templates?"',
+        gated: 'too_short',
+      });
+    }
+
+    // Greeting / placeholder
+    if (greetings.has(lower)) {
+      return res.status(200).json({
+        answer: "Hi! I'm the Exotel docs assistant. Ask me anything about Voice, SMS, WhatsApp, Voicebot, Contact Center, or any other Exotel API. For example: \"How do I make an outbound call?\" or \"How to send WhatsApp template messages?\"",
+        sources: [],
+        model: 'gated',
+        gated: 'greeting',
+      });
+    }
+
+    // Gibberish detection — letters with no vowels are very unlikely to be English
+    // (heuristic: words 5+ chars with zero vowels = junk like "hjhfdjhgkj")
+    const longWords = lower.match(/\b[a-z]{5,}\b/g) || [];
+    const realWords = longWords.filter((w) => /[aeiou]/i.test(w));
+    if (longWords.length > 0 && realWords.length === 0) {
+      return res.status(400).json({
+        error: 'I couldn\'t parse your question — please rephrase it',
+        hint: 'Try a clear, specific question like "How do I integrate WebRTC?" or "Status callback parameters"',
+        gated: 'gibberish',
+      });
+    }
+
+    // Excessive repeated chars (e.g. "asdfasdfasdfasdfasdf")
+    if (/(.)\1{6,}/.test(trimmed) || /(.{3,})\1{3,}/.test(trimmed)) {
+      return res.status(400).json({
+        error: 'I couldn\'t parse your question — please rephrase it',
+        gated: 'repeated_chars',
+      });
     }
 
     const apiKey = process.env.GEMINI_API_KEY;

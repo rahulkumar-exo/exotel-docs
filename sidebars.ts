@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
     'voice-v1/api-reference/outgoing-call-to-flow',
     'voice-v1/api-reference/call-details',
     'voice-v1/api-reference/number-metadata',
+    'voice-v1/api-reference/balance',
     'voice-v1/api-reference/incoming-call',
     'voice-v1/api-reference/status-callback',
     {
