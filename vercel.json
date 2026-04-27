@@ -129,6 +129,7 @@
     { "source": "/api/voicebot-api/:path*", "destination": "/docs/voicebot-tools/voicebot-api", "permanent": true },
 
     { "source": "/getting-started", "destination": "/docs/getting-started/overview", "permanent": true },
+    { "source": "/docs/getting-started/quickstart", "destination": "/docs/getting-started/overview", "permanent": true },
 
     { "source": "/api/introduction", "destination": "/docs/references/authentication", "permanent": true },
     { "source": "/api/heart-beat", "destination": "/docs/heartbeat/overview", "permanent": true },
