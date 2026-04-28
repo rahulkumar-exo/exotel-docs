@@ -2269,5 +2269,38 @@
       }
     ],
     "answer_length": 1066
+  },
+  {
+    "timestamp": "2026-04-28T07:12:39.456Z",
+    "question": "I want to retrieve call details in bulk https://${credentials?.sub_domain}/v1/Accounts/${data.account_sid}/Calls.json?PageSize=100&Sid=${data.call_sids}\n\nso is there any limit of how many call sids i can pass in this",
+    "question_length": 216,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5216,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      }
+    ],
+    "answer_length": 889
   }
 ]
