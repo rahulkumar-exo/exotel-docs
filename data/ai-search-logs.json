@@ -2335,5 +2335,38 @@
       }
     ],
     "answer_length": 6795
+  },
+  {
+    "timestamp": "2026-04-28T07:53:59.867Z",
+    "question": "how do i get virtual number",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6744,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 1178
   }
 ]
