@@ -2695,5 +2695,38 @@
       }
     ],
     "answer_length": 1411
+  },
+  {
+    "timestamp": "2026-04-29T13:24:04.382Z",
+    "question": "give me the overal PDF file of integrtaion of exotel",
+    "question_length": 52,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1846,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 492
   }
 ]
