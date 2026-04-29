@@ -2662,5 +2662,38 @@
     "response_time_ms": 1179,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-04-29T12:57:51.433Z",
+    "question": "dynamic via url",
+    "question_length": 15,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5104,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      },
+      {
+        "title": "URL Shortening",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/overview"
+      }
+    ],
+    "answer_length": 1411
   }
 ]
