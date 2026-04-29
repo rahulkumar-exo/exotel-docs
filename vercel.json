@@ -149,6 +149,15 @@
     { "source": "/api/balance", "destination": "/docs/voice-v1/api-reference/balance", "permanent": true },
     { "source": "/api/account-balance", "destination": "/docs/voice-v1/api-reference/balance", "permanent": true },
 
+    { "source": "/api/exomind-tasker-api", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
+    { "source": "/api/exomind-tasker", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
+    { "source": "/api/exomind", "destination": "/docs/gen-ai/overview", "permanent": true },
+    { "source": "/api/exovoice-analyze-api", "destination": "/docs/gen-ai/api-reference/exovoice-analyze", "permanent": true },
+    { "source": "/api/exovoice-analyze", "destination": "/docs/gen-ai/api-reference/exovoice-analyze", "permanent": true },
+    { "source": "/api/exovoice", "destination": "/docs/gen-ai/overview", "permanent": true },
+    { "source": "/api/gen-ai", "destination": "/docs/gen-ai/overview", "permanent": true },
+    { "source": "/api/genai", "destination": "/docs/gen-ai/overview", "permanent": true },
+
     { "source": "/applet", "destination": "/docs/voice-v1/applets/connect", "permanent": true },
     { "source": "/applet/:path*", "destination": "/docs/voice-v1/applets/connect", "permanent": true },
 
