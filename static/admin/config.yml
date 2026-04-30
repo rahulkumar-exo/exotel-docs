@@ -361,6 +361,21 @@ collections:
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  # ─── CQA — Conversation Quality Analysis ───────────────
+  - name: cqa
+    label: "CQA — Conversation Quality Analysis"
+    folder: docs/cqa
+    create: true
+    nested:
+      depth: 3
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Document ID", name: "id", widget: "string", required: false }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   # ─── ✨ Add New Product Documentation ──────────────────
   # PMs use this collection to scaffold docs for a brand-new product
   # without waiting for engineering. The first segment of "Path" becomes

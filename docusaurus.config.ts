@@ -189,6 +189,7 @@ const config: Config = {
           items: [
             { type: 'html', value: '<span class="dropdown-section-label">AI & Advanced</span>' },
             { type: 'docSidebar', sidebarId: 'voicebotToolsSidebar', label: 'VoiceBot Tools' },
+            { type: 'docSidebar', sidebarId: 'cqaSidebar', label: 'CQA — Conversation Quality Analysis' },
             { type: 'docSidebar', sidebarId: 'genAiSidebar', label: 'Gen AI' },
             { type: 'docSidebar', sidebarId: 'chatbotSidebar', label: 'Chatbot Platform' },
             { type: 'docSidebar', sidebarId: 'agentStreamSidebar', label: 'AgentStream' },

@@ -149,6 +149,11 @@
     { "source": "/api/balance", "destination": "/docs/voice-v1/api-reference/balance", "permanent": true },
     { "source": "/api/account-balance", "destination": "/docs/voice-v1/api-reference/balance", "permanent": true },
 
+    { "source": "/docs/new-products/cqa/overview", "destination": "/docs/cqa/overview", "permanent": true },
+    { "source": "/docs/new-products/cqa/:path*", "destination": "/docs/cqa/:path*", "permanent": true },
+    { "source": "/docs/new-products/api-reference/cqa-api-reference", "destination": "/docs/cqa/overview", "permanent": true },
+    { "source": "/api/cqa", "destination": "/docs/cqa/overview", "permanent": true },
+
     { "source": "/api/exomind-tasker-api", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
     { "source": "/api/exomind-tasker", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
     { "source": "/api/exomind", "destination": "/docs/gen-ai/overview", "permanent": true },

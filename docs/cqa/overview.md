@@ -1,7 +1,16 @@
 ---
+id: overview
 title: CQA API Reference
-sidebar_label: CQA — API Reference
+sidebar_label: Overview
+slug: /cqa/overview
 description: "Exotel CQA (Conversation Quality Analysis) — AI-powered quality scoring for contact center interactions. Data Import API, Analysis API, and CSV file schemas."
+keywords:
+  - CQA
+  - Conversation Quality Analysis
+  - Quality scoring
+  - Contact center quality
+  - AI quality analysis
+  - Call analytics
 ---
 # CQA API Reference
 
