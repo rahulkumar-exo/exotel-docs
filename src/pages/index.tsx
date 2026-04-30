@@ -39,8 +39,8 @@ const products = [
     available: true,
   },
   {
-    title: 'CQA',
-    description: 'Conversation Quality Analysis — AI-powered quality scoring for contact center interactions with Data Import, Analysis APIs, and CSV file schemas.',
+    title: 'Conversation Quality Analysis',
+    description: 'AI-powered quality scoring for contact center interactions — Data Import API, Analysis API, and CSV file schemas.',
     link: '/docs/cqa/overview',
     available: true,
   },
