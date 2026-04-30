@@ -2940,5 +2940,38 @@
     "response_time_ms": 1804,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-04-30T10:45:02.489Z",
+    "question": "what is this \"mum1\"",
+    "question_length": 19,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3512,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Categories",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-categories"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "WhatsApp Quality Rating",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/quality-rating"
+      }
+    ],
+    "answer_length": 329
   }
 ]
