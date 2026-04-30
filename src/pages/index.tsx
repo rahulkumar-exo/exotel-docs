@@ -39,6 +39,12 @@ const products = [
     available: true,
   },
   {
+    title: 'CQA',
+    description: 'Conversation Quality Analysis — AI-powered quality scoring for contact center interactions with Data Import, Analysis APIs, and CSV file schemas.',
+    link: '/docs/cqa/overview',
+    available: true,
+  },
+  {
     title: 'ExoVerify',
     description: 'Verify phone numbers with SMS OTP for secure user authentication.',
     link: '/docs/exoverify-api/overview',
