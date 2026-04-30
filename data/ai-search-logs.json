@@ -3014,5 +3014,38 @@
     "response_time_ms": 1026,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-04-30T11:04:28.370Z",
+    "question": "how many numbers can i purchase in a day, is there a limit",
+    "question_length": 58,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3895,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 366
   }
 ]
