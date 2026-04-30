@@ -218,9 +218,6 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'rcsOmnichannelSidebar', label: 'RCS Omnichannel' },
             { type: 'docSidebar', sidebarId: 'urlShorteningSidebar', label: 'URL Shortening' },
             { type: 'docSidebar', sidebarId: 'mcpServerSidebar', label: 'MCP Server' },
-            { type: 'html', value: '<span class="dropdown-separator"></span>' },
-            { type: 'html', value: '<span class="dropdown-section-label">New Products</span>' },
-            { type: 'docSidebar', sidebarId: 'newProductsSidebar', label: '✨ New Products' },
           ],
         },
         // ── Guides ──

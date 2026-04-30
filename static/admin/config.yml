@@ -5,396 +5,421 @@ backend:
   base_url: https://exotel-docs.vercel.app
   auth_endpoint: api/auth
 
+# These three settings give every CMS entry a "View on web" button so PMs
+# can always see exactly where their content lives — both the collection
+# list AND each individual entry shows a clickable URL preview.
+site_url: https://developer.exotel.com
+display_url: https://developer.exotel.com
+logo_url: https://developer.exotel.com/img/exotel-logo.png
+
 media_folder: static/img/uploads
 public_folder: /img/uploads
 
 publish_mode: editorial_workflow
 
+# ──────────────────────────────────────────────────────────────────────────
+# COLLECTION CONVENTIONS — read this if you're touching this file
+# ──────────────────────────────────────────────────────────────────────────
+# Every collection has:
+#   description   — one-liner shown ABOVE the collection in the CMS, telling
+#                   PMs the live URL pattern + which navbar entry it appears
+#                   under. PMs need this to mentally map "this CMS folder"
+#                   → "this section of the site".
+#   preview_path  — Decap renders a "View on web" link next to each entry,
+#                   constructed from this template + the entry's slug.
+#                   For nested collections {{slug}} = the Path field value.
+#   no `id` field — the `id` frontmatter field is intentionally NOT exposed.
+#                   Docusaurus generates URLs from the file path; letting PMs
+#                   set `id` lets them accidentally override the URL and end
+#                   up with mismatched paths (this bit us once with CQA).
+# ──────────────────────────────────────────────────────────────────────────
+
 collections:
-  # ─── Voice v1 ───────────────────────────────────────────
+  # ═══════════════════════════════════════════════════════════════════════
+  #  CORE API REFERENCE — appears in: navbar → API Reference dropdown
+  # ═══════════════════════════════════════════════════════════════════════
+
   - name: voice-v1
-    label: "Voice v1"
+    label: "📞 Voice v1"
+    description: "📍 docs/voice-v1/* → developer.exotel.com/docs/voice-v1/*  •  📂 Navbar: API Reference → Voice → Voice v1"
     folder: docs/voice-v1
+    preview_path: "docs/voice-v1/{{slug}}"
     create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path (e.g. api-reference/connect-two-numbers)", index_file: overview } }
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Title", name: "title", widget: "string", hint: "Page heading shown at the top of the page" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false, hint: "Short label for the left sidebar (defaults to title if empty)" }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false, hint: "Lower numbers appear higher. Leave blank to keep current order." }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── Voice v2 (CCM) ────────────────────────────────────
   - name: voice-v2
-    label: "Voice v2 (CCM)"
+    label: "📞 Voice v2 (CCM)"
+    description: "📍 docs/voice-api/* → developer.exotel.com/docs/voice-api/*  •  📂 Navbar: API Reference → Voice → Voice v2"
     folder: docs/voice-api
+    preview_path: "docs/voice-api/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── Voice v3 ───────────────────────────────────────────
   - name: voice-v3
-    label: "Voice v3"
+    label: "📞 Voice v3"
+    description: "📍 docs/voice-v3/* → developer.exotel.com/docs/voice-v3/*  •  📂 Navbar: API Reference → Voice → Voice v3"
     folder: docs/voice-v3
+    preview_path: "docs/voice-v3/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── SMS API ────────────────────────────────────────────
   - name: sms-api
-    label: "SMS"
+    label: "💬 SMS"
+    description: "📍 docs/sms-api/* → developer.exotel.com/docs/sms-api/*  •  📂 Navbar: API Reference → Messaging → SMS"
     folder: docs/sms-api
+    preview_path: "docs/sms-api/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── ExoPhones ──────────────────────────────────────────
-  - name: exophones
-    label: "ExoPhones"
-    folder: docs/exophones
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── Heartbeat ──────────────────────────────────────────
-  - name: heartbeat
-    label: "Heartbeat"
-    folder: docs/heartbeat
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── Call Campaigns ─────────────────────────────────────
-  - name: campaigns
-    label: "Call Campaigns"
-    folder: docs/campaigns
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── SMS Campaigns ──────────────────────────────────────
-  - name: sms-campaigns
-    label: "SMS Campaigns"
-    folder: docs/sms-campaigns
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── Campaigns - Contacts ───────────────────────────────
-  - name: campaigns-contacts
-    label: "Campaigns - Contacts"
-    folder: docs/campaigns-contacts
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── Campaigns - Lists ──────────────────────────────────
-  - name: campaign-lists
-    label: "Campaigns - Lists"
-    folder: docs/campaign-lists
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── Lead Assist (GreenPin) ─────────────────────────────
-  - name: lead-assist
-    label: "Lead Assist (ExoBridge - GreenPin)"
-    folder: docs/lead-assist
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── Lead Assist (GreenVN) ──────────────────────────────
-  - name: lead-assist-greenvn
-    label: "Lead Assist (ExoBridge - GreenVN)"
-    folder: docs/lead-assist-greenvn
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── Lead Assist (Settings) ─────────────────────────────
-  - name: lead-assist-settings
-    label: "Lead Assist (ExoBridge - Settings)"
-    folder: docs/lead-assist-settings
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── Users ──────────────────────────────────────────────
-  - name: users
-    label: "Users"
-    folder: docs/users
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── ExoVerify ──────────────────────────────────────────
-  - name: exoverify-api
-    label: "ExoVerify"
-    folder: docs/exoverify-api
-    create: true
-    nested:
-      depth: 3
-    meta: { path: { widget: string, label: "Path", index_file: overview } }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── WhatsApp - Messaging API ───────────────────────────
   - name: whatsapp-api
-    label: "WhatsApp - Messaging API"
+    label: "💬 WhatsApp"
+    description: "📍 docs/whatsapp-api/* → developer.exotel.com/docs/whatsapp-api/*  •  📂 Navbar: API Reference → Messaging → WhatsApp"
     folder: docs/whatsapp-api
+    preview_path: "docs/whatsapp-api/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── RCS - Omnichannel ──────────────────────────────────
   - name: rcs-omnichannel
-    label: "RCS - Omnichannel APIs"
+    label: "💬 RCS - Omnichannel"
+    description: "📍 docs/rcs-omnichannel/* → developer.exotel.com/docs/rcs-omnichannel/*  •  📂 Navbar: API Reference → Other → RCS Omnichannel"
     folder: docs/rcs-omnichannel
+    preview_path: "docs/rcs-omnichannel/{{slug}}"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── URL Shortening ─────────────────────────────────────
-  - name: url-shortening
-    label: "URL Shortening"
-    folder: docs/url-shortening
+  - name: exoverify-api
+    label: "🔐 ExoVerify"
+    description: "📍 docs/exoverify-api/* → developer.exotel.com/docs/exoverify-api/*  •  📂 Navbar: API Reference → Platform → ExoVerify"
+    folder: docs/exoverify-api
+    preview_path: "docs/exoverify-api/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── Contact Center APIs v6 ─────────────────────────────
-  - name: contact-center
-    label: "Contact Center APIs v6"
-    folder: docs/contact-center
+  - name: exophones
+    label: "📲 ExoPhones"
+    description: "📍 docs/exophones/* → developer.exotel.com/docs/exophones/*  •  📂 Navbar: API Reference → Platform → ExoPhones"
+    folder: docs/exophones
+    preview_path: "docs/exophones/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── Contact Center APIs v4 ─────────────────────────────
-  - name: contact-center-v4
-    label: "Contact Center APIs v4"
-    folder: docs/contact-center-v4
+  - name: users
+    label: "👤 Users"
+    description: "📍 docs/users/* → developer.exotel.com/docs/users/*  •  📂 Navbar: API Reference → Platform → Users"
+    folder: docs/users
+    preview_path: "docs/users/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── IP-PSTN WebRTC ─────────────────────────────────────
-  - name: ip-pstn-webrtc
-    label: "IP-PSTN WebRTC SDK"
-    folder: docs/ip-pstn-webrtc
+  - name: heartbeat
+    label: "❤️ Heartbeat"
+    description: "📍 docs/heartbeat/* → developer.exotel.com/docs/heartbeat/*  •  📂 Navbar: API Reference → Platform → Heartbeat"
+    folder: docs/heartbeat
+    preview_path: "docs/heartbeat/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── Legs ───────────────────────────────────────────────
   - name: legs
-    label: "Legs"
+    label: "🦵 Legs"
+    description: "📍 docs/legs/* → developer.exotel.com/docs/legs/*  •  📂 Navbar: API Reference → Platform → Legs"
     folder: docs/legs
+    preview_path: "docs/legs/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── Gen AI ─────────────────────────────────────────────
-  - name: gen-ai
-    label: "Gen AI"
-    folder: docs/gen-ai
+  - name: url-shortening
+    label: "🔗 URL Shortening"
+    description: "📍 docs/url-shortening/* → developer.exotel.com/docs/url-shortening/*  •  📂 Navbar: Products → SDKs & Integrations → URL Shortening"
+    folder: docs/url-shortening
+    preview_path: "docs/url-shortening/{{slug}}"
     create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── MCP Server ─────────────────────────────────────────
-  - name: mcp-server
-    label: "Exotel MCP Server"
-    folder: docs/mcp-server
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+  # ═══════════════════════════════════════════════════════════════════════
+  #  CONTACT CENTER — appears in: navbar → API Reference + Products
+  # ═══════════════════════════════════════════════════════════════════════
 
-  # ─── FAQs ───────────────────────────────────────────────
-  - name: faqs
-    label: "FAQs"
-    folder: docs/faqs
+  - name: contact-center
+    label: "🏢 Contact Center APIs v6"
+    description: "📍 docs/contact-center/* → developer.exotel.com/docs/contact-center/*  •  📂 Navbar: API Reference + Products → Contact Center → v6"
+    folder: docs/contact-center
+    preview_path: "docs/contact-center/{{slug}}"
     create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
-      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  # ─── CQA — Conversation Quality Analysis ───────────────
-  - name: cqa
-    label: "CQA — Conversation Quality Analysis"
-    folder: docs/cqa
-    create: true
-    nested:
-      depth: 3
+    nested: { depth: 3 }
     meta: { path: { widget: string, label: "Path", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── ✨ Add New Product Documentation ──────────────────
-  # PMs use this collection to scaffold docs for a brand-new product
-  # without waiting for engineering. The first segment of "Path" becomes
-  # the product folder, e.g. Path = "my-new-product/overview" creates
-  #   docs/new-products/my-new-product/overview.md
-  # served at  /docs/new-products/my-new-product/overview
-  # Pages auto-appear in the "New Products" navbar section (autogenerated
-  # sidebar). Once a product graduates to a top-level collection, an
-  # engineer promotes it into its own folder + sidebar.
-  - name: new-products
-    label: "✨ Add New Product Documentation"
-    folder: docs/new-products
+  - name: contact-center-v4
+    label: "🏢 Contact Center APIs v4"
+    description: "📍 docs/contact-center-v4/* → developer.exotel.com/docs/contact-center-v4/*  •  📂 Navbar: API Reference + Products → Contact Center → v4"
+    folder: docs/contact-center-v4
+    preview_path: "docs/contact-center-v4/{{slug}}"
     create: true
-    nested:
-      depth: 4
-    meta: { path: { widget: string, label: "Path (use <product-slug>/<page>, e.g. my-product/overview)", index_file: overview } }
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ═══════════════════════════════════════════════════════════════════════
+  #  AI & ADVANCED — appears in: navbar → Products → AI & Advanced
+  # ═══════════════════════════════════════════════════════════════════════
+
+  - name: cqa
+    label: "🤖 CQA — Conversation Quality Analysis"
+    description: "📍 docs/cqa/* → developer.exotel.com/docs/cqa/*  •  📂 Navbar: Products → AI & Advanced → CQA"
+    folder: docs/cqa
+    preview_path: "docs/cqa/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path (e.g. overview, api-reference/data-import)", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: gen-ai
+    label: "🤖 Gen AI"
+    description: "📍 docs/gen-ai/* → developer.exotel.com/docs/gen-ai/*  •  📂 Navbar: Products → AI & Advanced → Gen AI"
+    folder: docs/gen-ai
+    preview_path: "docs/gen-ai/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: ip-pstn-webrtc
+    label: "🔌 IP-PSTN WebRTC SDK"
+    description: "📍 docs/ip-pstn-webrtc/* → developer.exotel.com/docs/ip-pstn-webrtc/*  •  📂 Navbar: Products → SDKs & Integrations → WebRTC SDK"
+    folder: docs/ip-pstn-webrtc
+    preview_path: "docs/ip-pstn-webrtc/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: mcp-server
+    label: "🔌 Exotel MCP Server"
+    description: "📍 docs/mcp-server/* → developer.exotel.com/docs/mcp-server/*  •  📂 Navbar: Products → SDKs & Integrations → MCP Server"
+    folder: docs/mcp-server
+    preview_path: "docs/mcp-server/{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ═══════════════════════════════════════════════════════════════════════
+  #  CAMPAIGNS — appears in: navbar → Products → Campaigns
+  # ═══════════════════════════════════════════════════════════════════════
+
+  - name: campaigns
+    label: "📣 Call Campaigns"
+    description: "📍 docs/campaigns/* → developer.exotel.com/docs/campaigns/*  •  📂 Navbar: Products → Campaigns → Call Campaigns"
+    folder: docs/campaigns
+    preview_path: "docs/campaigns/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: sms-campaigns
+    label: "📣 SMS Campaigns"
+    description: "📍 docs/sms-campaigns/* → developer.exotel.com/docs/sms-campaigns/*  •  📂 Navbar: Products → Campaigns → SMS Campaigns"
+    folder: docs/sms-campaigns
+    preview_path: "docs/sms-campaigns/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: campaigns-contacts
+    label: "📣 Campaigns - Contacts"
+    description: "📍 docs/campaigns-contacts/* → developer.exotel.com/docs/campaigns-contacts/*  •  📂 Navbar: Products → Campaigns → Contacts"
+    folder: docs/campaigns-contacts
+    preview_path: "docs/campaigns-contacts/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: campaign-lists
+    label: "📣 Campaigns - Lists"
+    description: "📍 docs/campaign-lists/* → developer.exotel.com/docs/campaign-lists/*  •  📂 Navbar: Products → Campaigns → Lists"
+    folder: docs/campaign-lists
+    preview_path: "docs/campaign-lists/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ═══════════════════════════════════════════════════════════════════════
+  #  LEAD ASSIST — appears in: navbar → Products → Lead Assist
+  # ═══════════════════════════════════════════════════════════════════════
+
+  - name: lead-assist
+    label: "🎯 Lead Assist (GreenPin)"
+    description: "📍 docs/lead-assist/* → developer.exotel.com/docs/lead-assist/*  •  📂 Navbar: Products → Lead Assist → GreenPin"
+    folder: docs/lead-assist
+    preview_path: "docs/lead-assist/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: lead-assist-greenvn
+    label: "🎯 Lead Assist (GreenVN)"
+    description: "📍 docs/lead-assist-greenvn/* → developer.exotel.com/docs/lead-assist-greenvn/*  •  📂 Navbar: Products → Lead Assist → GreenVN"
+    folder: docs/lead-assist-greenvn
+    preview_path: "docs/lead-assist-greenvn/{{slug}}"
+    create: true
+    nested: { depth: 3 }
+    meta: { path: { widget: string, label: "Path", index_file: overview } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: lead-assist-settings
+    label: "🎯 Lead Assist (Settings)"
+    description: "📍 docs/lead-assist-settings/* → developer.exotel.com/docs/lead-assist-settings/*  •  📂 Navbar: Products → Lead Assist → Settings"
+    folder: docs/lead-assist-settings
+    preview_path: "docs/lead-assist-settings/{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ═══════════════════════════════════════════════════════════════════════
+  #  GUIDES — appears in: navbar → Guides
+  # ═══════════════════════════════════════════════════════════════════════
+
+  - name: faqs
+    label: "❓ FAQs"
+    description: "📍 docs/faqs/* → developer.exotel.com/docs/faqs/*  •  📂 Navbar: Guides → Help → FAQs & Regulations"
+    folder: docs/faqs
+    preview_path: "docs/faqs/{{slug}}"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ═══════════════════════════════════════════════════════════════════════
+  #  ✨ SCAFFOLD A NEW PRODUCT — for products without their own collection yet
+  # ═══════════════════════════════════════════════════════════════════════
+  # Use this when you're documenting a brand-new product that doesn't yet
+  # have its own dedicated CMS collection. Once the product matures (you
+  # have several pages and want a top-level navbar entry), ping
+  # rahul.kumar@exotel.com — we'll graduate it like we did with CQA.
+
+  - name: new-products
+    label: "✨ NEW: Add a brand-new product"
+    description: "📍 docs/new-products/<your-product>/* → developer.exotel.com/docs/new-products/<your-product>/*  •  📂 Navbar: Products → New Products → Your product appears here automatically  •  ⚠️ ALWAYS start the Path with your product slug (e.g. 'my-product/overview') — DON'T start with 'api-reference/' as that creates orphan files"
+    folder: docs/new-products
+    preview_path: "docs/new-products/{{slug}}"
+    create: true
+    nested: { depth: 4 }
+    meta: { path: { widget: string, label: "Path — start with your product slug, e.g. 'my-product/overview' or 'my-product/api-reference/send'", index_file: overview } }
     fields:
       - { label: "Title", name: "title", widget: "string", hint: "Page title — e.g. 'My Product API Overview'" }
-      - { label: "Document ID", name: "id", widget: "string", required: false }
       - { label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false, hint: "Short label for the left sidebar (defaults to filename)" }
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false, hint: "Lower numbers appear higher in the sidebar" }
       - { label: "Body", name: "body", widget: "markdown" }
