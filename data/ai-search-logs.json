@@ -3006,5 +3006,13 @@
       }
     ],
     "answer_length": 3336
+  },
+  {
+    "timestamp": "2026-04-30T11:04:09.408Z",
+    "question": "how many numbers can i purchase in a day, is  there a limit",
+    "question_length": 59,
+    "response_time_ms": 1026,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
