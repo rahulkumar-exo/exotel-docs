@@ -3385,5 +3385,13 @@
       }
     ],
     "answer_length": 422
+  },
+  {
+    "timestamp": "2026-05-01T09:03:12.087Z",
+    "question": "What audio codec / sample rate?\n\nPCM 8k?\nμ-law?\nslin?",
+    "question_length": 53,
+    "response_time_ms": 962,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
