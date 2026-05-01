@@ -3286,5 +3286,38 @@
       }
     ],
     "answer_length": 1579
+  },
+  {
+    "timestamp": "2026-05-01T08:25:54.611Z",
+    "question": "how do we invoke the transfer from backend ?",
+    "question_length": 44,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4416,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Categories",
+        "product": "chatbot",
+        "url": "/docs/chatbot/categories"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      }
+    ],
+    "answer_length": 1050
   }
 ]
