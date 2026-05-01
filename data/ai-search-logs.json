@@ -3492,5 +3492,38 @@
       }
     ],
     "answer_length": 2750
+  },
+  {
+    "timestamp": "2026-05-01T11:56:26.139Z",
+    "question": "tell me about exoml",
+    "question_length": 19,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6430,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Assign to Flow",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/assign-to-flow"
+      },
+      {
+        "title": "ExoMind Tasker",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/api-reference/exomind-tasker"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow.mdx"
+      }
+    ],
+    "answer_length": 1800
   }
 ]
