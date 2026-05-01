@@ -3640,5 +3640,38 @@
       }
     ],
     "answer_length": 2017
+  },
+  {
+    "timestamp": "2026-05-01T19:45:40.004Z",
+    "question": "i am getting forbidden error",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3743,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 809
   }
 ]
