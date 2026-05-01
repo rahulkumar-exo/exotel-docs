@@ -3426,5 +3426,38 @@
       }
     ],
     "answer_length": 985
+  },
+  {
+    "timestamp": "2026-05-01T11:24:08.110Z",
+    "question": "how can we redirect a call using xml?",
+    "question_length": 37,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4420,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 449
   }
 ]
