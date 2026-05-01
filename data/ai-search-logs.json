@@ -3558,5 +3558,38 @@
       }
     ],
     "answer_length": 4948
+  },
+  {
+    "timestamp": "2026-05-01T14:27:43.475Z",
+    "question": "Call users automatically from my backend system using API\nPlay a pre-recorded IVR message (audio hosted on a public URL) via ExoML\nCapture user input using DTMF (e.g., press 1, press 2)\nSend the user input to my server via webhook (Passthru)\nBased on the input, either continue the IVR flow or store the response in my system",
+    "question_length": 325,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13716,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "IVR Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/ivr-applet-guide"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      }
+    ],
+    "answer_length": 3300
   }
 ]
