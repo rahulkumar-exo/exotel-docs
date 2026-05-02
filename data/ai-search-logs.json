@@ -3821,5 +3821,38 @@
       }
     ],
     "answer_length": 75
+  },
+  {
+    "timestamp": "2026-05-02T05:44:11.726Z",
+    "question": "i have a existing connection with you for my organisation. I want to connect my call to some voice bot if connected number are unavilable to take the call. then voice bot should take the call and do the process",
+    "question_length": 210,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10990,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 2881
   }
 ]
