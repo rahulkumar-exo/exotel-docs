@@ -3755,5 +3755,38 @@
       }
     ],
     "answer_length": 6718
+  },
+  {
+    "timestamp": "2026-05-02T05:21:48.347Z",
+    "question": "Provide the JSON format",
+    "question_length": 23,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5784,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Create Pin Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      }
+    ],
+    "answer_length": 2458
   }
 ]
