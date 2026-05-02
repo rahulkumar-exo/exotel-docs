@@ -3788,5 +3788,38 @@
       }
     ],
     "answer_length": 2458
+  },
+  {
+    "timestamp": "2026-05-02T05:39:23.975Z",
+    "question": "HI Exotel",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1204,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Network Requirements",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/network-requirements"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      }
+    ],
+    "answer_length": 75
   }
 ]
