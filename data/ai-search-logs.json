@@ -3854,5 +3854,38 @@
       }
     ],
     "answer_length": 2881
+  },
+  {
+    "timestamp": "2026-05-02T05:50:55.420Z",
+    "question": "with Exotel VoiceBot Tool , can i achieve the same",
+    "question_length": 50,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6603,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "VoiceBot Tools Server",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/overview.mdx"
+      },
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 1625
   }
 ]
