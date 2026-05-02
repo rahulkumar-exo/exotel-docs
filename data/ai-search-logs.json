@@ -3722,5 +3722,38 @@
       }
     ],
     "answer_length": 1585
+  },
+  {
+    "timestamp": "2026-05-02T05:20:54.784Z",
+    "question": "Share the Exact Reqyest for below - Parameter\tRequired\tType\tDescription\nFrom\tYes\tString\tPhone number called first. Preferably in E.164 format.\nTo\tYes\tString\tCustomer phone number. Preferably in E.164 format.\nCallerId\tYes\tString\tYour ExoPhone/virtual number.\nCallType\tNo\tString\ttrans for transactional calls.\nTimeLimit\tNo\tInteger\tMax call duration in seconds. Max: 14400 (4 hours).\nTimeOut\tNo\tInteger\tRing timeout in seconds.\nWaitUrl\tNo\tString\tAudio URL (WAV) played while waiting. Recommended: under ",
+    "question_length": 1185,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8751,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      },
+      {
+        "title": "Call Details (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow.mdx"
+      }
+    ],
+    "answer_length": 6718
   }
 ]
