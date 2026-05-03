@@ -4184,5 +4184,38 @@
       }
     ],
     "answer_length": 7487
+  },
+  {
+    "timestamp": "2026-05-03T13:45:32.786Z",
+    "question": "Did you have a place in Saudi arabia",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4470,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Greeting Messages",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/greeting-message"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 386
   }
 ]
