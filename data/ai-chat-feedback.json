@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "timestamp": "2026-05-04T07:08:14.829Z",
+    "response_id": "test-1777878494",
+    "vote": "down",
+    "question": "Test question",
+    "answer_excerpt": "Test answer",
+    "comment": "Testing feedback round-trip",
+    "user_agent": "curl/8.7.1"
+  }
+]
