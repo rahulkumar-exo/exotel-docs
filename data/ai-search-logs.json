@@ -4689,5 +4689,39 @@
       }
     ],
     "answer_length": 3050
+  },
+  {
+    "timestamp": "2026-05-04T23:00:38.857Z",
+    "response_id": "e5e9f3e5-d569-48e2-8f23-ebe920ced437",
+    "question": "How to get a call transcript/summary using the API?",
+    "question_length": 51,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4654,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 858
   }
 ]
