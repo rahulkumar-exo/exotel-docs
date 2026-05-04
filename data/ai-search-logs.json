@@ -4655,5 +4655,39 @@
       }
     ],
     "answer_length": 4254
+  },
+  {
+    "timestamp": "2026-05-04T21:44:04.790Z",
+    "response_id": "1fe7d0fe-94a8-4f29-9d6e-14f72a9b7990",
+    "question": "How can I set up a webhook for when a call has ended?",
+    "question_length": 53,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8097,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 3050
   }
 ]
