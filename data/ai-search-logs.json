@@ -4453,5 +4453,39 @@
       }
     ],
     "answer_length": 3068
+  },
+  {
+    "timestamp": "2026-05-04T10:04:31.514Z",
+    "response_id": "8d3da262-40df-4cca-92c9-e0303eb6edb0",
+    "question": "in exotal to number is my personal nuber but what about from number that is my extol numbee or what?",
+    "question_length": 100,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8187,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 1870
   }
 ]
