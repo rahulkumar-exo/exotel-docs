@@ -4,6 +4,9 @@ import styles from './styles.module.css';
 interface Message {
   role: 'user' | 'assistant';
   content: string;
+  response_id?: string;
+  question?: string;          // the question this answer responded to (for feedback)
+  feedback?: 'up' | 'down' | 'submitted';
 }
 
 interface Source {
@@ -26,6 +29,80 @@ function formatMarkdown(text: string): string {
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
     // Line breaks
     .replace(/\n/g, '<br />');
+}
+
+/**
+ * Compact 👍/👎 bar shown below each assistant message.
+ * On 👎 click, expands inline to ask "what was wrong?" with an optional textarea.
+ */
+function FeedbackBar({
+  state,
+  onSubmit,
+}: {
+  state: 'up' | 'down' | 'submitted' | undefined;
+  onSubmit: (vote: 'up' | 'down', comment?: string) => void;
+}): JSX.Element {
+  const [showCommentBox, setShowCommentBox] = useState(false);
+  const [comment, setComment] = useState('');
+
+  if (state === 'submitted') {
+    return <div className={styles.feedbackThanks}>Thanks for the feedback! 🙏</div>;
+  }
+
+  if (showCommentBox) {
+    return (
+      <div className={styles.feedbackCommentBox}>
+        <textarea
+          className={styles.feedbackTextarea}
+          placeholder="What was wrong with this answer? (optional)"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          rows={2}
+          maxLength={1000}
+        />
+        <div className={styles.feedbackCommentActions}>
+          <button
+            type="button"
+            className={styles.feedbackSubmitButton}
+            onClick={() => onSubmit('down', comment.trim() || undefined)}
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            className={styles.feedbackSkipButton}
+            onClick={() => onSubmit('down')}
+          >
+            Skip
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.feedbackBar}>
+      <span className={styles.feedbackPrompt}>Was this helpful?</span>
+      <button
+        type="button"
+        className={styles.feedbackButton}
+        onClick={() => onSubmit('up')}
+        title="This answer was helpful"
+        aria-label="Helpful"
+      >
+        👍
+      </button>
+      <button
+        type="button"
+        className={styles.feedbackButton}
+        onClick={() => setShowCommentBox(true)}
+        title="This answer was not helpful"
+        aria-label="Not helpful"
+      >
+        👎
+      </button>
+    </div>
+  );
 }
 
 const SUGGESTED_QUESTIONS = [
@@ -111,7 +188,12 @@ export default function AiChat(): JSX.Element {
         throw new Error(errMsg);
       }
 
-      const assistantMessage: Message = { role: 'assistant', content: data.answer };
+      const assistantMessage: Message = {
+        role: 'assistant',
+        content: data.answer,
+        response_id: data.response_id,
+        question,
+      };
       setMessages(prev => [...prev, assistantMessage]);
 
       if (data.sources?.length) {
@@ -144,6 +226,38 @@ export default function AiChat(): JSX.Element {
   const clearChat = () => {
     setMessages([]);
     setSources([]);
+  };
+
+  // Submit thumbs-up/down (and optional comment) to /api/chat?action=feedback
+  const submitFeedback = async (
+    messageIndex: number,
+    vote: 'up' | 'down',
+    comment?: string,
+  ) => {
+    const msg = messages[messageIndex];
+    if (!msg || !msg.response_id) return;
+
+    // Optimistically mark as submitted so the UI updates immediately
+    setMessages((prev) =>
+      prev.map((m, i) => (i === messageIndex ? { ...m, feedback: 'submitted' } : m)),
+    );
+
+    try {
+      await fetch('/api/chat?action=feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          response_id: msg.response_id,
+          vote,
+          comment: comment || null,
+          question: msg.question || null,
+          answer_excerpt: (msg.content || '').slice(0, 500),
+        }),
+      });
+    } catch (err) {
+      // Best-effort: don't surface errors. The optimistic UI stays.
+      console.error('feedback submission failed', err);
+    }
   };
 
   return (
@@ -244,14 +358,22 @@ export default function AiChat(): JSX.Element {
                       </svg>
                     </div>
                   )}
-                  <div
-                    className={styles.messageContent}
-                    dangerouslySetInnerHTML={{
-                      __html: msg.role === 'assistant'
-                        ? formatMarkdown(msg.content)
-                        : msg.content,
-                    }}
-                  />
+                  <div className={styles.messageContentWrapper}>
+                    <div
+                      className={styles.messageContent}
+                      dangerouslySetInnerHTML={{
+                        __html: msg.role === 'assistant'
+                          ? formatMarkdown(msg.content)
+                          : msg.content,
+                      }}
+                    />
+                    {msg.role === 'assistant' && msg.response_id && (
+                      <FeedbackBar
+                        state={msg.feedback}
+                        onSubmit={(vote, comment) => submitFeedback(i, vote, comment)}
+                      />
+                    )}
+                  </div>
                 </div>
               ))
             )}

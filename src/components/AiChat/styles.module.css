@@ -481,3 +481,127 @@
     font-size: 13px;
   }
 }
+
+/* ─── Feedback bar (👍/👎 below each assistant message) ───────────────── */
+.messageContentWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.feedbackBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 12px;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.feedbackPrompt {
+  margin-right: 4px;
+  font-size: 11px;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.feedbackButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.feedbackButton:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+}
+
+.feedbackButton:active {
+  transform: translateY(0);
+}
+
+.feedbackThanks {
+  margin-top: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--ifm-color-success-darkest, #2e7d32);
+  background: rgba(46, 125, 50, 0.08);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.feedbackCommentBox {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedbackTextarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--ifm-color-emphasis-900);
+  background: var(--ifm-background-color);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  resize: vertical;
+  min-height: 50px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.feedbackTextarea:focus {
+  border-color: var(--ifm-color-primary);
+}
+
+.feedbackCommentActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.feedbackSubmitButton,
+.feedbackSkipButton {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.feedbackSubmitButton {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.feedbackSubmitButton:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.feedbackSkipButton {
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.feedbackSkipButton:hover {
+  background: rgba(0, 0, 0, 0.04);
+}

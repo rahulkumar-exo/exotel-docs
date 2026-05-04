@@ -21,18 +21,19 @@ const shouldPull = args.includes('--pull');
 
 const REPO_ROOT = path.resolve(__dirname, '..');
 const LOG_PATH = path.join(REPO_ROOT, 'data', 'ai-search-logs.json');
+const FEEDBACK_PATH = path.join(REPO_ROOT, 'data', 'ai-chat-feedback.json');
 
 if (shouldPull) {
   console.log('Pulling latest from git...\n');
   // Use stash+pull+pop so this works even with a dirty working copy.
-  // Fetch only data/ai-search-logs.json so we don't disturb other in-progress edits.
+  // Fetch only the log files so we don't disturb other in-progress edits.
   try {
     execSync(
-      'git fetch origin main --quiet && git checkout origin/main -- data/ai-search-logs.json',
+      'git fetch origin main --quiet && git checkout origin/main -- data/ai-search-logs.json data/ai-chat-feedback.json',
       { cwd: REPO_ROOT, stdio: 'inherit' }
     );
   } catch (e) {
-    console.warn('Could not pull latest log file from git — analyzing local copy only.');
+    console.warn('Could not pull latest log files from git — analyzing local copy only.');
   }
 }
 
@@ -42,10 +43,14 @@ if (!fs.existsSync(LOG_PATH)) {
 }
 
 let logs = JSON.parse(fs.readFileSync(LOG_PATH, 'utf-8'));
+let feedback = fs.existsSync(FEEDBACK_PATH)
+  ? JSON.parse(fs.readFileSync(FEEDBACK_PATH, 'utf-8'))
+  : [];
 
 if (days != null) {
   const cutoff = Date.now() - days * 24 * 60 * 60 * 1000;
   logs = logs.filter((l) => new Date(l.timestamp).getTime() >= cutoff);
+  feedback = feedback.filter((f) => new Date(f.timestamp).getTime() >= cutoff);
 }
 
 if (rawMode) {
@@ -156,3 +161,43 @@ logs
   .forEach((l, i) => {
     console.log(`  ${i + 1}. [${l.timestamp.slice(0, 10)}] ${l.question}`);
   });
+
+// ────────────────────────────────────────────────────────────────────────
+// Feedback (👍/👎) analytics
+// ────────────────────────────────────────────────────────────────────────
+console.log('\n=== User Feedback (👍/👎) ===');
+if (feedback.length === 0) {
+  console.log('No feedback events recorded in this window yet.');
+} else {
+  const ups = feedback.filter((f) => f.vote === 'up').length;
+  const downs = feedback.filter((f) => f.vote === 'down').length;
+  const totalFb = ups + downs;
+  const ratio = totalFb > 0 ? ((ups / totalFb) * 100).toFixed(1) : '0.0';
+  const coverage = total > 0 ? ((totalFb / total) * 100).toFixed(1) : '0.0';
+
+  console.log(`Total feedback events: ${totalFb}`);
+  console.log(`  👍 Helpful:     ${ups} (${totalFb > 0 ? ((ups / totalFb) * 100).toFixed(1) : 0}%)`);
+  console.log(`  👎 Not helpful: ${downs} (${totalFb > 0 ? ((downs / totalFb) * 100).toFixed(1) : 0}%)`);
+  console.log(`Feedback coverage: ${totalFb} of ${total} responses (${coverage}%)`);
+  console.log(`Helpfulness ratio: ${ratio}% positive`);
+
+  const downvoted = feedback.filter((f) => f.vote === 'down');
+  if (downvoted.length > 0) {
+    console.log(`\n--- 👎 Negative feedback (${downvoted.length}) — fix these ---`);
+    downvoted.slice(0, 20).forEach((f, i) => {
+      const ts = (f.timestamp || '').slice(0, 10);
+      const q = (f.question || '(no question captured)').slice(0, 80);
+      const c = f.comment ? `\n      Comment: ${f.comment}` : '';
+      console.log(`  ${i + 1}. [${ts}] Q: ${q}${c}`);
+    });
+  }
+
+  const withComments = feedback.filter((f) => f.comment && f.comment.trim());
+  if (withComments.length > 0) {
+    console.log(`\n--- All feedback comments (${withComments.length}) ---`);
+    withComments.slice(0, 20).forEach((f, i) => {
+      const ts = (f.timestamp || '').slice(0, 10);
+      console.log(`  ${i + 1}. [${ts}] ${f.vote === 'up' ? '👍' : '👎'} "${f.comment.slice(0, 200)}"`);
+    });
+  }
+}

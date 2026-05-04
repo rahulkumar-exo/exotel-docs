@@ -6,6 +6,7 @@
  */
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+const crypto = require('crypto');
 
 // ---------------------------------------------------------------------------
 // Search query logging
@@ -13,14 +14,20 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const LOG_REPO = 'rahulkumar-exo/exotel-docs';
 const LOG_FILE_PATH = 'data/ai-search-logs.json';
+const FEEDBACK_FILE_PATH = 'data/ai-chat-feedback.json';
 const MAX_QUESTION_LEN = 500; // truncate very long questions
+const MAX_COMMENT_LEN = 1000; // truncate very long feedback comments
 
 /**
- * Append a search query to data/ai-search-logs.json via the GitHub API.
- * Fire-and-forget: caller should NOT await this to avoid adding latency
- * to the chat response.
+ * Generic helper: append a JSON object to a JSON-array file in GitHub.
+ * Used by both search-query logging and chat feedback logging.
+ *
+ * @param {string} filePath  GitHub repo path, e.g. 'data/ai-search-logs.json'
+ * @param {object} entry     The object to push onto the array
+ * @param {string} commitMsg Commit message for the GitHub write
+ * @param {string} botName   Committer name (shows up in git log)
  */
-async function logSearchQuery(entry) {
+async function appendToGitHubFile(filePath, entry, commitMsg, botName) {
   const token = (process.env.CMS_GITHUB_TOKEN || process.env.GITHUB_TOKEN || '').trim();
   if (!token) return; // No token configured — skip silently
 
@@ -30,7 +37,7 @@ async function logSearchQuery(entry) {
     'Content-Type': 'application/json',
   };
 
-  const url = `https://api.github.com/repos/${LOG_REPO}/contents/${LOG_FILE_PATH}`;
+  const url = `https://api.github.com/repos/${LOG_REPO}/contents/${filePath}`;
 
   // Retry up to 2 times to handle SHA conflicts from concurrent writes
   for (let attempt = 0; attempt < 2; attempt++) {
@@ -53,9 +60,9 @@ async function logSearchQuery(entry) {
 
       // Write back
       const putBody = {
-        message: `ai-search-log: ${entry.question.slice(0, 60)}${entry.question.length > 60 ? '...' : ''}`,
+        message: commitMsg,
         content: Buffer.from(JSON.stringify(logs, null, 2) + '\n').toString('base64'),
-        committer: { name: 'AI Search Logger', email: 'ai-bot@exotel.com' },
+        committer: { name: botName, email: 'ai-bot@exotel.com' },
         ...(sha ? { sha } : {}),
       };
 
@@ -68,12 +75,29 @@ async function logSearchQuery(entry) {
       if (putRes.ok) return; // success
       if (putRes.status === 409 || putRes.status === 422) continue; // SHA conflict, retry
       const errText = await putRes.text();
-      console.error('[ai-search-log] write error:', putRes.status, errText);
+      console.error(`[${botName}] write error:`, putRes.status, errText);
       return;
     } catch (err) {
-      console.error('[ai-search-log] attempt', attempt + 1, 'failed:', err.message);
+      console.error(`[${botName}] attempt`, attempt + 1, 'failed:', err.message);
     }
   }
+}
+
+/**
+ * Append a search query to data/ai-search-logs.json via the GitHub API.
+ */
+async function logSearchQuery(entry) {
+  const msg = `ai-search-log: ${entry.question.slice(0, 60)}${entry.question.length > 60 ? '...' : ''}`;
+  return appendToGitHubFile(LOG_FILE_PATH, entry, msg, 'AI Search Logger');
+}
+
+/**
+ * Append a chat feedback entry (👍/👎 + optional comment) to
+ * data/ai-chat-feedback.json via the GitHub API.
+ */
+async function logFeedback(entry) {
+  const msg = `ai-chat-feedback: ${entry.vote} on "${(entry.question || '').slice(0, 50)}"`;
+  return appendToGitHubFile(FEEDBACK_FILE_PATH, entry, msg, 'AI Feedback Logger');
 }
 
 // API-developer keywords — when present in query, boost API reference docs
@@ -192,6 +216,46 @@ module.exports = async function handler(req, res) {
 
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // -----------------------------------------------------------------------
+  // Feedback action — POST /api/chat?action=feedback
+  // Body: { response_id, vote: "up"|"down", comment?, question?, answer_excerpt? }
+  // -----------------------------------------------------------------------
+  const action = (req.query && req.query.action) || (req.body && req.body.action);
+  if (action === 'feedback') {
+    const {
+      response_id,
+      vote,
+      comment,
+      question: feedbackQuestion,
+      answer_excerpt,
+    } = req.body || {};
+
+    if (!response_id || typeof response_id !== 'string') {
+      return res.status(400).json({ error: 'response_id is required' });
+    }
+    if (vote !== 'up' && vote !== 'down') {
+      return res.status(400).json({ error: 'vote must be "up" or "down"' });
+    }
+
+    const feedbackEntry = {
+      timestamp: new Date().toISOString(),
+      response_id,
+      vote,
+      question: feedbackQuestion ? String(feedbackQuestion).slice(0, MAX_QUESTION_LEN) : null,
+      answer_excerpt: answer_excerpt ? String(answer_excerpt).slice(0, MAX_COMMENT_LEN) : null,
+      comment: comment ? String(comment).slice(0, MAX_COMMENT_LEN) : null,
+      user_agent: req.headers['user-agent'] ? String(req.headers['user-agent']).slice(0, 200) : null,
+    };
+
+    try {
+      await logFeedback(feedbackEntry);
+    } catch (e) {
+      console.error('[ai-chat-feedback] log failed:', e.message);
+    }
+
+    return res.status(200).json({ ok: true, message: 'Thanks for the feedback!' });
   }
 
   const startTime = Date.now();
@@ -350,10 +414,15 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
       product: c.product,
     })))].slice(0, 4);
 
+    // Generate a unique response_id so the frontend can later submit
+    // 👍/👎 feedback that maps back to this exact answer.
+    const response_id = crypto.randomUUID();
+
     // Build log entry — log BEFORE returning so the write completes reliably.
     // Adds ~300-500ms to the request but ensures no queries are dropped.
     const logEntry = {
       timestamp: new Date().toISOString(),
+      response_id,
       question: question.slice(0, MAX_QUESTION_LEN),
       question_length: question.length,
       has_history: Array.isArray(history) && history.length > 0,
@@ -376,6 +445,7 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
       answer,
       sources,
       model: usedModel,
+      response_id,
     });
   } catch (error) {
     console.error('Chat API error:', error);
