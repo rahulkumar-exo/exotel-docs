@@ -4419,5 +4419,39 @@
       }
     ],
     "answer_length": 3395
+  },
+  {
+    "timestamp": "2026-05-04T07:30:41.826Z",
+    "response_id": "00975886-881b-4262-a096-92633209dd46",
+    "question": "there is some issue in https://developer.exotel.com/docs/voice-v1/api-reference/status-callback\nwebhook,\nthe call status is completed but i am not getting recording Url \nit is coming as null, for some calls, but for most calls i am getting the url\nhow is is possible?",
+    "question_length": 267,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12749,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 3068
   }
 ]
