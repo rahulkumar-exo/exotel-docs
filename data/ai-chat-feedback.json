@@ -7,5 +7,14 @@
     "answer_excerpt": "Test answer",
     "comment": "Testing feedback round-trip",
     "user_agent": "curl/8.7.1"
+  },
+  {
+    "timestamp": "2026-05-04T07:08:40.087Z",
+    "response_id": "b7b95fed-b2bb-4486-9004-9fa3df7b3f86",
+    "vote": "up",
+    "question": "How do I make a call?",
+    "answer_excerpt": "You can make calls using Exotel through various methods, including the Exotel Dashboard, different API versions, or bulk campaigns.\n\n### 1. Via the Exotel Dashboard\n\nFor manual click-to-call:\n1.  Log in to the Exotel Dashboard.\n2.  Navigate to the dialer or click-to-call option.\n3.  Enter the customer's phone number.\n4.  Select the ExoPhone to use as the caller ID.\n5.  Click Call.\n\nExotel will first call your agent, and once they answer, it will dial the customer, connecting both parties. The cu",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
   }
 ]
