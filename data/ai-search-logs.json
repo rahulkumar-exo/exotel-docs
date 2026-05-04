@@ -4487,5 +4487,39 @@
       }
     ],
     "answer_length": 1870
+  },
+  {
+    "timestamp": "2026-05-04T10:10:02.822Z",
+    "response_id": "0ed9be1e-ace4-40d6-94a4-1a393e28f40a",
+    "question": "where to i get exotal number",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3933,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      }
+    ],
+    "answer_length": 969
   }
 ]
