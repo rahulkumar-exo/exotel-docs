@@ -246,12 +246,6 @@ const config: Config = {
             { type: 'doc', docId: 'references/changelog', label: 'Changelog' },
           ],
         },
-        // ── Builders ──
-        {
-          to: '/builders',
-          label: 'Builders',
-          position: 'left',
-        },
         // ── Right side ──
         {
           href: 'https://my.exotel.com',
