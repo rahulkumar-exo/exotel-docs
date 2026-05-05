@@ -4995,5 +4995,39 @@
       }
     ],
     "answer_length": 607
+  },
+  {
+    "timestamp": "2026-05-05T07:48:55.127Z",
+    "response_id": "4e92eef6-1d54-4490-82a5-678bf320a0b8",
+    "question": "how to paly or download call recording",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3670,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 831
   }
 ]
