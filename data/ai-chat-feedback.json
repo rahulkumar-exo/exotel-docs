@@ -16,5 +16,14 @@
     "answer_excerpt": "You can make calls using Exotel through various methods, including the Exotel Dashboard, different API versions, or bulk campaigns.\n\n### 1. Via the Exotel Dashboard\n\nFor manual click-to-call:\n1.  Log in to the Exotel Dashboard.\n2.  Navigate to the dialer or click-to-call option.\n3.  Enter the customer's phone number.\n4.  Select the ExoPhone to use as the caller ID.\n5.  Click Call.\n\nExotel will first call your agent, and once they answer, it will dial the customer, connecting both parties. The cu",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2026-05-05T06:48:09.539Z",
+    "response_id": "411c0bb4-a2a4-417d-977d-30256e95f6c7",
+    "vote": "down",
+    "question": "your api is available UAE",
+    "answer_excerpt": "Based on the provided documentation, Exotel's APIs are primarily served from the following regions:\n\n*   **Singapore**: `api.exotel.com` (for Voice and SMS APIs)\n*   **Mumbai (India)**: `api.in.exotel.com` (for Voice and SMS APIs), and `integrationscore.mum1.exotel.com` (for WebRTC Token Generation API)\n\nThe documentation does not specify API availability or dedicated endpoints for the UAE.\n\nIf you require information on API availability in specific regions like the UAE, it's best to reach out t",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
   }
 ]
