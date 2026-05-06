@@ -5233,5 +5233,39 @@
       }
     ],
     "answer_length": 2669
+  },
+  {
+    "timestamp": "2026-05-06T04:38:02.307Z",
+    "response_id": "b678383c-798e-47b1-a529-f1f29b7cc6ba",
+    "question": "how i can buy number",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3243,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      }
+    ],
+    "answer_length": 826
   }
 ]
