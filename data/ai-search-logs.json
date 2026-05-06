@@ -5267,5 +5267,39 @@
       }
     ],
     "answer_length": 826
+  },
+  {
+    "timestamp": "2026-05-06T04:45:13.996Z",
+    "response_id": "58cb5b9b-b6dd-4105-b498-92451ac127d0",
+    "question": "what limit gives for trail account",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3966,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/status-codes"
+      },
+      {
+        "title": "WhatsApp Messaging Limits",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/messaging-limits"
+      },
+      {
+        "title": "WhatsApp Messaging Limits",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/messaging-limits"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      }
+    ],
+    "answer_length": 431
   }
 ]
