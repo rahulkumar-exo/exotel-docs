@@ -5791,5 +5791,39 @@
       }
     ],
     "answer_length": 753
+  },
+  {
+    "timestamp": "2026-05-06T20:45:56.495Z",
+    "response_id": "5bbb5070-f078-42a4-a0fb-f72e3302e8b9",
+    "question": "i want when any message comes through sms dont need whatsapp eetc so it call our webhook with that full sms",
+    "question_length": 107,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3350,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Long SMS (Concatenated Messages)",
+        "product": "sms-support",
+        "url": "/docs/sms-support/long-sms"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 970
   }
 ]
