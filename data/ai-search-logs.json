@@ -5199,5 +5199,39 @@
       }
     ],
     "answer_length": 5103
+  },
+  {
+    "timestamp": "2026-05-06T04:03:16.690Z",
+    "response_id": "b69cc0dc-3355-4637-8758-41f5ea11cd53",
+    "question": "i want to build a system when a customer calls out system will lay tune and while tune is getting played it will call a web hook to get to which number it require to call once it fetch iut then transfer call",
+    "question_length": 207,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13923,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 2669
   }
 ]
