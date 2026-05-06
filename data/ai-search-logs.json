@@ -5673,5 +5673,13 @@
     "response_time_ms": 1192,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-06T14:50:33.339Z",
+    "question": "I have an AI agent service voice service where I already have the websocket connection for the media streaming.\nand I have tested it with the twilio phone calling already and its working.\nbut now I want to integrate the exotel in my system how can I do that?\nIts to make the inbound and outbound calls both and we also support the webhook for the incoming calls.\nSo how can I integrate this service in our system?",
+    "question_length": 413,
+    "response_time_ms": 1956,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
