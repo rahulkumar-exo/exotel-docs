@@ -5479,5 +5479,39 @@
       }
     ],
     "answer_length": 4736
+  },
+  {
+    "timestamp": "2026-05-06T06:54:44.850Z",
+    "response_id": "9e02da8f-e012-4571-b442-f81a6a667b54",
+    "question": "i have voicebot applet and app hwo to call usign that to a nunber",
+    "question_length": 65,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7757,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      }
+    ],
+    "answer_length": 2555
   }
 ]
