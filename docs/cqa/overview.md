@@ -3,7 +3,9 @@ id: overview
 title: CQA API Reference
 sidebar_label: Overview
 slug: /cqa/overview
-description: "Exotel CQA (Conversation Quality Analysis) — AI-powered quality scoring for contact center interactions. Data Import API, Analysis API, and CSV file schemas."
+description: Exotel CQA (Conversation Quality Analysis) — AI-powered quality
+  scoring for contact center interactions. Data Import API, Analysis API, and
+  CSV file schemas.
 keywords:
   - CQA
   - Conversation Quality Analysis
@@ -263,7 +265,6 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch
 | Parameter Name           | Mandatory / Optional | Type    | Description                                                                                                        |
 | ------------------------ | -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
 | `interactions`           | Mandatory            | array   | List of interaction objects, each following the same schema as the single ingest endpoint. Minimum 1, maximum 100. |
-| `skip_duplication_check` | Optional             | boolean | If `true`, skip deduplication by `external_interaction_id`. Default: `false`.                                      |
 
 
 ### Response Fields
@@ -300,7 +301,6 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/files
 | `callback_url`           | Optional             | string  | Default callback URL stored per row (same semantics as single ingest; no HTTP callback from ingress).                                                                                                                                               |
 | `column_mapping`         | Optional             | object  | Maps your CSV headers to canonical column names. Keys are your original headers (trimmed, lowercased); values are canonical names. Ignored for NDJSON. See [CSV Schema](#csv-schema) for canonical names.                                           |
 | `metadata`               | Optional             | object  | Default metadata merged into every row. After merge, each row should respect the **50-key** metadata limit enforced for batch/single ingest; avoid large default maps that push merged rows over the limit.                                         |
-| `skip_duplication_check` | Optional             | boolean | If `true`, skip deduplication. Default: `false`.                                                                                                                                                                                                    |
 
 
 ### File Processing Limits
