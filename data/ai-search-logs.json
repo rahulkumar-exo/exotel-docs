@@ -5825,5 +5825,39 @@
       }
     ],
     "answer_length": 970
+  },
+  {
+    "timestamp": "2026-05-07T04:52:06.007Z",
+    "response_id": "3238538d-0dbe-4431-adc4-11aa3604dca4",
+    "question": "for voice v1 api, what is the error code if the balance is insuffecient to call",
+    "question_length": 79,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3992,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 600
   }
 ]
