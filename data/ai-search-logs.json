@@ -6079,5 +6079,39 @@
       }
     ],
     "answer_length": 2617
+  },
+  {
+    "timestamp": "2026-05-07T15:50:38.356Z",
+    "response_id": "80358549-3263-4444-920f-668a1300d29c",
+    "question": "ifi used pipecat it wiil helps or this  or not ?",
+    "question_length": 48,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11869,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      },
+      {
+        "title": "Your First Call Flow",
+        "product": "getting-started",
+        "url": "/docs/getting-started/first-call-flow"
+      },
+      {
+        "title": "WhatsApp Template Categories",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-categories"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/status-codes"
+      }
+    ],
+    "answer_length": 3480
   }
 ]
