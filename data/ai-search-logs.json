@@ -5995,5 +5995,39 @@
       }
     ],
     "answer_length": 1531
+  },
+  {
+    "timestamp": "2026-05-07T11:47:12.427Z",
+    "response_id": "e5770771-2863-4eb8-a6ab-eab9b7297965",
+    "question": "I want to connect my Exotel number to a SIP endpoint (Vapi). Please tell me how to enable SIP Trunking / Voice Gateway / SIP Connect on my Exotel account, and where I can find the SIP credentials / SIP domain. My goal is to forward calls to this SIP URI: sip:e89dbd54-5af8-4ab4-a576-e8444a6fe574@sip.vapi.ai. What plan/setting/KYC is required?",
+    "question_length": 343,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14049,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Virtual SIP Trunking (vSIP)",
+        "product": "vsip",
+        "url": "/docs/vsip/overview"
+      },
+      {
+        "title": "vSIP Master Support Guide",
+        "product": "vsip",
+        "url": "/docs/vsip/master-guide"
+      },
+      {
+        "title": "vSIP to Flow Integration Guide",
+        "product": "vsip",
+        "url": "/docs/vsip/flow-integration"
+      },
+      {
+        "title": "vSIP Master Support Guide",
+        "product": "vsip",
+        "url": "/docs/vsip/master-guide"
+      }
+    ],
+    "answer_length": 3672
   }
 ]
