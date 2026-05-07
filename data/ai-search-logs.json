@@ -6029,5 +6029,13 @@
       }
     ],
     "answer_length": 3672
+  },
+  {
+    "timestamp": "2026-05-07T12:45:41.562Z",
+    "question": "Look i want to make an outbound call through api and connect it to my flow which will transmit data to my app ws so how to setup for this",
+    "question_length": 137,
+    "response_time_ms": 1579,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
