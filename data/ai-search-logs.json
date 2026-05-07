@@ -5961,5 +5961,39 @@
       }
     ],
     "answer_length": 570
+  },
+  {
+    "timestamp": "2026-05-07T11:29:33.116Z",
+    "response_id": "51438b3b-5a3f-4eeb-807d-977e6e8b37e4",
+    "question": "can i get total count of inbound and outbound calls",
+    "question_length": 51,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8717,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 1531
   }
 ]
