@@ -6401,5 +6401,39 @@
       }
     ],
     "answer_length": 4950
+  },
+  {
+    "timestamp": "2026-05-08T12:53:25.141Z",
+    "response_id": "0c6b8fcf-4893-427c-8625-5b515c602000",
+    "question": "not getting recording url in the api response",
+    "question_length": 45,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7580,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Call Details (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      }
+    ],
+    "answer_length": 1873
   }
 ]
