@@ -6537,5 +6537,39 @@
       }
     ],
     "answer_length": 1063
+  },
+  {
+    "timestamp": "2026-05-08T19:37:26.485Z",
+    "response_id": "2add2dd7-2e4b-4d5e-9265-93aca6feea40",
+    "question": "Iam developing Multi tenant SAAS platform for appointment booking and CRM with voice agent and whatsapp booking",
+    "question_length": 111,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8719,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Flow and API Configuration for Voice AI & CC Platforms",
+        "product": "vsip",
+        "url": "/docs/vsip/flow-api-configuration"
+      },
+      {
+        "title": "Flow and API Configuration for Voice AI & CC Platforms",
+        "product": "vsip",
+        "url": "/docs/vsip/flow-api-configuration"
+      },
+      {
+        "title": "Chatbot Platform",
+        "product": "chatbot",
+        "url": "/docs/chatbot/overview"
+      },
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      }
+    ],
+    "answer_length": 2907
   }
 ]
