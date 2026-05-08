@@ -6113,5 +6113,39 @@
       }
     ],
     "answer_length": 3480
+  },
+  {
+    "timestamp": "2026-05-08T06:01:17.903Z",
+    "response_id": "6093f8ca-98ad-4e46-9948-ab42053d2b89",
+    "question": "How do I make a call?",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9904,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 5011
   }
 ]
