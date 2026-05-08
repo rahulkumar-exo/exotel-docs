@@ -6299,5 +6299,39 @@
       }
     ],
     "answer_length": 1164
+  },
+  {
+    "timestamp": "2026-05-08T10:43:07.653Z",
+    "response_id": "b496896e-b841-4c1b-bf52-4a68ce7189c9",
+    "question": "see we have teams 1, 2 etc now how we route the call like we need to create the new exho phone for each team so that if lets say person A call to number i then it get trigger to team 1 and same for 2nd team",
+    "question_length": 206,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7013,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      }
+    ],
+    "answer_length": 2155
   }
 ]
