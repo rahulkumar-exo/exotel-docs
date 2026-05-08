@@ -6503,5 +6503,39 @@
       }
     ],
     "answer_length": 404
+  },
+  {
+    "timestamp": "2026-05-08T17:02:36.136Z",
+    "response_id": "d2fa0132-53ff-4a62-9df9-752371e5995d",
+    "question": "I want to purchase a virtual number for my team. In my team, there are three telecallers. What will be the pricing?",
+    "question_length": 115,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4083,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 1063
   }
 ]
