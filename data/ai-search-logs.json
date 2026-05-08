@@ -6265,5 +6265,39 @@
       }
     ],
     "answer_length": 1361
+  },
+  {
+    "timestamp": "2026-05-08T10:20:24.690Z",
+    "response_id": "bf382b22-5fac-4de9-9f6a-486f61f6a3c9",
+    "question": "what is CallType in outbound call?",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4268,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 1164
   }
 ]
