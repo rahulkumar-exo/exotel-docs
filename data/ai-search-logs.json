@@ -6181,5 +6181,39 @@
       }
     ],
     "answer_length": 2640
+  },
+  {
+    "timestamp": "2026-05-08T06:37:19.228Z",
+    "response_id": "c4eca02b-9284-40cf-986b-8d7724886bd8",
+    "question": "what is streaming",
+    "question_length": 17,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2481,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      }
+    ],
+    "answer_length": 457
   }
 ]
