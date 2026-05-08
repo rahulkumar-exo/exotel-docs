@@ -6333,5 +6333,39 @@
       }
     ],
     "answer_length": 2155
+  },
+  {
+    "timestamp": "2026-05-08T11:13:46.080Z",
+    "response_id": "d1238a2d-0bd2-47cd-999a-c90eea3f46ba",
+    "question": "ok great now tell me lets say we are using connect applet there are two methods manual entry and dynamic webhook url right so tell me does both of the methods any kind of info of the incoming call or only 2nd method that is webhook end point only and what info it give us",
+    "question_length": 271,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5754,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/connect"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 1484
   }
 ]
