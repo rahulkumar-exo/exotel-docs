@@ -227,7 +227,7 @@ module.exports = async function handler(req, res) {
   const isFeedback =
     (req.query && req.query.action === 'feedback') ||
     (req.body && req.body.action === 'feedback');
-  if (process.env.CHAT_TEMPORARILY_DISABLED === '1' && !isFeedback) {
+  if ((process.env.CHAT_TEMPORARILY_DISABLED || '').trim() === '1' && !isFeedback) {
     return res.status(200).json({
       answer:
         'The AI assistant is temporarily unavailable. Please use the **search bar** at the top of the page, which works for keyword-based queries.',

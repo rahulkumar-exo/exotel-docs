@@ -12,7 +12,7 @@ module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   // Kill switch — set TRY_IT_TEMPORARILY_DISABLED=1 in Vercel env to disable.
-  if (process.env.TRY_IT_TEMPORARILY_DISABLED === '1') {
+  if ((process.env.TRY_IT_TEMPORARILY_DISABLED || '').trim() === '1') {
     return res.status(503).json({
       error: 'The Try It console is temporarily unavailable. Please use the curl/code examples on the page to make API calls directly.',
       disabled: true,
