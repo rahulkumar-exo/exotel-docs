@@ -34,5 +34,14 @@
     "answer_excerpt": null,
     "comment": null,
     "user_agent": "curl/8.7.1"
+  },
+  {
+    "timestamp": "2026-05-09T05:39:25.105Z",
+    "response_id": "verify-test",
+    "vote": "up",
+    "question": null,
+    "answer_excerpt": null,
+    "comment": null,
+    "user_agent": "curl/8.7.1"
   }
 ]
