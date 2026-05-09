@@ -25,5 +25,14 @@
     "answer_excerpt": "Based on the provided documentation, Exotel's APIs are primarily served from the following regions:\n\n*   **Singapore**: `api.exotel.com` (for Voice and SMS APIs)\n*   **Mumbai (India)**: `api.in.exotel.com` (for Voice and SMS APIs), and `integrationscore.mum1.exotel.com` (for WebRTC Token Generation API)\n\nThe documentation does not specify API availability or dedicated endpoints for the UAE.\n\nIf you require information on API availability in specific regions like the UAE, it's best to reach out t",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2026-05-09T05:33:01.363Z",
+    "response_id": "test-killswitch-check",
+    "vote": "up",
+    "question": null,
+    "answer_excerpt": null,
+    "comment": null,
+    "user_agent": "curl/8.7.1"
   }
 ]
