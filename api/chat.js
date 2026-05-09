@@ -219,6 +219,25 @@ module.exports = async function handler(req, res) {
   }
 
   // -----------------------------------------------------------------------
+  // Kill switch — used to disable AI chat without removing the endpoint.
+  // Set CHAT_TEMPORARILY_DISABLED=1 in Vercel env to activate.
+  // Does NOT block /api/chat?action=feedback so users can still vote on
+  // existing answers in their session history.
+  // -----------------------------------------------------------------------
+  const isFeedback =
+    (req.query && req.query.action === 'feedback') ||
+    (req.body && req.body.action === 'feedback');
+  if (process.env.CHAT_TEMPORARILY_DISABLED === '1' && !isFeedback) {
+    return res.status(200).json({
+      answer:
+        'The AI assistant is temporarily unavailable. Please use the **search bar** at the top of the page, which works for keyword-based queries.',
+      sources: [],
+      model: 'disabled',
+      response_id: null,
+    });
+  }
+
+  // -----------------------------------------------------------------------
   // Feedback action — POST /api/chat?action=feedback
   // Body: { response_id, vote: "up"|"down", comment?, question?, answer_excerpt? }
   // -----------------------------------------------------------------------
