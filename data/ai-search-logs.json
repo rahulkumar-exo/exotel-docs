@@ -6911,5 +6911,13 @@
       }
     ],
     "answer_length": 509
+  },
+  {
+    "timestamp": "2026-05-11T11:21:13.833Z",
+    "question": "virtual numbers for inbound calls",
+    "question_length": 33,
+    "response_time_ms": 3730,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
