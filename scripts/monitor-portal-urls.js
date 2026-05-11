@@ -71,7 +71,16 @@ const REPO_ROOT = path.resolve(__dirname, '..');
 // The daily QA report reads from here when summarising uptime.
 const LOG_DIR = path.join(require('os').homedir(), '.claude', 'data');
 const LOG_PATH = path.join(LOG_DIR, 'exotel-uptime-monitor.json');
-const HOST = 'developer.exotel.com';
+
+// Two hosts to probe:
+//   1. developer.exotel.com — public CloudFront entry point (production traffic path)
+//   2. exotel-docs-tau.vercel.app — direct Vercel alias for the new Exotel-team project
+// Probing both lets us distinguish CloudFront-routing failures from Vercel project
+// failures. If exotel-docs-tau is failing but developer.exotel.com is fine, the issue
+// is with the Vercel project. If developer.exotel.com fails but exotel-docs-tau works,
+// it's CloudFront / Apache routing.
+const HOSTS = ['developer.exotel.com', 'exotel-docs-tau.vercel.app'];
+const HOST = HOSTS[0]; // primary — used in legacy single-host paths below
 
 const args = process.argv.slice(2);
 const quiet = args.includes('--quiet');
@@ -82,7 +91,7 @@ const probesPerUrl = probesArg >= 0 ? parseInt(args[probesArg + 1], 10) : PROBES
 // HTTP probe
 // ─────────────────────────────────────────────────────────────────────────
 
-function probeOnce(urlPath, method = 'GET', body = null) {
+function probeOnce(urlPath, method = 'GET', body = null, hostname = HOST) {
   return new Promise((resolve) => {
     const cb = `cb=${Date.now()}${Math.random().toString(36).slice(2, 8)}`;
     const sep = urlPath.includes('?') ? '&' : '?';
@@ -90,7 +99,7 @@ function probeOnce(urlPath, method = 'GET', body = null) {
 
     const start = Date.now();
     const opts = {
-      hostname: HOST,
+      hostname,
       port: 443,
       path: fullPath,
       method,
@@ -141,8 +150,14 @@ function probeOnce(urlPath, method = 'GET', body = null) {
   for (const target of URLS_TO_MONITOR) {
     const expectedStatus = target.expectedStatus || 200;
     const probes = [];
-    for (let i = 0; i < probesPerUrl; i++) {
-      probes.push(await probeOnce(target.url, target.method || 'GET', target.body));
+    // Probe both hosts (CloudFront entry + direct Vercel alias) so we can
+    // distinguish where failures live. Half the probes go to each host.
+    const half = Math.max(1, Math.floor(probesPerUrl / 2));
+    for (let i = 0; i < half; i++) {
+      probes.push(await probeOnce(target.url, target.method || 'GET', target.body, HOSTS[0]));
+    }
+    for (let i = 0; i < probesPerUrl - half; i++) {
+      probes.push(await probeOnce(target.url, target.method || 'GET', target.body, HOSTS[1]));
     }
 
     const successes = probes.filter((p) => p.status === expectedStatus).length;
