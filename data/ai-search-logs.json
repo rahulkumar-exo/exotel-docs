@@ -6809,5 +6809,39 @@
       }
     ],
     "answer_length": 1775
+  },
+  {
+    "timestamp": "2026-05-11T09:09:56.307Z",
+    "response_id": "a83ad9d4-4e1e-4e65-8521-ecfe2f1cfc13",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4906,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      },
+      {
+        "title": "Error Code Dictionary",
+        "product": "references",
+        "url": "/docs/references/error-codes"
+      }
+    ],
+    "answer_length": 2227
   }
 ]
