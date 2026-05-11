@@ -22,11 +22,11 @@ Exotel CQA (Conversation Quality Analysis) provides AI-powered quality analysis 
 
 This document covers the public API surface:
 
-- **Data Import API** -- Push interactions into CQA via REST (single, batch, or file-based).
-- **Analysis API** -- Retrieve detailed quality analysis results.
-- **File Schemas** -- CSV format specifications for bulk ingestion.
+* **Data Import API** -- Push interactions into CQA via REST (single, batch, or file-based).
+* **Analysis API** -- Retrieve detailed quality analysis results.
+* **File Schemas** -- CSV format specifications for bulk ingestion.
 
----
+- - -
 
 ## Base URL
 
@@ -38,40 +38,36 @@ https://{host}/cqa
 
 Replace `{host}` with the hostname of your CQA deployment (e.g. `cqa.exotel.com`).
 
----
+- - -
 
 ## Authentication
 
 All Data Import and Analysis API endpoints authenticate via an API key passed in the `X-API-Key` header.
-
 
 | API Surface     | Auth Method | Header             |
 | --------------- | ----------- | ------------------ |
 | Data Import API | API Key     | `X-API-Key: {key}` |
 | Analysis API    | API Key     | `X-API-Key: {key}` |
 
-
 ### API Keys
 
 API keys are scoped to a single account and are used for all programmatic ingestion and analysis retrieval. API keys can be created and managed through the CQA dashboard.
 
----
+- - -
 
 ## Rate Limits
 
 API endpoints are rate-limited per tenant (account). 
 
-- Requests that exceed the limit receive `429 Too Many Requests` with error code `**RATE_LIMIT_EXCEEDED**` (see [Response Envelope](#response-envelope)).
-- Too many **concurrent file jobs** is a separate `429` with code `**TOO_MANY_JOBS`**.
-
+* Requests that exceed the limit receive `429 Too Many Requests` with error code `**RATE_LIMIT_EXCEEDED**` (see [Response Envelope](#response-envelope)).
+* Too many **concurrent file jobs** is a separate `429` with code `**TOO_MANY_JOBS`\*\*.
 
 | Endpoint Pattern                  | Method | Default tenant limit (typical) |
 | --------------------------------- | ------ | ------------------------------ |
 | `/ingress/interactions`* (ingest) | POST   | 100 requests per minute        |
-| `/ingress/`** (tracking)          | GET    | 300 requests per minute        |
+| `/ingress/`\*\* (tracking)        | GET    | 300 requests per minute        |
 
-
----
+- - -
 
 ## Response Envelope
 
@@ -100,18 +96,15 @@ All Data Import and Analysis API endpoints return responses in a common envelope
 }
 ```
 
-
 | Field        | Type    | Description                                                                    |
 | ------------ | ------- | ------------------------------------------------------------------------------ |
 | `status`     | integer | HTTP status code mirrored in the body.                                         |
 | `request_id` | string  | Unique request identifier for tracing and support.                             |
 | `message`    | string  | Human-readable detail (present on many errors; may be omitted when redundant). |
 | `data`       | object  | Response payload (present on success).                                         |
-| `error`      | object  | Present on failure. Contains `**code`** only.                                  |
-
+| `error`      | object  | Present on failure. Contains `**code`\*\* only.                                |
 
 **Error Codes:**
-
 
 | Code                  | HTTP Status | Description                                                                                                      |
 | --------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -125,8 +118,7 @@ All Data Import and Analysis API endpoints return responses in a common envelope
 | `TOO_MANY_JOBS`       | 429         | Too many concurrent file ingestion jobs for this account.                                                        |
 | `INTERNAL_ERROR`      | 500         | An unexpected server error occurred.                                                                             |
 
-
----
+- - -
 
 # Data Import API
 
@@ -135,7 +127,7 @@ The Data Import API is the primary external integration point for pushing intera
 **Base path:** `/api/v1/accounts/{account_id}/ingress`
 **Auth:** `X-API-Key` header
 
----
+- - -
 
 ## Ingest a Single Interaction
 
@@ -151,22 +143,20 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions
 
 **Content requirement:** At least one of `audio_url`, `transcript_url` must be provided.
 
-
-| Parameter Name            | Mandatory / Optional | Type              | Description                                                                                                                                             |
-| ------------------------- | -------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `external_interaction_id` | Mandatory            | string            | Your unique identifier for this interaction. Used for deduplication.                                                                                    |
-| `channel_type`            | Mandatory            | string            | Interaction channel. Recognized values: `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`. Other values are accepted (not rejected). |
-| `source`                  | Optional             | string            | Identifies the originating system (e.g. `my-pbx`, `genesys`).                                                                                           |
-| `language`                | Optional             | string            | Language code (e.g. `en`, `hi`, `es`).                                                                                                                  |
-| `interaction_start_time`  | Optional             | string (ISO-8601) | When the interaction started (e.g. `2026-04-01T10:30:00Z`).                                                                                             |
-| `duration_seconds`        | Optional             | integer           | Duration of the interaction in seconds.                                                                                                                 |
-| `audio_format`            | Optional             | string            | Audio format hint (e.g. `WAV`, `MP3`, `OGG`).                                                                                                           |
-| `callback_url`            | Optional             | string            | Webhook URL for status update notifications.                                                                                                            |
-| `audio_url`               | Mandatory if transcript_url is not provided             | string            | Direct URL to the audio recording.                                                                                                                      |
-| `transcript_url`          | Mandatory if audio_url is not provided             | string            | Direct URL to the transcript file.                                                                                                                      |
-| `pii_redacted`            | Optional             | boolean           | Whether PII has already been redacted in the provided content. Default: `false`. If you have already redacted PII either by your own means or using the CQA provided capability, set this parameter as `true` (used internally to skip PII redaction again)                                                                        |
-| `metadata`                | Optional             | object            | Arbitrary key-value pairs for tagging. Maximum 50 keys. Values can be strings, numbers, or booleans.                                                    |
-
+| Parameter Name            | Mandatory / Optional                        | Type              | Description                                                                                                                                                                                                                                                 |
+| ------------------------- | ------------------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `external_interaction_id` | Mandatory                                   | string            | Your unique identifier for this interaction. Used for deduplication.                                                                                                                                                                                        |
+| `channel_type`            | Mandatory                                   | string            | Interaction channel. Recognized values: `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`. Other values are accepted (not rejected).                                                                                                                              |
+| `source`                  | Optional                                    | string            | Identifies the originating system (e.g. `my-pbx`, `genesys`).                                                                                                                                                                                               |
+| `language`                | Optional                                    | string            | Language code (e.g. `en`, `hi`, `es`).                                                                                                                                                                                                                      |
+| `interaction_start_time`  | Optional                                    | string (ISO-8601) | When the interaction started (e.g. `2026-04-01T10:30:00Z`).                                                                                                                                                                                                 |
+| `duration_seconds`        | Optional                                    | integer           | Duration of the interaction in seconds.                                                                                                                                                                                                                     |
+| `audio_format`            | Optional                                    | string            | Audio format hint (e.g. `WAV`, `MP3`, `OGG`).                                                                                                                                                                                                               |
+| `callback_url`            | Optional                                    | string            | Webhook URL for status update notifications.                                                                                                                                                                                                                |
+| `audio_url`               | Mandatory if transcript_url is not provided | string            | Direct URL to the audio recording.                                                                                                                                                                                                                          |
+| `transcript_url`          | Mandatory if audio_url is not provided      | string            | Direct URL to the transcript file.                                                                                                                                                                                                                          |
+| `pii_redacted`            | Optional                                    | boolean           | Whether PII has already been redacted in the provided content. Default: `false`. If you have already redacted PII either by your own means or using the CQA provided capability, set this parameter as `true` (used internally to skip PII redaction again) |
+| `metadata`                | Optional                                    | object            | Arbitrary key-value pairs for tagging. Maximum 50 keys. Values can be strings, numbers, or booleans.                                                                                                                                                        |
 
 ### Example Request
 
@@ -238,7 +228,6 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactio
 
 ### Response Fields
 
-
 | Parameter Name            | Type          | Description                                                                                              |
 | ------------------------- | ------------- | -------------------------------------------------------------------------------------------------------- |
 | `interaction_id`          | string (UUID) | CQA-assigned unique identifier for the interaction.                                                      |
@@ -246,8 +235,7 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactio
 | `status`                  | string        | `queued` on success.                                                                                     |
 | `message`                 | string        | Top-level hint on **201** (e.g. queued). On errors, the detail text is in `message`, not inside `error`. |
 
-
----
+- - -
 
 ## Ingest a Batch of Interactions
 
@@ -261,14 +249,11 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch
 
 ### Request Parameters (JSON Body)
 
-
-| Parameter Name           | Mandatory / Optional | Type    | Description                                                                                                        |
-| ------------------------ | -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `interactions`           | Mandatory            | array   | List of interaction objects, each following the same schema as the single ingest endpoint. Minimum 1, maximum 100. |
-
+| Parameter Name | Mandatory / Optional | Type  | Description                                                                                                        |
+| -------------- | -------------------- | ----- | ------------------------------------------------------------------------------------------------------------------ |
+| `interactions` | Mandatory            | array | List of interaction objects, each following the same schema as the single ingest endpoint. Minimum 1, maximum 100. |
 
 ### Response Fields
-
 
 | Parameter Name | Type   | Description                                                                                               |
 | -------------- | ------ | --------------------------------------------------------------------------------------------------------- |
@@ -276,8 +261,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch
 | `type`         | string | Always `batch` for this endpoint.                                                                         |
 | `status`       | string | `pending` -- the job has been accepted and is queued for processing.                                      |
 
-
----
+- - -
 
 ## Submit a File for Ingestion
 
@@ -291,28 +275,24 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/files
 
 ### Request Parameters (JSON Body)
 
-
-| Parameter Name           | Mandatory / Optional | Type    | Description                                                                                                                                                                                                                                         |
-| ------------------------ | -------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `file_url`               | Mandatory            | string  | URL to the file. Supported schemes: `https://`, `http://`, `s3://`. `https` is strongly recommended; `http` is accepted but offers no transport encryption. Private/local addresses (localhost, 127.0.0.1, 10.x, 192.168.x, 172.16.x) are rejected. |
-| `format`                 | Mandatory            | string  | File format: `csv` or `ndjson`.                                                                                                                                                                                                                     |
-| `source`                 | Optional             | string  | Default source applied to all rows where the row-level source is not set.                                                                                                                                                                           |
-| `pii_redacted`           | Optional             | boolean | Default PII flag applied to all rows.                                                                                                                                                                                                               |
-| `callback_url`           | Optional             | string  | Default callback URL stored per row (same semantics as single ingest; no HTTP callback from ingress).                                                                                                                                               |
-| `column_mapping`         | Optional             | object  | Maps your CSV headers to canonical column names. Keys are your original headers (trimmed, lowercased); values are canonical names. Ignored for NDJSON. See [CSV Schema](#csv-schema) for canonical names.                                           |
-| `metadata`               | Optional             | object  | Default metadata merged into every row. After merge, each row should respect the **50-key** metadata limit enforced for batch/single ingest; avoid large default maps that push merged rows over the limit.                                         |
-
+| Parameter Name   | Mandatory / Optional | Type    | Description                                                                                                                                                                                                                                         |
+| ---------------- | -------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `file_url`       | Mandatory            | string  | URL to the file. Supported schemes: `https://`, `http://`, `s3://`. `https` is strongly recommended; `http` is accepted but offers no transport encryption. Private/local addresses (localhost, 127.0.0.1, 10.x, 192.168.x, 172.16.x) are rejected. |
+| `format`         | Mandatory            | string  | File format: `csv` or `ndjson`.                                                                                                                                                                                                                     |
+| `source`         | Optional             | string  | Default source applied to all rows where the row-level source is not set.                                                                                                                                                                           |
+| `pii_redacted`   | Optional             | boolean | Default PII flag applied to all rows.                                                                                                                                                                                                               |
+| `callback_url`   | Optional             | string  | Default callback URL stored per row (same semantics as single ingest; no HTTP callback from ingress).                                                                                                                                               |
+| `column_mapping` | Optional             | object  | Maps your CSV headers to canonical column names. Keys are your original headers (trimmed, lowercased); values are canonical names. Ignored for NDJSON. See [CSV Schema](#csv-schema) for canonical names.                                           |
+| `metadata`       | Optional             | object  | Default metadata merged into every row. After merge, each row should respect the **50-key** metadata limit enforced for batch/single ingest; avoid large default maps that push merged rows over the limit.                                         |
 
 ### File Processing Limits
-
 
 | Limit                 | Default Value |
 | --------------------- | ------------- |
 | Max rows per file job | 100,000       |
 | Max file size         | 100 MB        |
 
-
----
+- - -
 
 ## Get Interaction by ID
 
@@ -326,15 +306,12 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/{interactio
 
 ### Path Parameters
 
-
 | Parameter Name           | Mandatory / Optional | Description                                                                        |
 | ------------------------ | -------------------- | ---------------------------------------------------------------------------------- |
 | `account_id`             | Mandatory            | Your CQA account ID.                                                               |
 | `interaction_identifier` | Mandatory            | Either the CQA-assigned UUID (`interaction_id`) or your `external_interaction_id`. |
 
-
 ### Response Fields
-
 
 | Parameter Name            | Type              | Description                                                                                               |
 | ------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------- |
@@ -353,11 +330,9 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/{interactio
 | `metadata`                | object            | Key-value metadata.                                                                                       |
 | `analyses`                | array             | List of analyses triggered for this interaction. Each contains `analysis_id`, `profile_id`, and `status`. |
 
-
 ### Interaction Status Lifecycle
 
 Applies to the `status` field on individual interactions and analyses.
-
 
 | API Status   | Meaning                                        |
 | ------------ | ---------------------------------------------- |
@@ -366,11 +341,9 @@ Applies to the `status` field on individual interactions and analyses.
 | `completed`  | All analyses finished successfully.            |
 | `failed`     | Processing failed (check `failure_reason`).    |
 
-
 ### Job Status Lifecycle
 
 Applies to the `status` field in the batch/file 202 response and the `job_status` field in the batch tracking response. Job statuses are distinct from interaction statuses.
-
 
 | Job Status   | Meaning                                                                |
 | ------------ | ---------------------------------------------------------------------- |
@@ -379,8 +352,7 @@ Applies to the `status` field in the batch/file 202 response and the `job_status
 | `completed`  | All rows have been processed (check `accepted`/`rejected` for counts). |
 | `failed`     | The job failed entirely (check `error_message`).                       |
 
-
----
+- - -
 
 ## Track Batch / File Job
 
@@ -394,24 +366,19 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch/{id}
 
 ### Path Parameters
 
-
 | Parameter Name | Mandatory / Optional | Description                                                                                  |
 | -------------- | -------------------- | -------------------------------------------------------------------------------------------- |
 | `account_id`   | Mandatory            | Your CQA account ID.                                                                         |
 | `id`           | Mandatory            | The job identifier: the `**id**` returned in the batch or file **202** response (`data.id`). |
 
-
 ### Query Parameters
-
 
 | Parameter Name | Default | Max | Description                                                                    |
 | -------------- | ------- | --- | ------------------------------------------------------------------------------ |
-| `page`         | 0       | --  | Zero-based page index.                                                         |
+| `page`         | 0       | \-- | Zero-based page index.                                                         |
 | `size`         | 20      | 100 | Number of interactions per page. Values above 100 are silently clamped to 100. |
 
-
 ### Response Fields
-
 
 | Parameter Name  | Type              | Description                                                                                     |
 | --------------- | ----------------- | ----------------------------------------------------------------------------------------------- |
@@ -428,8 +395,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch/{id}
 | `error_message` | string            | Top-level error message if the entire job failed.                                               |
 | `completed_at`  | string (ISO-8601) | When the job finished processing.                                                               |
 
-
----
+- - -
 
 # Analysis API
 
@@ -438,7 +404,7 @@ Retrieve detailed quality analysis results for a completed analysis.
 **Base path:** `/api/v1/accounts/{account_id}/analyses`
 **Auth:** `X-API-Key` header
 
----
+- - -
 
 ## Get Analysis Detail
 
@@ -452,15 +418,12 @@ https://{host}/cqa/api/v1/accounts/{account_id}/analyses/{analysis_id}
 
 ### Path Parameters
 
-
 | Parameter Name | Mandatory / Optional | Description                                                                  |
 | -------------- | -------------------- | ---------------------------------------------------------------------------- |
 | `account_id`   | Mandatory            | Your CQA account ID.                                                         |
 | `analysis_id`  | Mandatory            | The analysis UUID (obtained from the interaction detail's `analyses` array). |
 
-
 ### Response Fields
-
 
 | Parameter Name               | Type              | Description                                                                                                                                                                                         |
 | ---------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -480,9 +443,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/analyses/{analysis_id}
 | `categories`                 | array             | Scored categories. See Category object below.                                                                                                                                                       |
 | `metadata`                   | object            | Interaction metadata, echoed for convenience.                                                                                                                                                       |
 
-
 ### Category Object
-
 
 | Field                        | Type   | Description                                           |
 | ---------------------------- | ------ | ----------------------------------------------------- |
@@ -494,9 +455,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/analyses/{analysis_id}
 | `max_score`                  | float  | Maximum possible score.                               |
 | `sub_categories`             | array  | Subcategories within this category.                   |
 
-
 ### SubCategory Object
-
 
 | Field      | Type   | Description                                              |
 | ---------- | ------ | -------------------------------------------------------- |
@@ -504,9 +463,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/analyses/{analysis_id}
 | `qa_score` | float  | Manual QA score for the subcategory. Omitted if not set. |
 | `kpis`     | array  | Individual KPIs scored within this subcategory.          |
 
-
 ### KPI Object
-
 
 | Field                          | Type   | Description                                       |
 | ------------------------------ | ------ | ------------------------------------------------- |
@@ -524,14 +481,13 @@ https://{host}/cqa/api/v1/accounts/{account_id}/analyses/{analysis_id}
 | `criticality_adjusted_score`   | float  | Criticality-adjusted score.                       |
 | `max_score`                    | float  | Maximum possible score for this KPI.              |
 
-
----
+- - -
 
 # File Schemas
 
 When using the file-based ingestion endpoint (`POST /interactions/files`), CQA supports two file formats: CSV and NDJSON.
 
----
+- - -
 
 ## CSV Schema
 
@@ -539,23 +495,21 @@ The first row of a CSV file must contain column headers. Headers are trimmed and
 
 ### Canonical Column Names
 
-
-| Column                    | Required | Type            | Description                                                                                                                                                                      |
-| ------------------------- | -------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `external_interaction_id` | Yes      | string          | Your unique interaction identifier.                                                                                                                                              |
-| `channel_type`            | Yes      | string          | `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`.                                                                                                            |
-| `source`                  | No       | string          | Originating system identifier.                                                                                                                                                   |
-| `language`                | No       | string          | Language code (e.g. `en`).                                                                                                                                                       |
-| `interaction_start_time`  | No       | ISO-8601 string | ISO-8601 UTC format (e.g. `2026-04-01T10:00:00Z`).                                                                                                                               |
-| `duration_seconds`        | No       | integer         | Interaction duration in seconds.                                                                                                                                                 |
-| `audio_format`            | No       | string          | Format hint (e.g. `WAV`, `MP3`).                                                                                                                                                 |
-| `callback_url`            | No       | string          | Per-row callback URL (stored; no HTTP callback from ingress).                                                                                                                    |
-| `pii_redacted`            | No       | boolean         | `true` or `false`.                                                                                                                                                               |
-| `audio_url`               | Yes (Mandatory if transcript_url is not provided)       | string          | Audio file URL(s). Supports multiple URLs separated by `;`.                                                                                                                      |
-| `transcript_url`          | Yes (Mandatory if audio_url is not provided)       | string          | Transcript file URL(s). Supports multiple URLs separated by `;`.                                                                                                                 |
-| `file_url`                | No       | string          | Generic file URL. Used with `file_type` as a fallback when no `audio_url`/`transcript_url` entries exist.                                                                        |
-| `file_type`               | No       | string          | File extension for type resolution. Audio extensions: `mp3`, `wav`, `ogg`, `flac`, `m4a`, `aac`, `wma`, `amr`. Transcript extensions: `txt`, `pdf`, `doc`, `docx`, `srt`, `vtt`. |
-
+| Column                    | Required                                          | Type            | Description                                                                                                                                                                      |
+| ------------------------- | ------------------------------------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `external_interaction_id` | Yes                                               | string          | Your unique interaction identifier.                                                                                                                                              |
+| `channel_type`            | Yes                                               | string          | `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`.                                                                                                                                     |
+| `source`                  | No                                                | string          | Originating system identifier.                                                                                                                                                   |
+| `language`                | No                                                | string          | Language code (e.g. `en`).                                                                                                                                                       |
+| `interaction_start_time`  | No                                                | ISO-8601 string | ISO-8601 UTC format (e.g. `2026-04-01T10:00:00Z`).                                                                                                                               |
+| `duration_seconds`        | No                                                | integer         | Interaction duration in seconds.                                                                                                                                                 |
+| `audio_format`            | No                                                | string          | Format hint (e.g. `WAV`, `MP3`).                                                                                                                                                 |
+| `callback_url`            | No                                                | string          | Per-row callback URL (stored; no HTTP callback from ingress).                                                                                                                    |
+| `pii_redacted`            | No                                                | boolean         | `true` or `false`.                                                                                                                                                               |
+| `audio_url`               | Yes (Mandatory if transcript_url is not provided) | string          | Audio file URL(s). Supports multiple URLs separated by `;`.                                                                                                                      |
+| `transcript_url`          | Yes (Mandatory if audio_url is not provided)      | string          | Transcript file URL(s). Supports multiple URLs separated by `;`.                                                                                                                 |
+| `file_url`                | No                                                | string          | Generic file URL. Used with `file_type` as a fallback when no `audio_url`/`transcript_url` entries exist.                                                                        |
+| `file_type`               | No                                                | string          | File extension for type resolution. Audio extensions: `mp3`, `wav`, `ogg`, `flac`, `m4a`, `aac`, `wma`, `amr`. Transcript extensions: `txt`, `pdf`, `doc`, `docx`, `srt`, `vtt`. |
 
 **Content requirement:** Each row must have at least one of `audio_url`, `transcript_url`.
 
@@ -592,12 +546,11 @@ call-003,CHAT,,,,agent-42,retention
 
 > **Note:** Row 3 (`call-003`) would fail validation because it has no content source (no audio, transcript).
 
----
+- - -
 
 ## Request-Level Defaults for File Ingestion
 
 For both CSV and NDJSON file submissions, fields set on the `POST /interactions/files` request body are applied as defaults to every row:
-
 
 | Request Field  | Behavior                                                         |
 | -------------- | ---------------------------------------------------------------- |
@@ -606,12 +559,11 @@ For both CSV and NDJSON file submissions, fields set on the `POST /interactions/
 | `callback_url` | Applied to rows where the row-level value is null.               |
 | `metadata`     | Merged with each row's metadata. Row-level keys take precedence. |
 
-
----
+- - -
 
 # Webhooks / Callbacks
 
-When a `callback_url` is provided (on the single ingest request, in the batch/file request, or per CSV row), CQA delivers HTTP POST notifications to that URL at key points in the interaction's lifecycle.
+When a `callback_url` is provided (on the single ingest request, in the batch/file request, or per CSV row), CQA delivers HTTP POST notifications to that URL at key points in the interaction's or file job’s lifecycle.
 
 ## Delivery
 
@@ -621,29 +573,29 @@ When a `callback_url` is provided (on the single ingest request, in the batch/fi
 
 ## Event Types
 
-| Event | Trigger |
-| --- | --- |
-| `INTERACTION_INGESTED` | Interaction has been accepted and persisted. |
-| `INTERACTION_ANALYSIS_IN_PROGRESS` | Analysis has started for a quality profile. |
-| `INTERACTION_ANALYSIS_COMPLETED` | A single analysis completed successfully. Payload includes scores and KPI results. |
-| `INTERACTION_ANALYSIS_FAILED` | A single analysis failed. Payload includes error details. |
-| `INTERACTION_DISPUTE_RAISED` | A QA dispute has been raised on an analysis. |
-| `INTERACTION_DISPUTE_RESOLVED` | A QA dispute has been resolved. |
-| `FILE_INGESTION_COMPLETED` | A file ingestion job has finished processing. |
+| Event                              | Trigger                                                                            |
+| ---------------------------------- | ---------------------------------------------------------------------------------- |
+| `INTERACTION_INGESTED`             | Interaction has been accepted and persisted.                                       |
+| `INTERACTION_ANALYSIS_IN_PROGRESS` | Analysis has started for a quality profile.                                        |
+| `INTERACTION_ANALYSIS_COMPLETED`   | A single analysis completed successfully. Payload includes scores and KPI results. |
+| `INTERACTION_ANALYSIS_FAILED`      | A single analysis failed. Payload includes error details.                          |
+| `INTERACTION_DISPUTE_RAISED`       | A QA dispute has been raised on an analysis.                                       |
+| `INTERACTION_DISPUTE_RESOLVED`     | A QA dispute has been resolved.                                                    |
+| `FILE_INGESTION_COMPLETED`         | A file ingestion job has finished processing.                                      |
 
 ## Payload Structure
 
 Every callback POST body is a JSON object with these top-level fields:
 
-| Field | Type | Description |
-| --- | --- | --- |
-| `event` | string | The event type (see table above). |
-| `deliveryId` | string (UUID) | Unique identifier for this delivery attempt. |
-| `timestamp` | string (ISO-8601) | When the callback was generated (e.g. `2026-04-01T10:35:42.123Z`). |
-| `accountId` | string | Your account identifier. |
-| `interactionId` | string (UUID) | CQA's internal interaction identifier. Present for interaction-level events. |
-| `externalInteractionId` | string | Your `external_interaction_id`. Present when available. |
-| `data` | object | Event-specific data. Contents vary by event type (see below). |
+| Field                   | Type              | Description                                                                  |
+| ----------------------- | ----------------- | ---------------------------------------------------------------------------- |
+| `event`                 | string            | The event type (see table above).                                            |
+| `deliveryId`            | string (UUID)     | Unique identifier for this delivery attempt.                                 |
+| `timestamp`             | string (ISO-8601) | When the callback was generated (e.g. `2026-04-01T10:35:42.123Z`).           |
+| `accountId`             | string            | Your account identifier.                                                     |
+| `interactionId`         | string (UUID)     | CQA's internal interaction identifier. Present for interaction-level events. |
+| `externalInteractionId` | string            | Your `external_interaction_id`. Present when available.                      |
+| `data`                  | object            | Event-specific data. Contents vary by event type (see below).                |
 
 ### `data` by Event Type
 
@@ -785,9 +737,9 @@ A complete callback payload for a completed analysis:
 
 Each callback request includes headers for verifying authenticity:
 
-| Header | Description |
-| --- | --- |
-| `X-CQA-Signature` | HMAC-SHA256 signature of the request body, formatted as `sha256=<hex>`. |
+| Header            | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| `X-CQA-Signature` | HMAC-SHA256 signature of the request body, formatted as `sha256=<hex>`.            |
 | `X-CQA-Timestamp` | ISO-8601 timestamp of when the request was sent (e.g. `2026-04-01T10:35:42.123Z`). |
 
 To verify a callback:
@@ -802,20 +754,19 @@ The signing secret is derived from your active API key. It is shared during onbo
 
 If the callback endpoint returns a `5xx` or `429` status code (or the request times out), CQA retries delivery. A total of **3 attempts** are made (1 initial + 2 retries):
 
-| Attempt | Delay before attempt |
-| --- | --- |
-| 1st (initial) | Immediate |
-| 2nd (1st retry) | ~10 seconds |
-| 3rd (2nd retry) | ~30 seconds |
+| Attempt         | Delay before attempt |
+| --------------- | -------------------- |
+| 1st (initial)   | Immediate            |
+| 2nd (1st retry) | ~10 seconds          |
+| 3rd (2nd retry) | ~30 seconds          |
 
 After 3 failed attempts, the delivery is marked as `FAILED`.
 
 Callbacks that receive `2xx` or `4xx` (other than `429`) responses are **not** retried.
 
----
+- - -
 
 # Limits and Constraints
-
 
 | Constraint                           | Value                                                                                         |
 | ------------------------------------ | --------------------------------------------------------------------------------------------- |
@@ -827,6 +778,4 @@ Callbacks that receive `2xx` or `4xx` (other than `429`) responses are **not** r
 | Batch tracking page size (max)       | 100 (silently clamped)                                                                        |
 | Supported file formats               | `csv`, `ndjson`                                                                               |
 | Supported file URL schemes           | `https`, `http`, `s3` (`https` recommended)                                                   |
-| Supported channel types              | `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`                          |
-
-
+| Supported channel types              | `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`                                                   |
