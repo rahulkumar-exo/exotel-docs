@@ -6877,5 +6877,39 @@
       }
     ],
     "answer_length": 2245
+  },
+  {
+    "timestamp": "2026-05-11T09:28:13.420Z",
+    "response_id": "f81c9ede-aa7c-4109-b54c-612b880ddc27",
+    "question": "can we do post request for salesforce connector for rm connect usecase",
+    "question_length": 70,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3102,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      }
+    ],
+    "answer_length": 509
   }
 ]
