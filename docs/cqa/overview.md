@@ -609,6 +609,211 @@ For both CSV and NDJSON file submissions, fields set on the `POST /interactions/
 
 ---
 
+# Webhooks / Callbacks
+
+When a `callback_url` is provided (on the single ingest request, in the batch/file request, or per CSV row), CQA delivers HTTP POST notifications to that URL at key points in the interaction's lifecycle.
+
+## Delivery
+
+* **Method**: HTTP POST
+* **Content-Type**: `application/json`
+* **Timeout**: 10 seconds (connect and read)
+
+## Event Types
+
+| Event | Trigger |
+| --- | --- |
+| `INTERACTION_INGESTED` | Interaction has been accepted and persisted. |
+| `INTERACTION_ANALYSIS_IN_PROGRESS` | Analysis has started for a quality profile. |
+| `INTERACTION_ANALYSIS_COMPLETED` | A single analysis completed successfully. Payload includes scores and KPI results. |
+| `INTERACTION_ANALYSIS_FAILED` | A single analysis failed. Payload includes error details. |
+| `INTERACTION_DISPUTE_RAISED` | A QA dispute has been raised on an analysis. |
+| `INTERACTION_DISPUTE_RESOLVED` | A QA dispute has been resolved. |
+| `FILE_INGESTION_COMPLETED` | A file ingestion job has finished processing. |
+
+## Payload Structure
+
+Every callback POST body is a JSON object with these top-level fields:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `event` | string | The event type (see table above). |
+| `deliveryId` | string (UUID) | Unique identifier for this delivery attempt. |
+| `timestamp` | string (ISO-8601) | When the callback was generated (e.g. `2026-04-01T10:35:42.123Z`). |
+| `accountId` | string | Your account identifier. |
+| `interactionId` | string (UUID) | CQA's internal interaction identifier. Present for interaction-level events. |
+| `externalInteractionId` | string | Your `external_interaction_id`. Present when available. |
+| `data` | object | Event-specific data. Contents vary by event type (see below). |
+
+### `data` by Event Type
+
+**`INTERACTION_INGESTED`**
+
+```json
+{
+  "status": "INGESTED"
+}
+```
+
+**`INTERACTION_ANALYSIS_IN_PROGRESS`**
+
+```json
+{
+  "analysisId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "profileId": "prof-001",
+  "profileName": "Inbound Support"
+}
+```
+
+**`INTERACTION_ANALYSIS_COMPLETED`**
+
+```json
+{
+  "analysisId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "status": "COMPLETED",
+  "profileId": "prof-001",
+  "aiScore": 85.0,
+  "qaScore": null,
+  "finalScore": 85.0,
+  "criticalityAdjustedScore": 85.0,
+  "analysisCompletedAt": "2026-04-01T10:35:42Z",
+  "kpiResults": [
+    {
+      "kpiId": "kpi-101",
+      "categoryId": "cat-01",
+      "subCategoryId": "subcat-01",
+      "aiResponse": "Yes",
+      "aiJustification": "The agent greeted the customer by name.",
+      "aiScore": 5.0,
+      "qaScore": null,
+      "finalScore": 5.0,
+      "criticalityAdjustedScore": 5.0
+    }
+  ]
+}
+```
+
+The `kpiResults` array is included when KPI-level results are available. Each entry contains the KPI identifier, its category/sub-category, the AI's response and justification, and individual scores.
+
+**`INTERACTION_ANALYSIS_FAILED`**
+
+```json
+{
+  "errorCode": "ANALYSIS_FAILED",
+  "errorMessage": "Transcript processing timed out"
+}
+```
+
+**`INTERACTION_DISPUTE_RAISED`**
+
+```json
+{
+  "analysisId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "disputeId": "d1e2f3a4-b5c6-7890-abcd-ef1234567890"
+}
+```
+
+**`INTERACTION_DISPUTE_RESOLVED`**
+
+```json
+{
+  "analysisId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "disputeId": "d1e2f3a4-b5c6-7890-abcd-ef1234567890",
+  "resolution": "ACCEPTED",
+  "updatedScore": 90.0
+}
+```
+
+**`FILE_INGESTION_COMPLETED`**
+
+```json
+{
+  "fileJobId": "job-2026-04-01-001",
+  "status": "FILE_INGESTION_COMPLETED",
+  "totalRows": 500,
+  "accepted": 498,
+  "rejected": 2,
+  "completedAt": "2026-04-01T11:05:00Z",
+  "errors": [
+    {
+      "row": 42,
+      "reason": "Missing required field: external_interaction_id"
+    }
+  ]
+}
+```
+
+### Full Example
+
+A complete callback payload for a completed analysis:
+
+```json
+{
+  "event": "INTERACTION_ANALYSIS_COMPLETED",
+  "deliveryId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "timestamp": "2026-04-01T10:35:42.123Z",
+  "accountId": "e067e113f4",
+  "interactionId": "550e8400-e29b-41d4-a716-446655440000",
+  "externalInteractionId": "call-2026-04-01-001",
+  "data": {
+    "analysisId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "status": "COMPLETED",
+    "profileId": "prof-001",
+    "aiScore": 85.0,
+    "qaScore": null,
+    "finalScore": 85.0,
+    "criticalityAdjustedScore": 85.0,
+    "analysisCompletedAt": "2026-04-01T10:35:42Z",
+    "kpiResults": [
+      {
+        "kpiId": "kpi-101",
+        "categoryId": "cat-01",
+        "subCategoryId": "subcat-01",
+        "aiResponse": "Yes",
+        "aiJustification": "The agent greeted the customer by name.",
+        "aiScore": 5.0,
+        "qaScore": null,
+        "finalScore": 5.0,
+        "criticalityAdjustedScore": 5.0
+      }
+    ]
+  }
+}
+```
+
+## Security -- HMAC Signature
+
+Each callback request includes headers for verifying authenticity:
+
+| Header | Description |
+| --- | --- |
+| `X-CQA-Signature` | HMAC-SHA256 signature of the request body, formatted as `sha256=<hex>`. |
+| `X-CQA-Timestamp` | ISO-8601 timestamp of when the request was sent (e.g. `2026-04-01T10:35:42.123Z`). |
+
+To verify a callback:
+
+1. Extract the hex digest from `X-CQA-Signature` (strip the `sha256=` prefix).
+2. Compute `HMAC-SHA256(secret, requestBody)` using your API key secret as the signing key.
+3. Compare the computed hex digest with the value from step 1.
+
+The signing secret is derived from your active API key. It is shared during onboarding.
+
+## Retry Policy
+
+If the callback endpoint returns a `5xx` or `429` status code (or the request times out), CQA retries delivery. A total of **3 attempts** are made (1 initial + 2 retries):
+
+| Attempt | Delay before attempt |
+| --- | --- |
+| 1st (initial) | Immediate |
+| 2nd (1st retry) | ~10 seconds |
+| 3rd (2nd retry) | ~30 seconds |
+
+After 3 failed attempts, the delivery is marked as `FAILED`.
+
+Callbacks that receive `2xx` or `4xx` (other than `429`) responses are **not** retried.
+
+---
+
 # Limits and Constraints
 
 
