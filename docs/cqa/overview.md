@@ -164,7 +164,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions
 | `callback_url`            | Optional             | string            | Webhook URL for status update notifications.                                                                                                            |
 | `audio_url`               | Mandatory if transcript_url is not provided             | string            | Direct URL to the audio recording.                                                                                                                      |
 | `transcript_url`          | Mandatory if audio_url is not provided             | string            | Direct URL to the transcript file.                                                                                                                      |
-| `pii_redacted`            | Optional             | boolean           | Whether PII has already been redacted in the provided content. Default: `false`.                                                                        |
+| `pii_redacted`            | Optional             | boolean           | Whether PII has already been redacted in the provided content. Default: `false`. If you have already redacted PII either by your own means or using the CQA provided capability, set this parameter as `true` (used internally to skip PII redaction again)                                                                        |
 | `metadata`                | Optional             | object            | Arbitrary key-value pairs for tagging. Maximum 50 keys. Values can be strings, numbers, or booleans.                                                    |
 
 
