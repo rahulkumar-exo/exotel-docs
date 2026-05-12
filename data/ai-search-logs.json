@@ -7325,5 +7325,39 @@
       }
     ],
     "answer_length": 1681
+  },
+  {
+    "timestamp": "2026-05-12T10:25:10.628Z",
+    "response_id": "a6b60cce-1a81-4788-a704-f7e25db1b93f",
+    "question": "incoming sms",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3847,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Long SMS (Concatenated Messages)",
+        "product": "sms-support",
+        "url": "/docs/sms-support/long-sms"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "SMS Details",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/sms-details.mdx"
+      }
+    ],
+    "answer_length": 510
   }
 ]
