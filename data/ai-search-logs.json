@@ -7139,5 +7139,39 @@
       }
     ],
     "answer_length": 5863
+  },
+  {
+    "timestamp": "2026-05-12T07:32:15.498Z",
+    "response_id": "bce578ca-3f29-4e49-ad66-b427b879bc48",
+    "question": "mcp documentation for exotel",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5592,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "vSIP TCP Integration Guide (Mumbai)",
+        "product": "vsip",
+        "url": "/docs/vsip/tcp-integration"
+      },
+      {
+        "title": "vSIP FQDN-based Integration Guide",
+        "product": "vsip",
+        "url": "/docs/vsip/fqdn-integration"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      }
+    ],
+    "answer_length": 1889
   }
 ]
