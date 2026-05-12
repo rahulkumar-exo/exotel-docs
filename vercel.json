@@ -158,6 +158,14 @@
     { "source": "/docs/new-products", "destination": "/docs/getting-started/overview", "permanent": true },
 
     { "source": "/api/exomind-tasker-api", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
+
+    { "source": "/api/sip-trunking-apis", "destination": "/docs/vsip/overview", "permanent": true },
+    { "source": "/api/sip-trunking-api", "destination": "/docs/vsip/overview", "permanent": true },
+    { "source": "/api/sip-trunking", "destination": "/docs/vsip/overview", "permanent": true },
+    { "source": "/api/sip", "destination": "/docs/vsip/overview", "permanent": true },
+    { "source": "/api/vsip", "destination": "/docs/vsip/overview", "permanent": true },
+    { "source": "/api/vsip-api", "destination": "/docs/vsip/overview", "permanent": true },
+    { "source": "/api/vsip-trunking", "destination": "/docs/vsip/overview", "permanent": true },
     { "source": "/api/exomind-tasker", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
     { "source": "/api/exomind", "destination": "/docs/gen-ai/overview", "permanent": true },
     { "source": "/api/exovoice-analyze-api", "destination": "/docs/gen-ai/api-reference/exovoice-analyze", "permanent": true },
