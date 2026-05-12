@@ -7003,5 +7003,39 @@
       }
     ],
     "answer_length": 1216
+  },
+  {
+    "timestamp": "2026-05-12T05:12:40.583Z",
+    "response_id": "edca8d41-bf47-4cc7-9655-f0fb27851436",
+    "question": "when inbound calls comes how we can verify call come from exotel not any other",
+    "question_length": 78,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4848,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1055
   }
 ]
