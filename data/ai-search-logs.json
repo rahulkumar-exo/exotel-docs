@@ -7291,5 +7291,39 @@
       }
     ],
     "answer_length": 2149
+  },
+  {
+    "timestamp": "2026-05-12T10:19:37.123Z",
+    "response_id": "6a92de26-67c9-482e-98f4-d1edfd4af4e5",
+    "question": "I am talking about call campaigns - Once I create a campaign, can I add more callers later? Also, within the campaign, the message being spoken - can it be customized for each user?",
+    "question_length": 181,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13128,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      }
+    ],
+    "answer_length": 1681
   }
 ]
