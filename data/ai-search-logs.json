@@ -7071,5 +7071,39 @@
       }
     ],
     "answer_length": 1776
+  },
+  {
+    "timestamp": "2026-05-12T05:36:11.517Z",
+    "response_id": "4fe9f36a-95b7-4454-b5ce-e69e2cc289f1",
+    "question": "entity_blocked_by_dlt status",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4629,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Business Monitoring Dashboard",
+        "product": "use-cases",
+        "url": "/docs/use-cases/business-monitoring-dashboard.mdx"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Interactive SMS with Custom UI",
+        "product": "use-cases",
+        "url": "/docs/use-cases/interactive-sms.mdx"
+      }
+    ],
+    "answer_length": 682
   }
 ]
