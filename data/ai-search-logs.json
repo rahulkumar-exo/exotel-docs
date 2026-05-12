@@ -7393,5 +7393,39 @@
       }
     ],
     "answer_length": 3304
+  },
+  {
+    "timestamp": "2026-05-12T11:27:07.651Z",
+    "response_id": "cb804723-da85-46a1-93c9-d6fcc3651352",
+    "question": "can we create applet with code?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3883,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      }
+    ],
+    "answer_length": 482
   }
 ]
