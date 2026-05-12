@@ -7189,5 +7189,39 @@
     "response_time_ms": 728,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-12T09:49:30.553Z",
+    "response_id": "16c7af15-5cd7-45b0-8863-200e65a2722d",
+    "question": "SIP trunk APIs",
+    "question_length": 14,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6782,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Virtual SIP Trunking (vSIP)",
+        "product": "vsip",
+        "url": "/docs/vsip/overview"
+      },
+      {
+        "title": "vSIP Master Support Guide",
+        "product": "vsip",
+        "url": "/docs/vsip/master-guide"
+      },
+      {
+        "title": "vSIP Master Support Guide",
+        "product": "vsip",
+        "url": "/docs/vsip/master-guide"
+      },
+      {
+        "title": "vSIP FQDN-based Integration Guide",
+        "product": "vsip",
+        "url": "/docs/vsip/fqdn-integration"
+      }
+    ],
+    "answer_length": 1738
   }
 ]
