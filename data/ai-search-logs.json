@@ -7529,5 +7529,39 @@
       }
     ],
     "answer_length": 3560
+  },
+  {
+    "timestamp": "2026-05-12T14:22:06.774Z",
+    "response_id": "9b32d32f-440d-45e9-86ff-2e37bab5f546",
+    "question": "is there any api available for bulk numbers metadata checking",
+    "question_length": 61,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4512,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 684
   }
 ]
