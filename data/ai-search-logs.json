@@ -7597,5 +7597,39 @@
       }
     ],
     "answer_length": 566
+  },
+  {
+    "timestamp": "2026-05-12T15:31:14.542Z",
+    "response_id": "c439e09b-dbf0-4c3f-b614-90dce5249a04",
+    "question": "Call forwarding to mobile",
+    "question_length": 25,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6769,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Forwarding",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-forwarding"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Forwarding",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-forwarding"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 1061
   }
 ]
