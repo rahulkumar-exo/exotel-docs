@@ -166,6 +166,11 @@
     { "source": "/api/vsip", "destination": "/docs/vsip/overview", "permanent": true },
     { "source": "/api/vsip-api", "destination": "/docs/vsip/overview", "permanent": true },
     { "source": "/api/vsip-trunking", "destination": "/docs/vsip/overview", "permanent": true },
+
+    { "source": "/api/exoverify-apis", "destination": "/docs/exoverify-api/overview", "permanent": true },
+    { "source": "/api-console/exoverify-apis", "destination": "/docs/exoverify-api/overview", "permanent": true },
+    { "source": "/api/contact-center-apis", "destination": "/docs/contact-center/overview", "permanent": true },
+    { "source": "/api/contact-center-apis-v4", "destination": "/docs/contact-center-v4/overview", "permanent": true },
     { "source": "/api/exomind-tasker", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
     { "source": "/api/exomind", "destination": "/docs/gen-ai/overview", "permanent": true },
     { "source": "/api/exovoice-analyze-api", "destination": "/docs/gen-ai/api-reference/exovoice-analyze", "permanent": true },
