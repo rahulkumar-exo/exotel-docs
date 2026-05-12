@@ -7257,5 +7257,39 @@
       }
     ],
     "answer_length": 442
+  },
+  {
+    "timestamp": "2026-05-12T10:17:52.881Z",
+    "response_id": "f3f5923e-bad1-49a2-8ebf-d02214f361ff",
+    "question": "outbound campaigns",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4274,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Campaigns",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/overview"
+      },
+      {
+        "title": "List All Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/bulk-campaign-details"
+      },
+      {
+        "title": "SMS Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/overview"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns.mdx"
+      }
+    ],
+    "answer_length": 2149
   }
 ]
