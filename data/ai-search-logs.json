@@ -7359,5 +7359,39 @@
       }
     ],
     "answer_length": 510
+  },
+  {
+    "timestamp": "2026-05-12T11:26:45.408Z",
+    "response_id": "7b3cab53-69d9-4fc6-afc7-b710b79cbd5d",
+    "question": "How to set my backend webhook with phone number on exotel",
+    "question_length": 57,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11848,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Make a Call (Agent to Customer)",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/make-a-call.mdx"
+      }
+    ],
+    "answer_length": 3304
   }
 ]
