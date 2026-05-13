@@ -8217,5 +8217,39 @@
       }
     ],
     "answer_length": 4936
+  },
+  {
+    "timestamp": "2026-05-13T11:18:26.241Z",
+    "response_id": "4d0ae4b7-cc46-4ebd-92d7-e09f281b72c1",
+    "question": "where is the call recording stored",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2859,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 296
   }
 ]
