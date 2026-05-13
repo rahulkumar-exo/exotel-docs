@@ -8251,5 +8251,39 @@
       }
     ],
     "answer_length": 296
+  },
+  {
+    "timestamp": "2026-05-13T11:20:13.021Z",
+    "response_id": "e69b167b-8381-4591-9b8f-3d8e33d722b2",
+    "question": "how do i set statuscallback",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6181,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 1784
   }
 ]
