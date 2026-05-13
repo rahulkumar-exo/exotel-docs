@@ -7699,5 +7699,39 @@
       }
     ],
     "answer_length": 410
+  },
+  {
+    "timestamp": "2026-05-13T06:36:39.956Z",
+    "response_id": "3feda464-e683-4f03-9a04-9a7ecb98c87b",
+    "question": "failed to Crete campaigns in exotel portal",
+    "question_length": 42,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3485,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/overview"
+      },
+      {
+        "title": "Call Campaigns",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/overview"
+      },
+      {
+        "title": "List All Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/bulk-campaign-details"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      }
+    ],
+    "answer_length": 429
   }
 ]
