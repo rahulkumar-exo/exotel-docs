@@ -8455,5 +8455,39 @@
       }
     ],
     "answer_length": 1346
+  },
+  {
+    "timestamp": "2026-05-13T17:11:50.069Z",
+    "response_id": "175ae61c-dca0-4477-8aa2-574ed1d475e8",
+    "question": "Can i direct the call to bot without applet",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5588,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Email Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/email"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 858
   }
 ]
