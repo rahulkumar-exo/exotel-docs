@@ -7869,5 +7869,39 @@
       }
     ],
     "answer_length": 1027
+  },
+  {
+    "timestamp": "2026-05-13T10:40:01.336Z",
+    "response_id": "8c7615fb-ebad-4946-82f1-fbe49146076e",
+    "question": "why do calls have legs",
+    "question_length": 22,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5371,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Automated Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/automated-calls"
+      }
+    ],
+    "answer_length": 1938
   }
 ]
