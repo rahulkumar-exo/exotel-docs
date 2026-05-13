@@ -8039,5 +8039,39 @@
       }
     ],
     "answer_length": 2070
+  },
+  {
+    "timestamp": "2026-05-13T10:51:55.736Z",
+    "response_id": "ff5d4ae5-08cb-4dc7-85d8-8252416ee3f4",
+    "question": "any other api's which i use for integrating exotel with my application?",
+    "question_length": 71,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9335,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "getting-started",
+        "url": "/docs/getting-started/overview"
+      },
+      {
+        "title": "Integrations",
+        "product": "integrations",
+        "url": "/docs/integrations/overview"
+      }
+    ],
+    "answer_length": 2810
   }
 ]
