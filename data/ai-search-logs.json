@@ -7971,5 +7971,39 @@
       }
     ],
     "answer_length": 791
+  },
+  {
+    "timestamp": "2026-05-13T10:47:56.591Z",
+    "response_id": "8310bb25-3784-4968-b82d-572c88f2ba7c",
+    "question": "a status callback is exotel sending my application info when a call event happens ?",
+    "question_length": 83,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1865,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Call Notifications",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/call-notifications"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      }
+    ],
+    "answer_length": 745
   }
 ]
