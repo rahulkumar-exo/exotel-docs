@@ -7665,5 +7665,39 @@
       }
     ],
     "answer_length": 1254
+  },
+  {
+    "timestamp": "2026-05-13T04:30:33.539Z",
+    "response_id": "c4aa47af-eca4-4fd7-b692-77683648a830",
+    "question": "user upload",
+    "question_length": 11,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2565,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Update User",
+        "product": "users",
+        "url": "/docs/users/api-reference/update-user"
+      },
+      {
+        "title": "Create User",
+        "product": "users",
+        "url": "/docs/users/api-reference/create-user"
+      },
+      {
+        "title": "Delete User",
+        "product": "users",
+        "url": "/docs/users/api-reference/delete-user"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      }
+    ],
+    "answer_length": 410
   }
 ]
