@@ -7937,5 +7937,39 @@
       }
     ],
     "answer_length": 863
+  },
+  {
+    "timestamp": "2026-05-13T10:44:22.812Z",
+    "response_id": "5c47f2ae-4ffe-408f-b3e0-290cfd096db4",
+    "question": "in simple language what is voice v1 api",
+    "question_length": 39,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2636,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      }
+    ],
+    "answer_length": 791
   }
 ]
