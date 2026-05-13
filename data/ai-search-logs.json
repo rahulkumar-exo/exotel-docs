@@ -8285,5 +8285,39 @@
       }
     ],
     "answer_length": 1784
+  },
+  {
+    "timestamp": "2026-05-13T11:48:37.513Z",
+    "response_id": "2d2b1878-787f-40b3-8768-a137c5ff9971",
+    "question": "for trial session to outbound calls it tells to verfiy mobile to receive call so kindly tell where to verify",
+    "question_length": 108,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10838,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      }
+    ],
+    "answer_length": 1019
   }
 ]
