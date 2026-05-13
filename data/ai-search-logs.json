@@ -7835,5 +7835,39 @@
       }
     ],
     "answer_length": 1683
+  },
+  {
+    "timestamp": "2026-05-13T10:08:38.824Z",
+    "response_id": "9a55113e-5ca7-45be-a529-b74097f4fce6",
+    "question": "tell me about cloud telephony in simple language",
+    "question_length": 48,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2534,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What is Cloud Telephony?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/overview"
+      },
+      {
+        "title": "What is Cloud Telephony?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/overview"
+      },
+      {
+        "title": "What is Cloud Telephony?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/overview"
+      },
+      {
+        "title": "Creating WhatsApp Templates",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/creating-templates"
+      }
+    ],
+    "answer_length": 1027
   }
 ]
