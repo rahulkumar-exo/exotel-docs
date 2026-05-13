@@ -8421,5 +8421,39 @@
       }
     ],
     "answer_length": 2166
+  },
+  {
+    "timestamp": "2026-05-13T14:10:11.983Z",
+    "response_id": "af5ade06-155b-47ae-b75e-ab2eb7f7e337",
+    "question": "i just want to send voice recording to some mobile numbers, which service should i use?",
+    "question_length": 87,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12124,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 1346
   }
 ]
