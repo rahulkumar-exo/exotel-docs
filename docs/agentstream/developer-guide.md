@@ -337,7 +337,7 @@ curl -X POST '.../legs/<leg_sid>/actions/stop_say'
 
 ## Passthru Applet
 
-Place immediately after the Voicebot/Stream applet. Exotel POSTs stream metadata to your callback URL when the stream ends.
+Place immediately after the Voicebot/Stream applet. Exotel sends a **GET** request with stream metadata as query parameters to your callback URL when the stream ends.
 
 | Field | Description |
 |-------|-------------|
