@@ -197,20 +197,56 @@ curl -X POST '.../legs/<leg_sid>/actions/stop_say'
 
 ---
 
-## VoiceBot Applet configuration
+## Applet configuration
 
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| **URL** | Yes | `wss://bot.example.com/stream` — or `https://` endpoint returning `{"url":"wss://..."}` for dynamic routing |
-| **Authentication** | No | IP whitelist or Basic auth header. Email hello@exotel.com for Exotel's IP ranges. |
-| **Sample Rate** | No | `8000` (default) · `16000` (recommended) · `24000`. Append `?sample-rate=16000` to URL. |
-| **Custom Parameters** | No | Up to 3 key-value pairs in URL, max 256 chars total. Arrive in the `start` event. |
-| **Record** | No | Generates recording URL in the Passthru applet |
-| **Next Applet** | No | Stream closes automatically — no Stop applet needed |
+### Stream Applet — Unidirectional (Exotel → your server)
+
+Audio flows **one way only** — from the caller to your server. Your server cannot send audio back. Use for transcription, agent assist, call monitoring.
+
+| # | Parameter | Required | Description |
+|---|-----------|----------|-------------|
+| 1 | **Action** | Yes | `Start` to begin streaming · `Stop` to end it |
+| 2 | **URL** | Yes | `wss://your-server.com/stream` — or `https://` endpoint returning `{"url":"wss://..."}` |
+| 3 | **Next Applet** | No | Call flow continues to next applet immediately after stream creation |
+
+:::note
+Unidirectional streams fork audio immediately. If used with a Connect applet that rings multiple agents, audio from all ringing legs is sent — filter on your end.
+:::
+
+---
+
+### VoiceBot Applet — Bidirectional (Exotel ↔ your server)
+
+Audio flows **both ways** — your server receives caller audio and can send audio back in real time. Use for conversational AI, IVR replacement, outbound bots.
+
+| # | Parameter | Required | Description |
+|---|-----------|----------|-------------|
+| 1 | **URL** | Yes | `wss://bot.example.com/stream` — or `https://` endpoint returning `{"url":"wss://..."}` for dynamic routing |
+| 2 | **Authentication** | No | IP whitelist or Basic auth header. Email hello@exotel.com for Exotel's IP ranges. |
+| 3 | **Sample Rate** | No | `8000` (default) · `16000` (recommended) · `24000`. Append `?sample-rate=16000` to URL. |
+| 4 | **Custom Parameters** | No | Up to 3 key-value pairs in URL, max 256 chars total. Arrive in the `start` event. |
+| 5 | **Record** | No | Generates recording URL in the Passthru applet |
+| 6 | **Next Applet** | No | Stream closes automatically — no Stop applet needed |
 
 ---
 
 ## WebSocket protocol
+
+### Event support by applet type
+
+| Event | Stream Applet (Unidirectional) | VoiceBot Applet (Bidirectional) |
+|-------|-------------------------------|--------------------------------|
+| `connected` | ✓ | ✓ |
+| `start` | ✓ | ✓ |
+| `media` (receive) | ✓ | ✓ |
+| `dtmf` (receive) | ✗ | ✓ |
+| `mark` (receive) | ✗ | ✓ |
+| `stop` | ✓ | ✓ |
+| `media` (send) | ✗ | ✓ |
+| `mark` (send) | ✗ | ✓ |
+| `clear` (send) | ✗ | ✓ |
+
+---
 
 ### Events — Exotel → your server
 
@@ -255,7 +291,7 @@ curl -X POST '.../legs/<leg_sid>/actions/stop_say'
 }
 ```
 
-#### `dtmf`
+#### `dtmf` _(VoiceBot Applet only)_
 ```json
 {
   "event": "dtmf",
@@ -265,7 +301,10 @@ curl -X POST '.../legs/<leg_sid>/actions/stop_say'
 }
 ```
 
-#### `mark`
+#### `mark` _(VoiceBot Applet only)_
+
+Sent when audio you previously sent has finished playing.
+
 ```json
 {
   "event": "mark",
@@ -293,7 +332,11 @@ curl -X POST '.../legs/<leg_sid>/actions/stop_say'
 
 ---
 
-### Events — your server → Exotel
+### Events — your server → Exotel _(VoiceBot Applet only)_
+
+:::note
+These events only apply to the **VoiceBot Applet (bidirectional)**. The Stream Applet is receive-only — your server cannot send any events back.
+:::
 
 #### `media` — send audio to caller
 ```json
@@ -390,7 +433,7 @@ curl -X GET \
 
 ---
 
-## Echo server
+## Echo server _(VoiceBot Applet / bidirectional only)_
 
 ```python
 import asyncio, json, websockets
