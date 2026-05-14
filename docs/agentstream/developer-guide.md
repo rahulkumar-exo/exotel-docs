@@ -1,13 +1,13 @@
 ---
 id: developer-guide
-title: AgentStream Developer Guide
+title: AgentStream
 description: Complete developer reference — three connection methods, WebSocket protocol, audio format, Passthru Applet, stream monitoring, WSS error handling, and a working echo server.
-sidebar_label: Developer Guide
+sidebar_label: AgentStream
 slug: /agentstream/developer-guide
 sidebar_position: 3
 ---
 
-# AgentStream Developer Guide
+# AgentStream
 
 Real-time, bidirectional audio between live phone calls and your bot server over WebSocket. Exotel handles PSTN; you handle the logic.
 
