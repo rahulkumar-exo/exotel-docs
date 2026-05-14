@@ -192,6 +192,8 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'cqaSidebar', label: 'CQA — Conversation Quality Analysis' },
             { type: 'docSidebar', sidebarId: 'genAiSidebar', label: 'Gen AI' },
             { type: 'docSidebar', sidebarId: 'chatbotSidebar', label: 'Chatbot Platform' },
+            { type: 'html', value: '<span class="dropdown-separator"></span>' },
+            { type: 'html', value: '<span class="dropdown-section-label">Voice</span>' },
             { type: 'docSidebar', sidebarId: 'agentStreamSidebar', label: 'AgentStream' },
             { type: 'docSidebar', sidebarId: 'vsipSidebar', label: 'vSIP Trunking' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
