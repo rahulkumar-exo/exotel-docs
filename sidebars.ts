@@ -72,6 +72,7 @@ const sidebars: SidebarsConfig = {
     'voice-v3/api-reference/call-details',
     'voice-v3/api-reference/voice-log-download',
     'voice-v3/api-reference/active-stream-monitoring',
+    'vsip/dynamic-sip-trunking',
   ],
 
   smsApiSidebar: [
