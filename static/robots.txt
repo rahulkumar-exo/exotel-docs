@@ -1,0 +1,17 @@
+# Exotel Developer Documentation
+# https://developer.exotel.com
+#
+# Crawl policy: open to all bots (search engines + AI crawlers) because
+# this is a public developer documentation portal. We *want* AI assistants
+# like ChatGPT, Claude, Gemini, and Perplexity to read our docs so they
+# can answer developer questions about Exotel APIs accurately.
+#
+# Only carve-out: the CMS admin interface (/admin/) is hidden from indexing
+# since it has no public value and is an internal authoring surface.
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://developer.exotel.com/sitemap.xml
