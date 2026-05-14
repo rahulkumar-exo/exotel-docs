@@ -159,13 +159,17 @@
 
     { "source": "/api/exomind-tasker-api", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
 
-    { "source": "/api/sip-trunking-apis", "destination": "/docs/vsip/overview", "permanent": true },
-    { "source": "/api/sip-trunking-api", "destination": "/docs/vsip/overview", "permanent": true },
-    { "source": "/api/sip-trunking", "destination": "/docs/vsip/overview", "permanent": true },
-    { "source": "/api/sip", "destination": "/docs/vsip/overview", "permanent": true },
-    { "source": "/api/vsip", "destination": "/docs/vsip/overview", "permanent": true },
-    { "source": "/api/vsip-api", "destination": "/docs/vsip/overview", "permanent": true },
-    { "source": "/api/vsip-trunking", "destination": "/docs/vsip/overview", "permanent": true },
+    { "source": "/api/sip-trunking-apis", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/api/sip-trunking-api", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/api/sip-trunking", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/api/sip", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/api/vsip", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/api/vsip-api", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/api/vsip-trunking", "destination": "/docs/sip-trunking/overview", "permanent": true },
+
+    { "source": "/docs/vsip", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/docs/vsip/overview", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/docs/vsip/:path*", "destination": "/docs/sip-trunking/:path*", "permanent": true },
 
     { "source": "/api/exoverify-apis", "destination": "/docs/exoverify-api/overview", "permanent": true },
     { "source": "/api-console/exoverify-apis", "destination": "/docs/exoverify-api/overview", "permanent": true },

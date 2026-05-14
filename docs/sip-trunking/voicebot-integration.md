@@ -1,22 +1,22 @@
 ---
 id: voicebot-integration
-title: Exotel vSIP to SIP-Native Voicebot Integration
-description: Comprehensive guide for SIP-native voicebot partners to integrate their SIP infrastructure with Exotel's vSIP for direct voice routing.
+title: Exotel SIP Trunking to SIP-Native Voicebot Integration
+description: Comprehensive guide for SIP-native voicebot partners to integrate their SIP infrastructure with Exotel's SIP Trunking for direct voice routing.
 sidebar_label: Voicebot Integration
 sidebar_position: 8
 ---
 
-# Integration Guide: Exotel vSIP to SIP-Native Voicebot
+# Integration Guide: Exotel SIP Trunking to SIP-Native Voicebot
 
-This guide provides a comprehensive overview for SIP-native voicebot partners on how to integrate their SIP infrastructure with Exotel's Virtual SIP Trunking (vSIP) setup. It covers supported transport types (TCP, TLS, FQDN), setup best practices, media expectations, SIP header guidelines, and testing checklists.
+This guide provides a comprehensive overview for SIP-native voicebot partners on how to integrate their SIP infrastructure with Exotel's SIP Trunking setup. It covers supported transport types (TCP, TLS, FQDN), setup best practices, media expectations, SIP header guidelines, and testing checklists.
 
 :::note Alpha Release
-This guide covers the Alpha release of vSIP-to-Voicebot integration.
+This guide covers the Alpha release of SIP Trunking-to-Voicebot integration.
 :::
 
 ## Overview
 
-Exotel's vSIP integration enables bot providers to connect their SIP-based voicebot platforms directly with Exotel's PSTN and IP network. It allows:
+Exotel's SIP Trunking integration enables bot providers to connect their SIP-based voicebot platforms directly with Exotel's PSTN and IP network. It allows:
 
 - Receiving inbound calls from Exophone directly into the bot
 - SIP signaling over TCP or TLS
@@ -55,7 +55,7 @@ For detailed setup instructions per transport type, see:
 ## Architecture Flow
 
 ```
-Inbound Call -> Exophone (Exotel) -> vSIP Trunk (TCP/TLS/FQDN) -> SIP Bot Server -> RTP Media Exchange -> Bot Response
+Inbound Call -> Exophone (Exotel) -> SIP Trunking Trunk (TCP/TLS/FQDN) -> SIP Bot Server -> RTP Media Exchange -> Bot Response
 ```
 
 ## Pre-Integration Checklist
@@ -234,7 +234,7 @@ This is the only supported outbound architecture. Direct SIP to Exotel for outbo
 
 ## Related
 
-- [vSIP Overview](./overview.md)
+- [SIP Trunking Overview](./overview.md)
 - [Master Support Guide](./master-guide.md)
 - [Flow Integration Guide](./flow-integration.md)
 - [Flow and API Configuration](./flow-api-configuration.md)

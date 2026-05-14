@@ -72,7 +72,6 @@ const sidebars: SidebarsConfig = {
     'voice-v3/api-reference/call-details',
     'voice-v3/api-reference/voice-log-download',
     'voice-v3/api-reference/active-stream-monitoring',
-    'vsip/dynamic-sip-trunking',
   ],
 
   smsApiSidebar: [
@@ -398,20 +397,20 @@ const sidebars: SidebarsConfig = {
   ],
 
   vsipSidebar: [
-    'vsip/overview',
-    'vsip/dynamic-sip-trunking',
-    'vsip/master-guide',
-    'vsip/flow-api-configuration',
+    'sip-trunking/overview',
+    'sip-trunking/dynamic-sip-trunking',
+    'sip-trunking/master-guide',
+    'sip-trunking/flow-api-configuration',
     {
       type: 'category',
       label: 'Integration Guides',
       collapsed: false,
       items: [
-        'vsip/tls-integration',
-        'vsip/tcp-integration',
-        'vsip/fqdn-integration',
-        'vsip/flow-integration',
-        'vsip/voicebot-integration',
+        'sip-trunking/tls-integration',
+        'sip-trunking/tcp-integration',
+        'sip-trunking/fqdn-integration',
+        'sip-trunking/flow-integration',
+        'sip-trunking/voicebot-integration',
       ],
     },
   ],

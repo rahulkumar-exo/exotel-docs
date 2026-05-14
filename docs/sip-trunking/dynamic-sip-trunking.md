@@ -3,7 +3,7 @@ id: dynamic-sip-trunking
 title: Dynamic SIP Trunking
 description: API reference for Exotel Dynamic SIP Trunking — create and manage SIP trunks, whitelist IPs, configure destination URIs, and handle inbound/outbound PSTN calls programmatically.
 sidebar_label: Dynamic SIP Trunking
-slug: /vsip/dynamic-sip-trunking
+slug: /sip-trunking/dynamic-sip-trunking
 sidebar_position: 2
 ---
 
@@ -403,6 +403,6 @@ If calls connect but have no audio or one-way audio — UDP 10 000–40 000 is l
 
 ## Related
 
-- [vSIP Overview](./overview) — Static SIP trunking setup
+- [SIP Trunking Overview](./overview) — Static SIP trunking setup
 - [Flow API Configuration](./flow-api-configuration) — API-driven Voice AI setup
 - [Manage ExoTrunks](../agentstream/manage-exotrunks) — SIP trunk management

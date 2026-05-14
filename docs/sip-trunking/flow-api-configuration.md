@@ -1,26 +1,26 @@
 ---
 id: flow-api-configuration
 title: Flow and API Configuration for Voice AI & CC Platforms
-description: API-driven configuration guide for Voice AI and Contact Centre platforms integrating with Exotel vSIP for PSTN connectivity in India.
+description: API-driven configuration guide for Voice AI and Contact Centre platforms integrating with Exotel SIP Trunking for PSTN connectivity in India.
 sidebar_label: Flow & API Configuration
 sidebar_position: 3
 ---
 
-# Flow and API Configuration Guide for Voice AI & Contact Centre Platforms via Exotel vSIP
+# Flow and API Configuration Guide for Voice AI & Contact Centre Platforms via Exotel SIP Trunking
 
-This guide provides a comprehensive, API-driven setup for Voice AI and Contact Center (CC) platforms to integrate with Exotel's Virtual SIP Trunking (vSIP) for compliant PSTN connectivity in India.
+This guide provides a comprehensive, API-driven setup for Voice AI and Contact Center (CC) platforms to integrate with Exotel's SIP Trunking for compliant PSTN connectivity in India.
 
 ## Background & Objective
 
-Voice AI and Contact Center (CC) platforms often operate robust SIP-based (vSIP) infrastructures for AI-led and agent-assisted conversations. However, they typically lack direct access to India's PSTN (landline and mobile networks) due to licensing and regulatory restrictions.
+Voice AI and Contact Center (CC) platforms often operate robust SIP-based (SIP Trunking) infrastructures for AI-led and agent-assisted conversations. However, they typically lack direct access to India's PSTN (landline and mobile networks) due to licensing and regulatory restrictions.
 
-Exotel, operating as a Unified License (UL) Virtual Network Operator (VNO), bridges this gap by offering compliant PSTN ingress/egress via its Virtual SIP Trunking (vSIP) solution.
+Exotel, operating as a Unified License (UL) Virtual Network Operator (VNO), bridges this gap by offering compliant PSTN ingress/egress via its SIP Trunking solution.
 
 ### Objectives
 
 - Enable Voice AI and Contact Center platforms to access Indian PSTN via Exotel's UL VNO
 - Provide a plug-and-play SIP trunking layer without disrupting existing bot or agent logic
-- Support both inbound and outbound PSTN call flows using Exotel's vSIP infrastructure
+- Support both inbound and outbound PSTN call flows using Exotel's SIP Trunking infrastructure
 - Streamline onboarding via APIs for trunk creation, DID mapping, and IP whitelisting
 
 ### Ideal For
@@ -34,7 +34,7 @@ Exotel, operating as a Unified License (UL) Virtual Network Operator (VNO), brid
 
 ### Architecture
 
-- **Partner Side**: Existing vSIP Endpoint / SBC / PBX (Voice AI or CC layer)
+- **Partner Side**: Existing SIP Trunking Endpoint / SBC / PBX (Voice AI or CC layer)
 - **Exotel Side**: UL VNO SIP Gateway connected to Indian PSTN via multiple telcos
 
 **Connectivity Options:**
@@ -131,11 +131,11 @@ For more details, see the [Connect Applet -- Dynamic URL documentation](https://
 2. Use [Click-to-Call API](https://developer.exotel.com/api/make-a-call-api#call-customer) or [Connect Customer to Flow API](https://developer.exotel.com/api/make-a-call-api#call-customer)
 3. Set destination as `sip:<TrunkID>` in Connect Applet
 
-## Voicebot to Agent Handoff (vSIP Flow)
+## Voicebot to Agent Handoff (SIP Trunking Flow)
 
 ### Flow
 
-1. Voicebot runs on Connect Applet over vSIP
+1. Voicebot runs on Connect Applet over SIP Trunking
 2. Bot disconnects -> Flow moves to **Passthru Applet** -> calls webhook
 3. Webhook Response:
    - **200 OK**: Route to Connect Applet (agent group or SIP trunk)
@@ -173,7 +173,7 @@ Contact: hello@exotel.com or your Exotel CSM
 
 ## Related
 
-- [vSIP Overview](./overview.md)
+- [SIP Trunking Overview](./overview.md)
 - [Master Support Guide](./master-guide.md)
 - [Flow Integration Guide](./flow-integration.md)
 - [TCP Integration Guide](./tcp-integration.md)

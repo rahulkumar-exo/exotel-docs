@@ -1,14 +1,14 @@
 ---
 id: tcp-integration
-title: vSIP TCP Integration Guide (Mumbai)
-description: Technical guide for integrating Exotel Virtual SIP Trunking over TCP via the Mumbai PoP, including SIP headers, configuration, and testing steps.
+title: SIP Trunking TCP Integration Guide (Mumbai)
+description: Technical guide for integrating Exotel SIP Trunking over TCP via the Mumbai PoP, including SIP headers, configuration, and testing steps.
 sidebar_label: TCP Integration (Mumbai)
 sidebar_position: 5
 ---
 
-# Exotel Virtual SIP Trunking -- TCP (Mumbai) -- Customer Integration Guide
+# Exotel SIP Trunking -- TCP (Mumbai) -- Customer Integration Guide
 
-This guide provides enterprise customers with technical steps to integrate Exotel's Virtual SIP Trunking (vSIP) with your PBX, SIP server, or SBC over TCP via the Mumbai PoP. It outlines configuration practices, header formats, best practices, and validation techniques.
+This guide provides enterprise customers with technical steps to integrate Exotel's SIP Trunking with your PBX, SIP server, or SBC over TCP via the Mumbai PoP. It outlines configuration practices, header formats, best practices, and validation techniques.
 
 :::note Alpha Release
 This Alpha release is intended for controlled pilots and is not SLA-backed for production workloads.
@@ -16,7 +16,7 @@ This Alpha release is intended for controlled pilots and is not SLA-backed for p
 
 ## Product Overview
 
-Exotel's Virtual SIP Trunking (Alpha) allows secure SIP-based PSTN call origination and termination between your SIP infrastructure and Exotel's platform using IP authentication.
+Exotel's SIP Trunking (Alpha) allows secure SIP-based PSTN call origination and termination between your SIP infrastructure and Exotel's platform using IP authentication.
 
 | Parameter | Value |
 |-----------|-------|
@@ -26,8 +26,8 @@ Exotel's Virtual SIP Trunking (Alpha) allows secure SIP-based PSTN call originat
 | **Authentication** | IP Whitelisting (Registration-based auth not supported) |
 | **Edge Location** | Mumbai PoP (India) |
 
-:::caution vSIP Throttling
-Exotel enforces a default vSIP rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
+:::caution SIP Trunking Throttling
+Exotel enforces a default SIP Trunking rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
 
 If your traffic profile requires a higher burst rate, raise a request via your CSM or Support ticket. The capacity-planning team will review historical traffic, carrier limits, and QoS requirements and can increase the throttling threshold accordingly.
 :::
@@ -146,7 +146,7 @@ a=ptime:20
 | Supported | Optional | SIP extensions like `replaces`, `timer` |
 | X-Exotel-CallSid | Yes | Unique ID for the call session (tracking/debugging) |
 | X-Exotel-LegSid | Optional | Call leg identifier; unique to this direction of the call |
-| X-Exotel-TrunkSid | Optional | Identifies which virtual SIP trunk was used |
+| X-Exotel-TrunkSid | Optional | Identifies which SIP trunk was used |
 | P-Asserted-Identity | Optional | Validated caller ID presented to customer SIP server |
 | P-Early-Media | Optional | Indicates support for early media before call is answered |
 | Contact | Optional | Where Exotel can be reached for further in-dialog SIP messages |
@@ -266,7 +266,7 @@ a=sendrecv
 
 ## Support and Next Steps
 
-This guide covers Exotel vSIP over TCP via the Mumbai PoP under the Alpha release. Production deployment readiness (with TLS, SRTP, failover, dashboards) will be announced during the GA phase.
+This guide covers Exotel SIP Trunking over TCP via the Mumbai PoP under the Alpha release. Production deployment readiness (with TLS, SRTP, failover, dashboards) will be announced during the GA phase.
 
 For support:
 - Contact your Exotel account manager
@@ -279,7 +279,7 @@ For support:
 
 ## Related
 
-- [vSIP Overview](./overview.md)
+- [SIP Trunking Overview](./overview.md)
 - [Master Support Guide](./master-guide.md)
 - [TLS Integration Guide](./tls-integration.md)
 - [FQDN-based Integration](./fqdn-integration.md)

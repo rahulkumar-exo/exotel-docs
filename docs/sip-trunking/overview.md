@@ -1,17 +1,17 @@
 ---
 id: overview
-title: Virtual SIP Trunking (vSIP)
-description: Overview of Exotel's Virtual SIP Trunking (vSIP) for enterprise PBX/SBC integration with PSTN via SIP over TCP or TLS.
+title: SIP Trunking
+description: Overview of Exotel's SIP Trunking for enterprise PBX/SBC integration with PSTN via SIP over TCP or TLS.
 sidebar_label: Overview
 sidebar_position: 1
 ---
 
-# Virtual SIP Trunking (vSIP)
+# SIP Trunking
 
-Exotel's Virtual SIP Trunking (vSIP) enables enterprise PBX, SBC, and SIP-based platforms to connect directly with Exotel's voice infrastructure using SIP over TCP or TLS. It supports both inbound and outbound PSTN calling through IP connectivity, with optional FQDN-based flexibility.
+Exotel's SIP Trunking enables enterprise PBX, SBC, and SIP-based platforms to connect directly with Exotel's voice infrastructure using SIP over TCP or TLS. It supports both inbound and outbound PSTN calling through IP connectivity, with optional FQDN-based flexibility.
 
 :::note Alpha Release
-vSIP is currently in Alpha. Features and configurations may change before General Availability (GA). Alpha deployments are not covered by production-grade SLAs.
+SIP Trunking is currently in Alpha. Features and configurations may change before General Availability (GA). Alpha deployments are not covered by production-grade SLAs.
 :::
 
 ## Supported Use Cases
@@ -52,7 +52,7 @@ Once provisioned, your SIP traffic will be routed via Exotel's regional edge PoP
 
 Choose the guide that matches your deployment:
 
-- **[Master Support Guide](./master-guide.md)** -- Complete overview of all vSIP integration options
+- **[Master Support Guide](./master-guide.md)** -- Complete overview of all SIP Trunking integration options
 - **[TCP Integration (Mumbai)](./tcp-integration.md)** -- SIP over TCP setup via Mumbai PoP
 - **[TLS Integration (Mumbai)](./tls-integration.md)** -- Encrypted SIP over TLS via Mumbai PoP
 - **[FQDN-based Integration](./fqdn-integration.md)** -- DNS-based trunking for cloud/HA setups

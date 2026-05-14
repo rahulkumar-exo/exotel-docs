@@ -1,22 +1,22 @@
 ---
 id: fqdn-integration
-title: vSIP FQDN-based Integration Guide
-description: Guide for configuring Exotel Virtual SIP Trunking using FQDN-based trunking for cloud-native, load-balanced, and HA SIP deployments.
+title: SIP Trunking FQDN-based Integration Guide
+description: Guide for configuring Exotel SIP Trunking using FQDN-based trunking for cloud-native, load-balanced, and HA SIP deployments.
 sidebar_label: FQDN-based Integration
 sidebar_position: 6
 ---
 
-# Exotel Virtual SIP Trunking -- FQDN-based
+# Exotel SIP Trunking -- FQDN-based
 
-This guide explains how to configure Exotel's Virtual SIP Trunking (vSIP) using Fully Qualified Domain Name (FQDN) based trunking instead of fixed IPs. It details how the FQDN-based approach works, when it should be used, and why it offers benefits in enterprise-grade SIP deployments.
+This guide explains how to configure Exotel's SIP Trunking using Fully Qualified Domain Name (FQDN) based trunking instead of fixed IPs. It details how the FQDN-based approach works, when it should be used, and why it offers benefits in enterprise-grade SIP deployments.
 
 :::note Alpha Release
-FQDN-based Virtual SIP Trunking is currently in Alpha. Features may change before General Availability.
+FQDN-based SIP Trunking is currently in Alpha. Features may change before General Availability.
 :::
 
 ## Product Overview
 
-Exotel's FQDN-based Virtual SIP Trunking allows customers to use DNS-resolvable hostnames (e.g., `trunk.customer.com`) instead of static IPs to establish SIP trunking with Exotel's PoPs. This method enables greater flexibility and reliability, especially for deployments on cloud infrastructure or load-balanced SIP setups.
+Exotel's FQDN-based SIP Trunking allows customers to use DNS-resolvable hostnames (e.g., `trunk.customer.com`) instead of static IPs to establish SIP trunking with Exotel's PoPs. This method enables greater flexibility and reliability, especially for deployments on cloud infrastructure or load-balanced SIP setups.
 
 ## What is an FQDN-based Trunk?
 
@@ -52,8 +52,8 @@ FQDN is best suited when your IP address is not guaranteed to remain fixed or yo
 Exotel performs DNS resolution on each call attempt to support failover and dynamic environments.
 :::
 
-:::caution vSIP Throttling
-Exotel enforces a default vSIP rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
+:::caution SIP Trunking Throttling
+Exotel enforces a default SIP Trunking rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
 
 If your traffic profile requires a higher burst rate, raise a request via your CSM or Support ticket. The capacity-planning team will review historical traffic, carrier limits, and QoS requirements and can increase the throttling threshold accordingly.
 :::
@@ -152,7 +152,7 @@ Content-Length: ...
 | Max-Forwards | Yes | Loop control |
 | X-Exotel-CallSid | Yes | Exotel's global call ID -- key for webhook/CDR correlation |
 | X-Exotel-LegSid | Yes | Call leg identifier |
-| X-Exotel-TrunkSid | Yes | Identifies the virtual SIP trunk provisioned to you |
+| X-Exotel-TrunkSid | Yes | Identifies the SIP trunk provisioned to you |
 | P-Asserted-Identity | Yes | Validated CLI presented by Exotel |
 | P-Early-Media | Optional | Indicates early RTP media (if Exotel connects media pre-200 OK) |
 
@@ -199,7 +199,7 @@ For help:
 
 ## Related
 
-- [vSIP Overview](./overview.md)
+- [SIP Trunking Overview](./overview.md)
 - [Master Support Guide](./master-guide.md)
 - [TCP Integration Guide](./tcp-integration.md)
 - [TLS Integration Guide](./tls-integration.md)

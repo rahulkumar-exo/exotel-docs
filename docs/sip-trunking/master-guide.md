@@ -1,22 +1,22 @@
 ---
 id: master-guide
-title: vSIP Master Support Guide
-description: Complete guide for integrating with Exotel's Virtual SIP Trunking including TCP, TLS, and FQDN configuration options and best practices.
+title: SIP Trunking Master Support Guide
+description: Complete guide for integrating with Exotel's SIP Trunking including TCP, TLS, and FQDN configuration options and best practices.
 sidebar_label: Master Guide
 sidebar_position: 2
 ---
 
-# Exotel Virtual SIP Trunking (vSIP) -- Master Support Guide
+# Exotel SIP Trunking -- Master Support Guide
 
-This guide provides a complete overview of how enterprises can integrate with Exotel's Virtual SIP Trunking (vSIP). It includes configuration options (TCP, TLS, FQDN), onboarding steps, best practices, and supported use cases.
+This guide provides a complete overview of how enterprises can integrate with Exotel's SIP Trunking. It includes configuration options (TCP, TLS, FQDN), onboarding steps, best practices, and supported use cases.
 
 :::note Alpha Release
-vSIP is currently in Alpha. Features and configurations may change before General Availability.
+SIP Trunking is currently in Alpha. Features and configurations may change before General Availability.
 :::
 
-## What is Virtual SIP Trunking (vSIP)?
+## What is SIP Trunking?
 
-Virtual SIP Trunking allows enterprise PBX/SBC systems to connect directly with Exotel's voice infrastructure using SIP over TCP or TLS. It supports both inbound and outbound PSTN calling through IP connectivity, with optional FQDN-based flexibility.
+SIP Trunking allows enterprise PBX/SBC systems to connect directly with Exotel's voice infrastructure using SIP over TCP or TLS. It supports both inbound and outbound PSTN calling through IP connectivity, with optional FQDN-based flexibility.
 
 ## Supported Use Cases
 
@@ -48,8 +48,8 @@ Virtual SIP Trunking allows enterprise PBX/SBC systems to connect directly with 
 - SIP-to-Flow integration using Connect or IVR -- See: [SIP-to-Flow Integration Guide](./flow-integration.md)
 - SIP-to-SIP integration for native voicebot routing -- See: [Native SIP Voicebot Integration Guide](./voicebot-integration.md)
 
-:::caution vSIP Throttling
-Exotel enforces a default vSIP rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
+:::caution SIP Trunking Throttling
+Exotel enforces a default SIP Trunking rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
 
 If your traffic profile requires a higher burst rate, raise a request via your CSM or Support ticket. The capacity-planning team will review historical traffic, carrier limits, and QoS requirements and can increase the throttling threshold accordingly.
 :::
@@ -64,7 +64,7 @@ If your traffic profile requires a higher burst rate, raise a request via your C
 
 - Veeno KA, DL, Mum, AP, GJ
 
-## Getting Started with Exotel vSIP (Veeno Accounts)
+## Getting Started with Exotel SIP Trunking (Veeno Accounts)
 
 1. **Create your Exotel account** via [my.in.exotel.com](https://my.in.exotel.com)
 2. **Complete KYC** and upgrade the account with help from your Exotel Account Manager ([KYC documentation guide](https://support.exotel.com/support/solutions/articles/35760-where-do-i-upload-my-kyc-verification-docs-and-what-documents-qualify-for-kyc-))
@@ -137,7 +137,7 @@ Once provisioned, you can begin testing:
 - In the Dial Whom field, use format: `sip:<number>@<fqdn>:<port>;transport=tcp|tls`
 - Confirm the `P-Asserted-Identity` header shows the correct Leg1 number (caller identity)
 
-## Best Practices for vSIP Integration
+## Best Practices for SIP Trunking Integration
 
 - Use FQDN if infra is cloud-based, HA, or load-balanced
 - Keep DNS TTL between 30-60 seconds for fast recovery
@@ -172,7 +172,7 @@ Visit [support.exotel.com](https://support.exotel.com) and share the following:
 
 ## Related
 
-- [vSIP Overview](./overview.md)
+- [SIP Trunking Overview](./overview.md)
 - [TCP Integration Guide](./tcp-integration.md)
 - [TLS Integration Guide](./tls-integration.md)
 - [FQDN-based Integration](./fqdn-integration.md)

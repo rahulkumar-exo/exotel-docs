@@ -1,17 +1,17 @@
 ---
 id: flow-integration
-title: vSIP to Flow Integration Guide
+title: SIP Trunking to Flow Integration Guide
 description: Guide for routing inbound SIP calls from external SIP systems into Exotel Flow Applets including IVR and agent connect scenarios.
 sidebar_label: Flow Integration
 sidebar_position: 7
 ---
 
-# Exotel Virtual SIP Trunking to Flow Integration Guide
+# Exotel SIP Trunking to Flow Integration Guide
 
-This guide outlines how to integrate Exotel's Virtual SIP Trunking (vSIP) with your voice application flow (e.g., IVR or agent connect) using SIP signaling. It focuses on the use case of routing inbound SIP calls from external SIP systems into Exotel Flow Applets.
+This guide outlines how to integrate Exotel's SIP Trunking with your voice application flow (e.g., IVR or agent connect) using SIP signaling. It focuses on the use case of routing inbound SIP calls from external SIP systems into Exotel Flow Applets.
 
 :::note Alpha Release
-This guide covers the Alpha release of vSIP-to-Flow integration.
+This guide covers the Alpha release of SIP Trunking-to-Flow integration.
 :::
 
 ## Use Case: External SIP System to Exotel Flow
@@ -39,8 +39,8 @@ This guide is meant for customers who:
 - Source IP or FQDN from where SIP INVITE will originate
 - Transport type (TCP/TLS)
 
-:::caution vSIP Throttling
-Exotel enforces a default vSIP rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
+:::caution SIP Trunking Throttling
+Exotel enforces a default SIP Trunking rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
 
 If your traffic profile requires a higher burst rate, raise a request via your CSM or Support ticket. The capacity-planning team will review historical traffic, carrier limits, and QoS requirements and can increase the throttling threshold accordingly.
 :::
@@ -166,7 +166,7 @@ Content-Type: application/sdp
 
 ## Related
 
-- [vSIP Overview](./overview.md)
+- [SIP Trunking Overview](./overview.md)
 - [Master Support Guide](./master-guide.md)
 - [Flow and API Configuration Guide](./flow-api-configuration.md)
 - [TCP Integration Guide](./tcp-integration.md)

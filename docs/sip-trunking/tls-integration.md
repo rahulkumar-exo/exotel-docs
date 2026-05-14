@@ -1,14 +1,14 @@
 ---
 id: tls-integration
-title: vSIP TLS Integration Guide (Mumbai)
-description: Technical guide for integrating Exotel Virtual SIP Trunking over TLS via the Mumbai PoP with encrypted SIP signaling and SRTP media.
+title: SIP Trunking TLS Integration Guide (Mumbai)
+description: Technical guide for integrating Exotel SIP Trunking over TLS via the Mumbai PoP with encrypted SIP signaling and SRTP media.
 sidebar_label: TLS Integration (Mumbai)
 sidebar_position: 4
 ---
 
-# Exotel Virtual SIP Trunking -- TLS (Mumbai) -- Customer Integration Guide
+# Exotel SIP Trunking -- TLS (Mumbai) -- Customer Integration Guide
 
-This guide provides technical integration steps for enterprise customers setting up Exotel's Virtual SIP Trunking (vSIP) over TLS via the Mumbai PoP. It includes configuration guidelines, SIP headers, and best practices for secure SIP-based PSTN interconnects.
+This guide provides technical integration steps for enterprise customers setting up Exotel's SIP Trunking over TLS via the Mumbai PoP. It includes configuration guidelines, SIP headers, and best practices for secure SIP-based PSTN interconnects.
 
 :::note Alpha Release
 The Alpha version is designed for pilot usage and is not covered by production-grade SLAs.
@@ -16,7 +16,7 @@ The Alpha version is designed for pilot usage and is not covered by production-g
 
 ## Product Overview
 
-Exotel's Virtual SIP Trunking (Alpha) over TLS enables secure, encrypted PSTN call origination and termination between your SIP infrastructure and Exotel's platform.
+Exotel's SIP Trunking (Alpha) over TLS enables secure, encrypted PSTN call origination and termination between your SIP infrastructure and Exotel's platform.
 
 | Parameter | Value |
 |-----------|-------|
@@ -26,8 +26,8 @@ Exotel's Virtual SIP Trunking (Alpha) over TLS enables secure, encrypted PSTN ca
 | **Authentication** | IP Whitelisting (no SIP registration) |
 | **Edge Location** | Mumbai PoP (India) |
 
-:::caution vSIP Throttling
-Exotel enforces a default vSIP rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
+:::caution SIP Trunking Throttling
+Exotel enforces a default SIP Trunking rate-limit of **200 calls per minute (CPM)** per trunk to safeguard carrier capacity and call quality.
 
 If your traffic profile requires a higher burst rate, raise a request via your CSM or Support ticket. The capacity-planning team will review historical traffic, carrier limits, and QoS requirements and can increase the throttling threshold accordingly.
 :::
@@ -239,7 +239,7 @@ a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:<srtp-key>
 
 ## Support and Next Steps
 
-This guide documents Exotel vSIP over TLS via Mumbai PoP under the Alpha release. Future GA versions will include additional security layers, reporting, and failover routing.
+This guide documents Exotel SIP Trunking over TLS via Mumbai PoP under the Alpha release. Future GA versions will include additional security layers, reporting, and failover routing.
 
 For support:
 - Contact your Exotel account manager
@@ -252,7 +252,7 @@ For support:
 
 ## Related
 
-- [vSIP Overview](./overview.md)
+- [SIP Trunking Overview](./overview.md)
 - [Master Support Guide](./master-guide.md)
 - [TCP Integration Guide](./tcp-integration.md)
 - [FQDN-based Integration](./fqdn-integration.md)
