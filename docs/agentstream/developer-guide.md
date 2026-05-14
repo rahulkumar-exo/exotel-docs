@@ -1,7 +1,7 @@
 ---
 id: developer-guide
 title: AgentStream
-description: Complete developer reference — three connection methods, WebSocket protocol, audio format, Passthru Applet, stream monitoring, WSS error handling, and a working echo server.
+description: Complete developer reference for Exotel AgentStream — three connection methods, WebSocket protocol, audio spec, Passthru Applet, stream monitoring, and WSS error handling.
 sidebar_label: AgentStream
 slug: /agentstream/developer-guide
 sidebar_position: 3
@@ -9,24 +9,24 @@ sidebar_position: 3
 
 # AgentStream
 
-Real-time, bidirectional audio between live phone calls and your bot server over WebSocket. Exotel handles PSTN; you handle the logic.
+Real-time, bidirectional audio between live phone calls and your bot server over WebSocket. Exotel manages PSTN — you own the logic.
 
 ---
 
-## How AgentStream works
+## How it works
 
 ```
-Caller → Exophone (PSTN / SIP)
-              │
-    Exotel infrastructure
-              │
-    ┌─────────▼──────────┐
-    │  VoiceBot Applet   │  ◄──────► wss://your-bot-server
-    └────────────────────┘
-              │
-    ┌─────────▼──────────┐
-    │  Passthru Applet   │  ──POST──► your-callback-url
-    └────────────────────┘
+Caller ──► Exophone (PSTN / SIP)
+                  │
+       Exotel infrastructure
+                  │
+     ┌────────────▼────────────┐
+     │    VoiceBot Applet      │ ◄──── wss://your-bot-server
+     └────────────┬────────────┘
+                  │  (after stream ends)
+     ┌────────────▼────────────┐
+     │    Passthru Applet      │ ──POST──► your-callback-url
+     └─────────────────────────┘
 ```
 
 **Call lifecycle**
@@ -34,31 +34,45 @@ Caller → Exophone (PSTN / SIP)
 | Phase | What happens |
 |-------|-------------|
 | Call answered | Exotel opens WebSocket to your `wss://` endpoint |
-| `connected` | Handshake confirmed |
-| `start` | One-time metadata — call SID, custom params, audio format |
-| `media` (loop) | ~100 ms PCM chunks from caller → your server, and back |
+| `connected` | WebSocket handshake confirmed |
+| `start` | One-time session metadata — call SID, custom params, audio format |
+| `media` _(loop)_ | ~100 ms PCM audio chunks flow both ways |
 | `stop` | Call ended; socket closed |
-| Passthru POST | Stream metadata + outcome sent to your callback URL |
+| Passthru POST | Stream outcome + metadata posted to your callback URL |
+
+**Limits**
+
+| Constraint | Value |
+|-----------|-------|
+| Max session duration | 60 minutes |
+| Handshake timeout | 10 seconds (one automatic retry) |
+| Max custom URL params | 3 key-value pairs, ≤ 256 chars total |
+| Max `streamurl` length | 600 characters (including query string) |
+| Max `streamname` | 32 characters |
 
 ---
 
 ## Three ways to connect
 
-| # | Method | Bot URL lives in | Best for |
-|---|--------|-----------------|----------|
-| 1 | [Connect to Voice AI API](#1-connect-to-voice-ai-api) | API request (`streamurl`) | Simple outbound bot calls, no flow needed |
-| 2 | [Connect via Flow](#2-connect-via-flow-with-voice-ai) | Inside the Exotel flow | Flows with IVR menus, greetings, DTMF, agent handoff |
-| 3 | [ExoML / Programmable APIs](#3-exoml--programmable-voice-apis) | API request (`url` + Legs API) | Full programmatic control — per-call stream URLs, dynamic routing |
+| | Method | Bot URL configured in | Best for |
+|--|--------|----------------------|----------|
+| **1** | [Connect Voice AI](#1-connect-voice-ai) | API request (`streamurl`) | Direct outbound bot calls — no dashboard flow needed |
+| **2** | [Connect Voice API with Flow](#2-connect-voice-api-with-flow) | Inside the Exotel flow | Flows with IVR menus, greetings, DTMF collection, agent handoff |
+| **3** | [Programmable Voice APIs (ExoML)](#3-programmable-voice-apis-exoml) | API request (Legs API) | Full per-call control — dynamic stream URLs, greeting + stream in parallel |
 
-All three result in the same WebSocket connection described in [WebSocket Protocol](#websocket-protocol).
+All three result in the same WebSocket session described in [WebSocket Protocol](#websocket-protocol).
 
 ---
 
-## 1. Connect to Voice AI API
+## 1. Connect Voice AI
 
-One API call — Exotel dials the number and connects the answered call directly to your bot.
+One API call — Exotel dials a number and connects the answered call directly to your bot's WebSocket endpoint.
 
-**`POST /v1/accounts/{account_sid}/calls/connect`**
+### Endpoint
+
+```
+POST /v1/accounts/{account_sid}/calls/connect
+```
 
 | Region | Base URL |
 |--------|----------|
@@ -67,39 +81,39 @@ One API call — Exotel dials the number and connects the answered call directly
 
 **Auth:** HTTP Basic — API key as username, API token as password.
 
-### Required parameters
+### Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `from` | Number to dial — international format (`+919876543210`) |
-| `callerid` | Your Exophone (shown as caller ID) |
-| `streamurl` | Your bot's WebSocket URL (`wss://` or `ws://`) |
-| `streamtype` | Must be `bidirectional` |
+**Required**
 
-### Optional parameters
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `from` | string | Number to dial — E.164 format (`+919876543210`) |
+| `callerid` | string | Your Exophone shown as caller ID |
+| `streamurl` | string | Bot WebSocket URL — must start with `ws://` or `wss://` |
+| `streamtype` | string | Must be `bidirectional` |
 
-| Parameter | Description |
-|-----------|-------------|
-| `record` | `true` to record (default: `false`) |
-| `recordingchannels` | `single` (merged) or `dual` (separate tracks) |
-| `timelimit` | Max duration in seconds (max `14400`) |
-| `customfield` | Tracking metadata — max 128 chars |
-| `statuscallback` | Webhook URL for call status events |
-| `statuscallbackevents[]` | `answered` · `terminal` · `ringing` |
-| `streamname` | Label for the stream — max 32 chars |
+**Optional**
 
-:::warning
-`streamurl` must start with `ws://` or `wss://`. Full URL including query params must be **under 600 characters**.
-:::
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `record` | boolean | Record the call (default: `false`) |
+| `recordingchannels` | string | `single` (merged audio) or `dual` (separate tracks) |
+| `timelimit` | integer | Max call duration in seconds — max `14400` |
+| `customfield` | string | Tracking metadata — max 128 chars |
+| `statuscallback` | string | Webhook URL for call status events |
+| `statuscallbackevents[]` | string | `answered` · `terminal` · `ringing` |
+| `streamname` | string | Label for the stream — max 32 chars |
 
 ### Request
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<account_sid>/calls/connect' \
+curl -X POST \
+  'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<account_sid>/calls/connect' \
   -F 'from=+919876543210' \
   -F 'callerid=08047491899' \
   -F 'streamurl=wss://bot.example.com/media?sample_rate=16000' \
   -F 'streamtype=bidirectional' \
+  -F 'record=true' \
   -F 'statuscallback=https://your-server.com/callback' \
   -F 'statuscallbackevents[]=terminal'
 ```
@@ -120,43 +134,61 @@ curl -X POST 'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<accou
 }
 ```
 
-**Status values:** `queued` · `in-progress` · `completed` · `failed` · `busy` · `no-answer`
+**Call status values**
+
+| Status | Meaning |
+|--------|---------|
+| `queued` | Call is being prepared |
+| `in-progress` | Call is active |
+| `completed` | Call ended normally |
+| `failed` | Could not place call |
+| `busy` | Number was busy |
+| `no-answer` | No response within timeout |
 
 ---
 
-## 2. Connect via Flow with Voice AI
+## 2. Connect Voice API with Flow
 
-Exotel dials the number, the answered call enters an existing Exotel flow. The flow handles IVR menus, greetings, DTMF collection, and eventually reaches a Voicebot/Stream applet that opens the WebSocket.
+Exotel dials a number and the answered call enters a pre-built Exotel flow. The flow handles greetings, IVR menus, DTMF collection, and routing — and eventually a Voicebot or Stream applet inside the flow opens the WebSocket connection to your bot.
 
-**`POST /v1/accounts/{account_sid}/calls/connect`** (same endpoint as above)
+### Endpoint
 
-### Required parameters
+Same as above:
 
-| Parameter | Description |
-|-----------|-------------|
-| `from` | Number to dial |
-| `callerid` | Your Exophone |
-| `url` | Flow URL: `https://my.exotel.com/{account_sid}/exoml/start_voice/{flow_id}` |
+```
+POST /v1/accounts/{account_sid}/calls/connect
+```
 
-### Optional parameters
+### Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `calltype` | `trans` for transactional |
-| `timelimit` | Max duration in seconds (max `14400`) |
-| `timeout` | Ring timeout in seconds |
-| `statuscallback` | Webhook URL |
-| `statuscallbackevents` | `terminal` · `answered` · `both` |
-| `customfield` | Passed to your flow via the Passthru applet |
+**Required**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `from` | string | Number to dial — E.164 format |
+| `callerid` | string | Your Exophone |
+| `url` | string | Flow URL: `https://my.exotel.com/{account_sid}/exoml/start_voice/{flow_id}` |
+
+**Optional**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `calltype` | string | `trans` for transactional calls |
+| `timelimit` | integer | Max duration in seconds — max `14400` |
+| `timeout` | integer | Ring timeout in seconds |
+| `statuscallback` | string | Webhook URL for status events |
+| `statuscallbackevents` | string | `terminal` · `answered` · `both` |
+| `customfield` | string | Passed into your flow via the Passthru applet |
 
 :::note
-Do **not** pass `streamurl` or `streamtype` here — those are configured inside the flow's applet.
+Do **not** pass `streamurl` or `streamtype` in this request — the WebSocket URL is configured inside the flow's Voicebot/Stream applet.
 :::
 
 ### Request
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<account_sid>/calls/connect' \
+curl -X POST \
+  'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<account_sid>/calls/connect' \
   -d 'from=+919876543210' \
   -d 'callerid=08047491899' \
   -d 'url=https://my.exotel.com/<account_sid>/exoml/start_voice/<flow_id>' \
@@ -166,33 +198,36 @@ curl -X POST 'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<accou
 
 ### Response
 
-Same shape as [Connect to Voice AI API response](#response).
+Same shape as [Connect Voice AI response](#response).
 
 ### Flow patterns
 
-| Pattern | Applets in flow |
-|---------|----------------|
-| IVR menu → bot | Dial → Gather (DTMF) → Voicebot |
-| Compliance greeting → bot | Play → Voicebot |
+| Pattern | Applets used in flow |
+|---------|---------------------|
+| Compliance disclosure → bot | Play → Voicebot |
+| IVR menu → bot | Gather (DTMF) → Voicebot |
 | Bot → human escalation | Voicebot → Transfer |
-| Bot → external system | Voicebot → Passthru |
+| Bot → external system handoff | Voicebot → Passthru |
+| Agent assist (listen only) | Stream → agent dashboard |
 
 ---
 
-## 3. ExoML / Programmable Voice APIs
+## 3. Programmable Voice APIs (ExoML)
 
-Full programmatic control using the **Legs API** — create call legs, start streams, and manage greetings in real time. No flow configuration in the dashboard required.
+Full programmatic control via the **Legs API** — create call legs, start streams, and manage greetings dynamically at runtime. No Exotel dashboard flow required.
 
-**Prerequisites**
+### Prerequisites
 
 - Account SID, API Key, API Token
-- Configured Exophone
-- gRPC endpoint to receive leg events (`leg_answered`, etc.)
-- Your bot server deployed at a public `wss://` URL
+- Configured Exophone for outbound calls
+- gRPC endpoint to receive leg events
+- Bot server deployed at a public `wss://` URL
 
-### Approach A — Bot first (stream only)
+---
 
-Best for: inbound IVR, tech support, bot-only journeys.
+### Approach A — Stream only (bot-first)
+
+Best for: inbound IVR, tech support, any journey where the bot answers immediately.
 
 **Step 1 — Dial the customer**
 
@@ -203,7 +238,7 @@ Authorization: Basic <base64(api_key:api_token)>
 
 {
   "contact_uri": "+919876543210",
-  "exophone": "08047491899",
+  "exophone":    "08047491899",
   "leg_event_endpoint": "grpc://your-event-server.example.com",
   "timeout": 30
 }
@@ -218,11 +253,13 @@ POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream
 Content-Type: application/json
 
 {
-  "direction": "bidirectional",
-  "url": "wss://bot.example.com/stream",
+  "direction":    "bidirectional",
+  "url":          "wss://bot.example.com/stream",
   "content_type": "audio/x-mulaw;rate=8000"
 }
 ```
+
+---
 
 ### Approach B — Greeting + stream (eliminate dead air)
 
@@ -233,18 +270,20 @@ Best for: outbound sales, collections, contact centre simulation.
 **Step 2 — Fire both in parallel on `leg_answered`**
 
 ```http
-# Start the stream
 POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream
-{ "direction": "bidirectional", "url": "wss://bot.example.com/stream", "content_type": "audio/x-mulaw;rate=8000" }
+{
+  "direction": "bidirectional",
+  "url": "wss://bot.example.com/stream",
+  "content_type": "audio/x-mulaw;rate=8000"
+}
 ```
 
 ```http
-# Play a short greeting simultaneously
 POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_say
 { "text": "Please hold while I connect you.", "loop": 0 }
 ```
 
-Or use a WAV file instead of TTS:
+Or play an audio file instead of TTS:
 
 ```http
 POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_play
@@ -258,17 +297,17 @@ POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions/stop_say
 ```
 
 :::tip
-Keep greeting audio to **200–500 ms**. Stop `say`/`play` immediately on `stream_started` for a seamless transition.
+Keep greeting audio to **200–500 ms**. Send `stop_say` / `stop_play` immediately upon receiving `stream_started` for a seamless handoff.
 :::
 
 ### When to use each approach
 
 | Scenario | Approach |
 |----------|----------|
-| Bot-first / IVR journey | A |
+| Inbound IVR / bot-first | A |
+| Tech support (bot only) | A |
 | Outbound sales / collections | B |
 | Contact centre simulation | B |
-| Tech support (bot only) | A |
 
 ---
 
@@ -276,35 +315,35 @@ Keep greeting audio to **200–500 ms**. Stop `say`/`play` immediately on `strea
 
 Used when the Voicebot Applet is placed inside an Exotel flow (dashboard or ExoML).
 
-| # | Parameter | Required | Description |
-|---|-----------|----------|-------------|
-| 1 | **URL** | Yes | `wss://bot.example.com/stream` — or an `https://` URL that returns `{"url":"wss://..."}` for dynamic routing |
-| 2 | **Authentication** | No | IP whitelist (email hello@exotel.com) or Basic auth header |
-| 3 | **Sample Rate** | No | `8000` (default) · `16000` (recommended for ASR) · `24000`. Append `?sample-rate=16000` to URL |
-| 4 | **Custom Parameters** | No | Up to 3 key-value pairs in URL. Max 256 chars total. Arrive in the `start` event. |
-| 5 | **Record** | No | Generates recording URL in the subsequent Passthru applet |
-| 6 | **Next Applet** | No | Stream closes automatically — no explicit Stop applet needed |
+| # | Parameter | Required | Details |
+|---|-----------|----------|---------|
+| 1 | **URL** | Yes | `wss://bot.example.com/stream` — or an `https://` endpoint that returns `{"url":"wss://..."}` for dynamic routing per call |
+| 2 | **Authentication** | No | **IP whitelist** — email hello@exotel.com for Exotel's IP ranges. Or **Basic Auth**: `Authorization: Basic base64(api_key:api_token)` header |
+| 3 | **Sample Rate** | No | `8000` (default, PSTN quality) · `16000` (recommended for ASR) · `24000` (HD). Append as query param: `?sample-rate=16000` |
+| 4 | **Custom Parameters** | No | Up to 3 key-value pairs appended to the URL. Max 256 chars total. Values arrive in the `start` event's `custom_parameters` object. |
+| 5 | **Record** | No | Enables call recording; generates a recording URL in the subsequent Passthru applet |
+| 6 | **Next Applet** | No | Stream closes automatically before the next applet runs — no explicit Stop applet needed |
 
 ---
 
 ## WebSocket protocol
 
-### Event flow
+### Connection lifecycle
 
 ```
 Call answered
-    ↓
-Exotel sends → connected
-Exotel sends → start          (once — metadata)
-Exotel sends → media          (every ~100 ms — caller audio)
-You send     → media          (your bot's audio)
-Exotel sends → mark           (your audio finished playing)
-Exotel sends → dtmf           (caller pressed a key)
-Exotel sends → stop           (call ended)
+    │
+    ├── Exotel → connected          (WebSocket handshake done)
+    ├── Exotel → start              (once — call + session metadata)
+    ├── Exotel → media              (every ~100 ms — caller audio)
+    ├── You    → media              (your bot's audio response)
+    ├── Exotel → mark               (confirms your audio finished playing)
+    ├── Exotel → dtmf               (caller pressed a key)
+    └── Exotel → stop               (call ended — socket closes)
 ```
 
-:::warning 10-second timeout
-Exotel drops the session if your server doesn't complete the WebSocket handshake within **10 seconds**.
+:::warning Handshake timeout
+Exotel drops the session if your server doesn't complete the WebSocket handshake within **10 seconds**. One automatic retry is attempted before the session is abandoned.
 :::
 
 ---
@@ -313,16 +352,22 @@ Exotel drops the session if your server doesn't complete the WebSocket handshake
 
 #### `connected`
 
+Sent immediately after the WebSocket handshake.
+
 ```json
 { "event": "connected" }
 ```
 
+---
+
 #### `start`
+
+Sent **once**, before any audio. Contains full session context.
 
 ```json
 {
   "event": "start",
-  "sequence_number": 1,
+  "sequence_number": "1",
   "stream_sid": "MZxxxxxxxxxxxxxxxxxxxxxxxx",
   "start": {
     "stream_sid":  "MZxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -330,7 +375,10 @@ Exotel drops the session if your server doesn't complete the WebSocket handshake
     "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxx",
     "from": "+919876543210",
     "to":   "+918047491899",
-    "custom_parameters": { "key1": "value1", "key2": "value2" },
+    "custom_parameters": {
+      "session_type": "support",
+      "agent_id": "42"
+    },
     "media_format": {
       "encoding":    "audio/x-raw",
       "sample_rate": "8000",
@@ -340,61 +388,81 @@ Exotel drops the session if your server doesn't complete the WebSocket handshake
 }
 ```
 
+---
+
 #### `media`
+
+An audio chunk from the caller, arriving every ~100 ms.
 
 ```json
 {
   "event": "media",
-  "sequence_number": 3,
+  "sequence_number": "3",
   "stream_sid": "MZxxxxxxxxxxxxxxxxxxxxxxxx",
   "media": {
-    "chunk": 2,
+    "chunk":     "2",
     "timestamp": "200",
-    "payload": "<base64-encoded PCM>"
+    "payload":   "<base64-encoded PCM>"
   }
 }
 ```
 
+---
+
 #### `dtmf` _(bidirectional only)_
+
+A keypress from the caller.
 
 ```json
 {
   "event": "dtmf",
-  "sequence_number": 7,
+  "sequence_number": "7",
   "stream_sid": "MZxxxxxxxxxxxxxxxxxxxxxxxx",
-  "dtmf": { "digit": "5", "duration": "100" }
-}
-```
-
-#### `mark`
-
-Sent when audio you previously sent has finished playing.
-
-```json
-{
-  "event": "mark",
-  "sequence_number": 15,
-  "stream_sid": "MZxxxxxxxxxxxxxxxxxxxxxxxx",
-  "mark": { "name": "my-label" }
-}
-```
-
-#### `stop`
-
-```json
-{
-  "event": "stop",
-  "sequence_number": 20,
-  "stream_sid": "MZxxxxxxxxxxxxxxxxxxxxxxxx",
-  "stop": {
-    "call_sid":    "CAxxxxxxxxxxxxxxxxxxxxxxxx",
-    "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxx",
-    "reason": "callended"
+  "dtmf": {
+    "digit":    "5",
+    "duration": "100"
   }
 }
 ```
 
-`reason`: `stopped` (applet ended) · `callended` (caller hung up)
+---
+
+#### `mark`
+
+Sent when a chunk of audio you previously sent has **finished playing** to the caller.
+
+```json
+{
+  "event": "mark",
+  "sequence_number": "15",
+  "stream_sid": "MZxxxxxxxxxxxxxxxxxxxxxxxx",
+  "mark": { "name": "turn-3-end" }
+}
+```
+
+---
+
+#### `stop`
+
+Sent when the call ends or the stream is closed.
+
+```json
+{
+  "event": "stop",
+  "sequence_number": "20",
+  "stream_sid": "MZxxxxxxxxxxxxxxxxxxxxxxxx",
+  "stop": {
+    "call_sid":    "CAxxxxxxxxxxxxxxxxxxxxxxxx",
+    "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxx",
+    "reason":      "callended"
+  }
+}
+```
+
+| `reason` value | Meaning |
+|---------------|---------|
+| `stopped` | Applet ended (next applet in flow ran) |
+| `callended` | Caller or bot hung up |
 
 ---
 
@@ -410,9 +478,11 @@ Sent when audio you previously sent has finished playing.
 }
 ```
 
+---
+
 #### `mark` — tag a playback position
 
-Receive a matching `mark` event when that position finishes playing.
+Exotel echoes this back as an incoming `mark` event once that audio finishes playing. Use it for precise interruption timing.
 
 ```json
 {
@@ -422,32 +492,38 @@ Receive a matching `mark` event when that position finishes playing.
 }
 ```
 
-#### `clear` — flush buffered audio (barge-in)
+---
+
+#### `clear` — flush buffered audio
+
+Removes all queued, unplayed audio from Exotel's buffer. Send this when the caller starts speaking mid-response (barge-in).
 
 ```json
 { "event": "clear", "stream_sid": "MZxxxxxxxxxxxxxxxxxxxxxxxx" }
 ```
 
 :::tip Barge-in
-Send `clear` the moment caller speech is detected mid-response. Use small outgoing chunks (≤ 640 bytes) to minimise how much audio is flushed.
+Send `clear` as soon as you detect caller speech. Send outgoing audio in small chunks (≤ 640 bytes) so the buffer drains faster on interruption.
 :::
 
 ---
 
 ### Event field reference
 
-| Field | Type | Notes |
-|-------|------|-------|
+| Field | Type | Description |
+|-------|------|-------------|
 | `event` | string | `connected` · `start` · `media` · `dtmf` · `mark` · `stop` · `clear` |
-| `stream_sid` | string | Unique session ID — log this |
-| `sequence_number` | string | Monotonically increasing; detect gaps/drops |
-| `start.call_sid` | string | Correlate with status callbacks |
+| `stream_sid` | string | Unique stream session ID — always log this |
+| `sequence_number` | string | Monotonically increasing; use to detect dropped frames |
+| `start.call_sid` | string | Parent call ID — correlate with status callbacks |
+| `start.from` / `start.to` | string | Caller and called numbers |
 | `start.custom_parameters` | object | Key-value pairs from applet URL |
-| `media.payload` | string | Base64 raw PCM |
-| `media.chunk` | number | Chunk index within session |
-| `media.timestamp` | string | ms since stream start |
+| `start.media_format.sample_rate` | string | Negotiated sample rate for the session |
+| `media.payload` | string | Base64-encoded raw PCM audio |
+| `media.chunk` | string | Chunk index within the session |
+| `media.timestamp` | string | Milliseconds since stream start |
 | `stop.reason` | string | `stopped` or `callended` |
-| `dtmf.digit` | string | `0–9`, `*`, `#` |
+| `dtmf.digit` | string | `0–9` · `*` · `#` |
 | `dtmf.duration` | string | Key hold duration in ms |
 
 ---
@@ -456,51 +532,76 @@ Send `clear` the moment caller speech is detected mid-response. Use small outgoi
 
 | Property | Value |
 |----------|-------|
-| Codec | Raw PCM (linear16 / slin) — uncompressed |
+| Codec | Raw PCM / linear16 (slin) — uncompressed |
 | Bit depth | 16-bit signed, little-endian |
 | Channels | Mono |
 | Default sample rate | 8 000 Hz |
-| Supported rates | 8 000 · 16 000 · 24 000 Hz |
+| Supported sample rates | 8 000 · 16 000 · 24 000 Hz |
 | Transport encoding | Base64 |
-| Min chunk | 3 200 bytes (100 ms @ 8 kHz) |
-| Max chunk | 100 000 bytes |
-| Chunk must be | A multiple of 320 bytes |
+| Min chunk size | 3 200 bytes — 100 ms @ 8 kHz |
+| Max chunk size | 100 000 bytes |
+| Chunk size must be | A multiple of **320 bytes** |
 
 :::note Why 320-byte multiples?
-320 bytes = 20 ms @ 8 kHz, 16-bit mono. Non-compliant sizes cause 20 ms gaps or audio distortion.
+320 bytes = 20 ms of audio @ 8 kHz, 16-bit mono. Non-compliant sizes introduce 20 ms gaps or audio distortion.
 :::
+
+**Setting sample rate**
+
+Append `?sample-rate=<rate>` to the applet URL or `streamurl`:
+
+```
+wss://bot.example.com/stream?sample-rate=16000
+```
 
 ---
 
 ## Passthru Applet
 
-Place the Passthru Applet **immediately after** the Voicebot/Stream applet. After the stream ends, Exotel POSTs stream metadata to your callback URL.
+Place the Passthru Applet **immediately after** the Voicebot or Stream applet in your flow. When the stream ends, Exotel POSTs session metadata to your callback URL.
 
-### Passthru POST fields
+### Callback POST fields
 
-| Field | Description |
-|-------|-------------|
-| `streamsid` | Stream session ID |
-| `streamurl` | The `wss://` URL used |
-| `status` | Final stream status |
-| `duration` | Stream duration in seconds |
-| `recordingurl` | Recording link (if recording was enabled) |
-| `error` | Error detail string (treat as opaque; copy for support) |
-| `disposition` | Outcome classification |
-| `disconnectedby` | `caller` · `bot` · `system` |
-| `detailedstatus` | Fine-grained status indicator |
-| `callsid` | Parent call SID |
-| `legs` | Present when Legs API was used |
-| `dialcallstatus` | Final dial status (after escalation) |
-| `dialwhomnumber` | Escalation target number |
+| Field | Type | Description |
+|-------|------|-------------|
+| `callsid` | string | Parent call identifier |
+| `streamsid` | string | Stream session identifier |
+| `streamurl` | string | The `wss://` URL used for the session |
+| `status` | string | Final stream status |
+| `duration` | integer | Stream duration in seconds |
+| `recordingurl` | string | Recording link — present if recording was enabled |
+| `error` | string | Error detail string; treat as opaque — copy full value for support |
+| `disposition` | string | Outcome classification |
+| `disconnectedby` | string | `caller` · `bot` · `system` |
+| `detailedstatus` | string | Fine-grained status indicator |
+| `legs` | object | Present when Legs API was used |
+| `dialcallstatus` | string | Final dial status (after transfer/escalation) |
+| `dialwhomnumber` | string | Escalation target number |
 
-### Implementation notes
+### Interpreting `disconnectedby`
 
-- Make your handler **idempotent** — Exotel may retry on non-200 responses.
-- Respond with **HTTP 200** immediately; process async.
-- Use `disconnectedby` to classify outcomes: `caller` = normal hang-up, `bot` = bot-initiated, `system` = infrastructure error.
-- Trigger fallback logic based on `detailedstatus` or `error`.
+| Value | Meaning |
+|-------|---------|
+| `caller` | Caller hung up normally |
+| `bot` | Bot closed the WebSocket |
+| `system` | Infrastructure error or session timeout |
+
+### Implementation requirements
+
+- Respond **HTTP 200** immediately — process async.
+- Make your handler **idempotent** — Exotel retries on non-200. Deduplicate on `callsid` + `streamsid`.
+- If `status` and `error` appear inconsistent, **trust `error`**.
+- Use `detailedstatus` to trigger fallback routing logic.
 - Never log credentials embedded in `streamurl`.
+
+### Deployment approach
+
+| Phase | Action |
+|-------|--------|
+| Dev | Validate handler with mock payloads |
+| QA / Staging | Test with real calls; verify all field values |
+| Canary | Roll out gradually; watch error rates |
+| Production | Expand; keep rollback path ready |
 
 ---
 
@@ -508,14 +609,20 @@ Place the Passthru Applet **immediately after** the Voicebot/Stream applet. Afte
 
 Query how many AgentStream sessions are live on your account right now.
 
-**`GET /v1/accounts/{account_sid}/activestreams`**
+### Endpoint
+
+```
+GET /v1/accounts/{account_sid}/activestreams
+```
 
 | Region | Base URL |
 |--------|----------|
 | Mumbai | `https://api.in.exotel.com` |
 | Singapore | `https://api.exotel.com` |
 
-**Auth:** HTTP Basic (API key : API token).
+**Auth:** HTTP Basic — API key as username, API token as password.
+
+Find your credentials at `https://my.exotel.com/apisettings/site#api-credentials`.
 
 ### Request
 
@@ -528,88 +635,110 @@ curl -X GET \
 
 ```json
 {
-  "status": "success",
-  "active_streams": 12,
+  "status":              "success",
+  "active_streams":      12,
   "max_allowed_streams": 100,
-  "account_sid": "<account_sid>"
+  "account_sid":         "<account_sid>"
 }
 ```
 
-| Field | Description |
-|-------|-------------|
-| `active_streams` | Currently live sessions |
-| `max_allowed_streams` | Account concurrency limit |
-| `account_sid` | Your account identifier |
+| Field | Type | Description |
+|-------|------|-------------|
+| `status` | string | `success` or error indicator |
+| `active_streams` | integer | Currently live sessions |
+| `max_allowed_streams` | integer | Account concurrency limit |
+| `account_sid` | string | Your account identifier |
 
-:::tip
-Poll this endpoint to detect concurrency spikes before they cause dropped sessions. Alert when `active_streams / max_allowed_streams > 0.8`.
+:::tip Capacity alerting
+Alert when `active_streams / max_allowed_streams ≥ 0.8` to avoid hitting the concurrency limit mid-call.
 :::
 
 ---
 
 ## WSS errors and handling
 
-Errors surface in two places — WebSocket close codes and the Passthru `error` / `detailedstatus` fields.
+Errors surface in two independent places — always correlate both using `callsid`.
+
+| Source | What it contains |
+|--------|-----------------|
+| WebSocket close code | RFC 6455 code when socket terminates |
+| Passthru `error` + `detailedstatus` | Application-level stream outcome |
 
 ### WebSocket close codes
 
 | Code | Meaning | Common causes |
 |------|---------|---------------|
 | `1000` | Normal closure | Clean disconnect |
-| `1001` | Endpoint going away | Server restart, deploy |
-| `1002–1003` | Protocol / data type error | Malformed frames |
-| `1006` | Abnormal closure (no close frame) | Network drop, TLS failure, LB idle timeout, server crash |
-| `1007–1009` | Payload / policy / size violation | Chunk size out of bounds |
+| `1001` | Endpoint going away | Server restart, redeploy |
+| `1002` | Protocol error | Malformed WebSocket frame |
+| `1003` | Unsupported data type | Non-binary/text frame format mismatch |
+| `1006` | Abnormal closure (no close frame) | Network drop · TLS failure · LB idle timeout · server crash |
+| `1007` | Invalid payload data | Frame encoding violation |
+| `1008` | Policy violation | Auth failure or edge rate limit |
+| `1009` | Message too large | Chunk exceeded max size |
 | `1011` | Server error | Unhandled exception in your handler |
-| `1012–1013` | Restart / retry | Transient infrastructure |
+| `1012` | Service restart | Transient infrastructure — retry |
+| `1013` | Try again later | Temporary overload |
 
-:::warning Code 1006 is the most common
-Always validate: WSS URL reachability, TLS certificate validity, firewall rules, and server cold-start time before investigating further.
+:::warning Code 1006 is the most common error
+Before anything else: check WSS URL reachability, TLS certificate validity, firewall rules, and server cold-start time.
 :::
 
-### Diagnostic checklist by symptom
+### Diagnose by symptom
 
 | Symptom | Check |
 |---------|-------|
-| Won't connect at all | URL, DNS, TLS cert, firewall, IP allowlist |
-| Connects then drops during setup | Cold start latency, CPU, proxy timeout (< 10 s) |
-| Drops after first `start`/`media` | Auth headers, WebSocket upgrade path, edge rate limits |
-| Random mid-call drops | Back-pressure, event loop blocking, application latency |
+| Never connects | URL accessible? DNS resolves? TLS cert valid? Firewall allows Exotel IPs? |
+| Connects, drops during setup | Cold start > 10 s? Proxy timeout? CPU spike on boot? |
+| Drops immediately after `start` | Auth headers correct? WebSocket upgrade path working? Edge rate limits? |
+| Random mid-call drops | Event loop blocked? Back-pressure from ASR/TTS? Audio chunk sizes compliant? |
+| `1006` with no pattern | Enable LB keep-alive; check idle connection timeout settings |
 
-### General best practices
+### Callback error handling
 
-- Log `callsid`, `streamsid`, close code, and the full `error` string for every session.
-- Correlate close codes with `disconnectedby` and `detailedstatus` from the Passthru POST.
-- If `status` and `error` appear inconsistent in the callback, trust `error`.
-- Make Passthru handlers idempotent — deduplicate on `callsid` + `streamsid`.
+- Copy the full `error` string — do not try to parse it; value is opaque and changes.
+- Correlate `stream error` with `status`, `disconnectedby`, and `disposition` in the Passthru POST.
+- If values appear inconsistent, `error` is the authoritative signal.
+- Log: `callsid`, `streamsid`, close code, `error`, `detailedstatus`.
 
 ---
 
 ## Quick start — Echo server
 
-A minimal Python server that reflects caller audio back. Use it to confirm your setup end-to-end before adding ASR/TTS.
+Reflects caller audio back verbatim. Use it to verify your WebSocket setup before integrating ASR/TTS.
 
 ```python
 import asyncio, json, websockets
 
 async def handle(ws):
     stream_sid = None
+
     async for msg in ws:
         ev = json.loads(msg)
+
         match ev["event"]:
+            case "connected":
+                print("connected")
+
             case "start":
                 stream_sid = ev["start"]["stream_sid"]
-                print(f"▶ started  stream={stream_sid}  call={ev['start']['call_sid']}")
+                call_sid   = ev["start"]["call_sid"]
+                params     = ev["start"].get("custom_parameters", {})
+                print(f"start  stream={stream_sid}  call={call_sid}  params={params}")
+
             case "media":
+                # Echo audio back to the caller
                 await ws.send(json.dumps({
                     "event": "media",
                     "stream_sid": stream_sid,
                     "media": {"payload": ev["media"]["payload"]}
                 }))
+
             case "dtmf":
-                print(f"✱ DTMF: {ev['dtmf']['digit']}")
+                print(f"dtmf  digit={ev['dtmf']['digit']}")
+
             case "stop":
-                print(f"■ stopped  reason={ev['stop']['reason']}")
+                print(f"stop  reason={ev['stop']['reason']}")
                 break
 
 async def main():
@@ -620,36 +749,54 @@ async def main():
 asyncio.run(main())
 ```
 
-For local testing:
+**Run it locally**
 
 ```bash
 pip install websockets
+python echo.py
+
+# Expose publicly (Exotel requires a reachable URL)
 ngrok http 5001
-# Use the https:// URL — Exotel resolves it to wss:// automatically
+# Paste the https:// URL into streamurl — Exotel resolves it to wss:// automatically
 ```
 
 ---
 
 ## Production checklist
 
-- [ ] Endpoint uses `wss://` (TLS). Plain `ws://` not supported in production.
-- [ ] WebSocket handshake completes within **10 seconds** of call answer.
-- [ ] Outgoing audio chunks are multiples of **320 bytes** (max 100 KB).
-- [ ] `clear` sent on user interruption — barge-in works correctly.
-- [ ] `mark` used to track exact playback position.
-- [ ] `sample_rate` in applet URL matches ASR/TTS backend rate.
-- [ ] `stream_sid` and `call_sid` logged for every session.
-- [ ] Async WebSocket server used (asyncio / Node.js / Go goroutines).
-- [ ] Passthru handler responds **HTTP 200** immediately; processes async.
-- [ ] Passthru handler is **idempotent** (handles retries without side effects).
-- [ ] Active streams monitored — alert at ≥ 80 % of `max_allowed_streams`.
-- [ ] `streamurl` total length (including query params) is under **600 chars**.
+**Connection**
+- [ ] Endpoint uses `wss://` with a valid TLS certificate
+- [ ] WebSocket handshake completes within **10 seconds**
+- [ ] Exotel's IP ranges are allowlisted if using IP whitelisting
+
+**Audio**
+- [ ] Outgoing chunks are multiples of **320 bytes** (3 200–100 000 bytes)
+- [ ] `sample_rate` in applet URL matches ASR/TTS backend rate
+- [ ] Outgoing chunks are ≤ 640 bytes for responsive barge-in
+
+**Session handling**
+- [ ] `stream_sid` and `call_sid` logged for every session
+- [ ] `clear` sent on user interruption; barge-in tested
+- [ ] `mark` used to track exact playback position
+- [ ] `stop` event handled gracefully; resources cleaned up
+
+**Passthru & callbacks**
+- [ ] Passthru applet placed immediately after Voicebot/Stream applet
+- [ ] Callback handler returns **HTTP 200** immediately; processes async
+- [ ] Callback handler is **idempotent** — deduplicates on `callsid` + `streamsid`
+- [ ] `disconnectedby` used to classify session outcomes
+
+**Scale**
+- [ ] Async WebSocket server used (asyncio / Node.js / Go goroutines)
+- [ ] Active streams monitored — alert at ≥ 80% of `max_allowed_streams`
+- [ ] `streamurl` total length ≤ **600 characters**
+- [ ] Session duration ≤ **60 minutes** accounted for in flow design
 
 ---
 
 ## Related
 
-- [Stream & Voicebot Applet](./stream-voicebot-applet) — Full applet reference and all event field details
+- [Stream & Voicebot Applet](./stream-voicebot-applet) — Full applet reference and event field details
 - [Bot Stream with Legs API](./bot-stream-legs-api) — Legs API programmatic call control
-- [Passthru Applet](./passthru-applet) — Passthru applet configuration
+- [Passthru Applet](./passthru-applet) — Passthru applet configuration reference
 - [AgentStream Overview](./overview) — Platform capabilities at a glance
