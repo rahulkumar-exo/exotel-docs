@@ -171,6 +171,13 @@
     { "source": "/api-console/exoverify-apis", "destination": "/docs/exoverify-api/overview", "permanent": true },
     { "source": "/api/contact-center-apis", "destination": "/docs/contact-center/overview", "permanent": true },
     { "source": "/api/contact-center-apis-v4", "destination": "/docs/contact-center-v4/overview", "permanent": true },
+
+    { "source": "/api/exotel-mcp-server", "destination": "/docs/mcp-server/overview", "permanent": true },
+    { "source": "/api/mcp-server", "destination": "/docs/mcp-server/overview", "permanent": true },
+    { "source": "/api/mcp", "destination": "/docs/mcp-server/overview", "permanent": true },
+    { "source": "/api/exotel-mcp", "destination": "/docs/mcp-server/overview", "permanent": true },
+    { "source": "/api-console/exotel-mcp-server", "destination": "/docs/mcp-server/overview", "permanent": true },
+    { "source": "/api-console/mcp-server", "destination": "/docs/mcp-server/overview", "permanent": true },
     { "source": "/api/exomind-tasker", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
     { "source": "/api/exomind", "destination": "/docs/gen-ai/overview", "permanent": true },
     { "source": "/api/exovoice-analyze-api", "destination": "/docs/gen-ai/api-reference/exovoice-analyze", "permanent": true },
