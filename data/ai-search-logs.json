@@ -8633,5 +8633,39 @@
       }
     ],
     "answer_length": 267
+  },
+  {
+    "timestamp": "2026-05-14T10:50:30.053Z",
+    "response_id": "7dcea608-69d2-4454-870d-31470ac355fc",
+    "question": "in the LMS is iam Integrating the Exotel what will the Users who has Exotel do is there any api thta is to Signin or api key will be put to validate the account availability",
+    "question_length": 173,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8399,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "Categories",
+        "product": "chatbot",
+        "url": "/docs/chatbot/categories"
+      },
+      {
+        "title": "Authentication & Security",
+        "product": "references",
+        "url": "/docs/references/authentication"
+      }
+    ],
+    "answer_length": 2028
   }
 ]
