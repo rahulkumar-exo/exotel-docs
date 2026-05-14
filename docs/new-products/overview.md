@@ -1,7 +1,7 @@
 ---
 title: AgentStream
 sidebar_label: Overview
-sidebar_position: ""
+sidebar_position: 2
 ---
 # Connect to Voice AI API
 
