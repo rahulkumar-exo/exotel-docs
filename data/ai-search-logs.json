@@ -8591,5 +8591,13 @@
       }
     ],
     "answer_length": 4453
+  },
+  {
+    "timestamp": "2026-05-14T09:15:16.160Z",
+    "question": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TwilioResponse>\n <Call>\n  <Sid>f12a0c23dd46fe724f8e6f0b58eb1a5e</Sid>\n  <ParentCallSid/>\n  <DateCreated>2026-05-14 12:41:05</DateCreated>\n  <DateUpdated>2026-05-14 12:41:05</DateUpdated>\n  <AccountSid>apollohealthaxis1m</AccountSid>\n  <To>04048867056</To>\n  <From>08186801823</From>\n  <PhoneNumberSid>04048867056</PhoneNumberSid>\n  <Status>in-progress</Status>\n  <StartTime>2026-05-14 12:41:05</StartTime>\n  <EndTime/>\n  <Duration/>\n  <Price/>\n  <Direction>out",
+    "question_length": 1142,
+    "response_time_ms": 2083,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
