@@ -8701,5 +8701,39 @@
       }
     ],
     "answer_length": 3187
+  },
+  {
+    "timestamp": "2026-05-14T13:24:08.527Z",
+    "response_id": "cf10f439-8094-45be-a7fd-63b64c78e213",
+    "question": "hubspot",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2680,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Integrations",
+        "product": "integrations",
+        "url": "/docs/integrations/overview"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      }
+    ],
+    "answer_length": 791
   }
 ]
