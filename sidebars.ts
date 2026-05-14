@@ -398,6 +398,7 @@ const sidebars: SidebarsConfig = {
 
   vsipSidebar: [
     'vsip/overview',
+    'vsip/dynamic-sip-trunking',
     'vsip/master-guide',
     'vsip/flow-api-configuration',
     {
