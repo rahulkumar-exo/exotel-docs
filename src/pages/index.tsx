@@ -15,6 +15,12 @@ const products = [
     available: true,
   },
   {
+    title: 'AgentStream',
+    description: 'Real-time bidirectional audio between live calls and your bot server over WebSocket — three connection methods, full protocol reference.',
+    link: '/docs/agentstream/developer-guide',
+    available: true,
+  },
+  {
     title: 'Contact Center API',
     description: 'Build custom agent interfaces with outbound calling, lead management, and campaign configuration.',
     link: '/docs/contact-center/overview',
