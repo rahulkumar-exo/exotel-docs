@@ -8599,5 +8599,39 @@
     "response_time_ms": 2083,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-14T09:15:40.258Z",
+    "response_id": "12e1a0d7-4d6b-4327-b6c8-021b4c8b35cd",
+    "question": "how to use CustomField ?",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2839,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Categories",
+        "product": "chatbot",
+        "url": "/docs/chatbot/categories"
+      }
+    ],
+    "answer_length": 267
   }
 ]
