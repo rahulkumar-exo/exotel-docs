@@ -342,45 +342,12 @@ Permanently deletes the trunk and all associated phone numbers, ACLs, and destin
 
 ## Network & firewall
 
-### SIP signaling
+For the full list of SIP signaling endpoints, inbound source IPs, media IP ranges, and firewall rules, refer to the official source of truth:
 
-| Transport | Port | Use |
-|-----------|------|-----|
-| TLS | 443 | Recommended (production) |
-| TCP | 5070 | Fallback only |
-
-**Outbound SIP endpoints (SIP → PSTN)**
-
-| Endpoint | Type |
-|----------|------|
-| `edge.mum.in.exotel.com` | Primary |
-| `edge.hyd.in.exotel.com` | Secondary |
-| `edge.in.exotel.com` | Single DNS |
-
-**Inbound SIP source IPs (PSTN → SIP)**
-
-| IP | Location |
-|----|----------|
-| `35.154.174.161` | AWS Mumbai |
-| `98.130.67.66` | AWS Hyderabad |
-| `129.154.231.198` | OCI (legacy) |
-
-### Media (RTP/SRTP)
-
-| Protocol | Port range |
-|----------|-----------|
-| UDP | 10 000–40 000 |
-
-**India media IPs (allow all):**
-```
-36.59.115.x, 13.127.39.217, 43.205.221.135, 13.203.184.147,
-13.203.182.84, 13.203.81.133, 3.7.34.113, 13.126.206.147,
-35.154.177.121, 13.205.31.133, 35.154.118.78, 40.192.25.80,
-98.130.133.120, 16.112.157.119, 16.112.117.9, 18.61.59.229, 18.61.247.215
-```
+**[Network & Firewall Configuration →](https://docs.exotel.com/dynamic-sip-trunking/network-and-firewall-configuration)**
 
 :::warning No audio?
-If calls connect but have no audio or one-way audio — UDP 10 000–40 000 is blocked on your firewall.
+If calls connect but have no audio or one-way audio — UDP 10 000–40 000 is likely blocked on your firewall.
 :::
 
 ---
