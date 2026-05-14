@@ -371,6 +371,7 @@ const sidebars: SidebarsConfig = {
   agentStreamSidebar: [
     'agentstream/overview',
     'agentstream/getting-started',
+    'agentstream/developer-guide',
     {
       type: 'category',
       label: 'Applets & Streaming',
