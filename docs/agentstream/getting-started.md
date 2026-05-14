@@ -9,10 +9,6 @@ sidebar_position: 2
 
 # Quick Guide to Get Started with Exotel Streaming Services
 
-:::info Content Migration In Progress
-This page is being migrated from the [Exotel Support Center](https://support.exotel.com/support/solutions/articles/3000132268-quick-guide-to-get-started-with-exotel-streaming-services). Full content will be available shortly.
-:::
-
 This guide outlines how to enable and use Exotel's AgentStream capabilities via the Voicebot Applet or Stream Applet. These applets allow real-time audio streaming from calls to your server for processing, voicebot interactions, and more.
 
 ## Prerequisites

@@ -9,10 +9,6 @@ sidebar_position: 6
 
 # Using Exotel Legs APIs to Start a Bot Stream with Optional Greeting
 
-:::info Content Migration In Progress
-This page is being migrated from the [Exotel Support Center](https://support.exotel.com/support/solutions/articles/3000133761-using-exotel-legs-apis-to-start-a-bot-stream-with-optional-greeting). Full content will be available shortly.
-:::
-
 ## Overview
 
 When you build bot-driven voice experiences, reducing perceived latency is critical. With Exotel Legs APIs, you can control call legs and media actions in real time, enabling you to start a bot stream with an optional greeting message.

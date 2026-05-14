@@ -7,12 +7,6 @@ sidebar_position: 6
 
 # Freshdesk Secure Recording Enablement
 
-:::info Content Migration In Progress
-This article is being migrated from the Exotel support portal. Full content will be available shortly.
-
-**Original article:** [Freshdesk Secure Recording Enablement](https://support.exotel.com/support/solutions/articles/3000132169-freshdesk-secure-recording-enablement)
-:::
-
 ## Overview
 
 Enable secure call recording playback within your Freshdesk integration. This guide covers the configuration steps to ensure call recordings are accessed securely and in compliance with your organization's policies.

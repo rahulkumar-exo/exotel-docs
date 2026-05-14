@@ -7,12 +7,6 @@ sidebar_position: 13
 
 # Use CleverTap via Exotel Native SMS Plugin
 
-:::info Content Migration In Progress
-This article is being migrated from the Exotel support portal. Full content will be available shortly.
-
-**Original article:** [Use CleverTap via Exotel Native SMS Plugin](https://support.exotel.com/support/solutions/articles/3000114660-use-clevertap-via-exotel-native-sms-plugin-)
-:::
-
 ## Overview
 
 Configure CleverTap to use Exotel's native SMS plugin for tighter platform integration, improved delivery tracking, and seamless messaging within your engagement campaigns.

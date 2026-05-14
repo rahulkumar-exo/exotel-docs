@@ -7,12 +7,6 @@ sidebar_position: 3
 
 # Exotel Integration with Freshdesk
 
-:::info Content Migration In Progress
-This article is being migrated from the Exotel support portal. Full content will be available shortly.
-
-**Original article:** [Exotel Integration with Freshdesk](https://support.exotel.com/support/solutions/articles/3000101252-exotel-integration-with-freshdesk)
-:::
-
 ## Overview
 
 Integrate Exotel with Freshdesk to enable telephony features directly within your support ticket workflow, including click-to-call and automatic call logging.

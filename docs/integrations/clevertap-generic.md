@@ -7,12 +7,6 @@ sidebar_position: 12
 
 # Use CleverTap via Exotel Generic SMS Plugin
 
-:::info Content Migration In Progress
-This article is being migrated from the Exotel support portal. Full content will be available shortly.
-
-**Original article:** [Use CleverTap via Exotel Generic SMS Plugin](https://support.exotel.com/support/solutions/articles/3000114565-use-clevertap-via-exotel-generic-sms-plugin-)
-:::
-
 ## Overview
 
 Configure CleverTap to use Exotel's generic SMS plugin for sending SMS messages as part of your marketing automation and customer engagement campaigns.

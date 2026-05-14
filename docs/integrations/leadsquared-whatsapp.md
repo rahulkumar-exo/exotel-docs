@@ -7,12 +7,6 @@ sidebar_position: 11
 
 # Configure Exotel's WhatsApp Cloud Integration with LeadSquared
 
-:::info Content Migration In Progress
-This article is being migrated from the Exotel support portal. Full content will be available shortly.
-
-**Original article:** [Configure Exotel's WhatsApp Cloud Integration with LeadSquared](https://support.exotel.com/support/solutions/articles/3000130200-configure-exotel-s-whatsapp-cloud-integration-with-leadsquared)
-:::
-
 ## Overview
 
 Configure Exotel's WhatsApp Cloud integration with LeadSquared to enable automated messaging workflows and lead engagement through WhatsApp.

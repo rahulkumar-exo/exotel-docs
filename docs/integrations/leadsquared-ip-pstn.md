@@ -7,12 +7,6 @@ sidebar_position: 10
 
 # LSQ IP-PSTN Connector
 
-:::info Content Migration In Progress
-This article is being migrated from the Exotel support portal. Full content will be available shortly.
-
-**Original article:** [LSQ IP-PSTN Connector](https://support.exotel.com/support/solutions/articles/3000127371-lsq-ip-pstn-connector)
-:::
-
 ## Overview
 
 Configure the LeadSquared IP-PSTN connector with Exotel voice capabilities to enable browser-based (WebRTC) and PSTN calling directly within LeadSquared.

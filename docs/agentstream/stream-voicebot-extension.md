@@ -9,10 +9,6 @@ sidebar_position: 5
 
 # Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)
 
-:::info Content Migration In Progress
-This page is being migrated from the [Exotel Support Center](https://support.exotel.com/support/solutions/articles/3000132302-updated-extension-guide-working-with-the-stream-and-voicebot-applet-beta-). Full content will be available shortly.
-:::
-
 :::warning Beta Feature
 This extension guide covers Beta features for the Stream and Voicebot Applet. Features and behavior may change.
 :::

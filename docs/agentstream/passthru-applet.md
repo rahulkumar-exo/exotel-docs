@@ -9,10 +9,6 @@ sidebar_position: 3
 
 # Working with Passthru Applet for AgentStream (Beta)
 
-:::info Content Migration In Progress
-This page is being migrated from the [Exotel Support Center](https://support.exotel.com/support/solutions/articles/3000132269-working-with-passthru-applet-for-agentstream-beta-). Full content will be available shortly.
-:::
-
 :::warning Beta Feature
 The Passthru Applet for AgentStream is currently in Beta. Features and behavior may change.
 :::

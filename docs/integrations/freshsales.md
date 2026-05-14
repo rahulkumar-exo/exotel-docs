@@ -7,12 +7,6 @@ sidebar_position: 5
 
 # Exotel Integration with FreshSales
 
-:::info Content Migration In Progress
-This article is being migrated from the Exotel support portal. Full content will be available shortly.
-
-**Original article:** [Exotel Integration with FreshSales](https://support.exotel.com/support/solutions/articles/3000126282-exotel-integration-with-freshsales)
-:::
-
 ## Overview
 
 Integrate Exotel with FreshSales to add click-to-call functionality and automatic call logging to your sales CRM, streamlining your sales workflow.

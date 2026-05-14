@@ -9,10 +9,6 @@ sidebar_position: 1
 
 # AgentStream
 
-:::info Content Migration In Progress
-This documentation is being migrated from the [Exotel Support Center](https://support.exotel.com/support/solutions/folders/3000023566). Full content will be available shortly.
-:::
-
 AgentStream is Exotel's real-time audio streaming platform that enables voicebot integrations, media processing, and SIP trunking solutions. It provides applets and APIs for unidirectional and bidirectional audio streaming during active calls.
 
 ## Key Capabilities
