@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "exotel-docs": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/exotel-docs-mcp/index.js"],
+      "env": {
+        "DOCS_REPO_ROOT": "${workspaceFolder}"
+      }
+    }
+  }
+}

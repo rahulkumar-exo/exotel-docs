@@ -1,0 +1,28 @@
+{
+  "name": "exotel-docs-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server for the Exotel Developer Documentation portal. Exposes tools to search, read, create, and edit docs from any AI coding assistant (Claude Code, Cursor, VS Code Copilot agents, Windsurf).",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "exotel-docs-mcp": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "exotel",
+    "documentation",
+    "docusaurus"
+  ],
+  "license": "MIT"
+}
