@@ -8887,5 +8887,39 @@
       }
     ],
     "answer_length": 1698
+  },
+  {
+    "timestamp": "2026-05-15T08:12:47.846Z",
+    "response_id": "e94af311-1ee1-4933-be6b-a35fb3fb8739",
+    "question": "how do i retrieve call recording through api",
+    "question_length": 44,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4761,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 1970
   }
 ]
