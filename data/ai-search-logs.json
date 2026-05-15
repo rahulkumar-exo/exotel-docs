@@ -9091,5 +9091,39 @@
       }
     ],
     "answer_length": 2330
+  },
+  {
+    "timestamp": "2026-05-15T10:22:08.554Z",
+    "response_id": "bc1cc973-5d63-48b2-9ec1-0b71bf39a3f4",
+    "question": "can i ger last 2 years worth of call recordings through api?",
+    "question_length": 60,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 15266,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      }
+    ],
+    "answer_length": 1989
   }
 ]
