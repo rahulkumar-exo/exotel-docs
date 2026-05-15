@@ -21,6 +21,20 @@ Three things from your Exotel account:
 
 That's it. You don't need to know what base64 encoding is. You don't need to touch a terminal.
 
+## Supported AI Clients
+
+Exotel MCP works with any AI client that supports the Model Context Protocol. Tested clients and where each one keeps its MCP config (the AI client edits this file for you in Step 1 — you usually don't need to open it manually):
+
+| Client | MCP config location |
+|--------|---------------------|
+| **Claude Desktop** | `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) · `%APPDATA%\Claude\claude_desktop_config.json` (Windows) |
+| **Cursor** | `.cursor/mcp.json` in your project root, or `~/.cursor/mcp.json` globally |
+| **Claude Code** | `.claude/settings.json` in your project root |
+| **VS Code** (with MCP-supporting extension or Copilot agents) | `.vscode/mcp.json` in your project root |
+| **Windsurf** | `~/.codeium/windsurf/mcp_config.json` |
+
+Just open the AI client you already use — the next step is the same regardless.
+
 ## Step 1 — Paste This Into Your AI Client
 
 Open Claude, Cursor, or any MCP-compatible AI client and send this message — fill in your actual values:
@@ -81,4 +95,4 @@ Check your Exotel dashboard URL:
 
 ## Questions?
 
-Contact your Exotel account manager or reach **Exotel support** at [support.exotel.com](https://support.exotel.com).
+Contact your Exotel account manager or reach **Exotel support** at [hello@exotel.com](mailto:hello@exotel.com).

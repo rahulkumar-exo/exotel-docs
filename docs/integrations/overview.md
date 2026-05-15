@@ -177,5 +177,5 @@ Customer onboarding guide for IP-PSTN intermix and WebRTC SDK integration.
 
 ## Need Help?
 
-- Contact [Exotel Support](https://support.exotel.com) for integration assistance
+- Contact [Exotel Support](mailto:hello@exotel.com) for integration assistance
 - Visit the [Exotel Dashboard](https://my.exotel.com) to manage your account settings

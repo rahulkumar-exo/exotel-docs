@@ -270,7 +270,7 @@ This guide covers Exotel SIP Trunking over TCP via the Mumbai PoP under the Alph
 
 For support:
 - Contact your Exotel account manager
-- Or raise a ticket via [support.exotel.com](https://support.exotel.com) with:
+- Or raise a ticket via [hello@exotel.com](mailto:hello@exotel.com) with:
   - Account SID
   - Call time and number
   - SIP trace logs (.pcap or .txt)

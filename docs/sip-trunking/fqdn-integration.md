@@ -193,7 +193,7 @@ For FQDN-based trunk configuration:
 3. Test connectivity using SIPp, `sngrep`, or call traces
 
 For help:
-- Contact [support.exotel.com](https://support.exotel.com) with FQDN, DNS setup, and logs
+- Contact [hello@exotel.com](mailto:hello@exotel.com) with FQDN, DNS setup, and logs
 
 ---
 

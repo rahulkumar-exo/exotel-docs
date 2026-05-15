@@ -104,6 +104,6 @@ Before diving in, familiarize yourself with these Exotel terms:
 
 ## Need Help?
 
-- **Support portal**: [support.exotel.com](https://support.exotel.com)
+- **Support portal**: [hello@exotel.com](mailto:hello@exotel.com)
 - **Email**: hello@exotel.com
 - **Dashboard chat**: Available in the bottom-right corner of [my.exotel.com](https://my.exotel.com)

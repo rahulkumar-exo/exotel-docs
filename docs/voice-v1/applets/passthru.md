@@ -29,7 +29,7 @@ The Passthru applet supports **binary decisions** using HTTP status codes:
 
 ## Parameters Sent to Your URL
 
-When a call reaches the Passthru applet, Exotel sends details about the incoming call to your Application URL. For the complete list of parameters, refer to the [Passthru applet documentation](https://support.exotel.com/support/solutions/articles/48283-working-with-passthru-applet).
+When a call reaches the Passthru applet, Exotel sends details about the incoming call to your Application URL. For the complete list of parameters, refer to the [Passthru applet documentation](mailto:hello@exotel.com).
 
 ## Use Cases
 

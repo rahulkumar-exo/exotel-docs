@@ -87,7 +87,7 @@ If your corporate network blocks UDP traffic or uses a restrictive firewall, Web
 
 ## SIP Trunk Requirements
 
-For SIP trunk integrations (see [VSIP documentation](/docs/vsip/overview)):
+For SIP trunk integrations (see [SIP Trunking documentation](/docs/sip-trunking/overview)):
 
 ### Ports and Protocols
 
@@ -229,4 +229,4 @@ For WebRTC or SIP deployments, test voice quality:
 - [IP Whitelisting](/docs/advanced-config/ip-whitelisting) -- Restrict API access by IP
 - [High Availability](/docs/advanced-config/high-availability) -- Redundancy and failover
 - [WebRTC SDK](/docs/integrations/webrtc-sdk) -- Browser-based calling
-- [VSIP](/docs/vsip/overview) -- SIP trunk integration
+- [SIP Trunking](/docs/sip-trunking/overview) -- SIP trunk integration

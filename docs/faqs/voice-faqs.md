@@ -196,7 +196,7 @@ Yes. Exotel supports WebRTC for browser-based calling. See the [WebRTC SDK integ
 
 ### Does Exotel support SIP trunking?
 
-Yes. Enterprise accounts can configure SIP trunking for direct PBX integration. See the [vSIP documentation](/docs/vsip/overview) for details.
+Yes. Enterprise accounts can configure SIP trunking for direct PBX integration. See the [SIP Trunking documentation](/docs/sip-trunking/overview) for details.
 
 ### Can I use text-to-speech in call flows?
 

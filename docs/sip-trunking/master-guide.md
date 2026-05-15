@@ -67,7 +67,7 @@ If your traffic profile requires a higher burst rate, raise a request via your C
 ## Getting Started with Exotel SIP Trunking (Veeno Accounts)
 
 1. **Create your Exotel account** via [my.in.exotel.com](https://my.in.exotel.com)
-2. **Complete KYC** and upgrade the account with help from your Exotel Account Manager ([KYC documentation guide](https://support.exotel.com/support/solutions/articles/35760-where-do-i-upload-my-kyc-verification-docs-and-what-documents-qualify-for-kyc-))
+2. **Complete KYC** and upgrade the account with help from your Exotel Account Manager ([KYC documentation guide](mailto:hello@exotel.com))
 3. **Procure Exophones** by emailing hello@exotel.com (mention region-specific need)
 4. **Decide trunking mode**: TCP or TLS, Static IP or FQDN
 5. **Collect and share** the following with Exotel:
@@ -162,7 +162,7 @@ Contact your Exotel CSM or email: hello@exotel.com
 
 ### Technical Support
 
-Visit [support.exotel.com](https://support.exotel.com) and share the following:
+Visit [hello@exotel.com](mailto:hello@exotel.com) and share the following:
 - Account SID
 - Trunk transport type (TCP/TLS/FQDN)
 - Sample Call SIDs

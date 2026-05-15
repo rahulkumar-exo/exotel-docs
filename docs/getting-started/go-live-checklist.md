@@ -137,7 +137,7 @@ If your estimated peak concurrent calls exceed your plan's limit, request a capa
 | Integration architecture documented | | API flow, webhook handling, data flow |
 | Runbooks for common issues | | Steps for credential rotation, campaign management |
 | Escalation contacts documented | | Exotel support, account manager, internal team |
-| Exotel support channel established | | support.exotel.com, hello@exotel.com |
+| Exotel support channel established | | hello@exotel.com, hello@exotel.com |
 | Team trained on dashboard usage | | Supervisors and agents know their tools |
 
 ## Pre-Launch Verification
@@ -170,7 +170,7 @@ During the first 48 hours after go-live:
 
 | Channel | Contact |
 |---------|---------|
-| Support portal | [support.exotel.com](https://support.exotel.com) |
+| Support portal | [hello@exotel.com](mailto:hello@exotel.com) |
 | Email support | hello@exotel.com |
 | Dashboard chat | Bottom-right corner of [my.exotel.com](https://my.exotel.com) |
 | Account manager | As assigned during onboarding |

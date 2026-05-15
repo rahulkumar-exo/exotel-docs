@@ -72,7 +72,7 @@ Choose the guide that matches your deployment:
 ## Support
 
 - **Provisioning**: Contact your Exotel CSM or email hello@exotel.com
-- **Technical Support**: Visit [support.exotel.com](https://support.exotel.com) and share:
+- **Technical Support**: Visit [hello@exotel.com](mailto:hello@exotel.com) and share:
   - Account SID
   - Trunk transport type (TCP/TLS/FQDN)
   - Sample Call SIDs

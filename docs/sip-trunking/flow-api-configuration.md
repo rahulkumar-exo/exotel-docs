@@ -68,7 +68,7 @@ For detailed SIP message format and header reference, see:
 ### Step 1: Exotel Account Setup & KYC
 
 1. **Create Account** -- [Sign up on Exotel](https://my.in.exotel.com/auth/register) and select Browser Calling during setup
-2. **Complete KYC/CAF** -- [Upload KYC Documents](https://support.exotel.com/support/solutions/articles/35760)
+2. **Complete KYC/CAF** -- [Upload KYC Documents](mailto:hello@exotel.com)
 
 ### Step 2: SIP Trunk Enablement
 
@@ -116,13 +116,13 @@ Headers prefixed with `Exotel-` or `Veeno-` are platform-reserved and cannot be 
 }
 ```
 
-For more details, see the [Connect Applet -- Dynamic URL documentation](https://support.exotel.com/support/solutions/articles/3000096873).
+For more details, see the [Connect Applet -- Dynamic URL documentation](mailto:hello@exotel.com).
 
 ## Outbound Call Setup (Platform to PSTN)
 
 ### Static IP Setup
 
-1. Request IP whitelisting via [Exotel Support](https://support.exotel.com/support/solutions/folders/3000023599) or use the API repo above
+1. Request IP whitelisting via [Exotel Support](mailto:hello@exotel.com) or use the API repo above
 2. Once approved, initiate SIP outbound calls to Indian PSTN
 
 ### FQDN-based Setup (API-triggered)

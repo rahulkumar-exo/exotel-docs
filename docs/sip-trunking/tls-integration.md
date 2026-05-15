@@ -243,7 +243,7 @@ This guide documents Exotel SIP Trunking over TLS via Mumbai PoP under the Alpha
 
 For support:
 - Contact your Exotel account manager
-- Or file a ticket via [support.exotel.com](https://support.exotel.com) with:
+- Or file a ticket via [hello@exotel.com](mailto:hello@exotel.com) with:
   - Account SID
   - Timestamp of test
   - SIP trace logs (.pcap or raw headers)

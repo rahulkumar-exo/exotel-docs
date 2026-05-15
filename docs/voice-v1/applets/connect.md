@@ -35,7 +35,7 @@ When using an application URL, your endpoint receives call details and should re
 * Time of day (route to different teams based on shifts)
 * CRM data (route to the account owner)
 
-For detailed documentation on the URL response format, refer to the [Connect applet dial-whom documentation](https://support.exotel.com/support/solutions/articles/48283-connect-applet-dial-whom).
+For detailed documentation on the URL response format, refer to the [Connect applet dial-whom documentation](mailto:hello@exotel.com).
 
 ## Call Recording
 

@@ -159,7 +159,7 @@ Content-Type: application/sdp
   - SIP signaling IP or FQDN
   - Preferred Transport (TCP or TLS)
 - Technical Help:
-  - [support.exotel.com](https://support.exotel.com)
+  - [hello@exotel.com](mailto:hello@exotel.com)
   - Share call samples and SIP logs for troubleshooting
 
 ---
