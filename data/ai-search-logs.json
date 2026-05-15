@@ -9125,5 +9125,39 @@
       }
     ],
     "answer_length": 1989
+  },
+  {
+    "timestamp": "2026-05-15T10:23:34.428Z",
+    "response_id": "2b8e8b7e-ccb1-4880-aaa0-3439a9a71a4c",
+    "question": "give me step by step breakdown of how i can get my call recording this should start with getting right api",
+    "question_length": 106,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12535,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "getting-started",
+        "url": "/docs/getting-started/overview"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 4030
   }
 ]
