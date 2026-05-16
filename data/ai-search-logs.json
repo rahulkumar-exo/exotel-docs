@@ -9193,5 +9193,39 @@
       }
     ],
     "answer_length": 294
+  },
+  {
+    "timestamp": "2026-05-16T04:23:44.754Z",
+    "response_id": "415c86fe-391d-4a6e-a709-ccab121b5c86",
+    "question": "workforce management tool",
+    "question_length": 25,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4832,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "VoiceBot Tools Server",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/overview.mdx"
+      },
+      {
+        "title": "Team Management",
+        "product": "getting-started",
+        "url": "/docs/getting-started/team-management"
+      },
+      {
+        "title": "Application Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/applications.mdx"
+      },
+      {
+        "title": "Customer Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/customer-management"
+      }
+    ],
+    "answer_length": 1740
   }
 ]
