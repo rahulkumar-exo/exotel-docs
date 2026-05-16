@@ -9227,5 +9227,39 @@
       }
     ],
     "answer_length": 1740
+  },
+  {
+    "timestamp": "2026-05-16T07:12:42.475Z",
+    "response_id": "16d80fe2-1535-4f39-9858-4f4fe4ae121f",
+    "question": "please complete kyc",
+    "question_length": 19,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3776,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      }
+    ],
+    "answer_length": 1948
   }
 ]
