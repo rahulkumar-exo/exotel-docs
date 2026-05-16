@@ -9363,5 +9363,39 @@
       }
     ],
     "answer_length": 559
+  },
+  {
+    "timestamp": "2026-05-16T16:33:19.977Z",
+    "response_id": "694a2e9e-a0af-4a9b-a5a2-30d0bf851bad",
+    "question": "what is the charge to use exotel number masking feature",
+    "question_length": 55,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3985,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 435
   }
 ]
