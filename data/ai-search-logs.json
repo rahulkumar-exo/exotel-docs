@@ -9329,5 +9329,39 @@
       }
     ],
     "answer_length": 5512
+  },
+  {
+    "timestamp": "2026-05-16T09:23:46.020Z",
+    "response_id": "5bcb1abc-3767-40c1-b52c-a8980ebd487d",
+    "question": "where can i get my virtual number",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3257,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 559
   }
 ]
