@@ -10043,5 +10043,39 @@
       }
     ],
     "answer_length": 1128
+  },
+  {
+    "timestamp": "2026-05-18T11:25:26.968Z",
+    "response_id": "70da491e-4b71-4533-a1cc-69578c4edacc",
+    "question": "suppose an employee connects with the exotel ivr number\nThen is there any way for me to detect this leg, and also then get the data for this leg like from and to number and the callsid",
+    "question_length": 184,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4309,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 1142
   }
 ]
