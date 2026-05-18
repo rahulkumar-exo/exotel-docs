@@ -9669,5 +9669,39 @@
       }
     ],
     "answer_length": 352
+  },
+  {
+    "timestamp": "2026-05-18T06:37:39.831Z",
+    "response_id": "737ca952-a85f-47f8-8a6a-5c57c3bc6692",
+    "question": "I want to get a data of agents about how many times they are turning there exoctel status on and off during the whole day",
+    "question_length": 121,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4809,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      },
+      {
+        "title": "Combined Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/combined-analytics"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      }
+    ],
+    "answer_length": 629
   }
 ]
