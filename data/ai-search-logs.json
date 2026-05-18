@@ -9975,5 +9975,39 @@
       }
     ],
     "answer_length": 1433
+  },
+  {
+    "timestamp": "2026-05-18T11:13:56.386Z",
+    "response_id": "d730b106-30d8-47e3-ad34-b6790ebfff19",
+    "question": "Can i make an outgoing call without an agent number, directly from an exophone number",
+    "question_length": 85,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6604,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 1402
   }
 ]
