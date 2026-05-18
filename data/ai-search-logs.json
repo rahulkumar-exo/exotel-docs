@@ -9533,5 +9533,39 @@
       }
     ],
     "answer_length": 3095
+  },
+  {
+    "timestamp": "2026-05-18T05:12:13.699Z",
+    "response_id": "7687f93a-11ee-4782-9ee6-9334f17f4b1b",
+    "question": "API that give the details of all agents when they turn on the exotel and when they turn off",
+    "question_length": 91,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8018,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Combined Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/combined-analytics"
+      }
+    ],
+    "answer_length": 975
   }
 ]
