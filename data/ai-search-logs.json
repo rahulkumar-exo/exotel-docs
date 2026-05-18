@@ -9567,5 +9567,39 @@
       }
     ],
     "answer_length": 975
+  },
+  {
+    "timestamp": "2026-05-18T05:57:09.341Z",
+    "response_id": "760c6c4f-450c-43e2-9428-80402ad4b4aa",
+    "question": "Account SID: shivshaktijagatkalyan1 API key/token pair India endpoint access: api.in.exotel.com Caller ID: 08047191199 Account active status Outbound calling enabled",
+    "question_length": 165,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2630,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Regions & Availability",
+        "product": "getting-started",
+        "url": "/docs/getting-started/regions-availability"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 200
   }
 ]
