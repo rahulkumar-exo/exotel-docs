@@ -10111,5 +10111,39 @@
       }
     ],
     "answer_length": 3459
+  },
+  {
+    "timestamp": "2026-05-18T11:33:19.713Z",
+    "response_id": "8597bf2a-ba35-4d89-8aee-e524dd1038f6",
+    "question": "so we can use statuscallback for getting from and to of an ongoing call right?",
+    "question_length": 78,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5123,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 1314
   }
 ]
