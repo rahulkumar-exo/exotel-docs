@@ -10221,5 +10221,39 @@
       }
     ],
     "answer_length": 3834
+  },
+  {
+    "timestamp": "2026-05-18T20:26:08.193Z",
+    "response_id": "82723a88-f9b7-4964-8603-76bd9c9af697",
+    "question": "i need my EXOTEL_SENDER_ID=your_exophone\nEXOTEL_SUBDOMAIN=api.in.exotel.com",
+    "question_length": 75,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6342,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp.mdx"
+      },
+      {
+        "title": "Application Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/applications.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      }
+    ],
+    "answer_length": 1719
   }
 ]
