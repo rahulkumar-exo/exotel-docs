@@ -10077,5 +10077,39 @@
       }
     ],
     "answer_length": 1142
+  },
+  {
+    "timestamp": "2026-05-18T11:31:18.019Z",
+    "response_id": "d70436e3-d11e-46a6-b3e1-93e2565ed8ff",
+    "question": "StatusCallback\nStatusCallback is an asynchronous webhook mechanism that notifies your application when a call completes. Exotel sends an HTTP POST to your specified URL with call details.\n\nHow It Works\nWhen making a call via the API, pass a StatusCallback URL parameter\nWhen the call reaches a terminal state, Exotel sends a POST request to that URL\nYour server receives call details including status, duration, and recording URL\ncaution\nStatusCallback delivery may be delayed or fail due to network ",
+    "question_length": 3456,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12643,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      }
+    ],
+    "answer_length": 3459
   }
 ]
