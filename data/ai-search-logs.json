@@ -9703,5 +9703,39 @@
       }
     ],
     "answer_length": 629
+  },
+  {
+    "timestamp": "2026-05-18T08:07:51.929Z",
+    "response_id": "e9644bce-483e-43a8-94fe-8c27748277d8",
+    "question": "Does Exotel support BYOC? Can the client bring their own phone number?",
+    "question_length": 70,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3837,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      }
+    ],
+    "answer_length": 431
   }
 ]
