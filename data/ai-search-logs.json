@@ -9941,5 +9941,39 @@
       }
     ],
     "answer_length": 1208
+  },
+  {
+    "timestamp": "2026-05-18T10:48:00.684Z",
+    "response_id": "6b858be0-4080-49ed-a7d4-bd7ea7c173b4",
+    "question": "I want to download call recordings through api",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4681,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 1433
   }
 ]
