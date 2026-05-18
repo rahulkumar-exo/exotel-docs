@@ -9737,5 +9737,39 @@
       }
     ],
     "answer_length": 431
+  },
+  {
+    "timestamp": "2026-05-18T09:25:36.010Z",
+    "response_id": "d4504730-cd5c-43c6-9e02-15db046e3a3a",
+    "question": "how to do url shortening in SMS Send API",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4008,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 467
   }
 ]
