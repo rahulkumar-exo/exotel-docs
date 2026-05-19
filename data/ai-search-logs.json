@@ -10289,5 +10289,39 @@
       }
     ],
     "answer_length": 1539
+  },
+  {
+    "timestamp": "2026-05-19T04:13:33.868Z",
+    "response_id": "4b616557-f225-49a2-9efb-1a33705157b4",
+    "question": "campaign api",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8062,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 4882
   }
 ]
