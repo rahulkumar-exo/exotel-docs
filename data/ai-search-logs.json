@@ -10781,5 +10781,39 @@
       }
     ],
     "answer_length": 455
+  },
+  {
+    "timestamp": "2026-05-19T11:49:49.346Z",
+    "response_id": "9cdafdaa-4dda-4922-b4c7-1c3e593baa18",
+    "question": "What endpoints I need to configure?",
+    "question_length": 35,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3377,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 1155
   }
 ]
