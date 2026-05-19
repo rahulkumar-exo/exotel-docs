@@ -10705,5 +10705,39 @@
       }
     ],
     "answer_length": 1862
+  },
+  {
+    "timestamp": "2026-05-19T11:25:29.753Z",
+    "response_id": "63a4f459-5e0d-46e4-9876-61273103ddd1",
+    "question": "How do I make an Inbound call, eg I want my customer to call to my number and I want to automate that using IVR and persist the response in my system/platform.",
+    "question_length": 159,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10206,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Call Details (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 4301
   }
 ]
