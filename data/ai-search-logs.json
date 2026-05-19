@@ -10907,5 +10907,39 @@
     "response_time_ms": 2564,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-19T12:13:49.623Z",
+    "response_id": "388ab8f8-914d-49de-b5e7-36cf93efd58d",
+    "question": "While saving flow, I'm getting \"Applet has to read out or play something!\"",
+    "question_length": 74,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4636,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Make Call",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/make-call"
+      },
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      }
+    ],
+    "answer_length": 1175
   }
 ]
