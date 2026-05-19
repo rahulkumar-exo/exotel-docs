@@ -10255,5 +10255,39 @@
       }
     ],
     "answer_length": 1719
+  },
+  {
+    "timestamp": "2026-05-19T00:19:12.616Z",
+    "response_id": "f4de9b4f-2007-4b4a-a1dd-44200938ae86",
+    "question": "can we initiate call and receive inbound call using webrtc",
+    "question_length": 58,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6718,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 1539
   }
 ]
