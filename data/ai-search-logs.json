@@ -11017,5 +11017,39 @@
       }
     ],
     "answer_length": 5588
+  },
+  {
+    "timestamp": "2026-05-19T18:49:03.239Z",
+    "response_id": "35aab79f-73a2-436d-a1b7-36b7b1874148",
+    "question": "what is capital of france",
+    "question_length": 25,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2862,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 147
   }
 ]
