@@ -10501,5 +10501,39 @@
       }
     ],
     "answer_length": 392
+  },
+  {
+    "timestamp": "2026-05-19T10:21:40.892Z",
+    "response_id": "be2e3057-afae-442e-9e23-763e99cef7d0",
+    "question": "Here is what happened:\nInbound Call failed to connect to VoiceBot. The number 04041897777 received a call from 09063095958 at Tue, 19 May 2026 15:39:49 The call was failed to connect with the websocket URL . The call was streamed to the websocket URL An HTTP Call was made on the url: https://pipecat-agent-dev.wonderfulsand-562ff538.centralindia.azurecontainerapps.io/api/exotel/passthru?CallSid=4e13a4e8ae0809fb612d0a7394c41a5j&CallFrom=09063095958&CallTo=04041897777&Direction=incoming&Created=Tue",
+    "question_length": 911,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12609,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      }
+    ],
+    "answer_length": 1696
   }
 ]
