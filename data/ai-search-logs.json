@@ -11051,5 +11051,39 @@
       }
     ],
     "answer_length": 147
+  },
+  {
+    "timestamp": "2026-05-19T18:50:52.238Z",
+    "response_id": "13d3ce48-01d7-4df0-9895-de7f9ac18ddc",
+    "question": "what is base url?",
+    "question_length": 17,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2370,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      }
+    ],
+    "answer_length": 303
   }
 ]
