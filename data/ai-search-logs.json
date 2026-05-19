@@ -10975,5 +10975,13 @@
       }
     ],
     "answer_length": 4436
+  },
+  {
+    "timestamp": "2026-05-19T13:55:47.163Z",
+    "question": "does Voicebot websocket ACTUALLY support outbound audio injection?",
+    "question_length": 66,
+    "response_time_ms": 2438,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
