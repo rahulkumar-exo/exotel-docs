@@ -10323,5 +10323,39 @@
       }
     ],
     "answer_length": 4882
+  },
+  {
+    "timestamp": "2026-05-19T05:06:50.891Z",
+    "response_id": "d94f4daa-5f21-441f-ba30-fedf04ad2938",
+    "question": "SIP trucking",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6626,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      }
+    ],
+    "answer_length": 2419
   }
 ]
