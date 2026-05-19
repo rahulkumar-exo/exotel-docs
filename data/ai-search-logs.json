@@ -10391,5 +10391,39 @@
       }
     ],
     "answer_length": 645
+  },
+  {
+    "timestamp": "2026-05-19T06:41:55.829Z",
+    "response_id": "0abb35ad-f0f6-4f28-8d2c-f56c805d2c80",
+    "question": "statuscallback",
+    "question_length": 14,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9636,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 5211
   }
 ]
