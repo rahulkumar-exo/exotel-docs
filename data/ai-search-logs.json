@@ -11119,5 +11119,39 @@
       }
     ],
     "answer_length": 1271
+  },
+  {
+    "timestamp": "2026-05-20T01:39:28.008Z",
+    "response_id": "6ac34610-ce76-40ce-8e93-938053940ba8",
+    "question": "When I'm making call from Passthru Applet, it's not reaching my service , the same url works in browser / postman, do I need to whitelist on exotel side?\n\nFYI, here is the api\n\nhttps://96mw8rh9q5.execute-api.ap-south-1.amazonaws.com/live/public/exotel/clinic/incoming?clinicId=clinic-4125c655&CallSid=76aff96aef55636db0220fc950371a5k&CallFrom=09472433283&CallTo=08037091588&Direction=incoming&Created=Wed%2C+20+May+2026+07%3A01%3A32&DialCallDuration=0&StartTime=2026-05-20+07%3A01%3A32&EndTime=1970-0",
+    "question_length": 656,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7036,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      }
+    ],
+    "answer_length": 1336
   }
 ]
