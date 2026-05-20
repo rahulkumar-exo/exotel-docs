@@ -11595,5 +11595,39 @@
       }
     ],
     "answer_length": 3592
+  },
+  {
+    "timestamp": "2026-05-20T10:21:13.768Z",
+    "response_id": "fac6d1db-d219-46a5-b651-46132371a866",
+    "question": "can i create a flow usign api",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4578,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/flows"
+      }
+    ],
+    "answer_length": 811
   }
 ]
