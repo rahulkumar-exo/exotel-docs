@@ -11323,5 +11323,39 @@
       }
     ],
     "answer_length": 559
+  },
+  {
+    "timestamp": "2026-05-20T06:19:47.308Z",
+    "response_id": "97a14d38-0b2e-47cd-8b27-c24282f230d8",
+    "question": "i want to make an outbound call and read out a message",
+    "question_length": 54,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11747,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 2725
   }
 ]
