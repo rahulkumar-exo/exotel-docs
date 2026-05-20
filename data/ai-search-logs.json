@@ -11221,5 +11221,39 @@
       }
     ],
     "answer_length": 3561
+  },
+  {
+    "timestamp": "2026-05-20T04:38:44.938Z",
+    "response_id": "a42581a4-6dcb-4dd0-bbe4-5e859539a135",
+    "question": "If I operate in India, billing will be in INR?",
+    "question_length": 46,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3393,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Billing Overview",
+        "product": "billing",
+        "url": "/docs/billing/overview"
+      },
+      {
+        "title": "Billing Overview",
+        "product": "billing",
+        "url": "/docs/billing/overview"
+      },
+      {
+        "title": "Billing FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/billing-faqs"
+      },
+      {
+        "title": "Enterprise Billing",
+        "product": "billing",
+        "url": "/docs/billing/enterprise-billing"
+      }
+    ],
+    "answer_length": 752
   }
 ]
