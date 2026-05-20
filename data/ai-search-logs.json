@@ -11493,5 +11493,39 @@
       }
     ],
     "answer_length": 1906
+  },
+  {
+    "timestamp": "2026-05-20T08:40:58.293Z",
+    "response_id": "8d38a367-2308-4a52-b559-be6efc8e1c34",
+    "question": "how to connect the concurrent call to the outbond call",
+    "question_length": 54,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8525,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 2418
   }
 ]
