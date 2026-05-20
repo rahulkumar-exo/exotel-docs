@@ -11459,5 +11459,39 @@
       }
     ],
     "answer_length": 2259
+  },
+  {
+    "timestamp": "2026-05-20T08:32:31.659Z",
+    "response_id": "6aee8e89-f1a5-475e-aa62-f2012db2e355",
+    "question": "concurrent to outbound call",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6289,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      }
+    ],
+    "answer_length": 1906
   }
 ]
