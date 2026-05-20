@@ -11561,5 +11561,39 @@
       }
     ],
     "answer_length": 2414
+  },
+  {
+    "timestamp": "2026-05-20T09:56:22.340Z",
+    "response_id": "3dd7b475-c4d6-4e1e-b164-0feef7eaaea6",
+    "question": "how to generate api token",
+    "question_length": 25,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13372,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Token Generation",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/token-generation.mdx"
+      }
+    ],
+    "answer_length": 3592
   }
 ]
