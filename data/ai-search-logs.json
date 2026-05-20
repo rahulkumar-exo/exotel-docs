@@ -11425,5 +11425,39 @@
       }
     ],
     "answer_length": 2804
+  },
+  {
+    "timestamp": "2026-05-20T08:07:29.278Z",
+    "response_id": "3ab97789-68e9-469f-a2e0-1fb1cee26336",
+    "question": "concurrent call",
+    "question_length": 15,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4104,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 2259
   }
 ]
