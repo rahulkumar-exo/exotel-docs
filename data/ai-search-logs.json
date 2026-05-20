@@ -11289,5 +11289,39 @@
       }
     ],
     "answer_length": 1147
+  },
+  {
+    "timestamp": "2026-05-20T05:17:17.237Z",
+    "response_id": "cdfa0140-4a4a-4745-8d89-5eed030bbfe7",
+    "question": "what is current pulse  rate  for Voice outbound calls",
+    "question_length": 53,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4246,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 559
   }
 ]
