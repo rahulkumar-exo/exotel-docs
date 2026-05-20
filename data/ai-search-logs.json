@@ -11187,5 +11187,39 @@
       }
     ],
     "answer_length": 1351
+  },
+  {
+    "timestamp": "2026-05-20T04:07:38.107Z",
+    "response_id": "be39ecf6-dae0-44e8-b803-50cc51aa6ca9",
+    "question": "call data",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6854,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Monitoring & Visualization",
+        "product": "use-cases",
+        "url": "/docs/use-cases/call-monitoring-visualization.mdx"
+      }
+    ],
+    "answer_length": 3561
   }
 ]
