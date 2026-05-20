@@ -11629,5 +11629,39 @@
       }
     ],
     "answer_length": 811
+  },
+  {
+    "timestamp": "2026-05-20T10:33:21.962Z",
+    "response_id": "446e1ff9-f012-4697-9eb8-db9ace21adb2",
+    "question": "greenpin",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5289,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Update Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - GreenPin)",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/overview"
+      },
+      {
+        "title": "Delete Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/delete-allocation"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      }
+    ],
+    "answer_length": 2453
   }
 ]
