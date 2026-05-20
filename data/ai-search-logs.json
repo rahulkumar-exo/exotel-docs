@@ -11255,5 +11255,39 @@
       }
     ],
     "answer_length": 752
+  },
+  {
+    "timestamp": "2026-05-20T05:14:02.242Z",
+    "response_id": "4481b9ad-e340-4eca-88ae-b7ff18896927",
+    "question": "I want to know about pricing  for outbound  Audio calls in india local",
+    "question_length": 70,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4256,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      }
+    ],
+    "answer_length": 1147
   }
 ]
