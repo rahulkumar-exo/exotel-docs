@@ -11943,5 +11943,39 @@
       }
     ],
     "answer_length": 1548
+  },
+  {
+    "timestamp": "2026-05-21T07:04:17.079Z",
+    "response_id": "69929b7f-ee57-47cd-be08-56b998fea88d",
+    "question": "https://developer.exotel.com/docs/getting-started/trial-account\n\nthis states that we've limited number of outbound calls in the trial can you please help me why it's not working?",
+    "question_length": 178,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3666,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 667
   }
 ]
