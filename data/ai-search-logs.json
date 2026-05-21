@@ -11807,5 +11807,39 @@
       }
     ],
     "answer_length": 301
+  },
+  {
+    "timestamp": "2026-05-21T05:43:07.978Z",
+    "response_id": "5284ecaa-3c03-4176-bf4b-928765a143c4",
+    "question": "Call attempt from 04440115075 The number 04440115075 received a call from 04440115075 at Thu, 21 May 2026 11:06:23 The call was streamed to the websocket URL wss://psychologically-nonprecious-vonnie.ngrok-free.dev/ws",
+    "question_length": 216,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9197,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1910
   }
 ]
