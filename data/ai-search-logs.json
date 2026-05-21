@@ -11909,5 +11909,39 @@
       }
     ],
     "answer_length": 4077
+  },
+  {
+    "timestamp": "2026-05-21T07:02:03.370Z",
+    "response_id": "68300993-5ffd-4bc9-9558-564047854113",
+    "question": "POST /Calls.json returns 403 because your Trial account doesn't have outbound API calling enabled\n\nis this a issue if yes, how to fix this",
+    "question_length": 138,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8514,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Authentication & Security",
+        "product": "references",
+        "url": "/docs/references/authentication"
+      }
+    ],
+    "answer_length": 1548
   }
 ]
