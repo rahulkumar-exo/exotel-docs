@@ -12325,5 +12325,39 @@
       }
     ],
     "answer_length": 1798
+  },
+  {
+    "timestamp": "2026-05-21T11:51:39.113Z",
+    "response_id": "3009b0a8-fe5d-43de-a2fe-a82480ced545",
+    "question": "what is the price of exophone",
+    "question_length": 29,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2727,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 849
   }
 ]
