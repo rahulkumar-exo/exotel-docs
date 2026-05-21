@@ -12121,5 +12121,39 @@
     "response_time_ms": 3567,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-21T10:24:50.185Z",
+    "response_id": "0c6a4558-08a4-4266-8d47-f23d81d00238",
+    "question": "i've made a voice bot using stt and tts what i want is to connect it with an outbound call so i need your help which applet allow us to do that and how to setup the connection on exotel?",
+    "question_length": 186,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11346,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Passthru Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/passthru"
+      }
+    ],
+    "answer_length": 2219
   }
 ]
