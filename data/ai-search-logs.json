@@ -12045,5 +12045,39 @@
       }
     ],
     "answer_length": 2729
+  },
+  {
+    "timestamp": "2026-05-21T07:18:17.196Z",
+    "response_id": "13b2fe53-06ac-4ed7-b854-5614cad4c047",
+    "question": "i can make calls from the dashboard call button but i can't call using the api and my number is verified too can you help me",
+    "question_length": 124,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9008,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 3222
   }
 ]
