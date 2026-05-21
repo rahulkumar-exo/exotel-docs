@@ -12223,5 +12223,39 @@
       }
     ],
     "answer_length": 345
+  },
+  {
+    "timestamp": "2026-05-21T11:46:38.552Z",
+    "response_id": "ab1c2be0-d2aa-46ea-9574-0201bfc48261",
+    "question": "create exophone api",
+    "question_length": 19,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2279,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 918
   }
 ]
