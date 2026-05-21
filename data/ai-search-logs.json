@@ -12393,5 +12393,39 @@
       }
     ],
     "answer_length": 2862
+  },
+  {
+    "timestamp": "2026-05-21T11:53:57.054Z",
+    "response_id": "925840ef-cece-44d4-b72a-d9eaa5fad16a",
+    "question": "we just need API as a webhook",
+    "question_length": 29,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7300,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 2382
   }
 ]
