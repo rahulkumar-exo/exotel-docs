@@ -12427,5 +12427,39 @@
       }
     ],
     "answer_length": 2382
+  },
+  {
+    "timestamp": "2026-05-21T13:20:13.831Z",
+    "response_id": "fd4d71f0-7c8e-42b3-894d-a72bcbe5b6b9",
+    "question": "how do i bring my own chat bot to exotel",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8313,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "Bring Your Own MCP",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/mcp-integration.mdx"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Chatbot Platform",
+        "product": "chatbot",
+        "url": "/docs/chatbot/overview"
+      }
+    ],
+    "answer_length": 1457
   }
 ]
