@@ -12257,5 +12257,39 @@
       }
     ],
     "answer_length": 918
+  },
+  {
+    "timestamp": "2026-05-21T11:49:36.455Z",
+    "response_id": "ff7c09fe-bca2-494d-a5b3-ba64cffc7bf0",
+    "question": "can I use exophone in my saas erp",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5375,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "ExoPhone Details",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/number-details"
+      }
+    ],
+    "answer_length": 2189
   }
 ]
