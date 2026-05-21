@@ -12495,5 +12495,39 @@
       }
     ],
     "answer_length": 555
+  },
+  {
+    "timestamp": "2026-05-21T13:24:00.488Z",
+    "response_id": "7e0854a9-45cc-4763-ae92-f06dba640d64",
+    "question": "how do agents handle whats app messages if the call hasn't been routed to an agent?",
+    "question_length": 83,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5352,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 808
   }
 ]
