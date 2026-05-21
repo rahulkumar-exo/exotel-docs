@@ -12011,5 +12011,39 @@
       }
     ],
     "answer_length": 948
+  },
+  {
+    "timestamp": "2026-05-21T07:06:48.054Z",
+    "response_id": "0234a0fe-6c48-471c-b314-b88df806c17f",
+    "question": "i was not able to make even one outbound call",
+    "question_length": 45,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8944,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Call Notifications",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/call-notifications"
+      }
+    ],
+    "answer_length": 2729
   }
 ]
