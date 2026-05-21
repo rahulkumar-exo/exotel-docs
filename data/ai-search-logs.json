@@ -12359,5 +12359,39 @@
       }
     ],
     "answer_length": 849
+  },
+  {
+    "timestamp": "2026-05-21T11:52:55.527Z",
+    "response_id": "881884bd-4122-476d-b6aa-2d4f7abb6d60",
+    "question": "chat integration",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5795,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      },
+      {
+        "title": "LiveKit and Exotel SIP Trunking Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/livekit-integration"
+      },
+      {
+        "title": "ElevenLabs and Exotel SIP Trunking Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/elevenlabs-integration"
+      }
+    ],
+    "answer_length": 2862
   }
 ]
