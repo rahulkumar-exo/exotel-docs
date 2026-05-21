@@ -12461,5 +12461,39 @@
       }
     ],
     "answer_length": 1457
+  },
+  {
+    "timestamp": "2026-05-21T13:21:04.889Z",
+    "response_id": "35386735-8d15-4f23-b2fa-053a6085ed74",
+    "question": "does exotel hae webchat?",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4033,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 555
   }
 ]
