@@ -12537,5 +12537,39 @@
     "response_time_ms": 2935,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-21T14:08:25.173Z",
+    "response_id": "794c44c9-3fb3-4dc5-ae47-4ea86e63c901",
+    "question": "give me link to documentation of ippstin",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2789,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Template Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/templates"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 489
   }
 ]
