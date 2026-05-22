@@ -12673,5 +12673,39 @@
       }
     ],
     "answer_length": 464
+  },
+  {
+    "timestamp": "2026-05-22T06:35:28.920Z",
+    "response_id": "8266696b-af61-425b-8f14-448eac2d6062",
+    "question": "i found the setting but enabling this will chage us or not",
+    "question_length": 58,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3301,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      }
+    ],
+    "answer_length": 724
   }
 ]
