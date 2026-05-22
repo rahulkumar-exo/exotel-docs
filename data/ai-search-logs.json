@@ -12775,5 +12775,39 @@
       }
     ],
     "answer_length": 3794
+  },
+  {
+    "timestamp": "2026-05-22T11:11:06.930Z",
+    "response_id": "1a53f27c-3a46-47e6-825e-4a39377f5b58",
+    "question": "Ivr saas company",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2452,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IVR Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/ivr-applet-guide"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      }
+    ],
+    "answer_length": 463
   }
 ]
