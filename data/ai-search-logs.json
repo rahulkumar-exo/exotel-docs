@@ -13037,5 +13037,39 @@
     "response_time_ms": 2326,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-22T15:36:35.148Z",
+    "response_id": "6ff6cc12-81ae-40df-9221-1f2287a7df2d",
+    "question": "what is flow url",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2075,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "WhatsApp Flows",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/flows"
+      },
+      {
+        "title": "WhatsApp Flows",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/flows"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      }
+    ],
+    "answer_length": 795
   }
 ]
