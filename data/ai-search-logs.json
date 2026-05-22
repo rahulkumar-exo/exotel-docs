@@ -12707,5 +12707,39 @@
       }
     ],
     "answer_length": 724
+  },
+  {
+    "timestamp": "2026-05-22T07:29:32.823Z",
+    "response_id": "583a1197-cd08-42b3-a0be-8dfc35815e79",
+    "question": "what this does in StreamUrl\tNo\tString\tWebSocket URL for real-time audio streaming.",
+    "question_length": 82,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2640,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      }
+    ],
+    "answer_length": 283
   }
 ]
