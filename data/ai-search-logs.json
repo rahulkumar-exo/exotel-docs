@@ -12605,5 +12605,39 @@
       }
     ],
     "answer_length": 4545
+  },
+  {
+    "timestamp": "2026-05-22T04:45:39.056Z",
+    "response_id": "9a9a530d-74c5-493e-8314-91a5c663846b",
+    "question": "how is my outbound concurrent channel limit",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3547,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      }
+    ],
+    "answer_length": 1481
   }
 ]
