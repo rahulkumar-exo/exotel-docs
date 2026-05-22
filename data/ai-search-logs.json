@@ -12927,5 +12927,39 @@
     "response_time_ms": 1206,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-22T14:07:06.095Z",
+    "response_id": "d6906545-119d-45b2-904f-0a24b80a2581",
+    "question": "Using APIs, can I create an exophone number and assign to a custom app?",
+    "question_length": 71,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7097,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "Custom Caller ID",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/custom-caller-id"
+      },
+      {
+        "title": "Number Masking Setup",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/number-masking-setup"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      }
+    ],
+    "answer_length": 2451
   }
 ]
