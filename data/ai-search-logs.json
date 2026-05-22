@@ -12639,5 +12639,39 @@
       }
     ],
     "answer_length": 1481
+  },
+  {
+    "timestamp": "2026-05-22T06:33:12.573Z",
+    "response_id": "e50869d7-7758-4429-881b-229a27bbad8a",
+    "question": "am unable to findout notification settings in my exotel dashboard",
+    "question_length": 65,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3720,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Lead Assist (ExoBridge - Settings)",
+        "product": "lead-assist-settings",
+        "url": "/docs/lead-assist-settings/overview"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "Dashboard Overview",
+        "product": "getting-started",
+        "url": "/docs/getting-started/dashboard-overview"
+      }
+    ],
+    "answer_length": 464
   }
 ]
