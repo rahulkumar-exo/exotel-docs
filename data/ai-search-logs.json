@@ -13181,5 +13181,39 @@
       }
     ],
     "answer_length": 1764
+  },
+  {
+    "timestamp": "2026-05-23T11:14:33.894Z",
+    "response_id": "acb3a45b-956b-4131-b45a-e673b2e0e555",
+    "question": "in your whatsapp-api i see receive messages and i understand it, but in my service i want to receive media files like images, audio, document etc which i would easily receive through my configured webhook, but how do i process it? because you don't actually send the file just it's id according to the docs, in my old code that i have received from my company you guys sent a url to download in same payload... how do i process that file for ocr etc at my server?",
+    "question_length": 463,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4551,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 875
   }
 ]
