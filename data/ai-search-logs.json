@@ -13147,5 +13147,39 @@
       }
     ],
     "answer_length": 1218
+  },
+  {
+    "timestamp": "2026-05-23T09:22:43.954Z",
+    "response_id": "a7156a77-01bc-455b-8d4a-215ae41870df",
+    "question": "i want to know more about agentstream apis",
+    "question_length": 42,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5185,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Using Exotel Legs APIs to Start a Bot Stream with Optional Greeting",
+        "product": "agentstream",
+        "url": "/docs/agentstream/bot-stream-legs-api"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      }
+    ],
+    "answer_length": 1764
   }
 ]
