@@ -13249,5 +13249,39 @@
       }
     ],
     "answer_length": 5367
+  },
+  {
+    "timestamp": "2026-05-23T18:38:25.717Z",
+    "response_id": "7ef91699-1640-4e96-b886-0709e9302d4b",
+    "question": "Rakesh Kumar",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2282,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 173
   }
 ]
