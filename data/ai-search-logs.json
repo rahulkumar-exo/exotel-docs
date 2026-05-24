@@ -13317,5 +13317,39 @@
       }
     ],
     "answer_length": 594
+  },
+  {
+    "timestamp": "2026-05-24T19:24:49.348Z",
+    "response_id": "7b7e139f-5ca1-49bc-8b3b-99abdf6121bc",
+    "question": "how do i set the Chunk Size for voice bot applet",
+    "question_length": 48,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3991,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "IVR Menu Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/ivr-menu"
+      },
+      {
+        "title": "IVR Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/ivr-applet-guide"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      }
+    ],
+    "answer_length": 612
   }
 ]
