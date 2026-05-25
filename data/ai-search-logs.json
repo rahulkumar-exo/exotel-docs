@@ -13963,5 +13963,39 @@
       }
     ],
     "answer_length": 1719
+  },
+  {
+    "timestamp": "2026-05-25T17:18:19.654Z",
+    "response_id": "f5f32651-c11d-42d6-88e6-360a20be948e",
+    "question": "for call",
+    "question_length": 8,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5800,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      }
+    ],
+    "answer_length": 2440
   }
 ]
