@@ -13385,5 +13385,39 @@
       }
     ],
     "answer_length": 460
+  },
+  {
+    "timestamp": "2026-05-25T06:36:46.245Z",
+    "response_id": "94917000-4ad8-4ef7-9748-97273c262802",
+    "question": "how do i get status back of each call when they get connected, rejected, busy, not answered , completed ? is there a callback url ?",
+    "question_length": 131,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11447,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Monitoring & Visualization",
+        "product": "use-cases",
+        "url": "/docs/use-cases/call-monitoring-visualization.mdx"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 3830
   }
 ]
