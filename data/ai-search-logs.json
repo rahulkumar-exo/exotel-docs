@@ -13453,5 +13453,39 @@
       }
     ],
     "answer_length": 2013
+  },
+  {
+    "timestamp": "2026-05-25T07:49:04.765Z",
+    "response_id": "b404d3b2-77d7-4800-816a-5ead0353f132",
+    "question": "whatsapp",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4959,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "WhatsApp Commerce",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/commerce"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "WhatsApp Catalog",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/catalog"
+      }
+    ],
+    "answer_length": 1948
   }
 ]
