@@ -13555,5 +13555,39 @@
       }
     ],
     "answer_length": 908
+  },
+  {
+    "timestamp": "2026-05-25T10:14:12.422Z",
+    "response_id": "6376b793-110d-431c-9541-92ab74afbae2",
+    "question": "Do the passthru and statuscallback responses have to land at the same endpoint?",
+    "question_length": 79,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4166,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Categories",
+        "product": "chatbot",
+        "url": "/docs/chatbot/categories"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      }
+    ],
+    "answer_length": 802
   }
 ]
