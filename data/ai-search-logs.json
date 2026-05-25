@@ -13487,5 +13487,39 @@
       }
     ],
     "answer_length": 1948
+  },
+  {
+    "timestamp": "2026-05-25T09:54:19.903Z",
+    "response_id": "cde1e0fd-c8e5-46bb-bbe4-234f282ca3f6",
+    "question": "How does exotel webhook return call status",
+    "question_length": 42,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3510,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      }
+    ],
+    "answer_length": 1615
   }
 ]
