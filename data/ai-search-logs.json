@@ -13861,5 +13861,39 @@
       }
     ],
     "answer_length": 3223
+  },
+  {
+    "timestamp": "2026-05-25T13:07:47.797Z",
+    "response_id": "92bee6a4-fb30-4253-be99-aa9c10c81c33",
+    "question": "sms rate limit",
+    "question_length": 14,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3166,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Campaign SMS Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/sms-details"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "SMS Details",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/sms-details.mdx"
+      }
+    ],
+    "answer_length": 1731
   }
 ]
