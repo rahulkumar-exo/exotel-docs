@@ -13521,5 +13521,39 @@
       }
     ],
     "answer_length": 1615
+  },
+  {
+    "timestamp": "2026-05-25T09:54:59.972Z",
+    "response_id": "7c1174df-53dd-4ec5-a374-8ff59065f924",
+    "question": "what are the different terminal states that are returned by exotel",
+    "question_length": 66,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1989,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      }
+    ],
+    "answer_length": 908
   }
 ]
