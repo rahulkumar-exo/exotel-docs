@@ -13895,5 +13895,39 @@
       }
     ],
     "answer_length": 1731
+  },
+  {
+    "timestamp": "2026-05-25T13:14:52.710Z",
+    "response_id": "5873731c-10cc-4e2b-ad0c-6b4eb0bb6531",
+    "question": "How to create Custom app using API?",
+    "question_length": 35,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4801,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      }
+    ],
+    "answer_length": 1140
   }
 ]
