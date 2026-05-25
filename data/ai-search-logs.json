@@ -13351,5 +13351,39 @@
       }
     ],
     "answer_length": 612
+  },
+  {
+    "timestamp": "2026-05-25T05:29:32.585Z",
+    "response_id": "ed2922de-aff9-4005-b018-565a32f61241",
+    "question": "livekit",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3280,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "LiveKit and Exotel SIP Trunking Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/livekit-integration"
+      },
+      {
+        "title": "ElevenLabs and Exotel SIP Trunking Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/elevenlabs-integration"
+      },
+      {
+        "title": "Manage ExoTrunks",
+        "product": "agentstream",
+        "url": "/docs/agentstream/manage-exotrunks"
+      },
+      {
+        "title": "OmniDimension Voicebot & Exotel AgentStream Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/omnidimension-integration"
+      }
+    ],
+    "answer_length": 460
   }
 ]
