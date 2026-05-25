@@ -13793,5 +13793,39 @@
       }
     ],
     "answer_length": 902
+  },
+  {
+    "timestamp": "2026-05-25T12:27:03.091Z",
+    "response_id": "b91fa094-2ebb-4c69-b903-d5d6cb608194",
+    "question": "for SMS what is difference between  Throughput  limits and Bulk Sms limits",
+    "question_length": 74,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5411,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/overview"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 1588
   }
 ]
