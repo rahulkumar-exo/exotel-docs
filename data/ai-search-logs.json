@@ -13589,5 +13589,39 @@
       }
     ],
     "answer_length": 802
+  },
+  {
+    "timestamp": "2026-05-25T10:15:26.671Z",
+    "response_id": "5ecc21ce-00ea-41db-be71-5f9554c28697",
+    "question": "where do i specify the status callback url",
+    "question_length": 42,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4829,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Customer Callbacks",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/customer-callbacks.mdx"
+      }
+    ],
+    "answer_length": 1200
   }
 ]
