@@ -13997,5 +13997,39 @@
       }
     ],
     "answer_length": 2440
+  },
+  {
+    "timestamp": "2026-05-25T17:25:31.295Z",
+    "response_id": "8081c2b7-6936-4ce9-b11b-ab19176cf8e0",
+    "question": "how to transfer a call from pipecat voice agent in call with enduser to a human agent",
+    "question_length": 85,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6836,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 2091
   }
 ]
