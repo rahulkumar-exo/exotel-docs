@@ -13623,5 +13623,39 @@
       }
     ],
     "answer_length": 1200
+  },
+  {
+    "timestamp": "2026-05-25T10:18:45.866Z",
+    "response_id": "c1a5c147-1475-4bcf-9c0e-05cbe60ab555",
+    "question": "the statuscallback answered state is exactly when? is it upon leg 2 connected or when exactlty",
+    "question_length": 94,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7551,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 1183
   }
 ]
