@@ -13419,5 +13419,39 @@
       }
     ],
     "answer_length": 3830
+  },
+  {
+    "timestamp": "2026-05-25T06:41:15.459Z",
+    "response_id": "0f03704a-947a-44f8-9679-388f2b8ce20d",
+    "question": "where to set the callback url ?",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6268,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      }
+    ],
+    "answer_length": 2013
   }
 ]
