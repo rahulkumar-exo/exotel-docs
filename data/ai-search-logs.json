@@ -14201,5 +14201,39 @@
       }
     ],
     "answer_length": 2083
+  },
+  {
+    "timestamp": "2026-05-26T05:48:46.455Z",
+    "response_id": "11074823-2b6d-4444-a6f5-a4760632c2d7",
+    "question": "Can our platform trigger outbound AI bot calls purely via API",
+    "question_length": 61,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4997,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 884
   }
 ]
