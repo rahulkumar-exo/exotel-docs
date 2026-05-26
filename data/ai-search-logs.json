@@ -14133,5 +14133,39 @@
       }
     ],
     "answer_length": 2365
+  },
+  {
+    "timestamp": "2026-05-26T05:44:47.028Z",
+    "response_id": "1082dd75-c1d0-4734-a2d2-08e046fb25cb",
+    "question": "what kind of the questions Does the Bot asks to customer",
+    "question_length": 56,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7137,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 2015
   }
 ]
