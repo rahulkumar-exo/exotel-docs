@@ -14167,5 +14167,39 @@
       }
     ],
     "answer_length": 2015
+  },
+  {
+    "timestamp": "2026-05-26T05:47:00.966Z",
+    "response_id": "c99dfb96-5f82-4bae-9d12-1668021014d4",
+    "question": "What questions Does voice bot ask to customer?",
+    "question_length": 46,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6058,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 2083
   }
 ]
