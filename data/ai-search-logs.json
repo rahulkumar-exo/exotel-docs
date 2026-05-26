@@ -14065,5 +14065,39 @@
       }
     ],
     "answer_length": 1662
+  },
+  {
+    "timestamp": "2026-05-26T05:38:33.627Z",
+    "response_id": "1ca34709-c28c-4d2c-aacf-448afe3aa9e9",
+    "question": "Can u give in Detail How Voice bot works",
+    "question_length": 40,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9889,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      }
+    ],
+    "answer_length": 3710
   }
 ]
