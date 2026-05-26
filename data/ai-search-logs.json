@@ -14531,5 +14531,39 @@
     "response_time_ms": 1290,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-26T13:52:06.606Z",
+    "response_id": "0224468b-3089-4352-a9b3-8456bb4bde3f",
+    "question": "should I buy dabbler plan will work for zoho and exotel integration",
+    "question_length": 67,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4804,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integrations",
+        "product": "integrations",
+        "url": "/docs/integrations/overview"
+      },
+      {
+        "title": "ElevenLabs and Exotel SIP Trunking Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/elevenlabs-integration"
+      },
+      {
+        "title": "FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/overview"
+      },
+      {
+        "title": "LiveKit and Exotel SIP Trunking Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/livekit-integration"
+      }
+    ],
+    "answer_length": 639
   }
 ]
