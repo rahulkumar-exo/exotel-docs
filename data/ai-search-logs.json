@@ -14387,5 +14387,39 @@
       }
     ],
     "answer_length": 1818
+  },
+  {
+    "timestamp": "2026-05-26T12:03:53.039Z",
+    "response_id": "d2df0a6d-0ed4-4123-9064-5a6fb5aeda3e",
+    "question": "Call transcript",
+    "question_length": 15,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3916,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 511
   }
 ]
