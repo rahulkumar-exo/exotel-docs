@@ -14565,5 +14565,39 @@
       }
     ],
     "answer_length": 639
+  },
+  {
+    "timestamp": "2026-05-26T13:55:41.275Z",
+    "response_id": "b9c5cacd-a519-4596-b8d0-f83cfdc04163",
+    "question": "pricing for starter and growth plan",
+    "question_length": 35,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5368,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "Plans Comparison",
+        "product": "billing",
+        "url": "/docs/billing/plans-comparison"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "Plans Comparison",
+        "product": "billing",
+        "url": "/docs/billing/plans-comparison"
+      }
+    ],
+    "answer_length": 824
   }
 ]
