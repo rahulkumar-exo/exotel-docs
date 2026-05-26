@@ -14667,5 +14667,39 @@
       }
     ],
     "answer_length": 1070
+  },
+  {
+    "timestamp": "2026-05-26T15:53:24.512Z",
+    "response_id": "4ab6ac29-a909-4030-a14e-8b40fb382033",
+    "question": "voicebot",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5151,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      }
+    ],
+    "answer_length": 2836
   }
 ]
