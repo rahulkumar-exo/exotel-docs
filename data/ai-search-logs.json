@@ -14523,5 +14523,13 @@
       }
     ],
     "answer_length": 1669
+  },
+  {
+    "timestamp": "2026-05-26T13:51:32.160Z",
+    "question": "dabbler plan will work for zoho and exotel integration",
+    "question_length": 54,
+    "response_time_ms": 1290,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
