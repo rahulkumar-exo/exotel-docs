@@ -14277,5 +14277,39 @@
     "response_time_ms": 2041,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-26T09:05:45.766Z",
+    "response_id": "1b107efa-c6cb-4826-b6f7-e1038a1cfa2b",
+    "question": "green vn",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5383,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Lead Assist (ExoBridge - GreenVN)",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/overview"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      },
+      {
+        "title": "WhatsApp Messaging Limits",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/messaging-limits"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 2214
   }
 ]
