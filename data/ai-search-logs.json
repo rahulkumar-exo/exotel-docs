@@ -14031,5 +14031,39 @@
       }
     ],
     "answer_length": 2091
+  },
+  {
+    "timestamp": "2026-05-26T05:37:10.513Z",
+    "response_id": "b00d8dc2-1d22-4e2e-8514-d831c6c88c39",
+    "question": "voice bot api how it works",
+    "question_length": 26,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4987,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      }
+    ],
+    "answer_length": 1662
   }
 ]
