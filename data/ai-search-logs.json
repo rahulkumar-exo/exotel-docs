@@ -14099,5 +14099,39 @@
       }
     ],
     "answer_length": 3710
+  },
+  {
+    "timestamp": "2026-05-26T05:42:26.139Z",
+    "response_id": "a91048c0-42d9-4f21-8050-7b9e57f6f9f3",
+    "question": "Will u give the audio recording files and also transcription",
+    "question_length": 60,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5710,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 2365
   }
 ]
