@@ -14489,5 +14489,39 @@
       }
     ],
     "answer_length": 742
+  },
+  {
+    "timestamp": "2026-05-26T13:50:00.043Z",
+    "response_id": "487e64a5-97fe-4017-9917-83edbcd73cb7",
+    "question": "zoho crm integration",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8042,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integrations",
+        "product": "integrations",
+        "url": "/docs/integrations/overview"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Exotel Integration with Zoho Desk",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-desk"
+      },
+      {
+        "title": "FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/overview"
+      }
+    ],
+    "answer_length": 1669
   }
 ]
