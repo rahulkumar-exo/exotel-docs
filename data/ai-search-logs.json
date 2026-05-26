@@ -14311,5 +14311,13 @@
       }
     ],
     "answer_length": 2214
+  },
+  {
+    "timestamp": "2026-05-26T09:56:54.606Z",
+    "question": "linking exotel to external custom CRM with dialler",
+    "question_length": 50,
+    "response_time_ms": 3856,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
