@@ -14353,5 +14353,39 @@
       }
     ],
     "answer_length": 354
+  },
+  {
+    "timestamp": "2026-05-26T10:42:23.961Z",
+    "response_id": "78b99cb6-0f90-444e-a670-321d6e00c4e4",
+    "question": "how to pull out recordings",
+    "question_length": 26,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5301,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Anti-Spam & Bulk Limits",
+        "product": "faqs",
+        "url": "/docs/faqs/spam-prevention"
+      },
+      {
+        "title": "WhatsApp Quality Rating",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/quality-rating"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      }
+    ],
+    "answer_length": 1818
   }
 ]
