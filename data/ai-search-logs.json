@@ -14751,5 +14751,39 @@
     "response_time_ms": 2185,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-27T07:21:44.040Z",
+    "response_id": "30f6f919-7b4f-4832-b917-4f20b8bdb9c4",
+    "question": "incoming",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9641,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      }
+    ],
+    "answer_length": 5207
   }
 ]
