@@ -1,0 +1,902 @@
+---
+id: account-lifecycle
+title: Account Lifecycle Integration Guide
+description: Technical integration guide for building a full account lifecycle communication system using Exotel — Verify, Voice, SMS, WhatsApp, Campaigns, Voicebot, CQA, and Chatbot.
+sidebar_label: Account Lifecycle
+sidebar_position: 7
+---
+
+# Account Lifecycle Integration Guide
+
+This guide covers how to wire Exotel's communication products into a full user lifecycle system — from signup verification through churn prevention. Audience: engineers integrating Exotel APIs into a product backend.
+
+All 8 products are covered: **Verify**, **Voice**, **SMS**, **WhatsApp**, **Campaigns/Engage**, **Voicebot**, **CQA**, and **Chatbot**.
+
+---
+
+## 1. System Architecture
+
+### Component Overview
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│                        Your Application Layer                         │
+│                                                                        │
+│   ┌──────────────┐    ┌──────────────┐    ┌──────────────────────┐  │
+│   │  Product      │    │  Lifecycle   │    │  Webhook Handler     │  │
+│   │  Backend      │◄──►│  State Store │◄───│  (POST /webhooks/*)  │  │
+│   │  (REST API)   │    │  (DB / Redis)│    └──────────────────────┘  │
+│   └──────┬───────┘    └──────────────┘             ▲                 │
+│          │                                           │                 │
+└──────────┼───────────────────────────────────────────────────────────┘
+           │ outbound API calls                        │ inbound webhooks
+           ▼                                           │
+┌──────────────────────────────────────────────────────────────────────┐
+│                          Exotel Platform                              │
+│                                                                        │
+│  ┌──────────┐  ┌───────┐  ┌────────┐  ┌──────────────────────────┐  │
+│  │  Verify  │  │  SMS  │  │ Voice  │  │  WhatsApp Business API   │  │
+│  │  (OTP)   │  │  API  │  │  API   │  │  (Templates/Interactive) │  │
+│  └──────────┘  └───────┘  └────────┘  └──────────────────────────┘  │
+│                                                                        │
+│  ┌────────────┐  ┌──────────┐  ┌──────────┐  ┌────────────────────┐ │
+│  │ Campaigns  │  │Voicebot  │  │ Chatbot  │  │  CQA               │ │
+│  │ (Engage)  │  │  (AI IVR)│  │(Web/WA)  │  │  (Quality Scoring) │ │
+│  └────────────┘  └──────────┘  └──────────┘  └────────────────────┘ │
+└──────────────────────────────────────────────────────────────────────┘
+           │                                           │
+           ▼                                           │
+     End Users (phone, WhatsApp, web)  ────────────────┘
+```
+
+### Where Exotel Sits in Your Stack
+
+```
+CRM / User DB  ──►  Your Backend  ──►  Exotel APIs  ──►  End User
+                          ▲                 │
+                          └─────────────────┘
+                           Webhook callbacks
+                        (delivery, call events,
+                         bot sessions, CQA scores)
+```
+
+Your backend is the **orchestrator**. Exotel is the **communication execution layer**. You own lifecycle state; Exotel fires events back to you via webhooks that keep your state in sync.
+
+### Webhook Event Bus Pattern
+
+Register a single base path (e.g., `https://api.yourapp.com/webhooks/exotel`) with sub-routes per product. Each incoming webhook should:
+
+1. Validate the signature (HMAC-SHA256 on `X-Exotel-Signature` / `X-CQA-Signature`)
+2. Respond `200 OK` within 5 seconds (async processing)
+3. Deduplicate on the event's unique ID before processing (see §7)
+
+---
+
+## 2. Lifecycle State Machine
+
+### States
+
+```
+ACQUIRED ──► ONBOARDING ──► ACTIVATED ──► ENGAGED
+                                             │
+                                        AT_RISK ──► CHURNED ──► OFFBOARDED
+```
+
+### State Transition Table
+
+| Transition | Trigger Event | Exotel Product | API Call | Webhook Back |
+|---|---|---|---|---|
+| → ONBOARDING | user submits signup form | Verify | `POST /v2/accounts/{sid}/verifications/sms` | `status: approved` on verify check |
+| → ACTIVATED | user completes first key action | SMS / WhatsApp | Send welcome + activation confirmation | delivery callback `status: delivered` |
+| → ENGAGED | regular usage detected (your signal) | Campaigns | Tag user in active segment | — |
+| → AT_RISK | no login for N days (configurable) | Campaigns / Voicebot | Trigger drip or bot call | bot session end event |
+| → CHURNED | no response to AT_RISK interventions | — | Internal state update | — |
+| → OFFBOARDED | explicit delete / GDPR request | SMS | Confirmation SMS | delivery callback |
+
+### Retry Logic and Fallback Channels
+
+```
+OTP via SMS
+  └─ deliver? No → wait 30s → retry SMS (max 2x)
+               No → fall back to Voice OTP call
+                    └─ answered? No → mark verification_failed
+
+WhatsApp template
+  └─ delivered? No (30004–30041) → fall back to SMS transactional
+               Seen but no response in T minutes → trigger Chatbot proactive message
+
+Voicebot call
+  └─ answered? No → retry after 2h (max 2x)
+              Yes, but incomplete → escalate to SmartConnect agent
+```
+
+---
+
+## 3. Product Integration Specs
+
+### 3.1 Verify (OTP / 2FA)
+
+**Trigger:** User submits phone number at signup, login, or sensitive action (payment, profile change).
+
+**Start Verification**
+```bash
+POST https://exoverify.exotel.com/v2/accounts/{account_sid}/verifications/sms
+Authorization: Basic <base64(app_id:app_secret)>
+Content-Type: application/json
+
+{
+  "application_id": "your_exoverify_app_id",
+  "phone_number": "+919876543210"
+}
+```
+
+Response: `{ "sid": "VE...", "status": "pending" }`
+
+**Check OTP**
+```bash
+POST https://exoverify.exotel.com/v2/accounts/{account_sid}/verifications/sms/{verification_sid}/check
+Authorization: Basic <base64(app_id:app_secret)>
+Content-Type: application/json
+
+{
+  "otp": "482916"
+}
+```
+
+Response: `{ "status": "approved" | "pending" | "failed" }`
+
+**Webhook:** No push webhook on verify — poll or use the check response directly.
+
+**Fallback:** If SMS OTP times out (60s default), offer a "resend via voice call" option. Implement a separate voice call using the Voice API with a TTS message containing the OTP.
+
+**Integration notes:**
+- OTP expiry: 60 seconds. Max attempts: 10 per verification SID.
+- One verification SID per phone number per session. Don't reuse SIDs.
+- Use `replace_vars` to inject custom parameters into the OTP template if your DLT template requires it.
+- Rate-limit your resend button client-side — Exotel allows up to 10 attempts but excessive OTP sends flag the account.
+
+---
+
+### 3.2 Voice (Outbound, Inbound IVR, SmartConnect, Click-to-Call)
+
+**Trigger:** Activation nudge call, churn win-back call, support escalation, Click-to-Call from web/app.
+
+**Outbound call (Click-to-Call / agent-to-customer)**
+```bash
+POST https://{api_key}:{api_token}@ccm-api.in.exotel.com/v2/accounts/{account_sid}/calls
+Content-Type: application/json
+
+{
+  "from": { "user_id": "agent-uuid-from-dashboard" },
+  "to": { "number": "+919876543210" },
+  "virtual_number": "+911140XXXXXX",
+  "recording": true,
+  "recording_channels": "dual",
+  "custom_field": "user_id:u_12345|ticket:TK_9900",
+  "status_callback": [
+    { "event": "terminal", "url": "https://api.yourapp.com/webhooks/exotel/call" }
+  ]
+}
+```
+
+**Webhook payload (terminal event)**
+```json
+{
+  "CallSid": "c4e6a...",
+  "Status": "completed",
+  "Duration": "183",
+  "RecordingUrl": "https://storage.exotel.com/...",
+  "custom_field": "user_id:u_12345|ticket:TK_9900"
+}
+```
+
+Key fields: `Status` (`completed`, `no-answer`, `busy`, `failed`), `Duration`, `RecordingUrl`.
+
+**SmartConnect (inbound routing):** Configure in the Exotel dashboard to map inbound ExoPhone to a queue or flow. Skills-based routing uses applet parameters. No direct API — configured via dashboard flow builder, with passthrough webhook on `call-connect` and `call-end` events.
+
+**Fallback:** `no-answer` or `busy` → schedule retry in 2h (max 2 attempts). After 2 failures, escalate to Campaigns for async drip.
+
+**Integration notes:**
+- `custom_field` (max 255 chars) is your primary correlation key between the Exotel call and your internal record. Store `CallSid` → your internal ID in Redis for sub-second webhook lookup.
+- `recording_channels: "dual"` required for CQA analysis (separate agent/customer tracks).
+- Voice v2 (CCM API) requires agents as co-workers in the dashboard. For system-initiated calls with no agent (e.g., outbound dialer, notifications), use Voice v1 (`/v1/Accounts/{sid}/Calls/connect`).
+
+---
+
+### 3.3 SMS
+
+**Trigger:** Transactional alerts (OTP, order, status change), activation nudges, churn fallback messages.
+
+**Send transactional SMS**
+```bash
+POST https://{api_key}:{api_token}@api.in.exotel.com/v1/Accounts/{account_sid}/Sms/send
+Content-Type: application/x-www-form-urlencoded
+
+From=EXOTEL&To=%2B919876543210&Body=Your+order+%23ORD-001+is+confirmed.&DltEntityId=1234567890123&DltTemplateId=9876543210987&StatusCallback=https%3A%2F%2Fapi.yourapp.com%2Fwebhooks%2Fexotel%2Fsms
+```
+
+**Webhook payload**
+```json
+{
+  "SmsSid": "SM...",
+  "To": "+919876543210",
+  "Status": "delivered",
+  "ErrorCode": null,
+  "DateSent": "2026-05-19T10:23:00Z"
+}
+```
+
+Key `Status` values: `sent`, `delivered`, `undelivered`, `failed`.
+
+**Fallback:** If `Status: undelivered` within 5 minutes, retry once. After two failures, fall back to WhatsApp template message.
+
+**Integration notes:**
+- DLT compliance is mandatory for India. Every outbound SMS requires `DltEntityId` (your registered entity) and `DltTemplateId` (pre-approved template). Without these, messages will be blocked by carriers.
+- Promotional messages (`SmsType=promotional`) are restricted to 9am–9pm IST. Transactional messages (`transactional`) have no time restriction.
+- Bulk dynamic SMS: up to 100 unique messages per request. Use the bulk endpoint with an array payload.
+- Rate limit: 200 requests/min per account.
+
+---
+
+### 3.4 WhatsApp Business API
+
+**Trigger:** Onboarding welcome, feature adoption nudges, support notifications, churn outreach (high engagement channel).
+
+**Send template message**
+```bash
+POST https://{api_key}:{api_token}@api.in.exotel.com/v2/accounts/{account_sid}/messages
+Content-Type: application/json
+
+{
+  "to": "+919876543210",
+  "from": "whatsapp:+9191XXXXXXXX",
+  "type": "template",
+  "template": {
+    "name": "onboarding_welcome_v2",
+    "language": { "code": "en" },
+    "components": [
+      {
+        "type": "body",
+        "parameters": [
+          { "type": "text", "text": "Priya" },
+          { "type": "text", "text": "7 days" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+**Send interactive message (buttons)**
+```json
+{
+  "to": "+919876543210",
+  "from": "whatsapp:+9191XXXXXXXX",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "body": { "text": "Ready to activate your account?" },
+    "action": {
+      "buttons": [
+        { "type": "reply", "reply": { "id": "activate_yes", "title": "Yes, activate" } },
+        { "type": "reply", "reply": { "id": "activate_later", "title": "Remind me later" } }
+      ]
+    }
+  }
+}
+```
+
+**Webhook (inbound message / delivery)**
+```json
+{
+  "MessageSid": "WA...",
+  "From": "whatsapp:+919876543210",
+  "To": "whatsapp:+9191XXXXXXXX",
+  "Body": "activate_yes",
+  "ButtonPayload": "activate_yes",
+  "Status": "delivered",
+  "StatusCode": 30002
+}
+```
+
+**Inbound handling:** Register an inbound webhook URL in the Exotel dashboard. Parse `ButtonPayload` for interactive replies; `Body` for free-text. Route to your Chatbot or backend based on content.
+
+**Fallback:** On status codes 30004–30041 (failed), fall back to SMS transactional with same message content.
+
+**Integration notes:**
+- All template messages require WhatsApp pre-approval. Template rejection (`status: rejected`) will return a 4xx. Build a retry queue with a 24h backoff for template re-approvals.
+- 24-hour messaging window: after a user-initiated message, you can send free-form messages for 24 hours. Outside this window, only approved templates are allowed.
+- WhatsApp supports bulk up to 100 messages per API call.
+
+---
+
+### 3.5 Campaigns / Engage
+
+**Trigger:** Lifecycle stage changes (AT_RISK detected, Day 7 inactivity, post-activation upsell window).
+
+**Integration pattern:** Campaigns are configured in the Exotel Engage dashboard (segment builder + drip sequence). Your backend drives them via two methods:
+
+**Method A — Event-triggered via API**
+Push a lifecycle event to the Campaigns API to enroll a user in a sequence:
+
+```bash
+POST https://{api_key}:{api_token}@api.in.exotel.com/v1/Accounts/{sid}/Campaigns/enroll
+Content-Type: application/json
+
+{
+  "campaign_id": "CMP_onboarding_day7",
+  "contacts": [
+    {
+      "phone": "+919876543210",
+      "custom_fields": {
+        "user_id": "u_12345",
+        "last_login": "2026-05-12"
+      }
+    }
+  ]
+}
+```
+
+**Method B — Segment sync**
+Sync your user segments to Exotel Contacts via the Contacts API. Campaigns read from these segments on schedule.
+
+**Webhook on campaign event completion:** Configure per-campaign webhooks to receive send/delivery/response events per user.
+
+**Fallback:** Multi-channel drip sequences can be configured natively: Day 0 WhatsApp → Day 2 SMS → Day 5 Voice call. If a user responds on any channel, remove them from the sequence by calling the unenroll endpoint.
+
+**Integration notes:**
+- Idempotency: enrolling the same `phone` + `campaign_id` twice does not create duplicates if the user is already active in the sequence.
+- For time-sensitive lifecycle events (AT_RISK detection), prefer Method A (event API) over segment sync to avoid lag.
+
+---
+
+### 3.6 Voicebot
+
+**Trigger:** Activation nudge calls (Day 7), churn win-back calls, post-onboarding check-in, automated collections, NPS surveys.
+
+**How it works:** The Voicebot is an AI-powered call handler. You trigger an outbound call using the Voice API with the bot's IVR flow as the call handler. The bot uses NLP + DTMF for input, calls your tools (via OpenAPI or Python functions in the Tools Server), and escalates to a live agent via SmartConnect when it can't resolve.
+
+**Trigger an outbound Voicebot call**
+```bash
+POST https://{api_key}:{api_token}@api.in.exotel.com/v1/Accounts/{account_sid}/Calls/connect
+Content-Type: application/x-www-form-urlencoded
+
+From=+9191XXXXXXXX&To=%2B919876543210&Url=https%3A%2F%2Fmy.exotel.com%2F{account_sid}%2Fexoml%2Ffetch%2F{voicebot_flow_id}&CustomField=user_id%3Au_12345&StatusCallback=https%3A%2F%2Fapi.yourapp.com%2Fwebhooks%2Fexotel%2Fvoicebot
+```
+
+`Url` points to the VoiceBot ExoML flow. `CustomField` passes context the bot can read via its tools.
+
+**DTMF + NLP input handling:**
+- DTMF: bot presents menu (`Press 1 to confirm, 2 to speak to an agent`). `<Gather>` node collects digit input.
+- NLP: free-speech input is transcribed and interpreted by the bot's configured LLM. Intents map to bot actions.
+
+**Escalation to live agent (SmartConnect):**
+When the bot detects it cannot resolve (low-confidence NLP, explicit user request, N retries exhausted), it transfers the call:
+```xml
+<!-- VoiceBot ExoML escalation node -->
+<Connect>
+  <Queue>retention-agents</Queue>
+</Connect>
+```
+Session context (user ID, bot interaction summary) is passed as `custom_field` to the agent leg, and can be surfaced in your CRM via the terminal webhook.
+
+**Webhook (session end)**
+```json
+{
+  "CallSid": "CA...",
+  "Status": "completed",
+  "CustomField": "user_id:u_12345",
+  "BotSessionId": "BS_abc123",
+  "BotOutcome": "escalated_to_agent | resolved | unanswered"
+}
+```
+
+**Fallback:** If the call is not answered, use the Campaign retry logic. If the bot session ends with `unanswered` 3x, escalate to human outreach queue.
+
+**Integration notes:**
+- Tools registered in the Voicebot Tools Server (OpenAPI or Python) are invoked in real-time during the call. Ensure tool endpoints respond within 3s or the bot will time out.
+- The bot can read `CustomField` values if your tool fetches them via your API using the `CallSid`.
+- Pass `recording: true` on the call and record in dual-channel for CQA ingestion.
+
+---
+
+### 3.7 CQA (Conversation Quality Analytics)
+
+**Trigger:** Post-call (triggered from `Status: completed` webhook), post-chat (triggered from chat session close event).
+
+**Ingest a call for analysis**
+```bash
+POST https://cqa.exotel.com/cqa/api/v1/accounts/{account_id}/ingress/interactions
+X-API-Key: {cqa_api_key}
+Content-Type: application/json
+
+{
+  "external_interaction_id": "call-{CallSid}",
+  "channel_type": "VOICE",
+  "audio_url": "{RecordingUrl}",
+  "audio_format": "WAV",
+  "interaction_start_time": "2026-05-19T10:00:00Z",
+  "duration_seconds": 183,
+  "callback_url": "https://api.yourapp.com/webhooks/cqa",
+  "metadata": {
+    "user_id": "u_12345",
+    "lifecycle_stage": "AT_RISK",
+    "agent_id": "agent-42",
+    "campaign": "churn-prevention-q2"
+  }
+}
+```
+
+**CQA webhook (analysis complete)**
+```json
+{
+  "event": "INTERACTION_ANALYSIS_COMPLETED",
+  "externalInteractionId": "call-CA...",
+  "data": {
+    "analysisId": "a1b2c3d4-...",
+    "finalScore": 72.5,
+    "criticalityAdjustedScore": 68.0,
+    "kpiResults": [
+      {
+        "kpiId": "kpi-101",
+        "aiResponse": "No",
+        "aiJustification": "Agent did not offer retention discount.",
+        "finalScore": 0.0
+      }
+    ]
+  }
+}
+```
+
+**What CQA returns:**
+- `finalScore` / `criticalityAdjustedScore` — overall quality score (0–100)
+- Per-category scores (Communication, Compliance, Resolution)
+- Per-KPI `aiResponse`, `aiJustification`, `aiSuggestion`
+- Implicit: transcript (accessible via `transcript_url` after processing) and sentiment signal embedded in KPI justifications
+
+**Automated lifecycle decisions from CQA:**
+
+```python
+def handle_cqa_webhook(payload):
+    score = payload["data"]["finalScore"]
+    user_id = get_user_from_interaction(payload["externalInteractionId"])
+
+    if score < 50:
+        # Low quality interaction → re-trigger retention campaign
+        enroll_in_campaign(user_id, "CMP_retention_followup")
+    elif score < 70:
+        # Moderate → flag for QA team review
+        create_review_task(user_id, payload["data"]["analysisId"])
+    else:
+        # Good outcome → update lifecycle stage
+        update_lifecycle_state(user_id, "ENGAGED")
+```
+
+**Integration notes:**
+- 409 Conflict on duplicate `external_interaction_id` — use `CallSid` as the ID for deduplication.
+- CQA supports `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP` channel types. Chatbot sessions can also be ingested.
+- Webhook delivery: 3 attempts (0s, 10s, 30s). Return `200` immediately; process async.
+- HMAC verification: `X-CQA-Signature: sha256={hex}` signed with your API key secret.
+
+---
+
+### 3.8 Chatbot
+
+**Trigger:** Inbound web/WhatsApp message, proactive outreach initiated by your backend, support request.
+
+**Proactive session initiation (WhatsApp):**
+Send a WhatsApp template message that includes a "Chat with us" CTA. When the user replies, the inbound webhook routes to the chatbot flow configured for that number.
+
+**Inbound webhook routing:**
+```
+Inbound WhatsApp message
+  → Exotel routes to configured Chatbot flow
+  → Bot processes intent
+  → Bot calls your API via Actions node (if CRM lookup needed)
+  → Bot responds
+
+If bot cannot resolve:
+  → Bot transfers to LiveChat queue (SmartConnect)
+  → Agent picks up the session
+```
+
+**Chatbot → Voicebot handoff:**
+If the user explicitly requests a voice call or the bot determines the issue needs voice, trigger a Voicebot call:
+1. Chatbot captures user consent (`Reply YES to receive a call`)
+2. On user consent, chatbot webhook fires to your backend
+3. Your backend calls the Voice API to initiate a Voicebot call, passing session context via `CustomField`
+4. Voicebot picks up with context (user name, issue summary) pre-loaded from your CRM
+
+**Session context passing:**
+```json
+// Passed as CustomField on the Voice API call
+{
+  "chat_session_id": "CS_abc123",
+  "user_id": "u_12345",
+  "issue_summary": "Cannot upgrade plan",
+  "bot_resolution_attempts": 2
+}
+```
+
+**LiveChat escalation webhook:**
+When the chatbot transfers to an agent, Exotel fires a session-handoff event:
+```json
+{
+  "event": "live_chat_assigned",
+  "session_id": "CS_abc123",
+  "agent_id": "agent-42",
+  "transcript_url": "https://...",
+  "user_id": "u_12345"
+}
+```
+
+**Fallback:** If no agent is available in the LiveChat queue (beyond SLA threshold), bot sends a callback scheduling message and creates a ticket in your system.
+
+**Integration notes:**
+- Chatbot flows are built in the visual Flow Builder. For dynamic data (user plan, balance), use the API Action node pointing to your backend.
+- WhatsApp chatbot sessions are scoped to the 24-hour messaging window. Outside the window, the bot cannot initiate free-form messages — it must use a template first.
+- Bot analytics (session count, completion rate, drop-off nodes) are available via the Analytics dashboard and the Download Reports API.
+
+---
+
+## 4. Key Flows
+
+### 4.1 Onboarding Flow
+
+```
+User          Your Backend       Exotel Verify     WhatsApp API      Chatbot
+ |                 |                   |                 |               |
+ |--POST /signup-->|                   |                 |               |
+ |                 |--POST /verifications/sms {phone}--->|               |
+ |<----SMS OTP-----|-------------------|                 |               |
+ |--POST /verify-->|                   |                 |               |
+ |                 |--POST /verifications/{sid}/check--->|               |
+ |                 |<--{status:"approved"}---------------|               |
+ |                 |--create_user(), state=ONBOARDING    |               |
+ |                 |                                     |               |
+ |                 |--POST /messages (onboarding_welcome_template)------>|
+ |<--WA welcome msg with [Start Setup] button-----------|               |
+ |--[Start Setup] reply------------------------>|                        |
+ |                 |<--inbound webhook {ButtonPayload:"start_setup"}     |
+ |                 |--route to onboarding_flow-------------------------->|
+ |<--Chatbot-guided setup (profile, preferences)------------------------|
+ |                 |                                                      |
+ |  [if stuck / no response 10min]                                       |
+ |                 |<--session_stalled webhook---------------------------|
+ |                 |--POST /messages (offer agent)--------------->|      |
+ |--"Talk to someone"-------------------------------------->|             |
+ |                 |--SmartConnect queue: onboarding-agents              |
+ |                 |                                                      |
+ |                 |<--setup_complete webhook----------------------------|
+ |                 |--state=ACTIVATED                                    |
+```
+
+### 4.2 Activation Nudge Flow (Day 7 Inactivity)
+
+```
+Your Backend      Campaigns        WhatsApp API      SMS API       Voicebot    SmartConnect
+     |                |                  |               |              |             |
+     |--cron: inactive >= 7d, state=ONBOARDING          |              |             |
+     |--POST /campaigns/enroll {campaign:"activation_d7"}|             |             |
+     |                |--Day 0: WhatsApp template------->|             |             |
+     |<--delivery webhook--------------------|            |             |             |
+     |                |                      |            |             |             |
+     |  [no response in 48h]                 |            |             |             |
+     |                |--Day 2: SMS nudge--------------->|             |             |
+     |<--delivery webhook----------------------------------|            |             |
+     |                |                                   |             |             |
+     |  [no response in 96h]                              |             |             |
+     |--POST /Calls/connect (voicebot_activation_flow)--->|            |             |
+     |<--call answered------------------------------------|             |             |
+     |                |                                                 |             |
+     |  [user engages with bot]                                         |             |
+     |<--BotOutcome:"activated"-----------------------------------------|            |
+     |--state=ACTIVATED                                                 |             |
+     |                |                                                 |             |
+     |  [bot cannot resolve]                                            |             |
+     |                |                    Transfer to retention agent->|------------>|
+     |<--call_end webhook {Duration, RecordingUrl}---------------------|-------------|
+     |--POST /ingress/interactions {audio_url, metadata}               |             |
+     |                |                                                 |             |
+     |  [no-answer x2 after voicebot]                                  |             |
+     |--state=AT_RISK, schedule churn_prevention flow                  |             |
+```
+
+### 4.3 Churn Prevention Flow
+
+```
+Your Backend      Chatbot          User           Voicebot     SmartConnect     CQA
+     |                |              |                |              |            |
+     |--at_risk signal detected (usage drop, billing flag)          |            |
+     |--state=AT_RISK                |                |              |            |
+     |                |              |                |              |            |
+     |--trigger proactive WA chatbot session          |              |            |
+     |                |--"We noticed you haven't been active..."---->|            |
+     |                |              |                |              |            |
+     |  [user responds]              |                |              |            |
+     |<--session outcome: resolved | escalate---------|             |            |
+     |                |              |                |              |            |
+     |  [no response in 24h]         |                |              |            |
+     |--POST /Calls/connect (win_back_flow)---------->|             |            |
+     |                |              |<--AI voice call with offer---|            |
+     |<--{BotOutcome: offer_accepted|declined|escalated}------------|            |
+     |                |              |                |              |            |
+     |  [BotOutcome = escalated]     |                |              |            |
+     |                |              |  Transfer to retention spec.->|            |
+     |<--call_end {CallSid, RecordingUrl, Duration}----------------|            |
+     |--POST /ingress/interactions {audio_url, stage:"AT_RISK"}---->|            |
+     |<--INTERACTION_ANALYSIS_COMPLETED webhook--------------------|------------|
+     |                |              |                |              |            |
+     |  finalScore < 60  → re-enroll in CMP_retention_followup     |            |
+     |  offer_accepted   → state=ENGAGED                            |            |
+     |  declined         → state=CHURNED                            |            |
+```
+
+### 4.4 Support Escalation Flow
+
+```
+User         Chatbot      Your Backend     Voicebot     Agent (SC)      CQA
+  |              |               |              |             |           |
+  |--inbound msg (web/WA)------->|              |             |           |
+  |              |--intent classification + response attempt  |           |
+  |<--bot response---------------|              |             |           |
+  |              |               |              |             |           |
+  |  [bot cannot resolve]        |              |             |           |
+  |<--"Let me connect you to voice"-------------|            |           |
+  |              |--handoff webhook {session_id, summary}---->|          |
+  |              |               |--POST /Calls/connect------>|          |
+  |<--outbound call (AI voice support)----------|             |           |
+  |              |               |              |             |           |
+  |  [voicebot cannot resolve]   |              |             |           |
+  |              |               |  Connect <Queue>support-tier1>-------->|
+  |              |               |<--call_answered {CallSid, AgentId}----|
+  |<--live call with agent------------------------------------------------|
+  |              |               |              |             |           |
+  |              |               |<--call_end {CallSid, RecordingUrl}----|
+  |              |               |--POST /ingress/interactions {audio_url,
+  |              |               |   channel_type:VOICE, metadata:       |
+  |              |               |   {agent_id, ticket_id, session_id}}->|
+  |              |               |<--INTERACTION_ANALYSIS_COMPLETED-------|
+  |              |               |   {finalScore, kpiResults}            |
+  |              |               |                                        |
+  |              |  finalScore < 60  → flag for QA review                |
+  |              |  FCR KPI = No     → schedule callback                 |
+```
+
+---
+
+## 5. CQA Integration Detail
+
+### Where CQA plugs in
+
+| Touchpoint | Integration | Trigger |
+|---|---|---|
+| Post-voice-call | REST ingest | `Status: completed` webhook from Voice API |
+| Post-voicebot-call | REST ingest | `BotOutcome` webhook from Voicebot session |
+| Post-live-chat | REST ingest | Session close event from Chatbot LiveChat |
+| Real-time coaching | CQA dashboard (not API) | Not available via API at present |
+
+### Data returned by CQA analysis
+
+```json
+{
+  "finalScore": 72.5,
+  "criticalityAdjustedScore": 68.0,
+  "categories": [
+    {
+      "name": "Communication Skills",
+      "finalScore": 80.0,
+      "sub_categories": [...]
+    },
+    {
+      "name": "Compliance",
+      "finalScore": 55.0,
+      "sub_categories": [...]
+    }
+  ],
+  "kpiResults": [
+    {
+      "kpiId": "kpi-201",
+      "aiResponse": "No",
+      "aiJustification": "Agent did not confirm resolution before closing.",
+      "finalScore": 0.0
+    }
+  ]
+}
+```
+
+Transcripts are available by fetching the interaction detail after status = `completed`.
+
+### Automated lifecycle decisions from CQA
+
+```python
+CQA_SCORE_THRESHOLDS = {
+    "trigger_retention_campaign": 50,
+    "flag_for_qa_review": 70,
+    "auto_close_resolved": 85,
+}
+
+def process_cqa_result(interaction_id, final_score, kpi_results, metadata):
+    user_id = metadata["user_id"]
+
+    # Check for critical KPI failures
+    critical_fails = [k for k in kpi_results if k["finalScore"] == 0.0 and k.get("is_critical")]
+
+    if critical_fails:
+        create_compliance_alert(agent_id=metadata["agent_id"], kpis=critical_fails)
+
+    if final_score < CQA_SCORE_THRESHOLDS["trigger_retention_campaign"]:
+        enroll_campaign(user_id, "CMP_post_call_recovery")
+    elif final_score < CQA_SCORE_THRESHOLDS["flag_for_qa_review"]:
+        create_qa_task(interaction_id)
+    else:
+        auto_close_ticket(metadata.get("ticket_id"))
+        if metadata.get("lifecycle_stage") == "AT_RISK":
+            update_lifecycle_state(user_id, "ENGAGED")
+```
+
+---
+
+## 6. Voicebot + Chatbot Handoff
+
+### Channel switching: Chat → Voice
+
+```
+Chatbot session (WhatsApp)
+  │
+  ├─ Issue unresolvable by bot
+  │
+  ▼
+Bot sends: "Would you like us to call you? Reply YES"
+User: "YES"
+  │
+  ▼
+Chatbot webhook → your backend
+  │
+  ▼
+Voice API: POST /Calls/connect
+  CustomField = {
+    "chat_session_id": "CS_abc",
+    "user_id": "u_12345",
+    "bot_intent": "billing_dispute",
+    "prior_steps": ["confirmed_account", "checked_invoice"]
+  }
+  │
+  ▼
+Voicebot call starts
+Voicebot tool (OpenAPI) fetches context via GET /sessions/{chat_session_id}
+Bot continues conversation with full context
+```
+
+### Unified conversation history
+
+Maintain a `conversations` table in your DB:
+
+```sql
+conversations (
+  id           UUID PRIMARY KEY,
+  user_id      UUID NOT NULL,
+  channel      ENUM('whatsapp', 'web', 'voice', 'voicebot'),
+  session_id   TEXT,          -- chatbot session ID or CallSid
+  started_at   TIMESTAMPTZ,
+  ended_at     TIMESTAMPTZ,
+  transcript   JSONB,         -- raw turn-by-turn, stored after session ends
+  cqa_score    FLOAT,         -- populated after CQA analysis completes
+  outcome      TEXT,          -- resolved / escalated / unanswered / transferred
+  parent_id    UUID           -- links voice leg back to originating chat session
+)
+```
+
+When the Voicebot escalates to SmartConnect, the agent receives the call with `CustomField` containing `chat_session_id`. Surface this in your agent UI by fetching the chatbot transcript via `GET /conversations?session_id=CS_abc`.
+
+### Both bots escalating to live agents (SmartConnect)
+
+**Chatbot → LiveChat:**
+Configure a "Transfer to Agent" node in the Chatbot Flow Builder. Set the target queue name. Chatbot fires a `live_chat_assigned` webhook to your backend.
+
+**Voicebot → SmartConnect:**
+The Voicebot ExoML flow uses `<Connect><Queue>queue-name</Queue></Connect>`. On queue connect, the SmartConnect `call-connect` webhook fires to your backend.
+
+Both paths should carry the `user_id` and session context so your agent desktop can surface the right record without the agent asking for account details again.
+
+---
+
+## 7. Data & State Management
+
+### Lifecycle state model (your DB)
+
+```sql
+users (
+  id                  UUID PRIMARY KEY,
+  phone               TEXT UNIQUE NOT NULL,
+  lifecycle_stage     ENUM('ACQUIRED','ONBOARDING','ACTIVATED','ENGAGED','AT_RISK','CHURNED','OFFBOARDED'),
+  stage_updated_at    TIMESTAMPTZ,
+  last_contact_at     TIMESTAMPTZ,
+  last_contact_channel TEXT,          -- 'sms' | 'whatsapp' | 'voice' | 'voicebot' | 'chatbot'
+  channel_preference  TEXT,           -- preferred channel, updated from engagement data
+  verify_sid          TEXT,           -- active verification SID
+  active_campaign_id  TEXT,
+  cqa_last_score      FLOAT,
+  opt_out_sms         BOOLEAN DEFAULT false,
+  opt_out_whatsapp    BOOLEAN DEFAULT false,
+  created_at          TIMESTAMPTZ
+)
+```
+
+### Keeping state in sync from webhooks
+
+Each Exotel webhook event maps to a state update:
+
+| Webhook | State Action |
+|---|---|
+| Verify `status: approved` | `lifecycle_stage → ONBOARDING`, `last_contact_channel = 'sms'` |
+| WhatsApp `status: delivered` | `last_contact_at = now()` |
+| WhatsApp inbound reply | `last_contact_at = now()`, `channel_preference = 'whatsapp'` |
+| Voice `Status: completed` with duration > 30s | `last_contact_at = now()` |
+| Voicebot `BotOutcome: resolved` | depends on flow — map outcome → stage |
+| Chatbot session close with `resolved: true` | `last_contact_at = now()` |
+| CQA `finalScore < 50` | trigger retention campaign, potentially `stage → AT_RISK` |
+
+### Idempotency and duplicate webhook delivery
+
+Exotel and CQA may re-deliver webhooks on timeout (see §3.7 retry policy). Deduplicate using a `processed_events` table:
+
+```sql
+processed_events (
+  event_id    TEXT PRIMARY KEY,  -- CallSid, SmsSid, WA MessageSid, CQA deliveryId
+  event_type  TEXT,
+  processed_at TIMESTAMPTZ
+)
+```
+
+Before processing any webhook:
+```python
+def handle_webhook(event_id, event_type, payload):
+    if db.exists("processed_events", event_id):
+        return 200  # already handled
+    db.insert("processed_events", event_id, event_type)
+    process(payload)
+```
+
+Use a Redis SET with TTL (7 days) for high-throughput event deduplication instead of a DB write.
+
+---
+
+## 8. Error Handling & Observability
+
+### Failure modes per product
+
+| Product | Failure Mode | Detection | Recovery |
+|---|---|---|---|
+| Verify | OTP not delivered | `status: pending` after 60s | Retry SMS x2 → fall back to voice OTP |
+| Verify | Invalid OTP | `status: failed` on check | Allow up to 3 user retries, then invalidate SID |
+| SMS | Undelivered | webhook `Status: undelivered` | Retry x1 → fall back to WhatsApp |
+| SMS | DLT rejection | 4xx on API call (`DLT_TEMPLATE_NOT_FOUND`) | Fix template mapping; do not retry until resolved |
+| WhatsApp | Template rejected | `StatusCode: 30004+` | Fall back to SMS; audit template compliance |
+| WhatsApp | 24h window expired | 4xx `HSM_MESSAGE_ONLY` | Send approved template to reopen session |
+| Voice | No answer | `Status: no-answer` | Retry in 2h (max 2x) → fall back to async channel |
+| Voicebot | Tool timeout (>3s) | Bot session ends with `error` | Implement tool fallback response; log for investigation |
+| Voicebot | No agent in queue | Queue timeout callback | Offer callback scheduling in bot |
+| CQA | Analysis failed | `INTERACTION_ANALYSIS_FAILED` webhook | Re-ingest with same `external_interaction_id` — 409 means already queued, which means retry |
+| Chatbot | API action timeout | Bot flow error node | Bot sends fallback message; creates support ticket |
+
+### Key metrics to monitor
+
+| Metric | Source | Alert Threshold |
+|---|---|---|
+| OTP delivery rate | Verify — `status: approved` / total starts | < 85% delivery |
+| SMS delivery rate | SMS webhook `delivered` / `sent` | < 90% |
+| WhatsApp delivery rate | WA webhook `StatusCode: 30002` / total sent | < 85% |
+| Voice connect rate | Voice webhook `Status: completed` / total calls | < 60% |
+| Voicebot completion rate | `BotOutcome: resolved` / total bot calls | < 40% (tune flow) |
+| Chatbot session resolution | resolved sessions / total sessions | < 50% |
+| CQA processing failure rate | `INTERACTION_ANALYSIS_FAILED` / total ingested | > 2% |
+| CQA average score by stage | CQA webhook `finalScore` grouped by lifecycle stage | Score < 60 for AT_RISK calls |
+
+### Recommended alerting setup
+
+- **P1 (immediate):** DLT rejection rate > 1% (upstream config issue); Verify OTP delivery < 70% (carrier issue)
+- **P2 (15 min):** Voice connect rate < 50% over 1h window; CQA failure rate > 5%
+- **P3 (daily digest):** Voicebot completion rate trending down week-over-week; Chatbot escalation rate > 30%
+
+Instrument your webhook handler with structured logs keyed on `CallSid` / `SmsSid` / `MessageSid`. These IDs are the join key between Exotel events and your internal records. Store them in your `conversations` and `users` tables from the first event.

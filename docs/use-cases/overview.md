@@ -57,6 +57,18 @@ Build a progressive dialer that checks agent availability before each call, conn
 
 ---
 
+## Multi-Product & Lifecycle
+
+### [Account Lifecycle Integration Guide](/docs/use-cases/account-lifecycle)
+
+End-to-end technical guide for building an account lifecycle communication system using all Exotel products as the communication layer. Covers the lifecycle state machine (ACQUIRED → CHURNED), per-product API specs, key flows with sequence diagrams, CQA feedback loops, bot handoffs, and error handling.
+
+**APIs used:** Verify, Voice, SMS, WhatsApp, Campaigns, Voicebot, CQA, Chatbot
+
+**Tags:** `Verify` `Voice` `SMS` `WhatsApp` `Campaigns` `Voicebot` `CQA` `Chatbot`
+
+---
+
 ## Messaging
 
 ### [Interactive SMS with Custom UI](/docs/use-cases/interactive-sms)

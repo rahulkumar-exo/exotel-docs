@@ -79,6 +79,11 @@ const config: Config = {
           routeBasePath: 'docs',
         },
         blog: false,
+        sitemap: {
+          ignorePatterns: ['/search', '/markdown-page'],
+          changefreq: 'weekly',
+          priority: 0.5,
+        },
         theme: {
           customCss: './src/css/custom.css',
         },

@@ -6,12 +6,22 @@
 # like ChatGPT, Claude, Gemini, and Perplexity to read our docs so they
 # can answer developer questions about Exotel APIs accurately.
 #
-# Only carve-out: the CMS admin interface (/admin/) is hidden from indexing
-# since it has no public value and is an internal authoring surface.
+# Carve-outs:
+# - /admin/ is the CMS authoring interface — no public value, exclude from indexing.
+# - /api/* serverless function endpoints are excluded (chat, auth, etc.) but legacy
+#   redirect aliases like /api/voice, /api/sms are intentionally allowed so crawlers
+#   can follow the 301 redirects to the canonical /docs/ destinations.
 
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /api/
+Disallow: /api/chat
+Disallow: /api/auth
+Disallow: /api/callback
+Disallow: /api/newsletter
+Disallow: /api/send-newsletter
+Disallow: /api/unsubscribe
+Disallow: /api/ab-status
+Disallow: /api/proxy
 
 Sitemap: https://developer.exotel.com/sitemap.xml
