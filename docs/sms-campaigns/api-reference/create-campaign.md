@@ -38,6 +38,10 @@ POST /v2/accounts/<account_sid>/message-campaigns
 | `schedule` | Object | Contains `start_time` and `end_time` in RFC 3339 format |
 | `status_callback` | URL | Webhook for campaign-level status updates |
 | `sms_status_callback` | URL | Webhook for individual SMS delivery updates |
+| `sms_url_shortening` | Boolean | `true` to enable URL shortening for links in the SMS body |
+| `shorten_url_header` | String | DLT-registered header for the short URL domain |
+| `click_url_event_enabled` | Boolean | `true` to enable click tracking analytics |
+| `click_tracking_callback_url` | String | Webhook URL to receive click events |
 
 :::info Dynamic Templates
 For dynamic campaigns, use `@@column_header` syntax to insert personalized values from your contact list columns.
