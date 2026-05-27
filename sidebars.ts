@@ -69,9 +69,17 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'voice-v3/overview',
-    'voice-v3/api-reference/call-details',
-    'voice-v3/api-reference/voice-log-download',
-    'voice-v3/api-reference/active-stream-monitoring',
+    {
+      type: 'category',
+      label: 'API Reference',
+      collapsed: false,
+      items: [
+        'voice-v3/api-reference/connect-two-numbers',
+        'voice-v3/api-reference/call-details',
+        'voice-v3/api-reference/voice-log-download',
+        'voice-v3/api-reference/active-stream-monitoring',
+      ],
+    },
   ],
 
   smsApiSidebar: [
@@ -426,6 +434,7 @@ const sidebars: SidebarsConfig = {
     'use-cases/dynamic-caller-id-campaigns',
     'use-cases/progressive-dialer',
     'use-cases/interactive-sms',
+    'use-cases/account-lifecycle',
   ],
 
   faqsSidebar: [

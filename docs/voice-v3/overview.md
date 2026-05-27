@@ -42,23 +42,42 @@ curl -X GET \
 
 | API | Method | Endpoint | Description |
 |-----|--------|----------|-------------|
+| [Connect Two Numbers](/docs/voice-v3/api-reference/connect-two-numbers) | POST | `/v1/accounts/{sid}/Calls/connect` | Initiate an outbound call connecting two numbers |
 | [Call Details](/docs/voice-v3/api-reference/call-details) | GET | `/v3/accounts/{sid}/calls/{call_sid}` | Get enhanced call details |
 | [Active Streams](/docs/voice-v3/api-reference/active-stream-monitoring) | GET | `/v3/accounts/{sid}/calls/active` | Monitor active call streams |
 | [Voice Logs](/docs/voice-v3/api-reference/voice-log-download) | GET | `/v3/accounts/{sid}/calls/{call_sid}/voice-logs` | Download voice recordings |
 
 ## Outbound & Inbound Call APIs
 
-Voice v3 focuses on enhanced reporting and monitoring. For initiating outbound calls and handling inbound calls, use the existing Voice v1 endpoints — they remain the production-grade APIs and are fully compatible alongside v3 reporting.
+Voice v3 focuses on enhanced reporting and monitoring. Call initiation uses the Voice v1 endpoint, which is fully production-grade and compatible alongside v3 reporting.
 
 ### Connect Two Numbers {#call-to-connect-two-numbers}
 
-To programmatically connect two phone numbers (e.g., agent ↔ customer), use the **Connect Two Numbers** API on Voice v1:
+To programmatically connect two phone numbers (e.g., agent ↔ customer), use the **Connect Two Numbers** API.
 
-→ **[POST /v1/Accounts/&#123;sid&#125;/Calls/connect](/docs/voice-v1/api-reference/connect-two-numbers)**
+→ **[Connect Two Numbers — full parameters, code examples & response reference](/docs/voice-v3/api-reference/connect-two-numbers)**
+
+**Quick reference:**
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `From` | ✅ | Agent / dialler number (E.164 preferred) |
+| `To` | ✅ | Customer phone number (E.164 preferred) |
+| `CallerId` | ✅ | Your Exotel ExoPhone / virtual number |
+| `Record` | Optional | `true` to record the call |
+| `TimeLimit` | Optional | Max duration in seconds (max 14400) |
+| `StatusCallback` | Optional | Webhook URL for call status updates |
+| `CustomField` | Optional | Custom metadata string (max 128 chars) |
+| `WaitUrl` | Optional | Audio played while waiting for answer |
+| `StreamUrl` | Optional | WebSocket URL for real-time audio streaming |
+
+**Endpoint:** `POST /v1/Accounts/{sid}/Calls/connect`
+
+After the call is placed, use the returned `CallSid` with [Call Details (v3)](/docs/voice-v3/api-reference/call-details) for enhanced reporting.
 
 Connect-to-Flow is also available if you want to drop the call into an App Bazaar IVR flow:
 
-→ **[POST /v1/Accounts/&#123;sid&#125;/Calls/connect (with `Url`)](/docs/voice-v1/api-reference/connect-to-flow)**
+→ **[Connect to Flow](/docs/voice-v1/api-reference/connect-to-flow)**
 
 ### Incoming Calls {#call-incoming}
 

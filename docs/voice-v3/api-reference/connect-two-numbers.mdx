@@ -1,0 +1,382 @@
+---
+id: connect-two-numbers
+title: Connect Two Numbers
+description: Initiate an outbound call connecting two phone numbers using the Exotel Voice API. Supports call recording, streaming, custom playback, and status callbacks.
+sidebar_label: Connect Two Numbers
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Connect Two Numbers
+
+Initiate an outbound call that connects two phone numbers — typically an agent and a customer. Exotel first calls the `From` number, waits for it to answer, then dials the `To` number and bridges the two legs.
+
+:::info Using Voice v1 endpoint
+Call initiation in Voice v3 uses the **Voice v1** endpoint (`/v1/Accounts/...`). Use the **Voice v3** [Call Details API](/docs/voice-v3/api-reference/call-details) to fetch enhanced reporting on the call after it is placed.
+:::
+
+<TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Calls/connect" />
+
+## Endpoint
+
+```
+POST /v1/Accounts/<account_sid>/Calls/connect
+```
+
+**Content-Type:** `application/x-www-form-urlencoded`
+
+### Regional Base URLs
+
+| Region | Base URL |
+|--------|----------|
+| Singapore | `https://<api_key>:<api_token>@api.exotel.com` |
+| Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com` |
+
+## Request Parameters
+
+### Required
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `From` | String | The number dialled first (typically your agent or dialler). Preferably E.164 format (e.g., `+919900XXXXXX`). |
+| `To` | String | The customer's phone number. Preferably E.164 format. |
+| `CallerId` | String | Your Exotel ExoPhone / virtual number used as the outbound caller ID. |
+
+### Optional
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `CallType` | String | — | Set to `trans` for transactional calls. |
+| `TimeLimit` | Integer | — | Maximum call duration in seconds. Maximum value: `14400` (4 hours). |
+| `TimeOut` | Integer | — | Ringing timeout in seconds before the call is considered unanswered. |
+| `WaitUrl` | String | — | Audio file URL (WAV) played to the `From` caller while waiting for `To` to answer. File should be under 2 MB. **Note:** URLs are cached — append a unique query parameter (e.g., `?v=2`) when updating audio. |
+| `Record` | Boolean | `false` | Set to `true` to record the conversation. |
+| `RecordingChannels` | String | `single` | `single` (merged audio) or `dual` (separate channels per leg). |
+| `RecordingFormat` | String | `mp3` | `mp3` or `mp3-hq` (high quality). |
+| `StreamUrl` | String | — | WebSocket URL for real-time audio streaming. See [AgentStream](/docs/agentstream/overview). |
+| `StreamBegin` | String | — | When streaming starts: `at Leg1Connect` or `at Leg2Connect`. |
+| `CustomField` | String | — | Custom metadata string, max 128 characters. Passed through to `StatusCallback` and applets. |
+| `StartPlaybackToNew` | String | `Callee` | Who hears pre-call audio: `Callee` or `Both`. |
+| `StartPlaybackValueNew` | String | — | Audio URL played to the specified party before the call connects. |
+| `StatusCallback` | String | — | Webhook URL to receive call status updates (POST). |
+| `StatusCallbackEvents` | Array | — | Events to trigger the callback: `terminal`, `answered`, or both. |
+| `StatusCallbackContentType` | String | `multipart/form-data` | Format of the callback payload: `multipart/form-data` or `application/json`. |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -X POST \
+  'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect' \
+  -d 'From=+919900XXXXXX' \
+  -d 'To=+918800XXXXXX' \
+  -d 'CallerId=09XXXXXXXXX' \
+  -d 'Record=true' \
+  -d 'TimeLimit=600' \
+  -d 'StatusCallback=https://your-server.com/callback' \
+  -d 'StatusCallbackEvents[]=terminal'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+api_key = '<your_api_key>'
+api_token = '<your_api_token>'
+account_sid = '<your_account_sid>'
+
+url = f'https://api.exotel.com/v1/Accounts/{account_sid}/Calls/connect'
+
+payload = {
+    'From': '+919900XXXXXX',
+    'To': '+918800XXXXXX',
+    'CallerId': '09XXXXXXXXX',
+    'Record': 'true',
+    'TimeLimit': 600,
+    'StatusCallback': 'https://your-server.com/callback',
+    'StatusCallbackEvents[]': 'terminal',
+}
+
+response = requests.post(url, data=payload, auth=(api_key, api_token))
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<your_api_key>';
+const apiToken = '<your_api_token>';
+const accountSid = '<your_account_sid>';
+
+const url = `https://api.exotel.com/v1/Accounts/${accountSid}/Calls/connect`;
+
+const params = new URLSearchParams({
+  From: '+919900XXXXXX',
+  To: '+918800XXXXXX',
+  CallerId: '09XXXXXXXXX',
+  Record: 'true',
+  TimeLimit: '600',
+  StatusCallback: 'https://your-server.com/callback',
+  'StatusCallbackEvents[]': 'terminal',
+});
+
+const credentials = Buffer.from(`${apiKey}:${apiToken}`).toString('base64');
+
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    'Authorization': `Basic ${credentials}`,
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  body: params.toString(),
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$apiKey    = '<your_api_key>';
+$apiToken  = '<your_api_token>';
+$accountSid = '<your_account_sid>';
+
+$curl = curl_init();
+curl_setopt_array($curl, [
+  CURLOPT_URL            => "https://{$apiKey}:{$apiToken}@api.exotel.com/v1/Accounts/{$accountSid}/Calls/connect",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST           => true,
+  CURLOPT_POSTFIELDS     => http_build_query([
+    'From'                        => '+919900XXXXXX',
+    'To'                          => '+918800XXXXXX',
+    'CallerId'                    => '09XXXXXXXXX',
+    'Record'                      => 'true',
+    'TimeLimit'                   => 600,
+    'StatusCallback'              => 'https://your-server.com/callback',
+    'StatusCallbackEvents[]'      => 'terminal',
+  ]),
+]);
+
+$response = curl_exec($curl);
+curl_close($curl);
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "net/http"
+    "net/url"
+    "strings"
+    "io/ioutil"
+)
+
+func main() {
+    apiKey     := "<your_api_key>"
+    apiToken   := "<your_api_token>"
+    accountSid := "<your_account_sid>"
+
+    endpoint := fmt.Sprintf(
+        "https://%s:%s@api.exotel.com/v1/Accounts/%s/Calls/connect",
+        apiKey, apiToken, accountSid,
+    )
+
+    data := url.Values{}
+    data.Set("From", "+919900XXXXXX")
+    data.Set("To", "+918800XXXXXX")
+    data.Set("CallerId", "09XXXXXXXXX")
+    data.Set("Record", "true")
+    data.Set("TimeLimit", "600")
+    data.Set("StatusCallback", "https://your-server.com/callback")
+    data.Set("StatusCallbackEvents[]", "terminal")
+
+    req, _ := http.NewRequest("POST", endpoint, strings.NewReader(data.Encode()))
+    req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+```json
+{
+  "Call": {
+    "Sid": "b6cfaf5f5cef3ca0fc937749ef96d245",
+    "ParentCallSid": null,
+    "DateCreated": "2024-03-03 10:48:33",
+    "DateUpdated": "2024-03-03 10:53:33",
+    "AccountSid": "<account_sid>",
+    "To": "0XXXXX38847",
+    "From": "0XXXXX30240",
+    "PhoneNumberSid": "0XXXXXX4890",
+    "Status": "in-progress",
+    "StartTime": "2024-03-03 10:48:33",
+    "EndTime": null,
+    "Duration": null,
+    "Price": null,
+    "Direction": "outbound-api",
+    "AnsweredBy": null,
+    "RecordingUrl": null,
+    "Details": {
+      "ConversationDuration": 0,
+      "Leg1Status": "in-progress",
+      "Leg2Status": "queued",
+      "Legs": []
+    }
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Call.Sid` | String | Unique call identifier. Use this with the [Call Details API](/docs/voice-v3/api-reference/call-details) for enhanced reporting. |
+| `Call.ParentCallSid` | String / null | Parent call identifier if this is a child call. |
+| `Call.DateCreated` | DateTime | Timestamp when the call was created. |
+| `Call.DateUpdated` | DateTime | Timestamp of the last status update. |
+| `Call.AccountSid` | String | Your Exotel account SID. |
+| `Call.To` | String | The `To` phone number. |
+| `Call.From` | String | The `From` phone number. |
+| `Call.PhoneNumberSid` | String | Identifier of the ExoPhone used as `CallerId`. |
+| `Call.Status` | String | Call status — see [Call Statuses](#call-statuses) below. |
+| `Call.StartTime` | DateTime | Time the call was initiated. |
+| `Call.EndTime` | DateTime / null | Time the call ended (`null` while in progress). |
+| `Call.Duration` | String / null | Total duration in seconds (updates ~2 minutes after call ends). |
+| `Call.Price` | String / null | Call cost (updates ~2 minutes after call ends). |
+| `Call.Direction` | String | `outbound-api` for calls initiated via this endpoint. |
+| `Call.AnsweredBy` | String / null | `Human`, `Machine`, `NotSure`, or `NA`. |
+| `Call.RecordingUrl` | String / null | Direct URL to recording MP3 (populated if `Record=true`). |
+| `Call.Details.ConversationDuration` | Integer | Seconds both parties were connected. |
+| `Call.Details.Leg1Status` | String | Status of the `From` leg. |
+| `Call.Details.Leg2Status` | String | Status of the `To` leg. |
+| `Call.Details.Legs` | Array | Per-leg detail objects with `Id` and `OnCallDuration`. |
+
+:::note
+`Duration`, `Price`, and `EndTime` are populated asynchronously — typically within 2 minutes after the call ends. Use the `StatusCallback` webhook to receive the final values.
+:::
+
+## Call Statuses
+
+| Status | Description |
+|--------|-------------|
+| `queued` | Call is queued, waiting to be sent to the operator. |
+| `in-progress` | Call is currently active. |
+| `completed` | Call ended normally. |
+| `failed` | Call could not be completed. |
+| `busy` | `To` number was busy. |
+| `no-answer` | Call was not answered within `TimeOut`. |
+
+## StatusCallback Webhook
+
+When the call reaches a terminal state (or is answered, if configured), Exotel sends a POST to your `StatusCallback` URL.
+
+### Payload Fields
+
+| Parameter | Description |
+|-----------|-------------|
+| `CallSid` | Unique call identifier. |
+| `EventType` | `terminal` or `answered`. |
+| `Status` | Final call status (`completed`, `failed`, `busy`, `no-answer`). |
+| `From` | From-leg number. |
+| `To` | To-leg number. |
+| `PhoneNumberSid` | ExoPhone identifier. |
+| `StartTime` | Call start timestamp. |
+| `EndTime` | Call end timestamp. |
+| `Duration` | Total call duration in seconds. |
+| `ConversationDuration` | Talk time in seconds. |
+| `RecordingUrl` | Recording URL (if `Record=true`). |
+| `Direction` | `outbound-api`. |
+| `CustomField` | Custom data passed in the original request. |
+| `Legs` | Array of per-leg status objects (see below). |
+
+### Legs Array
+
+```json
+{
+  "Legs": [
+    {
+      "OnCallDuration": 41,
+      "Status": "completed",
+      "AnsweredBy": "NA"
+    },
+    {
+      "OnCallDuration": 32,
+      "Status": "completed",
+      "AnsweredBy": "Human"
+    }
+  ]
+}
+```
+
+**`AnsweredBy` values:**
+
+| Value | Description |
+|-------|-------------|
+| `Human` | Answered by a person. |
+| `Machine` | Answered by voicemail or an IVR. |
+| `NotSure` | Could not determine. |
+| `NA` | Not applicable (first / `From` leg). |
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `200` | Success — call queued. |
+| `400` | Bad Request — missing or invalid parameters. |
+| `401` | Unauthorized — invalid API credentials. |
+| `429` | Rate limit exceeded (200 calls/minute). |
+| `500` | Server error. |
+
+## Fetch Enhanced Call Details
+
+After placing a call, use the `Call.Sid` from the response to retrieve enhanced reporting via Voice v3:
+
+```bash
+curl -X GET \
+  'https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
+  -H 'Content-Type: application/json'
+```
+
+The v3 Call Details response includes richer metadata: DTMF digits, recording objects, app/flow information, and per-leg data. See [Call Details (v3)](/docs/voice-v3/api-reference/call-details).
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v1/Accounts/{account_sid}/Calls/connect"
+  contentType="form"
+  params={[
+    { name: 'From', required: true, type: 'string', description: 'Agent or dialler phone number (E.164 preferred)', placeholder: '+919900XXXXXX' },
+    { name: 'To', required: true, type: 'string', description: 'Customer phone number (E.164 preferred)', placeholder: '+918800XXXXXX' },
+    { name: 'CallerId', required: true, type: 'string', description: 'Your Exotel ExoPhone / virtual number', placeholder: '09XXXXXXXXX' },
+    { name: 'Record', required: false, type: 'boolean', description: 'Record the call (true/false)', placeholder: 'true' },
+    { name: 'TimeLimit', required: false, type: 'integer', description: 'Max call duration in seconds (max 14400)', placeholder: '600' },
+    { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://your-server.com/callback' },
+    { name: 'CustomField', required: false, type: 'string', description: 'Custom metadata string (max 128 chars)', placeholder: 'order_id=12345' },
+  ]}
+/>
