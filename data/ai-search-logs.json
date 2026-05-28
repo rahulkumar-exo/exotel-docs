@@ -14819,5 +14819,39 @@
       }
     ],
     "answer_length": 685
+  },
+  {
+    "timestamp": "2026-05-28T08:19:48.118Z",
+    "response_id": "e8d7e35a-efed-4aed-8232-b65794d2564b",
+    "question": "hey can igte Indian numbers",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2965,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      }
+    ],
+    "answer_length": 784
   }
 ]
