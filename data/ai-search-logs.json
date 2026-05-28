@@ -14751,5 +14751,39 @@
       }
     ],
     "answer_length": 740
+  },
+  {
+    "timestamp": "2026-05-28T04:47:07.225Z",
+    "response_id": "26454d47-093a-4857-9de5-e809c9c33861",
+    "question": "Upgrade Exotel account — remove trial restrictions (costs money but unblocks everything)\nUse <Say> instead of <Play> — Exotel's built-in TTS, no external URL needed, works on trial",
+    "question_length": 180,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9114,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 2274
   }
 ]
