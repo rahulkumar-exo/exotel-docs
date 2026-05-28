@@ -15115,5 +15115,39 @@
       }
     ],
     "answer_length": 2815
+  },
+  {
+    "timestamp": "2026-05-28T12:18:16.201Z",
+    "response_id": "2f8102cb-8bcd-4dd4-8144-d4a429cb9bf7",
+    "question": "i want to get call recordings of all call with multiple ssids",
+    "question_length": 61,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12759,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 4934
   }
 ]
