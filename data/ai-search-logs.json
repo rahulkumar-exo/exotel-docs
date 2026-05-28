@@ -14997,5 +14997,39 @@
       }
     ],
     "answer_length": 1200
+  },
+  {
+    "timestamp": "2026-05-28T10:11:56.875Z",
+    "response_id": "86b02b1d-daad-4293-af39-c9a5900a48f3",
+    "question": "DO I need to enable this StatusCallbackEvents feature in my exotel account, or will it work for every account, is it premium feature?",
+    "question_length": 133,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5140,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      }
+    ],
+    "answer_length": 876
   }
 ]
