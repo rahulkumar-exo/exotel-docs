@@ -14921,5 +14921,39 @@
       }
     ],
     "answer_length": 1048
+  },
+  {
+    "timestamp": "2026-05-28T10:00:49.256Z",
+    "response_id": "161f4362-aaff-48cc-aa5b-f2e70dd4af96",
+    "question": "I have implement connect appletes dynamic via url  but what should i return from backend spring boot in response can u give me the api?",
+    "question_length": 135,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5284,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/connect"
+      },
+      {
+        "title": "Call Details (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 1280
   }
 ]
