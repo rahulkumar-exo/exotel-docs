@@ -35,6 +35,19 @@ POST /v1/Accounts/<account_sid>/Calls/connect
 | Singapore | `https://<api_key>:<api_token>@api.exotel.com` |
 | Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com` |
 
+## Prerequisites
+
+Before initiating a call, ensure the following:
+
+1. **Agent device must be ON** — The `From` number must have an active device set to `available: true`. Use the [Manage Devices API](/docs/users/api-reference/manage-devices) to check or update device availability.
+2. **Agent must not be on another call** — If the agent's device is already in use, the API returns `409` with error code `10706` (`User device busy`). Wait for the current call to end before retrying.
+3. **Phone numbers in E.164 format** — Both `From` and `To` should be in E.164 format (e.g., `+919900XXXXXX`), or `From` can be a SIP URI.
+
+| Error Code | HTTP | Description | Fix |
+|------------|------|-------------|-----|
+| `1012` | `409` | User device unavailable (OFF) | Ask agent to turn their device ON |
+| `10706` | `409` | User device busy | Agent is on another call — wait and retry |
+
 ## Request Parameters
 
 ### Required
