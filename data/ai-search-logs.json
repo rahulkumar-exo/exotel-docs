@@ -15411,5 +15411,39 @@
       }
     ],
     "answer_length": 419
+  },
+  {
+    "timestamp": "2026-05-29T07:20:20.144Z",
+    "response_id": "f2df5c22-dc7a-48ae-ae03-69fe67f10145",
+    "question": "purchase ai",
+    "question_length": 11,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2867,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      },
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      },
+      {
+        "title": "Add Credits",
+        "product": "billing",
+        "url": "/docs/billing/add-credits"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      }
+    ],
+    "answer_length": 341
   }
 ]
