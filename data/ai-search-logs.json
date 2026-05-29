@@ -15649,5 +15649,39 @@
       }
     ],
     "answer_length": 1837
+  },
+  {
+    "timestamp": "2026-05-29T20:11:31.757Z",
+    "response_id": "ccc7fccb-f84f-4a83-9eed-c595ef0e1a16",
+    "question": "Is this URL valid: https://my.in.exotel.com/?",
+    "question_length": 45,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7899,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      }
+    ],
+    "answer_length": 699
   }
 ]
