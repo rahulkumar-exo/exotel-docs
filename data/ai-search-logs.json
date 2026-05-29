@@ -15437,5 +15437,39 @@
       }
     ],
     "answer_length": 2699
+  },
+  {
+    "timestamp": "2026-05-29T11:26:58.377Z",
+    "response_id": "64adee55-e41f-41c5-ae42-d950122f3d29",
+    "question": "what is meant by Dynamic SIP truncking explain with very simple words",
+    "question_length": 69,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5208,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      }
+    ],
+    "answer_length": 536
   }
 ]
