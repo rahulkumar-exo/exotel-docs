@@ -15259,5 +15259,13 @@
     "response_time_ms": 4282,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-29T02:37:19.781Z",
+    "question": "Can u let me know if we call via a primary url in connect applt and if it didn't find the nimber so in fallback i need to use gather applet but first it should find in the primary url",
+    "question_length": 183,
+    "response_time_ms": 1654,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
