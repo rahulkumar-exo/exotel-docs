@@ -15217,5 +15217,39 @@
       }
     ],
     "answer_length": 1271
+  },
+  {
+    "timestamp": "2026-05-29T02:34:17.714Z",
+    "response_id": "937a2fbc-39b4-4b5b-a490-a8b14bd7c960",
+    "question": "But what need to be added in app bazar applets? So that ill recieve recordings?",
+    "question_length": 79,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5611,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 1614
   }
 ]
