@@ -32,8 +32,8 @@ POST /v1/Accounts/<your_sid>/Calls/connect
 
 | Parameter                   | Required | Type    | Description                                                     |
 | --------------------------- | -------- | ------- | --------------------------------------------------------------- |
-| `From`                      | Yes      | String  | Phone number called first. Preferably in E.164 format.          |
-| `To`                        | Yes      | String  | Customer phone number. Preferably in E.164 format.              |
+| `From`                      | Yes      | String  | The number called first. Accepts an E.164 phone number (e.g., `+919900XXXXXX`) or a SIP URI (e.g., `sip:agent@exotel.com`). |
+| `To`                        | Yes      | String  | Customer phone number. E.164 format only (e.g., `+918800XXXXXX`). |
 | `CallerId`                  | Yes      | String  | Your ExoPhone/virtual number.                                   |
 | `CallType`                  | No       | String  | `trans` for transactional calls.                                |
 | `TimeLimit`                 | No       | Integer | Max call duration in seconds. Max: `14400` (4 hours).           |

@@ -41,8 +41,8 @@ POST /v1/Accounts/<account_sid>/Calls/connect
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `From` | String | The number dialled first (typically your agent or dialler). Preferably E.164 format (e.g., `+919900XXXXXX`). |
-| `To` | String | The customer's phone number. Preferably E.164 format. |
+| `From` | String | The number dialled first (typically your agent or dialler). Accepts an E.164 phone number (e.g., `+919900XXXXXX`) or a SIP URI (e.g., `sip:agent@exotel.com`). |
+| `To` | String | The customer's phone number. E.164 format only (e.g., `+918800XXXXXX`). |
 | `CallerId` | String | Your Exotel ExoPhone / virtual number used as the outbound caller ID. |
 
 ### Optional
