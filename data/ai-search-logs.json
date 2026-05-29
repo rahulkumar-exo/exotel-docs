@@ -15267,5 +15267,39 @@
     "response_time_ms": 1654,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-05-29T02:37:39.327Z",
+    "response_id": "bba96dc1-ecb4-4b80-a432-6cca15f20e98",
+    "question": "Can u provide doc atleast",
+    "question_length": 25,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2923,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bot Messages",
+        "product": "chatbot",
+        "url": "/docs/chatbot/bot-messages"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "DLT Consent Templates",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-consent-template"
+      },
+      {
+        "title": "Bot Messages",
+        "product": "chatbot",
+        "url": "/docs/chatbot/bot-messages"
+      }
+    ],
+    "answer_length": 975
   }
 ]
