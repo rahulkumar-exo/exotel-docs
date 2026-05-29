@@ -15615,5 +15615,39 @@
       }
     ],
     "answer_length": 2378
+  },
+  {
+    "timestamp": "2026-05-29T20:10:20.696Z",
+    "response_id": "61858d07-6aca-4332-a4ef-f48ade5ca2bb",
+    "question": "Where can I find ExoPhone number?",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4675,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "ExoPhone Details",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/number-details"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      }
+    ],
+    "answer_length": 1837
   }
 ]
