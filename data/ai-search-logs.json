@@ -15301,5 +15301,39 @@
       }
     ],
     "answer_length": 975
+  },
+  {
+    "timestamp": "2026-05-29T04:28:49.104Z",
+    "response_id": "a2969c34-e7e7-4d14-947f-74ffb0b1b80f",
+    "question": "we need cloude calling solution for our agents",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4683,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 950
   }
 ]
