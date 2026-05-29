@@ -15513,5 +15513,13 @@
       }
     ],
     "answer_length": 1326
+  },
+  {
+    "timestamp": "2026-05-29T09:27:20.311Z",
+    "question": "i want to test the call for call quality and all, how can i do the test call to specific person",
+    "question_length": 95,
+    "response_time_ms": 3191,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
