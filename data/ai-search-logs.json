@@ -15505,5 +15505,39 @@
       }
     ],
     "answer_length": 4194
+  },
+  {
+    "timestamp": "2026-05-29T11:29:48.921Z",
+    "response_id": "8f876101-8f1b-471f-b76b-e5adf92fefbf",
+    "question": "How is a Virtual number usecase different from Lead assist solution",
+    "question_length": 67,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8508,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Lead Assist (ExoBridge - GreenVN)",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/overview"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - GreenPin)",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/overview"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - GreenPin)",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/overview"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 4894
   }
 ]
