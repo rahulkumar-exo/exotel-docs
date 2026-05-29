@@ -15335,5 +15335,39 @@
       }
     ],
     "answer_length": 950
+  },
+  {
+    "timestamp": "2026-05-29T04:30:15.167Z",
+    "response_id": "49e61542-3126-48bb-ae1f-8f99b9822b64",
+    "question": "can you assign someone who can help me from exotel",
+    "question_length": 50,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1975,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Exotel Integration with Zoho Desk",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-desk"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      }
+    ],
+    "answer_length": 516
   }
 ]
