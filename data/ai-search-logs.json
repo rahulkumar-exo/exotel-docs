@@ -15555,5 +15555,39 @@
       }
     ],
     "answer_length": 3298
+  },
+  {
+    "timestamp": "2026-05-29T09:39:49.744Z",
+    "response_id": "d1e26ab1-ea47-406f-adde-6e40a70dc34a",
+    "question": "give the exact response formats that received in each of these",
+    "question_length": 62,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10858,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Call Details (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 2175
   }
 ]
