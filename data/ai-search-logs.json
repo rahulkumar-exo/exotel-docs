@@ -15887,5 +15887,39 @@
       }
     ],
     "answer_length": 2332
+  },
+  {
+    "timestamp": "2026-05-30T07:04:15.113Z",
+    "response_id": "b899a7ab-336e-4cb0-9fb9-b8800cfaa4ca",
+    "question": "I have set it up for icoming calls. so when someone calls they get a greeting and then connect in that dial whom option I added one group. then call hang up. but now the call just does not go and it adds the sorry message and hung u[",
+    "question_length": 233,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 18279,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 2278
   }
 ]
