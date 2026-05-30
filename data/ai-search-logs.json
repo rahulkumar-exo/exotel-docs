@@ -15785,5 +15785,39 @@
       }
     ],
     "answer_length": 3859
+  },
+  {
+    "timestamp": "2026-05-30T06:39:39.375Z",
+    "response_id": "17de3faa-b6af-4b52-8a58-0e97e09cb5ee",
+    "question": "i need missed calls list in our own crm need api",
+    "question_length": 48,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3100,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      }
+    ],
+    "answer_length": 828
   }
 ]
