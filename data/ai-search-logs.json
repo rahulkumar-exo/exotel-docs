@@ -15853,5 +15853,39 @@
       }
     ],
     "answer_length": 4497
+  },
+  {
+    "timestamp": "2026-05-30T07:01:24.135Z",
+    "response_id": "97a02f0e-7ae5-40a4-beeb-6b100f357889",
+    "question": "I have added a group in connect but not recieveing calls on that number",
+    "question_length": 71,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10791,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      }
+    ],
+    "answer_length": 2332
   }
 ]
