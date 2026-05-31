@@ -16099,5 +16099,39 @@
       }
     ],
     "answer_length": 4704
+  },
+  {
+    "timestamp": "2026-05-31T10:21:44.821Z",
+    "response_id": "f56b8f75-6f6c-44a7-8037-75392039fc73",
+    "question": "i do have dlt , can you tell me the exact process and the steps to setup things on exotel side",
+    "question_length": 94,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4101,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1089
   }
 ]
