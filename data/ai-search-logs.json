@@ -16133,5 +16133,39 @@
       }
     ],
     "answer_length": 1089
+  },
+  {
+    "timestamp": "2026-05-31T10:23:44.822Z",
+    "response_id": "009f019b-d83f-4d99-9a39-6301c3fff0fe",
+    "question": "is there any api that i can call and on the call peopl hear a recorded voice with the otp in it? bascially i neeed to send otp  from muy app",
+    "question_length": 140,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7541,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 1474
   }
 ]
