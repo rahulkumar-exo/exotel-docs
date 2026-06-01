@@ -16563,5 +16563,39 @@
     "response_time_ms": 5266,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-01T09:27:58.228Z",
+    "response_id": "30fc3262-8703-4340-9076-97ce1ccb6627",
+    "question": "in which formaat i should give this DateCreated",
+    "question_length": 47,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 15609,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "WhatsApp Template Categories",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-categories"
+      },
+      {
+        "title": "Actions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/actions"
+      },
+      {
+        "title": "Functions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/functions"
+      }
+    ],
+    "answer_length": 2031
   }
 ]
