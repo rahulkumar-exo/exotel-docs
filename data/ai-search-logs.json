@@ -16379,5 +16379,13 @@
     "response_time_ms": 6208,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-01T06:31:27.080Z",
+    "question": "Id like to setup a webhook so that another tool gets update once I receive a call",
+    "question_length": 81,
+    "response_time_ms": 1696,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
