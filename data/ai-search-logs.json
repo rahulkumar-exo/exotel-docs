@@ -16387,5 +16387,39 @@
     "response_time_ms": 1696,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-01T06:48:38.064Z",
+    "response_id": "b32fc95c-2303-411a-89eb-37e064af079d",
+    "question": "so we have a call connected using exotel call api, \n\nis there a way to fowrward the call somehow in between",
+    "question_length": 107,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5457,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 807
   }
 ]
