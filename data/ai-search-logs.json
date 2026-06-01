@@ -16707,5 +16707,13 @@
       }
     ],
     "answer_length": 1058
+  },
+  {
+    "timestamp": "2026-06-01T12:01:51.837Z",
+    "question": "Where will i get the App ID and App Secret?",
+    "question_length": 43,
+    "response_time_ms": 1661,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
