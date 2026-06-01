@@ -16505,5 +16505,13 @@
       }
     ],
     "answer_length": 1012
+  },
+  {
+    "timestamp": "2026-06-01T06:55:33.169Z",
+    "question": "where i see the add the applet in UI",
+    "question_length": 36,
+    "response_time_ms": 1918,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
