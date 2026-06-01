@@ -16337,5 +16337,39 @@
       }
     ],
     "answer_length": 2387
+  },
+  {
+    "timestamp": "2026-06-01T06:30:31.250Z",
+    "response_id": "53591579-7f63-4f03-ad02-49c53b964141",
+    "question": "How do I setup webhooks",
+    "question_length": 23,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10849,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      }
+    ],
+    "answer_length": 5187
   }
 ]
