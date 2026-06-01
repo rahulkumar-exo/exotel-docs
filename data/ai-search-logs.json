@@ -16235,5 +16235,39 @@
       }
     ],
     "answer_length": 559
+  },
+  {
+    "timestamp": "2026-06-01T05:57:40.076Z",
+    "response_id": "0646d512-e459-47cd-8300-847bdbba8035",
+    "question": "Connect Applet test\n\nis this a get or post api",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6227,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 757
   }
 ]
