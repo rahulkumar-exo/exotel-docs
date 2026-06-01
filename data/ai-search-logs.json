@@ -16269,5 +16269,39 @@
       }
     ],
     "answer_length": 757
+  },
+  {
+    "timestamp": "2026-06-01T06:11:33.055Z",
+    "response_id": "83313dfe-ef44-40c3-96fd-5bfd1978d660",
+    "question": "so i do not use passthru insteda i use connect app direcy to voice bot, so i am not mentioning the api in my server , but its ill get cooncetd to mu server",
+    "question_length": 155,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11646,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 2317
   }
 ]
