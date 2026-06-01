@@ -16303,5 +16303,39 @@
       }
     ],
     "answer_length": 2317
+  },
+  {
+    "timestamp": "2026-06-01T06:13:30.918Z",
+    "response_id": "31010f1c-52dd-4af7-8ea7-0e60ad9fd869",
+    "question": "no what i am saying is that \ni have not mantioned about /exotel/passthru-transfer this api to check if redial to human true or false but it still get hit on this api, i have only mentioned my base url for websocket connection",
+    "question_length": 225,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10489,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 2387
   }
 ]
