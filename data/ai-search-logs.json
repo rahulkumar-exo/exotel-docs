@@ -16833,5 +16833,39 @@
       }
     ],
     "answer_length": 598
+  },
+  {
+    "timestamp": "2026-06-02T06:28:51.264Z",
+    "response_id": "6e24e013-829d-4c1f-9606-01c5554e81a7",
+    "question": "is this limited to single number?",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4655,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 1175
   }
 ]
