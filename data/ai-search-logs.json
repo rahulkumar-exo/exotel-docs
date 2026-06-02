@@ -16901,5 +16901,39 @@
       }
     ],
     "answer_length": 2265
+  },
+  {
+    "timestamp": "2026-06-02T06:51:39.204Z",
+    "response_id": "ae9ce8e7-e6f1-47ed-a095-f0fbaeb6c605",
+    "question": "what is the difference of concurrent calls and number of streaming channels",
+    "question_length": 75,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3745,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 739
   }
 ]
