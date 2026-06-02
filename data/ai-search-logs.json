@@ -16867,5 +16867,39 @@
       }
     ],
     "answer_length": 1175
+  },
+  {
+    "timestamp": "2026-06-02T06:40:31.048Z",
+    "response_id": "008352dc-6f35-4db3-b435-d532f8b948bd",
+    "question": "how can i make concurrent inbound calls",
+    "question_length": 39,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7697,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      }
+    ],
+    "answer_length": 2265
   }
 ]
