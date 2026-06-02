@@ -17147,5 +17147,39 @@
       }
     ],
     "answer_length": 1739
+  },
+  {
+    "timestamp": "2026-06-02T11:33:03.558Z",
+    "response_id": "257b0941-299c-48c3-ab50-777b04b4fcc8",
+    "question": "like auto dailer or predictove dailer",
+    "question_length": 37,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6663,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Add Credits",
+        "product": "billing",
+        "url": "/docs/billing/add-credits"
+      },
+      {
+        "title": "Auto Retry on Busy",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/auto-retry"
+      },
+      {
+        "title": "Billing FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/billing-faqs"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      }
+    ],
+    "answer_length": 2196
   }
 ]
