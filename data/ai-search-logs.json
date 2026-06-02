@@ -17003,5 +17003,39 @@
       }
     ],
     "answer_length": 1419
+  },
+  {
+    "timestamp": "2026-06-02T06:55:11.780Z",
+    "response_id": "26c152cf-d626-4039-8ce5-3b1c2d3f6492",
+    "question": "baiscally want to resell that my node app after the api intrigation",
+    "question_length": 67,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3330,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      }
+    ],
+    "answer_length": 711
   }
 ]
