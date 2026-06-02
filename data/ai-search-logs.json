@@ -16935,5 +16935,39 @@
       }
     ],
     "answer_length": 739
+  },
+  {
+    "timestamp": "2026-06-02T06:52:37.067Z",
+    "response_id": "0afad078-1610-4910-b09a-34099cf349d3",
+    "question": "how can i connect an agent in between the voice bot",
+    "question_length": 51,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4166,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 2729
   }
 ]
