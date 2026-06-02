@@ -16799,5 +16799,39 @@
       }
     ],
     "answer_length": 3779
+  },
+  {
+    "timestamp": "2026-06-02T06:28:20.357Z",
+    "response_id": "a71d9acf-b477-4282-b010-0d2d4d921fb9",
+    "question": "how many max concurrecny I can handle?",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3964,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Interactive Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/interactive-messages"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 598
   }
 ]
