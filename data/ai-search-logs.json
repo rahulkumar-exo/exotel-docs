@@ -17113,5 +17113,39 @@
       }
     ],
     "answer_length": 471
+  },
+  {
+    "timestamp": "2026-06-02T11:31:38.279Z",
+    "response_id": "113fe1b6-0a65-4cb7-b689-b32f13be8156",
+    "question": "how manytype of dialers do we provide",
+    "question_length": 37,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7869,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How to Send SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/how-to-send-sms"
+      }
+    ],
+    "answer_length": 1739
   }
 ]
