@@ -16765,5 +16765,39 @@
       }
     ],
     "answer_length": 3855
+  },
+  {
+    "timestamp": "2026-06-02T05:16:49.620Z",
+    "response_id": "dcdc8fe7-0ae3-40a8-aa8e-c39989455f7e",
+    "question": "I am building a service platform like Yourule. Citizens create service requests and Partners help complete the service. I want to add a Call via Yourule feature. Citizen should be able to click Call Partner, and Partner should be able to click Call Citizen. The call should go through a Yourule virtual number so their real mobile numbers are not exposed. We also need call logs, missed call status, call duration, and optional call recording with consent. Which Exotel APIs or features should I use ",
+    "question_length": 509,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11580,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 3779
   }
 ]
