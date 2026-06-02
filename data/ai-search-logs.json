@@ -16969,5 +16969,39 @@
       }
     ],
     "answer_length": 2729
+  },
+  {
+    "timestamp": "2026-06-02T06:53:04.660Z",
+    "response_id": "9abbda4a-dbed-46cb-91c0-6bdd27e686f4",
+    "question": "can i connect with my node application",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5587,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Connect Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/connect"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      }
+    ],
+    "answer_length": 1419
   }
 ]
