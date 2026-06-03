@@ -17325,5 +17325,39 @@
       }
     ],
     "answer_length": 384
+  },
+  {
+    "timestamp": "2026-06-03T05:32:48.267Z",
+    "response_id": "770f191f-1f06-4027-ad3a-f7cc065724f8",
+    "question": "give me link to open superadmin account\nalso how can i check sip is enabled or not?",
+    "question_length": 83,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6100,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      }
+    ],
+    "answer_length": 1400
   }
 ]
