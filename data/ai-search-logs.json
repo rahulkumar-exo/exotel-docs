@@ -17731,5 +17731,39 @@
       }
     ],
     "answer_length": 5953
+  },
+  {
+    "timestamp": "2026-06-03T21:35:24.662Z",
+    "response_id": "f83e0447-ad81-42ba-8a2f-ae3767b37905",
+    "question": "We are integrating Exotel vSIP / Dynamic SIP Trunking with ElevenLabs (ElevenAgents) for AI voice calls in India. SIP INVITE is not reaching ElevenLabs. Please help troubleshoot.\n\nACCOUNT & TRUNK\n- Account SID: [your_account_sid]\n- Trunk SID: trmum1077ab61a75e859ad0f1a63\n- Exophone (DID): 02241780798\n- Flow name in App Bazaar: \"Elevenlabs\"\n\nCALL THAT FAILED\n- Call Reference ID: f7f8df593dae3e64be001f7406c91a64\n- Date/time: Thu, 04 Jun 2026, 02:34:34 IST\n- Caller: 09686148149 (inbound test to our",
+    "question_length": 2688,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 24827,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking to Flow Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-integration"
+      },
+      {
+        "title": "SIP Trunking TCP Integration Guide (Mumbai)",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/tcp-integration"
+      }
+    ],
+    "answer_length": 6252
   }
 ]
