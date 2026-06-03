@@ -17799,5 +17799,39 @@
       }
     ],
     "answer_length": 1884
+  },
+  {
+    "timestamp": "2026-06-03T21:39:27.791Z",
+    "response_id": "0b5ae32b-aa80-4781-8356-c6a271c3d694",
+    "question": "after completing this the sip invite is not reaching eleven labs",
+    "question_length": 64,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 26235,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      }
+    ],
+    "answer_length": 3420
   }
 ]
