@@ -17765,5 +17765,39 @@
       }
     ],
     "answer_length": 6252
+  },
+  {
+    "timestamp": "2026-06-03T21:37:32.525Z",
+    "response_id": "b1219d07-7b95-47d6-8320-d55ed7978021",
+    "question": "we are using exotrunks",
+    "question_length": 22,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7732,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage ExoTrunks",
+        "product": "agentstream",
+        "url": "/docs/agentstream/manage-exotrunks"
+      },
+      {
+        "title": "API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/api-faqs"
+      },
+      {
+        "title": "Security & Compliance FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/security-compliance"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 1884
   }
 ]
