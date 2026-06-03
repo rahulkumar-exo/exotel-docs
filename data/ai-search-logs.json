@@ -17867,5 +17867,39 @@
       }
     ],
     "answer_length": 3226
+  },
+  {
+    "timestamp": "2026-06-03T21:49:24.447Z",
+    "response_id": "5e8601a7-4e2c-4a5b-a299-53f942a895ba",
+    "question": "changfed  ut didnt work",
+    "question_length": 23,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3699,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 857
   }
 ]
