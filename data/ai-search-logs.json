@@ -17469,5 +17469,39 @@
       }
     ],
     "answer_length": 2015
+  },
+  {
+    "timestamp": "2026-06-03T10:27:21.975Z",
+    "response_id": "0b9b58ee-d1be-4c9b-9d00-2e0f7237c137",
+    "question": "is Exotel Support SIP Trunking over 5060 port ?",
+    "question_length": 47,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2145,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      }
+    ],
+    "answer_length": 649
   }
 ]
