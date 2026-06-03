@@ -17553,5 +17553,39 @@
     "response_time_ms": 1075,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-03T15:03:09.633Z",
+    "response_id": "ff774c18-8b6a-4f93-a86d-3c987a697220",
+    "question": "did the statusCallback changed recently?",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6450,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 474
   }
 ]
