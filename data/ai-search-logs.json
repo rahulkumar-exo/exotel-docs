@@ -17359,5 +17359,39 @@
       }
     ],
     "answer_length": 1400
+  },
+  {
+    "timestamp": "2026-06-03T06:40:44.146Z",
+    "response_id": "c3a74cc0-adb4-4224-a77e-4f481cb517ee",
+    "question": "missed call",
+    "question_length": 11,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11322,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Missed Call Solution",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/missed-call"
+      },
+      {
+        "title": "Missed Call Solution",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/missed-call"
+      },
+      {
+        "title": "Missed Call Solution",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/missed-call"
+      }
+    ],
+    "answer_length": 6578
   }
 ]
