@@ -17833,5 +17833,39 @@
       }
     ],
     "answer_length": 3420
+  },
+  {
+    "timestamp": "2026-06-03T21:42:05.206Z",
+    "response_id": "127369fd-316a-4005-8a14-52dd6b86264f",
+    "question": "but then what the use of exo trunks?\nwont this bypas that \ntrunk id is from there only",
+    "question_length": 86,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12903,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 3226
   }
 ]
