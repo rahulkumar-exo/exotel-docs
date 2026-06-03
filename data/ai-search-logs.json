@@ -17393,5 +17393,39 @@
       }
     ],
     "answer_length": 6578
+  },
+  {
+    "timestamp": "2026-06-03T09:52:54.858Z",
+    "response_id": "7ce28ad8-6dee-43e7-aeb5-5ca0fe2c3d81",
+    "question": "need a number",
+    "question_length": 13,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5523,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      }
+    ],
+    "answer_length": 1033
   }
 ]
