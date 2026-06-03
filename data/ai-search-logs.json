@@ -17257,5 +17257,39 @@
       }
     ],
     "answer_length": 2791
+  },
+  {
+    "timestamp": "2026-06-03T05:28:26.606Z",
+    "response_id": "afe1770f-c7ce-460d-98f5-a868352ab941",
+    "question": "how to connect sip with elevenlabs",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8983,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking to Flow Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-integration"
+      }
+    ],
+    "answer_length": 3120
   }
 ]
