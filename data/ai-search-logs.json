@@ -17663,5 +17663,39 @@
       }
     ],
     "answer_length": 1511
+  },
+  {
+    "timestamp": "2026-06-03T17:01:09.116Z",
+    "response_id": "a102c722-b814-4594-946e-2a0aac5a98cb",
+    "question": "How do I fetch approved templates list ?",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6204,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      },
+      {
+        "title": "SMS Templates",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-templates"
+      }
+    ],
+    "answer_length": 1007
   }
 ]
