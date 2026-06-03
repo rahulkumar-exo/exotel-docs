@@ -17291,5 +17291,39 @@
       }
     ],
     "answer_length": 3120
+  },
+  {
+    "timestamp": "2026-06-03T05:31:06.525Z",
+    "response_id": "676c6ab5-2626-4d64-a6fd-a2261268bd0d",
+    "question": "https://support.exotel.com/support/solutions/articles/3000134146-elevenlabs-and-exotel-sip-trunking-integration-guide",
+    "question_length": 117,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7576,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 384
   }
 ]
