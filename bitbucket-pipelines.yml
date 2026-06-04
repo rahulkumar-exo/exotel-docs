@@ -1,0 +1,20 @@
+image: node:20
+
+definitions:
+  caches:
+    npm: ~/.npm
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Build and Deploy to Vercel
+          caches:
+            - npm
+          script:
+            - npm ci
+            - npm run build
+            - npx vercel deploy --prod --token=$VERCEL_TOKEN
+          environment:
+            VERCEL_ORG_ID: $VERCEL_ORG_ID
+            VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID
