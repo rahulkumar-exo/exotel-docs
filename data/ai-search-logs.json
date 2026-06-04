@@ -15853,5 +15853,39 @@
       }
     ],
     "answer_length": 4052
+  },
+  {
+    "timestamp": "2026-06-04T04:58:04.884Z",
+    "response_id": "6edd9247-943d-4829-a6fd-b2aa2baee24d",
+    "question": "when StatusCallback API will run??",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1822,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 396
   }
 ]
