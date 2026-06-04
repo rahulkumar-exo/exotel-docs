@@ -16167,5 +16167,39 @@
     "response_time_ms": 1735,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-04T12:06:52.938Z",
+    "response_id": "ea503e15-99a1-401d-8e88-a469aee637e5",
+    "question": "How to get trunk specific information",
+    "question_length": 37,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3908,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes.mdx"
+      },
+      {
+        "title": "Get Assigned Users",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-assigned-users.mdx"
+      }
+    ],
+    "answer_length": 388
   }
 ]
