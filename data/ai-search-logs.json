@@ -15887,5 +15887,39 @@
       }
     ],
     "answer_length": 396
+  },
+  {
+    "timestamp": "2026-06-04T06:22:11.663Z",
+    "response_id": "8fb9e6e3-7317-470d-af19-a9b8c34b3308",
+    "question": "call masking",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4582,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 867
   }
 ]
