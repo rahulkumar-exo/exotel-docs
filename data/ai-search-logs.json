@@ -16057,5 +16057,39 @@
       }
     ],
     "answer_length": 2299
+  },
+  {
+    "timestamp": "2026-06-04T11:33:13.215Z",
+    "response_id": "1c0efa08-2853-4133-bbcc-70c8ed86a415",
+    "question": "how to whitelist fqdn to sip trunk?",
+    "question_length": 35,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4509,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking FQDN-based Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/fqdn-integration"
+      },
+      {
+        "title": "SIP Trunking FQDN-based Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/fqdn-integration"
+      },
+      {
+        "title": "SIP Trunking FQDN-based Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/fqdn-integration"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      }
+    ],
+    "answer_length": 1724
   }
 ]
