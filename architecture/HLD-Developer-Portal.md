@@ -5,7 +5,7 @@
 | **System** | Exotel Developer Documentation Portal |
 | **Production URL** | https://developer.exotel.com |
 | **Direct origin** | https://exotel-docs.vercel.app |
-| **Repository** | github.com/rahulkumar-exo/exotel-docs (private) |
+| **Repository** | bitbucket.org/Exotel/developer-docs (private) |
 | **Status** | Live, public-facing documentation site |
 | **Doc owner** | rahul.kumar@exotel.com |
 | **Doc version** | 1.0 — drafted 2026-05-04 |
