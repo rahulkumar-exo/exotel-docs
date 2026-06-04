@@ -16235,5 +16235,39 @@
       }
     ],
     "answer_length": 473
+  },
+  {
+    "timestamp": "2026-06-04T18:13:20.388Z",
+    "response_id": "d9e6a99f-61f8-4485-86c6-b85b06c69b1e",
+    "question": "can I use my own sim card ?",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2960,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bot Messages",
+        "product": "chatbot",
+        "url": "/docs/chatbot/bot-messages"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      }
+    ],
+    "answer_length": 345
   }
 ]
