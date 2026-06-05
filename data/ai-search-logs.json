@@ -16743,5 +16743,39 @@
       }
     ],
     "answer_length": 2273
+  },
+  {
+    "timestamp": "2026-06-05T12:53:24.152Z",
+    "response_id": "b4c6075d-6576-44f3-96a6-a1c17c36fd0f",
+    "question": "Can I get a webhook call from my system when I get a call?",
+    "question_length": 58,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6456,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Call Monitoring & Visualization",
+        "product": "use-cases",
+        "url": "/docs/use-cases/call-monitoring-visualization.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      }
+    ],
+    "answer_length": 1381
   }
 ]
