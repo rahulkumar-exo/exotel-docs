@@ -16709,5 +16709,39 @@
       }
     ],
     "answer_length": 1577
+  },
+  {
+    "timestamp": "2026-06-05T11:39:38.618Z",
+    "response_id": "c58c4443-f9b6-431a-84e1-520c077e9bac",
+    "question": "passthru ringing",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5602,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      },
+      {
+        "title": "Parallel Ringing",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/parallel-ringing"
+      },
+      {
+        "title": "Parallel Ringing",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/parallel-ringing"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 2273
   }
 ]
