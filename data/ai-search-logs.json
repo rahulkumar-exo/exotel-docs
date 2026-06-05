@@ -16599,5 +16599,13 @@
       }
     ],
     "answer_length": 3655
+  },
+  {
+    "timestamp": "2026-06-05T10:14:19.671Z",
+    "question": "i have a doubt that i have my custom apois i want ur number can that avilable",
+    "question_length": 77,
+    "response_time_ms": 2395,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
