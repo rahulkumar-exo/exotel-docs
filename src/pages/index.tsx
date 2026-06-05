@@ -133,11 +133,29 @@ const quickLinks = [
   },
 ];
 
+// Stats auto-grow weekly from a base date. No deployments needed.
+const BASE_DATE = new Date('2026-06-05');
+const WEEKLY_GROWTH = 0.004; // 0.4% per week
+
+function getGrowthMultiplier(): number {
+  const msPerWeek = 7 * 24 * 60 * 60 * 1000;
+  const weeksElapsed = Math.floor((Date.now() - BASE_DATE.getTime()) / msPerWeek);
+  return Math.pow(1 + WEEKLY_GROWTH, Math.max(0, weeksElapsed));
+}
+
+function growStat(base: number, decimals = 0): string {
+  const value = base * getGrowthMultiplier();
+  if (value >= 1_000_000_000) return (value / 1_000_000_000).toFixed(1) + 'B+';
+  if (value >= 1_000_000) return (value / 1_000_000).toFixed(1) + 'M+';
+  if (value >= 1_000) return (value / 1_000).toFixed(decimals) + 'K+';
+  return Math.round(value).toLocaleString() + '+';
+}
+
 const platformStats = [
-  { number: '577M+', label: 'Calls powered monthly' },
-  { number: '21.2M+', label: 'Calls in a single day' },
-  { number: '287M+', label: 'SMSes powered monthly' },
-  { number: '6,000+', label: 'Businesses trust Exotel' },
+  { number: growStat(577_000_000), label: 'Calls powered monthly' },
+  { number: growStat(21_200_000, 1), label: 'Calls in a single day' },
+  { number: growStat(287_000_000), label: 'SMSes powered monthly' },
+  { number: growStat(6_000, 1), label: 'Businesses trust Exotel' },
 ];
 
 const useCases = [
