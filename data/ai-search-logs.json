@@ -16675,5 +16675,39 @@
       }
     ],
     "answer_length": 427
+  },
+  {
+    "timestamp": "2026-06-05T11:39:05.600Z",
+    "response_id": "200a1bd0-f23a-4779-b6b0-ba8e18da390e",
+    "question": "ringing duration",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5579,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Parallel Ringing",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/parallel-ringing"
+      },
+      {
+        "title": "Parallel Ringing",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/parallel-ringing"
+      },
+      {
+        "title": "Parallel Ringing",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/parallel-ringing"
+      },
+      {
+        "title": "Parallel Ringing",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/parallel-ringing"
+      }
+    ],
+    "answer_length": 1577
   }
 ]
