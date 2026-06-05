@@ -16497,5 +16497,39 @@
     "response_time_ms": 1013,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-05T09:11:46.180Z",
+    "response_id": "1bb328b5-b4ff-471c-a4e1-0a82a7dfbecc",
+    "question": "dynamic prompt on IVR",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6199,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IVR Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/ivr-applet-guide"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      }
+    ],
+    "answer_length": 1680
   }
 ]
