@@ -16531,5 +16531,39 @@
       }
     ],
     "answer_length": 1680
+  },
+  {
+    "timestamp": "2026-06-05T09:13:55.148Z",
+    "response_id": "1fcd5732-540e-4f89-940d-35460c66fe2a",
+    "question": "we will get a webhook event even if the call is not connected ??",
+    "question_length": 64,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2823,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Notifications",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/call-notifications"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 497
   }
 ]
