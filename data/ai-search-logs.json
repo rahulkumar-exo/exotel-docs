@@ -16887,5 +16887,39 @@
     "response_time_ms": 2536,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-06T08:01:49.711Z",
+    "response_id": "4a29ab74-b6be-42e5-ae0f-d84a77991a83",
+    "question": "how to just use for testing environment",
+    "question_length": 39,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2051,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "WhatsApp Media Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/media-messages"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      }
+    ],
+    "answer_length": 369
   }
 ]
