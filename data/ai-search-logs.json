@@ -17023,5 +17023,39 @@
       }
     ],
     "answer_length": 1438
+  },
+  {
+    "timestamp": "2026-06-06T12:57:57.160Z",
+    "response_id": "376f728a-35e2-4c30-8866-970e7f9cde6d",
+    "question": "how to connect exotel to eleven labs or vapi or rettell",
+    "question_length": 55,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4362,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 750
   }
 ]
