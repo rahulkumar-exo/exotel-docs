@@ -16777,5 +16777,39 @@
       }
     ],
     "answer_length": 1381
+  },
+  {
+    "timestamp": "2026-06-06T04:40:12.221Z",
+    "response_id": "d7062bca-1fa5-40ab-aaf1-bfddac634e91",
+    "question": "price for a message ?",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2135,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Error Code Dictionary",
+        "product": "references",
+        "url": "/docs/references/error-codes"
+      },
+      {
+        "title": "Greeting Messages",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/greeting-message"
+      },
+      {
+        "title": "Long SMS (Concatenated Messages)",
+        "product": "sms-support",
+        "url": "/docs/sms-support/long-sms"
+      }
+    ],
+    "answer_length": 176
   }
 ]
