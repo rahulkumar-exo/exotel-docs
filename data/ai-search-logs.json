@@ -17057,5 +17057,39 @@
       }
     ],
     "answer_length": 750
+  },
+  {
+    "timestamp": "2026-06-06T13:13:37.442Z",
+    "response_id": "82596a8b-3c92-49a1-a9a7-a87da3d26460",
+    "question": "how to create applet",
+    "question_length": 20,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3427,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      },
+      {
+        "title": "Create Leg",
+        "product": "legs",
+        "url": "/docs/legs/api-reference/create-leg"
+      }
+    ],
+    "answer_length": 1655
   }
 ]
