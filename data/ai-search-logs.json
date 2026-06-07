@@ -17159,5 +17159,39 @@
       }
     ],
     "answer_length": 4900
+  },
+  {
+    "timestamp": "2026-06-07T09:20:03.978Z",
+    "response_id": "91d1ff13-5661-4a06-ba22-69589c7b73c9",
+    "question": "i wanted to integrate calling feature",
+    "question_length": 37,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5542,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoMind Tasker",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/api-reference/exomind-tasker"
+      },
+      {
+        "title": "Application Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/applications.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Payment Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/payment-messages"
+      }
+    ],
+    "answer_length": 2259
   }
 ]
