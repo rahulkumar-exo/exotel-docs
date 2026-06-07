@@ -17227,5 +17227,39 @@
       }
     ],
     "answer_length": 3541
+  },
+  {
+    "timestamp": "2026-06-07T12:25:18.700Z",
+    "response_id": "9ce0b626-7793-4c5b-85cc-d07992a7d13a",
+    "question": "can you explain me about exotel partner program?",
+    "question_length": 48,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2120,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      }
+    ],
+    "answer_length": 253
   }
 ]
