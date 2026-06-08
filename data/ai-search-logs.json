@@ -17965,5 +17965,39 @@
       }
     ],
     "answer_length": 2302
+  },
+  {
+    "timestamp": "2026-06-08T15:52:13.955Z",
+    "response_id": "62dd024d-62a7-427c-94e2-e9b09654ff77",
+    "question": "explain call status when can each happen\nwhen does failed status come",
+    "question_length": 69,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4031,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      }
+    ],
+    "answer_length": 1955
   }
 ]
