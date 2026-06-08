@@ -17507,5 +17507,39 @@
     "response_time_ms": 1552,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-08T06:51:59.746Z",
+    "response_id": "020da4c5-6377-4d70-b4e2-19ed7006223d",
+    "question": "do i get a free trial period ? after i complete my kyc",
+    "question_length": 54,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1587,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 529
   }
 ]
