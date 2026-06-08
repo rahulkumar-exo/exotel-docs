@@ -17813,5 +17813,39 @@
       }
     ],
     "answer_length": 484
+  },
+  {
+    "timestamp": "2026-06-08T11:47:06.170Z",
+    "response_id": "845783ec-e6a8-4ac3-962a-2f6597e74cb9",
+    "question": "can we retry failed message in a campaign",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4351,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      },
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      },
+      {
+        "title": "Auto Retry on Busy",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/auto-retry"
+      },
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      }
+    ],
+    "answer_length": 702
   }
 ]
