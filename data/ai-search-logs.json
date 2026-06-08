@@ -17779,5 +17779,39 @@
       }
     ],
     "answer_length": 571
+  },
+  {
+    "timestamp": "2026-06-08T11:40:09.373Z",
+    "response_id": "76423d24-9dbf-46d4-837a-2765711987af",
+    "question": "how much time it takes for 100k message to deliver over whatsapp API",
+    "question_length": 68,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7517,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      }
+    ],
+    "answer_length": 484
   }
 ]
