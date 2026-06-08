@@ -17609,5 +17609,39 @@
       }
     ],
     "answer_length": 223
+  },
+  {
+    "timestamp": "2026-06-08T06:54:15.754Z",
+    "response_id": "3f3a5203-9c04-4a5b-bf01-e65a612ad274",
+    "question": "what are the subscription plans for exotel ?",
+    "question_length": 44,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1466,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      }
+    ],
+    "answer_length": 176
   }
 ]
