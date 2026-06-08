@@ -17847,5 +17847,39 @@
       }
     ],
     "answer_length": 702
+  },
+  {
+    "timestamp": "2026-06-08T11:48:06.467Z",
+    "response_id": "4f6a65f4-d4b3-45b3-bd33-b9aabe381bee",
+    "question": "can we retry failed WABA message in a campaign",
+    "question_length": 46,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3895,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      },
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      },
+      {
+        "title": "Auto Retry on Busy",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/auto-retry"
+      },
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      }
+    ],
+    "answer_length": 956
   }
 ]
