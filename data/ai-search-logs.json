@@ -17541,5 +17541,39 @@
       }
     ],
     "answer_length": 529
+  },
+  {
+    "timestamp": "2026-06-08T06:52:50.544Z",
+    "response_id": "04b3146d-da18-48d5-b7ce-67184c92d536",
+    "question": "so i can use the exotel without the kyc for free for 7 days ?",
+    "question_length": 61,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2714,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 465
   }
 ]
