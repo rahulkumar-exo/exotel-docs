@@ -17931,5 +17931,39 @@
       }
     ],
     "answer_length": 1942
+  },
+  {
+    "timestamp": "2026-06-08T15:51:37.022Z",
+    "response_id": "b9f64e6d-197e-499d-8443-f55295d9a20f",
+    "question": "what is failed when can it happen",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7739,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Campaign FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/campaign-faqs"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      }
+    ],
+    "answer_length": 2302
   }
 ]
