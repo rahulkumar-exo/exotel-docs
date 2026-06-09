@@ -18237,5 +18237,39 @@
       }
     ],
     "answer_length": 668
+  },
+  {
+    "timestamp": "2026-06-09T05:09:21.582Z",
+    "response_id": "29057486-b8cf-4d1c-bd20-7be84c24c508",
+    "question": "is exotel provide SIP truncing ?",
+    "question_length": 32,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2485,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "SIP Trunking FQDN-based Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/fqdn-integration"
+      },
+      {
+        "title": "SIP Trunking to Flow Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-integration"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      }
+    ],
+    "answer_length": 1047
   }
 ]
