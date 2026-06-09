@@ -18397,5 +18397,39 @@
       }
     ],
     "answer_length": 628
+  },
+  {
+    "timestamp": "2026-06-09T09:59:59.906Z",
+    "response_id": "4f44eb0a-3305-4b0c-a37b-6acec2fb8149",
+    "question": "create campaign",
+    "question_length": 15,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3093,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaign Scheduling",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-scheduling"
+      },
+      {
+        "title": "Campaign Scheduling",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-scheduling"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Campaign Scheduling",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-scheduling"
+      }
+    ],
+    "answer_length": 1319
   }
 ]
