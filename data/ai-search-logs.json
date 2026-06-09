@@ -18329,5 +18329,39 @@
     "response_time_ms": 3684,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-09T09:04:08.546Z",
+    "response_id": "2e185e8e-051b-4780-a2c7-b833605d7c73",
+    "question": "executive contact",
+    "question_length": 17,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1747,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      }
+    ],
+    "answer_length": 176
   }
 ]
