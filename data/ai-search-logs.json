@@ -18203,5 +18203,39 @@
       }
     ],
     "answer_length": 313
+  },
+  {
+    "timestamp": "2026-06-09T05:08:34.855Z",
+    "response_id": "8c312ce4-7097-4c3c-b228-66d45a992015",
+    "question": "can i integrate exotel with ultravox ai for call connection ?",
+    "question_length": 61,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4206,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Integrations",
+        "product": "integrations",
+        "url": "/docs/integrations/overview"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 668
   }
 ]
