@@ -18135,5 +18135,39 @@
       }
     ],
     "answer_length": 1970
+  },
+  {
+    "timestamp": "2026-06-09T04:58:58.321Z",
+    "response_id": "669d2982-c2cc-4ef5-9941-b4a1ccf7f717",
+    "question": "IS THERE IS any way o connect exotel to ultravox",
+    "question_length": 48,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2959,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      }
+    ],
+    "answer_length": 424
   }
 ]
