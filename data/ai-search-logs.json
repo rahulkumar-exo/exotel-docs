@@ -18641,5 +18641,39 @@
       }
     ],
     "answer_length": 2407
+  },
+  {
+    "timestamp": "2026-06-09T13:18:03.739Z",
+    "response_id": "5a154c5b-e666-4adb-b6e7-0be6bf214202",
+    "question": "wat are possible status codes for number metadata \n\nif number is not found what happens?",
+    "question_length": 88,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5225,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 613
   }
 ]
