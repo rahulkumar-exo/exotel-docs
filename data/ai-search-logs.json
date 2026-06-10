@@ -18887,5 +18887,13 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-06-10T06:28:22.216Z",
+    "question": "the custom_field we add in the campaign do we get it in callback?",
+    "question_length": 65,
+    "response_time_ms": 1800,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
