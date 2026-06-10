@@ -19191,5 +19191,39 @@
       }
     ],
     "answer_length": 5368
+  },
+  {
+    "timestamp": "2026-06-10T17:02:39.368Z",
+    "response_id": "cb22c549-d976-4126-8501-c71a1a441e26",
+    "question": "answering machine detection",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6396,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create Leg",
+        "product": "legs",
+        "url": "/docs/legs/api-reference/create-leg"
+      },
+      {
+        "title": "Legs",
+        "product": "legs",
+        "url": "/docs/legs/overview"
+      },
+      {
+        "title": "ExoMind Tasker",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/api-reference/exomind-tasker"
+      },
+      {
+        "title": "Campaign SMS Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/sms-details"
+      }
+    ],
+    "answer_length": 1448
   }
 ]
