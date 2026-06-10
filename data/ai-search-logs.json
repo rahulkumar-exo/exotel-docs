@@ -18819,5 +18819,39 @@
       }
     ],
     "answer_length": 5366
+  },
+  {
+    "timestamp": "2026-06-10T05:34:08.699Z",
+    "response_id": "0c8bdc8d-6917-4f34-8e21-ff586164d456",
+    "question": "i need help regarding bulk msg",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7958,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/bulk-sms"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/bulk-sms"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      }
+    ],
+    "answer_length": 3913
   }
 ]
