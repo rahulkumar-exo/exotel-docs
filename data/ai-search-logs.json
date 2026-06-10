@@ -19259,5 +19259,39 @@
       }
     ],
     "answer_length": 370
+  },
+  {
+    "timestamp": "2026-06-10T17:09:35.034Z",
+    "response_id": "041c0c74-949b-4e95-939c-924274af4c94",
+    "question": "if yes , give me a curl command that i can execute for getting that detail about this call - cd6f963522647fe99bedf25071481a6a",
+    "question_length": 125,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4144,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Plans Comparison",
+        "product": "billing",
+        "url": "/docs/billing/plans-comparison"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "SIP Trunking TCP Integration Guide (Mumbai)",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/tcp-integration"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 808
   }
 ]
