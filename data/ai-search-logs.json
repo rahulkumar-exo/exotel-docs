@@ -19123,5 +19123,39 @@
       }
     ],
     "answer_length": 2298
+  },
+  {
+    "timestamp": "2026-06-10T14:27:33.317Z",
+    "response_id": "9fbb466e-39da-4d27-b9ad-b82a2f600af5",
+    "question": "OST /Calls/{Sid}/Hangup",
+    "question_length": 23,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3340,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      }
+    ],
+    "answer_length": 376
   }
 ]
