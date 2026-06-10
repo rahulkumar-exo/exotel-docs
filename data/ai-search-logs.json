@@ -18895,5 +18895,39 @@
     "response_time_ms": 1800,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-10T09:12:13.265Z",
+    "response_id": "11a18065-8b8c-4a44-ba4a-e78eac82ae9b",
+    "question": "can i create template in Exotel dashboard with apis?",
+    "question_length": 52,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4369,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "getting-started",
+        "url": "/docs/getting-started/overview"
+      }
+    ],
+    "answer_length": 613
   }
 ]
