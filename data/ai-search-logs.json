@@ -18929,5 +18929,39 @@
       }
     ],
     "answer_length": 613
+  },
+  {
+    "timestamp": "2026-06-10T09:51:59.632Z",
+    "response_id": "7a5471c2-97c4-486f-8a42-32a93fc95af9",
+    "question": "softphone",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7836,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Users",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/manage-users.mdx"
+      },
+      {
+        "title": "Agent Presence Monitoring",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/agent-presence.mdx"
+      },
+      {
+        "title": "Manage Users",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/manage-users.mdx"
+      },
+      {
+        "title": "Manage Users",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/manage-users.mdx"
+      }
+    ],
+    "answer_length": 2807
   }
 ]
