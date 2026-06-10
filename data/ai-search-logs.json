@@ -19089,5 +19089,39 @@
       }
     ],
     "answer_length": 4748
+  },
+  {
+    "timestamp": "2026-06-10T14:18:51.335Z",
+    "response_id": "ceba8932-a160-4914-abac-245605c2cc00",
+    "question": "metada mask",
+    "question_length": 11,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4844,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      }
+    ],
+    "answer_length": 2298
   }
 ]
