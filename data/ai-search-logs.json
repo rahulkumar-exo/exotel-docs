@@ -19225,5 +19225,39 @@
       }
     ],
     "answer_length": 1448
+  },
+  {
+    "timestamp": "2026-06-10T17:09:10.437Z",
+    "response_id": "f4b59114-15a0-416a-8d7b-a2912b6db449",
+    "question": "can i generate answered by for an outbound call which is connected to a voice bot ?",
+    "question_length": 83,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2989,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Forwarding",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-forwarding"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 370
   }
 ]
