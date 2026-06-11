@@ -19335,5 +19335,13 @@
       }
     ],
     "answer_length": 3053
+  },
+  {
+    "timestamp": "2026-06-11T06:14:25.973Z",
+    "question": "how can i purchase the number through the api do you provide any api?",
+    "question_length": 69,
+    "response_time_ms": 3339,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
