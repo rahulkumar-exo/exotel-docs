@@ -19495,5 +19495,39 @@
       }
     ],
     "answer_length": 4207
+  },
+  {
+    "timestamp": "2026-06-11T09:20:15.124Z",
+    "response_id": "e42a4e7a-0cc4-472d-9039-6903480009d9",
+    "question": "what is CQA Dashboard, where can I find it",
+    "question_length": 42,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3652,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      }
+    ],
+    "answer_length": 297
   }
 ]
