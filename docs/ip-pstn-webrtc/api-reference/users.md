@@ -1,13 +1,13 @@
 ---
 id: users
 title: Users
-description: Create, retrieve, list, and delete users with SIP credentials in your Exotel WebRTC application using the Users API.
+description: Map and manage users within your Exotel WebRTC application using the User Mapping API.
 sidebar_label: Users
 ---
 
 # Users
 
-Map and manage users within your WebRTC applications. Users are assigned SIP credentials and can make/receive calls through the application.
+Map users from your application to Exotel accounts for WebRTC/IP-PSTN calling. Each mapping associates your app's user with an Exotel account, agent number, and virtual number.
 
 ## Base URL
 
@@ -15,201 +15,75 @@ Map and manage users within your WebRTC applications. Users are assigned SIP cre
 https://integrationscore.mum1.exotel.com/v2/integrations
 ```
 
-## Create User
+## Create User Mapping
 
-Map a new user under an application.
+Map a new user to an Exotel account.
 
 ```
-POST /{customer_id}/apps/{app_id}/users
+POST /usermapping
 ```
 
 ### Headers
 
 | Header | Value |
 |--------|-------|
-| `Authorization` | `Bearer <app_token>` |
+| `Authorization` | Your AuthCode |
 | `Content-Type` | `application/json` |
 
 ### Request Body
 
 ```json
-{
-  "user_id": "agent_001",
-  "name": "John Agent",
-  "phone": "+919876543210",
-  "sip_enabled": true
-}
+[
+  {
+    "AppUserId": "123",
+    "AppUsername": "ABC",
+    "Email": "xyz@exotel.in",
+    "ExotelAccountSid": "<your_account_sid>",
+    "ExotelUserName": "ABC XYZ",
+    "AgentNumber": "956190XXXX",
+    "VirtualNumber": "0113512XXXX"
+  }
+]
 ```
 
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `user_id` | String | Yes | Unique identifier for the user |
-| `name` | String | Yes | Display name |
-| `phone` | String | No | PSTN phone number for fallback |
-| `sip_enabled` | Boolean | No | Enable SIP/WebRTC calling (default: `true`) |
+| `AppUserId` | String | Yes | Unique user ID in your application |
+| `AppUsername` | String | Yes | Username in your application |
+| `Email` | String | Yes | User's email address |
+| `ExotelAccountSid` | String | Yes | Your Exotel Account SID |
+| `ExotelUserName` | String | Yes | Display name for the Exotel user |
+| `AgentNumber` | String | Yes | Agent's PSTN phone number |
+| `VirtualNumber` | String | Yes | Virtual number assigned to this user |
 
 ### Example Request
 
 ```bash
-curl -X POST \
-  'https://integrationscore.mum1.exotel.com/v2/integrations/{customer_id}/apps/{app_id}/users' \
-  -H 'Authorization: Bearer <app_token>' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "user_id": "agent_001",
-    "name": "John Agent",
-    "phone": "+919876543210",
-    "sip_enabled": true
-  }'
-```
-
-### Response
-
-```json
-{
-  "success": true,
-  "data": {
-    "user_id": "agent_001",
-    "name": "John Agent",
-    "phone": "+919876543210",
-    "sip_enabled": true,
-    "sip_credentials": {
-      "username": "agent_001@app_abc123.exotel.com",
-      "domain": "sip.exotel.com"
-    },
-    "status": "active",
-    "created_at": "2024-06-15T10:30:00.000Z"
-  }
-}
-```
-
----
-
-## List Users
-
-```
-GET /{customer_id}/apps/{app_id}/users
-```
-
-### Query Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `limit` | Integer | No | Results per page (default: 20) |
-| `offset` | Integer | No | Pagination offset |
-
-### Example Request
-
-```bash
-curl -X GET \
-  'https://integrationscore.mum1.exotel.com/v2/integrations/{customer_id}/apps/{app_id}/users?limit=50' \
-  -H 'Authorization: Bearer <app_token>'
-```
-
-### Response
-
-```json
-{
-  "success": true,
-  "data": {
-    "users": [
-      {
-        "user_id": "agent_001",
-        "name": "John Agent",
-        "phone": "+919876543210",
-        "sip_enabled": true,
-        "status": "active",
-        "device_status": {
-          "phone": true,
-          "sip": true
-        }
-      },
-      {
-        "user_id": "agent_002",
-        "name": "Jane Support",
-        "phone": "+919876543211",
-        "sip_enabled": true,
-        "status": "active",
-        "device_status": {
-          "phone": true,
-          "sip": false
-        }
-      }
-    ],
-    "total": 2,
-    "limit": 50,
-    "offset": 0
-  }
-}
-```
-
----
-
-## Get User Details
-
-```
-GET /{customer_id}/apps/{app_id}/users/{user_id}
-```
-
-### Response
-
-```json
-{
-  "success": true,
-  "data": {
-    "user_id": "agent_001",
-    "name": "John Agent",
-    "phone": "+919876543210",
-    "sip_enabled": true,
-    "sip_credentials": {
-      "username": "agent_001@app_abc123.exotel.com",
-      "domain": "sip.exotel.com"
-    },
-    "status": "active",
-    "device_status": {
-      "phone": true,
-      "sip": true
-    },
-    "created_at": "2024-06-15T10:30:00.000Z",
-    "updated_at": "2024-06-15T10:30:00.000Z"
-  }
-}
-```
-
----
-
-## Delete User
-
-```
-DELETE /{customer_id}/apps/{app_id}/users/{user_id}
-```
-
-### Example Request
-
-```bash
-curl -X DELETE \
-  'https://integrationscore.mum1.exotel.com/v2/integrations/{customer_id}/apps/{app_id}/users/{user_id}' \
-  -H 'Authorization: Bearer <app_token>'
-```
-
-### Response
-
-```json
-{
-  "success": true,
-  "message": "User deleted successfully"
-}
+curl --location --request POST \
+  'https://integrationscore.mum1.exotel.com/v2/integrations/usermapping' \
+  --header 'Authorization: <your_auth_code>' \
+  --header 'Content-Type: application/json' \
+  --data-raw '[
+    {
+      "AppUserId": "123",
+      "AppUsername": "ABC",
+      "Email": "xyz@exotel.in",
+      "ExotelAccountSid": "<your_account_sid>",
+      "ExotelUserName": "ABC XYZ",
+      "AgentNumber": "956190XXXX",
+      "VirtualNumber": "0113512XXXX"
+    }
+  ]'
 ```
 
 ## HTTP Status Codes
 
 | Code | Description |
 |------|-------------|
-| `200` | Success |
-| `201` | User created successfully |
-| `400` | Bad Request — Invalid parameters or duplicate user_id |
-| `401` | Unauthorized — Invalid or expired token |
-| `404` | Not Found — User doesn't exist |
+| `200` | User mapped successfully |
+| `400` | Bad Request — Invalid parameters or duplicate user |
+| `401` | Unauthorized — Invalid or expired auth code |
+| `404` | Not Found — Account SID or virtual number not found |
 | `500` | Internal Server Error |
