@@ -19055,5 +19055,39 @@
     "response_time_ms": 1738,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-11T10:49:58.252Z",
+    "response_id": "169509da-0132-470d-a8d4-c787980aaa6c",
+    "question": "PUT /v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>\ncan you give me the sample if i want to update VoiceUrl?",
+    "question_length": 128,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3533,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Functions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/functions"
+      },
+      {
+        "title": "Update Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      }
+    ],
+    "answer_length": 356
   }
 ]
