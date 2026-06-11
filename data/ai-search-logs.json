@@ -19123,5 +19123,39 @@
       }
     ],
     "answer_length": 853
+  },
+  {
+    "timestamp": "2026-06-11T12:57:26.433Z",
+    "response_id": "3e3a8aee-c183-40dd-95ad-24f7541a0a67",
+    "question": "What kind of API will I need to make calls with dynamic data",
+    "question_length": 60,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10552,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Make a Call (Agent to Customer)",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/make-a-call.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 2608
   }
 ]
