@@ -19241,5 +19241,39 @@
       }
     ],
     "answer_length": 4486
+  },
+  {
+    "timestamp": "2026-06-12T03:51:18.875Z",
+    "response_id": "e6ca594b-b3e6-4e7f-ba80-dedd52640717",
+    "question": "can i update webhook url for my free number?",
+    "question_length": 44,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6422,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      },
+      {
+        "title": "Update Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      }
+    ],
+    "answer_length": 1248
   }
 ]
