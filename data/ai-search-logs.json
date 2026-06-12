@@ -19681,5 +19681,39 @@
       }
     ],
     "answer_length": 2173
+  },
+  {
+    "timestamp": "2026-06-12T12:38:30.519Z",
+    "response_id": "430724da-76e4-4132-b7fb-f1a58f00d498",
+    "question": "i want to make a ai caller so what I want to make is an AI phone caller. I have the LLM; they are studying the TDS model with me. What that app would do is call the users and record what the users are saying in real time, with no lag and almost no delay, and respond back to the user. That's how we can fetch all the endpoints, all the resources, and all the documentation that is resourceful and needed and can be helpful for this whole automation. There is a web circuit that is generated, so I am ",
+    "question_length": 850,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13990,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 3069
   }
 ]
