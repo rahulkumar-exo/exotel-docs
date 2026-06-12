@@ -19715,5 +19715,39 @@
       }
     ],
     "answer_length": 3069
+  },
+  {
+    "timestamp": "2026-06-12T21:18:37.664Z",
+    "response_id": "f458383e-ea4e-4450-b36d-c07c1c8f7463",
+    "question": "I want to connect my app to exotel via a webhook.\n\nCodex asks me to setup this in exotel \n\nMethod: POST\nURL: https://sandpit-sinister-acorn.ngrok-free.dev/api/webhooks/exotel/passthru\n\nWhere do I do that?",
+    "question_length": 204,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9926,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use CleverTap via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-native"
+      }
+    ],
+    "answer_length": 1331
   }
 ]
