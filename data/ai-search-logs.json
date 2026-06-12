@@ -19495,5 +19495,39 @@
       }
     ],
     "answer_length": 2481
+  },
+  {
+    "timestamp": "2026-06-12T11:41:14.207Z",
+    "response_id": "f99aa4c5-4682-4309-baf5-e85b6da161d0",
+    "question": "can I obtain via one of the available API the agent statuses (including login and logout times)? It can eitgher be agent stauts intervales (e.g. from 09:25 to 09:32 the agent was handing a call) or eventes (e.g. (at 10:43 the agent entered the state \"after call work\")",
+    "question_length": 268,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5145,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 879
   }
 ]
