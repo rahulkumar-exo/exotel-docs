@@ -19343,5 +19343,39 @@
       }
     ],
     "answer_length": 3418
+  },
+  {
+    "timestamp": "2026-06-12T04:28:02.542Z",
+    "response_id": "c1a9aae3-8cb8-4853-8d61-c82b4fb1c499",
+    "question": "can we purchase number through the api?",
+    "question_length": 39,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1866,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 668
   }
 ]
