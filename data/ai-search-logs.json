@@ -19563,5 +19563,39 @@
       }
     ],
     "answer_length": 3069
+  },
+  {
+    "timestamp": "2026-06-12T12:01:41.406Z",
+    "response_id": "4e14f6b5-6eed-47ca-aab7-189e362b5217",
+    "question": "how do i connect my ai agent to a number",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8159,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      }
+    ],
+    "answer_length": 2722
   }
 ]
