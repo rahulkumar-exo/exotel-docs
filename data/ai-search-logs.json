@@ -19377,5 +19377,39 @@
       }
     ],
     "answer_length": 668
+  },
+  {
+    "timestamp": "2026-06-12T05:33:34.362Z",
+    "response_id": "7dced47d-8429-4ee4-8099-659d32bca4cf",
+    "question": "api to assign call flow to a purchased nubmer?",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5289,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow.mdx"
+      }
+    ],
+    "answer_length": 1096
   }
 ]
