@@ -19647,5 +19647,39 @@
       }
     ],
     "answer_length": 1099
+  },
+  {
+    "timestamp": "2026-06-12T12:04:24.664Z",
+    "response_id": "61ae6777-9244-462d-82ed-54312d6c0934",
+    "question": "agentstream vs exotrunks",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5759,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage ExoTrunks",
+        "product": "agentstream",
+        "url": "/docs/agentstream/manage-exotrunks"
+      },
+      {
+        "title": "OmniDimension Voicebot & Exotel AgentStream Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/omnidimension-integration"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      }
+    ],
+    "answer_length": 2173
   }
 ]
