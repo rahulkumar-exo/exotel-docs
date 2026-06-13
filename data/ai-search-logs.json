@@ -19817,5 +19817,39 @@
       }
     ],
     "answer_length": 1928
+  },
+  {
+    "timestamp": "2026-06-13T13:33:15.679Z",
+    "response_id": "f59a33bd-b4c4-457d-b9f3-6b30387035b7",
+    "question": "dont need for payment just call and reminder about the payment",
+    "question_length": 62,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 15066,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "WhatsApp Payments",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/payments"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 6360
   }
 ]
