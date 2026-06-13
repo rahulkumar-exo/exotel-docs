@@ -19783,5 +19783,39 @@
       }
     ],
     "answer_length": 868
+  },
+  {
+    "timestamp": "2026-06-13T13:32:38.259Z",
+    "response_id": "55411cf1-411f-4ec0-9637-a16489551c17",
+    "question": "I want to setup this using Google Sheets\n\nI want to setup this for Payment reminder",
+    "question_length": 83,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7764,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Payments",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/payments"
+      },
+      {
+        "title": "High Availability Setup",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/high-availability"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "SIP Trunking TCP Integration Guide (Mumbai)",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/tcp-integration"
+      }
+    ],
+    "answer_length": 1928
   }
 ]
