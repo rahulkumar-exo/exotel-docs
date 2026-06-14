@@ -19885,5 +19885,39 @@
       }
     ],
     "answer_length": 764
+  },
+  {
+    "timestamp": "2026-06-14T02:09:05.479Z",
+    "response_id": "e4c9fb61-b81f-4263-988c-9a8ca4f3c8da",
+    "question": "7518020483",
+    "question_length": 10,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1575,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 122
   }
 ]
