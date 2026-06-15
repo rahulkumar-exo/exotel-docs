@@ -20215,5 +20215,39 @@
       }
     ],
     "answer_length": 1757
+  },
+  {
+    "timestamp": "2026-06-15T07:50:08.140Z",
+    "response_id": "8b79c2d3-0f43-4a9f-bb54-90bd4dd8f60d",
+    "question": "What events are available?\n\nNeed:\n\nCall Started\n\nCall Answered\n\nCall Ended\n\nCall Failed",
+    "question_length": 87,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10848,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 4397
   }
 ]
