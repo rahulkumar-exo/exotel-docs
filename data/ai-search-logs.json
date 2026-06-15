@@ -20147,5 +20147,39 @@
       }
     ],
     "answer_length": 1018
+  },
+  {
+    "timestamp": "2026-06-15T07:49:06.544Z",
+    "response_id": "176897e7-51d1-4538-a923-290acee05395",
+    "question": "Does AgentStream support:\n\nFull Duplex Audio",
+    "question_length": 44,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2117,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Team Management",
+        "product": "getting-started",
+        "url": "/docs/getting-started/team-management"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/developer-guide"
+      }
+    ],
+    "answer_length": 583
   }
 ]
