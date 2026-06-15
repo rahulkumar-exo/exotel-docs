@@ -20341,5 +20341,39 @@
       }
     ],
     "answer_length": 2461
+  },
+  {
+    "timestamp": "2026-06-15T09:19:03.670Z",
+    "response_id": "8a6f9313-4e78-4258-b51a-216c768bd7e8",
+    "question": "WHICH QUESTION IS ASKED IN EXOTEL FRO PRODUCTION SUPPORT ROLE",
+    "question_length": 61,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2641,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 201
   }
 ]
