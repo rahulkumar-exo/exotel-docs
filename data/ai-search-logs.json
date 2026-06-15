@@ -20621,5 +20621,39 @@
       }
     ],
     "answer_length": 3683
+  },
+  {
+    "timestamp": "2026-06-15T17:06:30.725Z",
+    "response_id": "c3c5ee33-b8a0-44c1-ba47-021686b6e18b",
+    "question": "tell me if i created an ai call assistance service and use exotel services like api exophone let use assume i had 20 client and for them need 10 exophone tell me to provide whole service what exotel services i need and how much i had to spend",
+    "question_length": 242,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8277,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Services Provided by Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/services"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Use CleverTap via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-native"
+      }
+    ],
+    "answer_length": 1606
   }
 ]
