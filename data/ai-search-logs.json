@@ -20655,5 +20655,39 @@
       }
     ],
     "answer_length": 1606
+  },
+  {
+    "timestamp": "2026-06-15T17:32:06.148Z",
+    "response_id": "4ed2bc9e-fdbe-481d-8663-8fd2580e77b2",
+    "question": "can i buy exophones directly",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3574,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      },
+      {
+        "title": "List All ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/list-numbers"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      }
+    ],
+    "answer_length": 732
   }
 ]
