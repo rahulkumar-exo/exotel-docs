@@ -20409,5 +20409,39 @@
       }
     ],
     "answer_length": 4960
+  },
+  {
+    "timestamp": "2026-06-15T11:38:10.239Z",
+    "response_id": "c1fcddca-2a90-4a7c-9c3b-c22d2c440095",
+    "question": "how to connect with me project",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 15364,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      }
+    ],
+    "answer_length": 5879
   }
 ]
