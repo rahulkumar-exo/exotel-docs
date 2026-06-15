@@ -20587,5 +20587,39 @@
       }
     ],
     "answer_length": 3336
+  },
+  {
+    "timestamp": "2026-06-15T14:41:01.240Z",
+    "response_id": "2b6e7169-544d-408a-af45-ae85f575311e",
+    "question": "Send SMS via API",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6523,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      }
+    ],
+    "answer_length": 3683
   }
 ]
