@@ -20181,5 +20181,39 @@
       }
     ],
     "answer_length": 583
+  },
+  {
+    "timestamp": "2026-06-15T07:49:40.223Z",
+    "response_id": "757bcf8d-f8ff-4d13-a225-d6669ecdb406",
+    "question": "What audio format does AgentStream use?\n\nNeed to know:\n\nPCM?\nμ-law?\nSample Rate?",
+    "question_length": 80,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5664,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/developer-guide"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/developer-guide"
+      }
+    ],
+    "answer_length": 1757
   }
 ]
