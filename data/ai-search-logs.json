@@ -20055,5 +20055,13 @@
       }
     ],
     "answer_length": 4503
+  },
+  {
+    "timestamp": "2026-06-15T07:01:20.691Z",
+    "question": "How does ExoVerify phone verification work?",
+    "question_length": 43,
+    "response_time_ms": 5868,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
