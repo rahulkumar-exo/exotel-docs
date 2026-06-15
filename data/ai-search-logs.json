@@ -20689,5 +20689,39 @@
       }
     ],
     "answer_length": 732
+  },
+  {
+    "timestamp": "2026-06-15T17:41:30.843Z",
+    "response_id": "bccad726-85ec-4242-84e3-a23f936a0a47",
+    "question": "ok it means i had to get one exonumber then i need to pay 500 per month right so as you know i want to provide ai call assistant services like i had business owner i provide him ai call assistance for his missed calls assigned one exonumber for him and other exotel services to handle call to ask question as given in flow then sending that info to the owner via email tell me how much i need to pay to exotel to get this service so how much i charge from him to make profit",
+    "question_length": 474,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3315,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 176
   }
 ]
