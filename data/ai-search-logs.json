@@ -19987,5 +19987,39 @@
       }
     ],
     "answer_length": 4902
+  },
+  {
+    "timestamp": "2026-06-15T05:40:21.824Z",
+    "response_id": "9da68086-b3b3-4a7b-9079-4d40b3e0ad80",
+    "question": "How can i use whatsapp api to send pdf ? should i upload as part of api ? or it is required to have a url of the pdf ?",
+    "question_length": 118,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5397,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 930
   }
 ]
