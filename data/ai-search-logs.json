@@ -20307,5 +20307,39 @@
       }
     ],
     "answer_length": 981
+  },
+  {
+    "timestamp": "2026-06-15T07:58:17.961Z",
+    "response_id": "6440e033-6ff1-4ad6-b38e-28de541ca394",
+    "question": "I actually need a virtual number, from which call will be connected when automation triggered. And And I want to integrate AI into the call which will talk to the human and then based upon the human response, my own llm response will be sent and AI will then respond with the LLM genrated response. This is my requirement. What should i choose now, which service",
+    "question_length": 362,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 16659,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 2461
   }
 ]
