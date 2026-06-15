@@ -20485,5 +20485,39 @@
       }
     ],
     "answer_length": 512
+  },
+  {
+    "timestamp": "2026-06-15T12:13:08.993Z",
+    "response_id": "cce0440d-114e-4549-9f4f-c82943284707",
+    "question": "i just need to handle incoing calsas",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2734,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Functions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/functions"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Bot Prompts",
+        "product": "chatbot",
+        "url": "/docs/chatbot/bot-prompts"
+      }
+    ],
+    "answer_length": 976
   }
 ]
