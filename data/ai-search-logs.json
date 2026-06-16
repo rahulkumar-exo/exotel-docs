@@ -20977,5 +20977,39 @@
       }
     ],
     "answer_length": 2934
+  },
+  {
+    "timestamp": "2026-06-16T12:28:37.913Z",
+    "response_id": "f9d58c8c-ff58-47b9-9563-a8886f61e440",
+    "question": "what will cost of it?",
+    "question_length": 21,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1238,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "WhatsApp Messaging Limits",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/messaging-limits"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      }
+    ],
+    "answer_length": 176
   }
 ]
