@@ -20901,5 +20901,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-06-16T12:19:58.337Z",
+    "response_id": "48a01963-e992-46a8-8d67-e90c110b1179",
+    "question": "I need AI Based auto generate call on given customer number",
+    "question_length": 59,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6060,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Missed Call Solution",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/missed-call"
+      },
+      {
+        "title": "Auto Retry on Busy",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/auto-retry"
+      }
+    ],
+    "answer_length": 1776
   }
 ]
