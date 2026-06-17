@@ -21577,5 +21577,39 @@
       }
     ],
     "answer_length": 2260
+  },
+  {
+    "timestamp": "2026-06-17T18:46:17.928Z",
+    "response_id": "6a62ee61-9b8c-4e1e-a301-c73636609d6f",
+    "question": "how can i add customfield in the greeting message to pass the name of the customer",
+    "question_length": 82,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12265,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 2545
   }
 ]
