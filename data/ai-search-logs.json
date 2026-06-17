@@ -21391,5 +21391,39 @@
       }
     ],
     "answer_length": 1036
+  },
+  {
+    "timestamp": "2026-06-17T08:25:44.167Z",
+    "response_id": "acb544d5-65d2-4acb-b14f-dd26f32dbf07",
+    "question": "but caller id not there in. api settings page",
+    "question_length": 45,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3523,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Authentication & Security",
+        "product": "references",
+        "url": "/docs/references/authentication"
+      },
+      {
+        "title": "Custom Caller ID",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/custom-caller-id"
+      }
+    ],
+    "answer_length": 1157
   }
 ]
