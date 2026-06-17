@@ -21493,5 +21493,39 @@
       }
     ],
     "answer_length": 4030
+  },
+  {
+    "timestamp": "2026-06-17T11:52:47.809Z",
+    "response_id": "bfc176b1-744d-4f19-bbde-749cd0de8ce8",
+    "question": "api to dissconect call",
+    "question_length": 22,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3983,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 396
   }
 ]
