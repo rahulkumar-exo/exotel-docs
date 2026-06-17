@@ -21543,5 +21543,39 @@
     "response_time_ms": 1527,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-17T12:28:10.785Z",
+    "response_id": "6fa7bf3b-11d3-4e4b-906b-06cdfa86d55d",
+    "question": "api for campaign call",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6168,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      }
+    ],
+    "answer_length": 2260
   }
 ]
