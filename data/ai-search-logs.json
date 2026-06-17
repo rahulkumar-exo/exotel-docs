@@ -21205,5 +21205,39 @@
       }
     ],
     "answer_length": 3834
+  },
+  {
+    "timestamp": "2026-06-17T05:48:53.970Z",
+    "response_id": "9bf79957-22df-4dff-a1b2-6b980feb39a5",
+    "question": "i have a voicebot hosted. i want to a call a person and the audio stream should be sent to my bot and the bot will send the response audio in return which the person will hear. which api should i use",
+    "question_length": 199,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11821,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 3499
   }
 ]
