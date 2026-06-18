@@ -21713,5 +21713,39 @@
       }
     ],
     "answer_length": 4242
+  },
+  {
+    "timestamp": "2026-06-18T05:22:19.491Z",
+    "response_id": "d9b857c0-c656-43d9-a7ea-909b863af994",
+    "question": "how much charge per call",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2201,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      }
+    ],
+    "answer_length": 176
   }
 ]
