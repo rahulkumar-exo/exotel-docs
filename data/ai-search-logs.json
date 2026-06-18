@@ -21983,5 +21983,39 @@
       }
     ],
     "answer_length": 2625
+  },
+  {
+    "timestamp": "2026-06-18T09:06:50.779Z",
+    "response_id": "11b155c3-5757-46d7-87b3-6209c0102e5d",
+    "question": "Passthru Send call details to your application URL for dynamic routing which detail are passed",
+    "question_length": 94,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3147,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Passthru Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/passthru"
+      },
+      {
+        "title": "Call Forwarding",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-forwarding"
+      },
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      }
+    ],
+    "answer_length": 1244
   }
 ]
