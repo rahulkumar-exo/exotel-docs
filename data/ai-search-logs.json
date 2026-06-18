@@ -21873,5 +21873,39 @@
       }
     ],
     "answer_length": 1611
+  },
+  {
+    "timestamp": "2026-06-18T08:40:34.239Z",
+    "response_id": "84c8d4e2-7f45-48f8-8a73-44e34234928b",
+    "question": "how to get DTMF responses in callDetails api response",
+    "question_length": 53,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3000,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Details (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 605
   }
 ]
