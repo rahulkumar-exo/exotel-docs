@@ -21747,5 +21747,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-06-18T05:22:50.590Z",
+    "response_id": "86929fa5-67fd-4c72-9527-9a9e7f77fe9b",
+    "question": "voice-v3",
+    "question_length": 8,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5082,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Active Stream Monitoring",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/active-stream-monitoring"
+      },
+      {
+        "title": "Active Stream Monitoring",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/active-stream-monitoring"
+      },
+      {
+        "title": "Active Stream Monitoring",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/active-stream-monitoring"
+      },
+      {
+        "title": "Active Stream Monitoring",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/active-stream-monitoring"
+      }
+    ],
+    "answer_length": 2355
   }
 ]
