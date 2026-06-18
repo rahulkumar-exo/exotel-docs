@@ -22101,5 +22101,39 @@
       }
     ],
     "answer_length": 2720
+  },
+  {
+    "timestamp": "2026-06-18T10:27:59.739Z",
+    "response_id": "2a059f74-4c32-444f-9188-cc295297ac70",
+    "question": "rate limit",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6464,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      }
+    ],
+    "answer_length": 3644
   }
 ]
