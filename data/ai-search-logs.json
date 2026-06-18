@@ -22135,5 +22135,13 @@
       }
     ],
     "answer_length": 3644
+  },
+  {
+    "timestamp": "2026-06-18T10:50:15.171Z",
+    "question": "Exotel's WebRTC SDK — browser mic → SIP registration → PSTN bridge.\n\n\ndo i get streaming for it ?",
+    "question_length": 97,
+    "response_time_ms": 2306,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
