@@ -21941,5 +21941,13 @@
       }
     ],
     "answer_length": 2210
+  },
+  {
+    "timestamp": "2026-06-18T08:58:42.322Z",
+    "question": "for  voice AI assistants i need",
+    "question_length": 31,
+    "response_time_ms": 1719,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
