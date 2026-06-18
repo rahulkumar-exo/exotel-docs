@@ -22017,5 +22017,13 @@
       }
     ],
     "answer_length": 1244
+  },
+  {
+    "timestamp": "2026-06-18T09:09:13.355Z",
+    "question": "Voice Type v1 \npassthru set exotel \nYour application responds with an HTTP status code your only pass the status code \nor other detail are pass",
+    "question_length": 143,
+    "response_time_ms": 2057,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
