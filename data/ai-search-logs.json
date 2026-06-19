@@ -22327,5 +22327,39 @@
       }
     ],
     "answer_length": 2330
+  },
+  {
+    "timestamp": "2026-06-19T09:36:26.971Z",
+    "response_id": "f84d027a-82ca-4cef-8c2c-ae71c66e69ac",
+    "question": "what is basic plan for voice calls",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2405,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/voice-faqs"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 176
   }
 ]
