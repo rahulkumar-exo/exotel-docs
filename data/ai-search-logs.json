@@ -22259,5 +22259,39 @@
     "response_time_ms": 1652,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-19T08:58:52.430Z",
+    "response_id": "391a1619-e1fe-4129-8982-2f0a5e4d5546",
+    "question": "what is insights in exolite dashboard",
+    "question_length": 37,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1854,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Reporting Overview",
+        "product": "reporting",
+        "url": "/docs/reporting/overview"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Dashboard Overview",
+        "product": "getting-started",
+        "url": "/docs/getting-started/dashboard-overview"
+      }
+    ],
+    "answer_length": 1154
   }
 ]
