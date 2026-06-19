@@ -22293,5 +22293,39 @@
       }
     ],
     "answer_length": 1154
+  },
+  {
+    "timestamp": "2026-06-19T09:11:08.442Z",
+    "response_id": "67d8c4f2-d3ce-4e3d-b5d6-4972152ee51c",
+    "question": "need to get all my calls data",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7563,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Monitoring & Visualization",
+        "product": "use-cases",
+        "url": "/docs/use-cases/call-monitoring-visualization.mdx"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns.mdx"
+      }
+    ],
+    "answer_length": 2330
   }
 ]
