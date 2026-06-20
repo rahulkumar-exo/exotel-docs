@@ -22453,5 +22453,39 @@
     "response_time_ms": 2802,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-20T04:41:08.663Z",
+    "response_id": "c004f661-6262-4b16-81b9-741e80c895bc",
+    "question": "inbound replies?",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7478,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Notifications",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/call-notifications"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "SMS Webhooks",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-webhooks"
+      }
+    ],
+    "answer_length": 3778
   }
 ]
