@@ -22555,5 +22555,39 @@
       }
     ],
     "answer_length": 4987
+  },
+  {
+    "timestamp": "2026-06-20T12:31:46.334Z",
+    "response_id": "a0e62ecb-bdbb-47e6-8749-5d8d8d2536ba",
+    "question": "can we do greeting using the xml",
+    "question_length": 32,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2009,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Greeting Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/greeting"
+      }
+    ],
+    "answer_length": 772
   }
 ]
