@@ -22487,5 +22487,39 @@
       }
     ],
     "answer_length": 3778
+  },
+  {
+    "timestamp": "2026-06-20T05:42:08.292Z",
+    "response_id": "ce917775-a09d-454f-9d26-378c1365decf",
+    "question": "hello to make automated outbound calls (campaign) do we need to register with trai \nis there any article which i can follow to setup this",
+    "question_length": 137,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5088,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Automated Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/automated-calls"
+      },
+      {
+        "title": "Exotel Integration with Zoho Desk",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-desk"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Integration FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/integration-faqs"
+      }
+    ],
+    "answer_length": 1272
   }
 ]
