@@ -22445,5 +22445,13 @@
       }
     ],
     "answer_length": 4741
+  },
+  {
+    "timestamp": "2026-06-20T04:40:49.872Z",
+    "question": "how does it make an nbound replies",
+    "question_length": 34,
+    "response_time_ms": 2802,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
