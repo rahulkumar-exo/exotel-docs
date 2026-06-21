@@ -22707,5 +22707,39 @@
       }
     ],
     "answer_length": 2380
+  },
+  {
+    "timestamp": "2026-06-21T13:03:44.006Z",
+    "response_id": "a4596ed0-9e3e-40d4-abcc-5cd3f9e5e5af",
+    "question": "how i can ue exotel api for transcripting, sumarizing on my calls how i can use the api  keys and use in code",
+    "question_length": 109,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6349,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 1880
   }
 ]
