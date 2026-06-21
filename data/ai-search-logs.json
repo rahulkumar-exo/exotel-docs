@@ -22673,5 +22673,39 @@
       }
     ],
     "answer_length": 4236
+  },
+  {
+    "timestamp": "2026-06-21T02:32:56.027Z",
+    "response_id": "6301a40d-7df3-4994-8e50-c1ce484cb88c",
+    "question": "web calling",
+    "question_length": 11,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5030,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN intermix: WebRTC SDK integration",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/overview"
+      },
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      }
+    ],
+    "answer_length": 2380
   }
 ]
