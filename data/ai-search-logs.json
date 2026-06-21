@@ -22809,5 +22809,39 @@
       }
     ],
     "answer_length": 3543
+  },
+  {
+    "timestamp": "2026-06-21T15:36:35.201Z",
+    "response_id": "56df4389-b08e-4ec9-b6db-9d20a68f9685",
+    "question": "Does this support browser calling and i have built one crm website and want to integrate browser calling feature for my agents to call leads",
+    "question_length": 140,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4954,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      }
+    ],
+    "answer_length": 1341
   }
 ]
