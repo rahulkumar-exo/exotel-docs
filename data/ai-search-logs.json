@@ -23081,5 +23081,39 @@
       }
     ],
     "answer_length": 3588
+  },
+  {
+    "timestamp": "2026-06-22T05:05:02.446Z",
+    "response_id": "6b9dbae2-6306-48a7-8059-09b297bc6457",
+    "question": "HOW TO AUTHORISE",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6502,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 1900
   }
 ]
