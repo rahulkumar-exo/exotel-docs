@@ -23419,5 +23419,39 @@
       }
     ],
     "answer_length": 1412
+  },
+  {
+    "timestamp": "2026-06-22T10:08:52.924Z",
+    "response_id": "19e3cc9f-3ad4-4cea-b732-e85a9d974dd5",
+    "question": "following is the content that i provided. as per me, this should not have given error.  {\"type\": \"text\",\"text\": { \"body\": \"Hello from Exotel!\" }}",
+    "question_length": 145,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4857,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 1262
   }
 ]
