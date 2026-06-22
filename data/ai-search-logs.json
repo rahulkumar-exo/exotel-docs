@@ -22945,5 +22945,39 @@
       }
     ],
     "answer_length": 1356
+  },
+  {
+    "timestamp": "2026-06-22T02:42:20.177Z",
+    "response_id": "2f5d6246-e451-4d99-b11f-d461251c6ae2",
+    "question": "[\n  {\n    \"Call\": {\n      \"Sid\": \"163abf3df5e825d538fc2dd6823f1a6m\",\n      \"ParentCallSid\": \"\",\n      \"DateCreated\": \"2026-06-22 07:48:50\",\n      \"DateUpdated\": \"2026-06-22 07:50:05\",\n      \"AccountSid\": \"thecarlaundry3\",\n      \"To\": \"06383430631\",\n      \"From\": \"09500312764\",\n      \"PhoneNumberSid\": \"09513886363\",\n      \"Status\": \"completed\",\n      \"StartTime\": \"2026-06-22 07:48:50\",\n      \"EndTime\": \"2026-06-22 07:49:41\",\n      \"Duration\": 51,\n      \"Price\": 1.5,\n      \"Direction\": \"outbound-a",
+    "question_length": 761,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6087,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow.mdx"
+      },
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 1963
   }
 ]
