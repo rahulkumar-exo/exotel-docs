@@ -23453,5 +23453,39 @@
       }
     ],
     "answer_length": 1262
+  },
+  {
+    "timestamp": "2026-06-22T10:12:15.770Z",
+    "response_id": "52be597b-ae40-40b5-8fdf-bf5413c7e4a5",
+    "question": "where do we send the channel parameter. i didn't see any such parameter in the documentation",
+    "question_length": 92,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4816,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 1608
   }
 ]
