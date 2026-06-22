@@ -23317,5 +23317,39 @@
       }
     ],
     "answer_length": 322
+  },
+  {
+    "timestamp": "2026-06-22T09:37:48.637Z",
+    "response_id": "b0d355c5-bcbf-43cb-a1b9-9a41e3e9793a",
+    "question": "I need to connect the number which i bought from exotel to my voice agent through sip connection?",
+    "question_length": 97,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7882,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 1899
   }
 ]
