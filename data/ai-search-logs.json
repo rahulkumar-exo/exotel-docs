@@ -23487,5 +23487,39 @@
       }
     ],
     "answer_length": 1608
+  },
+  {
+    "timestamp": "2026-06-22T11:53:53.227Z",
+    "response_id": "ee1887ac-d56d-49ca-a171-56a2d8071ab3",
+    "question": "chat with expert",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2115,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      },
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      }
+    ],
+    "answer_length": 176
   }
 ]
