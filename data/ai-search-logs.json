@@ -22979,5 +22979,39 @@
       }
     ],
     "answer_length": 1963
+  },
+  {
+    "timestamp": "2026-06-22T02:45:47.992Z",
+    "response_id": "dfda4b86-995e-4503-bb65-e0ed0d0e4ef6",
+    "question": "while making the call ,this is what i send to exotel ,do i need to add anymore with it to gewt the call recoridntg // POST to: // https://{api_key}:{api_token}@{subdomain}/v1/Accounts/{sid}/Calls/connect.json const form = new URLSearchParams(); form.set(\"From\", agentPhone); // assigned sales person's phone number form.set(\"To\", leadPhone); // lead's phone number form.set(\"CallerId\", settings.exotel_caller_id); // your Exotel caller ID form.set(\"CallType\", \"trans\"); // \"trans\" = transfer/connect ",
+    "question_length": 504,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4039,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 1460
   }
 ]
