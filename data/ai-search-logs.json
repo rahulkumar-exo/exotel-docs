@@ -23013,5 +23013,39 @@
       }
     ],
     "answer_length": 1460
+  },
+  {
+    "timestamp": "2026-06-22T05:02:32.756Z",
+    "response_id": "669c9d91-5154-49cb-a08d-0a9f6120d31c",
+    "question": "{\n  \"RestException\": {\n    \"Status\": 401,\n    \"Message\": \"Unauthorized; \",\n    \"Code\": 34010\n  }\n}",
+    "question_length": 98,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6863,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 876
   }
 ]
