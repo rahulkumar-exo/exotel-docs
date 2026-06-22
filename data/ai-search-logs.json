@@ -22877,5 +22877,39 @@
       }
     ],
     "answer_length": 1888
+  },
+  {
+    "timestamp": "2026-06-22T01:53:08.890Z",
+    "response_id": "707608b7-d7e3-44ff-84a2-a9d1c45b9803",
+    "question": "i want to setup a call back url using api to get the call recordings url ,give me the curl and explain how to do it with sample data",
+    "question_length": 132,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 17001,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      }
+    ],
+    "answer_length": 3579
   }
 ]
