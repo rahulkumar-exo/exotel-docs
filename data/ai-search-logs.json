@@ -23351,5 +23351,39 @@
       }
     ],
     "answer_length": 1899
+  },
+  {
+    "timestamp": "2026-06-22T09:46:40.150Z",
+    "response_id": "b6ad19da-eabc-4b9f-b72e-0532cb4756c2",
+    "question": "in which section i can able to find my numbers?",
+    "question_length": 47,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3732,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dashboard Overview",
+        "product": "getting-started",
+        "url": "/docs/getting-started/dashboard-overview"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      }
+    ],
+    "answer_length": 404
   }
 ]
