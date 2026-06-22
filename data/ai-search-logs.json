@@ -23225,5 +23225,39 @@
     "response_time_ms": 774,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-22T07:02:28.656Z",
+    "response_id": "7bb9e734-6c60-4904-94c3-43204bce25f8",
+    "question": "in number metadata api what does it mean when phone_number is false in response?",
+    "question_length": 80,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3113,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 461
   }
 ]
