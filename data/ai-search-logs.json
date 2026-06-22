@@ -23385,5 +23385,39 @@
       }
     ],
     "answer_length": 404
+  },
+  {
+    "timestamp": "2026-06-22T10:07:28.842Z",
+    "response_id": "f1d7681f-b9ce-45a9-b316-6fd0063bc3b7",
+    "question": "this error is coming from send message api endpoint. \"description\": \"at least one channel is mandatory\",",
+    "question_length": 104,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8827,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Send RCS Message",
+        "product": "rcs-omnichannel",
+        "url": "/docs/rcs-omnichannel/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      }
+    ],
+    "answer_length": 1412
   }
 ]
