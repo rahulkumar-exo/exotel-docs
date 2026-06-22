@@ -23217,5 +23217,13 @@
       }
     ],
     "answer_length": 601
+  },
+  {
+    "timestamp": "2026-06-22T07:02:17.712Z",
+    "question": "in number metadata api what does it mean when phone_number is false in response?",
+    "question_length": 80,
+    "response_time_ms": 774,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
