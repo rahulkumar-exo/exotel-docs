@@ -23521,5 +23521,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-06-22T11:54:38.365Z",
+    "response_id": "602871b2-80e5-420b-8678-6aa430e4a952",
+    "question": "earlier i am connect chat with expert",
+    "question_length": 37,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8164,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      },
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 176
   }
 ]
