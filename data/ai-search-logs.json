@@ -23623,5 +23623,39 @@
       }
     ],
     "answer_length": 1708
+  },
+  {
+    "timestamp": "2026-06-22T17:56:56.198Z",
+    "response_id": "67eefbac-6949-4b04-b2d5-26ab2bf5c302",
+    "question": "what will be the cost",
+    "question_length": 21,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1182,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Categories",
+        "product": "chatbot",
+        "url": "/docs/chatbot/categories"
+      }
+    ],
+    "answer_length": 176
   }
 ]
