@@ -23555,5 +23555,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-06-22T12:19:18.400Z",
+    "response_id": "1bb54e8d-19ca-461e-aaa7-d106b375a07d",
+    "question": "what is cost per minute for exotel outbound call",
+    "question_length": 48,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3006,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 176
   }
 ]
