@@ -22911,5 +22911,39 @@
       }
     ],
     "answer_length": 3579
+  },
+  {
+    "timestamp": "2026-06-22T02:38:27.918Z",
+    "response_id": "bc6cc13f-df6b-4901-94fc-fbb75bc62219",
+    "question": "after i make the call via http, i got the api response as like given below, with call sid and all,but from that how can i get the call recording url",
+    "question_length": 148,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4976,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1356
   }
 ]
