@@ -24045,5 +24045,13 @@
     "response_time_ms": 1646,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-23T16:53:57.605Z",
+    "question": "I want to integrate the Exotel Voicebot Applet with my Python FastAPI WebSocket server for real-time bidirectional audio. I need the exact low-level protocol details:\n\nWebSocket message format — when Exotel connects to my WebSocket URL, what is the exact structure of each message it sends? Is it:\n\nRaw binary audio bytes?\nA JSON envelope like {\"event\": \"media\", \"payload\": \"<base64audio>\"} similar to Twilio?\nSomething else?\n\n\nAudio format from Exotel to my server — what codec, sample rate, bit dep",
+    "question_length": 1202,
+    "response_time_ms": 1513,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
