@@ -23851,5 +23851,39 @@
       }
     ],
     "answer_length": 3108
+  },
+  {
+    "timestamp": "2026-06-23T12:10:42.627Z",
+    "response_id": "a01da048-e3dd-41ed-bab5-b9745f84296d",
+    "question": "how to use number metadata for bulk operations",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4267,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 773
   }
 ]
