@@ -23969,5 +23969,39 @@
       }
     ],
     "answer_length": 952
+  },
+  {
+    "timestamp": "2026-06-23T16:49:54.165Z",
+    "response_id": "aeb5eaf6-9604-4dd1-8cb3-ab0dadaea621",
+    "question": "I have a production multi-agent banking voice AI system currently using Twilio for outbound calls. I want to migrate it to Exotel. My tech stack is Python, FastAPI, asyncio, and WebSockets. The system handles real-time bidirectional voice — STT → NLU → dialogue orchestration → TTS — with full-duplex WebSocket interactions and barge-in detection. We have purchased the number 080-472-85130 for outbound calls. I need help with the following:  How to initiate outbound calls from this number using Ex",
+    "question_length": 860,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14378,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 4464
   }
 ]
