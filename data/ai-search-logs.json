@@ -24003,5 +24003,39 @@
       }
     ],
     "answer_length": 4464
+  },
+  {
+    "timestamp": "2026-06-23T16:52:10.530Z",
+    "response_id": "12b12230-fefc-4fac-acd5-cd0ec4b43fb1",
+    "question": "I need to stream real-time audio from an active Exotel call to my own backend server for AI processing — similar to how Twilio Media Streams works (Twilio connects the call leg to a WebSocket URL and streams raw audio frames in real-time).\nDoes Exotel support any of the following:\n\nMedia Streaming — streaming raw audio from a live call to a WebSocket URL on my server\nSIP URI routing — routing a call leg to a SIP endpoint that my backend manages\nExoML — a TwiML-equivalent where I can redirect cal",
+    "question_length": 934,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 18649,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 6323
   }
 ]
