@@ -24189,5 +24189,39 @@
       }
     ],
     "answer_length": 4802
+  },
+  {
+    "timestamp": "2026-06-24T18:34:04.227Z",
+    "response_id": "047f4570-0084-42ff-be1d-1b2ff5c64f36",
+    "question": "Can exotel send me a webhook on call hangup in a inbound call?",
+    "question_length": 62,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14160,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1601
   }
 ]
