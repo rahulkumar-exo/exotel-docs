@@ -24113,5 +24113,39 @@
       }
     ],
     "answer_length": 3384
+  },
+  {
+    "timestamp": "2026-06-24T10:33:57.244Z",
+    "response_id": "98e97125-b3ac-4c00-b588-91ab2c1ca363",
+    "question": "does exotel play any role in laguage detection and speech to text generation and sending it to ultravox?",
+    "question_length": 104,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8885,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Text-to-Speech Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/tts-config"
+      }
+    ],
+    "answer_length": 1597
   }
 ]
