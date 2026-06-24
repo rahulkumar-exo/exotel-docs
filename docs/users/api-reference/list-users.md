@@ -7,13 +7,32 @@ sidebar_label: List Users
 
 # List Users
 
-Retrieve a paginated list of users in your account with optional filtering.
+Retrieve a paginated list of users and their device details in your account. Equivalent to **Bulk Get User & Device Details** in the legacy portal.
 
 ## HTTP Request
 
 ```
 GET /v2/accounts/<account_sid>/users
 ```
+
+### Regional Base URLs
+
+| Region | Base URL |
+|--------|----------|
+| Singapore | `https://<api_key>:<api_token>@ccm-api.exotel.com` |
+| Mumbai | `https://<api_key>:<api_token>@ccm-api.in.exotel.com` |
+
+### Example
+
+```bash
+curl -X GET \
+  'https://<api_key>:<api_token>@ccm-api.in.exotel.com/v2/accounts/<account_sid>/users?fields=devices&limit=50' \
+  -H 'Content-Type: application/json'
+```
+
+:::info
+This API supports JSON response only. Pass `fields=devices` to include device status in the response.
+:::
 
 ## Query Parameters
 
