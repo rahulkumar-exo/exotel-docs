@@ -24223,5 +24223,39 @@
       }
     ],
     "answer_length": 1601
+  },
+  {
+    "timestamp": "2026-06-24T18:35:57.754Z",
+    "response_id": "8906717c-f38f-49e4-b055-3952a5aae829",
+    "question": "I want to know if a user drops of on the call while he is traversing a IVR tree",
+    "question_length": 79,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10414,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 2267
   }
 ]
