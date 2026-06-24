@@ -24011,5 +24011,39 @@
       }
     ],
     "answer_length": 4149
+  },
+  {
+    "timestamp": "2026-06-24T10:25:17.589Z",
+    "response_id": "8d7f0e97-873b-4810-b5e4-03a7b1c430e9",
+    "question": "when im trying to switch between languages its not working properly",
+    "question_length": 67,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4452,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      },
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      },
+      {
+        "title": "Your First Call Flow",
+        "product": "getting-started",
+        "url": "/docs/getting-started/first-call-flow"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 719
   }
 ]
