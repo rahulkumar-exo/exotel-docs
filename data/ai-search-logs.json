@@ -23725,5 +23725,39 @@
       }
     ],
     "answer_length": 989
+  },
+  {
+    "timestamp": "2026-06-24T06:29:06.523Z",
+    "response_id": "f12c17e3-76d9-4c3b-8b29-225c711982bf",
+    "question": "how to configure soft phone",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5252,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integration FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/integration-faqs"
+      },
+      {
+        "title": "Greeting Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/greeting-applet-guide"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      }
+    ],
+    "answer_length": 1050
   }
 ]
