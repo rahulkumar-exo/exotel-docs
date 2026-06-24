@@ -23775,5 +23775,13 @@
     "response_time_ms": 1643,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-24T07:14:42.550Z",
+    "question": "i was developed a realestate crm i want to make calls through my crm so that i want to choose this exotel, my requirement is calls recordings should be available and i am providing my crm to multiple customers so can i use single exotel account for all the customers",
+    "question_length": 266,
+    "response_time_ms": 1842,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
