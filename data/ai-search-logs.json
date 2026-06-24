@@ -23691,5 +23691,39 @@
       }
     ],
     "answer_length": 1215
+  },
+  {
+    "timestamp": "2026-06-24T06:29:05.406Z",
+    "response_id": "4d8a3d4d-deb5-43f0-8681-8864267bd4d3",
+    "question": "for hunars case should i use voice 1 or voice v2",
+    "question_length": 48,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3645,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      }
+    ],
+    "answer_length": 989
   }
 ]
