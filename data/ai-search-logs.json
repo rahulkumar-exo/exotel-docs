@@ -23919,5 +23919,39 @@
       }
     ],
     "answer_length": 1431
+  },
+  {
+    "timestamp": "2026-06-24T09:30:58.629Z",
+    "response_id": "1c4d3cb5-d583-467a-8a15-3d76743df672",
+    "question": "Call Recording Configuration.\n\nWhere can u do this",
+    "question_length": 50,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3690,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 1709
   }
 ]
