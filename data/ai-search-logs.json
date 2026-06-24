@@ -24257,5 +24257,39 @@
       }
     ],
     "answer_length": 2267
+  },
+  {
+    "timestamp": "2026-06-24T18:37:12.720Z",
+    "response_id": "5335fb0a-d046-48b2-9bda-1e0d444629ab",
+    "question": "status callback will work only call initiated API's only right? And not for calls directly onan ExoPhone?",
+    "question_length": 105,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5765,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 850
   }
 ]
