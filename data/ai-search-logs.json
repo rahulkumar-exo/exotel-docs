@@ -24079,5 +24079,39 @@
       }
     ],
     "answer_length": 2544
+  },
+  {
+    "timestamp": "2026-06-24T10:27:28.975Z",
+    "response_id": "5accf349-299a-49ca-b5e7-7af647865bdf",
+    "question": "my flow is exotel api and in the flow using ultravox as agent",
+    "question_length": 61,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12528,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Actions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/actions"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 3384
   }
 ]
