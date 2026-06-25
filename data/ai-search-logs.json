@@ -24901,5 +24901,39 @@
       }
     ],
     "answer_length": 4187
+  },
+  {
+    "timestamp": "2026-06-25T09:41:00.798Z",
+    "response_id": "a0a8bdbc-d26a-4106-8c91-2de21bcf785d",
+    "question": "Can trial accounts make actual outbound calls to real phone numbers, or only to test numbers?",
+    "question_length": 93,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2202,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 594
   }
 ]
