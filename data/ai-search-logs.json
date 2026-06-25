@@ -24825,5 +24825,39 @@
       }
     ],
     "answer_length": 2668
+  },
+  {
+    "timestamp": "2026-06-25T09:02:01.428Z",
+    "response_id": "c3cac991-7e84-4dff-9454-4a2cf4bb0cd1",
+    "question": "facing issue",
+    "question_length": 12,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4821,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Customer Callbacks",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/customer-callbacks.mdx"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "WhatsApp Payments",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/payments"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 708
   }
 ]
