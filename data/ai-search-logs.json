@@ -24537,5 +24537,39 @@
       }
     ],
     "answer_length": 1041
+  },
+  {
+    "timestamp": "2026-06-25T08:23:43.023Z",
+    "response_id": "204feff1-731b-4a22-8b21-d8d47cc37f9d",
+    "question": "can i get free number without kyc",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2696,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      }
+    ],
+    "answer_length": 537
   }
 ]
