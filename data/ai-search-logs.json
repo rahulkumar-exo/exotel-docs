@@ -24503,5 +24503,39 @@
       }
     ],
     "answer_length": 2284
+  },
+  {
+    "timestamp": "2026-06-25T08:16:54.706Z",
+    "response_id": "09012dfd-e679-4ff2-9a25-fc261585c0b7",
+    "question": "can i integrate sarvam ai with exotel to test outbound call quality?",
+    "question_length": 68,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5049,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      }
+    ],
+    "answer_length": 1041
   }
 ]
