@@ -24791,5 +24791,39 @@
       }
     ],
     "answer_length": 412
+  },
+  {
+    "timestamp": "2026-06-25T08:52:52.036Z",
+    "response_id": "04321e87-efb1-49db-9634-759c5473dcb0",
+    "question": "ok now im in dashboard and signed up how can i test it??",
+    "question_length": 56,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6086,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Dashboard Overview",
+        "product": "getting-started",
+        "url": "/docs/getting-started/dashboard-overview"
+      }
+    ],
+    "answer_length": 2668
   }
 ]
