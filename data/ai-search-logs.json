@@ -24605,5 +24605,39 @@
       }
     ],
     "answer_length": 4561
+  },
+  {
+    "timestamp": "2026-06-25T08:35:56.486Z",
+    "response_id": "e2a87901-8463-4769-b5b3-725b11254e87",
+    "question": "Does Exotel support Hindi and Marathi voices? What language codes should we use?",
+    "question_length": 80,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2535,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Freshdesk",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 380
   }
 ]
