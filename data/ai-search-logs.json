@@ -24435,5 +24435,39 @@
       }
     ],
     "answer_length": 1608
+  },
+  {
+    "timestamp": "2026-06-25T08:14:55.724Z",
+    "response_id": "460c81f9-6a10-4938-8140-ad24c29d4a10",
+    "question": "i want to test exotel calling how can i test it ?",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5187,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      },
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      }
+    ],
+    "answer_length": 2339
   }
 ]
