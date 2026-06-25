@@ -24715,5 +24715,13 @@
     "response_time_ms": 2106,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-25T08:50:25.793Z",
+    "question": "i want to test exotel without kyc what options do i have ?",
+    "question_length": 58,
+    "response_time_ms": 944,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
