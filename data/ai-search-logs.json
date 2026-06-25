@@ -25181,5 +25181,39 @@
       }
     ],
     "answer_length": 1055
+  },
+  {
+    "timestamp": "2026-06-25T18:24:08.551Z",
+    "response_id": "1376778b-9bde-4fc8-8d26-3e876abfb9d6",
+    "question": "just tell me in voice calls is there ant way like sip or any ither thing where i can test exotel voice telephony locally?",
+    "question_length": 121,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5973,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "Voice API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/voice-faqs"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 1208
   }
 ]
