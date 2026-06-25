@@ -24673,5 +24673,39 @@
       }
     ],
     "answer_length": 269
+  },
+  {
+    "timestamp": "2026-06-25T08:49:08.812Z",
+    "response_id": "1a0ee7ba-64cc-4643-bcda-69e1ab0bae53",
+    "question": "API Version & Endpoint: Are we using Exotel's latest REST API, and what's the base URL? (e.g., https://api.exotel.com/v2/... or something else?)",
+    "question_length": 144,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6197,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 817
   }
 ]
