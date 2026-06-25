@@ -24757,5 +24757,39 @@
       }
     ],
     "answer_length": 367
+  },
+  {
+    "timestamp": "2026-06-25T08:51:09.544Z",
+    "response_id": "81377d4a-fd80-4833-9563-9cb71a1b4aee",
+    "question": "can you give link for dashboard",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1259,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "getting-started",
+        "url": "/docs/getting-started/overview"
+      }
+    ],
+    "answer_length": 412
   }
 ]
