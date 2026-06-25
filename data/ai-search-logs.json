@@ -25139,5 +25139,13 @@
       }
     ],
     "answer_length": 936
+  },
+  {
+    "timestamp": "2026-06-25T11:55:17.269Z",
+    "question": "What's Exotel's SIP server address?",
+    "question_length": 35,
+    "response_time_ms": 1208,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
