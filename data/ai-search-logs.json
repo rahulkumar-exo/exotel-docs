@@ -25215,5 +25215,39 @@
       }
     ],
     "answer_length": 1208
+  },
+  {
+    "timestamp": "2026-06-25T18:25:01.064Z",
+    "response_id": "0748e94d-43bc-4987-9235-23853ada1c2b",
+    "question": "for it do i need to do kyc ?",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3023,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 874
   }
 ]
