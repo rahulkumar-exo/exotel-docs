@@ -24935,5 +24935,39 @@
       }
     ],
     "answer_length": 594
+  },
+  {
+    "timestamp": "2026-06-25T09:41:45.424Z",
+    "response_id": "ec89eacf-205c-444a-b0d6-b9b3945a68b3",
+    "question": "What are the limitations of trial accounts?\nCan you make outbound calls to real numbers on trial?\nDo you need to whitelist numbers first?\nIs there a SIP gateway option like Plivo had?",
+    "question_length": 183,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9408,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 2042
   }
 ]
