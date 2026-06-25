@@ -25105,5 +25105,39 @@
       }
     ],
     "answer_length": 1397
+  },
+  {
+    "timestamp": "2026-06-25T11:54:09.392Z",
+    "response_id": "8213b79b-621d-4539-9d73-2e9d339e814d",
+    "question": "SIP Endpoin",
+    "question_length": 11,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11256,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      }
+    ],
+    "answer_length": 936
   }
 ]
