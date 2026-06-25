@@ -24401,5 +24401,39 @@
     "response_time_ms": 2209,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-06-25T07:38:19.436Z",
+    "response_id": "f257cbd1-fa8b-4bd6-8762-1b115ea5aa85",
+    "question": "ok i want to do concurrent calls from india at a specific time , what maximum amount of calls can i send?",
+    "question_length": 105,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7248,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      }
+    ],
+    "answer_length": 1608
   }
 ]
