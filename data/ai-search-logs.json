@@ -25249,5 +25249,39 @@
       }
     ],
     "answer_length": 874
+  },
+  {
+    "timestamp": "2026-06-26T05:37:51.682Z",
+    "response_id": "e965e1f9-2e5e-4b57-8b60-81648928160b",
+    "question": "does exotel send the call from  as a parameter when the inbound call is made",
+    "question_length": 76,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10460,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 946
   }
 ]
