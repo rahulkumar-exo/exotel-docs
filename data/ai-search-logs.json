@@ -25351,5 +25351,39 @@
       }
     ],
     "answer_length": 773
+  },
+  {
+    "timestamp": "2026-06-26T10:34:49.043Z",
+    "response_id": "523914c1-8ce3-420f-b03c-5247b120d5c8",
+    "question": "to get list of all numbers",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3018,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns.mdx"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes.mdx"
+      },
+      {
+        "title": "List All Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/bulk-campaign-details"
+      }
+    ],
+    "answer_length": 1129
   }
 ]
