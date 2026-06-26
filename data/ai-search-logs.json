@@ -25317,5 +25317,39 @@
       }
     ],
     "answer_length": 726
+  },
+  {
+    "timestamp": "2026-06-26T10:33:42.252Z",
+    "response_id": "29e8193b-98cd-4d42-b04c-8e1c985166b2",
+    "question": "is there any api from exotel side to check my subscribed all numbers by my account creds if yes give me api and inputs and responce type",
+    "question_length": 136,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3418,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 773
   }
 ]
