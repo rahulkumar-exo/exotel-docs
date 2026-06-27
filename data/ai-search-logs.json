@@ -25487,5 +25487,39 @@
       }
     ],
     "answer_length": 226
+  },
+  {
+    "timestamp": "2026-06-27T08:12:17.609Z",
+    "response_id": "53eb61b0-6bbf-4468-bdda-1690d5707927",
+    "question": "Where can i fiind call sid",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5645,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      }
+    ],
+    "answer_length": 2732
   }
 ]
