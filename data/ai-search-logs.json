@@ -25385,5 +25385,39 @@
       }
     ],
     "answer_length": 1129
+  },
+  {
+    "timestamp": "2026-06-27T07:46:50.065Z",
+    "response_id": "c7dfb688-67ca-4fa1-9a45-6f6bf3dbdaef",
+    "question": "what are ate StatusCallbackEvents for V3 voice",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3176,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 300
   }
 ]
