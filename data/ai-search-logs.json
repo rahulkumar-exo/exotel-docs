@@ -25419,5 +25419,39 @@
       }
     ],
     "answer_length": 300
+  },
+  {
+    "timestamp": "2026-06-27T08:01:05.004Z",
+    "response_id": "25db0e29-8d75-4601-a6bb-01a84e167d55",
+    "question": "It is showing 403 Forbidden error",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4838,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      }
+    ],
+    "answer_length": 1214
   }
 ]
