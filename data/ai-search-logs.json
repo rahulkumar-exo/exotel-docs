@@ -25521,5 +25521,39 @@
       }
     ],
     "answer_length": 2732
+  },
+  {
+    "timestamp": "2026-06-27T12:51:15.574Z",
+    "response_id": "724dc5d0-ced0-49bf-a40c-7d8b880c73a8",
+    "question": "exotel suported international voice call?",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3054,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      }
+    ],
+    "answer_length": 736
   }
 ]
