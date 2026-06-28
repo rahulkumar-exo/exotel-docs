@@ -25691,5 +25691,39 @@
       }
     ],
     "answer_length": 676
+  },
+  {
+    "timestamp": "2026-06-28T10:05:45.735Z",
+    "response_id": "a0008b53-1608-417d-bd64-098d52ecc57d",
+    "question": "When a call is answered, Exotel opens a WebSocket to your endpoint and streams raw PCM audio every ~100 ms. Send audio back on the same socket to speak to the caller.\n\nit says so here, so when i get a media event in my websocket with sampling rate of 16000 , what should be the byte array size?",
+    "question_length": 294,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9192,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 1023
   }
 ]
