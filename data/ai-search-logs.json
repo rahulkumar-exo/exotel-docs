@@ -25929,5 +25929,39 @@
       }
     ],
     "answer_length": 1267
+  },
+  {
+    "timestamp": "2026-06-28T10:14:14.043Z",
+    "response_id": "1be5c6ad-2ba0-4d25-be8b-c26a56a6841a",
+    "question": "the voicebot does not show anything with setting Media format",
+    "question_length": 61,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11090,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 1724
   }
 ]
