@@ -26167,5 +26167,39 @@
       }
     ],
     "answer_length": 2908
+  },
+  {
+    "timestamp": "2026-06-28T10:42:49.783Z",
+    "response_id": "a311f34b-429a-4ae3-983c-2215c3cc4950",
+    "question": "{\n  \"event\": \"media\",\n  \"sequence_number\": 3,\n  \"stream_sid\": \"<stream_sid>\",\n  \"media\": {\n    \"chunk\": 2,\n    \"timestamp\": \"10\",\n    \"payload\": \"<base64_encoded_audio>\"\n  }\n}\n\nwhy do i see here sequence number and chunk param, so for each sequence number i can have 100ms audio and chunk will be split for that 100ms ?",
+    "question_length": 319,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4445,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      }
+    ],
+    "answer_length": 686
   }
 ]
