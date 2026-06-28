@@ -25997,5 +25997,39 @@
       }
     ],
     "answer_length": 621
+  },
+  {
+    "timestamp": "2026-06-28T10:16:46.422Z",
+    "response_id": "a8118845-b8c4-4610-bb67-c73ad9aa1369",
+    "question": "i run right now the trial mode, is this why i dont see it?",
+    "question_length": 58,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5911,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 1405
   }
 ]
