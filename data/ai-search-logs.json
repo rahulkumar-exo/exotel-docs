@@ -25725,5 +25725,39 @@
       }
     ],
     "answer_length": 1023
+  },
+  {
+    "timestamp": "2026-06-28T10:06:38.043Z",
+    "response_id": "8ed9230e-3393-4d25-8bff-6f62f3e68217",
+    "question": "but i only see 640 bytes , it is sending every 200 ms",
+    "question_length": 53,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14571,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Services Provided by Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/services"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      },
+      {
+        "title": "Combined Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/combined-analytics"
+      },
+      {
+        "title": "Services Provided by Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/services"
+      }
+    ],
+    "answer_length": 1887
   }
 ]
