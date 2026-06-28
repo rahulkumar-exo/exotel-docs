@@ -25963,5 +25963,39 @@
       }
     ],
     "answer_length": 1724
+  },
+  {
+    "timestamp": "2026-06-28T10:14:55.967Z",
+    "response_id": "67b55f7c-0336-4a10-a68c-e98ff932f3c2",
+    "question": "will mulaw have for every 100ms at 8khz byte array size of 640?",
+    "question_length": 63,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4086,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      }
+    ],
+    "answer_length": 621
   }
 ]
