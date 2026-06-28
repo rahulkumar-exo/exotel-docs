@@ -26099,5 +26099,39 @@
       }
     ],
     "answer_length": 1134
+  },
+  {
+    "timestamp": "2026-06-28T10:32:56.544Z",
+    "response_id": "073e76b4-ffb9-4b6d-92d0-ca4783915305",
+    "question": "https://developer.exotel.com/docs/agentstream/stream-voicebot-applet\n\nin this it is mentioned as \nAll audio payloads are sent as raw/slin (16-bit, 8kHz, mono PCM little-endian) encoded in base64.",
+    "question_length": 195,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6610,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes.mdx"
+      },
+      {
+        "title": "Make Call",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/make-call"
+      }
+    ],
+    "answer_length": 1693
   }
 ]
