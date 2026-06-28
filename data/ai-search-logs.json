@@ -26065,5 +26065,39 @@
       }
     ],
     "answer_length": 1373
+  },
+  {
+    "timestamp": "2026-06-28T10:31:53.232Z",
+    "response_id": "5cbfc8a4-30e8-4dde-a172-ce9a85fc3dcb",
+    "question": "i see two different things mentioned in two guides one is beta guide, which to trust, one says by default the media format in pcm and the second says by default it is mu-law",
+    "question_length": 173,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5610,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 1134
   }
 ]
