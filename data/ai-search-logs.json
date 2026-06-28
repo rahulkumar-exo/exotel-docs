@@ -26133,5 +26133,39 @@
       }
     ],
     "answer_length": 1693
+  },
+  {
+    "timestamp": "2026-06-28T10:34:42.986Z",
+    "response_id": "16df5959-f289-41c6-a73a-a0205cc45643",
+    "question": "moreover i see i only recieve 640 bytes per call, which could explain me getting 8khz every 40 ms , or 16 khz every 20 ms , how can i know this now",
+    "question_length": 147,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12345,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 2908
   }
 ]
