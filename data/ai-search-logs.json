@@ -25657,5 +25657,39 @@
       }
     ],
     "answer_length": 534
+  },
+  {
+    "timestamp": "2026-06-28T10:04:39.378Z",
+    "response_id": "39cbe951-8114-48a4-a305-8a2b0567da9e",
+    "question": "in this page it says exotel streams 100ms data to my websocket per call, but i only see byte array size as 640 , configured sampling percentage as 16000",
+    "question_length": 152,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4352,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Data Privacy & Retention",
+        "product": "faqs",
+        "url": "/docs/faqs/data-privacy"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Security & Compliance FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/security-compliance"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 676
   }
 ]
