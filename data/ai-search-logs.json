@@ -25793,5 +25793,39 @@
       }
     ],
     "answer_length": 1256
+  },
+  {
+    "timestamp": "2026-06-28T10:09:52.224Z",
+    "response_id": "04ffc64b-f84d-46aa-a638-435b3d66404d",
+    "question": "wss://lmvdjj20.euw.devtunnels.ms:8080/ws/audio?sample-rate=16000 in applet config, i configured this , will this now stream pcm16 raw audio",
+    "question_length": 139,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4814,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 1170
   }
 ]
