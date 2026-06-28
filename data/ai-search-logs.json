@@ -26031,5 +26031,39 @@
       }
     ],
     "answer_length": 1405
+  },
+  {
+    "timestamp": "2026-06-28T10:25:41.538Z",
+    "response_id": "55726a69-b2dd-423c-8cfe-6e073ada13d8",
+    "question": "but i still recieve 640 bytes of data with this , what does that mean, it does not look like it is sent every 100ms",
+    "question_length": 115,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8651,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Data Privacy & Retention",
+        "product": "faqs",
+        "url": "/docs/faqs/data-privacy"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Combined Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/combined-analytics"
+      }
+    ],
+    "answer_length": 1373
   }
 ]
