@@ -25861,5 +25861,39 @@
       }
     ],
     "answer_length": 976
+  },
+  {
+    "timestamp": "2026-06-28T10:11:35.685Z",
+    "response_id": "c4f1488a-2816-4666-b52b-b6d112591bdb",
+    "question": "no section called applet settings",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5437,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Lead Assist (ExoBridge - Settings)",
+        "product": "lead-assist-settings",
+        "url": "/docs/lead-assist-settings/overview"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      }
+    ],
+    "answer_length": 1630
   }
 ]
