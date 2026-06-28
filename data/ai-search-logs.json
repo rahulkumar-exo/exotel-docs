@@ -25623,5 +25623,39 @@
       }
     ],
     "answer_length": 4225
+  },
+  {
+    "timestamp": "2026-06-28T09:49:28.845Z",
+    "response_id": "a1190472-d73f-4073-8edb-7237d93b2816",
+    "question": "WHat are callerId for Bridge call?",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4558,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Media Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/media-messages"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Bot Prompts",
+        "product": "chatbot",
+        "url": "/docs/chatbot/bot-prompts"
+      }
+    ],
+    "answer_length": 534
   }
 ]
