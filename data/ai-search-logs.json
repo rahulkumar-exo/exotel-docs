@@ -26269,5 +26269,39 @@
       }
     ],
     "answer_length": 1483
+  },
+  {
+    "timestamp": "2026-06-29T04:24:08.809Z",
+    "response_id": "4f3e57c8-a8dc-4066-95bd-ec876f29ebe1",
+    "question": "I wnat to use whatsapp to send reminders whicch apis should i use",
+    "question_length": 65,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8091,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      }
+    ],
+    "answer_length": 3985
   }
 ]
