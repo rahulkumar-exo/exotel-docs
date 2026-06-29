@@ -26201,5 +26201,39 @@
       }
     ],
     "answer_length": 686
+  },
+  {
+    "timestamp": "2026-06-29T03:25:08.306Z",
+    "response_id": "4232d300-6d5d-41dd-be81-8f854e6cc2f7",
+    "question": "080-458-89122 - can i buy these types of numbers using api?",
+    "question_length": 59,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3481,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      }
+    ],
+    "answer_length": 556
   }
 ]
