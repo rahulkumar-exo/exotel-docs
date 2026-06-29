@@ -26303,5 +26303,39 @@
       }
     ],
     "answer_length": 3985
+  },
+  {
+    "timestamp": "2026-06-29T04:25:03.397Z",
+    "response_id": "ad5131c8-6713-488c-82fb-e5e72deee7e7",
+    "question": "I jave a singapor based account i cannot use v2 there suggest v1",
+    "question_length": 64,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6011,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      }
+    ],
+    "answer_length": 976
   }
 ]
