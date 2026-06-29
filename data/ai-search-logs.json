@@ -26983,5 +26983,39 @@
       }
     ],
     "answer_length": 3897
+  },
+  {
+    "timestamp": "2026-06-29T12:06:24.170Z",
+    "response_id": "aa5e3cc6-c56e-4821-805c-fcacf9401124",
+    "question": "for India based SMSes, do I need to send complete body of SMS? can i just not send array of values corresponding to the template id?",
+    "question_length": 132,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6544,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Templates",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-templates"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 1611
   }
 ]
