@@ -26473,5 +26473,39 @@
       }
     ],
     "answer_length": 909
+  },
+  {
+    "timestamp": "2026-06-29T10:17:46.972Z",
+    "response_id": "d4c05734-7bd7-48e9-b0d9-2c2f8416b0f2",
+    "question": "Connect me with an agent",
+    "question_length": 24,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1624,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Parallel Ringing",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/parallel-ringing"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 176
   }
 ]
