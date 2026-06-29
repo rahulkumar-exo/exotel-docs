@@ -26779,5 +26779,39 @@
       }
     ],
     "answer_length": 387
+  },
+  {
+    "timestamp": "2026-06-29T11:44:08.295Z",
+    "response_id": "fb7a0336-da5b-4527-bb06-22f7701b4f45",
+    "question": "1. INBOUND calls (patient/boss calls your number)\n   → Webhook hit → return XML → open WebSocket\n   → Bidirectional audio stream (you send TTS back)\n\n2. OUTBOUND calls (your server initiates)\n   → API call → patient picks up → webhook hit\n   → Same WebSocket flow\n\n3. Indian +91 number\n   → TRAI compliant\n   → Patients trust local number\n\n4. WebSocket BIDIRECTIONAL audio\n   → μ-law 8kHz (same as Twilio)\n   → You receive caller audio chunks\n   → You inject TTS audio back in real-time\n   → THIS IS ",
+    "question_length": 529,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14493,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 5018
   }
 ]
