@@ -26405,5 +26405,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-06-29T07:59:29.326Z",
+    "response_id": "3516698a-4a58-48e8-97e4-578cd14fbbec",
+    "question": "bidirectional stream",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5069,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Using Exotel Legs APIs to Start a Bot Stream with Optional Greeting",
+        "product": "agentstream",
+        "url": "/docs/agentstream/bot-stream-legs-api"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/developer-guide"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 1798
   }
 ]
