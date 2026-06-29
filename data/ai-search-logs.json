@@ -27017,5 +27017,39 @@
       }
     ],
     "answer_length": 1611
+  },
+  {
+    "timestamp": "2026-06-29T12:09:14.402Z",
+    "response_id": "ef7e443c-dd6e-4fc0-8494-5863ef0ba3c1",
+    "question": "what about\nMessage Types: \n- Transactional: Order confirmations, OTPs, alerts\n\n- Service Implicit: Service updates, notifications\n\n- Promotional: Marketing messages, offers",
+    "question_length": 172,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6619,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/status-codes"
+      },
+      {
+        "title": "WhatsApp Payments",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/payments"
+      },
+      {
+        "title": "DLT Template Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-template-registration"
+      }
+    ],
+    "answer_length": 3831
   }
 ]
