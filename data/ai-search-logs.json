@@ -26881,5 +26881,39 @@
       }
     ],
     "answer_length": 4261
+  },
+  {
+    "timestamp": "2026-06-29T11:52:04.726Z",
+    "response_id": "9cc762ea-859c-4920-93c7-53ea09cd7719",
+    "question": "Outbound → StreamUrl via API \n\ngive me all the documentation and all the information how i do this \nThis is critical for:\n→ Pre-appointment reminder calls\n→ Feedback calls\n→ Boss AI outbound",
+    "question_length": 190,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7229,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1490
   }
 ]
