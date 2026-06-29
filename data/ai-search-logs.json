@@ -27119,5 +27119,13 @@
       }
     ],
     "answer_length": 575
+  },
+  {
+    "timestamp": "2026-06-29T14:32:11.009Z",
+    "question": "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect does api_token and <api_key> should be public like this",
+    "question_length": 137,
+    "response_time_ms": 1661,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
