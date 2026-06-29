@@ -26371,5 +26371,39 @@
       }
     ],
     "answer_length": 5541
+  },
+  {
+    "timestamp": "2026-06-29T07:53:45.142Z",
+    "response_id": "961e2829-7de9-4276-a3a8-c085a477ffdd",
+    "question": "Charges for calls",
+    "question_length": 17,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2437,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Automated Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/automated-calls"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      }
+    ],
+    "answer_length": 176
   }
 ]
