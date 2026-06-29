@@ -26813,5 +26813,39 @@
       }
     ],
     "answer_length": 5018
+  },
+  {
+    "timestamp": "2026-06-29T11:45:49.221Z",
+    "response_id": "98892da5-76f2-4d11-b5fb-1660adba3466",
+    "question": "well i have already the agent was in my python sever i want the number that \n\ndo this all \n\n1. INBOUND calls (patient/boss calls your number)\n   → Webhook hit → return XML → open WebSocket\n   → Bidirectional audio stream (you send TTS back)\n\n2. OUTBOUND calls (your server initiates)\n   → API call → patient picks up → webhook hit\n   → Same WebSocket flow\n\n3. Indian +91 number\n   → TRAI compliant\n   → Patients trust local number\n\n4. WebSocket BIDIRECTIONAL audio\n   → μ-law 8kHz (same as Twilio)\n  ",
+    "question_length": 632,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14858,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 5519
   }
 ]
