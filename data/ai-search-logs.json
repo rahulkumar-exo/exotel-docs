@@ -26439,5 +26439,39 @@
       }
     ],
     "answer_length": 1798
+  },
+  {
+    "timestamp": "2026-06-29T10:03:55.783Z",
+    "response_id": "216dad9e-1e27-4732-a3b8-5924f4256f99",
+    "question": "Tell me about any API that has recording callback",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5152,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 909
   }
 ]
