@@ -27739,5 +27739,39 @@
       }
     ],
     "answer_length": 365
+  },
+  {
+    "timestamp": "2026-06-30T11:24:00.085Z",
+    "response_id": "3dea9d2b-f686-4138-9107-42f3027e2f38",
+    "question": "can i make a outbound call with my ai agent ?",
+    "question_length": 45,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6446,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      }
+    ],
+    "answer_length": 1022
   }
 ]
