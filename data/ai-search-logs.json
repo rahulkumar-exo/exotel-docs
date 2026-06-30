@@ -27229,5 +27229,39 @@
       }
     ],
     "answer_length": 1725
+  },
+  {
+    "timestamp": "2026-06-30T05:19:35.444Z",
+    "response_id": "32aa9d9a-947b-422f-883b-6cb14f7f9cd0",
+    "question": "password policy",
+    "question_length": 15,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2777,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Devices",
+        "product": "users",
+        "url": "/docs/users/api-reference/manage-devices"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      }
+    ],
+    "answer_length": 499
   }
 ]
