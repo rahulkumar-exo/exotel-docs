@@ -27807,5 +27807,39 @@
       }
     ],
     "answer_length": 1437
+  },
+  {
+    "timestamp": "2026-06-30T11:27:05.125Z",
+    "response_id": "4d4ca503-a3b1-4c7d-916b-c15d40e12c2a",
+    "question": "doest agent stream only work for incoming calls or outgoing as well ?",
+    "question_length": 69,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2743,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 623
   }
 ]
