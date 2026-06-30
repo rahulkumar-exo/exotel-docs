@@ -27773,5 +27773,39 @@
       }
     ],
     "answer_length": 1022
+  },
+  {
+    "timestamp": "2026-06-30T11:24:43.574Z",
+    "response_id": "ac68ced0-e018-4a95-9f2f-d73ba3a9cd80",
+    "question": "can i connect eleven labs with exotel",
+    "question_length": 37,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7319,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1437
   }
 ]
