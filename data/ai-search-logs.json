@@ -27161,5 +27161,39 @@
       }
     ],
     "answer_length": 5159
+  },
+  {
+    "timestamp": "2026-06-30T02:42:06.722Z",
+    "response_id": "d0b5d48f-1cb7-4260-8959-678babfffadd",
+    "question": "In get call API, the price, it is always coming as null. Is there any reason for that?",
+    "question_length": 86,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4966,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 465
   }
 ]
