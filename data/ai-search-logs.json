@@ -27331,5 +27331,39 @@
       }
     ],
     "answer_length": 3576
+  },
+  {
+    "timestamp": "2026-06-30T07:05:57.972Z",
+    "response_id": "81fb40b8-f74e-40a4-b87d-3bb1a0814767",
+    "question": "i wanna know about monthly pricing",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1611,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      }
+    ],
+    "answer_length": 176
   }
 ]
