@@ -27195,5 +27195,39 @@
       }
     ],
     "answer_length": 465
+  },
+  {
+    "timestamp": "2026-06-30T03:01:26.468Z",
+    "response_id": "0808c5b6-b676-47c9-870a-0783e2232f79",
+    "question": "So currently we have a delay of five minutes, even after those five minutes, it is getting null. But in case if I call the same API after a day or so, it is giving some prices. What can be done on top of this to fix this?",
+    "question_length": 221,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6643,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      }
+    ],
+    "answer_length": 1725
   }
 ]
