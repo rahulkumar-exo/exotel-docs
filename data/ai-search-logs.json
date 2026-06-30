@@ -27637,5 +27637,39 @@
       }
     ],
     "answer_length": 2533
+  },
+  {
+    "timestamp": "2026-06-30T10:50:58.531Z",
+    "response_id": "177437bf-bd25-41f7-a913-b2b1d36d39f8",
+    "question": "listen if i want to use the livekit and exotel i have a room of webrtc and send call to telephony will i need a paid account or sip trunk that i have to email u or can i test it with free trail account?",
+    "question_length": 202,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1927,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      }
+    ],
+    "answer_length": 176
   }
 ]
