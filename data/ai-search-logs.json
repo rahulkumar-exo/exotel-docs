@@ -27535,5 +27535,39 @@
       }
     ],
     "answer_length": 2317
+  },
+  {
+    "timestamp": "2026-06-30T07:55:36.372Z",
+    "response_id": "13871af2-5ca0-49e5-800a-fcb09629fb72",
+    "question": "i want to extract the recording",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5256,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Freshdesk Secure Recording Enablement",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk-secure-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 2362
   }
 ]
