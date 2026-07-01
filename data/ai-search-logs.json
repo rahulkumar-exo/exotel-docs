@@ -28181,5 +28181,39 @@
       }
     ],
     "answer_length": 783
+  },
+  {
+    "timestamp": "2026-07-01T09:10:02.413Z",
+    "response_id": "2f60e240-f0b9-48a7-a729-f20547cfdc99",
+    "question": "can i use exotel for below scenario\n* A customer located in India will place a call to an Indian phone number.\n* Once the call is received, exotel should handle the call and establish a WebSocket connection with our backend application for real-time processing.",
+    "question_length": 261,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5025,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 1044
   }
 ]
