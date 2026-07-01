@@ -27467,5 +27467,39 @@
       }
     ],
     "answer_length": 3128
+  },
+  {
+    "timestamp": "2026-07-01T12:09:51.623Z",
+    "response_id": "38bdb3ec-0a14-4346-8fa7-f3db2fb76598",
+    "question": "Can you connect to Agent",
+    "question_length": 24,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13574,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      }
+    ],
+    "answer_length": 4240
   }
 ]
