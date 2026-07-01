@@ -27229,5 +27229,39 @@
       }
     ],
     "answer_length": 1725
+  },
+  {
+    "timestamp": "2026-07-01T09:12:56.596Z",
+    "response_id": "36602784-c2ee-4532-8a74-57e6d6f41079",
+    "question": "does exotel provide indian virtual number",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1746,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      }
+    ],
+    "answer_length": 646
   }
 ]
