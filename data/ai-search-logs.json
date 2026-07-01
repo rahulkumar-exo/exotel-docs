@@ -27501,5 +27501,39 @@
       }
     ],
     "answer_length": 4240
+  },
+  {
+    "timestamp": "2026-07-01T12:10:07.667Z",
+    "response_id": "6c81ed1b-bb35-4929-bf83-a0c2574c785f",
+    "question": "No Human Agent",
+    "question_length": 14,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1734,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      }
+    ],
+    "answer_length": 176
   }
 ]
