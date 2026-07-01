@@ -28113,5 +28113,39 @@
       }
     ],
     "answer_length": 2126
+  },
+  {
+    "timestamp": "2026-07-01T08:37:42.211Z",
+    "response_id": "1c830054-cb45-43c9-9934-2047c5069e37",
+    "question": "but i am using now free credits where we have only one verified number and one exotel number ..so we test the flow we havent added third number to connect to test the flow",
+    "question_length": 171,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11560,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      }
+    ],
+    "answer_length": 2221
   }
 ]
