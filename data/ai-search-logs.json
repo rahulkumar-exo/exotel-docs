@@ -28079,5 +28079,39 @@
       }
     ],
     "answer_length": 372
+  },
+  {
+    "timestamp": "2026-07-01T08:33:22.331Z",
+    "response_id": "f309d844-82b6-4bd0-b2df-d7ca87692399",
+    "question": "the thing is i have created one bot flow inside our bot builder flow..where we have nodes like first we will ask the nuber which we needs to connect.one number will be the customers and another number will be the agents.so we have call now button inside the flow which will go to thw api call node so we just have to connect the call with those two numbers",
+    "question_length": 356,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6196,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      }
+    ],
+    "answer_length": 2126
   }
 ]
