@@ -27297,5 +27297,39 @@
       }
     ],
     "answer_length": 1080
+  },
+  {
+    "timestamp": "2026-07-01T09:49:06.211Z",
+    "response_id": "6c8339fa-2c08-42eb-92fb-0bbee0adea03",
+    "question": "i am able to make call fro the exotel dashboard but when i a hitting the api curl i am getting 403 error",
+    "question_length": 104,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6041,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 1510
   }
 ]
