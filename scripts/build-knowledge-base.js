@@ -70,7 +70,7 @@ function getProductFromPath(filePath) {
 function getDocUrl(filePath) {
   const rel = path.relative(DOCS_DIR, filePath);
   const urlPath = rel
-    .replace(/\.md$/, '')
+    .replace(/\.mdx?$/, '')
     .replace(/\\/g, '/');
   return `/docs/${urlPath}`;
 }

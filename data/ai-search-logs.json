@@ -24291,5 +24291,2943 @@
       }
     ],
     "answer_length": 850
+  },
+  {
+    "timestamp": "2026-06-25T05:28:14.529Z",
+    "response_id": "a63c370d-0048-41be-933f-791e3336bbed",
+    "question": "what is exoconsole",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2571,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      }
+    ],
+    "answer_length": 292
+  },
+  {
+    "timestamp": "2026-06-25T05:28:31.140Z",
+    "response_id": "944666d3-4f27-4df3-914d-83a53139077b",
+    "question": "what is panic room ?",
+    "question_length": 20,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1109,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      }
+    ],
+    "answer_length": 190
+  },
+  {
+    "timestamp": "2026-06-25T06:29:04.642Z",
+    "response_id": "3d511894-3c02-48b2-99f7-f8f0526f1655",
+    "question": "i want to make a call through my react website with call masking",
+    "question_length": 64,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9890,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 2508
+  },
+  {
+    "timestamp": "2026-06-25T07:23:09.036Z",
+    "question": "Campaign API",
+    "question_length": 12,
+    "response_time_ms": 2209,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-06-25T07:38:19.436Z",
+    "response_id": "f257cbd1-fa8b-4bd6-8762-1b115ea5aa85",
+    "question": "ok i want to do concurrent calls from india at a specific time , what maximum amount of calls can i send?",
+    "question_length": 105,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7248,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      }
+    ],
+    "answer_length": 1608
+  },
+  {
+    "timestamp": "2026-06-25T08:14:55.724Z",
+    "response_id": "460c81f9-6a10-4938-8140-ad24c29d4a10",
+    "question": "i want to test exotel calling how can i test it ?",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5187,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      },
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      }
+    ],
+    "answer_length": 2339
+  },
+  {
+    "timestamp": "2026-06-25T08:16:01.635Z",
+    "response_id": "68281679-d3bc-4dc2-bd5c-081b8fa070da",
+    "question": "sip testing avalable?",
+    "question_length": 21,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5700,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      }
+    ],
+    "answer_length": 2284
+  },
+  {
+    "timestamp": "2026-06-25T08:16:54.706Z",
+    "response_id": "09012dfd-e679-4ff2-9a25-fc261585c0b7",
+    "question": "can i integrate sarvam ai with exotel to test outbound call quality?",
+    "question_length": 68,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5049,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      }
+    ],
+    "answer_length": 1041
+  },
+  {
+    "timestamp": "2026-06-25T08:23:43.023Z",
+    "response_id": "204feff1-731b-4a22-8b21-d8d47cc37f9d",
+    "question": "can i get free number without kyc",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2696,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      }
+    ],
+    "answer_length": 537
+  },
+  {
+    "timestamp": "2026-06-25T08:35:12.144Z",
+    "response_id": "d3aef293-604c-4f6c-9d86-7a169802a675",
+    "question": "How to send WhatsApp template messages?",
+    "question_length": 39,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8155,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/status-codes"
+      },
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      }
+    ],
+    "answer_length": 4561
+  },
+  {
+    "timestamp": "2026-06-25T08:35:56.486Z",
+    "response_id": "e2a87901-8463-4769-b5b3-725b11254e87",
+    "question": "Does Exotel support Hindi and Marathi voices? What language codes should we use?",
+    "question_length": 80,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2535,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Freshdesk",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 380
+  },
+  {
+    "timestamp": "2026-06-25T08:36:28.046Z",
+    "response_id": "bb6be22f-58c7-4f03-b59b-d45940a5acbb",
+    "question": "Does Exotel support Hindi and Marathi voices? What language codes should we use?",
+    "question_length": 80,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1935,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Freshdesk",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 269
+  },
+  {
+    "timestamp": "2026-06-25T08:49:08.812Z",
+    "response_id": "1a0ee7ba-64cc-4643-bcda-69e1ab0bae53",
+    "question": "API Version & Endpoint: Are we using Exotel's latest REST API, and what's the base URL? (e.g., https://api.exotel.com/v2/... or something else?)",
+    "question_length": 144,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6197,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 817
+  },
+  {
+    "timestamp": "2026-06-25T08:50:11.918Z",
+    "question": "i want to test exotel without kyc what options do i have ?",
+    "question_length": 58,
+    "response_time_ms": 2106,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-06-25T08:50:25.793Z",
+    "question": "i want to test exotel without kyc what options do i have ?",
+    "question_length": 58,
+    "response_time_ms": 944,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-06-25T08:50:36.353Z",
+    "response_id": "027c4ad8-bc52-4ac5-9eae-30ca96425bbd",
+    "question": "i want to test exotel without kyc what options do i have ?",
+    "question_length": 58,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2454,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      }
+    ],
+    "answer_length": 367
+  },
+  {
+    "timestamp": "2026-06-25T08:51:09.544Z",
+    "response_id": "81377d4a-fd80-4833-9563-9cb71a1b4aee",
+    "question": "can you give link for dashboard",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1259,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "getting-started",
+        "url": "/docs/getting-started/overview"
+      }
+    ],
+    "answer_length": 412
+  },
+  {
+    "timestamp": "2026-06-25T08:52:52.036Z",
+    "response_id": "04321e87-efb1-49db-9634-759c5473dcb0",
+    "question": "ok now im in dashboard and signed up how can i test it??",
+    "question_length": 56,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6086,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Dashboard Overview",
+        "product": "getting-started",
+        "url": "/docs/getting-started/dashboard-overview"
+      }
+    ],
+    "answer_length": 2668
+  },
+  {
+    "timestamp": "2026-06-25T09:02:01.428Z",
+    "response_id": "c3cac991-7e84-4dff-9454-4a2cf4bb0cd1",
+    "question": "facing issue",
+    "question_length": 12,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4821,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Customer Callbacks",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/customer-callbacks.mdx"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "WhatsApp Payments",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/payments"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 708
+  },
+  {
+    "timestamp": "2026-06-25T09:03:09.095Z",
+    "question": "where should i mention channel I don't see any option above",
+    "question_length": 59,
+    "response_time_ms": 1044,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-06-25T09:29:41.798Z",
+    "response_id": "6a022a62-c17f-4cbb-965b-6afa17541d0c",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9803,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 4187
+  },
+  {
+    "timestamp": "2026-06-25T09:41:00.798Z",
+    "response_id": "a0a8bdbc-d26a-4106-8c91-2de21bcf785d",
+    "question": "Can trial accounts make actual outbound calls to real phone numbers, or only to test numbers?",
+    "question_length": 93,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2202,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 594
+  },
+  {
+    "timestamp": "2026-06-25T09:41:45.424Z",
+    "response_id": "ec89eacf-205c-444a-b0d6-b9b3945a68b3",
+    "question": "What are the limitations of trial accounts?\nCan you make outbound calls to real numbers on trial?\nDo you need to whitelist numbers first?\nIs there a SIP gateway option like Plivo had?",
+    "question_length": 183,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9408,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 2042
+  },
+  {
+    "timestamp": "2026-06-25T09:43:35.709Z",
+    "response_id": "2e139bb9-d5f7-4bfa-ae87-49981c7c8aa8",
+    "question": "How do I make a call?",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9289,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 5257
+  },
+  {
+    "timestamp": "2026-06-25T10:09:19.375Z",
+    "response_id": "7a4cb31d-d245-43b5-8a9c-49ea6230c4bb",
+    "question": "How do I make a call?",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 18578,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 4615
+  },
+  {
+    "timestamp": "2026-06-25T10:12:14.892Z",
+    "response_id": "7618a1ab-a565-40ea-ad0c-6e0c81c41851",
+    "question": "Tell me if there's an API endpoint to add whitelisted numbers",
+    "question_length": 61,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5364,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      }
+    ],
+    "answer_length": 258
+  },
+  {
+    "timestamp": "2026-06-25T10:15:07.914Z",
+    "response_id": "b87117a2-3f24-4862-a627-13172b238df2",
+    "question": "sip endpoint available??",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10346,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      }
+    ],
+    "answer_length": 1397
+  },
+  {
+    "timestamp": "2026-06-25T11:54:09.392Z",
+    "response_id": "8213b79b-621d-4539-9d73-2e9d339e814d",
+    "question": "SIP Endpoin",
+    "question_length": 11,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11256,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      }
+    ],
+    "answer_length": 936
+  },
+  {
+    "timestamp": "2026-06-25T11:55:17.269Z",
+    "question": "What's Exotel's SIP server address?",
+    "question_length": 35,
+    "response_time_ms": 1208,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-06-25T13:09:14.507Z",
+    "response_id": "786a78d5-0057-43d8-aa9b-62e94fa4631b",
+    "question": "\"What is my ExoPhone (CallerId) for Voice API?\"",
+    "question_length": 47,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5645,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "ExoPhone Details",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/number-details"
+      },
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      }
+    ],
+    "answer_length": 1055
+  },
+  {
+    "timestamp": "2026-06-25T18:24:08.551Z",
+    "response_id": "1376778b-9bde-4fc8-8d26-3e876abfb9d6",
+    "question": "just tell me in voice calls is there ant way like sip or any ither thing where i can test exotel voice telephony locally?",
+    "question_length": 121,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5973,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "Voice API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/voice-faqs"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 1208
+  },
+  {
+    "timestamp": "2026-06-25T18:25:01.064Z",
+    "response_id": "0748e94d-43bc-4987-9235-23853ada1c2b",
+    "question": "for it do i need to do kyc ?",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3023,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 874
+  },
+  {
+    "timestamp": "2026-06-26T05:37:51.682Z",
+    "response_id": "e965e1f9-2e5e-4b57-8b60-81648928160b",
+    "question": "does exotel send the call from  as a parameter when the inbound call is made",
+    "question_length": 76,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10460,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 946
+  },
+  {
+    "timestamp": "2026-06-26T10:31:30.684Z",
+    "response_id": "64132c1f-9273-4728-8ff3-1f1019b8f546",
+    "question": "Is there any api in which i can send Auth Id and Auth token and I can get the number rented in that account as output?",
+    "question_length": 118,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5944,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 726
+  },
+  {
+    "timestamp": "2026-06-26T10:33:42.252Z",
+    "response_id": "29e8193b-98cd-4d42-b04c-8e1c985166b2",
+    "question": "is there any api from exotel side to check my subscribed all numbers by my account creds if yes give me api and inputs and responce type",
+    "question_length": 136,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3418,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 773
+  },
+  {
+    "timestamp": "2026-06-26T10:34:49.043Z",
+    "response_id": "523914c1-8ce3-420f-b03c-5247b120d5c8",
+    "question": "to get list of all numbers",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3018,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns.mdx"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes.mdx"
+      },
+      {
+        "title": "List All Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/bulk-campaign-details"
+      }
+    ],
+    "answer_length": 1129
+  },
+  {
+    "timestamp": "2026-06-27T07:46:50.065Z",
+    "response_id": "c7dfb688-67ca-4fa1-9a45-6f6bf3dbdaef",
+    "question": "what are ate StatusCallbackEvents for V3 voice",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3176,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 300
+  },
+  {
+    "timestamp": "2026-06-27T08:01:05.004Z",
+    "response_id": "25db0e29-8d75-4601-a6bb-01a84e167d55",
+    "question": "It is showing 403 Forbidden error",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4838,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      }
+    ],
+    "answer_length": 1214
+  },
+  {
+    "timestamp": "2026-06-27T08:04:45.448Z",
+    "response_id": "4d479472-4792-4842-8961-f9be7e963e67",
+    "question": "Where i can find the IP Allow list",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2360,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 226
+  },
+  {
+    "timestamp": "2026-06-27T08:12:17.609Z",
+    "response_id": "53eb61b0-6bbf-4468-bdda-1690d5707927",
+    "question": "Where can i fiind call sid",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5645,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      }
+    ],
+    "answer_length": 2732
+  },
+  {
+    "timestamp": "2026-06-27T12:51:15.574Z",
+    "response_id": "724dc5d0-ced0-49bf-a40c-7d8b880c73a8",
+    "question": "exotel suported international voice call?",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3054,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      }
+    ],
+    "answer_length": 736
+  },
+  {
+    "timestamp": "2026-06-27T12:51:34.125Z",
+    "response_id": "2af900cc-4ee2-4330-aef4-0a93d640eb39",
+    "question": "give me the supported country list",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2098,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 360
+  },
+  {
+    "timestamp": "2026-06-27T15:01:58.168Z",
+    "response_id": "fc3f6f4d-32b9-416e-9396-6a4c26b82f5f",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8536,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 4225
+  },
+  {
+    "timestamp": "2026-06-28T09:49:28.845Z",
+    "response_id": "a1190472-d73f-4073-8edb-7237d93b2816",
+    "question": "WHat are callerId for Bridge call?",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4558,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Media Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/media-messages"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Bot Prompts",
+        "product": "chatbot",
+        "url": "/docs/chatbot/bot-prompts"
+      }
+    ],
+    "answer_length": 534
+  },
+  {
+    "timestamp": "2026-06-28T10:04:39.378Z",
+    "response_id": "39cbe951-8114-48a4-a305-8a2b0567da9e",
+    "question": "in this page it says exotel streams 100ms data to my websocket per call, but i only see byte array size as 640 , configured sampling percentage as 16000",
+    "question_length": 152,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4352,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Data Privacy & Retention",
+        "product": "faqs",
+        "url": "/docs/faqs/data-privacy"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Security & Compliance FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/security-compliance"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 676
+  },
+  {
+    "timestamp": "2026-06-28T10:05:45.735Z",
+    "response_id": "a0008b53-1608-417d-bd64-098d52ecc57d",
+    "question": "When a call is answered, Exotel opens a WebSocket to your endpoint and streams raw PCM audio every ~100 ms. Send audio back on the same socket to speak to the caller.\n\nit says so here, so when i get a media event in my websocket with sampling rate of 16000 , what should be the byte array size?",
+    "question_length": 294,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9192,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 1023
+  },
+  {
+    "timestamp": "2026-06-28T10:06:38.043Z",
+    "response_id": "8ed9230e-3393-4d25-8bff-6f62f3e68217",
+    "question": "but i only see 640 bytes , it is sending every 200 ms",
+    "question_length": 53,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14571,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Services Provided by Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/services"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      },
+      {
+        "title": "Combined Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/combined-analytics"
+      },
+      {
+        "title": "Services Provided by Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/services"
+      }
+    ],
+    "answer_length": 1887
+  },
+  {
+    "timestamp": "2026-06-28T10:08:18.328Z",
+    "response_id": "3fc4d177-76d5-4eaa-85e2-a6720f116bbf",
+    "question": "i meant 20 ms",
+    "question_length": 13,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3959,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 1256
+  },
+  {
+    "timestamp": "2026-06-28T10:09:52.224Z",
+    "response_id": "04ffc64b-f84d-46aa-a638-435b3d66404d",
+    "question": "wss://lmvdjj20.euw.devtunnels.ms:8080/ws/audio?sample-rate=16000 in applet config, i configured this , will this now stream pcm16 raw audio",
+    "question_length": 139,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4814,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 1170
+  },
+  {
+    "timestamp": "2026-06-28T10:10:37.623Z",
+    "response_id": "13f1bf6e-fe27-422b-9833-5d3a009b7152",
+    "question": "give me an example on how to set Media formatin the url",
+    "question_length": 55,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3366,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 976
+  },
+  {
+    "timestamp": "2026-06-28T10:11:35.685Z",
+    "response_id": "c4f1488a-2816-4666-b52b-b6d112591bdb",
+    "question": "no section called applet settings",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5437,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Lead Assist (ExoBridge - Settings)",
+        "product": "lead-assist-settings",
+        "url": "/docs/lead-assist-settings/overview"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      }
+    ],
+    "answer_length": 1630
+  },
+  {
+    "timestamp": "2026-06-28T10:12:50.679Z",
+    "response_id": "dd9e8ece-d6ff-4847-b541-30a4432cc922",
+    "question": "so i need to use passthru as well if i want to change audio format",
+    "question_length": 66,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5055,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 1267
+  },
+  {
+    "timestamp": "2026-06-28T10:14:14.043Z",
+    "response_id": "1be5c6ad-2ba0-4d25-be8b-c26a56a6841a",
+    "question": "the voicebot does not show anything with setting Media format",
+    "question_length": 61,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11090,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 1724
+  },
+  {
+    "timestamp": "2026-06-28T10:14:55.967Z",
+    "response_id": "67b55f7c-0336-4a10-a68c-e98ff932f3c2",
+    "question": "will mulaw have for every 100ms at 8khz byte array size of 640?",
+    "question_length": 63,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4086,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      }
+    ],
+    "answer_length": 621
+  },
+  {
+    "timestamp": "2026-06-28T10:16:46.422Z",
+    "response_id": "a8118845-b8c4-4610-bb67-c73ad9aa1369",
+    "question": "i run right now the trial mode, is this why i dont see it?",
+    "question_length": 58,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5911,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 1405
+  },
+  {
+    "timestamp": "2026-06-28T10:25:41.538Z",
+    "response_id": "55726a69-b2dd-423c-8cfe-6e073ada13d8",
+    "question": "but i still recieve 640 bytes of data with this , what does that mean, it does not look like it is sent every 100ms",
+    "question_length": 115,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8651,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Data Privacy & Retention",
+        "product": "faqs",
+        "url": "/docs/faqs/data-privacy"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Combined Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/combined-analytics"
+      }
+    ],
+    "answer_length": 1373
+  },
+  {
+    "timestamp": "2026-06-28T10:31:53.232Z",
+    "response_id": "5cbfc8a4-30e8-4dde-a172-ce9a85fc3dcb",
+    "question": "i see two different things mentioned in two guides one is beta guide, which to trust, one says by default the media format in pcm and the second says by default it is mu-law",
+    "question_length": 173,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5610,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 1134
+  },
+  {
+    "timestamp": "2026-06-28T10:32:56.544Z",
+    "response_id": "073e76b4-ffb9-4b6d-92d0-ca4783915305",
+    "question": "https://developer.exotel.com/docs/agentstream/stream-voicebot-applet\n\nin this it is mentioned as \nAll audio payloads are sent as raw/slin (16-bit, 8kHz, mono PCM little-endian) encoded in base64.",
+    "question_length": 195,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6610,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes.mdx"
+      },
+      {
+        "title": "Make Call",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/make-call"
+      }
+    ],
+    "answer_length": 1693
+  },
+  {
+    "timestamp": "2026-06-28T10:34:42.986Z",
+    "response_id": "16df5959-f289-41c6-a73a-a0205cc45643",
+    "question": "moreover i see i only recieve 640 bytes per call, which could explain me getting 8khz every 40 ms , or 16 khz every 20 ms , how can i know this now",
+    "question_length": 147,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12345,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 2908
+  },
+  {
+    "timestamp": "2026-06-28T10:42:49.783Z",
+    "response_id": "a311f34b-429a-4ae3-983c-2215c3cc4950",
+    "question": "{\n  \"event\": \"media\",\n  \"sequence_number\": 3,\n  \"stream_sid\": \"<stream_sid>\",\n  \"media\": {\n    \"chunk\": 2,\n    \"timestamp\": \"10\",\n    \"payload\": \"<base64_encoded_audio>\"\n  }\n}\n\nwhy do i see here sequence number and chunk param, so for each sequence number i can have 100ms audio and chunk will be split for that 100ms ?",
+    "question_length": 319,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4445,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      }
+    ],
+    "answer_length": 686
+  },
+  {
+    "timestamp": "2026-06-29T03:25:08.306Z",
+    "response_id": "4232d300-6d5d-41dd-be81-8f854e6cc2f7",
+    "question": "080-458-89122 - can i buy these types of numbers using api?",
+    "question_length": 59,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3481,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      }
+    ],
+    "answer_length": 556
+  },
+  {
+    "timestamp": "2026-06-29T04:23:24.789Z",
+    "response_id": "ea0067f1-66d9-4bad-a401-c1e3aac8af26",
+    "question": "Whatsapp",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2923,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp Commerce",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/commerce"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      }
+    ],
+    "answer_length": 1483
+  },
+  {
+    "timestamp": "2026-06-29T04:24:08.809Z",
+    "response_id": "4f3e57c8-a8dc-4066-95bd-ec876f29ebe1",
+    "question": "I wnat to use whatsapp to send reminders whicch apis should i use",
+    "question_length": 65,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8091,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      }
+    ],
+    "answer_length": 3985
+  },
+  {
+    "timestamp": "2026-06-29T04:25:03.397Z",
+    "response_id": "ad5131c8-6713-488c-82fb-e5e72deee7e7",
+    "question": "I jave a singapor based account i cannot use v2 there suggest v1",
+    "question_length": 64,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6011,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      }
+    ],
+    "answer_length": 976
+  },
+  {
+    "timestamp": "2026-06-29T06:08:16.621Z",
+    "response_id": "c356b63f-38e6-4778-8675-ff571f57f81d",
+    "question": "How do I make a call?",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9584,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 5541
+  },
+  {
+    "timestamp": "2026-06-29T07:53:45.142Z",
+    "response_id": "961e2829-7de9-4276-a3a8-c085a477ffdd",
+    "question": "Charges for calls",
+    "question_length": 17,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2437,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Automated Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/automated-calls"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-06-29T07:59:29.326Z",
+    "response_id": "3516698a-4a58-48e8-97e4-578cd14fbbec",
+    "question": "bidirectional stream",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5069,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Using Exotel Legs APIs to Start a Bot Stream with Optional Greeting",
+        "product": "agentstream",
+        "url": "/docs/agentstream/bot-stream-legs-api"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/developer-guide"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 1798
+  },
+  {
+    "timestamp": "2026-06-29T10:03:55.783Z",
+    "response_id": "216dad9e-1e27-4732-a3b8-5924f4256f99",
+    "question": "Tell me about any API that has recording callback",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5152,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 909
+  },
+  {
+    "timestamp": "2026-06-29T10:17:46.972Z",
+    "response_id": "d4c05734-7bd7-48e9-b0d9-2c2f8416b0f2",
+    "question": "Connect me with an agent",
+    "question_length": 24,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1624,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Parallel Ringing",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/parallel-ringing"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-06-29T10:32:51.133Z",
+    "response_id": "a6e40df4-cd65-4e01-835c-30a5b1592bb1",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4176,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 1068
+  },
+  {
+    "timestamp": "2026-06-29T10:32:55.892Z",
+    "response_id": "5472e04c-4704-4eed-a7f7-44cce1e6aaa0",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3369,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 1475
+  },
+  {
+    "timestamp": "2026-06-29T10:33:00.279Z",
+    "response_id": "de38218d-8399-49b2-812d-81cdb7bf9925",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2860,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 784
+  },
+  {
+    "timestamp": "2026-06-29T10:33:04.431Z",
+    "response_id": "5f598889-bc73-4567-99bf-a0d90d958519",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2695,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 715
+  },
+  {
+    "timestamp": "2026-06-29T10:33:08.802Z",
+    "response_id": "16924b3b-d383-40eb-a0d0-79d33fa14023",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2843,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 987
+  },
+  {
+    "timestamp": "2026-06-29T11:10:30.614Z",
+    "response_id": "7ffd7305-68bd-4ab1-a197-75ac6eaf0607",
+    "question": "35000",
+    "question_length": 5,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2165,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 165
+  },
+  {
+    "timestamp": "2026-06-29T11:10:45.761Z",
+    "response_id": "d84084ca-df5a-4429-8bf6-ff3a7ee6032a",
+    "question": "error code 35000",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4131,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 672
+  },
+  {
+    "timestamp": "2026-06-29T11:11:01.190Z",
+    "response_id": "6d6586f4-738b-474e-876d-b0a73a6a78ea",
+    "question": "calling apo",
+    "question_length": 11,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2098,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      }
+    ],
+    "answer_length": 387
+  },
+  {
+    "timestamp": "2026-06-29T11:44:08.295Z",
+    "response_id": "fb7a0336-da5b-4527-bb06-22f7701b4f45",
+    "question": "1. INBOUND calls (patient/boss calls your number)\n   → Webhook hit → return XML → open WebSocket\n   → Bidirectional audio stream (you send TTS back)\n\n2. OUTBOUND calls (your server initiates)\n   → API call → patient picks up → webhook hit\n   → Same WebSocket flow\n\n3. Indian +91 number\n   → TRAI compliant\n   → Patients trust local number\n\n4. WebSocket BIDIRECTIONAL audio\n   → μ-law 8kHz (same as Twilio)\n   → You receive caller audio chunks\n   → You inject TTS audio back in real-time\n   → THIS IS ",
+    "question_length": 529,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14493,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 5018
+  },
+  {
+    "timestamp": "2026-06-29T11:45:49.221Z",
+    "response_id": "98892da5-76f2-4d11-b5fb-1660adba3466",
+    "question": "well i have already the agent was in my python sever i want the number that \n\ndo this all \n\n1. INBOUND calls (patient/boss calls your number)\n   → Webhook hit → return XML → open WebSocket\n   → Bidirectional audio stream (you send TTS back)\n\n2. OUTBOUND calls (your server initiates)\n   → API call → patient picks up → webhook hit\n   → Same WebSocket flow\n\n3. Indian +91 number\n   → TRAI compliant\n   → Patients trust local number\n\n4. WebSocket BIDIRECTIONAL audio\n   → μ-law 8kHz (same as Twilio)\n  ",
+    "question_length": 632,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14858,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 5519
+  },
+  {
+    "timestamp": "2026-06-29T11:49:44.626Z",
+    "response_id": "341f60ef-551e-4dc1-accf-814362cd635e",
+    "question": "well can u give me all the url and links and all the steps and process to do this",
+    "question_length": 81,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 15813,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 4261
+  },
+  {
+    "timestamp": "2026-06-29T11:52:04.726Z",
+    "response_id": "9cc762ea-859c-4920-93c7-53ea09cd7719",
+    "question": "Outbound → StreamUrl via API \n\ngive me all the documentation and all the information how i do this \nThis is critical for:\n→ Pre-appointment reminder calls\n→ Feedback calls\n→ Boss AI outbound",
+    "question_length": 190,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7229,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1490
+  },
+  {
+    "timestamp": "2026-06-29T12:01:31.435Z",
+    "response_id": "6f54fc26-cbd6-4a51-a9c4-7cc89d746e3e",
+    "question": "Send SMS via API",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8016,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      }
+    ],
+    "answer_length": 3689
+  },
+  {
+    "timestamp": "2026-06-29T12:02:28.942Z",
+    "response_id": "87147223-36a8-4b13-b1c3-706b8833910f",
+    "question": "Send SMS via API",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6529,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      }
+    ],
+    "answer_length": 3897
+  },
+  {
+    "timestamp": "2026-06-29T12:06:24.170Z",
+    "response_id": "aa5e3cc6-c56e-4821-805c-fcacf9401124",
+    "question": "for India based SMSes, do I need to send complete body of SMS? can i just not send array of values corresponding to the template id?",
+    "question_length": 132,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6544,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Templates",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-templates"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 1611
+  },
+  {
+    "timestamp": "2026-06-29T12:09:14.402Z",
+    "response_id": "ef7e443c-dd6e-4fc0-8494-5863ef0ba3c1",
+    "question": "what about\nMessage Types: \n- Transactional: Order confirmations, OTPs, alerts\n\n- Service Implicit: Service updates, notifications\n\n- Promotional: Marketing messages, offers",
+    "question_length": 172,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6619,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/status-codes"
+      },
+      {
+        "title": "WhatsApp Payments",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/payments"
+      },
+      {
+        "title": "DLT Template Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-template-registration"
+      }
+    ],
+    "answer_length": 3831
+  },
+  {
+    "timestamp": "2026-06-29T12:25:30.939Z",
+    "response_id": "ee22a1c2-e506-4254-9e17-492545c47c17",
+    "question": "heartbeat",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7538,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Heartbeat",
+        "product": "heartbeat",
+        "url": "/docs/heartbeat/overview"
+      },
+      {
+        "title": "Heartbeat",
+        "product": "heartbeat",
+        "url": "/docs/heartbeat/overview"
+      },
+      {
+        "title": "Webhook Format",
+        "product": "heartbeat",
+        "url": "/docs/heartbeat/webhook-format"
+      },
+      {
+        "title": "Business Monitoring Dashboard",
+        "product": "use-cases",
+        "url": "/docs/use-cases/business-monitoring-dashboard.mdx"
+      }
+    ],
+    "answer_length": 5039
+  },
+  {
+    "timestamp": "2026-06-29T12:40:15.040Z",
+    "response_id": "7639ae9a-7846-4fad-8a4c-6011b2df4a29",
+    "question": "What are the Voice API status callbacks?",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3753,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 575
+  },
+  {
+    "timestamp": "2026-06-29T14:32:11.009Z",
+    "question": "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect does api_token and <api_key> should be public like this",
+    "question_length": 137,
+    "response_time_ms": 1661,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-06-29T17:39:15.067Z",
+    "response_id": "fa0233b7-4c01-48c6-b1b7-0c9afb56f990",
+    "question": "How do I make a call?",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8484,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 5159
+  },
+  {
+    "timestamp": "2026-06-30T02:42:06.722Z",
+    "response_id": "d0b5d48f-1cb7-4260-8959-678babfffadd",
+    "question": "In get call API, the price, it is always coming as null. Is there any reason for that?",
+    "question_length": 86,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4966,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 465
+  },
+  {
+    "timestamp": "2026-06-30T03:01:26.468Z",
+    "response_id": "0808c5b6-b676-47c9-870a-0783e2232f79",
+    "question": "So currently we have a delay of five minutes, even after those five minutes, it is getting null. But in case if I call the same API after a day or so, it is giving some prices. What can be done on top of this to fix this?",
+    "question_length": 221,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6643,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      }
+    ],
+    "answer_length": 1725
   }
 ]
