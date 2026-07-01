@@ -27705,5 +27705,39 @@
       }
     ],
     "answer_length": 811
+  },
+  {
+    "timestamp": "2026-07-01T13:30:22.644Z",
+    "response_id": "5f2424fc-09ee-44e5-83eb-ac6691969ec8",
+    "question": "How does Exotel send phone numbers in pipecat websocket?",
+    "question_length": 56,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3465,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 447
   }
 ]
