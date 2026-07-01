@@ -27909,5 +27909,39 @@
       }
     ],
     "answer_length": 1272
+  },
+  {
+    "timestamp": "2026-07-01T06:46:49.551Z",
+    "response_id": "d8f340e8-37c3-4d79-955e-64220079cbc6",
+    "question": "how about fetching phonumbers, i need the get api url for fetch available phonumbers",
+    "question_length": 84,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2280,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 407
   }
 ]
