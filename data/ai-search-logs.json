@@ -28011,5 +28011,39 @@
       }
     ],
     "answer_length": 525
+  },
+  {
+    "timestamp": "2026-07-01T07:16:07.296Z",
+    "response_id": "33329705-2a9b-4feb-a685-bfaae584dde8",
+    "question": "Get Campaign Leads\n api giving error 400",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3658,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      }
+    ],
+    "answer_length": 674
   }
 ]
