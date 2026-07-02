@@ -28181,5 +28181,39 @@
       }
     ],
     "answer_length": 1566
+  },
+  {
+    "timestamp": "2026-07-02T19:13:31.265Z",
+    "response_id": "8f2e75c3-c82e-4611-9fc1-664bcc5ab452",
+    "question": "i want to know the price for the virtual phone number? I just need a virtual phone number.",
+    "question_length": 90,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2877,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 176
   }
 ]
