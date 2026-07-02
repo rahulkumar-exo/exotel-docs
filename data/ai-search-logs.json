@@ -28147,5 +28147,39 @@
       }
     ],
     "answer_length": 4947
+  },
+  {
+    "timestamp": "2026-07-02T18:26:28.391Z",
+    "response_id": "eee9247d-71ec-4a09-9735-ef07c7a95a6c",
+    "question": "create a curl for passthru applet",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6337,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      }
+    ],
+    "answer_length": 1566
   }
 ]
