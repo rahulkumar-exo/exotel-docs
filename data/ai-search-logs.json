@@ -28079,5 +28079,39 @@
       }
     ],
     "answer_length": 4321
+  },
+  {
+    "timestamp": "2026-07-02T10:23:38.233Z",
+    "response_id": "da62b642-3ffb-4ba9-9a28-faa6afc6e8e3",
+    "question": "can we run this curl with multiple numbers in the from number with one curel",
+    "question_length": 76,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3493,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Zoho Desk",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-desk"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      }
+    ],
+    "answer_length": 607
   }
 ]
