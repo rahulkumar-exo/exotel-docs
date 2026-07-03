@@ -28657,5 +28657,39 @@
       }
     ],
     "answer_length": 2125
+  },
+  {
+    "timestamp": "2026-07-03T07:14:20.292Z",
+    "response_id": "5d9d0fb9-35ce-428f-9db7-c01f73955d0f",
+    "question": "lead assist",
+    "question_length": 11,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7032,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Lead Assist (ExoBridge - GreenPin)",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/overview"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - GreenVN)",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/overview"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - Settings)",
+        "product": "lead-assist-settings",
+        "url": "/docs/lead-assist-settings/overview"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - GreenPin)",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/overview"
+      }
+    ],
+    "answer_length": 3478
   }
 ]
