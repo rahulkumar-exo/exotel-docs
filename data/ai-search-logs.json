@@ -28419,5 +28419,39 @@
       }
     ],
     "answer_length": 831
+  },
+  {
+    "timestamp": "2026-07-03T05:27:50.164Z",
+    "response_id": "64a21dff-129c-4b2b-914e-434205a1a7c3",
+    "question": "Can one ExoPhone support millions of different QR codes and dynamically route every incoming call to different owners using my own database and webhook?",
+    "question_length": 152,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 17533,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 2328
   }
 ]
