@@ -28487,5 +28487,39 @@
       }
     ],
     "answer_length": 1156
+  },
+  {
+    "timestamp": "2026-07-03T05:30:03.747Z",
+    "response_id": "7b2fef45-5a0b-49e1-9433-0baf1fe89ddb",
+    "question": "Can Connect Applet fetch destination phone numbers dynamically from my PHP API instead of hardcoded numbers? Please provide the exact response format.",
+    "question_length": 150,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6377,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/connect"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 1595
   }
 ]
