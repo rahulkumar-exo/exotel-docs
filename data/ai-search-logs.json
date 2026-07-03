@@ -28555,5 +28555,39 @@
       }
     ],
     "answer_length": 2768
+  },
+  {
+    "timestamp": "2026-07-03T05:30:50.812Z",
+    "response_id": "f9fa596e-b343-496c-9830-6cc8615c4950",
+    "question": "Can I send custom metadata like QR_ID, SESSION_ID, CALL_TOKEN, USER_ID to Exotel and receive them back in webhooks?",
+    "question_length": 115,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6460,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 1295
   }
 ]
