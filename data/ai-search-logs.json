@@ -28623,5 +28623,39 @@
       }
     ],
     "answer_length": 1560
+  },
+  {
+    "timestamp": "2026-07-03T05:50:49.471Z",
+    "response_id": "f30d44a1-c6e0-4a9b-9148-b99d7088dfbb",
+    "question": "legs api",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4333,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Manage Legs & Bridges",
+        "product": "legs",
+        "url": "/docs/legs/api-reference/manage-legs"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 2125
   }
 ]
