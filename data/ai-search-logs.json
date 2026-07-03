@@ -28589,5 +28589,39 @@
       }
     ],
     "answer_length": 1295
+  },
+  {
+    "timestamp": "2026-07-03T05:31:10.709Z",
+    "response_id": "2ab6ad2f-0011-4721-8544-301b0dc928d7",
+    "question": "What parameters are sent to my webhook when someone calls an ExoPhone? Do you send Caller Number, Called Number, Call SID, Custom Parameters, Timestamp etc.?",
+    "question_length": 157,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11037,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Custom Caller ID",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/custom-caller-id"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Custom Caller ID",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/custom-caller-id"
+      }
+    ],
+    "answer_length": 1560
   }
 ]
