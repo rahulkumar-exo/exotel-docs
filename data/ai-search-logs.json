@@ -28691,5 +28691,39 @@
       }
     ],
     "answer_length": 3478
+  },
+  {
+    "timestamp": "2026-07-03T07:19:07.962Z",
+    "response_id": "1b9abbbb-553c-459e-9aa1-d3a11a0f8c95",
+    "question": "When making a call via the API, pass a StatusCallback URL parameter\n\nwhat does it mean by this, rider calls the greenvn after the connection is created,",
+    "question_length": 152,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3336,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 567
   }
 ]
