@@ -28759,5 +28759,39 @@
       }
     ],
     "answer_length": 2395
+  },
+  {
+    "timestamp": "2026-07-03T07:44:27.795Z",
+    "response_id": "d3d48b60-cecd-4edf-8c8f-1bdb7f7fc3d4",
+    "question": "what is latency for stream and voice bot applet",
+    "question_length": 47,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2822,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      }
+    ],
+    "answer_length": 1376
   }
 ]
