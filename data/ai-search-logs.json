@@ -28827,5 +28827,39 @@
       }
     ],
     "answer_length": 347
+  },
+  {
+    "timestamp": "2026-07-03T08:44:12.931Z",
+    "response_id": "d26c61f0-7d43-4911-b3e8-8ba26624c002",
+    "question": "listen whisper and barge",
+    "question_length": 24,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3651,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Billing Overview",
+        "product": "billing",
+        "url": "/docs/billing/overview"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 373
   }
 ]
