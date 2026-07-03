@@ -28793,5 +28793,39 @@
       }
     ],
     "answer_length": 1376
+  },
+  {
+    "timestamp": "2026-07-03T08:42:28.739Z",
+    "response_id": "a2b402a7-e232-4d0c-8cc3-8bea5caa01ea",
+    "question": "give curl of this url: https://developer.exotel.com/docs/voice-v1/api-reference/connect-to-flow",
+    "question_length": 95,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3356,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Customer Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/customer-management"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      }
+    ],
+    "answer_length": 347
   }
 ]
