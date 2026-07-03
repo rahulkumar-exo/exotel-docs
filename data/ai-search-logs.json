@@ -28521,5 +28521,39 @@
       }
     ],
     "answer_length": 1595
+  },
+  {
+    "timestamp": "2026-07-03T05:30:33.995Z",
+    "response_id": "b13c6426-98d8-47f9-b52a-bca1636484af",
+    "question": "f 1000 users call the same ExoPhone simultaneously, how can Exotel identify which owner to connect each caller to? Can I pass a unique token, session ID or custom parameter?",
+    "question_length": 173,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11201,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 2768
   }
 ]
