@@ -29073,5 +29073,39 @@
       }
     ],
     "answer_length": 712
+  },
+  {
+    "timestamp": "2026-07-04T01:12:09.862Z",
+    "response_id": "bd95d817-af2a-4a69-b56e-8e56408d265f",
+    "question": "Call logs api",
+    "question_length": 13,
+    "has_history": true,
+    "history_length": 3,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4198,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 1798
   }
 ]
