@@ -29107,5 +29107,39 @@
       }
     ],
     "answer_length": 1798
+  },
+  {
+    "timestamp": "2026-07-04T09:16:48.314Z",
+    "response_id": "43e7d6cd-8dd3-4dc6-8bff-836daa18145c",
+    "question": "exophone connect to applet api",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7905,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Flow and API Configuration for Voice AI & CC Platforms",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-api-configuration"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 3014
   }
 ]
