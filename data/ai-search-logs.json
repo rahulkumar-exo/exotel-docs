@@ -29343,5 +29343,13 @@
       }
     ],
     "answer_length": 3583
+  },
+  {
+    "timestamp": "2026-07-06T04:59:58.047Z",
+    "question": "i want to use use 5  Via Campaigns (Outbound Dialer):\nhow i can setup this can you tell me",
+    "question_length": 90,
+    "response_time_ms": 1582,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
