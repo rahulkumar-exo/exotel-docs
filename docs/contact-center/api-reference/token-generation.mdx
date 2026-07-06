@@ -1,131 +1,78 @@
 ---
 id: token-generation
 title: Token Generation
-description: Generate authentication tokens for Exotel Contact Center API access using basic auth credentials. Covers endpoints, headers, and base URLs by data center.
+description: Generate a Bearer authentication token for Contact Center v6 API access using the basicauth endpoint.
 sidebar_label: Token Generation
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import ApiConsole from '@site/src/components/ApiConsole';
-import TryItBanner from '@site/src/components/TryItBanner';
 
 # Token Generation
 
-Generate authentication tokens for Contact Center API access. This API creates a session token using basic authentication credentials.
+Generate a Bearer authentication token for Contact Center API access.
 
-<TryItBanner method="POST" endpoint="/v2/accounts/{sid}/configuration/basicauth" />
+The Temporary Authorization token can be obtained through a browser by logging in as the admin user of the specific Contact Center instance. Once you have the credentials, encode them using Base64 (`username:password`) to use with the API.
 
 ## HTTP Request
 
 ```
-POST /v2/accounts/<account_sid>/configuration/basicauth
+POST https://<IP_Domain_Name>:<port>/configuration/basicauth
 ```
-
-### Base URL
-
-| Data Center | Base URL |
-|------------|----------|
-| Singapore | `https://ccm-api.exotel.com` |
-| Mumbai | `https://ccm-api.in.exotel.com` |
 
 ## Request Headers
 
 | Header | Value |
 |--------|-------|
+| `accept` | `application/json` |
 | `Content-Type` | `application/json` |
-| `Authorization` | `Basic <base64(api_key:api_token)>` |
+| `Authorization` | `Bearer <existing_token>` |
+
+## Request Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `username` | String | Yes | The unique identifier for the user account making the API request. This user must have appropriate permissions to perform the requested actions. |
+| `password` | String | Yes | The authentication password associated with the provided username. Transmit over HTTPS. |
+| `context` | String | Yes | Defines the specific application or service module the API call is intended for. For all contact center operations, set this to `"ContactCenter"`. |
+| `contextId` | String | Yes | The unique ID of the specific contact center instance or tenant you are targeting. Ensures the request is routed to the correct environment. |
+| `dateExpiry` | String | No | ISO 8601 timestamp specifying when the session or token will expire. If not provided, a default session timeout applies. Example: `"2030-05-19T12:20:57.310Z"` |
+| `userRole` | String | Yes | Defines the permission level of the user making the request. Determines which actions the user is authorized to perform. Example: `"Administrator"` |
 
 ## Example Request
 
-<Tabs groupId="programming-language">
-<TabItem value="curl" label="cURL">
-
 ```bash
-curl -X POST \
-  'https://ccm-api.exotel.com/v2/accounts/<account_sid>/configuration/basicauth' \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Basic <base64_encoded_credentials>'
+curl --location 'https://<IP_Domain_Name>:<port>/configuration/basicauth' \
+  --header 'accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <existing_token>' \
+  --data '{
+    "username": "customer_manager",
+    "password": "customer_manager@123",
+    "context": "ContactCenter",
+    "contextId": "1",
+    "dateExpiry": "2030-05-19T12:20:57.310Z",
+    "userRole": "Administrator"
+  }'
 ```
 
-</TabItem>
-<TabItem value="python" label="Python">
+## Base64 Encoding
 
-```python
-import requests
-import base64
+To create a token, credentials need to be encoded using Base64 in the format `username:password`. For example:
 
-api_key = "your_api_key"
-api_token = "your_api_token"
-account_sid = "your_account_sid"
-
-credentials = base64.b64encode(f"{api_key}:{api_token}".encode()).decode()
-
-response = requests.post(
-    f"https://ccm-api.exotel.com/v2/accounts/{account_sid}/configuration/basicauth",
-    headers={
-        "Content-Type": "application/json",
-        "Authorization": f"Basic {credentials}"
-    }
-)
-
-print(response.json())
+```
+customer_manager:customer_manager@123$
 ```
 
-</TabItem>
-</Tabs>
+You can use an online tool like [Base64 Encode](https://www.base64encode.org/) for this purpose.
 
-## Response
+## HTTP Response
 
-```json
-{
-  "request_id": "abc123-def456",
-  "method": "POST",
-  "http_code": 200,
-  "response": {
-    "code": 200,
-    "status": "success",
-    "data": {
-      "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-      "token_type": "Bearer",
-      "expires_in": 86400
-    }
-  }
-}
-```
-
-### Response Fields
-
-| Field | Description |
-|-------|-------------|
-| `access_token` | JWT token to use in subsequent API calls |
-| `token_type` | Token type — always `Bearer` |
-| `expires_in` | Token validity in seconds (default: 86400 = 24 hours) |
-
-## Using the Token
-
-After generating a token, include it in subsequent API requests:
-
-```bash
-curl -X GET \
-  'https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls' \
-  -H 'Authorization: Bearer <access_token>'
-```
+On success, the HTTP response status code will be `200`. The response returns a Bearer token to use in subsequent API calls.
 
 ## HTTP Status Codes
 
 | Code | Description |
 |------|-------------|
 | `200` | Success — Token generated |
-| `401` | Unauthorized — Invalid API key or token |
-| `403` | Forbidden — Account not authorized for CCM |
-| `429` | Rate Limited |
+| `400` | Bad Request — Invalid input or malformed request |
+| `401` | Unauthorized — Missing or invalid credentials |
+| `403` | Forbidden — User not permitted to access this resource |
 | `500` | Internal Server Error |
-
-## Try It
-
-<ApiConsole
-  method="POST"
-  path="/v2/accounts/{account_sid}/configuration/basicauth"
-  contentType="json"
-  params={[]}
-/>

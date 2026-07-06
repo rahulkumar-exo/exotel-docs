@@ -17,6 +17,13 @@ Update campaign lead user assignments. Use this endpoint to assign agents to lea
 PUT https://{Cms_Domain_Name}:{port}/cms/configuration/voice/campaignLeadUserMapping
 ```
 
+:::info Deriving `{Cms_Domain_Name}`
+Replace any existing subdomain in your ECC domain (such as `gateway`, `ecc`, or your tenant name) with `cms`. Keep the environment segment unchanged.
+
+- `http://gateway.bdt.cc.exotel.com` → `https://cms.bdt.cc.exotel.com`
+- `https://exotel.ecc-prod.cc.exotel.com` → `https://cms.engg-prod.cc.exotel.com`
+:::
+
 ## Authentication
 
 | Header | Value |

@@ -17,6 +17,13 @@ Retrieve a list of all processes configured within a specific contact center. Pr
 GET https://{Cms_Domain_Name}:{port}/configuration/cc/{contactCenterId}/process
 ```
 
+:::info Deriving `{Cms_Domain_Name}`
+Replace any existing subdomain in your ECC domain (such as `gateway`, `ecc`, or your tenant name) with `cms`. Keep the environment segment unchanged.
+
+- `https://gateway.ecc-prod.cc.exotel.com` → `https://cms.engg-prod.cc.exotel.com`
+- `https://exotel.ecc-prod.cc.exotel.com` → `https://cms.engg-prod.cc.exotel.com`
+:::
+
 ## Authentication
 
 | Header | Value |

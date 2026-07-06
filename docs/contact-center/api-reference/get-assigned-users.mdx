@@ -17,6 +17,13 @@ Fetch the user-lead mapping for a specific lead within a campaign. Returns which
 GET https://{Cms_Domain_Name}:{port}/cms/configuration/cc/{contactCenterId}/process/{processId}/campaign/{campaignId}/lead-user
 ```
 
+:::info Deriving `{Cms_Domain_Name}`
+Replace any existing subdomain in your ECC domain (such as `gateway`, `ecc`, or your tenant name) with `cms`. Keep the environment segment unchanged.
+
+- `http://gateway.bdtest.cc.exotel.com` → `https://cms.bdtest.cc.exotel.com`
+- `https://exotel.ecc-prod.cc.exotel.com` → `https://cms.engg-prod.cc.exotel.com`
+:::
+
 ## Authentication
 
 | Header | Value |
