@@ -29285,5 +29285,39 @@
       }
     ],
     "answer_length": 1176
+  },
+  {
+    "timestamp": "2026-07-06T06:03:44.492Z",
+    "response_id": "5bfba664-4f01-4cb2-a9bc-eb157d5c3ac8",
+    "question": "not like that want to first call exophone number right after server request through api call right after and TO in user phone number pass like that And communitcation make between those people",
+    "question_length": 192,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12593,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 2128
   }
 ]
