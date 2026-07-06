@@ -1,238 +1,213 @@
 ---
 id: manage-users
 title: Manage Users
-description: Create, update, retrieve, and delete agents in the Exotel Contact Center v4 system. Manage roles, teams, skills, and device types via the API.
+description: Create, update, and delete users in the Contact Center v4 system using the Ameyo REST API.
 sidebar_label: Manage Users
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import ApiConsole from '@site/src/components/ApiConsole';
-import TryItBanner from '@site/src/components/TryItBanner';
 
 # Manage Contact Center Users
 
-Create, update, retrieve, and delete users (agents) in the Contact Center v4 system.
+Manage users (agents, supervisors, administrators) in the Contact Center system. All requests require a valid `sessionId` obtained from the [Login API](./login).
 
-<TryItBanner method="POST" endpoint="/v4/accounts/{sid}/users" />
+---
 
-## Create User
+## Create User API
+
+The Create User API allows administrators to create new users in the Contact Center system programmatically. This API is typically used to onboard agents, supervisors, or system users by defining their credentials, roles, and access configurations.
+
+It helps automate user provisioning during setup, integration, or scaling of large contact center deployments, ensuring consistent configuration across environments.
+
+**Key Capabilities:**
+- Create a new user with required attributes such as user ID, name, contact center ID, and user type.
+- Define user roles and access levels (e.g., Agent, Supervisor, Administrator).
+- Configure optional parameters like default ready state, login policy, and mapping IDs.
+- Add metadata such as description or mapping with an external CRM or system user.
+- Returns a confirmation with the newly created user's unique identifier.
+
+### HTTP Request
 
 ```
-POST /v4/accounts/<account_sid>/users
+POST <Protocol>://<IP_Domain_Name>:<port>/ameyorestapi/cc/contactCenterUsers
 ```
 
-### Request Body
+### Request Parameters
 
-```json
-{
-  "name": "John Agent",
-  "email": "john@company.com",
-  "phone_number": "+919876543210",
-  "role": "agent",
-  "team_id": "sales_team",
-  "device_type": "softphone",
-  "skills": ["english", "sales"]
-}
-```
+The following are the POST parameters sent as raw in the Body of the Request:
 
-### Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `name` | String | Yes | Full name of the user |
-| `email` | String | Yes | Email address (must be unique) |
-| `phone_number` | String | Yes | Phone number in E.164 format |
-| `role` | String | Yes | `agent`, `supervisor`, or `admin` |
-| `team_id` | String | No | Team assignment |
-| `device_type` | String | No | `softphone`, `phone`, or `sip` |
-| `skills` | Array | No | Skill tags for routing |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| `userId` | String | Unique user identifier in CC. This is what you'll later use to map to external systems. |
+| `userType` | String | Business role of the user e.g. Agent, Supervisor, Executive, Professional Agent. |
+| `userName` | String | Display name of the user. |
+| `systemUserType` | String | System-level type, often same as userType. |
+| `defaultReady` | Boolean | Whether the agent should log in as "Ready" by default. |
+| `userData` | String | Extra data / notes. |
+| `contactCenterId` | Integer | CC id in which to create this user. |
+| `description` | String | Free-text description. |
+| `loginPolicy` | String | e.g. `disallow.after.limit` or `verify.before.force.login`. |
+| `maxAllowedLogins` | String | Max concurrent logins. Store as string for backward compatibility. |
+| `mappingUserId` | String | Mapping to external app login (email/SSO id). |
 
 ### Example Request
 
 ```bash
-curl -X POST \
-  'https://ccm-api.exotel.com/v4/accounts/<account_sid>/users' \
-  -H 'Authorization: Bearer <session_token>' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name": "John Agent",
-    "email": "john@company.com",
-    "phone_number": "+919876543210",
-    "role": "agent",
-    "device_type": "softphone"
+curl --location 'https://<IP_Domain_Name>:<port>/ameyorestapi/cc/contactCenterUsers' \
+  --header 'sessionId: <your-session-id>' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "userId": "abcd",
+    "userType": "Supervisor",
+    "userName": "Sharanya Pathikonda",
+    "contactCenterId": 1,
+    "userData": "password",
+    "defaultReady": true,
+    "systemUserType": "Supervisor",
+    "loginPolicy": "verify.before.force.login",
+    "maxAllowedLogins": "1",
+    "mappingUserId": "testUser@gmail.com",
+    "description": "test user"
   }'
 ```
 
-### Response
+### Example Response
 
 ```json
 {
-  "response": {
-    "code": 201,
-    "status": "success",
-    "data": {
-      "user_id": "user_abc123",
-      "name": "John Agent",
-      "email": "john@company.com",
-      "phone_number": "+919876543210",
-      "role": "agent",
-      "status": "offline",
-      "created_at": "2024-06-15T10:00:00.000Z"
-    }
-  }
+  "ccUserId": 364,
+  "userId": "tesUser",
+  "userType": "Supervisor",
+  "skillIds": [],
+  "skillIIds": null,
+  "userName": "tesUser",
+  "systemUserType": "Supervisor",
+  "privilegePlanId": 13,
+  "defaultReady": false,
+  "maskedPrivileges": null,
+  "maxAllowedLogins": null,
+  "loginPolicy": null,
+  "mappingUserId": null
 }
 ```
+
+### HTTP Response
+
+On success, the HTTP response status code will be `200`.
 
 ---
 
-## Update User
+## Update User API
+
+The Update User API allows administrators to modify an existing user's details within the Contact Center. It supports updating user information such as name, type, credentials, login policy, and mapping details.
+
+### HTTP Request
 
 ```
-PUT /v4/accounts/<account_sid>/users/<user_id>
+PUT <Protocol>://<IP_Domain_Name>:<port>/ameyorestapi/cc/contactCenterUsers/<userId>
 ```
 
-### Request Body
+### Request Parameters
+
+Include the following parameters in your raw PUT request body:
+
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| `userId` | String | Unique identifier of the user to be updated within the Contact Center. |
+| `userType` | String | Defines the user's access type (e.g., Agent, Supervisor, Analyst). Determines feature and role-based permissions. |
+| `userName` | String | The display name as it should appear in the Contact Center UI. |
+| `systemUserType` | String | Specifies the internal system role for the user, aligned with Contact Center's role management (e.g., Analyst, Supervisor). |
+| `defaultReady` | Boolean | If true, the user automatically moves to the "Ready" state upon login. |
+| `userData` | String | The user's password or credential data for authentication. |
+| `contactCenterId` | Integer | Unique ID of the Contact Center to which the user belongs. |
+| `loginPolicy` | String | Defines the login behavior. Example: `verify.before.force.login` ensures validation before session override. |
+| `maxAllowedLogins` | Integer | Maximum number of concurrent sessions allowed for the user. |
+| `mappingUserId` | String | External system mapping identifier (e.g., email or CRM user ID). Used for integrations with third-party systems. |
+
+### Example Request
+
+```bash
+curl --location --request PUT '<Protocol>://<IP_Domain_Name>:<port>/ameyorestapi/cc/contactCenterUsers' \
+  --header 'sessionId: <your-session-id>' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "userId": "30994",
+    "userType": "Analyst",
+    "userName": "Srajan",
+    "systemUserType": "Analyst",
+    "defaultReady": true,
+    "userData": "password",
+    "contactCenterId": 1,
+    "loginPolicy": "verify.before.force.login",
+    "maxAllowedLogins": 1,
+    "mappingUserId": "testUser@gmail.com"
+  }'
+```
+
+### Example Response
 
 ```json
 {
-  "name": "John Senior Agent",
-  "role": "supervisor",
-  "team_id": "sales_leads",
-  "skills": ["english", "sales", "escalation"]
+  "status": "success",
+  "message": "User updated successfully",
+  "userId": "30994",
+  "contactCenterId": 1,
+  "updatedFields": ["userName", "userType", "loginPolicy"]
 }
 ```
 
-All fields are optional — only include fields you want to update.
+### HTTP Response
 
-### Response
-
-```json
-{
-  "response": {
-    "code": 200,
-    "status": "success",
-    "data": {
-      "user_id": "user_abc123",
-      "name": "John Senior Agent",
-      "role": "supervisor",
-      "updated_at": "2024-06-15T14:00:00.000Z"
-    }
-  }
-}
-```
+On success, the HTTP response status code will be `200`.
 
 ---
 
-## Get User
+## Delete User API
+
+The Delete User API allows administrators to permanently remove an existing user from the Contact Center system. This API is typically used to deprovision inactive agents, revoke access for users who have left the organization, or clean up test or duplicate accounts.
+
+Once deleted, the user's access credentials become invalid, and the user can no longer log in or be assigned to any queues, campaigns, or roles.
+
+**Key Capabilities:**
+- Delete an existing user from the Contact Center system.
+- Automatically revoke associated sessions and access credentials.
+- Useful for deprovisioning, account cleanup, and compliance management.
+- Requires a valid Session ID for authentication.
+
+### HTTP Request
 
 ```
-GET /v4/accounts/<account_sid>/users/<user_id>
+DELETE <Protocol>://<IP_Domain_Name>:<port>/ameyorestapi/user/users/<userId>
 ```
 
-### Response
+### Request Headers
+
+| Header Name | Description |
+|-------------|-------------|
+| `sessionId` | Valid Session ID obtained from the Login API. Used to authenticate the delete request. |
+| `Content-Type` | (Optional) Indicates the media type of the request. Usually `application/json`. |
+
+### Path Parameter
+
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| `userId` | String | Unique identifier of the user to be deleted from the Contact Center system. |
+
+### Example Request
+
+```bash
+curl --location --request DELETE '<Protocol>://<IP_Domain_Name>:<port>/ameyorestapi/user/users/abcd' \
+  --header 'sessionId: <your-session-id>'
+```
+
+### Example Response
 
 ```json
 {
-  "response": {
-    "code": 200,
-    "status": "success",
-    "data": {
-      "user_id": "user_abc123",
-      "name": "John Senior Agent",
-      "email": "john@company.com",
-      "phone_number": "+919876543210",
-      "role": "supervisor",
-      "status": "available",
-      "team": {
-        "team_id": "sales_leads",
-        "name": "Sales Leads"
-      },
-      "skills": ["english", "sales", "escalation"],
-      "device": {
-        "type": "softphone",
-        "contact_uri": "sip:john@company.exotel.com"
-      },
-      "stats": {
-        "calls_today": 15,
-        "avg_handle_time": 180,
-        "availability_percentage": 85
-      },
-      "created_at": "2024-06-15T10:00:00.000Z",
-      "updated_at": "2024-06-15T14:00:00.000Z"
-    }
-  }
+  "status": "success",
+  "message": "User deleted successfully",
+  "userId": "abcd"
 }
 ```
 
----
+### HTTP Response
 
-## List Users
-
-```
-GET /v4/accounts/<account_sid>/users
-```
-
-### Query Parameters
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `role` | String | Filter by role |
-| `team_id` | String | Filter by team |
-| `status` | String | Filter by status |
-| `limit` | Integer | Results per page (default: 20) |
-| `offset` | Integer | Pagination offset |
-
----
-
-## Delete User
-
-```
-DELETE /v4/accounts/<account_sid>/users/<user_id>
-```
-
-### Response
-
-```json
-{
-  "response": {
-    "code": 200,
-    "status": "success",
-    "data": {
-      "user_id": "user_abc123",
-      "deleted": true
-    }
-  }
-}
-```
-
-:::warning
-Deleting a user is permanent. The user will be immediately logged out of any active sessions and removed from all teams.
-:::
-
-## HTTP Status Codes
-
-| Code | Description |
-|------|-------------|
-| `200` | Success |
-| `201` | Created |
-| `400` | Bad Request — Invalid parameters |
-| `401` | Unauthorized |
-| `404` | Not Found — User doesn't exist |
-| `409` | Conflict — Email already exists |
-| `429` | Rate Limited |
-
-## Try It
-
-<ApiConsole
-  method="POST"
-  path="/v4/accounts/{account_sid}/users"
-  contentType="json"
-  params={[
-    { name: 'name', required: true, type: 'string', description: 'Full name of the user', placeholder: 'John Agent' },
-    { name: 'email', required: true, type: 'string', description: 'Email address (must be unique)', placeholder: 'john@company.com' },
-    { name: 'phone_number', required: true, type: 'string', description: 'Phone number in E.164 format', placeholder: '+919876543210' },
-    { name: 'role', required: true, type: 'string', description: 'agent, supervisor, or admin', placeholder: 'agent' },
-    { name: 'team_id', required: false, type: 'string', description: 'Team assignment', placeholder: 'sales_team' },
-    { name: 'device_type', required: false, type: 'string', description: 'softphone, phone, or sip', placeholder: 'softphone' },
-  ]}
-/>
+On success, the HTTP response status code will be `200`.

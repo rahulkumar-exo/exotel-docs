@@ -1,144 +1,78 @@
 ---
 id: login
-title: Login
-description: Authenticate and create a session for Exotel Contact Center v4 API access. Covers login endpoints, request headers, and base URLs by data center.
+title: Session ID Authentication - Login API
+description: Authenticate and obtain a Session ID token to access Contact Center v4 APIs.
 sidebar_label: Login
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import ApiConsole from '@site/src/components/ApiConsole';
-import TryItBanner from '@site/src/components/TryItBanner';
 
-# Login API
+# Session ID Authentication - Login API
 
-Authenticate and create a session for Contact Center v4 API access.
+Session ID authentication is a secure, session-based mechanism that allows a user or system to access Contact Center APIs after a successful login.
 
-<TryItBanner method="POST" endpoint="/v4/accounts/{sid}/login" />
+When a user logs in through the authentication API, the system generates a Session ID token that uniquely represents that user's authenticated state. This Session ID must be passed with subsequent API requests until the session expires or the user logs out.
+
+## How it works
+
+**Login:** The client application calls the login API with valid user credentials and configuration parameters. The server responds with a `sessionId` token.
+
+**Use Session ID:** For every subsequent API request, the Session ID is included — either in the request header (recommended) or as part of the authentication field in the payload, depending on the API design.
+
+**Session Lifecycle:**
+- Each Session ID is time-bound and user-specific.
+- A session automatically expires after a configured timeout or explicit logout.
+- On expiry, the client must request a new Session ID via the login API.
 
 ## HTTP Request
 
 ```
-POST /v4/accounts/<account_sid>/login
+POST <Protocol>://<IP_Domain_Name>:<port>/ameyorestapi/session/userLogin
 ```
 
-### Base URL
+## Request Parameters
 
-| Data Center | Base URL |
-|------------|----------|
-| Singapore | `https://ccm-api.exotel.com` |
-| Mumbai | `https://ccm-api.in.exotel.com` |
+The following are the POST parameters sent as raw in the Body of the Request:
 
-## Request Headers
-
-| Header | Value |
-|--------|-------|
-| `Content-Type` | `application/json` |
-
-## Request Body
-
-```json
-{
-  "username": "your_api_key",
-  "password": "your_api_token",
-  "account_sid": "your_account_sid"
-}
-```
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `username` | String | Yes | API key from Exotel Dashboard |
-| `password` | String | Yes | API token from Exotel Dashboard |
-| `account_sid` | String | Yes | Your Exotel account SID |
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | String | The user's login ID for the Contact Center dashboard. Uniquely identifies the user within the system. |
+| `token` | String | The user's password or access key associated with the login ID. Used to authenticate the login request. |
+| `forceLogin` | Boolean | If set to `true`, the system allows the user to log in even if an active session already exists (used for session recovery or multi-terminal logins). |
+| `terminalInfo` | String | Metadata describing the terminal, browser, or device initiating the login (e.g., `"Agent Desktop"`, `"Chrome"`, `"WebSDK"`). |
 
 ## Example Request
 
-<Tabs groupId="programming-language">
-<TabItem value="curl" label="cURL">
-
 ```bash
-curl -X POST \
-  'https://ccm-api.exotel.com/v4/accounts/<account_sid>/login' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "username": "your_api_key",
-    "password": "your_api_token",
-    "account_sid": "your_account_sid"
+curl --location 'https://<IP_Domain_Name>:<port>/ameyorestapi/session/userLogin' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "token": "doc_admin",
+    "userId": "doc_admin",
+    "forceLogin": true,
+    "terminalInfo": "test"
   }'
 ```
 
-</TabItem>
-<TabItem value="python" label="Python">
-
-```python
-import requests
-
-response = requests.post(
-    f"https://ccm-api.exotel.com/v4/accounts/{account_sid}/login",
-    json={
-        "username": api_key,
-        "password": api_token,
-        "account_sid": account_sid
-    }
-)
-
-session_token = response.json()["response"]["data"]["session_token"]
-```
-
-</TabItem>
-</Tabs>
-
-## Response
+## Example Response
 
 ```json
 {
-  "request_id": "req_login_001",
-  "method": "POST",
-  "http_code": 200,
-  "response": {
-    "code": 200,
-    "status": "success",
-    "data": {
-      "session_token": "sess_abc123def456...",
-      "expires_at": "2024-06-16T10:30:00.000Z",
-      "user": {
-        "user_id": "user_001",
-        "name": "Admin User",
-        "role": "admin"
-      }
-    }
+  "userId": "doc_admin",
+  "terminalIp": "0.0.0.0",
+  "localIp": "0.0.0.0",
+  "sessionId": "d898-600087a3-ses-doc_admin-lYsFDHJiGg1OzkBdCeNIj...",
+  "loginTime": 17627834209072,
+  "userType": "Administrator",
+  "contactCenterId": 1,
+  "userName": "doc_admin",
+  "lastLoginInfo": {
+    "userId": "doc_admin",
+    "userName": "doc_admin",
+    "lastLoginTime": 17627885504129,
+    "sessionId": "d898-600087a3-ses-doc_admin-..."
   }
 }
 ```
 
-## Using the Session Token
+## HTTP Response
 
-Include the session token in subsequent v4 API calls:
-
-```bash
-curl -X GET \
-  'https://ccm-api.exotel.com/v4/accounts/<account_sid>/users' \
-  -H 'Authorization: Bearer <session_token>'
-```
-
-## HTTP Status Codes
-
-| Code | Description |
-|------|-------------|
-| `200` | Success — Authenticated |
-| `401` | Unauthorized — Invalid credentials |
-| `403` | Forbidden — Account not enabled for CCM |
-| `429` | Rate Limited |
-| `500` | Internal Server Error |
-
-## Try It
-
-<ApiConsole
-  method="POST"
-  path="/v4/accounts/{account_sid}/login"
-  contentType="json"
-  params={[
-    { name: 'username', required: true, type: 'string', description: 'API key from Exotel Dashboard', placeholder: 'your_api_key' },
-    { name: 'password', required: true, type: 'string', description: 'API token from Exotel Dashboard', placeholder: 'your_api_token' },
-    { name: 'account_sid', required: true, type: 'string', description: 'Your Exotel account SID', placeholder: 'your_account_sid' },
-  ]}
-/>
+On success, the HTTP response status code will be `200`.
