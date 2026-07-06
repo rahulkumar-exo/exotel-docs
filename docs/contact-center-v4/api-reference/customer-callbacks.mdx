@@ -1,230 +1,155 @@
 ---
 id: customer-callbacks
 title: Customer Callbacks
-description: Schedule and manage customer callback requests using the Exotel Contact Center v4 API. Queue callbacks with priority, scheduling, and retry settings.
+description: Retrieve and delete scheduled customer callback records in the Contact Center v4 system using the Ameyo REST API.
 sidebar_label: Customer Callbacks
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import ApiConsole from '@site/src/components/ApiConsole';
-import TryItBanner from '@site/src/components/TryItBanner';
 
 # Customer Callbacks
 
-Schedule and manage callback requests from customers. When customers request a callback, this API queues the request and connects an available agent at the scheduled time.
-
-<TryItBanner method="POST" endpoint="/v4/accounts/{sid}/callbacks" />
-
-## Create Callback Request
-
-```
-POST /v4/accounts/<account_sid>/callbacks
-```
-
-### Request Body
-
-```json
-{
-  "customer_number": "+919876543210",
-  "customer_name": "John Doe",
-  "priority": "high",
-  "scheduled_time": "2024-06-15T14:00:00.000Z",
-  "exophone": "+911234567890",
-  "team_id": "support_team",
-  "custom_field": "ticket_12345",
-  "max_retry": 3,
-  "retry_interval": 300
-}
-```
-
-### Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `customer_number` | String | Yes | Customer phone number in E.164 format |
-| `customer_name` | String | No | Customer's name |
-| `priority` | String | No | `low`, `normal` (default), `high` |
-| `scheduled_time` | String | No | ISO 8601 timestamp (default: immediate) |
-| `exophone` | String | Yes | ExoPhone to use for the callback |
-| `team_id` | String | No | Route to specific team |
-| `agent_id` | String | No | Assign to specific agent |
-| `custom_field` | String | No | Application-specific data (e.g., ticket ID) |
-| `max_retry` | Integer | No | Maximum retry attempts (default: 3) |
-| `retry_interval` | Integer | No | Seconds between retries (default: 300) |
-
-### Example Request
-
-<Tabs groupId="programming-language">
-<TabItem value="curl" label="cURL">
-
-```bash
-curl -X POST \
-  'https://ccm-api.exotel.com/v4/accounts/<account_sid>/callbacks' \
-  -H 'Authorization: Bearer <session_token>' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "customer_number": "+919876543210",
-    "exophone": "+911234567890",
-    "priority": "high",
-    "team_id": "support_team"
-  }'
-```
-
-</TabItem>
-<TabItem value="python" label="Python">
-
-```python
-import requests
-
-response = requests.post(
-    f"https://ccm-api.exotel.com/v4/accounts/{account_sid}/callbacks",
-    headers={
-        "Authorization": f"Bearer {session_token}",
-        "Content-Type": "application/json"
-    },
-    json={
-        "customer_number": "+919876543210",
-        "exophone": "+911234567890",
-        "priority": "high",
-        "team_id": "support_team"
-    }
-)
-```
-
-</TabItem>
-</Tabs>
-
-### Response
-
-```json
-{
-  "response": {
-    "code": 201,
-    "status": "success",
-    "data": {
-      "callback_id": "cb_abc123",
-      "customer_number": "+919876543210",
-      "status": "scheduled",
-      "scheduled_time": "2024-06-15T14:00:00.000Z",
-      "priority": "high",
-      "created_at": "2024-06-15T10:30:00.000Z"
-    }
-  }
-}
-```
+Manage scheduled customer callback records for a campaign. All requests require a valid `sessionId` obtained from the [Login API](./login).
 
 ---
 
-## Get Callback Details
+## Get Customer Callbacks
 
-```
-GET /v4/accounts/<account_sid>/callbacks/<callback_id>
-```
+Retrieve a paginated list of scheduled customer callback records for a specific campaign, using defined filters.
 
-### Response
+This API endpoint is typically used by supervisor or administrator applications to monitor, manage, and retrieve details of outstanding or past callbacks associated with a campaign.
 
-```json
-{
-  "response": {
-    "data": {
-      "callback_id": "cb_abc123",
-      "customer_number": "+919876543210",
-      "customer_name": "John Doe",
-      "status": "completed",
-      "attempts": [
-        {
-          "attempt_number": 1,
-          "time": "2024-06-15T14:00:00.000Z",
-          "status": "no-answer",
-          "call_sid": null
-        },
-        {
-          "attempt_number": 2,
-          "time": "2024-06-15T14:05:00.000Z",
-          "status": "connected",
-          "call_sid": "call_xyz789",
-          "agent_id": "agent_001",
-          "duration": 180
-        }
-      ]
-    }
-  }
-}
-```
+### Authentication
 
----
-
-## List Callbacks
-
-```
-GET /v4/accounts/<account_sid>/callbacks
-```
+This API requires session-based authentication. A valid session token, typically generated upon a successful supervisor or administrative login, must be passed in the request header.
 
 ### Query Parameters
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `status` | String | `scheduled`, `in-progress`, `completed`, `failed`, `canceled` |
-| `priority` | String | `low`, `normal`, `high` |
-| `start_date` | String | Filter by date range (ISO 8601) |
-| `end_date` | String | End date filter |
-| `limit` | Integer | Results per page |
-| `offset` | Integer | Pagination offset |
+The following parameters are passed directly in the URL query string to control filtering and pagination of the results.
 
----
+| Parameter | Type | Required | Description | Example Value |
+|-----------|------|----------|-------------|---------------|
+| `offset` | Integer | Yes | The starting index of the result set for pagination. Use `0` to start from the first record. | `0` |
+| `campaignId` | Integer | Yes | The unique identifier of the campaign for which callbacks are being retrieved. | `110` |
+| `limit` | Integer | Yes | The maximum number of callback records to return in the current request. | `101` |
 
-## Cancel Callback
+### HTTP Request
 
 ```
-PUT /v4/accounts/<account_sid>/callbacks/<callback_id>
+GET <Protocol>://<IP_Domain_Name>:<port>/ameyorestapi/voice/customerCallbacks/getFiltered?offset=<Integer>&campaignId=<Integer>&limit=<Integer>
 ```
 
-### Request Body
+### Example Request
+
+```bash
+curl --location 'https://app3.ameyoemerge.in:8443/ameyorestapi/voice/customerCallbacks/getFiltered?offset=0&campaignId=110&limit=101' \
+  --header 'SessionId: <your-session-id>'
+```
+
+### Response Fields
+
+A successful request returns a JSON array containing the list of callbacks.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `customerCallbackId` | String | The unique identifier for this specific callback instance. |
+| `campaignId` | Integer | The ID of the campaign the callback is associated with. |
+| `phone` | String | The customer's contact number for the callback. |
+| `callbackTime` | Long | The scheduled time for the callback, represented as a Unix epoch timestamp in **milliseconds**. |
+| `dateAdded` | Long | The timestamp (in milliseconds) when this callback record was **created**. |
+| `selfCallback` | Boolean | Indicates if the callback was initiated by the **customer** (`true`) or scheduled internally (`false`). |
+| `userId` | String | The ID of the **agent** it is assigned to or who scheduled it. |
+| `lastScheduledBy` | String | The user ID of the **last person/system** that scheduled or modified the callback. |
+
+### Example Response (200 OK)
+
+```json
+[
+  {
+    "customerCallbackId": "d741-6904fad1-cm-eEcdnIb3-50833",
+    "campaignId": 110,
+    "callbackTime": 17664104000000,
+    "selfCallback": true,
+    "userId": "Vinod",
+    "phone": "7905698272",
+    "customerId": -1,
+    "dateAdded": 17643243647640,
+    "maskedPhone": null,
+    "lastScheduledBy": "supervisor@exotel.in",
+    "actualCallbackTime": null,
+    "campaignName": null,
+    "displayPhone": "7905698272",
+    "uniqueIdentifier": null,
+    "groupIds": null,
+    "groupManagerIds": null
+  }
+]
+```
+
+### Error Handling Notes
+
+#### 401 Unauthorized Error
+
+The server returns a `401 Unauthorized` response when the provided authentication token is invalid or missing. The primary cause is typically an **expired or incorrect** `SessionId` passed in the request header. The response body will explicitly confirm the nature of the error.
+
+**Action:** If you receive this error, the client must **obtain a new `SessionId`** by performing a fresh login to the supervisor/administrator console and updating the token in the request header.
+
+#### 500 Internal Server Error (No Data Found)
+
+The system may incorrectly return a `500 Internal Server Error` in a specific edge case where the request is logically successful but **no data is found** (i.e., zero callbacks match the provided `campaignId`, `offset`, and `limit`). Instead of the expected `200 OK` with an empty array `[]`, the server returns a `500` status.
+
+**Action:** Developers should be prepared to handle a `500` error as a **success case indicating an empty result set** when the request URL and headers are otherwise valid. This behavior is considered an API bug but must be accounted for in client-side error logic to prevent false negative failures.
 
 ```json
 {
-  "status": "canceled",
-  "reason": "Customer resolved issue via chat"
+  "message": "Invalid.authentication.token:<session-id>",
+  "info": null,
+  "status": 401,
+  "errorCode": 70201
 }
 ```
 
-## Callback Status Values
+---
 
-| Status | Description |
-|--------|-------------|
-| `scheduled` | Callback is queued for the scheduled time |
-| `in-progress` | System is attempting to connect agent and customer |
-| `completed` | Callback was successful |
-| `failed` | All retry attempts exhausted |
-| `canceled` | Callback was manually canceled |
+## Delete Customer Callback
 
-## HTTP Status Codes
+Delete a single scheduled customer callback record using its unique identifier.
 
-| Code | Description |
-|------|-------------|
-| `200` | Success |
-| `201` | Created |
-| `400` | Bad Request |
-| `401` | Unauthorized |
-| `404` | Not Found |
-| `429` | Rate Limited |
+This API endpoint is used by supervisor or administrative applications to permanently remove an unwanted or completed callback from the system queue.
 
-## Try It
+### HTTP Request
 
-<ApiConsole
-  method="POST"
-  path="/v4/accounts/{account_sid}/callbacks"
-  contentType="json"
-  params={[
-    { name: 'customer_number', required: true, type: 'string', description: 'Customer phone number in E.164 format', placeholder: '+919876543210' },
-    { name: 'exophone', required: true, type: 'string', description: 'ExoPhone to use for the callback', placeholder: '+911234567890' },
-    { name: 'customer_name', required: false, type: 'string', description: "Customer's name", placeholder: 'John Doe' },
-    { name: 'priority', required: false, type: 'string', description: 'low, normal (default), or high', placeholder: 'high' },
-    { name: 'scheduled_time', required: false, type: 'string', description: 'ISO 8601 timestamp (default: immediate)', placeholder: '2024-06-15T14:00:00.000Z' },
-    { name: 'team_id', required: false, type: 'string', description: 'Route to specific team', placeholder: 'support_team' },
-    { name: 'agent_id', required: false, type: 'string', description: 'Assign to specific agent', placeholder: 'agent_001' },
-    { name: 'custom_field', required: false, type: 'string', description: 'Application-specific data', placeholder: 'ticket_12345' },
-    { name: 'max_retry', required: false, type: 'number', description: 'Maximum retry attempts (default: 3)', placeholder: '3' },
-    { name: 'retry_interval', required: false, type: 'number', description: 'Seconds between retries (default: 300)', placeholder: '300' },
-  ]}
-/>
+```
+DELETE <Protocol>://<IP_Domain_Name>:<port>/ameyorestapi/voice/customerCallbacks/{customerCallbackId}
+```
+
+### Authentication
+
+This API requires session-based authentication. A valid session token, generated upon successful supervisor or administrator login, must be passed in the request header.
+
+### Path Parameters
+
+| Parameter | Type | Required | Description | Example Value |
+|-----------|------|----------|-------------|---------------|
+| `customerCallbackId` | String | Yes | The unique identifier of the callback record to be deleted. | `d741-6904fad1-cm-eEcdnIb3-50833` |
+
+### Example Request
+
+```bash
+DELETE 'https://app3.ameyoemerge.in:8443/ameyorestapi/voice/customerCallbacks/d741-6904fad1-cm-eEcdnIb3-50833' \
+  --header 'sessionId: <your-session-id>'
+```
+
+### Example Response (200 OK)
+
+A successful deletion returns a minimal response, indicating the operation was executed correctly.
+
+| Status Code | Description |
+|-------------|-------------|
+| `200` | The request was successful, and the callback record has been deleted. |
+
+The response body will be the simple string `"ok"` (not a JSON object).
+
+### Error Responses
+
+**401 Unauthorized** — Returned when the provided `sessionId` is missing, expired, or invalid.
+
+**500 Internal Server Error** — Returned for an unexpected server-side issue. This can also occur if the system fails to interact with the database to execute the deletion.
