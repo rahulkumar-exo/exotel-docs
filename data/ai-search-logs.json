@@ -29387,5 +29387,39 @@
       }
     ],
     "answer_length": 897
+  },
+  {
+    "timestamp": "2026-07-06T06:43:14.271Z",
+    "response_id": "607740bd-f6a1-43e0-baf1-5d27ea29b083",
+    "question": "i want to calling and recording api",
+    "question_length": 35,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9680,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Freshdesk Secure Recording Enablement",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk-secure-recording"
+      }
+    ],
+    "answer_length": 5234
   }
 ]
