@@ -29727,5 +29727,39 @@
       }
     ],
     "answer_length": 4836
+  },
+  {
+    "timestamp": "2026-07-07T11:23:03.413Z",
+    "response_id": "dd5a9dea-1a21-494c-9e1e-d718e17c51a7",
+    "question": "is it integrate with salesforce/",
+    "question_length": 32,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3787,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      }
+    ],
+    "answer_length": 221
   }
 ]
