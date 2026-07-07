@@ -29761,5 +29761,39 @@
       }
     ],
     "answer_length": 221
+  },
+  {
+    "timestamp": "2026-07-07T11:41:10.395Z",
+    "response_id": "69c60624-5ded-4e78-b365-5d36c68055d0",
+    "question": "What is abanded call in exotel",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4293,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 761
   }
 ]
