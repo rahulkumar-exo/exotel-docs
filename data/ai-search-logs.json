@@ -29795,5 +29795,39 @@
       }
     ],
     "answer_length": 761
+  },
+  {
+    "timestamp": "2026-07-07T13:07:29.506Z",
+    "response_id": "7b5793f9-d731-43d7-8c14-880b7366900d",
+    "question": "The error \"Voice recording doesn't have a playable audio URL\" occurs because Zoho CRM's native media player is failing to fetch or format the underlying media stream from Exotel. The URL you provided is a Zoho PhoneBridge proxy link (phonebridge.zoho.in/...), meaning Zoho has mapped the call, but it cannot securely fetch the actual MP3/WAV file from Exotel's secure servers.",
+    "question_length": 376,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3779,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 1742
   }
 ]
