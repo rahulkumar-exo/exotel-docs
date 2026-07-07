@@ -29625,5 +29625,39 @@
       }
     ],
     "answer_length": 1026
+  },
+  {
+    "timestamp": "2026-07-07T04:53:09.824Z",
+    "response_id": "a1a9bef8-8b9b-45df-a7f6-9b12740f7e12",
+    "question": "i have created outvboubnd call voice bot now i want to do autodisconnect or hangup and when i do it gige some api error",
+    "question_length": 119,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7446,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      }
+    ],
+    "answer_length": 1503
   }
 ]
