@@ -30797,5 +30797,39 @@
       }
     ],
     "answer_length": 2784
+  },
+  {
+    "timestamp": "2026-07-08T13:25:25.427Z",
+    "response_id": "6c1d2a03-ba20-4977-8d52-b3bb757ec979",
+    "question": "Which one should I use for calling agent",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3903,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      }
+    ],
+    "answer_length": 2152
   }
 ]
