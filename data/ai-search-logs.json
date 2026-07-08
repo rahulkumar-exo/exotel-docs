@@ -30525,5 +30525,39 @@
       }
     ],
     "answer_length": 813
+  },
+  {
+    "timestamp": "2026-07-08T09:26:20.676Z",
+    "response_id": "9e4b988e-6a20-4ca4-86bf-9e7778414cdd",
+    "question": "maxretries",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3375,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 776
   }
 ]
