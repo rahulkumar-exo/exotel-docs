@@ -30593,5 +30593,39 @@
       }
     ],
     "answer_length": 4963
+  },
+  {
+    "timestamp": "2026-07-08T10:16:19.133Z",
+    "response_id": "61baf3ba-ba1c-4e05-bda2-f1fd95402bb5",
+    "question": "internet calling documentation",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4291,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      }
+    ],
+    "answer_length": 738
   }
 ]
