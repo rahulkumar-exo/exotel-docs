@@ -30661,5 +30661,39 @@
       }
     ],
     "answer_length": 2122
+  },
+  {
+    "timestamp": "2026-07-08T11:06:44.993Z",
+    "response_id": "88023dcf-27ca-4980-8f56-81becfbaf0e9",
+    "question": "for calls",
+    "question_length": 9,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7930,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Automated Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/automated-calls"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      }
+    ],
+    "answer_length": 4186
   }
 ]
