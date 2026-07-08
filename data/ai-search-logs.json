@@ -30627,5 +30627,39 @@
       }
     ],
     "answer_length": 738
+  },
+  {
+    "timestamp": "2026-07-08T11:05:36.599Z",
+    "response_id": "f5b35a60-e28a-4433-a6d1-da7729147b3c",
+    "question": "From where do configure webhook url?",
+    "question_length": 36,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5491,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "Webhook Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/webhooks-setup"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      }
+    ],
+    "answer_length": 2122
   }
 ]
