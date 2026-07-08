@@ -30559,5 +30559,39 @@
       }
     ],
     "answer_length": 776
+  },
+  {
+    "timestamp": "2026-07-08T09:27:28.585Z",
+    "response_id": "3a20c6a8-b137-44c1-b4a7-761d3461cd3f",
+    "question": "retry",
+    "question_length": 5,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6439,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Auto Retry on Busy",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/auto-retry"
+      },
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      },
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 4963
   }
 ]
