@@ -30729,5 +30729,39 @@
       }
     ],
     "answer_length": 4506
+  },
+  {
+    "timestamp": "2026-07-08T12:13:27.271Z",
+    "response_id": "ed8228bf-a4d0-4015-bc78-9eda53bce594",
+    "question": "WhatsApp templates",
+    "question_length": 18,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6272,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Creating WhatsApp Templates",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/creating-templates"
+      },
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "Creating WhatsApp Templates",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/creating-templates"
+      },
+      {
+        "title": "WhatsApp Commerce",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/commerce"
+      }
+    ],
+    "answer_length": 4101
   }
 ]
