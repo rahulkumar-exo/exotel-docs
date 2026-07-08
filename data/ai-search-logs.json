@@ -30763,5 +30763,39 @@
       }
     ],
     "answer_length": 4101
+  },
+  {
+    "timestamp": "2026-07-08T12:59:45.777Z",
+    "response_id": "fa6b11ba-337d-43d1-91ff-254749419d06",
+    "question": "Freshdesk",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4214,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Freshdesk Secure Recording Enablement",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Freshdesk",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk"
+      },
+      {
+        "title": "Freshdesk Secure Recording Enablement",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk-secure-recording"
+      },
+      {
+        "title": "Freshdesk Secure Recording Enablement",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk-secure-recording"
+      }
+    ],
+    "answer_length": 2784
   }
 ]
