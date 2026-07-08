@@ -30457,5 +30457,39 @@
       }
     ],
     "answer_length": 1544
+  },
+  {
+    "timestamp": "2026-07-08T06:37:32.843Z",
+    "response_id": "7d1512ed-64b9-4fde-ab4f-34c2c267ffed",
+    "question": "I have integrated exotel with sarvam ai and now when I'm to add a number. I'm unable to see all the numbers which we have bought on exotel",
+    "question_length": 138,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4244,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      }
+    ],
+    "answer_length": 491
   }
 ]
