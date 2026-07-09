@@ -31671,5 +31671,39 @@
       }
     ],
     "answer_length": 979
+  },
+  {
+    "timestamp": "2026-07-09T17:33:04.714Z",
+    "response_id": "e2ba2a61-7e46-4d35-8129-42b6af9664db",
+    "question": "How to connect the api to an ai call asistent",
+    "question_length": 45,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8206,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 2053
   }
 ]
