@@ -31051,5 +31051,39 @@
       }
     ],
     "answer_length": 2402
+  },
+  {
+    "timestamp": "2026-07-09T12:29:29.518Z",
+    "response_id": "42966713-3b24-4e6f-a2a2-e52de604d5a8",
+    "question": "give some dummy testing purpose number for singapore",
+    "question_length": 52,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3540,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      }
+    ],
+    "answer_length": 555
   }
 ]
