@@ -31841,5 +31841,39 @@
       }
     ],
     "answer_length": 1414
+  },
+  {
+    "timestamp": "2026-07-10T06:43:46.637Z",
+    "response_id": "4a9f6ad0-284d-462e-ad81-9c36235ae3f2",
+    "question": "Can we check Exophone Installed app names?",
+    "question_length": 42,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2639,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      }
+    ],
+    "answer_length": 428
   }
 ]
