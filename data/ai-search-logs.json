@@ -32147,5 +32147,39 @@
       }
     ],
     "answer_length": 4259
+  },
+  {
+    "timestamp": "2026-07-10T08:31:24.195Z",
+    "response_id": "b9ee2882-260e-49c2-aada-1d69dcaa346b",
+    "question": "Need api to connect to campaign",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11320,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/manage-campaign"
+      }
+    ],
+    "answer_length": 2425
   }
 ]
