@@ -32079,5 +32079,39 @@
       }
     ],
     "answer_length": 761
+  },
+  {
+    "timestamp": "2026-07-10T08:19:22.329Z",
+    "response_id": "1dee14f7-4a82-4343-a96b-ac05bf780747",
+    "question": "https://integrationscore.mum1.exotel.com/v2/integrations/app\nRequest Method\nGET\nStatus Code\n404 Not Found\nRemote Address\n13.207.123.159:443\nReferrer Policy\nstrict-origin-when-cross-origin\n{\n    \"RequestId\": \"7134c543-8767-48e9-bf74-1a8dd97d805c\",\n    \"Status\": \"Failed\",\n    \"Code\": 404,\n    \"Error\": \"record not found\",\n    \"Data\": null\n}\n\nwhy it show",
+    "question_length": 352,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9461,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes.mdx"
+      },
+      {
+        "title": "Get Assigned Users",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-assigned-users.mdx"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      }
+    ],
+    "answer_length": 1478
   }
 ]
