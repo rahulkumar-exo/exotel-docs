@@ -32317,5 +32317,39 @@
       }
     ],
     "answer_length": 5178
+  },
+  {
+    "timestamp": "2026-07-10T17:48:54.536Z",
+    "response_id": "8157496f-e8ec-410b-ba2f-d09db84c4744",
+    "question": "how can I implement contact center APIs and SDKs",
+    "question_length": 48,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13469,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Contact Center APIs v6",
+        "product": "contact-center",
+        "url": "/docs/contact-center/overview"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      }
+    ],
+    "answer_length": 5094
   }
 ]
