@@ -135,6 +135,7 @@
     { "source": "/api/heart-beat", "destination": "/docs/heartbeat/overview", "permanent": true },
     { "source": "/api/make-a-call-api", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
     { "source": "/api/product-voice-version-3", "destination": "/docs/voice-v3/overview", "permanent": true },
+    { "source": "/docs/voice-v3/api-reference/active-stream-monitoring", "destination": "/docs/voice-v3/api-reference/call-details", "permanent": true },
     { "source": "/api/product-exoverify-apis", "destination": "/docs/exoverify-api/overview", "permanent": true },
     { "source": "/api/exoverify-orchestration", "destination": "/docs/exoverify-api/overview", "permanent": true },
     { "source": "/api/url-shortening", "destination": "/docs/url-shortening/overview", "permanent": true },
