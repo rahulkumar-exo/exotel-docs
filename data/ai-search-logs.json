@@ -32419,5 +32419,39 @@
       }
     ],
     "answer_length": 2632
+  },
+  {
+    "timestamp": "2026-07-11T05:30:24.242Z",
+    "response_id": "76637cc4-7eb8-40ae-a161-606741caa739",
+    "question": "Rate of SMS gateway",
+    "question_length": 19,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2768,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Long SMS (Concatenated Messages)",
+        "product": "sms-support",
+        "url": "/docs/sms-support/long-sms"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/overview"
+      }
+    ],
+    "answer_length": 176
   }
 ]
