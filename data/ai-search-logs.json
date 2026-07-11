@@ -32555,5 +32555,39 @@
       }
     ],
     "answer_length": 3878
+  },
+  {
+    "timestamp": "2026-07-11T16:21:27.571Z",
+    "response_id": "c025b27e-1d87-4a7b-aa05-2c443e2a3db4",
+    "question": "how to use my own agent when someone call my exophone",
+    "question_length": 53,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4547,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1877
   }
 ]
