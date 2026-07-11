@@ -77,7 +77,6 @@ const sidebars: SidebarsConfig = {
         'voice-v3/api-reference/connect-two-numbers',
         'voice-v3/api-reference/call-details',
         'voice-v3/api-reference/voice-log-download',
-        'voice-v3/api-reference/active-stream-monitoring',
       ],
     },
   ],
