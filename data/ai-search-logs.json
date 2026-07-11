@@ -32623,5 +32623,39 @@
       }
     ],
     "answer_length": 3752
+  },
+  {
+    "timestamp": "2026-07-11T16:52:28.346Z",
+    "response_id": "fbdeffd3-9800-4b94-9fbe-207ea0169b20",
+    "question": "exotel can be integrated with n8n ?",
+    "question_length": 35,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2510,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      }
+    ],
+    "answer_length": 350
   }
 ]
