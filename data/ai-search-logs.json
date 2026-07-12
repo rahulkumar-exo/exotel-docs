@@ -32725,5 +32725,39 @@
       }
     ],
     "answer_length": 2626
+  },
+  {
+    "timestamp": "2026-07-12T14:50:18.701Z",
+    "response_id": "a3c6c015-53c8-439a-8840-b7f7b1130a8f",
+    "question": "How can i contact support team for call masking integration with my wcfm wordpress multivendor website",
+    "question_length": 102,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1871,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Exotel Integration with FreshSales",
+        "product": "integrations",
+        "url": "/docs/integrations/freshsales"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      }
+    ],
+    "answer_length": 176
   }
 ]
