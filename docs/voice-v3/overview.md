@@ -15,8 +15,7 @@ Voice v3 is the latest iteration of the Exotel Voice API, providing enhanced cal
 Voice v3 APIs are currently in **Beta**. Some features may change as we finalize the API contracts.
 :::\
 \
-:::note This API will connect two phone numbers. This API would also mark the user as busy to prevent them to make/receive any other call and incoming calls would be routed to other users, if available. It does not require a user to be added mandatorily on the Exotel dashboard, to be able to mark them as busy. It will connect the number provided in the **From** field first and once the person picks up the call, it will connect the number provided in the **To** field. The **From** field should always contain your user/agent contact number or the SIP id (for VOIP calling).\
-:::
+This API will connect two phone numbers. This API would also mark the user as busy to prevent them to make/receive any other call and incoming calls would be routed to other users, if available. It does not require a user to be added mandatorily on the Exotel dashboard, to be able to mark them as busy. It will connect the number provided in the **From** field first and once the person picks up the call, it will connect the number provided in the **To** field. The **From** field should always contain your user/agent contact number or the SIP id (for VOIP calling).
 
 ## Key Features
 
