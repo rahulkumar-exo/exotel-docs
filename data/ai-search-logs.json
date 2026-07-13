@@ -33031,5 +33031,39 @@
       }
     ],
     "answer_length": 393
+  },
+  {
+    "timestamp": "2026-07-13T13:42:21.478Z",
+    "response_id": "fb0570ad-fae5-47b3-a88d-8ea3832ff7c2",
+    "question": "WHEN I I WILL CALL THROUGH MY CRM PANEL THEN WHY NOT RECORDED FOR BOTH INCOMMING AND OUTGOING CALLS WHATS ISSEUS CAN COMPLEETE EXPALIN WITH API ENPODINT BODY AND EVERYTHING SO I CAN HANDLE IT PROPERLY",
+    "question_length": 200,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13468,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      }
+    ],
+    "answer_length": 4886
   }
 ]
