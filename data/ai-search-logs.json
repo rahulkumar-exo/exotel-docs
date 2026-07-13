@@ -32997,5 +32997,39 @@
       }
     ],
     "answer_length": 3084
+  },
+  {
+    "timestamp": "2026-07-13T13:37:52.746Z",
+    "response_id": "35fbbd3a-6f19-44d4-b700-953836daef04",
+    "question": "I want to fetch all the calls done in a month",
+    "question_length": 45,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5017,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 393
   }
 ]
