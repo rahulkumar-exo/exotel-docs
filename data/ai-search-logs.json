@@ -32827,5 +32827,39 @@
       }
     ],
     "answer_length": 3415
+  },
+  {
+    "timestamp": "2026-07-13T10:29:14.654Z",
+    "response_id": "d3fe7772-fdfb-49b6-88e8-3fb97f9a09d3",
+    "question": "virtual phone",
+    "question_length": 13,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3468,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      }
+    ],
+    "answer_length": 1538
   }
 ]
