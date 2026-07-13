@@ -21,7 +21,6 @@ Voice v3 APIs are currently in **Beta**. Some features may change as we finalize
 ## Key Features
 
 * **Call Details (Beta)** — Enhanced call detail records with richer metadata including recordings, DTMF digits, and flow information
-* **Active Stream Monitoring** — Real-time monitoring of active call streams
 * **Voice Log Download** — Download voice recordings and call logs programmatically
 * **Legs API Integration** — Works with the Legs & Bridges API for advanced call flows
 
