@@ -32895,5 +32895,39 @@
       }
     ],
     "answer_length": 446
+  },
+  {
+    "timestamp": "2026-07-13T13:14:01.422Z",
+    "response_id": "c5270249-57e7-472d-89c8-97be3d5c88cb",
+    "question": "Masking numbers pricing",
+    "question_length": 23,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4479,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "Number Masking Setup",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/number-masking-setup"
+      }
+    ],
+    "answer_length": 176
   }
 ]
