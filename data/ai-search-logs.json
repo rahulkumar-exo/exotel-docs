@@ -33099,5 +33099,39 @@
       }
     ],
     "answer_length": 738
+  },
+  {
+    "timestamp": "2026-07-13T18:29:55.601Z",
+    "response_id": "77f6e723-30be-4b39-b76e-5ca72784ada1",
+    "question": "Authorization how to handle thius",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6079,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Application Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/applications.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Agent Presence Monitoring",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/agent-presence.mdx"
+      }
+    ],
+    "answer_length": 2067
   }
 ]
