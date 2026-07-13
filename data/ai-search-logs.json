@@ -33065,5 +33065,39 @@
       }
     ],
     "answer_length": 4886
+  },
+  {
+    "timestamp": "2026-07-13T13:44:22.102Z",
+    "response_id": "180c4365-1313-464d-9944-7997d1aed787",
+    "question": "WHICH APPLET USE FOR RECORDIGN",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3941,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Flow and API Configuration for Voice AI & CC Platforms",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-api-configuration"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      }
+    ],
+    "answer_length": 738
   }
 ]
