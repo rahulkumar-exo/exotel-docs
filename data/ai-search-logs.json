@@ -372,5 +372,39 @@
       }
     ],
     "answer_length": 3755
+  },
+  {
+    "timestamp": "2026-07-14T07:48:00.906Z",
+    "response_id": "2fba52c7-9839-4543-bd68-4c0041854b43",
+    "question": "how can i receive transcriptions using the webhook ?",
+    "question_length": 52,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4679,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 513
   }
 ]
