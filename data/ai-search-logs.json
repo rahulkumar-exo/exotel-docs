@@ -66,5 +66,39 @@
       }
     ],
     "answer_length": 5162
+  },
+  {
+    "timestamp": "2026-07-14T04:13:19.188Z",
+    "response_id": "cf69f911-0c38-4223-9762-50bf35451cae",
+    "question": "is there 200CPM on any calls?",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1793,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      },
+      {
+        "title": "What is Cloud Telephony?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/overview"
+      },
+      {
+        "title": "API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/api-faqs"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      }
+    ],
+    "answer_length": 176
   }
 ]
