@@ -746,5 +746,39 @@
       }
     ],
     "answer_length": 489
+  },
+  {
+    "timestamp": "2026-07-14T16:07:29.009Z",
+    "response_id": "64449646-b431-4da7-be1e-e8f4b33b7ba9",
+    "question": "phone numbers",
+    "question_length": 13,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4718,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Connect Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/connect"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 2374
   }
 ]
