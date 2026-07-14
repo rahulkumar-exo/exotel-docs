@@ -61,5 +61,14 @@
     "answer_excerpt": "You're right, testing a two-party call connection requires at least three distinct numbers to function optimally: the caller's number (`From`), the recipient's number (`To`), and your ExoPhone (`CallerId`).\n\nWith your current setup of one verified number and one ExoPhone, you face a limitation in fully simulating a connection between *two different external parties*.\n\nHere are a couple of ways you can approach testing the `Connect Two Numbers` API within your bot flow:\n\n1.  **Partial Test (Calli",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0"
+  },
+  {
+    "timestamp": "2026-07-14T06:06:12.829Z",
+    "response_id": "2ec568d5-aee8-4ec9-be8c-fc081f4fd4e8",
+    "vote": "down",
+    "question": "How do I make a call?",
+    "answer_excerpt": "You can make calls through Exotel using the Dashboard or programmatically via Exotel's APIs.\n\n### 1. Make Outgoing Calls\n\nThere are multiple ways to initiate outbound calls:\n\n#### a. Via Exotel Dashboard\nYou can make calls manually through the Exotel Dashboard:\n1.  Log in to the Exotel Dashboard.\n2.  Navigate to the dialer or click-to-call option.\n3.  Enter the customer's phone number.\n4.  Select the ExoPhone to use as caller ID.\n5.  Click Call.\n*   **Documentation**: [How to Make or Receive Cal",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
   }
 ]
