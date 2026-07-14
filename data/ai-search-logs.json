@@ -542,5 +542,39 @@
       }
     ],
     "answer_length": 3157
+  },
+  {
+    "timestamp": "2026-07-14T09:55:07.271Z",
+    "response_id": "e4a0b685-de57-4823-b339-8d752988fcbc",
+    "question": "how to add credit via bank details",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2110,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Add Credits",
+        "product": "billing",
+        "url": "/docs/billing/add-credits"
+      },
+      {
+        "title": "Add Credits",
+        "product": "billing",
+        "url": "/docs/billing/add-credits"
+      },
+      {
+        "title": "Add Credits",
+        "product": "billing",
+        "url": "/docs/billing/add-credits"
+      },
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 850
   }
 ]
