@@ -100,5 +100,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-14T04:39:48.263Z",
+    "response_id": "33978050-1b30-4dbf-ba10-03406ede3a4c",
+    "question": "how to buy phone number in exotel",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2051,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 586
   }
 ]
