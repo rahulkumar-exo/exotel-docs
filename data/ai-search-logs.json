@@ -508,5 +508,39 @@
       }
     ],
     "answer_length": 2163
+  },
+  {
+    "timestamp": "2026-07-14T09:54:26.724Z",
+    "response_id": "22941b66-1a13-4ffd-be85-1bb459edda54",
+    "question": "Hi,\n\nWe are building a real-time AI Voice Assistant using OpenAI and Deepgram.\n\nWe need continuous bidirectional audio streaming.\n\nDoes your Sandbox account support:\n\n1. AgentStream\n2. Voicebot Applet\n3. Real-time WebSocket audio streaming\n\nor only normal Passthru webhooks?\n\nIf supported,\n\nplease share the documentation and Sandbox activation process.\n\nThanks.",
+    "question_length": 362,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9110,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 3157
   }
 ]
