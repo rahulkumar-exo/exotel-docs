@@ -678,5 +678,39 @@
       }
     ],
     "answer_length": 2055
+  },
+  {
+    "timestamp": "2026-07-14T12:29:38.887Z",
+    "response_id": "bd9e65fa-6e6e-46f6-9328-5b300deddf8d",
+    "question": "audio packets, how can i get them?",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5122,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns.mdx"
+      }
+    ],
+    "answer_length": 1415
   }
 ]
