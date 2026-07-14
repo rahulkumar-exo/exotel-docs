@@ -168,5 +168,39 @@
       }
     ],
     "answer_length": 1463
+  },
+  {
+    "timestamp": "2026-07-14T06:01:20.561Z",
+    "response_id": "5f4f6290-25e9-4dc5-9ea9-6e2f037b6140",
+    "question": "exotel how it retrun sample rate and audio formate?",
+    "question_length": 51,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2249,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Use CleverTap via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-native"
+      }
+    ],
+    "answer_length": 407
   }
 ]
