@@ -290,7 +290,6 @@ const sidebars: SidebarsConfig = {
         'contact-center/api-reference/call-details',
         'contact-center/api-reference/upload-contacts',
         'contact-center/api-reference/error-file-retrieval',
-        'contact-center/api-reference/agent-presence',
         'contact-center/api-reference/get-all-processes',
         'contact-center/api-reference/get-all-campaigns',
         'contact-center/api-reference/get-campaign-leads',
