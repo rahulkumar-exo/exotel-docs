@@ -338,5 +338,39 @@
       }
     ],
     "answer_length": 312
+  },
+  {
+    "timestamp": "2026-07-15T06:35:31.567Z",
+    "response_id": "80b0314c-97c0-41ef-8fff-9b6d7103bc7d",
+    "question": "is there any api for create the accound and connect to the app bazar for this ]",
+    "question_length": 79,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4170,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 593
   }
 ]
