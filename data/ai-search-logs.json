@@ -610,5 +610,39 @@
       }
     ],
     "answer_length": 2556
+  },
+  {
+    "timestamp": "2026-07-15T17:24:35.098Z",
+    "response_id": "aa16d64d-d654-41ad-bb75-5cacc083d6de",
+    "question": "Exotel error: Exotel API error: Exotel connect API failed (HTTP 400): <?xml version=\"1.0\" encoding=\"UTF-8\"?> <TwilioResponse> <RestException> <Status>400</Status> <Message>Invalid StreamBegin, should be atLeg1connect or atLeg2connect; </Message> <Code>340034</Code> </RestException> </TwilioResponse>",
+    "question_length": 300,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4993,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1139
   }
 ]
