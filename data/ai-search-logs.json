@@ -372,5 +372,39 @@
       }
     ],
     "answer_length": 593
+  },
+  {
+    "timestamp": "2026-07-15T08:00:06.629Z",
+    "response_id": "73cd9582-1792-454c-bc97-f46d486410e5",
+    "question": "How do I connect my Gemini Live agent to a customer making a regular phone call for a query?",
+    "question_length": 92,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4671,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 500
   }
 ]
