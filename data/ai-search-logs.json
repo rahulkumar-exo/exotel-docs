@@ -406,5 +406,39 @@
       }
     ],
     "answer_length": 500
+  },
+  {
+    "timestamp": "2026-07-15T10:19:06.743Z",
+    "response_id": "17e2d6ea-7567-47db-8f1d-ad08f27a5b0b",
+    "question": "suggest me api to make call by an application",
+    "question_length": 45,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6774,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 2461
   }
 ]
