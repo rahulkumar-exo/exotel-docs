@@ -304,5 +304,39 @@
       }
     ],
     "answer_length": 1207
+  },
+  {
+    "timestamp": "2026-07-15T03:53:32.636Z",
+    "response_id": "6637b818-5201-49d6-8172-805cb1c74b32",
+    "question": "what all regions come under india in exotel request",
+    "question_length": 51,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2991,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      }
+    ],
+    "answer_length": 312
   }
 ]
