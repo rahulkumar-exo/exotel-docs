@@ -440,5 +440,39 @@
       }
     ],
     "answer_length": 2461
+  },
+  {
+    "timestamp": "2026-07-15T10:43:46.691Z",
+    "response_id": "d69caa83-65bf-418a-9501-9b1d807daa59",
+    "question": "if i have web i call through microsip to a user and i want live streaming text what should i do?",
+    "question_length": 96,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6917,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 1404
   }
 ]
