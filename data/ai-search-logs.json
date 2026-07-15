@@ -508,5 +508,39 @@
       }
     ],
     "answer_length": 1147
+  },
+  {
+    "timestamp": "2026-07-15T10:49:37.693Z",
+    "response_id": "369e435a-3f8f-4f36-86f9-ae9cb7ac96c1",
+    "question": "How to implement rm connect use case using voice apl?",
+    "question_length": 53,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5851,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      }
+    ],
+    "answer_length": 1100
   }
 ]
