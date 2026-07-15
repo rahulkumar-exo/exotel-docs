@@ -576,5 +576,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-15T17:21:42.917Z",
+    "response_id": "52b97a94-b61c-48ee-aea1-e5c18dd584e0",
+    "question": "Exotel error: Exotel API error: Exotel connect API failed (HTTP 401): <?xml version=\"1.0\" encoding=\"UTF-8\"?> <TwilioResponse> <RestException> <Status>401</Status> <Message>Unauthorized; </Message> <Code>34010</Code> </RestException> </TwilioResponse>",
+    "question_length": 250,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9575,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 2556
   }
 ]
