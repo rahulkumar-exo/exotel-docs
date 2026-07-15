@@ -474,5 +474,39 @@
       }
     ],
     "answer_length": 1404
+  },
+  {
+    "timestamp": "2026-07-15T10:44:09.120Z",
+    "response_id": "475111e2-fdce-44c3-82bc-02e4916a23bc",
+    "question": "what if i connect deepgram",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2705,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 1147
   }
 ]
