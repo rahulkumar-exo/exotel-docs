@@ -924,5 +924,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-16T09:38:29.387Z",
+    "response_id": "e434e39d-d38c-4fc6-a617-240870c279be",
+    "question": "how to create exovery account",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2677,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Create Your Exotel Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/create-account"
+      },
+      {
+        "title": "Create Your Exotel Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/create-account"
+      },
+      {
+        "title": "Create Your Exotel Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/create-account"
+      }
+    ],
+    "answer_length": 1029
   }
 ]
