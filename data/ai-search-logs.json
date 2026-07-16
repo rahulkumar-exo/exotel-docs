@@ -822,5 +822,39 @@
       }
     ],
     "answer_length": 5107
+  },
+  {
+    "timestamp": "2026-07-16T08:08:04.639Z",
+    "response_id": "a937b28f-9a89-4ad9-8869-4fcc0a805a77",
+    "question": "What is the difference between Voice V1 and Voice V3 API's",
+    "question_length": 58,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8177,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 2192
   }
 ]
