@@ -686,5 +686,39 @@
       }
     ],
     "answer_length": 1740
+  },
+  {
+    "timestamp": "2026-07-16T06:41:27.231Z",
+    "response_id": "eaf9b123-9626-4a18-90fc-530308948b23",
+    "question": "pre-signed URL",
+    "question_length": 14,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3695,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/overview"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 586
   }
 ]
