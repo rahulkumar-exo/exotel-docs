@@ -1060,5 +1060,39 @@
       }
     ],
     "answer_length": 1450
+  },
+  {
+    "timestamp": "2026-07-16T12:32:55.720Z",
+    "response_id": "96e69062-4e8d-4da1-8582-3cbe5ba2efe5",
+    "question": "voicebot websocket event",
+    "question_length": 24,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3490,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voicelogs",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/voicelogs.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Call Notifications",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/call-notifications"
+      }
+    ],
+    "answer_length": 501
   }
 ]
