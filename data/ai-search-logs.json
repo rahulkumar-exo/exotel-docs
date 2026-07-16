@@ -992,5 +992,39 @@
       }
     ],
     "answer_length": 5145
+  },
+  {
+    "timestamp": "2026-07-16T11:01:36.876Z",
+    "response_id": "eb8f36fe-2aee-4218-b7d0-af33f379f602",
+    "question": "how we can stop the current active call?",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4118,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      }
+    ],
+    "answer_length": 286
   }
 ]
