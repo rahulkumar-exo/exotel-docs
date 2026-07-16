@@ -720,5 +720,39 @@
       }
     ],
     "answer_length": 586
+  },
+  {
+    "timestamp": "2026-07-16T07:20:45.447Z",
+    "response_id": "e29b7652-8453-4247-ae4b-80e23347ca11",
+    "question": "how to send sms through this service",
+    "question_length": 36,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8788,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Send SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/how-to-send-sms"
+      },
+      {
+        "title": "How to Send SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/how-to-send-sms"
+      },
+      {
+        "title": "SMS Overview",
+        "product": "sms-support",
+        "url": "/docs/sms-support/overview"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      }
+    ],
+    "answer_length": 4534
   }
 ]
