@@ -958,5 +958,39 @@
       }
     ],
     "answer_length": 1029
+  },
+  {
+    "timestamp": "2026-07-16T10:18:21.162Z",
+    "response_id": "43450d27-883b-4d2c-bba3-73d8c58f9266",
+    "question": "recording",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9127,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 5145
   }
 ]
