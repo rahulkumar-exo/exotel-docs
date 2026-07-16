@@ -754,5 +754,39 @@
       }
     ],
     "answer_length": 4534
+  },
+  {
+    "timestamp": "2026-07-16T07:23:47.997Z",
+    "response_id": "45c5bd18-50fa-4d33-a0a0-18bc4ffcef31",
+    "question": "what details are needed to submit for dlt registration",
+    "question_length": 54,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6554,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "DLT Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/dlt-compliance"
+      },
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "DLT Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-registration"
+      }
+    ],
+    "answer_length": 2789
   }
 ]
