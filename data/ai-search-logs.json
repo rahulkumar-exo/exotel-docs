@@ -890,5 +890,39 @@
       }
     ],
     "answer_length": 2321
+  },
+  {
+    "timestamp": "2026-07-16T09:15:36.703Z",
+    "response_id": "4e41adfc-cb6f-405b-9de9-faa1bf103919",
+    "question": "i want to talk to exper",
+    "question_length": 23,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2214,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Users",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/manage-users.mdx"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      }
+    ],
+    "answer_length": 176
   }
 ]
