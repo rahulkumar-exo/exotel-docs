@@ -1298,5 +1298,39 @@
       }
     ],
     "answer_length": 872
+  },
+  {
+    "timestamp": "2026-07-17T08:22:11.071Z",
+    "response_id": "a08459e5-6205-4874-b0e9-4c5fa7994ae9",
+    "question": "will i get presigned url of recording when call gets started",
+    "question_length": 60,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1562,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      }
+    ],
+    "answer_length": 712
   }
 ]
