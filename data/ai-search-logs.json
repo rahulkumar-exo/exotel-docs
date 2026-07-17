@@ -1332,5 +1332,39 @@
       }
     ],
     "answer_length": 712
+  },
+  {
+    "timestamp": "2026-07-17T08:24:01.003Z",
+    "response_id": "25f42a4d-a3f6-4df6-9e9c-392e9458b75a",
+    "question": "any way we can get access of stream in real-time",
+    "question_length": 48,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2326,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Active Stream Monitoring",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/active-stream-monitoring"
+      },
+      {
+        "title": "Team Management",
+        "product": "getting-started",
+        "url": "/docs/getting-started/team-management"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 997
   }
 ]
