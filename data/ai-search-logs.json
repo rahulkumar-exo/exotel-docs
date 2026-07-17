@@ -1400,5 +1400,39 @@
       }
     ],
     "answer_length": 2454
+  },
+  {
+    "timestamp": "2026-07-17T08:33:30.205Z",
+    "response_id": "4256cbf3-4498-431a-b15d-978c2b705bf0",
+    "question": "can you give me step by step flow , how i should create this applet , lets say applet is xyz , then how should i call the call-initiation api",
+    "question_length": 141,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14235,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 4995
   }
 ]
