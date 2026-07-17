@@ -1230,5 +1230,39 @@
       }
     ],
     "answer_length": 2553
+  },
+  {
+    "timestamp": "2026-07-17T08:14:48.848Z",
+    "response_id": "be8bc32d-f127-4abf-b834-34d9ed7b17bc",
+    "question": "are there any test credentials or api keys",
+    "question_length": 42,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4528,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      }
+    ],
+    "answer_length": 961
   }
 ]
