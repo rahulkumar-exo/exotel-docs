@@ -1638,5 +1638,39 @@
       }
     ],
     "answer_length": 712
+  },
+  {
+    "timestamp": "2026-07-17T10:28:25.603Z",
+    "response_id": "0f05bb47-e7ca-4f4d-b0dd-92acf8447be2",
+    "question": "US Number requirements, which we will use from India. It should support SMS and whatsapp",
+    "question_length": 88,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6331,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      }
+    ],
+    "answer_length": 1569
   }
 ]
