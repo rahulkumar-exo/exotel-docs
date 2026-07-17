@@ -1264,5 +1264,39 @@
       }
     ],
     "answer_length": 961
+  },
+  {
+    "timestamp": "2026-07-17T08:20:05.338Z",
+    "response_id": "3d8ffec9-f785-4a82-b87d-72a9ee52b723",
+    "question": "can i get transcript in real time somehow",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4608,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      },
+      {
+        "title": "Voicelogs",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/voicelogs.mdx"
+      }
+    ],
+    "answer_length": 872
   }
 ]
