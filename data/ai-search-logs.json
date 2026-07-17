@@ -1740,5 +1740,39 @@
       }
     ],
     "answer_length": 1954
+  },
+  {
+    "timestamp": "2026-07-17T11:33:26.243Z",
+    "response_id": "162a1818-ab33-496d-be72-bf9ea58b3daf",
+    "question": "what all credentials or tokens do i need to send a flow to user",
+    "question_length": 63,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7188,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Delete User",
+        "product": "users",
+        "url": "/docs/users/api-reference/delete-user"
+      },
+      {
+        "title": "Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/flows"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 759
   }
 ]
