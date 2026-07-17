@@ -1128,5 +1128,39 @@
       }
     ],
     "answer_length": 2345
+  },
+  {
+    "timestamp": "2026-07-17T05:25:05.686Z",
+    "response_id": "a3e72e2e-da6a-4865-8f1d-d57571a8275f",
+    "question": "how to use dynamic greeting",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4676,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Greeting Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/greeting"
+      },
+      {
+        "title": "Greeting Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/greeting-applet-guide"
+      },
+      {
+        "title": "Greeting Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/greeting-applet-guide"
+      },
+      {
+        "title": "Greeting Messages",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/greeting-message"
+      }
+    ],
+    "answer_length": 2092
   }
 ]
