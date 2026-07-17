@@ -1672,5 +1672,39 @@
       }
     ],
     "answer_length": 1569
+  },
+  {
+    "timestamp": "2026-07-17T10:29:11.184Z",
+    "response_id": "64d30b8d-20b0-4e0a-9b78-fd413db9e80d",
+    "question": "Can you connect with any real human",
+    "question_length": 35,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7054,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Using Exotel Legs APIs to Start a Bot Stream with Optional Greeting",
+        "product": "agentstream",
+        "url": "/docs/agentstream/bot-stream-legs-api"
+      },
+      {
+        "title": "Integration FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/integration-faqs"
+      },
+      {
+        "title": "Exotel Integration with Zoho Desk",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-desk"
+      },
+      {
+        "title": "Greeting Messages",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/greeting-message"
+      }
+    ],
+    "answer_length": 1293
   }
 ]
