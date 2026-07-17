@@ -1196,5 +1196,39 @@
       }
     ],
     "answer_length": 4040
+  },
+  {
+    "timestamp": "2026-07-17T07:57:41.278Z",
+    "response_id": "176b3c7b-07f9-43f4-87ef-b6f4dcb9174c",
+    "question": "i want to connect my agent and lead on a call , then want stream of there convcersation on my server , so that i can process the call in real time",
+    "question_length": 146,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11108,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 2553
   }
 ]
