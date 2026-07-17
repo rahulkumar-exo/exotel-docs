@@ -1604,5 +1604,39 @@
       }
     ],
     "answer_length": 4829
+  },
+  {
+    "timestamp": "2026-07-17T10:27:11.564Z",
+    "response_id": "c88761a8-9de9-433e-8a9c-6c0b031a3a1a",
+    "question": "Do you provide US Number which i can use as whatsapp ?",
+    "question_length": 54,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5062,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      }
+    ],
+    "answer_length": 712
   }
 ]
