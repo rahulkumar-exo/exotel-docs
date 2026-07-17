@@ -1706,5 +1706,39 @@
       }
     ],
     "answer_length": 1293
+  },
+  {
+    "timestamp": "2026-07-17T11:26:17.198Z",
+    "response_id": "731b1532-5532-4ca0-b867-84a352c7ce22",
+    "question": "buy exophone",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5423,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "ExoPhone Details",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/number-details"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      }
+    ],
+    "answer_length": 1954
   }
 ]
