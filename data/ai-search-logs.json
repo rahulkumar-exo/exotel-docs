@@ -1944,5 +1944,39 @@
       }
     ],
     "answer_length": 1275
+  },
+  {
+    "timestamp": "2026-07-19T06:19:30.815Z",
+    "response_id": "c9ee8808-17bf-41ea-bb16-cf0d3c1f0de3",
+    "question": "what if my CRM is custom and not in defined list ?",
+    "question_length": 50,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4064,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 1606
   }
 ]
