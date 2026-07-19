@@ -2012,5 +2012,39 @@
       }
     ],
     "answer_length": 3144
+  },
+  {
+    "timestamp": "2026-07-19T14:46:38.367Z",
+    "response_id": "912e55b0-577b-441a-ba5c-9e172b6c6de6",
+    "question": "How can I purchase the number?",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2189,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 245
   }
 ]
