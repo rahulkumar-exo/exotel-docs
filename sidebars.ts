@@ -758,15 +758,6 @@ const sidebars: SidebarsConfig = {
 
   advancedConfigSidebar: [
     'advanced-config/overview',
-    'advanced-config/webhooks-setup',
-    'advanced-config/ip-whitelisting',
-    'advanced-config/rate-limiting',
-    'advanced-config/high-availability',
-    'advanced-config/number-masking-setup',
-    'advanced-config/call-recording-config',
-    'advanced-config/tts-config',
-    'advanced-config/concurrent-calls',
-    'advanced-config/network-requirements',
   ],
 
   integrationsSidebar: [
