@@ -1978,5 +1978,39 @@
       }
     ],
     "answer_length": 3472
+  },
+  {
+    "timestamp": "2026-07-20T10:41:01.912Z",
+    "response_id": "6ea7b7c5-fb95-46a8-b155-80eac7cd8044",
+    "question": "how do i buy virtual numbers, and connect it to my AI system to receive calls?",
+    "question_length": 78,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14357,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 2786
   }
 ]
