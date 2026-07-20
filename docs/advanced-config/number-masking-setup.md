@@ -203,4 +203,3 @@ Use [CDR Reports](/docs/reporting/cdr-reports) to analyze number masking usage:
 - [Lead Assist API](/docs/lead-assist/overview) -- Managed number masking API
 - [Voice API](/docs/voice-api/getting-started/overview) -- Making masked API calls
 - [ExoPhones](/docs/exophones/overview) -- Managing virtual numbers
-- [Custom Caller ID](/docs/advanced-config/custom-caller-id) -- CallerID display configuration

@@ -144,6 +144,7 @@
     { "source": "/api/ccm-users", "destination": "/docs/contact-center/overview", "permanent": true },
     { "source": "/api/ccm-create-a-user-beta", "destination": "/docs/contact-center/overview", "permanent": true },
     { "source": "/api/agent-presence-apis", "destination": "/docs/contact-center/overview", "permanent": true },
+    { "source": "/docs/advanced-config/custom-caller-id", "destination": "/docs/advanced-config/overview", "permanent": true },
     { "source": "/docs/contact-center/api-reference/agent-presence", "destination": "/docs/contact-center/overview", "permanent": true },
     { "source": "/api/ccm-get-call-details", "destination": "/docs/contact-center/api-reference/call-details", "permanent": true },
     { "source": "/api/ccm-make-call-agent-connecting-to-a-number", "destination": "/docs/contact-center/api-reference/make-call", "permanent": true },

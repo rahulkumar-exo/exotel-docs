@@ -21,7 +21,6 @@ This section covers advanced configuration options for optimizing, securing, and
 | [Number Masking](/docs/advanced-config/number-masking-setup) | Privacy for two-party calls | Marketplace and delivery platforms |
 | [Call Recording Config](/docs/advanced-config/call-recording-config) | Dual-channel, storage, retention policies | All accounts with recording enabled |
 | [TTS Config](/docs/advanced-config/tts-config) | Text-to-speech languages, voices, SSML | Accounts using TTS in call flows |
-| [Custom Caller ID](/docs/advanced-config/custom-caller-id) | Display rules, verified numbers | Growth and Enterprise accounts |
 | [Concurrent Calls](/docs/advanced-config/concurrent-calls) | Call limits, scaling, burst capacity | Accounts with high call volumes |
 | [Network Requirements](/docs/advanced-config/network-requirements) | Ports, protocols, bandwidth, firewall rules | IT teams setting up Exotel |
 
@@ -48,7 +47,6 @@ Most advanced configurations are available through:
 | Call Recording (dual-channel) | -- | Yes | Yes |
 | TTS (basic) | Yes | Yes | Yes |
 | TTS (SSML, custom voices) | -- | -- | Yes |
-| Custom Caller ID | -- | Yes | Yes |
 | Concurrent Call Scaling | Limited | Moderate | Custom |
 | Dedicated Infrastructure | -- | -- | Yes |
 
@@ -80,7 +78,6 @@ If your use case has regulatory or privacy requirements:
 
 1. **[Number Masking](/docs/advanced-config/number-masking-setup)** -- Protect customer and agent phone numbers
 2. **[Call Recording Config](/docs/advanced-config/call-recording-config)** -- Configure recording retention and encryption
-3. **[Custom Caller ID](/docs/advanced-config/custom-caller-id)** -- Control what numbers are displayed to call recipients
 
 ## Related Topics
 

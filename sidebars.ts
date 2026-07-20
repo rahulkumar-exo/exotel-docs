@@ -765,7 +765,6 @@ const sidebars: SidebarsConfig = {
     'advanced-config/number-masking-setup',
     'advanced-config/call-recording-config',
     'advanced-config/tts-config',
-    'advanced-config/custom-caller-id',
     'advanced-config/concurrent-calls',
     'advanced-config/network-requirements',
   ],
