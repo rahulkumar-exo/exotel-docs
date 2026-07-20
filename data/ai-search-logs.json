@@ -2012,5 +2012,13 @@
       }
     ],
     "answer_length": 2786
+  },
+  {
+    "timestamp": "2026-07-20T10:42:39.086Z",
+    "question": "i created an account and clicked on start my free trial. Then, i was redirected to login page. I did not setup a password but it asked for password",
+    "question_length": 147,
+    "response_time_ms": 5554,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
