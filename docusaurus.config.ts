@@ -248,7 +248,6 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'appBazaarSidebar', label: 'App Bazaar' },
             { type: 'docSidebar', sidebarId: 'reportingSidebar', label: 'Reporting' },
             { type: 'docSidebar', sidebarId: 'billingSidebar', label: 'Billing' },
-            { type: 'docSidebar', sidebarId: 'advancedConfigSidebar', label: 'Advanced Config' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
             { type: 'html', value: '<span class="dropdown-section-label">Help</span>' },
             { type: 'docSidebar', sidebarId: 'faqsSidebar', label: 'FAQs & Regulations' },

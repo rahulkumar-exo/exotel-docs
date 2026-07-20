@@ -172,7 +172,7 @@ This is useful for:
 - Speech analytics where overlapping speech needs to be distinguished
 - Compliance audits that need to verify each party's consent
 
-See [Call Recording Configuration](/docs/advanced-config/call-recording-config) for setup instructions.
+For recording configuration, contact your account manager or visit [Exotel Support](https://support.exotel.com).
 
 ## Recording Security
 
@@ -214,5 +214,4 @@ In India, it is a best practice to inform callers that the call is being recorde
 
 - [Call Logs](/docs/reporting/call-logs) -- Find calls with recordings
 - [CDR Reports](/docs/reporting/cdr-reports) -- Detailed call records with recording metadata
-- [Call Recording Configuration](/docs/advanced-config/call-recording-config) -- Configure recording settings
 - [Webhooks](/docs/references/webhooks) -- Receive recording URLs via callbacks

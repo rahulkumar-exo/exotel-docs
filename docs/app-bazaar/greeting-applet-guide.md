@@ -94,10 +94,6 @@ Audio files must be in **8000 Hz Mono WAV** format for the best quality on phone
 | **Malayalam** | Female | Regional language support |
 | **Bengali** | Female | Regional language support |
 
-:::info
-For advanced TTS configuration including SSML support and custom voices, see [TTS Configuration](/docs/advanced-config/tts-config).
-:::
-
 ## Advanced Settings
 
 | Setting | Default | Description |
@@ -167,5 +163,4 @@ Greeting (consent) ──► Greeting (promotion) ──► Greeting (hold music
 
 - [Greeting Applet API Reference](/docs/voice-v1/applets/greeting) -- Technical API details
 - [IVR Applet Guide](/docs/app-bazaar/ivr-applet-guide) -- Build IVR menus after the greeting
-- [TTS Configuration](/docs/advanced-config/tts-config) -- Advanced text-to-speech settings
 - [Flow Builder Guide](/docs/app-bazaar/flow-builder-guide) -- Visual flow design

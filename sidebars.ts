@@ -756,9 +756,6 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
-  advancedConfigSidebar: [
-    'advanced-config/overview',
-  ],
 
   integrationsSidebar: [
     'integrations/overview',
