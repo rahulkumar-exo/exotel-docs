@@ -2148,5 +2148,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-20T08:48:43.812Z",
+    "response_id": "e862d018-0837-41c5-9fc4-c59a8f220375",
+    "question": "Let me understand about the dual channel, how the left and right channel relates to callee and the caller. \nIn docs it is mentioned that  Left channel = Agent, Right channel = Customer\n\nBut let me know exactly how it defines the channel for \"Two number Api connect call\" normal call from the dialer that connect with a call flow.",
+    "question_length": 329,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5903,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 814
   }
 ]
