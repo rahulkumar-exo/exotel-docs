@@ -2114,5 +2114,39 @@
       }
     ],
     "answer_length": 3912
+  },
+  {
+    "timestamp": "2026-07-20T06:36:17.037Z",
+    "response_id": "bc9c815a-4203-47bb-9617-70d122f7d4ba",
+    "question": "i want to use only call feature from exotel so how much will i cost, can i take pay as we go",
+    "question_length": 92,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1769,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 176
   }
 ]
