@@ -2080,5 +2080,39 @@
       }
     ],
     "answer_length": 2519
+  },
+  {
+    "timestamp": "2026-07-20T05:36:23.266Z",
+    "response_id": "0bfe2eb5-abf0-4bbf-a082-e3e0a740fb53",
+    "question": "get call details",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12188,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 3912
   }
 ]
