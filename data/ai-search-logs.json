@@ -2266,5 +2266,39 @@
       }
     ],
     "answer_length": 4812
+  },
+  {
+    "timestamp": "2026-07-21T04:16:16.026Z",
+    "response_id": "0e644fbb-51ce-4158-9b00-a7d25aeb515b",
+    "question": "leadassist",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2657,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Update Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      },
+      {
+        "title": "Create Pin Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Delete Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/delete-allocation"
+      }
+    ],
+    "answer_length": 914
   }
 ]
