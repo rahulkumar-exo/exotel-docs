@@ -2640,5 +2640,39 @@
       }
     ],
     "answer_length": 1143
+  },
+  {
+    "timestamp": "2026-07-21T07:49:14.321Z",
+    "response_id": "998f8c6d-e195-4f90-ae59-a644445ee249",
+    "question": "During the trial, you can only make calls and send SMS to numbers that you have explicitly verified (whitelisted) in the dashboard.",
+    "question_length": 131,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1971,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      }
+    ],
+    "answer_length": 523
   }
 ]
