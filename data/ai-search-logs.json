@@ -2742,5 +2742,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-21T08:03:30.350Z",
+    "response_id": "5e73bd10-89e9-4123-b9bb-c194dea7286a",
+    "question": "Answered by",
+    "question_length": 11,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3175,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Business Monitoring Dashboard",
+        "product": "use-cases",
+        "url": "/docs/use-cases/business-monitoring-dashboard.mdx"
+      },
+      {
+        "title": "Make Call",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/make-call"
+      },
+      {
+        "title": "Call Notifications",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/call-notifications"
+      }
+    ],
+    "answer_length": 725
   }
 ]
