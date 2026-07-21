@@ -3158,5 +3158,39 @@
       }
     ],
     "answer_length": 4147
+  },
+  {
+    "timestamp": "2026-07-21T12:47:53.746Z",
+    "response_id": "285bbbc7-6a0b-4b4b-ac74-ce8726dfac0a",
+    "question": "what is the difference between v1 and v3",
+    "question_length": 40,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2810,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 475
   }
 ]
