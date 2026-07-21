@@ -2368,5 +2368,39 @@
       }
     ],
     "answer_length": 430
+  },
+  {
+    "timestamp": "2026-07-21T04:49:13.022Z",
+    "response_id": "f0118202-6261-482a-b41a-4b973613cef6",
+    "question": "what should be my from field",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2411,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "WhatsApp Webhooks",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/webhooks"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "DLT Consent Templates",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-consent-template"
+      }
+    ],
+    "answer_length": 321
   }
 ]
