@@ -2878,5 +2878,39 @@
       }
     ],
     "answer_length": 354
+  },
+  {
+    "timestamp": "2026-07-21T08:32:47.907Z",
+    "response_id": "ca88c3b5-fa39-41f1-94da-29d5522460b9",
+    "question": "I can't see setting option",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2208,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Services Provided by Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/services"
+      },
+      {
+        "title": "Services Provided by Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/services"
+      },
+      {
+        "title": "IVR Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/ivr-applet-guide"
+      },
+      {
+        "title": "IVR Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/ivr-applet-guide"
+      }
+    ],
+    "answer_length": 1036
   }
 ]
