@@ -2674,5 +2674,39 @@
       }
     ],
     "answer_length": 523
+  },
+  {
+    "timestamp": "2026-07-21T07:49:51.580Z",
+    "response_id": "e038ac88-10e4-4bd0-abbf-b81d59ae0755",
+    "question": "I can't see setting in dashboard",
+    "question_length": 32,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5453,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Reporting Overview",
+        "product": "reporting",
+        "url": "/docs/reporting/overview"
+      }
+    ],
+    "answer_length": 318
   }
 ]
