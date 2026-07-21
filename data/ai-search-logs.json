@@ -3328,5 +3328,39 @@
       }
     ],
     "answer_length": 4693
+  },
+  {
+    "timestamp": "2026-07-21T18:08:17.423Z",
+    "response_id": "3c888669-a284-40a5-8e67-f8e41c2e9e69",
+    "question": "try gain",
+    "question_length": 8,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 19009,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp.mdx"
+      },
+      {
+        "title": "Auto Retry on Busy",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/auto-retry"
+      },
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Agent Presence Monitoring",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/agent-presence.mdx"
+      }
+    ],
+    "answer_length": 7678
   }
 ]
