@@ -2776,5 +2776,39 @@
       }
     ],
     "answer_length": 725
+  },
+  {
+    "timestamp": "2026-07-21T08:27:32.702Z",
+    "response_id": "bb99453f-3f9f-4982-94e1-7f8542b4a42c",
+    "question": "in connect applet\n\n\nI'm calling\n\n\nhttps://eo3y3pdg4v9hfq6.m.pipedream.net/?CallSid=413aa65ab80465f02df91f59ca411a7l&CallFrom=07013811139&CallTo=04041897939&CallStatus=in-progress&Direction=incoming&Created=Tue%2C+21+Jul+2026+13%3A55%3A34&DialCallDuration=0&StartTime=2026-07-21+13%3A55%3A34&EndTime=1970-01-01+05%3A30%3A00&CallType=call-attempt&DialWhomNumber=&flow_id=1296302&tenant_id=437145&From=07013811139&To=04041897939&CurrentTime=2026-07-21+13%3A55%3A45&digits=%225821%22\n\n\nand this api repon",
+    "question_length": 665,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8408,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Flow and API Configuration for Voice AI & CC Platforms",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-api-configuration"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 1250
   }
 ]
