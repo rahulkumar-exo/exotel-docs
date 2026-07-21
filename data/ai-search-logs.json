@@ -2988,5 +2988,39 @@
       }
     ],
     "answer_length": 4378
+  },
+  {
+    "timestamp": "2026-07-21T09:59:46.377Z",
+    "response_id": "8ba5d7fe-bbca-46ec-9a4c-b8b5a862ec7c",
+    "question": "IP-PSTN",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6111,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN intermix: WebRTC SDK integration",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/overview"
+      },
+      {
+        "title": "LSQ IP-PSTN Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-ip-pstn"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "IP-PSTN intermix: WebRTC SDK integration",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/overview"
+      }
+    ],
+    "answer_length": 3110
   }
 ]
