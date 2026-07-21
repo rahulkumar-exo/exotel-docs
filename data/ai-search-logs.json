@@ -3090,5 +3090,39 @@
       }
     ],
     "answer_length": 5523
+  },
+  {
+    "timestamp": "2026-07-21T11:11:46.837Z",
+    "response_id": "27a2df77-86a5-4764-ba01-f41071df4098",
+    "question": "exotel webhook base url",
+    "question_length": 23,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8188,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      }
+    ],
+    "answer_length": 3011
   }
 ]
