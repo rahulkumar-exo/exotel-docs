@@ -2334,5 +2334,39 @@
       }
     ],
     "answer_length": 5440
+  },
+  {
+    "timestamp": "2026-07-21T04:41:57.607Z",
+    "response_id": "aa74d2e7-7586-42c7-94e7-dceb668c3362",
+    "question": "where can i find acount sid",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2308,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      }
+    ],
+    "answer_length": 430
   }
 ]
