@@ -2572,5 +2572,39 @@
       }
     ],
     "answer_length": 2597
+  },
+  {
+    "timestamp": "2026-07-21T07:44:34.934Z",
+    "response_id": "6a219739-6790-4381-ae1c-b73de182dd8c",
+    "question": "virtual number masking with pin",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3856,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking Setup",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/number-masking-setup"
+      }
+    ],
+    "answer_length": 524
   }
 ]
