@@ -2538,5 +2538,39 @@
       }
     ],
     "answer_length": 3811
+  },
+  {
+    "timestamp": "2026-07-21T05:34:42.747Z",
+    "response_id": "a6baa09d-a396-4aa0-a883-84f5dbe88cd3",
+    "question": "i want to place a call and when pickup i want to play a text as audio which are preconfigured",
+    "question_length": 93,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7421,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 2597
   }
 ]
