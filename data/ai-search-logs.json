@@ -3192,5 +3192,39 @@
       }
     ],
     "answer_length": 475
+  },
+  {
+    "timestamp": "2026-07-21T12:48:25.499Z",
+    "response_id": "41413d8d-2e55-49cb-ae9a-97c4fceecdeb",
+    "question": "yes voice api v1 and voice api v3 beta",
+    "question_length": 38,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9507,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Plans Comparison",
+        "product": "billing",
+        "url": "/docs/billing/plans-comparison"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      }
+    ],
+    "answer_length": 3894
   }
 ]
