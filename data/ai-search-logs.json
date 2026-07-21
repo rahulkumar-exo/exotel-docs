@@ -2504,5 +2504,39 @@
       }
     ],
     "answer_length": 4718
+  },
+  {
+    "timestamp": "2026-07-21T05:22:08.376Z",
+    "response_id": "c3f48983-cdd1-4e09-8324-418f4e4f8414",
+    "question": "outbound",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7650,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      },
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      },
+      {
+        "title": "Network Requirements",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/network-requirements"
+      }
+    ],
+    "answer_length": 3811
   }
 ]
