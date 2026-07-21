@@ -458,7 +458,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit={limit}&offset={o
 | Field | Value |
 | --- | --- |
 | `field` | `"score"` |
-| `operator` | `"greater_than"`, `"less_than"`, `"greater_than_or_equal"`, `"less_than_or_equal"`, or `"equal"` |
+| `operator` | `"greater_than"`, `"less_than"`, `"greater_than_or_equal"`, `"less_than_or_equal"`, or `"equals"` |
 | `value` | Numeric score value. |
 
 **Example Request**
