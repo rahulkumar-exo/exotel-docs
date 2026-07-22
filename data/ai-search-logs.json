@@ -4450,5 +4450,39 @@
       }
     ],
     "answer_length": 780
+  },
+  {
+    "timestamp": "2026-07-22T18:53:37.903Z",
+    "response_id": "f6ca169d-423f-4736-955e-f7323d54ba6d",
+    "question": "how to enable dual channel recording for both incoming and oputgoing calls",
+    "question_length": 74,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6092,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "Freshdesk Secure Recording Enablement",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk-secure-recording"
+      }
+    ],
+    "answer_length": 1460
   }
 ]
