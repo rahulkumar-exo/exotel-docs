@@ -3396,5 +3396,39 @@
       }
     ],
     "answer_length": 3754
+  },
+  {
+    "timestamp": "2026-07-22T02:26:07.897Z",
+    "response_id": "1a81e33c-ffd4-48f4-a1ff-aa9a7bff6178",
+    "question": "how to setup webhook for whatsapp api",
+    "question_length": 37,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6424,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 1869
   }
 ]
