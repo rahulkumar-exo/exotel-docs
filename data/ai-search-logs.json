@@ -3430,5 +3430,39 @@
       }
     ],
     "answer_length": 1869
+  },
+  {
+    "timestamp": "2026-07-22T02:27:53.085Z",
+    "response_id": "e04158f5-7807-41fc-af79-5f3d7aedadfe",
+    "question": "is the verification using signature header mandatory",
+    "question_length": 52,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3650,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "DLT Header Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-header-registration"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 735
   }
 ]
