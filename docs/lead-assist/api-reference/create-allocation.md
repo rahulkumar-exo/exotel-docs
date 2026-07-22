@@ -33,12 +33,11 @@ Pass credentials using HTTP Basic Auth. Your Account SID is the username and you
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `caller_id_number` | String | Yes | Virtual number for the allocation, in E.164 format. Must be from your provisioned VN pool. |
-| `from` | Array of Strings | Yes | A-party phone number(s) — the agent or seller side. E.164 format. At least one number required. |
-| `to` | Array of Strings | No | B-party phone number(s) — the customer side. E.164 format. Can be left empty and set later via the Update endpoint. |
+| `from` | Number | Yes | A-party phone number — the agent or seller side. E.164 format. |
+| `to` | Number | No | B-party phone number — the customer side. E.164 format. Can be left empty and set later via the Update endpoint. |
 | `duration` | Integer | No | Allocation validity in seconds. Default: `86400` (24 hours). Min: `300` (5 minutes). Max: `14688000` (170 days). |
 | `max_pin_attempts` | Integer | No | Maximum number of incorrect PIN attempts before the allocation is locked out. Default: `3`. |
 | `record` | Boolean | No | Set to `true` to record all calls on this allocation. Default: `false`. |
-| `custom_field` | String | No | Arbitrary metadata string you want associated with this allocation (max 256 characters). Returned as-is in event callbacks. |
 
 ## Example Request
 
@@ -49,12 +48,11 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "caller_id_number": "+914000XXXXXX",
-    "from": ["+919900XXXXXX"],
-    "to": ["+918800XXXXXX"],
+    "from": "+919900XXXXXX",
+    "to": "+918800XXXXXX",
     "duration": 3600,
     "max_pin_attempts": 3,
-    "record": false,
-    "custom_field": "order_id=12345"
+    "record": false
   }'
 ```
 
@@ -66,12 +64,11 @@ curl -X POST \
     "greenpin_id": "gp_abc123xyz",
     "virtual_number": "+914000XXXXXX",
     "pin": "4821",
-    "from": ["+919900XXXXXX"],
-    "to": ["+918800XXXXXX"],
+    "from": "+919900XXXXXX",
+    "to": "+918800XXXXXX",
     "status": "active",
     "created_at": "2024-06-15T10:30:00+05:30",
-    "expires_at": "2024-06-15T11:30:00+05:30",
-    "custom_field": "order_id=12345"
+    "expires_at": "2024-06-15T11:30:00+05:30"
   }
 }
 ```
@@ -83,12 +80,11 @@ curl -X POST \
 | `greenpin_id` | String | Unique identifier for this allocation. Use this ID in subsequent Get, Update, and Delete requests. |
 | `virtual_number` | String | The virtual number assigned to this allocation. B-party dials this number to reach A-party. |
 | `pin` | String | System-generated PIN. B-party enters this after calling the virtual number. |
-| `from` | Array of Strings | A-party number(s) associated with this allocation. |
-| `to` | Array of Strings | B-party number(s) associated with this allocation. Empty array if not set at creation. |
+| `from` | Number | A-party number associated with this allocation. |
+| `to` | Number | B-party number associated with this allocation. Empty if not set at creation. |
 | `status` | String | Current state of the allocation. See Status Values below. |
 | `created_at` | String | ISO 8601 timestamp when the allocation was created. |
 | `expires_at` | String | ISO 8601 timestamp when the allocation will expire, based on the `duration` set. |
-| `custom_field` | String | The custom metadata string passed at creation, if any. |
 
 ## Status Values
 
