@@ -3498,5 +3498,39 @@
       }
     ],
     "answer_length": 3587
+  },
+  {
+    "timestamp": "2026-07-22T05:43:14.836Z",
+    "response_id": "8b33c1b1-cdb7-4487-b458-4692aefd5f12",
+    "question": "webrtc user delete",
+    "question_length": 18,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4029,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Delete User",
+        "product": "users",
+        "url": "/docs/users/api-reference/delete-user"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Users",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/users"
+      },
+      {
+        "title": "Users",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/users"
+      }
+    ],
+    "answer_length": 1280
   }
 ]
