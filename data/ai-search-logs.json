@@ -4314,5 +4314,39 @@
       }
     ],
     "answer_length": 340
+  },
+  {
+    "timestamp": "2026-07-22T14:48:46.493Z",
+    "response_id": "2ea31047-578c-450b-a9f9-6be7263e9fee",
+    "question": "what is ivr",
+    "question_length": 11,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2754,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IVR Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/ivr-applet-guide"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      }
+    ],
+    "answer_length": 1650
   }
 ]
