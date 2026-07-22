@@ -3634,5 +3634,39 @@
       }
     ],
     "answer_length": 1086
+  },
+  {
+    "timestamp": "2026-07-22T08:28:13.718Z",
+    "response_id": "cbe8b967-18b2-4184-8219-dec001f0e8d8",
+    "question": "its already an incoming call and i want to connect it to a bot",
+    "question_length": 62,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9780,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 2559
   }
 ]
