@@ -4280,5 +4280,39 @@
       }
     ],
     "answer_length": 186
+  },
+  {
+    "timestamp": "2026-07-22T14:45:41.287Z",
+    "response_id": "0073a7bd-4ecb-48af-ae92-027eacdc03d7",
+    "question": "/ivr-automation/webhook/connect-status\nwhat is this webhook",
+    "question_length": 59,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3288,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 340
   }
 ]
