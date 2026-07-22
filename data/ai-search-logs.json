@@ -4212,5 +4212,39 @@
       }
     ],
     "answer_length": 5179
+  },
+  {
+    "timestamp": "2026-07-22T11:34:37.887Z",
+    "response_id": "cc519d89-8884-46ee-b5fb-114945599aa4",
+    "question": "Hi Exotel team, we want to build a sales calling system where our agents call customers through Exotel.\n\nOur only requirement is: **we need the complete transcript of every sales call between agent and customer.**\n\nPlease clarify:\n\n1. Does Exotel provide call transcription (speech-to-text) directly?\n2. Is it available with Voice API / CCM API, or do we need Conversation Intelligence / Gen AI?\n3. Can we get transcripts through API or webhook after the call?\n4. Please share the recommended Exotel ",
+    "question_length": 793,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12419,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 2897
   }
 ]
