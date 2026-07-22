@@ -4416,5 +4416,39 @@
       }
     ],
     "answer_length": 606
+  },
+  {
+    "timestamp": "2026-07-22T16:25:20.070Z",
+    "response_id": "3332723e-75e0-4c6b-adac-29966e6e6703",
+    "question": "do you have mcp for documtaiotn fetching",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3488,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Bring Your Own MCP",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/mcp-integration.mdx"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      }
+    ],
+    "answer_length": 780
   }
 ]
