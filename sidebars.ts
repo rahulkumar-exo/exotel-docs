@@ -209,9 +209,10 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'lead-assist/api-reference/create-allocation',
+        'lead-assist/api-reference/delete-allocation',
         'lead-assist/api-reference/get-allocation',
         'lead-assist/api-reference/update-allocation',
-        'lead-assist/api-reference/delete-allocation',
+        'lead-assist/api-reference/update-greenvn',
       ],
     },
   ],

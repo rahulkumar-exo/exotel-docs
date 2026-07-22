@@ -1,72 +1,51 @@
 ---
 id: delete-allocation
-title: Delete Allocation
-description: Delete a GreenPIN allocation to remove the PIN-mapping between users and a virtual number via the Exotel Lead Assist API.
+title: Delete an Allocation
+description: Delete a VN allocation to remove the mapping from the GreenVN via the Exotel Lead Assist API.
 sidebar_label: Delete Allocation
 ---
 
-# Delete Pin Allocation
+# Delete an Allocation
 
-Delete a GreenPin allocation, removing the PIN-mapping between users and the assigned virtual number.
-
-## HTTP Request
+A de-allocation request removes the mapping from the VN.
 
 ```
-DELETE https://leadassist.exotel.in/v1/tenants/<tenant_id>/greenpin/<greenpin_id>
+DELETE https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn/<greenvn_id>
 ```
 
-## Headers
-
-| Header | Value |
-|--------|-------|
-| `Authorization` | HTTP Basic Auth — Account SID as username, ExoBridge token as password |
-
-## Path Parameters
-
-| Parameter | Description |
-|-----------|-------------|
-| `tenant_id` | Your tenant identifier |
-| `greenpin_id` | The unique identifier of the GreenPin allocation to delete |
+Replace `<your_sid>` with your tenant ID and `<greenvn_id>` with the same received in the allocation request.
 
 ## Example Request
 
 ```bash
-curl -X DELETE \
-  'https://leadassist.exotel.in/v1/tenants/<tenant_id>/greenpin/gp_abc123xyz' \
-  -u '<account_sid>:<exobridge_token>'
+curl -X DELETE https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn/<greenvn_id>
 ```
+
+## HTTP Response
+
+- On success, the HTTP response status code will be 200.
+- The HTTP response body will contain a JSON similar to the one below.
 
 ## Example Response
 
 ```json
 {
-  "response": {
-    "greenpin_id": "gp_abc123xyz",
-    "status": "deleted",
-    "deleted_at": "2024-06-15T11:00:00+05:30"
+  "success": true,
+  "status": 200,
+  "data": {
+    "connection_id": "abcd12345",
+    "aparty_numbers": [
+      "+000000000000"
+    ],
+    "bparty_numbers": [
+      "+919876543210"
+    ],
+    "usage": "oneway|twoway",
+    "state": "vault",
+    "green_vn": "+918012345678",
+    "greenvn_id": "123456"
   }
 }
 ```
 
-## Response Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `greenpin_id` | String | Identifier of the allocation that was deleted. |
-| `status` | String | Always `deleted` on a successful response. |
-| `deleted_at` | String | ISO 8601 timestamp of when the deletion was processed. |
-
-## HTTP Status Codes
-
-| Status Code | Meaning |
-|-------------|---------|
-| `200 OK` | Allocation deleted successfully. |
-| `401 Unauthorized` | Authentication failed. Verify your Account SID and ExoBridge token. |
-| `403 Forbidden` | You do not have permission to delete this allocation. |
-| `404 Not Found` | No allocation exists for the given `greenpin_id` under this tenant. |
-| `409 Conflict` | The allocation has already been deleted. |
-| `500 Internal Server Error` | Unexpected server error. Retry with exponential backoff. |
-
-:::info Virtual Number Release
-Deleting an allocation releases the virtual number back to your pool immediately. The number becomes available for a new allocation right away.
-:::
+The parameters in the above request are same as described in the response of the allocation request.
