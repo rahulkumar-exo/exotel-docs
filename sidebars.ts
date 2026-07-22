@@ -213,6 +213,7 @@ const sidebars: SidebarsConfig = {
         'lead-assist/api-reference/get-allocation',
         'lead-assist/api-reference/update-allocation',
         'lead-assist/api-reference/update-greenvn',
+        'lead-assist/api-reference/events-callbacks',
       ],
     },
   ],
