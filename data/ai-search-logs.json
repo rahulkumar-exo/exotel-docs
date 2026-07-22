@@ -4246,5 +4246,39 @@
       }
     ],
     "answer_length": 2897
+  },
+  {
+    "timestamp": "2026-07-22T12:57:36.328Z",
+    "response_id": "3e2b6286-1fd6-4b96-807b-20fc3f5a43c1",
+    "question": "Why is 140 series number used",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3422,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking Setup",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/number-masking-setup"
+      }
+    ],
+    "answer_length": 186
   }
 ]
