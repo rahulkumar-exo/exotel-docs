@@ -4042,5 +4042,39 @@
       }
     ],
     "answer_length": 4023
+  },
+  {
+    "timestamp": "2026-07-22T11:13:33.893Z",
+    "response_id": "f855f5c9-e04a-44c3-bbf6-bd22aec7d5c2",
+    "question": "how do I connect exotel documentation mcp with claude code?",
+    "question_length": 59,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5168,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      }
+    ],
+    "answer_length": 1442
   }
 ]
