@@ -4348,5 +4348,39 @@
       }
     ],
     "answer_length": 1650
+  },
+  {
+    "timestamp": "2026-07-22T15:28:30.451Z",
+    "response_id": "c5cb9d76-29f8-4004-96f1-4f088ab281f0",
+    "question": "Is there a transcript service",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5643,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "DLT Template Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-template-registration"
+      },
+      {
+        "title": "SMS Templates",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-templates"
+      },
+      {
+        "title": "ExoVoiceAnalyze",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/api-reference/exovoice-analyze"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 1661
   }
 ]
