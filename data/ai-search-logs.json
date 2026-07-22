@@ -3974,5 +3974,39 @@
       }
     ],
     "answer_length": 1805
+  },
+  {
+    "timestamp": "2026-07-22T10:47:44.834Z",
+    "response_id": "26c1a51a-8ff2-4a12-8496-196b6e6070b4",
+    "question": "okay i am using the passthru then voice bot applet .. now where will i set the status callback and the recording callback url",
+    "question_length": 125,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7422,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 2126
   }
 ]
