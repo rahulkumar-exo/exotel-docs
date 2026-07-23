@@ -4756,5 +4756,39 @@
       }
     ],
     "answer_length": 641
+  },
+  {
+    "timestamp": "2026-07-23T17:43:48.226Z",
+    "response_id": "df218574-13ad-4621-8bf8-941437859945",
+    "question": "I m doing bulk campaign",
+    "question_length": 23,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8663,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Campaign Scheduling",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-scheduling"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Creating a Voice Campaign",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/creating-voice-campaign"
+      }
+    ],
+    "answer_length": 1850
   }
 ]
