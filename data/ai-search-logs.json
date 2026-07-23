@@ -4654,5 +4654,39 @@
       }
     ],
     "answer_length": 4485
+  },
+  {
+    "timestamp": "2026-07-23T17:41:25.794Z",
+    "response_id": "bd53c439-9e5c-4cb0-afee-7058ce9983f1",
+    "question": "I sent an api request for campaign for 2000 contacts , but in Exotel it splits in 2 campaigns",
+    "question_length": 93,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7467,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaigns - Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/overview"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Campaigns - Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/overview"
+      }
+    ],
+    "answer_length": 745
   }
 ]
