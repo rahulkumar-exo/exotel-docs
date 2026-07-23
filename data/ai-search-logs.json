@@ -4518,5 +4518,39 @@
       }
     ],
     "answer_length": 2321
+  },
+  {
+    "timestamp": "2026-07-23T08:02:44.681Z",
+    "response_id": "f41ae065-9bb3-4b18-b4ba-2fddafc4bf56",
+    "question": "messages",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8280,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Payment Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/payment-messages"
+      },
+      {
+        "title": "WhatsApp Interactive Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/interactive-messages"
+      }
+    ],
+    "answer_length": 4440
   }
 ]
