@@ -4722,5 +4722,39 @@
       }
     ],
     "answer_length": 671
+  },
+  {
+    "timestamp": "2026-07-23T17:43:16.292Z",
+    "response_id": "6d842746-c787-414e-805a-0bea24d83ffa",
+    "question": "So what do you think if I m doing anything in my API call ?",
+    "question_length": 59,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3550,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 641
   }
 ]
