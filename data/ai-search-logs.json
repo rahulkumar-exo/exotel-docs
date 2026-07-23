@@ -4790,5 +4790,39 @@
       }
     ],
     "answer_length": 1850
+  },
+  {
+    "timestamp": "2026-07-23T17:45:02.754Z",
+    "response_id": "13f8dbde-9e14-4f5c-a3bb-f76e921026ce",
+    "question": "Maybe due to AI campaigns ? As I m doing campaign for AI bot",
+    "question_length": 60,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4958,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dynamic Caller ID Campaigns",
+        "product": "use-cases",
+        "url": "/docs/use-cases/dynamic-caller-id-campaigns.mdx"
+      },
+      {
+        "title": "Dynamic Caller ID Campaigns",
+        "product": "use-cases",
+        "url": "/docs/use-cases/dynamic-caller-id-campaigns.mdx"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Call Campaigns",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/overview"
+      }
+    ],
+    "answer_length": 1745
   }
 ]
