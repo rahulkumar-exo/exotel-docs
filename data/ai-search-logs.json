@@ -4688,5 +4688,39 @@
       }
     ],
     "answer_length": 745
+  },
+  {
+    "timestamp": "2026-07-23T17:42:51.816Z",
+    "response_id": "696eb004-e9ba-42c2-8961-1e09898d0fef",
+    "question": "If I send more then 1000 contacts in bulk campaign it gets split into 2 in Exotel",
+    "question_length": 81,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3928,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Campaigns - Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/overview"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      }
+    ],
+    "answer_length": 671
   }
 ]
