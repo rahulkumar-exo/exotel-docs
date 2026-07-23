@@ -4824,5 +4824,39 @@
       }
     ],
     "answer_length": 1745
+  },
+  {
+    "timestamp": "2026-07-23T17:49:26.740Z",
+    "response_id": "b6796cc5-c027-4f35-ba34-cd3c7a7f4330",
+    "question": "How to control how many channels to use for a campaign as for AI voice campaigns channels are being used",
+    "question_length": 104,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2484,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaign Guides Overview",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/overview"
+      },
+      {
+        "title": "Dynamic Caller ID Campaigns",
+        "product": "use-cases",
+        "url": "/docs/use-cases/dynamic-caller-id-campaigns.mdx"
+      },
+      {
+        "title": "Dynamic Caller ID Campaigns",
+        "product": "use-cases",
+        "url": "/docs/use-cases/dynamic-caller-id-campaigns.mdx"
+      },
+      {
+        "title": "Campaign Contact List Management",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-contacts-management"
+      }
+    ],
+    "answer_length": 269
   }
 ]
