@@ -4960,5 +4960,39 @@
       }
     ],
     "answer_length": 885
+  },
+  {
+    "timestamp": "2026-07-24T05:42:44.019Z",
+    "response_id": "60412895-dae7-4c86-b175-7b45a82c3ee5",
+    "question": "ratelimit",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3413,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 1269
   }
 ]
