@@ -5062,5 +5062,39 @@
       }
     ],
     "answer_length": 2044
+  },
+  {
+    "timestamp": "2026-07-24T06:54:57.520Z",
+    "response_id": "0877d673-7bee-434f-b080-7497bf51b9d4",
+    "question": "Give me details Voice API pricing - I am planning build a saas which offer incoming AI call and outgoing AI calls to users",
+    "question_length": 122,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2604,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 176
   }
 ]
