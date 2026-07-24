@@ -5028,5 +5028,39 @@
       }
     ],
     "answer_length": 1536
+  },
+  {
+    "timestamp": "2026-07-24T06:18:39.619Z",
+    "response_id": "0aaf5145-09e5-4c0d-9793-7f35b3df4bc1",
+    "question": "How to send static whatsapp messages",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5696,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "WhatsApp Session Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/session-messages"
+      }
+    ],
+    "answer_length": 2044
   }
 ]
