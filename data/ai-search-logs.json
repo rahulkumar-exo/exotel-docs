@@ -5300,5 +5300,39 @@
       }
     ],
     "answer_length": 3011
+  },
+  {
+    "timestamp": "2026-07-24T10:23:03.146Z",
+    "response_id": "7a52ca3e-c6c3-4157-989d-7c7bcb95b803",
+    "question": "hey i what will be the costing for a call , let's say i want to connect two numbers but receiver will get unknown number instead of caller number",
+    "question_length": 145,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2788,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Custom Caller ID",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/custom-caller-id"
+      }
+    ],
+    "answer_length": 176
   }
 ]
