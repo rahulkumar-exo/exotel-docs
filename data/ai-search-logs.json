@@ -5130,5 +5130,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-24T07:35:14.110Z",
+    "response_id": "6899b957-3a2e-4f5d-a8d6-a9eaf56e73f4",
+    "question": "hell@exotel.com how much would be the price for one virtual number",
+    "question_length": 66,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1323,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      }
+    ],
+    "answer_length": 176
   }
 ]
