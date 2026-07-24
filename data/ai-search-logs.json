@@ -5232,5 +5232,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-24T07:36:21.600Z",
+    "response_id": "81646c20-5d7e-4ac4-b502-ef509f89c797",
+    "question": "hello@exotel.com",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2277,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "getting-started",
+        "url": "/docs/getting-started/overview"
+      },
+      {
+        "title": "Flow and API Configuration for Voice AI & CC Platforms",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-api-configuration"
+      }
+    ],
+    "answer_length": 176
   }
 ]
