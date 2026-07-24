@@ -5368,5 +5368,39 @@
       }
     ],
     "answer_length": 4622
+  },
+  {
+    "timestamp": "2026-07-24T12:30:12.629Z",
+    "response_id": "ee52ae6f-536f-4cbc-97dd-3a50a160a277",
+    "question": "will it support international client",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3912,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "International Rates",
+        "product": "billing",
+        "url": "/docs/billing/international-rates"
+      },
+      {
+        "title": "International Rates",
+        "product": "billing",
+        "url": "/docs/billing/international-rates"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      }
+    ],
+    "answer_length": 536
   }
 ]
