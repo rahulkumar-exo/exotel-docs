@@ -4926,5 +4926,39 @@
       }
     ],
     "answer_length": 4567
+  },
+  {
+    "timestamp": "2026-07-24T05:02:55.043Z",
+    "response_id": "0a4c53c8-222b-44c2-be28-d50aa7cfcf62",
+    "question": "can I try it ? do you proivde any trial credentials?",
+    "question_length": 52,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4482,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 885
   }
 ]
