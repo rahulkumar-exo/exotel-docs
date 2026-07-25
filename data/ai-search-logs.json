@@ -5436,5 +5436,39 @@
       }
     ],
     "answer_length": 550
+  },
+  {
+    "timestamp": "2026-07-25T17:09:44.373Z",
+    "response_id": "bd076980-a745-443f-a8fa-7402f3cf4a88",
+    "question": "what's the compatibility with making phone calls ?",
+    "question_length": 50,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6037,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1861
   }
 ]
