@@ -5504,5 +5504,39 @@
       }
     ],
     "answer_length": 3468
+  },
+  {
+    "timestamp": "2026-07-25T19:48:03.226Z",
+    "response_id": "ee858961-8b71-4a60-bcc3-c8b9ced0cad4",
+    "question": "how do I invoke a call from my backend and what data do I need to send?",
+    "question_length": 71,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12498,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 1277
   }
 ]
