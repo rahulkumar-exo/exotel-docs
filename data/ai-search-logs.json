@@ -5640,5 +5640,39 @@
       }
     ],
     "answer_length": 867
+  },
+  {
+    "timestamp": "2026-07-26T05:51:17.323Z",
+    "response_id": "c916bfdc-11d8-4a6a-bc4f-bc0ce025da33",
+    "question": "can i get US numbers?",
+    "question_length": 21,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4276,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns.mdx"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes.mdx"
+      }
+    ],
+    "answer_length": 572
   }
 ]
