@@ -5708,5 +5708,39 @@
       }
     ],
     "answer_length": 449
+  },
+  {
+    "timestamp": "2026-07-26T09:17:51.701Z",
+    "response_id": "a0631445-3e4f-41b7-a378-3f59da2c9d31",
+    "question": "Purchasing an ExoPhone",
+    "question_length": 22,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4080,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      },
+      {
+        "title": "ExoPhone Details",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/number-details"
+      },
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      }
+    ],
+    "answer_length": 2135
   }
 ]
