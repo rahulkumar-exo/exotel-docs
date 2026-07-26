@@ -5742,5 +5742,39 @@
       }
     ],
     "answer_length": 2135
+  },
+  {
+    "timestamp": "2026-07-26T15:09:17.141Z",
+    "response_id": "82c3f1e3-b78f-4981-9eb1-a0c7a332edce",
+    "question": "what is the cost for exophone number",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2114,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 176
   }
 ]
