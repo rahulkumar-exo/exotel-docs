@@ -5572,5 +5572,39 @@
       }
     ],
     "answer_length": 1180
+  },
+  {
+    "timestamp": "2026-07-26T05:39:49.478Z",
+    "response_id": "34cc9bee-686e-484c-9be3-498cf33991e8",
+    "question": "how to checl available exophones",
+    "question_length": 32,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5485,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      },
+      {
+        "title": "List All ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/list-numbers"
+      }
+    ],
+    "answer_length": 2024
   }
 ]
