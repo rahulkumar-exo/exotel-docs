@@ -6014,5 +6014,39 @@
       }
     ],
     "answer_length": 4801
+  },
+  {
+    "timestamp": "2026-07-27T08:02:51.790Z",
+    "response_id": "ef93e26c-195a-4ee0-bbba-4405ef601fa6",
+    "question": "CLOUD CALLING",
+    "question_length": 13,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4042,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What is Cloud Telephony?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/overview"
+      },
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      }
+    ],
+    "answer_length": 2189
   }
 ]
