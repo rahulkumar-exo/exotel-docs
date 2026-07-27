@@ -6464,5 +6464,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-27T13:24:39.675Z",
+    "response_id": "1b3b3970-fbea-4065-ad1d-3e23971b7b3c",
+    "question": "Can you confirm whether the Voicebot Applet / AgentStream Flow Builder has been enabled on my account?",
+    "question_length": 102,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1459,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 176
   }
 ]
