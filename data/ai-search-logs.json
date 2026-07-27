@@ -6532,5 +6532,39 @@
       }
     ],
     "answer_length": 2465
+  },
+  {
+    "timestamp": "2026-07-27T16:49:11.288Z",
+    "response_id": "123764c2-997a-4886-bc89-93bb0438fdfc",
+    "question": "Pay as you go plan for startup",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3065,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Plans Comparison",
+        "product": "billing",
+        "url": "/docs/billing/plans-comparison"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "Refund Policy",
+        "product": "billing",
+        "url": "/docs/billing/refund-policy"
+      }
+    ],
+    "answer_length": 272
   }
 ]
