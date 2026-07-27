@@ -6252,5 +6252,39 @@
       }
     ],
     "answer_length": 2673
+  },
+  {
+    "timestamp": "2026-07-27T11:15:30.665Z",
+    "response_id": "b908d464-22ec-4540-8818-59b6e0189524",
+    "question": "How can i connect phone to AI model for TTS",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2763,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Connect Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/connect"
+      }
+    ],
+    "answer_length": 1059
   }
 ]
