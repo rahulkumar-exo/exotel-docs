@@ -6048,5 +6048,39 @@
       }
     ],
     "answer_length": 2189
+  },
+  {
+    "timestamp": "2026-07-27T08:08:18.820Z",
+    "response_id": "6b1698fa-7b2d-4f0c-8f5a-cb93b8725e17",
+    "question": "campaigns",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2432,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Campaigns",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/overview"
+      },
+      {
+        "title": "List All Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/bulk-campaign-details"
+      },
+      {
+        "title": "SMS Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/overview"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns.mdx"
+      }
+    ],
+    "answer_length": 761
   }
 ]
