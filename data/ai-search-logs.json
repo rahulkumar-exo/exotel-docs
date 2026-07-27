@@ -5946,5 +5946,39 @@
       }
     ],
     "answer_length": 960
+  },
+  {
+    "timestamp": "2026-07-27T07:46:28.941Z",
+    "response_id": "eec48b31-4101-4670-b6d3-db5d0e0d95e4",
+    "question": "pricing of call per minute ?",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1849,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      }
+    ],
+    "answer_length": 176
   }
 ]
