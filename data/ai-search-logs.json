@@ -6218,5 +6218,39 @@
       }
     ],
     "answer_length": 3028
+  },
+  {
+    "timestamp": "2026-07-27T10:50:22.640Z",
+    "response_id": "940be373-d7a9-48ad-823f-7642551f8e03",
+    "question": "how to login",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5860,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Login",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login.mdx"
+      },
+      {
+        "title": "Login",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Login",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login.mdx"
+      }
+    ],
+    "answer_length": 2673
   }
 ]
