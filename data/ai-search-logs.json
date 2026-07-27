@@ -6396,5 +6396,39 @@
       }
     ],
     "answer_length": 298
+  },
+  {
+    "timestamp": "2026-07-27T12:37:06.258Z",
+    "response_id": "0b9d1f8e-7349-4c4d-8e4f-bdc208cfdec9",
+    "question": "how many concurent calls can we make using exotel ?",
+    "question_length": 51,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2852,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Services Provided by Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/services"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 176
   }
 ]
