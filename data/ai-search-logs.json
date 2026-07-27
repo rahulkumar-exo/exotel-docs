@@ -6150,5 +6150,39 @@
       }
     ],
     "answer_length": 267
+  },
+  {
+    "timestamp": "2026-07-27T10:31:22.051Z",
+    "response_id": "eab9bead-5f5e-4f30-b735-eb5ef73a2505",
+    "question": "masking",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10854,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Masking Setup",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/number-masking-setup"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      }
+    ],
+    "answer_length": 3830
   }
 ]
