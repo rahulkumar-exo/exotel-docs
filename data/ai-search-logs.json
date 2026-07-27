@@ -5878,5 +5878,39 @@
       }
     ],
     "answer_length": 4936
+  },
+  {
+    "timestamp": "2026-07-27T07:12:36.743Z",
+    "response_id": "2fbe683f-68b6-4f05-846a-904ba428672f",
+    "question": "conference",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2950,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voicelogs",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/voicelogs.mdx"
+      },
+      {
+        "title": "Voice API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/voice-faqs"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      }
+    ],
+    "answer_length": 454
   }
 ]
