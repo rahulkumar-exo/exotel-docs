@@ -6116,5 +6116,39 @@
       }
     ],
     "answer_length": 4615
+  },
+  {
+    "timestamp": "2026-07-27T10:18:51.214Z",
+    "response_id": "41b1c89e-2cb9-4b30-8e59-e99c8abf2fee",
+    "question": "is there an opening in tech team?",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2357,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Delete Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/delete-allocation"
+      },
+      {
+        "title": "Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/flows"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      },
+      {
+        "title": "What is Cloud Telephony?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/overview"
+      }
+    ],
+    "answer_length": 267
   }
 ]
