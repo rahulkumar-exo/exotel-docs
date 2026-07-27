@@ -5844,5 +5844,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-27T06:53:09.714Z",
+    "response_id": "6ea1f8b2-d0a7-4974-8cbf-55ae44f19670",
+    "question": "heartbeat",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7004,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Heartbeat",
+        "product": "heartbeat",
+        "url": "/docs/heartbeat/overview"
+      },
+      {
+        "title": "Heartbeat",
+        "product": "heartbeat",
+        "url": "/docs/heartbeat/overview"
+      },
+      {
+        "title": "Webhook Format",
+        "product": "heartbeat",
+        "url": "/docs/heartbeat/webhook-format"
+      },
+      {
+        "title": "Business Monitoring Dashboard",
+        "product": "use-cases",
+        "url": "/docs/use-cases/business-monitoring-dashboard.mdx"
+      }
+    ],
+    "answer_length": 4936
   }
 ]
