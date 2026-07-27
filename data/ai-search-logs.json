@@ -6286,5 +6286,39 @@
       }
     ],
     "answer_length": 1059
+  },
+  {
+    "timestamp": "2026-07-27T11:15:54.335Z",
+    "response_id": "14de2b85-bb78-49f2-9f89-17e6bdfa9e97",
+    "question": "Sry, i want to do STTS",
+    "question_length": 22,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2969,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Users",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/manage-users.mdx"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Campaign Retry Configuration",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-retry-logic"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 924
   }
 ]
