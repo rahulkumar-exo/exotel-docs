@@ -6430,5 +6430,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-27T13:24:04.945Z",
+    "response_id": "f61852e6-802f-4345-ab46-f8681372caf3",
+    "question": "Web Streaming is enabled on my account and my WebSocket server is ready.\n\nHowever, I cannot find the Voicebot Applet or Flow Builder anywhere in my dashboard.\n\nCan you please:\n\nEnable the Voicebot Applet UI for my account, or\nTell me exactly where it is located in my dashboard, or\nConfigure the Voicebot Applet on your side using my WebSocket URL.\n\nMy WebSocket URL is:\n\nwss://bowling-carmen-gem-libraries.trycloudflare.com/exotel/stream",
+    "question_length": 438,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2655,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 176
   }
 ]
