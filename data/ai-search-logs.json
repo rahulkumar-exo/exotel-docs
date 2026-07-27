@@ -5912,5 +5912,39 @@
       }
     ],
     "answer_length": 454
+  },
+  {
+    "timestamp": "2026-07-27T07:17:26.938Z",
+    "response_id": "363889c1-1110-4a8e-8ca4-4a324aeaf448",
+    "question": "how do i set it up so that a agent can add another agent to a live call to make it a conference call?",
+    "question_length": 101,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4116,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      }
+    ],
+    "answer_length": 960
   }
 ]
