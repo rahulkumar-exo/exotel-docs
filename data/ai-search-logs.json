@@ -3668,5 +3668,39 @@
       }
     ],
     "answer_length": 2559
+  },
+  {
+    "timestamp": "2026-07-28T12:58:37.474Z",
+    "response_id": "c242874f-c636-4f13-af1b-c3d37a5fbaf9",
+    "question": "hi, i am looking for outbound AI based calling platform pricing",
+    "question_length": 63,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4742,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "Integrations",
+        "product": "integrations",
+        "url": "/docs/integrations/overview"
+      },
+      {
+        "title": "Integrations",
+        "product": "integrations",
+        "url": "/docs/integrations/overview"
+      },
+      {
+        "title": "Flow and API Configuration for Voice AI & CC Platforms",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-api-configuration"
+      }
+    ],
+    "answer_length": 176
   }
 ]
