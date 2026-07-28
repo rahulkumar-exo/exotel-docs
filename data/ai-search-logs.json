@@ -3702,5 +3702,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-28T13:19:22.076Z",
+    "response_id": "294e2d3f-6efa-4a71-bcd6-1a6337437a28",
+    "question": "Hi Exotel Team,\n\nI am Vetrivel Manickavelu from Achala Health, working on hospital projects.\n\nWe are evaluating Exotel for outbound Voice AI calls. Our hospital client would like to use their existing hospital phone number as the outbound caller ID instead of a newly assigned number. The hospital is ready to complete KYC and provide number ownership or authorization documents if required.\n\nCould you please confirm whether this is possible through custom CLI, SIP trunking, BYOC, number porting, o",
+    "question_length": 1017,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4480,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 176
   }
 ]
