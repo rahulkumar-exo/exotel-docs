@@ -6744,5 +6744,39 @@
       }
     ],
     "answer_length": 3180
+  },
+  {
+    "timestamp": "2026-07-28T07:33:20.917Z",
+    "response_id": "7399f323-2d76-4328-b4c9-9d050d41ed75",
+    "question": "Hi,\n\nI am developing a custom Laravel-based Repo Management Software for a repossession agency.\n\nI want to integrate Exotel Voice API into my application.\n\nMy requirement is NOT an IVR menu.\n\nMy workflow is:\n\n1. Admin uploads an Excel file containing customer details (Customer Name, Mobile Number, Vehicle Number, Finance Company, etc.).\n2. Admin creates a calling campaign.\n3. When the campaign starts, my Laravel application should initiate outbound calls using Exotel APIs.\n4. Exotel should first",
+    "question_length": 1886,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 20025,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 5202
   }
 ]
