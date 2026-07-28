@@ -328,7 +328,7 @@ There are multiple callbacks that the ExoBridge solution provides for events hap
 On every call that happens in an allocation, ExoBridge will make an HTTP POST request to the specified endpoint with the call details.
 
 :::info
-Additionally, call parameters as per Exotel will be included in this event. Please visit the [Support Article](http://support.exotel.in/support/solutions/articles/48283-working-with-passthru-applet) for more details.
+Additionally, call parameters as per Exotel will be included in this event. Please visit the [Support Article](https://support.exotel.com/support/solutions/articles/48283-working-with-passthru-applet) for more details.
 :::
 
 | Parameter Name | Type & Value |

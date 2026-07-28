@@ -16,7 +16,7 @@ On every call that happens in an allocation, ExoBridge will make a HTTP POST req
 :::info
 Note: Additionally call parameters as per Exotel will be included in this event.
 
-Please visit our [Support Article](http://support.exotel.in/support/solutions/articles/48283-working-with-passthru-applet) for more details.
+Please visit our [Support Article](https://support.exotel.com/support/solutions/articles/48283-working-with-passthru-applet) for more details.
 :::
 
 | Parameter Name | Type & Value |
