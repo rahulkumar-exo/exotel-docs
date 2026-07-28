@@ -6914,5 +6914,39 @@
       }
     ],
     "answer_length": 344
+  },
+  {
+    "timestamp": "2026-07-28T09:35:31.906Z",
+    "response_id": "54c892f1-b6fd-4bc9-b2f1-e0c8568da351",
+    "question": "how does the sid is being generated, is it a random one? or does it have sequences?",
+    "question_length": 83,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2129,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 524
   }
 ]
