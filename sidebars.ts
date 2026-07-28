@@ -714,7 +714,6 @@ const sidebars: SidebarsConfig = {
     'getting-started/team-management',
     'getting-started/api-credentials',
     'getting-started/testing-guide',
-    'getting-started/contributing-to-docs',
   ],
 
   billingSidebar: [
