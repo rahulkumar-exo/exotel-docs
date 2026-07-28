@@ -6846,5 +6846,39 @@
       }
     ],
     "answer_length": 686
+  },
+  {
+    "timestamp": "2026-07-28T09:33:43.888Z",
+    "response_id": "7137a8e4-40b1-4c8e-89c5-2824a70e4593",
+    "question": "how does the caller_sid is being generated, is it a random one? or does it have sequences?",
+    "question_length": 90,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3891,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 444
   }
 ]
