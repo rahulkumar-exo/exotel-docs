@@ -4016,5 +4016,39 @@
       }
     ],
     "answer_length": 889
+  },
+  {
+    "timestamp": "2026-07-29T06:33:15.614Z",
+    "response_id": "4f669952-14d4-43a5-84e2-42fc54d17d70",
+    "question": "ok so is it a one way flow, like only internal members can call the customers or can the customers too call the member",
+    "question_length": 118,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4597,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 1213
   }
 ]
