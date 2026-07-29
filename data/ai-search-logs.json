@@ -4398,5 +4398,13 @@
       }
     ],
     "answer_length": 1308
+  },
+  {
+    "timestamp": "2026-07-29T19:09:00.884Z",
+    "question": "One thing I’d like to verify before we commit to this architecture is whether Exotel’s SIP trunking supports WebRTC softphones in the way ServiceReach currently uses them (browser-based agents connected through Asterisk/OpenSIPS)",
+    "question_length": 229,
+    "response_time_ms": 2063,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
