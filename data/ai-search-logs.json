@@ -3846,5 +3846,39 @@
       }
     ],
     "answer_length": 652
+  },
+  {
+    "timestamp": "2026-07-29T04:18:38.557Z",
+    "response_id": "fc0289d8-a664-4165-a432-e4c253537e77",
+    "question": "is there a java library support too?",
+    "question_length": 36,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2874,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      },
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      }
+    ],
+    "answer_length": 259
   }
 ]
