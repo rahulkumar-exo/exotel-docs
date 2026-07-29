@@ -4126,5 +4126,39 @@
       }
     ],
     "answer_length": 3083
+  },
+  {
+    "timestamp": "2026-07-29T08:23:22.830Z",
+    "response_id": "54c12bd5-51c2-4d10-99a0-3b2193115ae8",
+    "question": "Different ways to send messages",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7263,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Payment Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/payment-messages"
+      },
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      }
+    ],
+    "answer_length": 3864
   }
 ]
