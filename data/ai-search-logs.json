@@ -4194,5 +4194,39 @@
       }
     ],
     "answer_length": 1099
+  },
+  {
+    "timestamp": "2026-07-29T08:26:41.844Z",
+    "response_id": "172e8c5a-0ad5-406b-99cf-06062aa5b21e",
+    "question": "What about interactions",
+    "question_length": 23,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3977,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Flows",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/flows"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      }
+    ],
+    "answer_length": 1424
   }
 ]
