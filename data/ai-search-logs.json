@@ -4262,5 +4262,39 @@
       }
     ],
     "answer_length": 3854
+  },
+  {
+    "timestamp": "2026-07-29T11:52:34.799Z",
+    "response_id": "47f03c07-f76b-47cb-bf0b-a629d65cac0b",
+    "question": "using postman if i hit a make a call api, what will i see, how i will communicate, will my mic be automatically on",
+    "question_length": 114,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7824,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 2516
   }
 ]
