@@ -4160,5 +4160,39 @@
       }
     ],
     "answer_length": 3864
+  },
+  {
+    "timestamp": "2026-07-29T08:24:07.427Z",
+    "response_id": "e8c7cdeb-efbe-419f-91d7-57257fde135d",
+    "question": "log calls in hubspot",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1888,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Automated Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/automated-calls"
+      }
+    ],
+    "answer_length": 1099
   }
 ]
