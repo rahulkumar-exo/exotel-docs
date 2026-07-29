@@ -3880,5 +3880,39 @@
       }
     ],
     "answer_length": 259
+  },
+  {
+    "timestamp": "2026-07-29T04:23:10.264Z",
+    "response_id": "2b885847-7cb0-4edf-8dd7-5d4495c8453e",
+    "question": "are u provind number starting with 8 or 9",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2595,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 552
   }
 ]
