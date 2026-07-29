@@ -4296,5 +4296,39 @@
       }
     ],
     "answer_length": 2516
+  },
+  {
+    "timestamp": "2026-07-29T11:54:11.631Z",
+    "response_id": "0061de6e-b881-4ff6-9ca6-58e24cf7fc63",
+    "question": "i am asking about voice v2",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12094,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 2850
   }
 ]
