@@ -3914,5 +3914,39 @@
       }
     ],
     "answer_length": 552
+  },
+  {
+    "timestamp": "2026-07-29T04:23:51.321Z",
+    "response_id": "d29b5a80-226c-4048-9e5b-9481a5f98e6d",
+    "question": "minmum plan we have to buy or pay as go",
+    "question_length": 39,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2501,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Plans Comparison",
+        "product": "billing",
+        "url": "/docs/billing/plans-comparison"
+      },
+      {
+        "title": "Upgrade from Trial to Paid Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/upgrade-account"
+      },
+      {
+        "title": "Upgrade from Trial to Paid Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/upgrade-account"
+      },
+      {
+        "title": "Plans Comparison",
+        "product": "billing",
+        "url": "/docs/billing/plans-comparison"
+      }
+    ],
+    "answer_length": 764
   }
 ]
