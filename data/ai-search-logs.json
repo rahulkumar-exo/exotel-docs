@@ -4330,5 +4330,39 @@
       }
     ],
     "answer_length": 2850
+  },
+  {
+    "timestamp": "2026-07-29T11:57:53.579Z",
+    "response_id": "21b5efac-ecc7-4b5e-b78b-306472321271",
+    "question": "how will a webrtc based system work, on what number will the agent receive call",
+    "question_length": 79,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5641,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      }
+    ],
+    "answer_length": 1295
   }
 ]
