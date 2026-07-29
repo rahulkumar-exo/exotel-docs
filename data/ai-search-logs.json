@@ -4364,5 +4364,39 @@
       }
     ],
     "answer_length": 1295
+  },
+  {
+    "timestamp": "2026-07-29T19:01:50.845Z",
+    "response_id": "e544f673-8c36-4fdc-bd17-8eb0afa2832b",
+    "question": "sip trunk",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4051,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      }
+    ],
+    "answer_length": 1308
   }
 ]
