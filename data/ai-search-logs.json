@@ -4822,5 +4822,39 @@
       }
     ],
     "answer_length": 1660
+  },
+  {
+    "timestamp": "2026-07-30T16:55:49.622Z",
+    "response_id": "d57a8e1b-929e-42cb-9a89-16d518e20653",
+    "question": "Can I make a call from a browser and use websockets for audio? NO SIP",
+    "question_length": 69,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2388,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "SIP Trunking TCP Integration Guide (Mumbai)",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/tcp-integration"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      }
+    ],
+    "answer_length": 1229
   }
 ]
