@@ -4754,5 +4754,39 @@
       }
     ],
     "answer_length": 1563
+  },
+  {
+    "timestamp": "2026-07-30T13:11:01.496Z",
+    "response_id": "4f6911e1-c51d-45e7-9207-2955f0ef891c",
+    "question": "where can i find this exotrunks",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2401,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "Manage ExoTrunks",
+        "product": "agentstream",
+        "url": "/docs/agentstream/manage-exotrunks"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 469
   }
 ]
