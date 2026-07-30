@@ -4550,5 +4550,39 @@
       }
     ],
     "answer_length": 355
+  },
+  {
+    "timestamp": "2026-07-30T07:27:59.209Z",
+    "response_id": "e236a5af-c328-4d2b-b1d6-7712deedeaaa",
+    "question": "what is the rate limit on number of concurrent calls i can do",
+    "question_length": 61,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5010,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      }
+    ],
+    "answer_length": 1590
   }
 ]
