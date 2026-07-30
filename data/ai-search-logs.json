@@ -4686,5 +4686,39 @@
       }
     ],
     "answer_length": 4699
+  },
+  {
+    "timestamp": "2026-07-30T12:13:02.194Z",
+    "response_id": "567f3d96-e3e7-4ea3-8845-07a326e23cdc",
+    "question": "how to purchase phone number from you",
+    "question_length": 37,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5460,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      }
+    ],
+    "answer_length": 2397
   }
 ]
