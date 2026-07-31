@@ -4958,5 +4958,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-07-31T06:06:37.061Z",
+    "response_id": "a691c68f-6d62-4fe5-aa37-807247530882",
+    "question": "okay, does exotel provides indian DID numbers?",
+    "question_length": 46,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4818,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 1043
   }
 ]
