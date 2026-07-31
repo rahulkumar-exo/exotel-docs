@@ -5264,5 +5264,39 @@
       }
     ],
     "answer_length": 1910
+  },
+  {
+    "timestamp": "2026-07-31T17:57:00.274Z",
+    "response_id": "d7b0128d-ba9a-4ee8-ac32-60bc3d712512",
+    "question": "How to get api",
+    "question_length": 14,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6606,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      }
+    ],
+    "answer_length": 3238
   }
 ]
