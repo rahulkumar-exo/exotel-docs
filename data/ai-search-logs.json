@@ -4924,5 +4924,39 @@
       }
     ],
     "answer_length": 549
+  },
+  {
+    "timestamp": "2026-07-31T06:05:48.976Z",
+    "response_id": "65cb33e8-0745-45a9-b59e-6a7ee6a61320",
+    "question": "do they provide SIP trunking per minute PAYO plan? if yes, then what is the per minute cost?",
+    "question_length": 92,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2028,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "SIP Trunking to Flow Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-integration"
+      },
+      {
+        "title": "SIP Trunking TLS Integration Guide (Mumbai)",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/tls-integration"
+      }
+    ],
+    "answer_length": 176
   }
 ]
