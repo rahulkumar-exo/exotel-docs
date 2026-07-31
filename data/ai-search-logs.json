@@ -4992,5 +4992,39 @@
       }
     ],
     "answer_length": 1043
+  },
+  {
+    "timestamp": "2026-07-31T06:07:28.242Z",
+    "response_id": "72ef24fe-96af-4d11-a9cc-a8dc703415be",
+    "question": "what is the per month price per DID?",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2823,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Usage Tracking",
+        "product": "billing",
+        "url": "/docs/billing/usage-tracking"
+      },
+      {
+        "title": "API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/api-faqs"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 176
   }
 ]
