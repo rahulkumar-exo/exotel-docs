@@ -5060,5 +5060,39 @@
       }
     ],
     "answer_length": 761
+  },
+  {
+    "timestamp": "2026-07-31T15:47:10.896Z",
+    "response_id": "ee353428-4612-4692-aacc-17e32b1681c2",
+    "question": "how can i contact with developers",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2917,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Contact Center APIs v6",
+        "product": "contact-center",
+        "url": "/docs/contact-center/overview"
+      },
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      }
+    ],
+    "answer_length": 176
   }
 ]
