@@ -4856,5 +4856,39 @@
       }
     ],
     "answer_length": 1229
+  },
+  {
+    "timestamp": "2026-07-31T04:54:41.438Z",
+    "response_id": "6069607d-0b2f-404f-be37-e1e3f0b87093",
+    "question": "\"We're using the voicebot/streaming flow via Connect to Flow. When we call GET /v1/Accounts/{sid}/Calls/{callSid}?details=true after a completed call, <ConversationDuration> is always empty but <OnCallDuration> on Leg 1 is populated. Is ConversationDuration supported for voicebot/streaming calls, or only for connect-two-numbers calls? If not supported, is OnCallDuration on Leg 1 the correct field to use for billing the customer's talk time?\"",
+    "question_length": 445,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11653,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 176
   }
 ]
