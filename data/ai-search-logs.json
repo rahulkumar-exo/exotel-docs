@@ -5434,5 +5434,39 @@
       }
     ],
     "answer_length": 1230
+  },
+  {
+    "timestamp": "2026-08-02T16:41:43.108Z",
+    "response_id": "e73425a8-03c5-4e8e-a74c-52f0ffc0e77a",
+    "question": "i am talking a about agents online to receive call, is there an API",
+    "question_length": 67,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4829,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      }
+    ],
+    "answer_length": 1533
   }
 ]
