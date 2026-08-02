@@ -5366,5 +5366,39 @@
       }
     ],
     "answer_length": 428
+  },
+  {
+    "timestamp": "2026-08-02T16:35:43.460Z",
+    "response_id": "d5c87880-2a2c-4a81-86d6-a8247d1d486a",
+    "question": "api to get online agents",
+    "question_length": 24,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4288,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      }
+    ],
+    "answer_length": 666
   }
 ]
