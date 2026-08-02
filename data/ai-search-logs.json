@@ -5400,5 +5400,39 @@
       }
     ],
     "answer_length": 666
+  },
+  {
+    "timestamp": "2026-08-02T16:36:08.396Z",
+    "response_id": "e4540148-78d8-4864-9660-4d9699065969",
+    "question": "agent availability api",
+    "question_length": 22,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2671,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Make a Call (Agent to Customer)",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/make-a-call.mdx"
+      },
+      {
+        "title": "Make a Call (Agent to Customer)",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/make-a-call.mdx"
+      },
+      {
+        "title": "Agent Presence Monitoring",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/agent-presence.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 1230
   }
 ]
