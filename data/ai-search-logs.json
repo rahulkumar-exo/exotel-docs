@@ -5774,5 +5774,39 @@
       }
     ],
     "answer_length": 3450
+  },
+  {
+    "timestamp": "2026-08-03T07:38:23.955Z",
+    "response_id": "82a90151-0dbd-424f-98d1-cc4b378cb8b0",
+    "question": "I'm building an hourly integration between Exotel and our PostgreSQL backend to store call data for analytics. Please provide the recommended Call Details API, authentication method, endpoint, pagination, how to fetch only new calls since the last sync (incremental sync), a complete sample JSON response with all available fields, the unique identifier for each call, agent-related fields, all possible call status values, API rate limits, and whether webhooks are recommended for this use case.",
+    "question_length": 496,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 17276,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 6157
   }
 ]
