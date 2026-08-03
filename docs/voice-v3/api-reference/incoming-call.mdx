@@ -1,0 +1,30 @@
+---
+id: incoming-call
+title: Incoming Call – Connecting Customer and User (Beta)
+description: Handle incoming calls by building call flows that connect customers to users/agents using the Exotel CCM programmable Connect applet.
+sidebar_label: Incoming Call
+---
+
+# Incoming Call – Connecting Customer and User (Beta)
+
+:::note Beta
+This feature is currently in beta.
+:::
+
+For handling incoming calls, you can build call flows on Exotel using various [applets](https://developer.exotel.com/applet). The CCM programmable version of the Connect applet enables the call flow to be configured for connecting the caller to a user along with additional parameters returned from your URL, which can be configured dynamically per call. These include configurations such as number state management, recording of the call, maximum conversation time, etc.
+
+For detailed documentation, refer to the [CCM Programmable Connect (Beta)](https://support.exotel.com/support/solutions/articles/3000118656-ccm-programmable-connect-beta-) support article.
+
+The dynamic URL should return a user's phone number or the SIP Id.
+
+## State Management Behaviour
+
+- If the user number is **not** added to the Exotel dashboard but the webhook response indicates that number state management is required (`state_management = 'true'`), the number will be marked busy so that no further calls can be routed to that number until it becomes available. State management will be `false` by default in such cases.
+
+- If the same user number was used previously in the [Outgoing call to connect two numbers](/docs/voice-v3/api-reference/connect-two-numbers) (C2C) API with `state_management = 'true'`, no incoming calls will be dialled to that number if it is already busy.
+
+- If the user number is added to the Exotel dashboard, state management of that user will be done by default, irrespective of the `state_management` parameter value. Such users need to be [added on Exotel](https://developer.exotel.com/api/ccm-users) and verified.
+
+:::note
+This feature is currently in private beta and can be enabled on request via [hello@exotel.com](mailto:hello@exotel.com).
+:::

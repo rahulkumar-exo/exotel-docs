@@ -75,7 +75,9 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'voice-v3/api-reference/connect-two-numbers',
+        'voice-v3/api-reference/incoming-call',
         'voice-v3/api-reference/call-details',
+        'voice-v3/api-reference/call-legs',
         'voice-v3/api-reference/voice-log-download',
       ],
     },

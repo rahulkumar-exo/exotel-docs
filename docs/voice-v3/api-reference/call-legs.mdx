@@ -1,0 +1,166 @@
+---
+id: call-legs
+title: Call Legs (Beta)
+description: Retrieve per-leg details for a given call using the Exotel Voice v3 API, including from/to leg status, timestamps, and agent information.
+sidebar_label: Call Legs
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# Call Legs (Beta)
+
+:::note
+To enable this API in your account, please reach out to [hello@exotel.com](mailto:hello@exotel.com).
+:::
+
+To get the different call legs associated with a call, make an HTTP GET request to the endpoint below.
+
+<TryItBanner method="GET" endpoint="/v3/accounts/{sid}/calls/{call_sid}/legs" />
+
+## Endpoint
+
+```
+GET /v3/accounts/<your_sid>/calls/<call_sid>/legs
+```
+
+### Regional URLs
+
+| Region | URL |
+|--------|-----|
+| Singapore | `https://<your_api_key>:<your_api_token>@ccm-api.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs` |
+| Mumbai | `https://<your_api_key>:<your_api_token>@ccm-api.in.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs` |
+
+### Path Parameters
+
+- Replace `<your_api_key>` and `<your_api_token>` with the API key and token created by you or use [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
+- Replace `<your_sid>` with your **Account SID**.
+- `<subdomain>` of Singapore cluster is `@ccm-api.exotel.com`; Mumbai cluster is `@ccm-api.in.exotel.com`.
+- Replace `<call_sid>` with the Call SID provided during the [Click to Call API](https://developer.exotel.com/api/ccm-make-call-agent-connecting-to-a-number) request.
+- `<your_api_key>`, `<your_api_token>`, and `<your_sid>` are available in the [API settings page](https://my.exotel.com/apisettings/site#api-credentials) of your Exotel Dashboard.
+
+## Code Example
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -X GET \
+  'https://<your_api_key>@ccm-api.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs' \
+  -H 'content-type: application/json'
+```
+
+</TabItem>
+</Tabs>
+
+## HTTP Response
+
+On success, the HTTP response status code will be `200`.
+
+### Response Parameter Description
+
+| Parameter Name | Type & Value |
+|----------------|-------------|
+| `request_id` | Unique ID of the request. Useful for debugging and tracing. |
+| `method` | HTTP method for the request (GET/POST/PUT etc.) |
+| `http_code` | HTTP code for the request (200, 400, 500 etc.) |
+| `response` | Response block containing leg details for the call SID passed in the path parameter. Contains: `code`, `error_data`, `status`, `leg_details` |
+
+### Parameters under `leg_details` block
+
+| Parameter Name | Description |
+|----------------|-------------|
+| `sid` | string; an alpha-numeric unique identifier of the call |
+| `from` | Array of JSON blocks containing information about the **from** leg. For outgoing calls, this contains all the user call leg(s) information. For incoming calls, this contains the customer call leg information. Each block contains: `sid`, `name`, `contact_uri`, `date_created`, `date_updated`, `status` |
+| `to` | Array of JSON blocks containing information about the **to** leg. For outgoing calls, this contains the customer call leg information. For incoming calls, this contains all the user call leg(s) information. Each block contains: `sid`, `name`, `contact_uri`, `date_created`, `date_updated`, `status`, `group_id`, `group_name` |
+
+### From / To leg fields
+
+| Field | Description |
+|-------|-------------|
+| `sid` | string; alpha-numeric unique identifier of the leg |
+| `name` | string; name of the user (can be null if not an agent) |
+| `contact_uri` | string; contact number associated with the leg |
+| `date_created` | string; date and time when this leg was created |
+| `date_updated` | string; date and time when this leg was last updated |
+| `status` | string; `in-progress` / `completed` / `failed` / `no-answer` |
+| `group_id` | Associated group ID for the user (if applicable). Only in `to` leg. |
+| `group_name` | Associated group name for the user (if applicable). Only in `to` leg. |
+
+## Example Response
+
+```json
+{
+  "request_id": "faf6d9fd87eb4dd6aef3967c40e369ed",
+  "method": "GET",
+  "http_code": 200,
+  "metadata": null,
+  "response": {
+    "code": 200,
+    "error_data": null,
+    "status": "success",
+    "leg_details": {
+      "call_sid": "f1ca1057692d586b23b4e7ffcc3216mk",
+      "account_sid": "exotel",
+      "from": [
+        {
+          "sid": "213f2560d153d744cd61eb81a98616ak",
+          "name": "Aditya Sharma",
+          "contact_uri": "0987xxxxxxx",
+          "date_created": "2020-09-15 11:01:20+05:30",
+          "date_updated": "2020-09-15 11:02:20+05:30",
+          "status": "completed"
+        },
+        {
+          "sid": "813f2660d153d744cd61eb81a98616ak",
+          "name": null,
+          "contact_uri": "09976xxxxxx",
+          "date_created": "2020-09-15 11:03:20+05:30",
+          "date_updated": "2020-09-15 11:04:20+05:30",
+          "status": "completed"
+        }
+      ],
+      "to": [
+        {
+          "sid": "913f2760d153d744cd61eb81a98616ak",
+          "name": "Customer",
+          "contact_uri": "09988xxxxxx",
+          "date_created": "2020-09-15 11:01:25+05:30",
+          "date_updated": "2020-09-15 11:04:20+05:30",
+          "status": "completed",
+          "group_id": null,
+          "group_name": null
+        }
+      ]
+    }
+  }
+}
+```
+
+## Error Scenarios
+
+| HTTP Code | Error Code | Description |
+|-----------|-----------|-------------|
+| `401` | `1010` | Authentication failed |
+| `404` | `1017` | Tenant not found |
+| `404` | `10744` | Call not found |
+| `429` | `10724` | Too many requests |
+| `500` | `10715` | Error retrieving leg details |
+| `500` | `10743` | Legs not found |
+
+:::note
+These error codes will be populated under the `error_data` block of the response.
+:::
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v3/accounts/{account_sid}/calls/{call_sid}/legs"
+  contentType="json"
+  params={[
+    { name: 'call_sid', required: true, type: 'string', description: 'Unique call identifier from Make Call API response', placeholder: 'f1ca1057692d586b23b4e7ffcc3216mk' },
+  ]}
+/>
