@@ -5740,5 +5740,39 @@
       }
     ],
     "answer_length": 1143
+  },
+  {
+    "timestamp": "2026-08-03T07:34:50.140Z",
+    "response_id": "48008f54-7437-4085-9a97-e7ffa1705088",
+    "question": "- Total number of calls made\n  - Total talk-time\n  - Total number of connected calls\n  - Average talk time per connected call\n  - Number of unique phone numbers called\n  - Average call attempts per phone number\n  - Number of calls with talk time greater than 2 minutes\n  - Agent-wise breakdown for all the above metrics\n\nwhich api has this data?",
+    "question_length": 345,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13330,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 3450
   }
 ]
