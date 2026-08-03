@@ -5808,5 +5808,39 @@
       }
     ],
     "answer_length": 6157
+  },
+  {
+    "timestamp": "2026-08-03T07:39:11.658Z",
+    "response_id": "a6a8acaa-e25f-48b6-88b8-4b4aaf2af2a5",
+    "question": "I specifically need the API to retrieve historical call logs (Call Detail Records) for reporting. Please provide the exact REST API endpoint, HTTP method, authentication, request parameters (especially date/time filters for incremental sync), pagination parameters, and a sample request and response. If this API is documented, please share the documentation link.",
+    "question_length": 364,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4944,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1918
   }
 ]
