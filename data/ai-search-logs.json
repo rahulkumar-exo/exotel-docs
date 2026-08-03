@@ -5910,5 +5910,39 @@
       }
     ],
     "answer_length": 386
+  },
+  {
+    "timestamp": "2026-08-03T08:39:28.383Z",
+    "response_id": "8521a9ab-b823-40f8-881c-68f0d1bd4773",
+    "question": "status callback",
+    "question_length": 15,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9398,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Customer Callbacks",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/customer-callbacks.mdx"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 4463
   }
 ]
