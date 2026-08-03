@@ -5502,5 +5502,39 @@
       }
     ],
     "answer_length": 3507
+  },
+  {
+    "timestamp": "2026-08-03T02:21:24.388Z",
+    "response_id": "ee4c937d-d310-42c8-abc4-7ab61f1e8ac9",
+    "question": "in my exotel account how to check IP-PSTN is enabled or not",
+    "question_length": 59,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1446,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "LSQ IP-PSTN Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-ip-pstn"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 506
   }
 ]
