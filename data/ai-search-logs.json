@@ -5842,5 +5842,39 @@
       }
     ],
     "answer_length": 1918
+  },
+  {
+    "timestamp": "2026-08-03T07:52:28.419Z",
+    "response_id": "86b218ef-1285-4422-ad20-298dda67ecbe",
+    "question": "I checked the Exotel dashboard, but I don't see the **WhatsApp** section.\n\nCould you please check if WhatsApp is enabled for our Exotel account? If not, we may need to contact Exotel support or our account manager to enable the WhatsApp Business service before we can continue with the onboarding and integration.",
+    "question_length": 313,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2536,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 176
   }
 ]
