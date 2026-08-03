@@ -5468,5 +5468,39 @@
       }
     ],
     "answer_length": 1533
+  },
+  {
+    "timestamp": "2026-08-03T02:17:24.927Z",
+    "response_id": "a7685abe-5809-423c-86be-d08d5b3fd5fe",
+    "question": "can you give me the doc to do outbound call and receive inbound call through api",
+    "question_length": 80,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10511,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 3507
   }
 ]
