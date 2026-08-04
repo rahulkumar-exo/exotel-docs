@@ -6284,5 +6284,39 @@
       }
     ],
     "answer_length": 1588
+  },
+  {
+    "timestamp": "2026-08-04T10:30:51.006Z",
+    "response_id": "85956d39-ac7d-499c-beb7-5f3780ee6241",
+    "question": "once you go into reports, generate my call, report for yesterday, and click generate, the csv has all the fields which i have provided above. through which api is that being generated?",
+    "question_length": 184,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5564,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      }
+    ],
+    "answer_length": 878
   }
 ]
