@@ -6216,5 +6216,39 @@
       }
     ],
     "answer_length": 1236
+  },
+  {
+    "timestamp": "2026-08-04T09:54:06.276Z",
+    "response_id": "add4d501-78d4-4e16-9ee2-aebf0ae3d21b",
+    "question": "I am looking only for Number Masking feature. \nWhat are the valid documents I will need and how much it will cost ?",
+    "question_length": 115,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1827,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      }
+    ],
+    "answer_length": 176
   }
 ]
