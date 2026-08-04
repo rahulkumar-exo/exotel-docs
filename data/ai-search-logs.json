@@ -6250,5 +6250,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-04T10:23:33.403Z",
+    "response_id": "600c1443-5cb7-4d1f-966a-580597d3c5d5",
+    "question": "where can i find these columns from the exotel api Id\tDirection\tType\tExotelNumber\tFrom\tFromName\tTo\tToName\tStatus\tStartTime\tEndTime\tDuration\tPrice\tRecordingUrls\tPriceDetails\tGroupName\tFromCircle\tToCircle\tLeg1Status\tLeg2Status\tConversationDuration\tAppID\tAppName\tDigits\tDisconnectedBy",
+    "question_length": 281,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7956,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1588
   }
 ]
