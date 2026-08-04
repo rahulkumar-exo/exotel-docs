@@ -6488,5 +6488,39 @@
       }
     ],
     "answer_length": 928
+  },
+  {
+    "timestamp": "2026-08-04T12:16:57.368Z",
+    "response_id": "ce501c81-4c86-490b-9ef2-00c826bda250",
+    "question": "does exotel offer any way to automate the delivery of this report via email?",
+    "question_length": 76,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5150,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "SMS Delivery Reports",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-delivery-reports"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 786
   }
 ]
