@@ -6894,5 +6894,39 @@
       }
     ],
     "answer_length": 2142
+  },
+  {
+    "timestamp": "2026-08-05T10:34:02.509Z",
+    "response_id": "e0cd3dc5-c4b2-4d0a-8095-70cbe304b8ce",
+    "question": "Listen whisper barge",
+    "question_length": 20,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4197,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      }
+    ],
+    "answer_length": 1257
   }
 ]
