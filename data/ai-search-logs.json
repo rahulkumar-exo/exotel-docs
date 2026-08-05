@@ -7106,5 +7106,39 @@
       }
     ],
     "answer_length": 3572
+  },
+  {
+    "timestamp": "2026-08-05T11:07:57.576Z",
+    "response_id": "697c154c-da4e-4e6f-b856-d43511178e87",
+    "question": "What is the expected JSON response format for the Dynamic URL in the Exotel Connect Applet? Please provide an example with phone numbers.",
+    "question_length": 137,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3911,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 351
   }
 ]
