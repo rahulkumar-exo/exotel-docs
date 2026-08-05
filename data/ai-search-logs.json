@@ -6758,5 +6758,39 @@
       }
     ],
     "answer_length": 4279
+  },
+  {
+    "timestamp": "2026-08-05T07:10:58.677Z",
+    "response_id": "ba03c0c5-22d2-4b53-ae6b-b47272daa562",
+    "question": "What is the exact API endpoint (URL and HTTP method) to fetch real-time Agent Statuses (Available, On Call, Offline) from the Exotel Contact Center API?",
+    "question_length": 152,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3869,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 486
   }
 ]
