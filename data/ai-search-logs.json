@@ -7038,5 +7038,39 @@
       }
     ],
     "answer_length": 1953
+  },
+  {
+    "timestamp": "2026-08-05T10:50:38.459Z",
+    "response_id": "dfb7eafe-452b-4bf7-a91f-da194b6043e4",
+    "question": "i dont see any option for it in the UI for my dashbaord, should i contact support for it ?",
+    "question_length": 90,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1850,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 176
   }
 ]
