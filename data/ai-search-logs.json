@@ -6928,5 +6928,39 @@
       }
     ],
     "answer_length": 1257
+  },
+  {
+    "timestamp": "2026-08-05T10:34:45.512Z",
+    "response_id": "3c71292a-cffd-4345-aed3-41211fc81957",
+    "question": "how to listen, whisper or barge via APIs",
+    "question_length": 40,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4208,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      }
+    ],
+    "answer_length": 1035
   }
 ]
