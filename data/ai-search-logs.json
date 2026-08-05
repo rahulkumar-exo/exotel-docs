@@ -6826,5 +6826,39 @@
       }
     ],
     "answer_length": 3409
+  },
+  {
+    "timestamp": "2026-08-05T08:50:05.087Z",
+    "response_id": "0054b182-ffd5-4c1b-a18b-b7ce6f940ab1",
+    "question": "what is the rate limit?",
+    "question_length": 23,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2953,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      }
+    ],
+    "answer_length": 354
   }
 ]
