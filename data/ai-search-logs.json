@@ -6590,5 +6590,39 @@
       }
     ],
     "answer_length": 510
+  },
+  {
+    "timestamp": "2026-08-05T06:49:44.323Z",
+    "response_id": "c732d2ff-b5e9-4df7-9468-edfc4b1169c7",
+    "question": "Does querying Calls.json or the v3 per-call endpoint incur any charge beyond our voice usage, and can we get a higher rate limit than 200/min for a daily batch job pulling ~12,600 calls?",
+    "question_length": 186,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5001,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 176
   }
 ]
