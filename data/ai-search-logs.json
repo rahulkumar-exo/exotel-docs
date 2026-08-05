@@ -6996,5 +6996,13 @@
       }
     ],
     "answer_length": 4107
+  },
+  {
+    "timestamp": "2026-08-05T10:45:10.933Z",
+    "question": "Send SMS API",
+    "question_length": 12,
+    "response_time_ms": 3360,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
