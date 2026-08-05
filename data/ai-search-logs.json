@@ -6658,5 +6658,13 @@
       }
     ],
     "answer_length": 1111
+  },
+  {
+    "timestamp": "2026-08-05T07:00:02.931Z",
+    "question": "Exact Terminal Status Values\nWhen a call finishes, Exotel sends one of these exact strings in the Status field:\n\ncompleted: The call was answered (by a human or voicemail) and audio was exchanged.\nbusy: The called party rejected the call, or was already on another line.\nno-answer: The phone rang for the full duration but was never picked up.\nfailed: The call failed to connect entirely (e.g., switched off, out of coverage, invalid number).\ncanceled: The caller (your system) hung up or canceled th",
+    "question_length": 1698,
+    "response_time_ms": 4408,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
