@@ -6624,5 +6624,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-05T06:58:02.979Z",
+    "response_id": "69298d50-a439-4e42-bd3f-91e2f5020059",
+    "question": "\"I am building a webhook endpoint to receive call status updates from Exotel. Could you provide the exact JSON or form-data payloads that Exotel sends to the StatusCallback URL for different call outcomes?  Specifically, I need to know:  What are the exact string values for the Status field when a call is: Answered successfully Busy (user rejected the call or is on another line) No Answer (rang out) Failed / Invalid Number Sent to Voicemail (if Exotel detects Answering Machines) Does Exotel prov",
+    "question_length": 690,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6327,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 1111
   }
 ]
