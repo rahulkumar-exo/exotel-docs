@@ -6860,5 +6860,39 @@
       }
     ],
     "answer_length": 354
+  },
+  {
+    "timestamp": "2026-08-05T10:28:05.847Z",
+    "response_id": "29c84a33-40ba-4b84-95ff-5a98bc251829",
+    "question": "whisper, transfer",
+    "question_length": 17,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6440,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Transfer Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/transfer"
+      },
+      {
+        "title": "Transfer Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/transfer"
+      },
+      {
+        "title": "Add Credits",
+        "product": "billing",
+        "url": "/docs/billing/add-credits"
+      },
+      {
+        "title": "Exotel Flow Builder",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/flow-builder"
+      }
+    ],
+    "answer_length": 2142
   }
 ]
