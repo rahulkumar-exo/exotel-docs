@@ -6698,5 +6698,39 @@
       }
     ],
     "answer_length": 4923
+  },
+  {
+    "timestamp": "2026-08-06T11:17:56.895Z",
+    "response_id": "139567ea-0013-4753-8d45-d821aef92f49",
+    "question": "me react and node ka us kr rha hu kese intigration hoga pura flow btao code ke sath",
+    "question_length": 83,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 25305,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Actions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/actions"
+      },
+      {
+        "title": "Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/flows"
+      }
+    ],
+    "answer_length": 13279
   }
 ]
