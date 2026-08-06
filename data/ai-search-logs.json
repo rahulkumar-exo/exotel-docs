@@ -6320,5 +6320,39 @@
     "response_time_ms": 173,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [400 Bad Request] * GenerateContentRequest.contents[2].parts[0].data: required oneof field 'data' must have one initialized field\n",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-06T02:18:48.713Z",
+    "response_id": "5e77d575-e2ba-4709-ad21-592a740fe3c9",
+    "question": "e0'XOR(if(now()=sysdate(),sleep(15),0))XOR'Z",
+    "question_length": 44,
+    "has_history": true,
+    "history_length": 1,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7059,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 3658
   }
 ]
