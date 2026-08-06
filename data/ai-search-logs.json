@@ -6970,5 +6970,39 @@
       }
     ],
     "answer_length": 2800
+  },
+  {
+    "timestamp": "2026-08-06T11:52:37.040Z",
+    "response_id": "6c98c396-c6c3-4811-9b6d-9aab450efcbc",
+    "question": "I want to know about DND in voice ai calling",
+    "question_length": 44,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1942,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "NDNC/DND Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/ndnc-dnd"
+      },
+      {
+        "title": "NDNC/DND Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/ndnc-dnd"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 682
   }
 ]
