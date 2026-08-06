@@ -6936,5 +6936,39 @@
       }
     ],
     "answer_length": 1652
+  },
+  {
+    "timestamp": "2026-08-06T11:51:25.936Z",
+    "response_id": "107f4e3d-9984-465b-ac4f-b33b0e549082",
+    "question": "i want to know more about DND",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4661,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "NDNC/DND Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/ndnc-dnd"
+      },
+      {
+        "title": "NDNC/DND Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/ndnc-dnd"
+      },
+      {
+        "title": "NDNC/DND Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/ndnc-dnd"
+      },
+      {
+        "title": "NDNC/DND Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/ndnc-dnd"
+      }
+    ],
+    "answer_length": 2800
   }
 ]
