@@ -7004,5 +7004,39 @@
       }
     ],
     "answer_length": 682
+  },
+  {
+    "timestamp": "2026-08-06T11:57:22.147Z",
+    "response_id": "2408ea55-6c5e-4eb6-a4f2-23920389f40f",
+    "question": "How to connect exotel to bolna",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2499,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      }
+    ],
+    "answer_length": 243
   }
 ]
