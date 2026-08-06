@@ -131,5 +131,10 @@
     "email": "testing@example.com'\"",
     "subscribedAt": "2026-08-06T02:09:32.744Z",
     "unsubscribeToken": "63844949-47c8-46fe-ba3a-8ca3a3e568ec"
+  },
+  {
+    "email": "testing@example.com����%2527%2522\\'\\\"",
+    "subscribedAt": "2026-08-06T02:09:33.998Z",
+    "unsubscribeToken": "7e61bd82-b732-4e29-805e-08be0cc4fc4b"
   }
 ]
