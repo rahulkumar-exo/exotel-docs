@@ -121,5 +121,10 @@
     "email": "testing@example.com0\"xor(if(now()=sysdate(),sleep(15),0))xor\"z",
     "subscribedAt": "2026-08-06T02:07:45.792Z",
     "unsubscribeToken": "fd43c5e3-c77c-4a5e-8110-f9105b0d946b"
+  },
+  {
+    "email": "testing@example.com'||dbms_pipe.receive_message(chr(98)||chr(98)||chr(98),15)||'",
+    "subscribedAt": "2026-08-06T02:09:30.871Z",
+    "unsubscribeToken": "529bbf82-b481-4a51-aa87-28d60c1670c2"
   }
 ]
