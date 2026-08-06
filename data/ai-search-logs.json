@@ -6370,5 +6370,13 @@
     "response_time_ms": 239,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [400 Bad Request] * GenerateContentRequest.contents[2].parts[0].data: required oneof field 'data' must have one initialized field\n",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-06T02:19:29.131Z",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "response_time_ms": 186,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [400 Bad Request] * GenerateContentRequest.contents[2].parts[0].data: required oneof field 'data' must have one initialized field\n",
+    "failed": true
   }
 ]
