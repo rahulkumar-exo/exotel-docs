@@ -6486,5 +6486,39 @@
       }
     ],
     "answer_length": 1226
+  },
+  {
+    "timestamp": "2026-08-06T05:44:45.434Z",
+    "response_id": "c0cf37bb-d636-4200-890d-c63a16d0a4ad",
+    "question": "i need to check whastapp campaign details for a partiuclar campaign",
+    "question_length": 67,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2985,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Campaign Scheduling",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-scheduling"
+      },
+      {
+        "title": "Campaign Scheduling",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-scheduling"
+      }
+    ],
+    "answer_length": 1207
   }
 ]
