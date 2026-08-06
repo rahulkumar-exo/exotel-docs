@@ -106,5 +106,10 @@
     "email": "okktxkhe@immenseignite.info",
     "subscribedAt": "2026-07-29T21:37:48.483Z",
     "unsubscribeToken": "424d3834-8870-4d3a-b06c-93e3f5ebf3ed"
+  },
+  {
+    "email": "testing@example.com",
+    "subscribedAt": "2026-08-06T02:06:20.261Z",
+    "unsubscribeToken": "b73a8a51-2780-4bae-8096-b1209faa3376"
   }
 ]
