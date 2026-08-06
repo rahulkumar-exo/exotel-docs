@@ -7072,5 +7072,39 @@
       }
     ],
     "answer_length": 2732
+  },
+  {
+    "timestamp": "2026-08-06T12:16:37.604Z",
+    "response_id": "b0b64f79-c7d5-4134-aff7-885f78092e7e",
+    "question": "i got \"at least one channel is mandatory\" with whatsapp API",
+    "question_length": 59,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7127,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp - Messaging API",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/overview"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      }
+    ],
+    "answer_length": 953
   }
 ]
