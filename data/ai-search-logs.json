@@ -7106,5 +7106,39 @@
       }
     ],
     "answer_length": 953
+  },
+  {
+    "timestamp": "2026-08-06T12:48:32.563Z",
+    "response_id": "e944bedf-c9c2-433b-8c4f-3a87292577bb",
+    "question": "write a code in c?",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3577,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      }
+    ],
+    "answer_length": 514
   }
 ]
