@@ -7038,5 +7038,39 @@
       }
     ],
     "answer_length": 243
+  },
+  {
+    "timestamp": "2026-08-06T12:06:02.418Z",
+    "response_id": "92bf5521-5545-4778-a034-6db23ee7f6bf",
+    "question": "how to setup in browser calling",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6611,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      },
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      },
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      },
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      }
+    ],
+    "answer_length": 2732
   }
 ]
