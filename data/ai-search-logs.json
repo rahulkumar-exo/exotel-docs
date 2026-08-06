@@ -6596,5 +6596,39 @@
       }
     ],
     "answer_length": 1809
+  },
+  {
+    "timestamp": "2026-08-06T08:00:11.521Z",
+    "response_id": "ea62f57c-bced-4cde-af84-36519113d27f",
+    "question": "usecase of voice bot",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6722,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 1590
   }
 ]
