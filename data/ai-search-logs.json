@@ -7666,5 +7666,39 @@
       }
     ],
     "answer_length": 495
+  },
+  {
+    "timestamp": "2026-08-07T08:34:04.094Z",
+    "response_id": "247c2b3a-f299-435b-bcde-760732beb2da",
+    "question": "sms campaign",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2712,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaign SMS Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/sms-details"
+      },
+      {
+        "title": "Creating an SMS Campaign",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/creating-sms-campaign"
+      },
+      {
+        "title": "SMS Campaign Reports & Analytics",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/sms-campaign-reporting"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      }
+    ],
+    "answer_length": 1097
   }
 ]
