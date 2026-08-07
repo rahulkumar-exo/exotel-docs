@@ -7878,5 +7878,39 @@
       }
     ],
     "answer_length": 1132
+  },
+  {
+    "timestamp": "2026-08-07T11:58:05.846Z",
+    "response_id": "469d7b42-533a-4a86-90a0-a21859763993",
+    "question": "when call connect to voicebot, can we use query params to know the caller from number",
+    "question_length": 85,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6264,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Custom Caller ID",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/custom-caller-id"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 1892
   }
 ]
