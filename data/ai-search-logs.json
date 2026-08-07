@@ -7514,5 +7514,39 @@
       }
     ],
     "answer_length": 2659
+  },
+  {
+    "timestamp": "2026-08-07T06:47:59.072Z",
+    "response_id": "5c3b5d57-de91-4d3a-b3da-cf2fba250e12",
+    "question": "csv upload api",
+    "question_length": 14,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8617,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      }
+    ],
+    "answer_length": 4625
   }
 ]
