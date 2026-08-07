@@ -7946,5 +7946,39 @@
       }
     ],
     "answer_length": 1996
+  },
+  {
+    "timestamp": "2026-08-07T12:43:08.293Z",
+    "response_id": "169415d1-4237-4f27-8513-7b154217fe55",
+    "question": "how to use your api keys in local",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3870,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Authentication & Security",
+        "product": "references",
+        "url": "/docs/references/authentication"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 1745
   }
 ]
