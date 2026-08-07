@@ -7776,5 +7776,39 @@
       }
     ],
     "answer_length": 2160
+  },
+  {
+    "timestamp": "2026-08-07T10:47:03.779Z",
+    "response_id": "497858a1-b4d6-4d8e-9ddc-5880385a081f",
+    "question": "who are customers here, for whom we create customer id",
+    "question_length": 54,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3154,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN intermix: WebRTC SDK integration",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/overview"
+      },
+      {
+        "title": "Customer Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/customer-management"
+      },
+      {
+        "title": "Bot Prompts",
+        "product": "chatbot",
+        "url": "/docs/chatbot/bot-prompts"
+      },
+      {
+        "title": "WhatsApp Interactive Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/interactive-messages"
+      }
+    ],
+    "answer_length": 677
   }
 ]
