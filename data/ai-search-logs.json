@@ -7344,5 +7344,39 @@
       }
     ],
     "answer_length": 1001
+  },
+  {
+    "timestamp": "2026-08-07T05:25:40.761Z",
+    "response_id": "da9e67e0-9534-4b55-9ca0-7cae29fb92b9",
+    "question": "all the above pages are showing page not foun error can u shar the offical doc of exotel webrtc",
+    "question_length": 95,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4048,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 772
   }
 ]
