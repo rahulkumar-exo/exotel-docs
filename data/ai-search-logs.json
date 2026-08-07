@@ -7912,5 +7912,39 @@
       }
     ],
     "answer_length": 1892
+  },
+  {
+    "timestamp": "2026-08-07T11:59:42.777Z",
+    "response_id": "4b3c9c3a-1d8c-4c45-8fe5-c42ac5f8ba6d",
+    "question": "in voicebot, i have added my server web socket connect,now i want to trigger calls for various purposes, now how to know which call is for which purpose",
+    "question_length": 152,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8766,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 1996
   }
 ]
