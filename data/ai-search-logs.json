@@ -7844,5 +7844,39 @@
       }
     ],
     "answer_length": 1545
+  },
+  {
+    "timestamp": "2026-08-07T11:55:43.380Z",
+    "response_id": "ad5bde8e-05d3-43b6-8dfa-b1e028bdefe5",
+    "question": "when exotel hit my wss server for connecting call, how to send call details?",
+    "question_length": 76,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5357,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 1132
   }
 ]
