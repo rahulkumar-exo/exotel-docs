@@ -7810,5 +7810,39 @@
       }
     ],
     "answer_length": 677
+  },
+  {
+    "timestamp": "2026-08-07T10:48:27.880Z",
+    "response_id": "f481968c-7554-4745-aac5-cb1d21e94aa4",
+    "question": "so a customer id and account sid are same",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5302,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Customer Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/customer-management"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Customer Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/customer-management"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 1545
   }
 ]
