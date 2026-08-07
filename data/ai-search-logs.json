@@ -7412,5 +7412,39 @@
       }
     ],
     "answer_length": 542
+  },
+  {
+    "timestamp": "2026-08-07T05:26:46.962Z",
+    "response_id": "8fc2f624-182a-4d9c-9d9a-e7e3f8fad870",
+    "question": "Page not found",
+    "question_length": 14,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6766,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "DLT Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/dlt-compliance"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Your First Call Flow",
+        "product": "getting-started",
+        "url": "/docs/getting-started/first-call-flow"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      }
+    ],
+    "answer_length": 1099
   }
 ]
