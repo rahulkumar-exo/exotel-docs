@@ -7378,5 +7378,39 @@
       }
     ],
     "answer_length": 772
+  },
+  {
+    "timestamp": "2026-08-07T05:26:25.777Z",
+    "response_id": "8b635d5d-56de-43da-86fb-f891a5cb989b",
+    "question": "same error",
+    "question_length": 10,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4137,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 542
   }
 ]
