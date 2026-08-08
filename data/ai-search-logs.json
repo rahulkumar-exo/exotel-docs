@@ -8354,5 +8354,39 @@
       }
     ],
     "answer_length": 5065
+  },
+  {
+    "timestamp": "2026-08-08T13:34:44.846Z",
+    "response_id": "d0715334-da49-429f-b5e8-450a8380b8ae",
+    "question": "where to get customer id and app id and their respective secrets",
+    "question_length": 64,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4574,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "IP-PSTN intermix: WebRTC SDK integration",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/overview"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 1474
   }
 ]
