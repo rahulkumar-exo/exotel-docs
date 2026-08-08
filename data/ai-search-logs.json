@@ -8490,5 +8490,39 @@
       }
     ],
     "answer_length": 1235
+  },
+  {
+    "timestamp": "2026-08-08T15:12:06.457Z",
+    "response_id": "d12604d9-c34f-4cf8-b9ad-bbe703cc833a",
+    "question": "how to assign a call flow to this specific app we created by using customer id",
+    "question_length": 78,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6027,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      }
+    ],
+    "answer_length": 1806
   }
 ]
