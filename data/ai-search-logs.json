@@ -8150,5 +8150,39 @@
       }
     ],
     "answer_length": 2334
+  },
+  {
+    "timestamp": "2026-08-08T08:19:15.499Z",
+    "response_id": "06db4eb4-de9d-4138-8e76-d04ab3fa2fdc",
+    "question": "so give me proper pricing details how i charge when i use this service from you and how much pricing of exophone number? give me detailed pricing breakdown",
+    "question_length": 155,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1452,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      },
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      }
+    ],
+    "answer_length": 176
   }
 ]
