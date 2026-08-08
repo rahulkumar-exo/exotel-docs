@@ -8558,5 +8558,39 @@
       }
     ],
     "answer_length": 1910
+  },
+  {
+    "timestamp": "2026-08-08T15:15:22.130Z",
+    "response_id": "1abe0931-f937-4c1f-83da-89a863143ee1",
+    "question": "but how do we associate our app with an specific exophone",
+    "question_length": 57,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3231,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      }
+    ],
+    "answer_length": 922
   }
 ]
