@@ -8014,5 +8014,39 @@
       }
     ],
     "answer_length": 7937
+  },
+  {
+    "timestamp": "2026-08-08T04:13:25.306Z",
+    "response_id": "9cf33ce9-3d4b-49a1-a1bd-cef5a3c27e32",
+    "question": "voice api pricing",
+    "question_length": 17,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1861,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      }
+    ],
+    "answer_length": 176
   }
 ]
