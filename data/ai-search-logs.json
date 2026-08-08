@@ -8456,5 +8456,39 @@
       }
     ],
     "answer_length": 1694
+  },
+  {
+    "timestamp": "2026-08-08T15:10:38.276Z",
+    "response_id": "fb9a216e-3cd6-4f1e-af87-c9eeeb90865f",
+    "question": "so it is like my if my single crm uses this sdk integration there will be single app id for it",
+    "question_length": 94,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4727,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 1235
   }
 ]
