@@ -8116,5 +8116,39 @@
       }
     ],
     "answer_length": 705
+  },
+  {
+    "timestamp": "2026-08-08T08:16:16.274Z",
+    "response_id": "0c9534de-921b-4574-95df-7e7426a14963",
+    "question": "can i make number masking call to factory user to driver to call for update like i have one logistic delivery platform in which factory user can create trip like want to move goods from placea to placeB so they create trip and driver can accept that so for this two user comunication i have to build voip calling system so both user can not see their real number for privacy can you provide this type of service?",
+    "question_length": 412,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8007,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      },
+      {
+        "title": "FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/overview"
+      }
+    ],
+    "answer_length": 2334
   }
 ]
