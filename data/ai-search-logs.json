@@ -8660,5 +8660,39 @@
       }
     ],
     "answer_length": 2982
+  },
+  {
+    "timestamp": "2026-08-08T15:22:13.010Z",
+    "response_id": "fade6972-60ff-4b6c-82e4-c3656fe15b7e",
+    "question": "these webhooks are provided by exotel or we have to create them, like to receive call recording will the exotel automatically hit my url for recording or my system has to continuously ping the url to get recoding",
+    "question_length": 212,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4562,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Freshdesk Secure Recording Enablement",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk-secure-recording"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1543
   }
 ]
