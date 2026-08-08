@@ -8592,5 +8592,39 @@
       }
     ],
     "answer_length": 922
+  },
+  {
+    "timestamp": "2026-08-08T15:15:51.363Z",
+    "response_id": "799e9413-2914-4324-9d9c-8cb8c8fff13d",
+    "question": "i am talking about the crm app",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3019,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      }
+    ],
+    "answer_length": 1334
   }
 ]
