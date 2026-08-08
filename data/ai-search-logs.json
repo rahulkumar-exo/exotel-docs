@@ -8422,5 +8422,39 @@
       }
     ],
     "answer_length": 1372
+  },
+  {
+    "timestamp": "2026-08-08T15:08:56.232Z",
+    "response_id": "1b78d181-9176-415c-b6e9-e30beabca6a4",
+    "question": "this application you are talking about is the same application that we make in app bazaar",
+    "question_length": 89,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5547,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      }
+    ],
+    "answer_length": 1694
   }
 ]
