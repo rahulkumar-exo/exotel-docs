@@ -8626,5 +8626,39 @@
       }
     ],
     "answer_length": 1334
+  },
+  {
+    "timestamp": "2026-08-08T15:16:49.146Z",
+    "response_id": "811bea84-0f97-4292-a69c-f187789cc4b1",
+    "question": "no i am asking when i integrate webrtc sdk in my inhouse crm, i will get a app id, but how do i associate that app with a specific exophone",
+    "question_length": 139,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7831,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      }
+    ],
+    "answer_length": 2982
   }
 ]
