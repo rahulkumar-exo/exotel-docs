@@ -8762,5 +8762,39 @@
       }
     ],
     "answer_length": 653
+  },
+  {
+    "timestamp": "2026-08-09T07:05:35.940Z",
+    "response_id": "67368954-5936-496e-a80e-66b240097270",
+    "question": "Yes I wanted to know the call concurrency is account level or each number level",
+    "question_length": 79,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2138,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Plans Comparison",
+        "product": "billing",
+        "url": "/docs/billing/plans-comparison"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 376
   }
 ]
