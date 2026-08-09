@@ -8796,5 +8796,39 @@
       }
     ],
     "answer_length": 376
+  },
+  {
+    "timestamp": "2026-08-09T20:14:49.722Z",
+    "response_id": "1d95a323-e0a8-4545-91a6-17b85246ce98",
+    "question": "We want multiple business customers to forward their respective customer-facing numbers to one shared\n  Exophone. We need to determine which customer-facing number was originally dialled so that our backend can\n  load the correct tenant’s AI agent.\n\n  Example:\n\n  Caller → Tenant A’s customer-facing number → call forwarding → Shared Exophone\n  Caller → Tenant B’s customer-facing number → call forwarding → Shared Exophone\n\n  Could you please confirm:\n\n  1. When a customer-facing number forwards a ",
+    "question_length": 1368,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13375,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 2649
   }
 ]
