@@ -9899,5 +9899,39 @@
       }
     ],
     "answer_length": 2083
+  },
+  {
+    "timestamp": "2026-08-10T09:35:26.862Z",
+    "response_id": "b351efd3-ff01-49d0-9c4e-0354d996ac65",
+    "question": "We are using Exotel Voice Streaming/StreamUrl for an active AI voice call. During the call, we receive a Voice v1 CallSid. We need to create a second support-agent leg using the Exotel Legs & Bridges API and bridge that leg with the existing customer leg without re-dialing the customer.\n\nCan the existing customer leg of a Voice Streaming/StreamUrl call be retrieved or referenced using a Voice v2 leg_sid?\n\nIf yes, please provide:\n\nHow to obtain the leg_sid from the existing Voice Streaming call.\n",
+    "question_length": 921,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11192,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1874
   }
 ]
