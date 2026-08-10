@@ -9488,5 +9488,39 @@
       }
     ],
     "answer_length": 2117
+  },
+  {
+    "timestamp": "2026-08-10T07:26:42.286Z",
+    "response_id": "ffd7b765-59f6-423e-9666-8e162aae3cfd",
+    "question": "app bazaar",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4486,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      }
+    ],
+    "answer_length": 2528
   }
 ]
