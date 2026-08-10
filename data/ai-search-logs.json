@@ -9865,5 +9865,39 @@
       }
     ],
     "answer_length": 2080
+  },
+  {
+    "timestamp": "2026-08-10T09:33:16.402Z",
+    "response_id": "26c8917f-5bc7-4565-9848-7f2f63a05d86",
+    "question": "Can the customer leg of an existing Exotel Voice Streaming/StreamUrl call be accessed as a leg_sid through the Legs & Bridges API, so that we can create a second support-agent leg and bridge it to the existing customer leg without re-dialing the customer?",
+    "question_length": 255,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9019,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 2083
   }
 ]
