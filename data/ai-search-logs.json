@@ -10382,5 +10382,39 @@
       }
     ],
     "answer_length": 3833
+  },
+  {
+    "timestamp": "2026-08-10T11:05:23.564Z",
+    "response_id": "70f0af4c-1e54-4843-af7b-c7d94783734d",
+    "question": "please proivde the setup for the exacr flow",
+    "question_length": 43,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10430,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Actions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/actions"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 3171
   }
 ]
