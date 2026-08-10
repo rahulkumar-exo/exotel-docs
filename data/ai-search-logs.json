@@ -9695,5 +9695,39 @@
     ],
     "answer_length": 1396,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-10T08:44:14.646Z",
+    "response_id": "9ae7293f-1da8-42a1-919c-20b123cbcf6e",
+    "question": "can i use the transfer flow for warm transfer?",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3668,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Actions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/actions"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Transfer Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/transfer"
+      }
+    ],
+    "answer_length": 498
   }
 ]
