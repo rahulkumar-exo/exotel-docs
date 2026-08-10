@@ -9729,5 +9729,39 @@
       }
     ],
     "answer_length": 498
+  },
+  {
+    "timestamp": "2026-08-10T08:45:39.450Z",
+    "response_id": "50770276-82db-4a13-8581-e721d0ed650e",
+    "question": "so for the current transfer flow the call needs to be doscpnnected before connecting to next call right,can you please give the actual flow here?",
+    "question_length": 145,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11397,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      }
+    ],
+    "answer_length": 1668
   }
 ]
