@@ -10348,5 +10348,39 @@
     ],
     "answer_length": 1000,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-10T10:49:32.232Z",
+    "response_id": "3a8c0c2c-bf5d-46a5-b4b6-80fe6275d497",
+    "question": "You can simply add a Connect Applet immediately after your Voicebot Applet.\n\nThe flow will look like this:\nIncoming Call ? Voicebot Applet ? Connect Applet (Configured with human agent number/group)\n\nImportant Implementation Note:\nFor this handoff to work correctly, the customer must remain on the line, and your bot must initiate the disconnect from the stream when it is ready to transfer.\n\nWhen your AI bot disconnects, Exotel will send a \"stop\" event. Because the bot ended its session (and the ",
+    "question_length": 719,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11443,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 3833
   }
 ]
