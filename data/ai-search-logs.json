@@ -10552,5 +10552,39 @@
       }
     ],
     "answer_length": 404
+  },
+  {
+    "timestamp": "2026-08-10T11:49:21.928Z",
+    "response_id": "e401fea2-778f-4d7f-8e0c-e2954556d2d9",
+    "question": "{\n    \"RequestId\": \"10462eeb-60be-4388-b800-98f40d3059e7\",\n    \"Status\": \"Failed\",\n    \"Code\": 401,\n    \"Error\": \"Authentication failed, Authentication failed\",\n    \"Data\": null\n}",
+    "question_length": 179,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1847,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow.mdx"
+      },
+      {
+        "title": "Connect to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 769
   }
 ]
