@@ -10106,5 +10106,39 @@
     ],
     "answer_length": 797,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-10T10:02:13.033Z",
+    "response_id": "76c3db6c-12c7-44b6-8bc1-cb64d8f92e41",
+    "question": "Does Exotel Provide a PSTIN number like Twillo which we can use",
+    "question_length": 63,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4819,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use CleverTap via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-native"
+      },
+      {
+        "title": "Use CleverTap via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-generic"
+      }
+    ],
+    "answer_length": 898
   }
 ]
