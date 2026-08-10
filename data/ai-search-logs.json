@@ -9522,5 +9522,39 @@
       }
     ],
     "answer_length": 2528
+  },
+  {
+    "timestamp": "2026-08-10T08:34:47.852Z",
+    "response_id": "9b958dd5-71d5-4cce-8dd8-a894c3ae5a47",
+    "question": "I am using the exotel app bazar voicebot and inside that I have set my application websocket url inside that could you tell me that can I pass headers params or not",
+    "question_length": 164,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4944,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Freshdesk Secure Recording Enablement",
+        "product": "integrations",
+        "url": "/docs/integrations/freshdesk-secure-recording"
+      }
+    ],
+    "answer_length": 1206
   }
 ]
