@@ -10140,5 +10140,39 @@
       }
     ],
     "answer_length": 898
+  },
+  {
+    "timestamp": "2026-08-10T10:03:28.804Z",
+    "response_id": "4445ea60-64be-46e0-9cca-b25a85e9ca13",
+    "question": "Does It aslo have streaming of audio to calling agent if we have",
+    "question_length": 64,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4053,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 828
   }
 ]
