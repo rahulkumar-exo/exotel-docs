@@ -10484,5 +10484,39 @@
       }
     ],
     "answer_length": 1913
+  },
+  {
+    "timestamp": "2026-08-10T11:37:08.078Z",
+    "response_id": "f7b625e1-cfd2-48f8-afb8-7ec706c99ad9",
+    "question": "How do you want to control your Connect params?\n\t\nConfigure using flow builder here\n\t\nConfigure parameters dynamically by providing a URL\nPrimary URL: *\nEnter URL here\n\nFallback URL (optional): If set, this URL will be triggered if Primary URL is having issues\nEnter fallback URL here\n\nClick here for the list of parameters and how they can be controlled\n\n\nDial Whom\n\t\nDial a user or group\nSelect a Group\n\t\nDial phone number(s):\nDND Check\nLike 08088919888\nor a comma separated list like 08088919888,0",
+    "question_length": 1451,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11258,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 3452
   }
 ]
