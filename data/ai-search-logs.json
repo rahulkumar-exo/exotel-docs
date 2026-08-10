@@ -10450,5 +10450,39 @@
       }
     ],
     "answer_length": 1089
+  },
+  {
+    "timestamp": "2026-08-10T11:35:24.104Z",
+    "response_id": "2a5664eb-d875-4a77-96d9-dadfbc8b340a",
+    "question": "applets",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5418,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow.mdx"
+      }
+    ],
+    "answer_length": 1913
   }
 ]
