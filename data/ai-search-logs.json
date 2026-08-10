@@ -10416,5 +10416,39 @@
       }
     ],
     "answer_length": 3171
+  },
+  {
+    "timestamp": "2026-08-10T11:29:04.144Z",
+    "response_id": "9da83ae1-e75b-43ea-a8b8-3ab8bc624d4f",
+    "question": "so wiith the Voicebot → Connect ,do we get the required flow ,the warm transer without connecting to call transfer app",
+    "question_length": 118,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4312,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 1089
   }
 ]
