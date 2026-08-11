@@ -13398,5 +13398,39 @@
     ],
     "answer_length": 1023,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-11T09:31:12.273Z",
+    "response_id": "ded5e91c-4b1e-4a88-9007-43d66d4cec33",
+    "question": "Give me the exotel health check api which i can configure in aws for ping",
+    "question_length": 73,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4127,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 381
   }
 ]
