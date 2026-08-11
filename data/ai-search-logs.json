@@ -13639,5 +13639,39 @@
       }
     ],
     "answer_length": 1123
+  },
+  {
+    "timestamp": "2026-08-11T10:32:04.545Z",
+    "response_id": "dcc04396-ca99-4cb7-8735-457e40a41042",
+    "question": "i'm asking about audio format",
+    "question_length": 29,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6009,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Greeting Messages",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/greeting-message"
+      }
+    ],
+    "answer_length": 2389
   }
 ]
