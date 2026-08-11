@@ -13157,5 +13157,39 @@
       }
     ],
     "answer_length": 263
+  },
+  {
+    "timestamp": "2026-08-11T08:06:10.461Z",
+    "response_id": "444957d1-13df-489e-a8cc-66b340df62da",
+    "question": "Can I add a connect applet in chain with voicebot?",
+    "question_length": 50,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11220,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 1592
   }
 ]
