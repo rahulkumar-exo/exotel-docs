@@ -13191,5 +13191,39 @@
       }
     ],
     "answer_length": 1592
+  },
+  {
+    "timestamp": "2026-08-11T08:07:26.817Z",
+    "response_id": "c65a1d8e-03e4-4fd4-94b5-c89277e213fc",
+    "question": "If I am subsxribed to the voicebot ws endpoint. How can I tell exotel that they need to call number X?",
+    "question_length": 102,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9845,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 4310
   }
 ]
