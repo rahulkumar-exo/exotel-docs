@@ -13571,5 +13571,39 @@
     ],
     "answer_length": 995,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-11T09:50:11.226Z",
+    "response_id": "5bcacc22-af76-4108-b956-926a41021985",
+    "question": "health check API for exotel server",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4768,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 676
   }
 ]
