@@ -12603,5 +12603,39 @@
     ],
     "answer_length": 879,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-11T04:34:28.964Z",
+    "response_id": "d3dd7474-096c-4354-9c31-e57b90772611",
+    "question": "me user mapping kr rha hu but ho nhi rha h",
+    "question_length": 42,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4327,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Update User",
+        "product": "users",
+        "url": "/docs/users/api-reference/update-user"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      },
+      {
+        "title": "Create User",
+        "product": "users",
+        "url": "/docs/users/api-reference/create-user"
+      },
+      {
+        "title": "Delete User",
+        "product": "users",
+        "url": "/docs/users/api-reference/delete-user"
+      }
+    ],
+    "answer_length": 1699
   }
 ]
