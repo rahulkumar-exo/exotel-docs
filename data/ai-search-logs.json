@@ -16076,5 +16076,39 @@
       }
     ],
     "answer_length": 945
+  },
+  {
+    "timestamp": "2026-08-12T11:31:21.044Z",
+    "response_id": "41f5da3e-c804-4d70-9f93-5e33c757cf7d",
+    "question": "In the Voicebot Applet configuration, does the URL query parameter literally named sample-rate (e.g. ?sample-rate=16000) change the sample rate of the audio in the media events, or is that parameter not real / not documented?",
+    "question_length": 225,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3268,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 999
   }
 ]
