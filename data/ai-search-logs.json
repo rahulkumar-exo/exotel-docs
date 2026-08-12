@@ -15974,5 +15974,39 @@
       }
     ],
     "answer_length": 325
+  },
+  {
+    "timestamp": "2026-08-12T10:20:02.075Z",
+    "response_id": "e83708fb-4d5a-4391-b0af-d73bec607044",
+    "question": "exotel is best for sms ?",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3197,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use CleverTap via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-generic"
+      }
+    ],
+    "answer_length": 452
   }
 ]
