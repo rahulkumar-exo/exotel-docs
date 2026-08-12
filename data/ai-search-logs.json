@@ -16144,5 +16144,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-12T23:50:41.913Z",
+    "response_id": "975e4430-3fbf-4d5f-b9f3-291f6bd3cfdd",
+    "question": "create users",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8012,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Users",
+        "product": "users",
+        "url": "/docs/users/overview"
+      },
+      {
+        "title": "Manage Users",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/manage-users.mdx"
+      },
+      {
+        "title": "Users",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/users"
+      },
+      {
+        "title": "List Users",
+        "product": "users",
+        "url": "/docs/users/api-reference/list-users"
+      }
+    ],
+    "answer_length": 3581
   }
 ]
