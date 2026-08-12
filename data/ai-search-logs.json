@@ -15940,5 +15940,39 @@
       }
     ],
     "answer_length": 2565
+  },
+  {
+    "timestamp": "2026-08-12T07:43:21.819Z",
+    "response_id": "c221775e-be90-4087-aad6-843297c2a7e5",
+    "question": "Where to get destination IP address",
+    "question_length": 35,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3395,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns.mdx"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes.mdx"
+      }
+    ],
+    "answer_length": 325
   }
 ]
