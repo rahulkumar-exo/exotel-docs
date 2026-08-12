@@ -16110,5 +16110,39 @@
       }
     ],
     "answer_length": 999
+  },
+  {
+    "timestamp": "2026-08-12T17:51:37.329Z",
+    "response_id": "826d7622-f982-4c5a-a730-d60a434dfd4c",
+    "question": "Hi Exotel team,\n\nWe're Mangwale, a hyperlocal delivery platform operating in Nashik — food, parcel and e-commerce delivery. We've been on Exotel since April on account sarvinsuppliesllp1, with ExoPhone 02048556923 as our published customer support line.\n\nWe'd like to enable Voice Streaming / AgentStream on this account so we can run our own AI voice agent on inbound support calls.\n\nEverything on our side is already built and running:\n\nA bidirectional WebSocket endpoint at wss://exotel.mangwale.a",
+    "question_length": 1558,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7890,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 176
   }
 ]
