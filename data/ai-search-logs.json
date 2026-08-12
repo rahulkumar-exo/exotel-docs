@@ -16042,5 +16042,39 @@
       }
     ],
     "answer_length": 3227
+  },
+  {
+    "timestamp": "2026-08-12T11:29:30.397Z",
+    "response_id": "2f556a9f-e828-4f74-b02e-7e944d46cde0",
+    "question": "When I pass ?sample-rate=16000 on the Voicebot Applet WebSocket URL, is the actual audio payload (both from the caller and sent back to the caller) really transmitted at 16000Hz, or does the wire format stay at 8kHz regardless of that parameter?",
+    "question_length": 245,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5196,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 945
   }
 ]
