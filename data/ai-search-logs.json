@@ -16178,5 +16178,39 @@
       }
     ],
     "answer_length": 3581
+  },
+  {
+    "timestamp": "2026-08-13T00:45:34.807Z",
+    "response_id": "f1b38102-1e22-4abe-8606-b85a55f72603",
+    "question": "everything about exotel",
+    "question_length": 23,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4325,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use CleverTap via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-native"
+      }
+    ],
+    "answer_length": 910
   }
 ]
