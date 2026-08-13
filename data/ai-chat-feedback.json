@@ -79,5 +79,14 @@
     "answer_excerpt": "Based on the provided documentation, there is no information regarding how to increase the number of parallel calls per number or any specific limits on concurrent calls (e.g., \"4 per number\").\n\nThis type of information might be found in documentation related to call capacity, platform limits, or your specific account configuration.",
     "comment": null,
     "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Mobile/15E148 Safari/604.1"
+  },
+  {
+    "timestamp": "2026-08-13T15:49:39.282Z",
+    "response_id": "fso-feedback-probe-3K8M2-1786636179",
+    "vote": "up",
+    "question": "fso-feedback-probe-3K8M2-1786636179",
+    "answer_excerpt": null,
+    "comment": "fso-feedback-probe-3K8M2-1786636179",
+    "user_agent": "Mozilla/5.0"
   }
 ]
