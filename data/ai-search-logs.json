@@ -16416,5 +16416,39 @@
       }
     ],
     "answer_length": 1668
+  },
+  {
+    "timestamp": "2026-08-13T07:20:56.827Z",
+    "response_id": "51b26bdc-f114-434e-9d8b-9d12cf348850",
+    "question": "tell me about exotel apis",
+    "question_length": 25,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5100,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 3303
   }
 ]
