@@ -16280,5 +16280,39 @@
       }
     ],
     "answer_length": 2490
+  },
+  {
+    "timestamp": "2026-08-13T06:15:24.889Z",
+    "response_id": "8d34c768-6829-48cf-8967-b233499657c2",
+    "question": "webhooks",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11047,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      }
+    ],
+    "answer_length": 5466
   }
 ]
