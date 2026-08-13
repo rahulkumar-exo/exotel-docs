@@ -16552,5 +16552,39 @@
       }
     ],
     "answer_length": 1022
+  },
+  {
+    "timestamp": "2026-08-13T08:34:55.347Z",
+    "response_id": "4bb269bf-9685-453c-a5f3-24a98d6d159f",
+    "question": "how much for mobile number?",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1808,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Media Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/media-messages"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 176
   }
 ]
