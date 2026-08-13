@@ -16382,5 +16382,39 @@
       }
     ],
     "answer_length": 1812
+  },
+  {
+    "timestamp": "2026-08-13T07:19:50.464Z",
+    "response_id": "d215a8c5-3167-4e3f-becb-be524ff7cd8f",
+    "question": "Incoming Call in crm",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5172,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 1668
   }
 ]
