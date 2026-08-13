@@ -16586,5 +16586,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-13T13:55:18.850Z",
+    "response_id": "2308b922-838c-4ea3-914d-d5b96dc77321",
+    "question": "campaign",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4487,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Campaign Scheduling",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-scheduling"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Creating a Voice Campaign",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/creating-voice-campaign"
+      }
+    ],
+    "answer_length": 2416
   }
 ]
