@@ -16484,5 +16484,39 @@
       }
     ],
     "answer_length": 3598
+  },
+  {
+    "timestamp": "2026-08-13T07:26:11.499Z",
+    "response_id": "2dbd07a6-c358-4ddf-a6c4-ac4bb73efc8a",
+    "question": "chal chutiye ye to pata hi tha",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2249,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Details & Bulk Calls",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead.mdx"
+      }
+    ],
+    "answer_length": 183
   }
 ]
