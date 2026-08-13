@@ -16212,5 +16212,39 @@
       }
     ],
     "answer_length": 910
+  },
+  {
+    "timestamp": "2026-08-13T04:27:45.264Z",
+    "response_id": "af01e3b0-55ff-4ab9-bfe4-1cde059d3ac9",
+    "question": "How can we increase number of parallel calls? We’re only able to do 4 per number now",
+    "question_length": 84,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3377,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      }
+    ],
+    "answer_length": 334
   }
 ]
