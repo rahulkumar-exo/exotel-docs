@@ -70,5 +70,14 @@
     "answer_excerpt": "You can make calls through Exotel using the Dashboard or programmatically via Exotel's APIs.\n\n### 1. Make Outgoing Calls\n\nThere are multiple ways to initiate outbound calls:\n\n#### a. Via Exotel Dashboard\nYou can make calls manually through the Exotel Dashboard:\n1.  Log in to the Exotel Dashboard.\n2.  Navigate to the dialer or click-to-call option.\n3.  Enter the customer's phone number.\n4.  Select the ExoPhone to use as caller ID.\n5.  Click Call.\n*   **Documentation**: [How to Make or Receive Cal",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2026-08-13T04:27:52.000Z",
+    "response_id": "af01e3b0-55ff-4ab9-bfe4-1cde059d3ac9",
+    "vote": "down",
+    "question": "How can we increase number of parallel calls? We’re only able to do 4 per number now",
+    "answer_excerpt": "Based on the provided documentation, there is no information regarding how to increase the number of parallel calls per number or any specific limits on concurrent calls (e.g., \"4 per number\").\n\nThis type of information might be found in documentation related to call capacity, platform limits, or your specific account configuration.",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Mobile/15E148 Safari/604.1"
   }
 ]
