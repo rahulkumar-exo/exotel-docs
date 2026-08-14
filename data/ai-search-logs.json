@@ -16926,5 +16926,39 @@
       }
     ],
     "answer_length": 756
+  },
+  {
+    "timestamp": "2026-08-14T16:53:33.486Z",
+    "response_id": "b70465af-d22d-4665-9469-b84b8ac34194",
+    "question": "can i create bulk contact using CSV",
+    "question_length": 35,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7500,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      }
+    ],
+    "answer_length": 2663
   }
 ]
