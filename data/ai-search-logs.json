@@ -16824,5 +16824,39 @@
       }
     ],
     "answer_length": 1654
+  },
+  {
+    "timestamp": "2026-08-14T08:11:46.944Z",
+    "response_id": "0f2bd69f-233b-466d-b3da-bce09065f9f8",
+    "question": "greeting applets",
+    "question_length": 16,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6254,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Greeting Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/greeting"
+      },
+      {
+        "title": "Greeting Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/greeting-applet-guide"
+      }
+    ],
+    "answer_length": 3475
   }
 ]
