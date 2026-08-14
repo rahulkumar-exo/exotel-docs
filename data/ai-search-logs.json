@@ -16722,5 +16722,39 @@
       }
     ],
     "answer_length": 2493
+  },
+  {
+    "timestamp": "2026-08-14T06:33:03.078Z",
+    "response_id": "7c6eebc7-4236-4344-aba1-4b3728070f67",
+    "question": "Can we get api for my automation",
+    "question_length": 32,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4286,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 1076
   }
 ]
