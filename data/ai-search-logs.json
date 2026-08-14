@@ -16892,5 +16892,39 @@
       }
     ],
     "answer_length": 2790
+  },
+  {
+    "timestamp": "2026-08-14T16:45:40.134Z",
+    "response_id": "a2b47028-c8b6-4d34-8986-af3e1e6ea99e",
+    "question": "how to create contact . give request body example",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3597,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      },
+      {
+        "title": "Login",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login.mdx"
+      }
+    ],
+    "answer_length": 756
   }
 ]
