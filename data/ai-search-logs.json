@@ -16620,5 +16620,39 @@
       }
     ],
     "answer_length": 2416
+  },
+  {
+    "timestamp": "2026-08-14T03:16:32.901Z",
+    "response_id": "68d728eb-1144-4ec0-b74e-5154fb51a7f7",
+    "question": "what access to be given to api user to download the recording via api",
+    "question_length": 69,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3778,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Authentication & Security",
+        "product": "references",
+        "url": "/docs/references/authentication"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 965
   }
 ]
