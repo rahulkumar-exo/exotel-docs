@@ -17062,5 +17062,39 @@
       }
     ],
     "answer_length": 3748
+  },
+  {
+    "timestamp": "2026-08-15T08:56:00.245Z",
+    "response_id": "54c76e9d-023c-4e00-be28-394b1936d0b4",
+    "question": "in ECC are we providing 100% call recording",
+    "question_length": 43,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7092,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 1925
   }
 ]
