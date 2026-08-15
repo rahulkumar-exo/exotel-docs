@@ -17096,5 +17096,39 @@
       }
     ],
     "answer_length": 1925
+  },
+  {
+    "timestamp": "2026-08-15T11:38:27.211Z",
+    "response_id": "f1744801-a249-428e-bf40-fe12bed67a3c",
+    "question": "incoming calls",
+    "question_length": 14,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3150,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Automated Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/automated-calls"
+      }
+    ],
+    "answer_length": 1164
   }
 ]
