@@ -17402,5 +17402,39 @@
       }
     ],
     "answer_length": 3848
+  },
+  {
+    "timestamp": "2026-08-17T08:56:56.759Z",
+    "response_id": "c1c4a9f6-4062-49b2-82d7-4a26a2ae393e",
+    "question": "How do you protect the health of the Exophone numbers? DO you give any fields for the sme?",
+    "question_length": 90,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4045,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 462
   }
 ]
