@@ -17682,5 +17682,39 @@
       }
     ],
     "answer_length": 286
+  },
+  {
+    "timestamp": "2026-08-17T13:39:44.892Z",
+    "response_id": "e6022cb2-6a21-4cea-8ae1-f1dad06784fd",
+    "question": "Ai calling",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2103,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      }
+    ],
+    "answer_length": 576
   }
 ]
