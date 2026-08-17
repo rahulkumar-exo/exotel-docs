@@ -17334,5 +17334,39 @@
       }
     ],
     "answer_length": 4356
+  },
+  {
+    "timestamp": "2026-08-17T06:44:21.617Z",
+    "response_id": "d7e765ab-ca0b-41ff-b438-c1318b21c04e",
+    "question": "Exotel Outbound",
+    "question_length": 15,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8042,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Network Requirements",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/network-requirements"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 2720
   }
 ]
