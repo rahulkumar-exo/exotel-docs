@@ -17580,5 +17580,39 @@
       }
     ],
     "answer_length": 4738
+  },
+  {
+    "timestamp": "2026-08-17T11:07:33.922Z",
+    "response_id": "e79c77be-b4ba-48b8-b7c2-c234eb5bc7fc",
+    "question": "now i need is what are the callback details u give",
+    "question_length": 50,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5692,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      }
+    ],
+    "answer_length": 1867
   }
 ]
