@@ -20074,5 +20074,39 @@
       }
     ],
     "answer_length": 1547
+  },
+  {
+    "timestamp": "2026-08-18T16:39:50.817Z",
+    "response_id": "81026883-2489-4be1-ba78-02bd3585fa6d",
+    "question": "HOW TO DISCONNECT A call where two number are connected from code.",
+    "question_length": 66,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3934,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 863
   }
 ]
