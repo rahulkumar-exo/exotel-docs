@@ -37,7 +37,7 @@ POST /v1/Accounts/<your_sid>/Calls/connect
 | `CallerId`                  | Yes      | String  | Your ExoPhone/virtual number.                                   |
 | `CallType`                  | No       | String  | `trans` for transactional calls.                                |
 | `TimeLimit`                 | No       | Integer | Max call duration in seconds. Max: `14400` (4 hours).           |
-| `TimeOut`                   | No       | Integer | Time in seconds to ring the called parties (both the From and To legs). The timer runs only during ringing and stops once each leg is answered. Default: 30 seconds. |
+| `TimeOut`                   | No       | Integer | Time in seconds to ring the called parties (both the From and To legs). The timer runs only during ringing and stops once each leg is answered. |
 | `WaitUrl`                   | No       | String  | Audio URL (WAV) played while waiting. Recommended: under 2MB.   |
 | `Record`                    | No       | Boolean | `true` to record the conversation.                              |
 | `RecordingChannels`         | No       | String  | `single` (default) or `dual`.                                   |

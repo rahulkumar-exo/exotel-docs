@@ -38,7 +38,7 @@ POST /v1/Accounts/<your_sid>/Calls/connect
 | `Url` | Yes | String | Flow URL: `http://my.exotel.com/{your_sid}/exoml/start_voice/{app_id}` |
 | `CallType` | No | String | `trans` for transactional calls. |
 | `TimeLimit` | No | Integer | Max call duration in seconds. Max: `14400` (4 hours). |
-| `TimeOut` | No | Integer | Time in seconds to ring the called party before treating the call as unanswered. The timer runs only during ringing and stops once the call is answered. Default: 30 seconds. |
+| `TimeOut` | No | Integer | Time in seconds to ring the called party before treating the call as unanswered. The timer runs only during ringing and stops once the call is answered. |
 | `StatusCallback` | No | String | Webhook URL for call status updates. |
 | `StatusCallbackEvents` | No | Array | `terminal`, `answered`, or both. |
 | `CustomField` | No | String | Metadata passed to the applet via Passthru. |

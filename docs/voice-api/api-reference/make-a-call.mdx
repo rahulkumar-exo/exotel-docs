@@ -72,7 +72,7 @@ POST /v2/accounts/<account_sid>/calls
 | `recording_channels` | No | String | `single` (mixed) or `dual` (separate agent/customer). |
 | `wait_audio_url` | No | String | Audio URL (WAV) played to agent while customer is being dialed. Recommended: under 2MB. |
 | `max_time_limit` | No | Integer | Maximum call duration in seconds. |
-| `attempt_time_out` | No | Integer | Time in seconds to ring the called parties (both the agent and customer legs). The timer runs only during ringing and stops once each leg is answered. Default: 30 seconds. |
+| `attempt_time_out` | No | Integer | Time in seconds to ring the called parties (both the agent and customer legs). The timer runs only during ringing and stops once each leg is answered. |
 | `custom_field` | No | String | Application-specific metadata. |
 | `status_callback` | No | Array | Webhook event configurations (see above). |
 

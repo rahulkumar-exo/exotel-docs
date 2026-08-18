@@ -26,7 +26,7 @@ POST /v2/accounts/<account_sid>/calls
 | `recording_channels` | No | `"single"` or `"dual"` channel recording |
 | `wait_audio_url` | No | Audio URL to play while agent connects |
 | `max_time_limit` | No | Maximum call duration in seconds |
-| `attempt_time_out` | No | Time in seconds to ring the called parties (both the agent and customer legs). The timer runs only during ringing and stops once each leg is answered. Default: 30 seconds. |
+| `attempt_time_out` | No | Time in seconds to ring the called parties (both the agent and customer legs). The timer runs only during ringing and stops once each leg is answered. |
 | `custom_field` | No | Application-specific metadata |
 | `status_callback` | No | Array of webhook event configurations |
 
