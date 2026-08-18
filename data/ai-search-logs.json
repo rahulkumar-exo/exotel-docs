@@ -17784,5 +17784,39 @@
       }
     ],
     "answer_length": 776
+  },
+  {
+    "timestamp": "2026-08-18T02:48:47.893Z",
+    "response_id": "4e9e8253-bbfc-4754-a607-9add5bb5e0dd",
+    "question": "What do you know about astrology?",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1200,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Messaging Limits",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/messaging-limits"
+      },
+      {
+        "title": "Greeting Messages",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/greeting-message"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "WhatsApp Display Name Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/display-name-guidelines"
+      }
+    ],
+    "answer_length": 127
   }
 ]
