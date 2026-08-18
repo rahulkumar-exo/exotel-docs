@@ -18234,5 +18234,39 @@
     ],
     "answer_length": 1406,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-18T05:55:48.785Z",
+    "response_id": "34d60702-98e0-4123-9d94-08f093d91fb9",
+    "question": "wgat is the voicebot you offer?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1965,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 439
   }
 ]
