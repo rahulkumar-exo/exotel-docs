@@ -18933,5 +18933,39 @@
     ],
     "answer_length": 909,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-18T08:42:08.854Z",
+    "response_id": "cd82d34c-2266-4c91-8a59-3f509e8b771c",
+    "question": "Can't even find the Settings.",
+    "question_length": 29,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10979,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 572
   }
 ]
