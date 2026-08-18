@@ -72,7 +72,7 @@ POST /v2/accounts/<account_sid>/calls
 | `recording_channels` | No | String | `single` (mixed) or `dual` (separate agent/customer). |
 | `wait_audio_url` | No | String | Audio URL (WAV) played to agent while customer is being dialed. Recommended: under 2MB. |
 | `max_time_limit` | No | Integer | Maximum call duration in seconds. |
-| `attempt_time_out` | No | Integer | Ring timeout in seconds. |
+| `attempt_time_out` | No | Integer | Time in seconds to ring the called parties (both the agent and customer legs). The timer runs only during ringing and stops once each leg is answered. Default: 30 seconds. |
 | `custom_field` | No | String | Application-specific metadata. |
 | `status_callback` | No | Array | Webhook event configurations (see above). |
 
@@ -218,7 +218,7 @@ HTTP 200 is **not** a confirmation of successful call placement. Use the StatusC
     { name: 'recording', required: false, type: 'boolean', description: 'Enable call recording (default: false)' },
     { name: 'recording_channels', required: false, type: 'string', description: 'single (mixed) or dual (separate)', placeholder: 'dual' },
     { name: 'max_time_limit', required: false, type: 'number', description: 'Maximum call duration in seconds', placeholder: '300' },
-    { name: 'attempt_time_out', required: false, type: 'number', description: 'Ring timeout in seconds', placeholder: '30' },
+    { name: 'attempt_time_out', required: false, type: 'number', description: 'Seconds to ring both agent and customer legs before treating as unanswered. Stops once each leg is answered.', placeholder: '30' },
     { name: 'custom_field', required: false, type: 'string', description: 'Application-specific metadata', placeholder: 'ticket_12345' },
   ]}
 />

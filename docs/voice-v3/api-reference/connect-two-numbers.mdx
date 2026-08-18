@@ -64,7 +64,7 @@ Before initiating a call, ensure the following:
 |-----------|------|---------|-------------|
 | `CallType` | String | — | Set to `trans` for transactional calls. |
 | `TimeLimit` | Integer | — | Maximum call duration in seconds. Maximum value: `14400` (4 hours). |
-| `TimeOut` | Integer | — | Ringing timeout in seconds before the call is considered unanswered. |
+| `TimeOut` | Integer | — | Time in seconds to ring the called parties (both the From and To legs). The timer runs only during ringing and stops once each leg is answered. Default: 30 seconds. |
 | `WaitUrl` | String | — | Audio file URL (WAV) played to the `From` caller while waiting for `To` to answer. File should be under 2 MB. **Note:** URLs are cached — append a unique query parameter (e.g., `?v=2`) when updating audio. |
 | `Record` | Boolean | `false` | Set to `true` to record the conversation. |
 | `RecordingChannels` | String | `single` | `single` (merged audio) or `dual` (separate channels per leg). |

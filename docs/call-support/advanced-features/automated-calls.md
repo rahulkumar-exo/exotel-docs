@@ -70,7 +70,7 @@ curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_
 | `Url` | Yes | The call flow (App) URL to execute when the customer answers |
 | `StatusCallback` | No | URL to receive call completion details |
 | `TimeLimit` | No | Maximum call duration in seconds |
-| `TimeOut` | No | How long to ring before giving up |
+| `TimeOut` | No | Time in seconds to ring the called party before treating the call as unanswered. The timer runs only during ringing and stops once the call is answered. Default: 30 seconds. |
 
 ### Method 2: Bulk Automated Calls (Campaign)
 
