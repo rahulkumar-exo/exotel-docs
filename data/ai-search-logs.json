@@ -19314,5 +19314,39 @@
     ],
     "answer_length": 631,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-18T11:28:57.960Z",
+    "response_id": "f63e0409-a21a-431b-83a8-398904f080a8",
+    "question": "agentstream",
+    "question_length": 11,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4358,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "OmniDimension Voicebot & Exotel AgentStream Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/omnidimension-integration"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/developer-guide"
+      }
+    ],
+    "answer_length": 2786
   }
 ]
