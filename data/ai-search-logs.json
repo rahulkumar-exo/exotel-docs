@@ -18691,5 +18691,39 @@
     ],
     "answer_length": 1228,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-18T07:56:32.795Z",
+    "response_id": "da0d0839-4c06-4158-8d1f-daa9aa20a751",
+    "question": "i connect two numbers now i want to disconnect the call from code",
+    "question_length": 65,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3843,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Connect Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/connect"
+      }
+    ],
+    "answer_length": 440
   }
 ]
