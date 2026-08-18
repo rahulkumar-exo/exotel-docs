@@ -18967,5 +18967,39 @@
       }
     ],
     "answer_length": 572
+  },
+  {
+    "timestamp": "2026-08-18T09:12:29.082Z",
+    "response_id": "84e561e5-0645-4401-868f-c545f199e36c",
+    "question": "2 way sms",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6256,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Long SMS (Concatenated Messages)",
+        "product": "sms-support",
+        "url": "/docs/sms-support/long-sms"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      }
+    ],
+    "answer_length": 3717
   }
 ]
