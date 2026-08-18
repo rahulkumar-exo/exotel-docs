@@ -38,7 +38,7 @@ POST /v1/Accounts/<your_sid>/Calls/connect
 | `Url` | Yes | String | The call flow URL. Format: `http://my.exotel.com/{your_sid}/exoml/start_voice/{app_id}` where `app_id` is the flow/applet ID. |
 | `CallType` | No | String | Set to `trans` for transactional calls. |
 | `TimeLimit` | No | Integer | Maximum call duration in seconds. Max: `14400` (4 hours). |
-| `TimeOut` | No | Integer | Ring timeout in seconds for both call legs. |
+| `TimeOut` | No | Integer | Time in seconds to ring the called parties (both the From and To legs). The timer runs only during ringing and stops once each leg is answered. Default: 30 seconds. |
 | `StatusCallback` | No | String | Webhook URL that receives CallSid, Status, RecordingUrl, DateUpdated when the call completes. |
 | `CustomField` | No | String | Custom data passed to Passthru or Greeting applets. |
 
@@ -182,7 +182,7 @@ A `200 OK` response means the request was accepted — it does not confirm the c
     { name: 'Url', required: true, type: 'string', description: 'Call flow URL: http://my.exotel.com/{sid}/exoml/start_voice/{app_id}', placeholder: 'http://my.exotel.com/your_sid/exoml/start_voice/926' },
     { name: 'CallType', required: false, type: 'string', description: 'Set to "trans" for transactional calls', placeholder: 'trans' },
     { name: 'TimeLimit', required: false, type: 'number', description: 'Max call duration in seconds (max 14400)', placeholder: '14400' },
-    { name: 'TimeOut', required: false, type: 'number', description: 'Ring timeout in seconds', placeholder: '30' },
+    { name: 'TimeOut', required: false, type: 'number', description: 'Seconds to ring both From and To legs before treating as unanswered. Stops once each leg is answered.', placeholder: '30' },
     { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://yoururl.com/callback' },
     { name: 'CustomField', required: false, type: 'string', description: 'Custom data passed to Passthru or Greeting applets', placeholder: 'order_123' },
   ]}
