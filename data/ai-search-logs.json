@@ -24186,5 +24186,39 @@
     ],
     "answer_length": 1057,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-19T23:41:32.897Z",
+    "response_id": "a8c7be25-c552-4aba-b31e-8ece781e6e5e",
+    "question": "if i want to use exotel api in my own application in order to make 2 way calls with an ai bot i have made in my own set up, how should i?",
+    "question_length": 137,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8524,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 3950
   }
 ]
