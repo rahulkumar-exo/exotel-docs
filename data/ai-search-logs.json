@@ -21545,5 +21545,39 @@
     ],
     "answer_length": 1000,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-19T06:13:38.693Z",
+    "response_id": "1a4549b2-dbfc-4efa-81a9-bb8e9efaf17d",
+    "question": "Hello Exotel Team,  I am planning to build a legitimate SMS/OTP service platform and would like to integrate your telephony/SMS APIs.  I would like information about:  1. Availability of virtual/virtual mobile numbers 2. Incoming SMS (two-way SMS) API 3. Number rental/availability and monthly pricing 4. API pricing per SMS 5. Number of numbers that can be rented 6. Webhook/API documentation 7. UPI or other available payment methods 8. Requirements for business/KYC verification  Please share your",
+    "question_length": 583,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6448,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 176
   }
 ]
