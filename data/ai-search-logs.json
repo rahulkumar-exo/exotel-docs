@@ -22389,5 +22389,39 @@
       }
     ],
     "answer_length": 1169
+  },
+  {
+    "timestamp": "2026-08-19T11:42:12.963Z",
+    "response_id": "9eebfd8e-93c0-4fa7-b000-a6c62a952475",
+    "question": "should it be string or boolean",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3286,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 700
   }
 ]
