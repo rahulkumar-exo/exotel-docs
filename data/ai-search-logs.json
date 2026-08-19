@@ -22219,5 +22219,39 @@
       }
     ],
     "answer_length": 1781
+  },
+  {
+    "timestamp": "2026-08-19T10:01:40.212Z",
+    "response_id": "c77d01da-2b3d-40f0-b89d-b8e4bf327ef7",
+    "question": "Does only gather applet allows to record the call or do i need to add connect specifically for recordings ??",
+    "question_length": 108,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4582,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 793
   }
 ]
