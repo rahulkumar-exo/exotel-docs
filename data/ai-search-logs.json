@@ -22185,5 +22185,39 @@
     ],
     "answer_length": 1031,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-19T09:59:17.659Z",
+    "response_id": "3ba1a812-37e1-4e41-9794-7987422c70ea",
+    "question": "starting a call with a gather applet, does sending record=True as a parameter lets us record the call ??",
+    "question_length": 104,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 17880,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 1781
   }
 ]
