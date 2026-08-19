@@ -23978,5 +23978,39 @@
     ],
     "answer_length": 651,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-19T21:41:29.158Z",
+    "response_id": "8db3e01b-7f31-4bb7-a129-365edba9317b",
+    "question": "EXOTEL_NUMBER",
+    "question_length": 13,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2668,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 133
   }
 ]
