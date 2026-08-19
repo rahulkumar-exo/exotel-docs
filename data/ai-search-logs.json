@@ -22813,5 +22813,13 @@
     "response_time_ms": 1712,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-19T14:04:38.056Z",
+    "question": "We are using Exotel SMS API to send OTP messages. The API returns HTTP 200 and the following response:\n\nStatus: queued\nDetailedStatus: PENDING_TO_OPERATOR\nDetailedStatusCode: 21010\n\nHowever, the recipient never receives the SMS. What does PENDING_TO_OPERATOR mean? What are the possible reasons why the SMS is not getting delivered, and how can we identify the root cause?",
+    "question_length": 372,
+    "response_time_ms": 2839,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
