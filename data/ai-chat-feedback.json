@@ -88,5 +88,14 @@
     "answer_excerpt": null,
     "comment": "fso-feedback-probe-3K8M2-1786636179",
     "user_agent": "Mozilla/5.0"
+  },
+  {
+    "timestamp": "2026-08-19T06:13:55.929Z",
+    "response_id": "1a4549b2-dbfc-4efa-81a9-bb8e9efaf17d",
+    "vote": "up",
+    "question": "Hello Exotel Team,  I am planning to build a legitimate SMS/OTP service platform and would like to integrate your telephony/SMS APIs.  I would like information about:  1. Availability of virtual/virtual mobile numbers 2. Incoming SMS (two-way SMS) API 3. Number rental/availability and monthly pricing 4. API pricing per SMS 5. Number of numbers that can be rented 6. Webhook/API documentation 7. UPI or other available payment methods 8. Requirements for business/KYC verification  Please share your",
+    "answer_excerpt": "This looks like something our team can help you with directly. Please write to **hello@exotel.com** with your question and one of our team members will get back to you shortly.",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
   }
 ]
