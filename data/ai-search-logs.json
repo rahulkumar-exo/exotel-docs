@@ -22821,5 +22821,39 @@
     "response_time_ms": 2839,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-19T14:06:31.000Z",
+    "response_id": "a94915d3-108c-4db2-b9e4-f434e9750b0e",
+    "question": "Our application successfully sends OTP requests to Exotel. We receive:\n\nHTTP 200\nStatus: queued\nDetailedStatus: PENDING_TO_OPERATOR\n\nBut users do not receive the OTP. Does this indicate an application issue or an Exotel/operator-side issue? What should we check next?",
+    "question_length": 267,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4241,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Passthru Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/passthru"
+      },
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp.mdx"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1464
   }
 ]
