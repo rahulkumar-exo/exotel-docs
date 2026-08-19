@@ -22253,5 +22253,39 @@
       }
     ],
     "answer_length": 793
+  },
+  {
+    "timestamp": "2026-08-19T10:29:54.183Z",
+    "response_id": "2ac52f71-e7cb-40d0-9060-e31497bb7986",
+    "question": "bro I need to make an API calling system i.e I will call exotel api with phone number and a text which it needs to call the number and speak the text. is it doable?",
+    "question_length": 164,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6801,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 1053
   }
 ]
