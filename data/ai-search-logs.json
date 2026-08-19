@@ -22423,5 +22423,39 @@
       }
     ],
     "answer_length": 700
+  },
+  {
+    "timestamp": "2026-08-19T12:19:05.251Z",
+    "response_id": "35849133-7981-4386-8b7d-ab7b986b36b3",
+    "question": "recieved messages for whatsapp template with quick reply clicked",
+    "question_length": 64,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6097,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      },
+      {
+        "title": "Template Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/templates"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Getting Started with WhatsApp Business API",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/getting-started"
+      }
+    ],
+    "answer_length": 1371
   }
 ]
