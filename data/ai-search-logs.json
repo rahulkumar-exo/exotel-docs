@@ -22321,5 +22321,39 @@
       }
     ],
     "answer_length": 496
+  },
+  {
+    "timestamp": "2026-08-19T11:23:31.161Z",
+    "response_id": "4ab759f2-bfb9-4f76-8bdb-7330ce1a2f1d",
+    "question": "PUT /v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>\n\n\ni need to assing number to a flow what is the domain here?",
+    "question_length": 132,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5803,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Actions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/actions"
+      },
+      {
+        "title": "Workflows",
+        "product": "chatbot",
+        "url": "/docs/chatbot/workflows"
+      }
+    ],
+    "answer_length": 774
   }
 ]
