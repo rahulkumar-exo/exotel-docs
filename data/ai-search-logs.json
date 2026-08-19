@@ -22287,5 +22287,39 @@
       }
     ],
     "answer_length": 1053
+  },
+  {
+    "timestamp": "2026-08-19T10:57:10.606Z",
+    "response_id": "cdac881b-cc64-4e2d-94e7-1e1b9d09e66d",
+    "question": "how to send StatusCallbackEvents in the api",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4408,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 496
   }
 ]
