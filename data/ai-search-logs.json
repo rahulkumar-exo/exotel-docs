@@ -24894,5 +24894,39 @@
       }
     ],
     "answer_length": 2955
+  },
+  {
+    "timestamp": "2026-08-20T09:26:47.700Z",
+    "response_id": "f93f18e3-0db5-48ca-9f9e-27ec1b9b46f0",
+    "question": "X-Exotel-Webhook-Token",
+    "question_length": 22,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1875,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 236
   }
 ]
