@@ -24792,5 +24792,39 @@
       }
     ],
     "answer_length": 5275
+  },
+  {
+    "timestamp": "2026-08-20T08:58:56.984Z",
+    "response_id": "fb111af1-0145-4cb8-8a92-a4a14a1dcff5",
+    "question": "do i need any kind of verification to use voicebot applet?",
+    "question_length": 58,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2749,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp.mdx"
+      },
+      {
+        "title": "Start Verification",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/start-verification.mdx"
+      },
+      {
+        "title": "Start Verification",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/start-verification.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      }
+    ],
+    "answer_length": 539
   }
 ]
