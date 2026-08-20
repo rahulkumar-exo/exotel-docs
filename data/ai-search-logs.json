@@ -25442,5 +25442,39 @@
       }
     ],
     "answer_length": 984
+  },
+  {
+    "timestamp": "2026-08-20T12:08:44.388Z",
+    "response_id": "928cf7ee-4063-4410-b9f3-4c2caba9fb3c",
+    "question": "research properly , and tell me steps for implementing the following processes , its very important that they work exactly so :\n\nPorting an Existing Number to Exotel\n If the organisation already has an established landline or mobile number, it can be ported to Exotel. Once ported, all incoming calls to that number will be routed through Exotel's system, allowing the AI bot to respond under the company's existing identity. This process typically takes 7 to 10 working days and requires KYC documen",
+    "question_length": 1069,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5017,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 909
   }
 ]
