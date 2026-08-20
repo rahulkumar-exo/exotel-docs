@@ -24758,5 +24758,39 @@
       }
     ],
     "answer_length": 2549
+  },
+  {
+    "timestamp": "2026-08-20T08:55:54.760Z",
+    "response_id": "2b32a66f-dab9-4a38-953b-690f58eba5a0",
+    "question": "Trunk",
+    "question_length": 5,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9815,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "SIP Trunking FQDN-based Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/fqdn-integration"
+      },
+      {
+        "title": "Manage ExoTrunks",
+        "product": "agentstream",
+        "url": "/docs/agentstream/manage-exotrunks"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      }
+    ],
+    "answer_length": 5275
   }
 ]
