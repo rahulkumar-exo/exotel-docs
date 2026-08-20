@@ -25340,5 +25340,39 @@
       }
     ],
     "answer_length": 4074
+  },
+  {
+    "timestamp": "2026-08-20T11:26:31.749Z",
+    "response_id": "3730c54d-7d84-4725-93ed-33132b1bd409",
+    "question": "why my credit in negative while i have not used it",
+    "question_length": 50,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1764,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Add Credits",
+        "product": "billing",
+        "url": "/docs/billing/add-credits"
+      },
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      },
+      {
+        "title": "Your First Call Flow",
+        "product": "getting-started",
+        "url": "/docs/getting-started/first-call-flow"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 176
   }
 ]
