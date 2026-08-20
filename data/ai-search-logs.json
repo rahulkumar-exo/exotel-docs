@@ -24624,5 +24624,13 @@
     "response_time_ms": 1215,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-20T05:19:32.086Z",
+    "question": "current outbound call of ai agent i make is from exophone i have now we have to connect 1600 and 1400 series number",
+    "question_length": 115,
+    "response_time_ms": 450,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
+    "failed": true
   }
 ]
