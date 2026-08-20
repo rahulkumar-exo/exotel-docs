@@ -24656,5 +24656,39 @@
     "response_time_ms": 1289,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-20T06:40:11.219Z",
+    "response_id": "6ff2859d-00e3-4ff8-9e72-8d9b70d7d43e",
+    "question": "When you subscribe to events via StatusCallbackEvents (supports terminal and answered), additional fields are included:\n\n{\n  \"CallSid\": \"80bfbec2d78bbbf10fb851f4fa165211\",\n  \"EventType\": \"terminal\",\n  \"DateCreated\": \"2024-01-15 14:25:10\",\n  \"DateUpdated\": \"2024-01-15 14:30:45\",\n  \"To\": \"09123456789\",\n  \"From\": \"09876543210\",\n  \"PhoneNumberSid\": \"0XXXXXX4890\",\n  \"StartTime\": \"2024-01-15 14:25:12\",\n  \"EndTime\": \"2024-01-15 14:30:45\",\n  \"Status\": \"completed\",\n  \"ConversationDuration\": 320,\n  \"Direc",
+    "question_length": 898,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5627,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      },
+      {
+        "title": "Webhooks & Callbacks",
+        "product": "references",
+        "url": "/docs/references/webhooks"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "StatusCallback",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/status-callback"
+      }
+    ],
+    "answer_length": 691
   }
 ]
