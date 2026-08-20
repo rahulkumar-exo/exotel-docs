@@ -25408,5 +25408,39 @@
       }
     ],
     "answer_length": 1793
+  },
+  {
+    "timestamp": "2026-08-20T12:03:44.747Z",
+    "response_id": "adf382c0-58f2-4e5f-b4c9-e43cf2700961",
+    "question": "okay no, I want exotel to be connected to a number I already have in my name , without any sort of extra verification like right now, like currently our free exotel account, has a specific exotel assigned number which I have to call and then provide my real connected number as a pin for proceeding , but instead I want to call the users to call my number directly and be connected , whats the way forward and steps",
+    "question_length": 415,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5803,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 984
   }
 ]
