@@ -24826,5 +24826,39 @@
       }
     ],
     "answer_length": 539
+  },
+  {
+    "timestamp": "2026-08-20T09:03:38.103Z",
+    "response_id": "410671ba-3b58-4f98-8f6b-39dba440f36e",
+    "question": "I can not see Navigate to AgentStream → ExoTrunks (or ExoPhone → ExoTrunks).",
+    "question_length": 76,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2137,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage ExoTrunks",
+        "product": "agentstream",
+        "url": "/docs/agentstream/manage-exotrunks"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      },
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      }
+    ],
+    "answer_length": 869
   }
 ]
