@@ -24584,5 +24584,13 @@
     "response_time_ms": 812,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-20T04:44:35.247Z",
+    "question": "i have registered to exotel on 3 aug. and that time i got 500 free credit . but today when i see again it shoes -688 while i have not used this service agian b/w them . why it happen, now i want to add credit into it but current price in negative",
+    "question_length": 246,
+    "response_time_ms": 552,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
+    "failed": true
   }
 ]
