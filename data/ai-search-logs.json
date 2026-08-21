@@ -26166,5 +26166,39 @@
       }
     ],
     "answer_length": 503
+  },
+  {
+    "timestamp": "2026-08-21T16:58:45.073Z",
+    "response_id": "6d4cc5c8-3cff-406e-ae1d-d33ebfbd590e",
+    "question": "what does TimiLimit tell us in connect 2 numbers",
+    "question_length": 48,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2953,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/connect"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      }
+    ],
+    "answer_length": 624
   }
 ]
