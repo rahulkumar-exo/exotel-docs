@@ -26302,5 +26302,39 @@
       }
     ],
     "answer_length": 195
+  },
+  {
+    "timestamp": "2026-08-21T17:43:23.550Z",
+    "response_id": "72b52499-ff92-4b85-8f1f-61d2c3c01ffb",
+    "question": "Call details 7060130635 august",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5606,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 1841
   }
 ]
