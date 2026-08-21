@@ -25792,5 +25792,39 @@
       }
     ],
     "answer_length": 726
+  },
+  {
+    "timestamp": "2026-08-21T09:35:05.737Z",
+    "response_id": "730609f5-5119-4cad-a23d-47c537f20928",
+    "question": "What is the start free trial when creating an account on your dashboard?",
+    "question_length": 72,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3388,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Create Your Exotel Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/create-account"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 756
   }
 ]
