@@ -25716,5 +25716,13 @@
     ],
     "answer_length": 789,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-21T03:17:13.046Z",
+    "question": "region",
+    "question_length": 6,
+    "response_time_ms": 1245,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
+    "failed": true
   }
 ]
