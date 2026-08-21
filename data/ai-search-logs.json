@@ -25826,5 +25826,39 @@
       }
     ],
     "answer_length": 756
+  },
+  {
+    "timestamp": "2026-08-21T09:35:23.857Z",
+    "response_id": "b290a96d-1fad-49f0-8bd0-a9801e6bc33f",
+    "question": "No I meant what does it offer?",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2207,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Display Name Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/display-name-guidelines"
+      }
+    ],
+    "answer_length": 522
   }
 ]
