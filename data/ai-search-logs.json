@@ -26064,5 +26064,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-21T11:43:44.886Z",
+    "response_id": "8cfb8437-e4c8-4b1e-8e73-9ef447b71a94",
+    "question": "channel status",
+    "question_length": 14,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8672,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Business Monitoring Dashboard",
+        "product": "use-cases",
+        "url": "/docs/use-cases/business-monitoring-dashboard.mdx"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Interactive SMS with Custom UI",
+        "product": "use-cases",
+        "url": "/docs/use-cases/interactive-sms.mdx"
+      }
+    ],
+    "answer_length": 3307
   }
 ]
