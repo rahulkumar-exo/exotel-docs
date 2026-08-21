@@ -25860,5 +25860,39 @@
       }
     ],
     "answer_length": 522
+  },
+  {
+    "timestamp": "2026-08-21T09:47:54.294Z",
+    "response_id": "99388419-80f9-49db-a8b1-ff90b5e92369",
+    "question": "do you support whatsapp calling or only whatsapp messages?",
+    "question_length": 58,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2414,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "WhatsApp Commerce",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/commerce"
+      },
+      {
+        "title": "Getting Started with WhatsApp Business API",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/getting-started"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 747
   }
 ]
