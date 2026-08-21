@@ -26234,5 +26234,39 @@
       }
     ],
     "answer_length": 1336
+  },
+  {
+    "timestamp": "2026-08-21T17:07:19.546Z",
+    "response_id": "891032a5-d7ee-45bd-ad35-6825fb7896db",
+    "question": "is max duration something set by the user or is the value fix to 4 hrs?",
+    "question_length": 71,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4706,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Database",
+        "product": "chatbot",
+        "url": "/docs/chatbot/database"
+      }
+    ],
+    "answer_length": 867
   }
 ]
