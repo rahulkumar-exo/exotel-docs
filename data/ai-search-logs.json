@@ -26132,5 +26132,39 @@
       }
     ],
     "answer_length": 462
+  },
+  {
+    "timestamp": "2026-08-21T13:57:39.211Z",
+    "response_id": "e3f82ff3-4afa-436d-b4ec-9222f7ab5b89",
+    "question": "psotman for usermapping",
+    "question_length": 23,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3563,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "SIP Trunking FQDN-based Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/fqdn-integration"
+      }
+    ],
+    "answer_length": 503
   }
 ]
