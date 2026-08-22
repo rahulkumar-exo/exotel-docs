@@ -26914,5 +26914,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-22T18:51:19.108Z",
+    "response_id": "8a99cafd-ac2b-417f-b8a8-639a07d8c4bb",
+    "question": "Can we connect claude to use your services?",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5003,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 746
   }
 ]
