@@ -26642,5 +26642,39 @@
       }
     ],
     "answer_length": 2377
+  },
+  {
+    "timestamp": "2026-08-22T13:41:12.843Z",
+    "response_id": "9d1586f5-1f01-4ba6-bfca-b1d6c851e256",
+    "question": "i want api for detecting missed calls and having call back for it",
+    "question_length": 65,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12095,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Flow and API Configuration for Voice AI & CC Platforms",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-api-configuration"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Missed Call Solution",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/missed-call"
+      }
+    ],
+    "answer_length": 3959
   }
 ]
