@@ -26880,5 +26880,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-22T18:50:24.857Z",
+    "response_id": "88d18565-dc93-4137-95a0-ff269fe1a137",
+    "question": "What are charges?",
+    "question_length": 17,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1263,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Quality Rating",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/quality-rating"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      }
+    ],
+    "answer_length": 176
   }
 ]
