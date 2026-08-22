@@ -26812,5 +26812,39 @@
       }
     ],
     "answer_length": 2381
+  },
+  {
+    "timestamp": "2026-08-22T18:47:03.633Z",
+    "response_id": "db345553-9292-4ddf-b6b4-f5f8247b9850",
+    "question": "I am building BingoCar, where each vehicle has a unique QR code linked to an owner in my backend\\.\nWhen a user taps “Call Owner,” my backend should use Exotel to dynamically initiate and bridge the call\\.\nThe owner’s number must remain private, while the QR code contains only a vehicle ID\\.\nCan Exotel support this architecture, including dynamic routing, caller\\-ID masking, production use, and applicable TRAI requirements?\nPlease provide the recommended API/product architecture, exact per\\-minut",
+    "question_length": 537,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7182,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 2877
   }
 ]
