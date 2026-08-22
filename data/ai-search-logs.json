@@ -26948,5 +26948,39 @@
       }
     ],
     "answer_length": 746
+  },
+  {
+    "timestamp": "2026-08-22T18:52:01.772Z",
+    "response_id": "a6841081-6f2f-4774-b07a-b4cf61b12be2",
+    "question": "Charges per masked calling?",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1877,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Number Masking Setup",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/number-masking-setup"
+      },
+      {
+        "title": "Usage Tracking",
+        "product": "billing",
+        "url": "/docs/billing/usage-tracking"
+      }
+    ],
+    "answer_length": 176
   }
 ]
