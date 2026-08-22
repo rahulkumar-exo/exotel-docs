@@ -26710,5 +26710,39 @@
       }
     ],
     "answer_length": 1844
+  },
+  {
+    "timestamp": "2026-08-22T15:54:33.744Z",
+    "response_id": "912ff04d-2b4a-44a1-bd7d-5f4be72c5295",
+    "question": "how do I get a exo phone number",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5419,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      },
+      {
+        "title": "List All ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/list-numbers"
+      },
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      }
+    ],
+    "answer_length": 2082
   }
 ]
