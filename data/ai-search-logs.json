@@ -26846,5 +26846,39 @@
       }
     ],
     "answer_length": 2877
+  },
+  {
+    "timestamp": "2026-08-22T18:50:07.310Z",
+    "response_id": "c9f45f7e-b116-4398-ba3b-48300e57804e",
+    "question": "Before proceeding, I need the complete pricing for the **Connect Two Numbers / dynamic number\\-masking setup**\\.\n\nPlease provide:\n\n1. **Exact cost per connected call/minute** for both call legs\\.\n2. Whether billing is **per minute, per call, or both**\\.\n3. **ExoPhone rental/monthly charges** and whether there are setup/activation charges\\.\n4. Any charges for **number\\-masking pairs, API calls, call bridging, recording, or other services**\\.\n5. Minimum monthly commitment, if any\\.\n6. Charges for ",
+    "question_length": 1809,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3989,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 176
   }
 ]
