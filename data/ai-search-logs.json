@@ -26506,5 +26506,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-22T08:10:30.809Z",
+    "response_id": "e07b5fd5-24f7-4f0f-ab60-a51239585e86",
+    "question": "Does Exotel provide international number?",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4758,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "International Calling Regulations",
+        "product": "faqs",
+        "url": "/docs/faqs/international-calling"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 647
   }
 ]
