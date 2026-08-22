@@ -26540,5 +26540,39 @@
       }
     ],
     "answer_length": 647
+  },
+  {
+    "timestamp": "2026-08-22T11:07:28.721Z",
+    "response_id": "802b8848-2a53-452f-85ea-9201a68f4d29",
+    "question": "per otp verification pricing",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3887,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp.mdx"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      }
+    ],
+    "answer_length": 176
   }
 ]
