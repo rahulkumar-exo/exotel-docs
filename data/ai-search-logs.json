@@ -26676,5 +26676,39 @@
       }
     ],
     "answer_length": 3959
+  },
+  {
+    "timestamp": "2026-08-22T15:53:47.736Z",
+    "response_id": "b89aa331-b283-4193-922e-18aa6db2270e",
+    "question": "> “नमस्कार! Welcome to CivicConnect, your civic issue reporting helpline. You can report problems such as garbage, road damage, water issues, public toilet problems, crowding, or damage to tourist and heritage places. For English, press 1, हिंदी के लिए 2 दबाएँ, और मराठीसाठी 3 दाबा. Please tell me your complaint and its location. I will understand your complaint, ask you for any missing information such as a nearby landmark, and confirm the details before registering it. Once your complaint is su",
+    "question_length": 695,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4131,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 1844
   }
 ]
