@@ -26778,5 +26778,39 @@
       }
     ],
     "answer_length": 5594
+  },
+  {
+    "timestamp": "2026-08-22T18:45:12.534Z",
+    "response_id": "8293274d-5c39-4596-a5eb-68713f5721ed",
+    "question": "I want a call masking between two callers",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4302,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Concurrent Call Management",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/concurrent-calls"
+      }
+    ],
+    "answer_length": 2381
   }
 ]
