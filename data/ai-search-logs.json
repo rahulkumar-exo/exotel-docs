@@ -27288,5 +27288,39 @@
       }
     ],
     "answer_length": 4285
+  },
+  {
+    "timestamp": "2026-08-23T17:05:45.181Z",
+    "response_id": "b923376e-db76-43c7-9750-b624120e457d",
+    "question": "how do i createacc n get indian ohone number",
+    "question_length": 44,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3349,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      }
+    ],
+    "answer_length": 596
   }
 ]
