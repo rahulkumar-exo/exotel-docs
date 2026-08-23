@@ -27254,5 +27254,39 @@
       }
     ],
     "answer_length": 411
+  },
+  {
+    "timestamp": "2026-08-23T09:29:50.683Z",
+    "response_id": "bc1c412c-e0d1-41fe-9b3e-55d77668c4f7",
+    "question": "pass through / pass thru",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6550,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 4285
   }
 ]
