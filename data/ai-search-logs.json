@@ -27084,5 +27084,39 @@
       }
     ],
     "answer_length": 407
+  },
+  {
+    "timestamp": "2026-08-23T04:22:15.709Z",
+    "response_id": "24f34cea-f59b-490b-8d2d-026369215b7a",
+    "question": "Server error. Please try again.\n\nServer Error (500)\n\nPlease try again later or contact support.",
+    "question_length": 95,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2634,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP Whitelisting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/ip-whitelisting"
+      },
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      }
+    ],
+    "answer_length": 381
   }
 ]
