@@ -27152,5 +27152,39 @@
       }
     ],
     "answer_length": 969
+  },
+  {
+    "timestamp": "2026-08-23T07:32:17.785Z",
+    "response_id": "37208ffc-383b-4db9-aae7-877655436cb8",
+    "question": "api url to check account balance",
+    "question_length": 32,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2892,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 589
   }
 ]
