@@ -27050,5 +27050,39 @@
       }
     ],
     "answer_length": 6757
+  },
+  {
+    "timestamp": "2026-08-23T04:11:24.270Z",
+    "response_id": "73581b9b-15de-4f5d-b2a5-ca1122bdc5a2",
+    "question": "guide to setup with livekit",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1997,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      },
+      {
+        "title": "LiveKit and Exotel SIP Trunking Integration Guide",
+        "product": "agentstream",
+        "url": "/docs/agentstream/livekit-integration"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 407
   }
 ]
