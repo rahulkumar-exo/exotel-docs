@@ -27186,5 +27186,39 @@
       }
     ],
     "answer_length": 589
+  },
+  {
+    "timestamp": "2026-08-23T09:01:35.946Z",
+    "response_id": "9cff8984-2566-4155-a05c-17bc03968385",
+    "question": "How do I use Call Flow Builder to build IVR flow",
+    "question_length": 48,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6550,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Exotel Flow Builder",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/flow-builder"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      }
+    ],
+    "answer_length": 2931
   }
 ]
