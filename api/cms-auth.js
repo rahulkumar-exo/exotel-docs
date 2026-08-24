@@ -1,4 +1,4 @@
-module.exports = function handler(req, res) {
+export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -29,4 +29,4 @@ module.exports = function handler(req, res) {
   if (!token) return res.status(500).json({ error: 'GitHub token not configured' });
 
   return res.status(200).json({ token, provider: 'github' });
-};
+}
