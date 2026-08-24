@@ -24809,5 +24809,39 @@
       }
     ],
     "answer_length": 4285
+  },
+  {
+    "timestamp": "2026-08-24T18:46:55.113Z",
+    "response_id": "5679d077-cd06-4f2b-bcd3-c4a9cdbfd1c9",
+    "question": "can campaing integrate with flow id  or voice bot",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8014,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      },
+      {
+        "title": "Chatbot Platform",
+        "product": "chatbot",
+        "url": "/docs/chatbot/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      }
+    ],
+    "answer_length": 2008
   }
 ]
