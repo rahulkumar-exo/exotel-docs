@@ -24707,5 +24707,39 @@
     ],
     "answer_length": 1397,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-08-24T15:49:36.063Z",
+    "response_id": "ca759353-9ba6-4aca-a712-2ce81b167ca6",
+    "question": "voice programming call",
+    "question_length": 22,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4965,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      }
+    ],
+    "answer_length": 1857
   }
 ]
