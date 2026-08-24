@@ -24843,5 +24843,39 @@
       }
     ],
     "answer_length": 2008
+  },
+  {
+    "timestamp": "2026-08-24T23:07:04.133Z",
+    "response_id": "87372978-ec68-49d4-b43c-dcaf49b8829f",
+    "question": "AgentStream is not visible in dashboard",
+    "question_length": 39,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2851,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Reporting Overview",
+        "product": "reporting",
+        "url": "/docs/reporting/overview"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 176
   }
 ]
