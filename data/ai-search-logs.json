@@ -24500,5 +24500,39 @@
       }
     ],
     "answer_length": 5364
+  },
+  {
+    "timestamp": "2026-08-24T12:13:37.618Z",
+    "response_id": "727bc058-236b-4f45-817a-4d48cfd6ae71",
+    "question": "billing",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3530,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Billing Overview",
+        "product": "billing",
+        "url": "/docs/billing/overview"
+      },
+      {
+        "title": "Billing Overview",
+        "product": "billing",
+        "url": "/docs/billing/overview"
+      },
+      {
+        "title": "Billing FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/billing-faqs"
+      },
+      {
+        "title": "Enterprise Billing",
+        "product": "billing",
+        "url": "/docs/billing/enterprise-billing"
+      }
+    ],
+    "answer_length": 2195
   }
 ]
