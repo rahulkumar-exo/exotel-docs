@@ -1,4 +1,4 @@
-// v2 — rebuilt to pick up updated CMS_USERS list
+// v3 — diagnostic to confirm runtime env var value
 module.exports = function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -14,9 +14,9 @@ module.exports = function handler(req, res) {
   if (!usersStr) return res.status(500).json({ error: 'CMS users not configured' });
 
   const users = usersStr.split(',').map(u => {
-    const colonIdx = u.trim().indexOf(':');
-    const e = colonIdx >= 0 ? u.trim().slice(0, colonIdx).trim() : u.trim();
-    const p = colonIdx >= 0 ? u.trim().slice(colonIdx + 1).trim() : '';
+    const cidx = u.trim().indexOf(':');
+    const e = cidx >= 0 ? u.trim().slice(0, cidx).trim() : u.trim();
+    const p = cidx >= 0 ? u.trim().slice(cidx + 1).trim() : '';
     return { email: e.toLowerCase(), password: p };
   });
 
@@ -24,7 +24,12 @@ module.exports = function handler(req, res) {
     u => u.email === email.trim().toLowerCase() && u.password === password.trim()
   );
 
-  if (!matched) return res.status(401).json({ error: 'Invalid email or password' });
+  if (!matched) {
+    return res.status(401).json({
+      error: 'Invalid email or password',
+      _d: { count: users.length, emails: users.map(u => u.email), len: usersStr.length },
+    });
+  }
 
   const token = (process.env.CMS_GITHUB_TOKEN || '').trim();
   if (!token) return res.status(500).json({ error: 'GitHub token not configured' });
