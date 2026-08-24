@@ -44,7 +44,12 @@ module.exports = function handler(req, res) {
   );
 
   if (!matched) {
-    return res.status(401).json({ error: 'Invalid email or password' });
+    // DEBUG: return parsed emails to diagnose env var issue
+    return res.status(401).json({
+      error: 'Invalid email or password',
+      debug_emails: users.map(u => u.email),
+      debug_input_email: email.trim().toLowerCase(),
+    });
   }
 
   // Return the shared GitHub token
