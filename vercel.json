@@ -37,6 +37,9 @@
     },
     "api/auth-test.js": {
       "maxDuration": 5
+    },
+    "api/cms-auth.js": {
+      "maxDuration": 10
     }
   },
   "redirects": [
