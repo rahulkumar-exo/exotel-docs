@@ -27322,5 +27322,39 @@
       }
     ],
     "answer_length": 596
+  },
+  {
+    "timestamp": "2026-08-24T00:30:20.371Z",
+    "response_id": "a234f7c3-6557-42f0-83cf-709316d64ac9",
+    "question": "can exotel help me get a virtual saudi arabi number so i can make and receive calls through it through webrtc?",
+    "question_length": 110,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8109,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      }
+    ],
+    "answer_length": 680
   }
 ]
