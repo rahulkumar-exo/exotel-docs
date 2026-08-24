@@ -24432,5 +24432,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-24T11:28:21.951Z",
+    "response_id": "a45570ff-9939-4f22-aa0c-b9f1b56a9ddc",
+    "question": "can you connect me with a human?",
+    "question_length": 32,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1135,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Greeting Messages",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/greeting-message"
+      },
+      {
+        "title": "Using Exotel Legs APIs to Start a Bot Stream with Optional Greeting",
+        "product": "agentstream",
+        "url": "/docs/agentstream/bot-stream-legs-api"
+      },
+      {
+        "title": "IVR Setup Guide",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/ivr-setup"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 176
   }
 ]
