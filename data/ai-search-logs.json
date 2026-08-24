@@ -24322,5 +24322,39 @@
       }
     ],
     "answer_length": 7780
+  },
+  {
+    "timestamp": "2026-08-24T08:55:04.164Z",
+    "response_id": "64e1cdd6-2f1a-4475-9e7b-52988a30b6a0",
+    "question": "Agents availability status",
+    "question_length": 26,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6854,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      },
+      {
+        "title": "Business Monitoring Dashboard",
+        "product": "use-cases",
+        "url": "/docs/use-cases/business-monitoring-dashboard.mdx"
+      }
+    ],
+    "answer_length": 2946
   }
 ]
