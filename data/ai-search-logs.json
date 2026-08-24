@@ -24254,5 +24254,39 @@
       }
     ],
     "answer_length": 3087
+  },
+  {
+    "timestamp": "2026-08-24T07:58:12.093Z",
+    "response_id": "a40f1ef1-2064-42c1-ae06-5143073e452f",
+    "question": "Call flow URL: http://my.exotel.com/{sid}/exoml/start_voice/{app_id}\n\nwhat is app_id here ? where do i get it",
+    "question_length": 109,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3362,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow.mdx"
+      }
+    ],
+    "answer_length": 548
   }
 ]
