@@ -24288,5 +24288,39 @@
       }
     ],
     "answer_length": 548
+  },
+  {
+    "timestamp": "2026-08-24T08:36:30.864Z",
+    "response_id": "88ff802c-ac47-4463-a482-c16aaa946d7c",
+    "question": "How to create a Greeting flow ? To read a text like robot, it must comes dynamically from my Python code. how to do it ?",
+    "question_length": 120,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 19948,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Your First Call Flow",
+        "product": "getting-started",
+        "url": "/docs/getting-started/first-call-flow"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "Create Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/create-campaign"
+      }
+    ],
+    "answer_length": 7780
   }
 ]
