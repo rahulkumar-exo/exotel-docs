@@ -25529,5 +25529,39 @@
       }
     ],
     "answer_length": 438
+  },
+  {
+    "timestamp": "2026-08-25T13:10:13.685Z",
+    "response_id": "0ed35e7c-badb-411d-b4b1-392a972d3289",
+    "question": "What Does Virtual PHone NUmber and From Number represents . Does From Number represents the number generated from Exotel ?",
+    "question_length": 122,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6571,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 1217
   }
 ]
