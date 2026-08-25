@@ -25495,5 +25495,39 @@
       }
     ],
     "answer_length": 1040
+  },
+  {
+    "timestamp": "2026-08-25T12:42:53.417Z",
+    "response_id": "25183db5-1689-48ff-8177-5c2980583346",
+    "question": "in live streaming does exotel suppose dual changel or mono chanel ?",
+    "question_length": 67,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3799,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 438
   }
 ]
