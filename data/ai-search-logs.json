@@ -25427,5 +25427,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-25T11:08:29.505Z",
+    "response_id": "21cfccda-9170-49ce-a329-145aabee0062",
+    "question": "hello@exotel.com can you plz tell me what price we have to pay if we want to rent mobile number as for Dabbler pricing it only includes single number only",
+    "question_length": 154,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1427,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      }
+    ],
+    "answer_length": 176
   }
 ]
