@@ -15,11 +15,11 @@ Retrieve details of a specific call, or query bulk call records with filters.
 
 See also [Call Details (CCM)](/docs/voice-v3/api-reference/call-details).
 
-<TryItBanner method="GET" endpoint="/v1/Accounts/{sid}/Calls/{CallSid}" />
+<TryItBanner method="GET" endpoint="/v1/Accounts/{account_sid}/Calls/{call_sid}" />
 
 ## Single Call Details
 
-<RegionalUrls path="/v1/Accounts/{sid}/Calls/{CallSid}.json" host="api" />
+<RegionalUrls path="/v1/Accounts/{account_sid}/Calls/{call_sid}.json" host="api" />
 
 ### Optional Query Parameter
 
@@ -81,7 +81,7 @@ curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/
 
 ## Bulk Call Details
 
-<RegionalUrls path="/v1/Accounts/{sid}/Calls.json" host="api" />
+<RegionalUrls path="/v1/Accounts/{account_sid}/Calls.json" host="api" />
 
 ### Query Filters
 
@@ -207,9 +207,9 @@ To look up operator, circle, and DND status for a number, see [Number Metadata](
 
 <ApiConsole
   method="GET"
-  path="/v1/Accounts/{account_sid}/Calls/{CallSid}.json"
+  path="/v1/Accounts/{account_sid}/Calls/{call_sid}.json"
   params={[
-    { name: 'CallSid', required: true, type: 'string', description: 'Unique call identifier (replaces {CallSid} in URL)', placeholder: 'c5797dcbaaeed7678c4062a4a3ed2f8a' },
+    { name: 'call_sid', required: true, type: 'string', description: 'Unique call identifier (replaces {call_sid} in URL)', placeholder: 'c5797dcbaaeed7678c4062a4a3ed2f8a' },
     { name: 'details', required: false, type: 'boolean', description: 'Set to true to include leg-level information' },
   ]}
 />

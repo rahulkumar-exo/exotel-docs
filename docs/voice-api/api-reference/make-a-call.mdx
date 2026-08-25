@@ -16,13 +16,13 @@ import RegionalUrls from '@site/src/components/RegionalUrls';
 
 Initiate an outbound call connecting an agent (user) to a customer. The agent is called first on their configured device (phone/SIP), then the customer is dialed.
 
-<TryItBanner method="POST" endpoint="/v2/accounts/{sid}/calls" />
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/calls" />
 
 :::info
 This is a **CCM** (Contact Center Management) API. Use it if you run contact center operations on `my*.exotel.com`. Agents must be added as co-workers in the dashboard and their device must be ON. For calls that connect two phone numbers, see [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers).
 :::
 
-<RegionalUrls path="/v2/accounts/{sid}/calls" host="ccm" />
+<RegionalUrls path="/v2/accounts/{account_sid}/calls" host="ccm" />
 
 ## Request Body (JSON)
 

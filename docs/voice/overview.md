@@ -37,13 +37,13 @@ CCM is Contact Center Management. Use CCM APIs if you run contact center operati
 To connect two numbers, POST to `api.exotel.com`:
 
 ```
-POST /v1/Accounts/{sid}/Calls/connect
+POST /v1/Accounts/{account_sid}/Calls/connect
 ```
 
 To connect an agent who is already in your dashboard, POST to `ccm-api.exotel.com`:
 
 ```
-POST /v2/accounts/{sid}/calls
+POST /v2/accounts/{account_sid}/calls
 ```
 
 The agent needs a device that is on. For queues, processes, and leads, see [Contact Center](/docs/contact-center/overview).
@@ -51,7 +51,7 @@ The agent needs a device that is on. For queues, processes, and leads, see [Cont
 To read the call after it ends (legs, digits, recordings), GET from `ccm-api.exotel.com`:
 
 ```
-GET /v3/accounts/{sid}/calls/{call_sid}
+GET /v3/accounts/{account_sid}/calls/{call_sid}
 ```
 
 You can place the call on one URL and read it on the other. Each API page lists the host and path for that request.
@@ -60,16 +60,16 @@ You can place the call on one URL and read it on the other. Each API page lists 
 
 | Task | Method | Path |
 |------|--------|------|
-| [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) | POST | `/v1/Accounts/{sid}/Calls/connect` |
-| [Connect Agent to Customer](/docs/voice-api/api-reference/make-a-call) | POST | `/v2/accounts/{sid}/calls` |
-| [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow) | POST | `/v1/Accounts/{sid}/Calls/connect` |
+| [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) | POST | `/v1/Accounts/{account_sid}/Calls/connect` |
+| [Connect Agent to Customer](/docs/voice-api/api-reference/make-a-call) | POST | `/v2/accounts/{account_sid}/calls` |
+| [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow) | POST | `/v1/Accounts/{account_sid}/Calls/connect` |
 | [Program Incoming Call](/docs/voice-v1/api-reference/incoming-call) | — | Call flow on the ExoPhone |
-| [Call Details](/docs/voice-v1/api-reference/call-details) | GET | `/v1/Accounts/{sid}/Calls/{CallSid}` |
-| [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) | GET | `/v3/accounts/{sid}/calls/{call_sid}` |
-| [Call legs](/docs/voice-v3/api-reference/call-legs) | GET | `/v3/accounts/{sid}/calls/{sid}/legs` |
-| [Voice logs](/docs/voice-v3/api-reference/voice-log-download) | GET | `/v3/accounts/{sid}/calls/{sid}/voice-logs` |
-| [Number metadata](/docs/voice-v1/api-reference/number-metadata) | GET | `/v1/Accounts/{sid}/Numbers/{number}` |
-| [Account balance](/docs/voice-v1/api-reference/balance) | GET | `/v1/Accounts/{sid}` |
+| [Call Details](/docs/voice-v1/api-reference/call-details) | GET | `/v1/Accounts/{account_sid}/Calls/{call_sid}` |
+| [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) | GET | `/v3/accounts/{account_sid}/calls/{call_sid}` |
+| [Call legs](/docs/voice-v3/api-reference/call-legs) | GET | `/v3/accounts/{account_sid}/calls/{call_sid}/legs` |
+| [Voice logs](/docs/voice-v3/api-reference/voice-log-download) | GET | `/v3/accounts/{account_sid}/calls/{call_sid}/voice-logs` |
+| [Number metadata](/docs/voice-v1/api-reference/number-metadata) | GET | `/v1/Accounts/{account_sid}/Numbers/{number}` |
+| [Account balance](/docs/voice-v1/api-reference/balance) | GET | `/v1/Accounts/{account_sid}/Balance.json` |
 | [Status callback](/docs/voice-v1/api-reference/status-callback) | — | Webhook on your server |
 
 ## Applets

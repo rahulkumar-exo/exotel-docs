@@ -18,7 +18,7 @@ To enable this API in your account, please reach out to [hello@exotel.com](mailt
 
 To get the different call legs associated with a call, make an HTTP GET request to the endpoint below.
 
-<TryItBanner method="GET" endpoint="/v3/accounts/{sid}/calls/{call_sid}/legs" />
+<TryItBanner method="GET" endpoint="/v3/accounts/{account_sid}/calls/{call_sid}/legs" />
 
 ## Endpoint
 
@@ -162,6 +162,6 @@ These error codes will be populated under the `error_data` block of the response
   contentType="json"
   host="ccm"
   params={[
-    { name: 'call_sid', required: true, type: 'string', description: 'Unique call identifier from Make Call API response', placeholder: 'f1ca1057692d586b23b4e7ffcc3216mk' },
+    { name: 'call_sid', required: true, type: 'string', description: 'Unique call identifier from the Connect Agent to Customer response', placeholder: 'f1ca1057692d586b23b4e7ffcc3216mk' },
   ]}
 />

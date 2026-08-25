@@ -42,10 +42,10 @@ Voice APIs are limited to **200 calls per minute**. Exceeding this returns HTTP 
 
 | API | Method | Endpoint | Description |
 |-----|--------|----------|-------------|
-| [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) | POST | `/v1/Accounts/{sid}/Calls/connect` | Connect two phone numbers |
-| [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow) | POST | `/v1/Accounts/{sid}/Calls/connect` | Connect a number to an IVR flow |
-| [Call Details](/docs/voice-v1/api-reference/call-details) | GET | `/v1/Accounts/{sid}/Calls/{CallSid}` | Get call details (single & bulk) |
-| [Number Metadata](/docs/voice-v1/api-reference/number-metadata) | GET | `/v1/Accounts/{sid}/Numbers/{number}` | Get telecom info for Indian numbers |
+| [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) | POST | `/v1/Accounts/{account_sid}/Calls/connect` | Connect two phone numbers |
+| [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow) | POST | `/v1/Accounts/{account_sid}/Calls/connect` | Connect a number to an IVR flow |
+| [Call Details](/docs/voice-v1/api-reference/call-details) | GET | `/v1/Accounts/{account_sid}/Calls/{call_sid}` | Get call details (single & bulk) |
+| [Number Metadata](/docs/voice-v1/api-reference/number-metadata) | GET | `/v1/Accounts/{account_sid}/Numbers/{number}` | Get telecom info for Indian numbers |
 | [Program Incoming Call](/docs/voice-v1/api-reference/incoming-call) | — | — | Configure incoming call flows with applets |
 | [StatusCallback](/docs/voice-v1/api-reference/status-callback) | — | — | Webhook reference for call events |
 
