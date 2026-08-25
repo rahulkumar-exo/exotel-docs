@@ -25461,5 +25461,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-25T11:25:33.608Z",
+    "response_id": "1596c713-3ce7-40f1-8c38-f8b8a37fd096",
+    "question": "Fetch Analysis Endpoint for CQA",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3705,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      }
+    ],
+    "answer_length": 1040
   }
 ]
