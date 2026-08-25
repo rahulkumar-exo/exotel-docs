@@ -1,40 +1,35 @@
 ---
 id: call-details
-title: Call Details (Beta)
+title: Call Details (CCM)
 description: Retrieve enhanced call detail records with the Exotel Voice v3 API, including leg-level metadata, recordings, DTMF digits, and flow data.
-sidebar_label: Call Details
+sidebar_label: Call Details (CCM)
+displayed_sidebar: voiceSidebar
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
-# Call Details (Beta)
+# Call Details (CCM)
 
 Retrieve enhanced call detail records with richer metadata including leg-level information, recording details, DTMF digits, and flow information.
 
 <TryItBanner method="GET" endpoint="/v3/accounts/{sid}/calls/{call_sid}" />
 
-## Endpoint
+:::info
+This is a **CCM** (Contact Center Management) API. Use it for calls placed with [Connect Agent to Customer](/docs/voice-api/api-reference/make-a-call) if you run contact center operations on `my*.exotel.com`. For calls that connect two phone numbers, see [Call Details](/docs/voice-v1/api-reference/call-details).
+:::
 
-```
-GET /v3/accounts/<account_sid>/calls/<call_sid>
-```
-
-### Regional URLs
-
-| Region | URL |
-|--------|-----|
-| Singapore | `https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>` |
-| Mumbai | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>` |
+<RegionalUrls path="/v3/accounts/{sid}/calls/{call_sid}" host="ccm" />
 
 ## Path Parameters
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `account_sid` | String | Your Exotel account SID |
-| `call_sid` | String | Unique call identifier (from Make Call API response) |
+| `call_sid` | String | Unique call identifier from the [Connect Agent to Customer](/docs/voice-api/api-reference/make-a-call) response |
 
 ## Code Examples
 
@@ -280,7 +275,8 @@ func main() {
   method="GET"
   path="/v3/accounts/{account_sid}/calls/{call_sid}"
   contentType="json"
+  host="ccm"
   params={[
-    { name: 'call_sid', required: true, type: 'string', description: 'Unique call identifier from Make Call API response', placeholder: 'cabfb1dfa8c5e1c7f2c458423b7716b3' },
+    { name: 'call_sid', required: true, type: 'string', description: 'Unique call identifier from the Connect Agent to Customer response', placeholder: 'cabfb1dfa8c5e1c7f2c458423b7716b3' },
   ]}
 />

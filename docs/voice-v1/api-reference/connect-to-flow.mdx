@@ -1,14 +1,15 @@
 ---
 id: connect-to-flow
-title: Connect to Call Flow
+title: Connect Number to Call Flow
 description: "Connect a phone number to an IVR call flow using Exotel API. Route calls through applets and dynamic logic."
-sidebar_label: Connect to Flow
+sidebar_label: Connect Number to Call Flow
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
 # Connect Number to Call Flow
 
@@ -16,18 +17,7 @@ Call a phone number and connect them to an applet/IVR flow after they answer. Un
 
 <TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Calls/connect" />
 
-## HTTP Request
-
-```
-POST /v1/Accounts/<your_sid>/Calls/connect
-```
-
-### Regional Endpoints
-
-| Region | URL |
-|--------|-----|
-| Singapore | `https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
-| Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
+<RegionalUrls path="/v1/Accounts/{sid}/Calls/connect" host="api" />
 
 ## Request Parameters
 

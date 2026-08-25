@@ -165,8 +165,9 @@ table td {
   vertical-align: top;
 }
 
-table tr:last-child td {
-  border-bottom: none;
+table td code,
+table th code {
+  white-space: nowrap;
 }
 
 /* ─── Code Blocks ─── */

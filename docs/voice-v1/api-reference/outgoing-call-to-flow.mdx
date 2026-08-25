@@ -3,6 +3,7 @@ id: outgoing-call-to-flow
 title: Outgoing Call to a Call Flow
 description: Make outbound calls and connect recipients to an IVR flow or applet using the Exotel Voice API v1 Calls/connect endpoint.
 sidebar_label: Call to Flow
+displayed_sidebar: voiceSidebar
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,6 +12,10 @@ import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
 
 # Outgoing Call to a Call Flow
+
+:::note
+This is the same request as [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow). Use that page.
+:::
 
 Make an outbound call and connect the recipient to an IVR flow or applet instead of another phone number. The `From` number is called first, and once they answer, they are routed to the specified call flow.
 

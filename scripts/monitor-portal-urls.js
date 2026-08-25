@@ -42,6 +42,7 @@ const URLS_TO_MONITOR = [
 
   // Top-of-navbar product overviews (one per main product)
   { url: '/docs/getting-started/overview', label: 'Getting Started' },
+  { url: '/docs/voice', label: 'Voice overview' },
   { url: '/docs/voice-v1/overview', label: 'Voice v1 overview' },
   { url: '/docs/voice-v3/overview', label: 'Voice v3 overview' },
   { url: '/docs/sms-api/overview', label: 'SMS overview' },

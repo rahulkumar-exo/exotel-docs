@@ -43,8 +43,8 @@
     }
   },
   "redirects": [
-    { "source": "/api", "destination": "/docs/voice-v1/overview", "permanent": true },
-    { "source": "/api/", "destination": "/docs/voice-v1/overview", "permanent": true },
+    { "source": "/api", "destination": "/docs/voice", "permanent": true },
+    { "source": "/api/", "destination": "/docs/voice", "permanent": true },
 
     { "source": "/docs/voice/click-to-call", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
     { "source": "/docs/voice/make-a-call", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
@@ -56,8 +56,6 @@
     { "source": "/docs/voice/status-callback", "destination": "/docs/voice-v1/api-reference/status-callback", "permanent": true },
     { "source": "/docs/voice/number-metadata", "destination": "/docs/voice-v1/api-reference/number-metadata", "permanent": true },
     { "source": "/docs/voice/heartbeat", "destination": "/docs/heartbeat/overview", "permanent": true },
-    { "source": "/docs/voice", "destination": "/docs/voice-v1/overview", "permanent": true },
-    { "source": "/docs/voice/:path*", "destination": "/docs/voice-v1/overview", "permanent": true },
 
     { "source": "/docs/sms/send-sms", "destination": "/docs/sms-api/api-reference/send-sms", "permanent": true },
     { "source": "/docs/sms/bulk-sms", "destination": "/docs/sms-api/api-reference/bulk-sms", "permanent": true },
@@ -77,8 +75,8 @@
     { "source": "/docs/whatsapp", "destination": "/docs/whatsapp-api/overview", "permanent": true },
     { "source": "/docs/whatsapp/:path*", "destination": "/docs/whatsapp-api/overview", "permanent": true },
 
-    { "source": "/api/voice", "destination": "/docs/voice-v1/overview", "permanent": true },
-    { "source": "/api/voice/overview", "destination": "/docs/voice-v1/overview", "permanent": true },
+    { "source": "/api/voice", "destination": "/docs/voice", "permanent": true },
+    { "source": "/api/voice/overview", "destination": "/docs/voice", "permanent": true },
     { "source": "/api/voice/make-a-call", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
     { "source": "/api/voice/connect-to-flow", "destination": "/docs/voice-v1/api-reference/connect-to-flow", "permanent": true },
     { "source": "/api/voice/call-details", "destination": "/docs/voice-v1/api-reference/call-details", "permanent": true },
@@ -129,7 +127,7 @@
     { "source": "/faqs", "destination": "/docs/faqs/overview", "permanent": true },
     { "source": "/faq", "destination": "/docs/faqs/overview", "permanent": true },
 
-    { "source": "/api-console", "destination": "/docs/voice-v1/overview", "permanent": true },
+    { "source": "/api-console", "destination": "/docs/voice", "permanent": true },
 
     { "source": "/api/voicebot-api", "destination": "/docs/voicebot-tools/voicebot-api", "permanent": true },
     { "source": "/api/voicebot-api/:path*", "destination": "/docs/voicebot-tools/voicebot-api", "permanent": true },
@@ -227,7 +225,7 @@
     { "source": "/api-console/lead-assist-greenvn", "destination": "/docs/lead-assist-greenvn/overview", "permanent": true },
     { "source": "/api-console/update-greenpin-allocation", "destination": "/docs/lead-assist/api-reference/update-allocation", "permanent": true },
     { "source": "/api-console/bulk-update-greenpin-allocation-api-console", "destination": "/docs/lead-assist/api-reference/update-allocation", "permanent": true },
-    { "source": "/api-console/:path*", "destination": "/docs/voice-v1/overview", "permanent": true },
+    { "source": "/api-console/:path*", "destination": "/docs/voice", "permanent": true },
 
     { "source": "/docs/whatsapp-support/overview", "destination": "/docs/whatsapp-support/whatsapp-overview", "permanent": true },
     { "source": "/docs/exoverify/overview", "destination": "/docs/exoverify-api/overview", "permanent": true },

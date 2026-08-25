@@ -27,9 +27,9 @@ const products = [
     available: true,
   },
   {
-    title: 'Voice API',
+    title: 'Programmable Voice',
     description: 'Make and receive calls, build IVR flows, and manage phone numbers programmatically.',
-    link: '/docs/voice-v1/overview',
+    link: '/docs/voice',
     available: true,
   },
   {

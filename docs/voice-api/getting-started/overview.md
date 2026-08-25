@@ -4,9 +4,14 @@ title: Voice v2
 description: Overview of the Exotel Voice v2 (CCM) API for making calls with agent context, including key differences from Voice v1 and base URLs.
 sidebar_label: Overview
 sidebar_position: 1
+displayed_sidebar: voiceSidebar
 ---
 
 # Voice v2 API (CCM)
+
+:::note
+To connect an agent to a customer, see [Make a Call](/docs/voice-api/api-reference/make-a-call). For other Voice work, start at [Voice](/docs/voice).
+:::
 
 Voice v2 APIs use the Contact Center Management (CCM) platform to make calls with **agent/user context**. Unlike Voice v1 (which works without user context), Voice v2 requires users to be added as co-workers in the Exotel dashboard.
 

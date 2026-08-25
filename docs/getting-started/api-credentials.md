@@ -216,5 +216,5 @@ For higher rate limits, contact your account manager.
 
 - [Testing Guide](/docs/getting-started/testing-guide) -- Test your API setup with calls and SMS
 - [Authentication Reference](/docs/references/authentication) -- Detailed authentication documentation
-- [Voice API](/docs/voice-api/getting-started/overview) -- Start making API calls
+- [Voice API](/docs/voice) -- Start making API calls
 - [SMS API](/docs/sms-api/overview) -- Send your first SMS via API

@@ -162,9 +162,7 @@ const config: Config = {
           position: 'left',
           items: [
             { type: 'html', value: '<span class="dropdown-section-label">Voice</span>' },
-            { type: 'docSidebar', sidebarId: 'voiceV1Sidebar', label: 'Voice v1' },
-            { type: 'docSidebar', sidebarId: 'voiceApiSidebar', label: 'Voice v2' },
-            { type: 'docSidebar', sidebarId: 'voiceV3Sidebar', label: 'Voice v3' },
+            { type: 'docSidebar', sidebarId: 'voiceSidebar', label: 'Programmable Voice' },
             { type: 'doc', docId: 'sip-trunking/dynamic-sip-trunking', label: 'Dynamic SIP Trunking' },
             { type: 'doc', docId: 'agentstream/developer-guide', label: 'AgentStream' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
@@ -268,9 +266,7 @@ const config: Config = {
         {
           title: 'API Docs',
           items: [
-            { label: 'Voice v1', to: '/docs/voice-v1/overview' },
-            { label: 'Voice v2', to: '/docs/voice-api/getting-started/overview' },
-            { label: 'Voice v3', to: '/docs/voice-v3/overview' },
+            { label: 'Programmable Voice', to: '/docs/voice' },
             { label: 'SMS', to: '/docs/sms-api/overview' },
             { label: 'ExoPhones', to: '/docs/exophones/overview' },
             { label: 'Heartbeat', to: '/docs/heartbeat/overview' },
