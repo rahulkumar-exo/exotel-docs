@@ -32,7 +32,7 @@ Make outbound calls to customers using APIs or the dashboard. The customer sees 
 - Automated calls triggered by events
 - Connect two numbers via API
 
-See: [Outgoing Calls](/docs/call-support/call-features/outgoing-calls) | [Voice v1 API](/docs/voice-v1/overview)
+See: [Outgoing Calls](/docs/call-support/call-features/outgoing-calls) | [Voice API](/docs/voice)
 
 ### IVR (Interactive Voice Response)
 
@@ -169,4 +169,4 @@ All Exotel services share these platform capabilities:
 
 - [Getting Started with Exotel](/docs/call-support/basics/getting-started)
 - [Setting Up a Call Flow](/docs/call-support/call-features/setting-up-call-flow)
-- [Voice v1 API Overview](/docs/voice-v1/overview)
+- [Voice API](/docs/voice)

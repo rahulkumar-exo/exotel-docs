@@ -1,11 +1,11 @@
 ---
 id: incoming-call
-title: Incoming Call
+title: Program Incoming Call
 description: Learn how Exotel handles incoming calls on your ExoPhone, including call flow configuration using applets like Greeting, IVR Menu, and Connect.
-sidebar_label: Incoming Call
+sidebar_label: Program Incoming Call
 ---
 
-# Incoming Call
+# Program Incoming Call
 
 When an incoming call lands on your ExoPhone, a call flow is automatically initiated. You configure what happens during that call flow using **Applets** — modular building blocks that handle greeting, routing, IVR menus, and more.
 

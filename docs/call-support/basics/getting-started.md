@@ -133,4 +133,4 @@ See: [Connect Two Numbers API](/docs/voice-v1/api-reference/connect-two-numbers)
 
 - [How to Make or Receive Calls](/docs/call-support/call-features/make-receive-calls) -- Detailed guide on call handling
 - [IVR Setup](/docs/call-support/call-features/ivr-setup) -- Build interactive voice menus
-- [Voice v1 API Overview](/docs/voice-v1/overview) -- Start using the API
+- [Voice API](/docs/voice) -- Start using the API

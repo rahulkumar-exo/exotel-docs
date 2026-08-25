@@ -152,5 +152,5 @@ Editing a live app affects all incoming calls immediately. For critical changes,
 
 - [App Builder](/docs/app-bazaar/app-builder) -- Create custom apps without coding
 - [Flow Builder Guide](/docs/app-bazaar/flow-builder-guide) -- Visual drag-and-drop call flow design
-- [Voice API](/docs/voice-api/getting-started/overview) -- Trigger apps programmatically via API
+- [Voice API](/docs/voice) -- Trigger apps programmatically via API
 - [ExoPhones](/docs/exophones/overview) -- Manage virtual numbers and app assignments

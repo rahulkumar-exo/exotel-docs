@@ -90,9 +90,7 @@ The Exotel Dashboard at [my.exotel.com](https://my.exotel.com) is where you:
 
 For programmatic control, Exotel provides REST APIs:
 
-- [Voice v1 API](/docs/voice-v1/overview) -- Simple call automation and IVR
-- [Voice v2 API](/docs/voice-api/getting-started/overview) -- Enhanced call management
-- [Voice v3 API](/docs/voice-v3/overview) -- Advanced call details and monitoring
+- [Voice](/docs/voice) -- Make and receive calls, IVR, call details
 - [SMS API](/docs/sms-api/overview) -- Send and manage SMS
 - [Campaigns API](/docs/campaigns/overview) -- Bulk outbound calling
 

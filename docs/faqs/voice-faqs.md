@@ -210,7 +210,7 @@ The default ring timeout is 30 seconds. If the call is not answered within this 
 
 ## Related Resources
 
-- [Voice API Overview](/docs/voice-api/getting-started/overview) -- Complete Voice API documentation
-- [Voice V1 Quickstart](/docs/voice-v1/quickstart) -- Quick start guide for voice calls
+- [Voice](/docs/voice) -- Voice API documentation
+- [Quickstart](/docs/voice-v1/quickstart) -- Place your first call
 - [Call Flows (App Bazaar)](/docs/getting-started/first-call-flow) -- Build interactive call flows
 - [Troubleshooting](/docs/faqs/troubleshooting) -- General troubleshooting guide

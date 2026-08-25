@@ -1,8 +1,8 @@
 ---
 id: make-a-call
-title: Make a Call (Agent to Customer)
+title: Connect Agent to Customer
 description: Initiate an outbound agent-to-customer call using the Exotel Voice v2 (CCM) API. The agent is called first, then connected to the customer.
-sidebar_label: Make a Call
+sidebar_label: Connect Agent to Customer
 sidebar_position: 1
 ---
 
@@ -10,29 +10,19 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
-# Make a Call — Agent to Customer
+# Connect Agent to Customer
 
 Initiate an outbound call connecting an agent (user) to a customer. The agent is called first on their configured device (phone/SIP), then the customer is dialed.
 
 <TryItBanner method="POST" endpoint="/v2/accounts/{sid}/calls" />
 
 :::info
-This is a **Voice v2 (CCM)** API. Agents must be added as co-workers in the Exotel dashboard and their device must be ON. For calls without user context, see [Voice v1](/docs/voice-v1/overview).
+This is a **CCM** (Contact Center Management) API. Use it if you run contact center operations on `my*.exotel.com`. Agents must be added as co-workers in the dashboard and their device must be ON. For calls that connect two phone numbers, see [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers).
 :::
 
-## Endpoint
-
-```
-POST /v2/accounts/<account_sid>/calls
-```
-
-### Regional URLs
-
-| Region | URL |
-|--------|-----|
-| Singapore | `https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<account_sid>/calls` |
-| Mumbai | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v2/accounts/<account_sid>/calls` |
+<RegionalUrls path="/v2/accounts/{sid}/calls" host="ccm" />
 
 ## Request Body (JSON)
 
@@ -190,7 +180,7 @@ console.log(response.data);
 ```
 
 :::note
-HTTP 200 is **not** a confirmation of successful call placement. Use the StatusCallback webhook or the [Call Details API](/docs/voice-api/api-reference/call-details) to check actual call status.
+HTTP 200 is **not** a confirmation of successful call placement. Use the StatusCallback webhook or [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) to check actual call status.
 :::
 
 ## Error Responses
@@ -211,6 +201,7 @@ HTTP 200 is **not** a confirmation of successful call placement. Use the StatusC
   method="POST"
   path="/v2/accounts/{account_sid}/calls"
   contentType="json"
+  host="ccm"
   params={[
     { name: 'from', required: true, type: 'string', description: 'Agent identifier object (JSON). E.g. {"user_contact_uri":"sip:agent@exotel.com"}', placeholder: '{"user_contact_uri":"sip:agent@exotel.com"}' },
     { name: 'to', required: true, type: 'string', description: 'Customer phone number object (JSON). E.g. {"number":"+919876543210"}', placeholder: '{"number":"+919876543210"}' },

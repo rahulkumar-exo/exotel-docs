@@ -1,0 +1,73 @@
+.box {
+  border: 1px solid #d4bfff;
+  border-radius: 8px;
+  background: #f8f5ff;
+  padding: 12px 14px;
+  margin: 12px 0 20px;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5b5168;
+  margin-bottom: 8px;
+}
+
+.regions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.region,
+.regionOn {
+  border: 1px solid #c6c9d8;
+  background: #fff;
+  color: #231f20;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.regionOn {
+  border-color: #9b42f1;
+  background: #9b42f1;
+  color: #fff;
+}
+
+.urlRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.url {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #374151;
+  background: #fff;
+  border: 1px solid #e8eaf3;
+  border-radius: 4px;
+  padding: 8px 10px;
+  overflow-wrap: anywhere;
+}
+
+.copy {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 6px;
+  background: #9b42f1;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copy:hover {
+  background: #8429e0;
+}

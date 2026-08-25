@@ -26,7 +26,12 @@ module.exports = async function handler(req, res) {
   }
 
   // Only allow requests to Exotel API domains
-  const allowedDomains = ['api.exotel.com', 'api.in.exotel.com'];
+  const allowedDomains = [
+    'api.exotel.com',
+    'api.in.exotel.com',
+    'ccm-api.exotel.com',
+    'ccm-api.in.exotel.com',
+  ];
   if (!allowedDomains.includes(subdomain)) {
     return res.status(400).json({ error: 'Invalid subdomain' });
   }

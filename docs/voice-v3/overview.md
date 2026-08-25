@@ -6,8 +6,13 @@ description: Overview of the Exotel Voice v3 API (Beta) with enhanced call
   integration.
 sidebar_label: Overview
 slug: /voice-v3/overview
+displayed_sidebar: voiceSidebar
 ---
 # Voice v3 (Beta)
+
+:::note
+To look up a call after it ends, see [Call Details (CCM)](/docs/voice-v3/api-reference/call-details). For other Voice work, start at [Voice](/docs/voice).
+:::
 
 Voice v3 is the latest iteration of the Exotel Voice API, providing enhanced call management capabilities with improved call detail reporting, active stream monitoring, and voice log downloads.
 
@@ -15,6 +20,7 @@ Voice v3 is the latest iteration of the Exotel Voice API, providing enhanced cal
 Voice v3 APIs are currently in **Beta**. Some features may change as we finalize the API contracts.\
 \
 This API will connect two phone numbers. This API would also mark the user as busy to prevent them to make/receive any other call and incoming calls would be routed to other users, if available. It does not require a user to be added mandatorily on the Exotel dashboard, to be able to mark them as busy. It will connect the number provided in the **From** field first and once the person picks up the call, it will connect the number provided in the **To** field. The **From** field should always contain your user/agent contact number or the SIP id (for VOIP calling).
+:::
 
 ## Key Features
 
@@ -44,7 +50,7 @@ curl -X GET \
 | API                                                                     | Method | Endpoint                                         | Description                                      |
 | ----------------------------------------------------------------------- | ------ | ------------------------------------------------ | ------------------------------------------------ |
 | [Connect Two Numbers](/docs/voice-v3/api-reference/connect-two-numbers) | POST   | `/v1/accounts/{sid}/Calls/connect`               | Initiate an outbound call connecting two numbers |
-| [Call Details](/docs/voice-v3/api-reference/call-details)               | GET    | `/v3/accounts/{sid}/calls/{call_sid}`            | Get enhanced call details                        |
+| [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) | GET    | `/v3/accounts/{sid}/calls/{call_sid}`            | Get enhanced call details                        |
 | [Active Streams](/docs/voice-v3/api-reference/active-stream-monitoring) | GET    | `/v3/accounts/{sid}/calls/active`                | Monitor active call streams                      |
 | [Voice Logs](/docs/voice-v3/api-reference/voice-log-download)           | GET    | `/v3/accounts/{sid}/calls/{call_sid}/voice-logs` | Download voice recordings                        |
 
@@ -74,7 +80,7 @@ To programmatically connect two phone numbers (e.g., agent ↔ customer), use th
 
 **Endpoint:** `POST /v1/Accounts/{sid}/Calls/connect`
 
-After the call is placed, use the returned `CallSid` with [Call Details (v3)](/docs/voice-v3/api-reference/call-details) for enhanced reporting.
+After the call is placed, use the returned `CallSid` with [Call Details (CCM)](/docs/voice-v3/api-reference/call-details).
 
 Connect-to-Flow is also available if you want to drop the call into an App Bazaar IVR flow:
 
@@ -82,9 +88,9 @@ Connect-to-Flow is also available if you want to drop the call into an App Bazaa
 
 ### Incoming Calls {#call-incoming}
 
-To handle incoming calls (call routing, ExoML responses, agent forwarding), use the Voice v1 **Incoming Call** API:
+To handle incoming calls (call routing, ExoML responses, agent forwarding), use **Program Incoming Call**:
 
-→ **[Incoming Call API](/docs/voice-v1/api-reference/incoming-call)**
+→ **[Program Incoming Call](/docs/voice-v1/api-reference/incoming-call)**
 
 For real-time delivery status of incoming/outgoing calls, configure the [Status Callback](/docs/voice-v1/api-reference/status-callback) webhook.
 
