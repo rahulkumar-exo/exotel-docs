@@ -49,10 +49,10 @@ curl -X GET \
 
 | API                                                                     | Method | Endpoint                                         | Description                                      |
 | ----------------------------------------------------------------------- | ------ | ------------------------------------------------ | ------------------------------------------------ |
-| [Connect Two Numbers](/docs/voice-v3/api-reference/connect-two-numbers) | POST   | `/v1/accounts/{sid}/Calls/connect`               | Initiate an outbound call connecting two numbers |
-| [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) | GET    | `/v3/accounts/{sid}/calls/{call_sid}`            | Get enhanced call details                        |
-| [Active Streams](/docs/voice-v3/api-reference/active-stream-monitoring) | GET    | `/v3/accounts/{sid}/calls/active`                | Monitor active call streams                      |
-| [Voice Logs](/docs/voice-v3/api-reference/voice-log-download)           | GET    | `/v3/accounts/{sid}/calls/{call_sid}/voice-logs` | Download voice recordings                        |
+| [Connect Two Numbers](/docs/voice-v3/api-reference/connect-two-numbers) | POST   | `/v1/accounts/{account_sid}/Calls/connect`               | Initiate an outbound call connecting two numbers |
+| [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) | GET    | `/v3/accounts/{account_sid}/calls/{call_sid}`            | Get enhanced call details                        |
+| [Active Streams](/docs/voice-v3/api-reference/active-stream-monitoring) | GET    | `/v3/accounts/{account_sid}/calls/active`                | Monitor active call streams                      |
+| [Voice Logs](/docs/voice-v3/api-reference/voice-log-download)           | GET    | `/v3/accounts/{account_sid}/calls/{call_sid}/voice-logs` | Download voice recordings                        |
 
 ## Outbound & Inbound Call APIs
 
@@ -78,7 +78,7 @@ To programmatically connect two phone numbers (e.g., agent ↔ customer), use th
 | `WaitUrl`        | Optional | Audio played while waiting for answer       |
 | `StreamUrl`      | Optional | WebSocket URL for real-time audio streaming |
 
-**Endpoint:** `POST /v1/Accounts/{sid}/Calls/connect`
+**Endpoint:** `POST /v1/Accounts/{account_sid}/Calls/connect`
 
 After the call is placed, use the returned `CallSid` with [Call Details (CCM)](/docs/voice-v3/api-reference/call-details).
 
