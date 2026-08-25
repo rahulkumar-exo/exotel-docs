@@ -25291,5 +25291,39 @@
       }
     ],
     "answer_length": 3230
+  },
+  {
+    "timestamp": "2026-08-25T08:55:43.110Z",
+    "response_id": "8374240a-ade2-424c-9e9f-2845f78cdd3a",
+    "question": "Does Exotel AgentStream support Answering Machine Detection (AMD) for outbound calls? We are using Exotel AgentStream/WebSocket to stream the call audio to our own server, which then connects to ElevenLabs Conversational AI. We need to detect whether the answered call is a human or voicemail/answering machine before continuing the AI conversation. Is AMD supported for this exact AgentStream architecture?",
+    "question_length": 407,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13150,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 1292
   }
 ]
