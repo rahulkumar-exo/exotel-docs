@@ -25325,5 +25325,39 @@
       }
     ],
     "answer_length": 1292
+  },
+  {
+    "timestamp": "2026-08-25T08:57:40.875Z",
+    "response_id": "b21091d6-fa6a-418a-a318-ec89604c8ec4",
+    "question": "I would ask Exotel this exact question:\n\nWe confirmed that the Connect Two Numbers API exposes Call.AnsweredBy with values such as Human, Machine, NotSure, and NA. Can this AMD result be used for an outbound call that subsequently uses AgentStream/WebSocket? Specifically, can we obtain Call.AnsweredBy=Machine before or immediately after the AgentStream WebSocket starts, and then prevent the ElevenLabs session from continuing? If yes, please provide the exact API flow, request parameters, callbac",
+    "question_length": 765,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 18234,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 2536
   }
 ]
