@@ -25563,5 +25563,39 @@
       }
     ],
     "answer_length": 1217
+  },
+  {
+    "timestamp": "2026-08-25T13:11:28.795Z",
+    "response_id": "22e03193-5edb-4a2b-a517-485b2e60ba53",
+    "question": "Do I need masking can i make it without using from number and only with to NUmber ?",
+    "question_length": 83,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5738,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Masking Setup",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/number-masking-setup"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 1069
   }
 ]
