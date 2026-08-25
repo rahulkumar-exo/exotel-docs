@@ -25393,5 +25393,39 @@
       }
     ],
     "answer_length": 501
+  },
+  {
+    "timestamp": "2026-08-25T11:06:28.811Z",
+    "response_id": "5b315949-aae3-4432-9cb6-52b4e84146ea",
+    "question": "What is rent per price in Indai Mumbai",
+    "question_length": 38,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2154,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/api-faqs"
+      },
+      {
+        "title": "Rate Limiting",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/rate-limiting"
+      },
+      {
+        "title": "Usage Tracking",
+        "product": "billing",
+        "url": "/docs/billing/usage-tracking"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      }
+    ],
+    "answer_length": 176
   }
 ]
