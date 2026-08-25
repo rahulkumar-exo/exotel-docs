@@ -25257,5 +25257,39 @@
       }
     ],
     "answer_length": 2424
+  },
+  {
+    "timestamp": "2026-08-25T07:17:20.646Z",
+    "response_id": "66215d84-91e7-4ded-83a1-a77ae22d2e03",
+    "question": "balance check apui",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6240,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Usage Tracking",
+        "product": "billing",
+        "url": "/docs/billing/usage-tracking"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 3230
   }
 ]
