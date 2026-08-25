@@ -25081,5 +25081,39 @@
       }
     ],
     "answer_length": 1577
+  },
+  {
+    "timestamp": "2026-08-25T05:26:29.913Z",
+    "response_id": "a28db690-7079-4e2b-abb3-c65f5d30d15f",
+    "question": "in .Net",
+    "question_length": 7,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7022,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 4438
   }
 ]
