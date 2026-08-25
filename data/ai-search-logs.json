@@ -25597,5 +25597,39 @@
       }
     ],
     "answer_length": 1069
+  },
+  {
+    "timestamp": "2026-08-25T13:18:26.374Z",
+    "response_id": "65233506-8a3b-438e-95c8-a2e12620d07c",
+    "question": "<Message>Your account is not yet KYC compliant. This is mandatory before making outbound calls.</Message>",
+    "question_length": 105,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7568,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      }
+    ],
+    "answer_length": 1651
   }
 ]
