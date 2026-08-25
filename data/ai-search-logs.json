@@ -25223,5 +25223,39 @@
     "response_time_ms": 1035,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-25T06:52:41.553Z",
+    "response_id": "760b22ba-aec9-4e6d-b214-0e6d44d27d03",
+    "question": "my scenario is this, when i trigger a call, i want to greet user with their name, how to do that? should i pass name in api call? other there is another way?",
+    "question_length": 157,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11388,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Update User",
+        "product": "users",
+        "url": "/docs/users/api-reference/update-user"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 2424
   }
 ]
