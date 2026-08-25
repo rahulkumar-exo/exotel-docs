@@ -24979,5 +24979,39 @@
       }
     ],
     "answer_length": 844
+  },
+  {
+    "timestamp": "2026-08-25T03:59:19.129Z",
+    "response_id": "2d4b69fe-79c9-43bf-9100-9402897f95da",
+    "question": "lets say i am using voiceBot applet now when call connected on start event i am immediatly sending ws event media with same stream_sid and media.payload as audio. Now where is this event gone and why i am hearing the voice send in this payload.",
+    "question_length": 244,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12163,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      }
+    ],
+    "answer_length": 1240
   }
 ]
