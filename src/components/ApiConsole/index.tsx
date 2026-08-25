@@ -307,16 +307,15 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
                   <div className={styles.credsField}>
                     <label>Subdomain</label>
                     <select
-                      value={isMumbai(creds.subdomain) ? 'in' : 'sg'}
-                      onChange={(e) =>
-                        updateCreds(
-                          'subdomain',
-                          e.target.value === 'in' ? 'api.in.exotel.com' : 'api.exotel.com',
-                        )
-                      }
+                      value={requestHost}
+                      onChange={(e) => updateCreds('subdomain', e.target.value)}
                     >
-                      <option value="sg">{hostForRegion(host, false)} (Singapore)</option>
-                      <option value="in">{hostForRegion(host, true)} (Mumbai)</option>
+                      <option value={hostForRegion(host, false)}>
+                        {hostForRegion(host, false)} (Singapore)
+                      </option>
+                      <option value={hostForRegion(host, true)}>
+                        {hostForRegion(host, true)} (Mumbai)
+                      </option>
                     </select>
                   </div>
                 </div>
