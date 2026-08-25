@@ -25013,5 +25013,39 @@
       }
     ],
     "answer_length": 1240
+  },
+  {
+    "timestamp": "2026-08-25T04:01:14.313Z",
+    "response_id": "cc324926-f2e1-4180-b117-f786971bc8e3",
+    "question": "so basically what ever media event i send to exotel i will hear it ??",
+    "question_length": 69,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3860,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Media Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/media-messages"
+      },
+      {
+        "title": "Use CleverTap via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-native"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use CleverTap via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-generic"
+      }
+    ],
+    "answer_length": 938
   }
 ]
