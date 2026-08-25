@@ -25165,5 +25165,13 @@
       }
     ],
     "answer_length": 640
+  },
+  {
+    "timestamp": "2026-08-25T05:44:12.261Z",
+    "question": "Integration of click-to-call at custom crm",
+    "question_length": 42,
+    "response_time_ms": 1132,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
+    "failed": true
   }
 ]
