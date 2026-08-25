@@ -25665,5 +25665,39 @@
       }
     ],
     "answer_length": 764
+  },
+  {
+    "timestamp": "2026-08-25T15:28:22.882Z",
+    "response_id": "25e6febd-8b30-4b8f-8793-d113e2c3388a",
+    "question": "VOIP integrate to my CRM",
+    "question_length": 24,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5189,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Integrations",
+        "product": "integrations",
+        "url": "/docs/integrations/overview"
+      }
+    ],
+    "answer_length": 1594
   }
 ]
