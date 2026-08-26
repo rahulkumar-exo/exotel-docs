@@ -25767,5 +25767,39 @@
       }
     ],
     "answer_length": 1145
+  },
+  {
+    "timestamp": "2026-08-26T05:36:52.921Z",
+    "response_id": "eee4f1b6-d13d-4a0c-a18d-0a32d7134023",
+    "question": "how can i implement this ?",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11498,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Send SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/how-to-send-sms"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Categories",
+        "product": "chatbot",
+        "url": "/docs/chatbot/categories"
+      },
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      }
+    ],
+    "answer_length": 3558
   }
 ]
