@@ -26131,5 +26131,39 @@
       }
     ],
     "answer_length": 1756
+  },
+  {
+    "timestamp": "2026-08-26T11:08:17.173Z",
+    "response_id": "0c47cc42-6a0c-48a6-b381-7d79c214cce5",
+    "question": "pricing?",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2087,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 176
   }
 ]
