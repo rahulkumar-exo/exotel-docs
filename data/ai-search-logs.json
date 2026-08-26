@@ -26403,5 +26403,39 @@
       }
     ],
     "answer_length": 4215
+  },
+  {
+    "timestamp": "2026-08-26T17:11:32.474Z",
+    "response_id": "ad04dd66-ca1a-4282-81bf-b82812241c9e",
+    "question": "TimeLimit\tNo\tInteger\tMax call duration in seconds. Max: 14400 (4 hours). - what does this variable do",
+    "question_length": 101,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3125,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow.mdx"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 478
   }
 ]
