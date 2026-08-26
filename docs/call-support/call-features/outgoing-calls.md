@@ -75,7 +75,7 @@ curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_
 | `StatusCallback` | No | URL to receive call status updates |
 | `StatusCallbackEvents` | No | Events to notify: `initiated`, `ringing`, `answered`, `completed` |
 | `TimeLimit` | No | Maximum call duration in seconds |
-| `TimeOut` | No | Ring timeout in seconds |
+| `TimeOut` | No | Time in seconds to ring the called parties (both the From and To legs). The timer runs only during ringing and stops once each leg is answered. |
 
 **Response:**
 

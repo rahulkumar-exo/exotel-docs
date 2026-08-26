@@ -293,7 +293,7 @@ export default function AiChat(): JSX.Element {
               </div>
               <div>
                 <div className={styles.chatTitle}>Exotel AI Assistant</div>
-                <div className={styles.chatSubtitle}>Powered by Gemini</div>
+                <a className={styles.chatSubtitle} href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Powered by Gemini</a>
               </div>
             </div>
             <div className={styles.chatHeaderActions}>

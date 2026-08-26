@@ -9,6 +9,39 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const crypto = require('crypto');
 
 // ---------------------------------------------------------------------------
+// In-memory answer cache
+// Persists across warm invocations of the same function instance.
+// Reduces Gemini API calls for repeated questions (saves quota).
+// ---------------------------------------------------------------------------
+const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+const CACHE_MAX_SIZE = 200;
+const answerCache = new Map(); // normalizedQuestion -> { answer, sources, model, timestamp }
+
+function normalizeQuestion(q) {
+  return q.toLowerCase().trim().replace(/[?!.,;:'"]/g, '').replace(/\s+/g, ' ');
+}
+
+function getCachedAnswer(question) {
+  const key = normalizeQuestion(question);
+  const entry = answerCache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.timestamp > CACHE_TTL_MS) {
+    answerCache.delete(key);
+    return null;
+  }
+  return entry;
+}
+
+function setCachedAnswer(question, answer, sources, model) {
+  const key = normalizeQuestion(question);
+  if (answerCache.size >= CACHE_MAX_SIZE) {
+    // Evict the oldest entry (Map preserves insertion order)
+    answerCache.delete(answerCache.keys().next().value);
+  }
+  answerCache.set(key, { answer, sources, model, timestamp: Date.now() });
+}
+
+// ---------------------------------------------------------------------------
 // Search query logging
 // ---------------------------------------------------------------------------
 
@@ -339,6 +372,37 @@ module.exports = async function handler(req, res) {
       });
     }
 
+    // Cache lookup — only for standalone questions (no conversation history),
+    // since follow-up answers depend on prior context and must not be reused.
+    const hasHistory = Array.isArray(history) && history.length > 0;
+    if (!hasHistory) {
+      const cached = getCachedAnswer(question);
+      if (cached) {
+        // Return cached answer immediately — no Gemini call needed
+        const logEntry = {
+          timestamp: new Date().toISOString(),
+          response_id: crypto.randomUUID(),
+          question: question.slice(0, MAX_QUESTION_LEN),
+          question_length: question.length,
+          has_history: false,
+          history_length: 0,
+          model_used: `${cached.model} (cached)`,
+          response_time_ms: Date.now() - startTime,
+          relevant_chunks_found: cached.sources.length,
+          source_pages: cached.sources.map((s) => ({ title: s.title, product: s.product, url: s.url })),
+          answer_length: cached.answer.length,
+          cache_hit: true,
+        };
+        try { await logSearchQuery(logEntry); } catch {}
+        return res.status(200).json({
+          answer: cached.answer,
+          sources: cached.sources,
+          model: `${cached.model} (cached)`,
+          response_id: logEntry.response_id,
+        });
+      }
+    }
+
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
       return res.status(500).json({
@@ -438,6 +502,11 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
       url: c.url,
       product: c.product,
     })))].slice(0, 4);
+
+    // Cache the answer for future identical questions (standalone only)
+    if (!hasHistory) {
+      setCachedAnswer(question, answer, sources, usedModel);
+    }
 
     // Generate a unique response_id so the frontend can later submit
     // 👍/👎 feedback that maps back to this exact answer.

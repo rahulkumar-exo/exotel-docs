@@ -28,7 +28,7 @@ Call a phone number and connect them to an applet/IVR flow after they answer. Un
 | `Url` | Yes | String | Flow URL: `http://my.exotel.com/{your_sid}/exoml/start_voice/{app_id}` |
 | `CallType` | No | String | `trans` for transactional calls. |
 | `TimeLimit` | No | Integer | Max call duration in seconds. Max: `14400` (4 hours). |
-| `TimeOut` | No | Integer | Ring timeout in seconds. |
+| `TimeOut` | No | Integer | Time in seconds to ring the called party before treating the call as unanswered. The timer runs only during ringing and stops once the call is answered. |
 | `StatusCallback` | No | String | Webhook URL for call status updates. |
 | `StatusCallbackEvents` | No | Array | `terminal`, `answered`, or both. |
 | `CustomField` | No | String | Metadata passed to the applet via Passthru. |
@@ -147,7 +147,7 @@ When using a flow URL, the `To` field in the response will be `null` since the d
     { name: 'Url', required: true, type: 'string', description: 'Call flow URL: http://my.exotel.com/{account_sid}/exoml/start_voice/{app_id}', placeholder: 'http://my.exotel.com/your_sid/exoml/start_voice/926' },
     { name: 'CallType', required: false, type: 'string', description: 'Set to "trans" for transactional calls', placeholder: 'trans' },
     { name: 'TimeLimit', required: false, type: 'number', description: 'Max call duration in seconds (max 14400)', placeholder: '14400' },
-    { name: 'TimeOut', required: false, type: 'number', description: 'Ring timeout in seconds', placeholder: '30' },
+    { name: 'TimeOut', required: false, type: 'number', description: 'Seconds to ring before treating the call as unanswered. Stops once the call is answered.', placeholder: '30' },
     { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://yoururl.com/callback' },
     { name: 'CustomField', required: false, type: 'string', description: 'Metadata passed to the applet via Passthru', placeholder: 'order_123' },
   ]}

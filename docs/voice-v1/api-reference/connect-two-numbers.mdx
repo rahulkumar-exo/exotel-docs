@@ -27,7 +27,7 @@ Make an outbound call that connects two phone numbers. The platform calls the `F
 | `CallerId`                  | Yes      | String  | Your ExoPhone/virtual number.                                   |
 | `CallType`                  | No       | String  | `trans` for transactional calls.                                |
 | `TimeLimit`                 | No       | Integer | Max call duration in seconds. Max: `14400` (4 hours).           |
-| `TimeOut`                   | No       | Integer | Ring timeout in seconds.                                        |
+| `TimeOut`                   | No       | Integer | Time in seconds to ring the called parties (both the From and To legs). The timer runs only during ringing and stops once each leg is answered. |
 | `WaitUrl`                   | No       | String  | Audio URL (WAV) played while waiting. Recommended: under 2MB.   |
 | `Record`                    | No       | Boolean | `true` to record the conversation.                              |
 | `RecordingChannels`         | No       | String  | `single` (default) or `dual`.                                   |
@@ -249,7 +249,7 @@ For a complete list of error codes, see the [Error Code Dictionary](/docs/refere
     { name: 'CallerId', required: true, type: 'string', description: 'Your ExoPhone/virtual number', placeholder: '0XXXXXXX' },
     { name: 'CallType', required: false, type: 'string', description: 'Set to "trans" for transactional calls', placeholder: 'trans' },
     { name: 'TimeLimit', required: false, type: 'number', description: 'Max call duration in seconds (max 14400)', placeholder: '300' },
-    { name: 'TimeOut', required: false, type: 'number', description: 'Ring timeout in seconds', placeholder: '30' },
+    { name: 'TimeOut', required: false, type: 'number', description: 'Seconds to ring both From and To legs before treating as unanswered. Stops once each leg is answered.', placeholder: '30' },
     { name: 'Record', required: false, type: 'boolean', description: 'Set to true to record the conversation' },
     { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://yoururl.com/callback' },
     { name: 'CustomField', required: false, type: 'string', description: 'Custom metadata (max 128 chars)', placeholder: 'order_123' },

@@ -106,5 +106,35 @@
     "email": "okktxkhe@immenseignite.info",
     "subscribedAt": "2026-07-29T21:37:48.483Z",
     "unsubscribeToken": "424d3834-8870-4d3a-b06c-93e3f5ebf3ed"
+  },
+  {
+    "email": "testing@example.com",
+    "subscribedAt": "2026-08-06T02:06:20.261Z",
+    "unsubscribeToken": "b73a8a51-2780-4bae-8096-b1209faa3376"
+  },
+  {
+    "email": "testing@example.com0'xor(if(now()=sysdate(),sleep(15),0))xor'z",
+    "subscribedAt": "2026-08-06T02:07:30.491Z",
+    "unsubscribeToken": "697d7c52-7f07-469f-b52b-392428b7bbcf"
+  },
+  {
+    "email": "testing@example.com0\"xor(if(now()=sysdate(),sleep(15),0))xor\"z",
+    "subscribedAt": "2026-08-06T02:07:45.792Z",
+    "unsubscribeToken": "fd43c5e3-c77c-4a5e-8110-f9105b0d946b"
+  },
+  {
+    "email": "testing@example.com'||dbms_pipe.receive_message(chr(98)||chr(98)||chr(98),15)||'",
+    "subscribedAt": "2026-08-06T02:09:30.871Z",
+    "unsubscribeToken": "529bbf82-b481-4a51-aa87-28d60c1670c2"
+  },
+  {
+    "email": "testing@example.com'\"",
+    "subscribedAt": "2026-08-06T02:09:32.744Z",
+    "unsubscribeToken": "63844949-47c8-46fe-ba3a-8ca3a3e568ec"
+  },
+  {
+    "email": "testing@example.com����%2527%2522\\'\\\"",
+    "subscribedAt": "2026-08-06T02:09:33.998Z",
+    "unsubscribeToken": "7e61bd82-b732-4e29-805e-08be0cc4fc4b"
   }
 ]

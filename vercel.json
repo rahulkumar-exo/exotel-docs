@@ -34,6 +34,12 @@
     },
     "api/make-call.js": {
       "maxDuration": 15
+    },
+    "api/auth-test.js": {
+      "maxDuration": 5
+    },
+    "api/cms-auth.js": {
+      "maxDuration": 10
     }
   },
   "redirects": [
