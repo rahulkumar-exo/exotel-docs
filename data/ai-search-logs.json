@@ -26437,5 +26437,39 @@
       }
     ],
     "answer_length": 478
+  },
+  {
+    "timestamp": "2026-08-26T17:13:12.791Z",
+    "response_id": "072e3a46-75c0-4f8e-abef-48b737a41f44",
+    "question": "if we set is to 60, will exotel terminate the call?",
+    "question_length": 51,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2267,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      }
+    ],
+    "answer_length": 231
   }
 ]
