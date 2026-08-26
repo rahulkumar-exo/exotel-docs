@@ -25733,5 +25733,39 @@
       }
     ],
     "answer_length": 1881
+  },
+  {
+    "timestamp": "2026-08-26T05:36:08.826Z",
+    "response_id": "02812357-d3c6-445f-ad74-87f72fd1b9a8",
+    "question": "if i make a call people are pushing it to voice mail how can i detect the voice mail",
+    "question_length": 84,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8273,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Voicemail Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/voicemail"
+      }
+    ],
+    "answer_length": 1145
   }
 ]
