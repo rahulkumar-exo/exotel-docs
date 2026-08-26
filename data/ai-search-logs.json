@@ -26199,5 +26199,39 @@
       }
     ],
     "answer_length": 1657
+  },
+  {
+    "timestamp": "2026-08-26T11:26:17.208Z",
+    "response_id": "0a2ec7ef-5040-4e0f-a342-c5af8ad7e7c0",
+    "question": "integrate with our own app",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11336,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      }
+    ],
+    "answer_length": 4465
   }
 ]
