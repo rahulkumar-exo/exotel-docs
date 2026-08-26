@@ -3,6 +3,7 @@ id: connect-two-numbers
 title: Connect Two Numbers
 description: Initiate an outbound call connecting two phone numbers using the Exotel Voice API. Supports call recording, streaming, custom playback, and status callbacks.
 sidebar_label: Connect Two Numbers
+displayed_sidebar: voiceSidebar
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,10 +16,10 @@ import TryItBanner from '@site/src/components/TryItBanner';
 Initiate an outbound call that connects two phone numbers — typically an agent and a customer. Exotel first calls the `From` number, waits for it to answer, then dials the `To` number and bridges the two legs.
 
 :::info Using Voice v1 endpoint
-Call initiation in Voice v3 uses the **Voice v1** endpoint (`/v1/Accounts/...`). Use the **Voice v3** [Call Details API](/docs/voice-v3/api-reference/call-details) to fetch enhanced reporting on the call after it is placed.
+Use the **Voice v1** endpoint (`/v1/Accounts/...`). After the call, use [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) for the enriched record.
 :::
 
-<TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Calls/connect" />
+<TryItBanner method="POST" endpoint="/v1/Accounts/{account_sid}/Calls/connect" />
 
 ## Endpoint
 
@@ -268,7 +269,7 @@ func main() {
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `Call.Sid` | String | Unique call identifier. Use this with the [Call Details API](/docs/voice-v3/api-reference/call-details) for enhanced reporting. |
+| `Call.Sid` | String | Unique call identifier. Use this with [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) for the enriched record. |
 | `Call.ParentCallSid` | String / null | Parent call identifier if this is a child call. |
 | `Call.DateCreated` | DateTime | Timestamp when the call was created. |
 | `Call.DateUpdated` | DateTime | Timestamp of the last status update. |
@@ -375,7 +376,7 @@ curl -X GET \
   -H 'Content-Type: application/json'
 ```
 
-The v3 Call Details response includes richer metadata: DTMF digits, recording objects, app/flow information, and per-leg data. See [Call Details (v3)](/docs/voice-v3/api-reference/call-details).
+The enriched Call Details response includes DTMF digits, recording objects, app/flow information, and per-leg data. See [Call Details (CCM)](/docs/voice-v3/api-reference/call-details).
 
 ## Try It
 
@@ -388,7 +389,7 @@ The v3 Call Details response includes richer metadata: DTMF digits, recording ob
     { name: 'To', required: true, type: 'string', description: 'Customer phone number (E.164 preferred)', placeholder: '+918800XXXXXX' },
     { name: 'CallerId', required: true, type: 'string', description: 'Your Exotel ExoPhone / virtual number', placeholder: '09XXXXXXXXX' },
     { name: 'Record', required: false, type: 'boolean', description: 'Record the call (true/false)', placeholder: 'true' },
-    { name: 'TimeLimit', required: false, type: 'integer', description: 'Max call duration in seconds (max 14400)', placeholder: '600' },
+    { name: 'TimeLimit', required: false, type: 'number', description: 'Max call duration in seconds (max 14400)', placeholder: '600' },
     { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://your-server.com/callback' },
     { name: 'CustomField', required: false, type: 'string', description: 'Custom metadata string (max 128 chars)', placeholder: 'order_id=12345' },
   ]}

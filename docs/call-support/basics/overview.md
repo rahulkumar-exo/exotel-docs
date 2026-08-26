@@ -57,7 +57,7 @@ Exotel provides a complete cloud telephony platform that includes:
 
 1. **Virtual numbers (ExoPhones)** -- Dedicated phone numbers for your business. See [What is an ExoPhone?](/docs/call-support/basics/virtual-numbers) for details.
 2. **Call flows** -- Visual drag-and-drop builder to design call routing logic. See [Setting Up a Call Flow](/docs/call-support/call-features/setting-up-call-flow).
-3. **APIs** -- Programmatic control over calls, SMS, and campaigns. See the [Voice v1 API](/docs/voice-v1/overview) or [Voice v2 API](/docs/voice-api/getting-started/overview).
+3. **APIs** -- Programmatic control over calls, SMS, and campaigns. See the [Voice API](/docs/voice).
 4. **Dashboard** -- Web-based interface for configuration, monitoring, and reporting.
 5. **Integrations** -- Connect with CRMs, helpdesks, and other business tools. See [Integrations](/docs/integrations/overview).
 

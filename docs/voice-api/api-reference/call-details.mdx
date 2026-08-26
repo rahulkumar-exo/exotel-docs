@@ -4,6 +4,7 @@ title: Call Details
 description: Retrieve detailed information about a specific call using the Exotel Voice v2 (CCM) API including status, duration, and recordings.
 sidebar_label: Call Details
 sidebar_position: 4
+displayed_sidebar: voiceSidebar
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +16,7 @@ import TryItBanner from '@site/src/components/TryItBanner';
 
 Retrieve detailed information about a specific call made via the Voice v2 (CCM) API.
 
-<TryItBanner method="GET" endpoint="/v2/accounts/{sid}/calls/{call_sid}" />
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/calls/{call_sid}" />
 
 ## Endpoint
 
@@ -34,7 +35,7 @@ GET /v2/accounts/<account_sid>/calls/<call_sid>
 
 | Parameter | Required | Description |
 |-----------|----------|-------------|
-| `call_sid` | Yes | The unique call identifier from the Make Call response |
+| `call_sid` | Yes | The unique call identifier from the Connect Agent to Customer response |
 
 ## Code Examples
 
@@ -161,7 +162,8 @@ console.log(response.data);
   method="GET"
   path="/v2/accounts/{account_sid}/calls/{call_sid}"
   contentType="json"
+  host="ccm"
   params={[
-    { name: 'call_sid', required: true, type: 'string', description: 'The unique call identifier from the Make Call response', placeholder: 'unique_call_identifier' },
+    { name: 'call_sid', required: true, type: 'string', description: 'The unique call identifier from the Connect Agent to Customer response', placeholder: 'unique_call_identifier' },
   ]}
 />

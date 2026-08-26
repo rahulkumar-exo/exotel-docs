@@ -20,7 +20,7 @@ import TryItBanner from '@site/src/components/TryItBanner';
 
 Retrieve your Exotel **account balance** programmatically. This API returns your current wallet credit (in INR), the configured pricing plan, and account currency. Useful for monitoring credit consumption, building low-balance alerts, and reconciling usage with billing.
 
-<TryItBanner method="GET" endpoint="/v1/Accounts/{sid}/Balance.json" />
+<TryItBanner method="GET" endpoint="/v1/Accounts/{account_sid}/Balance.json" />
 
 ## Endpoint
 
@@ -174,8 +174,6 @@ This endpoint is subject to standard Exotel API rate limits. Avoid polling more 
 
 <ApiConsole
   method="GET"
-  path="/v1/Accounts/{your_sid}/Balance.json"
-  params={[
-    { name: 'your_sid', required: true, type: 'string', description: 'Your Exotel Account SID', placeholder: 'Exotel' },
-  ]}
+  path="/v1/Accounts/{account_sid}/Balance.json"
+  params={[]}
 />

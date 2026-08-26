@@ -187,4 +187,4 @@ Every time you save an app, a new version is created. Version history is retaine
 - [Flow Builder Guide](/docs/app-bazaar/flow-builder-guide) -- Detailed flow builder instructions
 - [App Bazaar Overview](/docs/app-bazaar/overview) -- Complete applet catalog
 - [ExoPhones](/docs/exophones/overview) -- Assign apps to virtual numbers
-- [Voice API](/docs/voice-api/getting-started/overview) -- Trigger apps programmatically
+- [Voice API](/docs/voice) -- Trigger apps programmatically

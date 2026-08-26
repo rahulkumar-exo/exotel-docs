@@ -8,7 +8,7 @@ sidebar_position: 2
 
 # Authentication
 
-Exotel uses **HTTP Basic Authentication** for all Voice API endpoints. The same credentials work for both Voice v1 and Voice v2 (CCM) APIs.
+Exotel uses HTTP Basic Authentication for all Voice endpoints. The same API key and token work on `api.exotel.com` and `ccm-api.exotel.com`.
 
 ## Credentials
 
@@ -22,7 +22,7 @@ All credentials are available on your [Exotel Dashboard](https://my.exotel.com/a
 
 ## Base URLs
 
-### Voice v1 (Standard)
+### Place a call, applets, older records
 
 ```
 https://<api_key>:<api_token>@<subdomain>/v1/Accounts/<account_sid>/
@@ -33,10 +33,13 @@ https://<api_key>:<api_token>@<subdomain>/v1/Accounts/<account_sid>/
 | Singapore | `api.exotel.com` |
 | Mumbai | `api.in.exotel.com` |
 
-### Voice v2 (CCM)
+### Agent calls and richer reports
+
+CCM is Contact Center Management. Use these hosts if you run contact center operations on `my*.exotel.com`.
 
 ```
 https://<api_key>:<api_token>@<ccm_subdomain>/v2/accounts/<account_sid>/
+https://<api_key>:<api_token>@<ccm_subdomain>/v3/accounts/<account_sid>/
 ```
 
 | Region | CCM Subdomain |
@@ -44,15 +47,17 @@ https://<api_key>:<api_token>@<ccm_subdomain>/v2/accounts/<account_sid>/
 | Singapore | `ccm-api.exotel.com` |
 | Mumbai | `ccm-api.in.exotel.com` |
 
+Use `api.exotel.com` to place a call, connect to a flow, or read the older call record. Use `ccm-api.exotel.com` to [connect an agent](/docs/voice-api/api-reference/make-a-call) or to fetch the [CCM call record](/docs/voice-v3/api-reference/call-details).
+
 ## Making Authenticated Requests
 
 ### Using URL credentials
 
 ```bash
-# Voice v1
+# Place a call
 curl https://your_api_key:your_api_token@api.exotel.com/v1/Accounts/your_sid/Calls.json
 
-# Voice v2 (CCM)
+# Agent call or call details
 curl https://your_api_key:your_api_token@ccm-api.exotel.com/v2/accounts/your_sid/calls
 ```
 

@@ -8,25 +8,15 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
 # Connect Two Numbers
 
 Make an outbound call that connects two phone numbers. The platform calls the `From` number first, and once they answer, the `To` number is dialed and connected.
 
-<TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Calls/connect" />
+<TryItBanner method="POST" endpoint="/v1/Accounts/{account_sid}/Calls/connect" />
 
-## HTTP Request
-
-```
-POST /v1/Accounts/<your_sid>/Calls/connect
-```
-
-### Regional Endpoints
-
-| Region    | URL                                                                                    |
-| --------- | -------------------------------------------------------------------------------------- |
-| Singapore | `https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls/connect`    |
-| Mumbai    | `https://<api_key>:<api_token>@api.in.exotel.com/v1/Accounts/<your_sid>/Calls/connect` |
+<RegionalUrls path="/v1/Accounts/{account_sid}/Calls/connect" host="api" />
 
 ## Request Parameters
 

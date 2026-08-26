@@ -16,6 +16,7 @@ interface ApiConsoleProps {
   path: string; // e.g. "/v1/Accounts/{account_sid}/Calls/connect"
   params: ApiParam[];
   contentType?: 'form' | 'json'; // default: form
+  host?: 'api' | 'ccm';
 }
 
 interface Credentials {
@@ -41,7 +42,35 @@ function saveCredentials(creds: Credentials) {
   } catch {}
 }
 
-export default function ApiConsole({ method, path, params = [], contentType = 'form' }: ApiConsoleProps) {
+function isMumbai(subdomain: string) {
+  return subdomain.includes('.in.');
+}
+
+function hostForRegion(kind: 'api' | 'ccm', mumbai: boolean) {
+  if (kind === 'ccm') {
+    return mumbai ? 'ccm-api.in.exotel.com' : 'ccm-api.exotel.com';
+  }
+  return mumbai ? 'api.in.exotel.com' : 'api.exotel.com';
+}
+
+function coerceParamValue(paramDef: ApiParam | undefined, value: string): unknown {
+  if (paramDef?.type === 'number') return Number(value);
+  if (paramDef?.type === 'boolean') return value === 'true';
+  const trimmed = value.trim();
+  if (
+    (trimmed.startsWith('{') && trimmed.endsWith('}')) ||
+    (trimmed.startsWith('[') && trimmed.endsWith(']'))
+  ) {
+    try {
+      return JSON.parse(trimmed);
+    } catch {
+      return value;
+    }
+  }
+  return value;
+}
+
+export default function ApiConsole({ method, path, params = [], contentType = 'form', host = 'api' }: ApiConsoleProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [creds, setCreds] = useState<Credentials>(loadCredentials);
   const [showCreds, setShowCreds] = useState(false);
@@ -104,9 +133,11 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
     return resolved;
   }, [path, creds.accountSid, pathParamNames.join(',')]);
 
+  const requestHost = hostForRegion(host, isMumbai(creds.subdomain));
+
   const buildUrl = useCallback(() => {
-    return `https://${creds.subdomain}${resolvePathParams(path, paramValues)}`;
-  }, [path, creds, paramValues, resolvePathParams]);
+    return `https://${requestHost}${resolvePathParams(path, paramValues)}`;
+  }, [path, requestHost, paramValues, resolvePathParams]);
 
   const buildCurl = useCallback(() => {
     const url = buildUrl();
@@ -123,10 +154,7 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
       if (contentType === 'json') {
         const obj: Record<string, unknown> = {};
         filledParams.forEach(([k, v]) => {
-          const paramDef = params.find((p) => p.name === k);
-          if (paramDef?.type === 'number') obj[k] = Number(v);
-          else if (paramDef?.type === 'boolean') obj[k] = v === 'true';
-          else obj[k] = v;
+          obj[k] = coerceParamValue(params.find((p) => p.name === k), v);
         });
         body = ` \\\n  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify(obj, null, 2)}'`;
       } else {
@@ -172,10 +200,7 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
         if (contentType === 'json') {
           const obj: Record<string, unknown> = {};
           filledParams.forEach(([k, v]) => {
-            const paramDef = params.find((p) => p.name === k);
-            if (paramDef?.type === 'number') obj[k] = Number(v);
-            else if (paramDef?.type === 'boolean') obj[k] = v === 'true';
-            else obj[k] = v;
+            obj[k] = coerceParamValue(params.find((p) => p.name === k), v);
           });
           bodyData = JSON.stringify(obj);
           bodyContentType = 'application/json';
@@ -190,7 +215,7 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           method,
-          subdomain: creds.subdomain,
+          subdomain: requestHost,
           path: resolvedPath + queryString,
           apiKey: creds.apiKey,
           apiToken: creds.apiToken,
@@ -282,11 +307,15 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
                   <div className={styles.credsField}>
                     <label>Subdomain</label>
                     <select
-                      value={creds.subdomain}
+                      value={requestHost}
                       onChange={(e) => updateCreds('subdomain', e.target.value)}
                     >
-                      <option value="api.exotel.com">api.exotel.com (Singapore)</option>
-                      <option value="api.in.exotel.com">api.in.exotel.com (Mumbai)</option>
+                      <option value={hostForRegion(host, false)}>
+                        {hostForRegion(host, false)} (Singapore)
+                      </option>
+                      <option value={hostForRegion(host, true)}>
+                        {hostForRegion(host, true)} (Mumbai)
+                      </option>
                     </select>
                   </div>
                 </div>

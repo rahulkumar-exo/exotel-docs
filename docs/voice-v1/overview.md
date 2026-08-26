@@ -4,9 +4,14 @@ title: Voice v1
 description: "Exotel Voice v1 API — make calls, build IVR flows, connect numbers, and manage call routing programmatically."
 sidebar_label: Overview
 slug: /voice-v1/overview
+displayed_sidebar: voiceSidebar
 ---
 
 # Voice v1 API
+
+:::note
+To place or look up a call, start at [Voice](/docs/voice).
+:::
 
 Voice v1 APIs work without any user (call centre agent) context — they don't need a user to be added to the Exotel dashboard. Use these APIs for simple call automation, number-to-number connection, and IVR flows.
 
@@ -37,12 +42,11 @@ Voice APIs are limited to **200 calls per minute**. Exceeding this returns HTTP 
 
 | API | Method | Endpoint | Description |
 |-----|--------|----------|-------------|
-| [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) | POST | `/v1/Accounts/{sid}/Calls/connect` | Connect two phone numbers |
-| [Connect to Flow](/docs/voice-v1/api-reference/connect-to-flow) | POST | `/v1/Accounts/{sid}/Calls/connect` | Connect a number to an IVR flow |
-| [Outgoing Call to Flow](/docs/voice-v1/api-reference/outgoing-call-to-flow) | POST | `/v1/Accounts/{sid}/Calls/connect` | Outgoing call connected to a call flow |
-| [Call Details](/docs/voice-v1/api-reference/call-details) | GET | `/v1/Accounts/{sid}/Calls/{CallSid}` | Get call details (single & bulk) |
-| [Number Metadata](/docs/voice-v1/api-reference/number-metadata) | GET | `/v1/Accounts/{sid}/Numbers/{number}` | Get telecom info for Indian numbers |
-| [Incoming Call](/docs/voice-v1/api-reference/incoming-call) | — | — | Configure incoming call flows with applets |
+| [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) | POST | `/v1/Accounts/{account_sid}/Calls/connect` | Connect two phone numbers |
+| [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow) | POST | `/v1/Accounts/{account_sid}/Calls/connect` | Connect a number to an IVR flow |
+| [Call Details](/docs/voice-v1/api-reference/call-details) | GET | `/v1/Accounts/{account_sid}/Calls/{call_sid}` | Get call details (single & bulk) |
+| [Number Metadata](/docs/voice-v1/api-reference/number-metadata) | GET | `/v1/Accounts/{account_sid}/Numbers/{number}` | Get telecom info for Indian numbers |
+| [Program Incoming Call](/docs/voice-v1/api-reference/incoming-call) | — | — | Configure incoming call flows with applets |
 | [StatusCallback](/docs/voice-v1/api-reference/status-callback) | — | — | Webhook reference for call events |
 
 ## Applets (Call Flow Building Blocks)
