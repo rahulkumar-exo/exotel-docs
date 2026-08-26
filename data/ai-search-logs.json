@@ -26301,5 +26301,39 @@
       }
     ],
     "answer_length": 1416
+  },
+  {
+    "timestamp": "2026-08-26T15:51:48.896Z",
+    "response_id": "fbf8ee94-154e-43a6-a98a-b4b90c4a6423",
+    "question": "i want to have ai call bot do you provide the api",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5922,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 1195
   }
 ]
