@@ -25911,5 +25911,13 @@
     "response_time_ms": 1111,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-26T06:22:07.954Z",
+    "question": "On the Voice v1 /Calls/connect API, I get 400 Invalid 'StatusCallbackEvents' specified when I pass StatusCallbackEvents=answered. Is this parameter supported on Voice v1, does it require a different plan/tier, or is there a different way to get notified in real time the moment an outbound call is answered (not just the final StatusCallback at call end)?",
+    "question_length": 355,
+    "response_time_ms": 1247,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.",
+    "failed": true
   }
 ]
