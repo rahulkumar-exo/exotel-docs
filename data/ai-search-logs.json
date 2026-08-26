@@ -26097,5 +26097,39 @@
       }
     ],
     "answer_length": 2328
+  },
+  {
+    "timestamp": "2026-08-26T08:05:28.256Z",
+    "response_id": "3e611d55-e7e3-4245-b60e-711aa576b9ed",
+    "question": "i wnat the api which tell me that today total calls, total missedcall etc",
+    "question_length": 73,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7451,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Actions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/actions"
+      }
+    ],
+    "answer_length": 1756
   }
 ]
