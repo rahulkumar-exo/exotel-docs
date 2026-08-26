@@ -25995,5 +25995,39 @@
       }
     ],
     "answer_length": 4661
+  },
+  {
+    "timestamp": "2026-08-26T07:29:08.036Z",
+    "response_id": "04e8bf4b-ec86-4add-be1a-d16842135cdd",
+    "question": "Suppose I have 5 number and 2 channel then how many call at a time i can place on my system",
+    "question_length": 91,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1777,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 176
   }
 ]
