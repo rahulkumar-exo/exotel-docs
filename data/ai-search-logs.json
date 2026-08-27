@@ -26615,5 +26615,39 @@
       }
     ],
     "answer_length": 2110
+  },
+  {
+    "timestamp": "2026-08-27T07:39:37.416Z",
+    "response_id": "a2b0a832-3e9c-4389-a60f-a860f9bd4ea0",
+    "question": "i want to integrate exotel to my application for voip ..guide me",
+    "question_length": 64,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10176,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Application Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/applications.mdx"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Application Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/applications.mdx"
+      },
+      {
+        "title": "Application Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/applications.mdx"
+      }
+    ],
+    "answer_length": 3823
   }
 ]
