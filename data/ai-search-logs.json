@@ -26861,5 +26861,39 @@
       }
     ],
     "answer_length": 4370
+  },
+  {
+    "timestamp": "2026-08-27T17:53:45.384Z",
+    "response_id": "bb6e1c69-6047-45a0-93e4-4f8d85411521",
+    "question": "NUMBER",
+    "question_length": 6,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5888,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      }
+    ],
+    "answer_length": 2768
   }
 ]
