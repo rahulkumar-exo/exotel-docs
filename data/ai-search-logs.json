@@ -26471,5 +26471,39 @@
       }
     ],
     "answer_length": 231
+  },
+  {
+    "timestamp": "2026-08-27T03:11:45.515Z",
+    "response_id": "5b20246a-fcec-48f3-b864-0d09b5b2932f",
+    "question": "phone",
+    "question_length": 5,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6210,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      },
+      {
+        "title": "Device Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/device-management"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers.mdx"
+      },
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      }
+    ],
+    "answer_length": 2961
   }
 ]
