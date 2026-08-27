@@ -26539,5 +26539,39 @@
       }
     ],
     "answer_length": 7742
+  },
+  {
+    "timestamp": "2026-08-27T06:02:23.276Z",
+    "response_id": "5c52b811-29ed-461b-8e51-db49ce53b1e7",
+    "question": "How can I buy this SMS API Service",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2076,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "SMS Details",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/sms-details.mdx"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      }
+    ],
+    "answer_length": 176
   }
 ]
