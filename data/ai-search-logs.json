@@ -27953,5 +27953,39 @@
       }
     ],
     "answer_length": 514
+  },
+  {
+    "timestamp": "2026-08-28T17:04:35.083Z",
+    "response_id": "6206fb3d-f23e-4670-8531-16e8207e25bc",
+    "question": "I want to setup whatsapp messages with reply templates will only be used for transactional messages, sending approx 3000 msgs per month what will be the estimate /",
+    "question_length": 163,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3033,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      },
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      }
+    ],
+    "answer_length": 176
   }
 ]
