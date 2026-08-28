@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import copyPageSourcePlugin from './plugins/copy-page-source';
 
 const config: Config = {
   title: 'Exotel Developer Docs',
@@ -68,6 +69,7 @@ const config: Config = {
         },
       };
     },
+    copyPageSourcePlugin,
   ],
 
   presets: [
@@ -131,13 +133,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    announcementBar: {
-      id: 'new_portal_2026',
-      content: '🚀 Welcome to the new Exotel Developer Portal! Faster, smarter, and now with AI-powered search. <a href="/docs/getting-started/overview" style="color:#00eac3;font-weight:600;">Explore the docs →</a>',
-      backgroundColor: '#231f20',
-      textColor: '#ffffff',
-      isCloseable: true,
-    },
     metadata: [
       { name: 'keywords', content: 'Exotel API, Voice API, SMS API, WhatsApp API, cloud telephony, CPaaS, developer documentation' },
       { name: 'robots', content: 'index, follow' },

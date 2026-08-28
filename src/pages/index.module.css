@@ -6,15 +6,6 @@
   border-bottom: 1px solid #e8eaf3;
 }
 
-.heroLogo {
-  margin-bottom: 1.5rem;
-}
-
-.heroLogoImg {
-  height: 48px;
-  width: auto;
-}
-
 .heroTitle {
   font-size: 2.5rem;
   font-weight: 800;
@@ -24,12 +15,13 @@
 }
 
 .heroSubtitle {
-  font-size: 1.25rem;
-  color: #808285;
+  font-size: 1.15rem;
+  color: #4a5563;
   margin-bottom: 2rem;
-  max-width: 560px;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.55;
 }
 
 /* Hero Search / Ask AI */
@@ -428,40 +420,6 @@
 }
 
 /* Platform Stats Section */
-.platformStats {
-  padding: 2.5rem 0;
-  background: linear-gradient(135deg, #f5ecfe 0%, #f0e6fd 50%, #ece4fb 100%);
-  border-bottom: 1px solid #e8eaf3;
-}
-
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  text-align: center;
-}
-
-.statItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.statNumber {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #231f20;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.statLabel {
-  font-size: 0.9rem;
-  color: #808285;
-  font-weight: 500;
-}
-
 /* Use Cases Section */
 .useCases {
   padding: 4rem 0 5rem;
@@ -538,83 +496,6 @@
 }
 
 /* Social Share Strip — thin bar just above footer */
-.socialShare {
-  padding: 0.6rem 0;
-  text-align: center;
-  background: #e8eaf3;
-}
-
-.socialShareLabel {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: #808285;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0;
-  display: inline;
-  margin-right: 0.75rem;
-  vertical-align: middle;
-}
-
-.socialShareButtons {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  vertical-align: middle;
-}
-
-.socialShareBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px solid #c6c9d8;
-  background: #fff;
-  color: #808285;
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-  position: relative;
-}
-
-.socialShareBtn:hover {
-  border-color: #9b42f1;
-  color: #9b42f1;
-}
-
-.socialShareBtn svg {
-  width: 13px;
-  height: 13px;
-}
-
-.copyTooltip {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: #231f20;
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-  animation: fadeInUp 0.2s ease;
-}
-
-.copyTooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 4px solid transparent;
-  border-top-color: #231f20;
-}
-
 /* Newsletter Signup Section */
 .newsletter {
   padding: 4rem 0;
@@ -713,16 +594,12 @@
     padding: 3rem 1rem 2.5rem;
   }
 
-  .heroLogoImg {
-    height: 36px;
-  }
-
   .heroTitle {
     font-size: 1.75rem;
   }
 
   .heroSubtitle {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .heroSearchBox {
@@ -751,15 +628,6 @@
 
   .quickLinksGrid {
     grid-template-columns: 1fr;
-  }
-
-  .statsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .statNumber {
-    font-size: 1.5rem;
   }
 
   .useCasesGrid {

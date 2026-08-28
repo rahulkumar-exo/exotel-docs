@@ -8,7 +8,7 @@ sidebar_position: 3
 
 # Tools
 
-The Exotel MCP server exposes the following [MCP tools](https://modelcontextprotocol.io/docs/concepts/tools). All tools appear in `tools/list` no matter which products you have set up in your [`Authorization` header](/docs/mcp-server/overview#authentication). If you invoke a tool for a product you have not set up (for example, a VoiceBot tool without VoiceBot credentials), the tool returns a credential error at call time.
+The Exotel MCP server exposes the following [MCP tools](https://modelcontextprotocol.io/docs/concepts/tools). Every tool below appears in `tools/list` regardless of which product credentials you provide in your [`Authorization` header](/docs/mcp-server/overview#authentication). Invoking a tool whose product isn't configured (for example, a VoiceBot tool without VoiceBot credentials) returns a credential error.
 
 ## Setup helpers
 

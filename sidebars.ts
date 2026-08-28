@@ -6,7 +6,7 @@ const sidebars: SidebarsConfig = {
     'voice-v1/quickstart',
     {
       type: 'category',
-      label: 'API reference',
+      label: 'API Reference',
       collapsed: false,
       items: [
         'voice-v1/api-reference/connect-two-numbers',
