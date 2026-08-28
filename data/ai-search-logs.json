@@ -27133,5 +27133,39 @@
       }
     ],
     "answer_length": 989
+  },
+  {
+    "timestamp": "2026-08-28T05:17:59.411Z",
+    "response_id": "9e6e9046-a612-4c94-b8b0-9b5eb2073c4b",
+    "question": "for this what pre-requirement should i need to test this",
+    "question_length": 56,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10145,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Template Categories",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-categories"
+      },
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 3657
   }
 ]
