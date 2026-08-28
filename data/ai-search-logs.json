@@ -27715,5 +27715,39 @@
       }
     ],
     "answer_length": 891
+  },
+  {
+    "timestamp": "2026-08-28T11:02:47.821Z",
+    "response_id": "93d5a872-65e0-4a44-a5cb-0baac1360958",
+    "question": "where will I get exotel caller Id?",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4831,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      }
+    ],
+    "answer_length": 879
   }
 ]
