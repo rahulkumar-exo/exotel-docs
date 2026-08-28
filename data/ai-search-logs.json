@@ -27099,5 +27099,39 @@
       }
     ],
     "answer_length": 3317
+  },
+  {
+    "timestamp": "2026-08-28T05:16:49.803Z",
+    "response_id": "c5b309cf-5a70-44af-a581-560d50146b43",
+    "question": "i need to integrate this calling and sms in exotel to my client so is there a test mode account in this to test ?",
+    "question_length": 113,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2884,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use CleverTap via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-native"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 989
   }
 ]
