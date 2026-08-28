@@ -27327,5 +27327,13 @@
     "response_time_ms": 325,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-28T05:28:59.546Z",
+    "question": "can you give the guid incoming webhook for calling and sms",
+    "question_length": 58,
+    "response_time_ms": 340,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.",
+    "failed": true
   }
 ]
