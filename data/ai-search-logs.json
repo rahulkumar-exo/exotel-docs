@@ -27065,5 +27065,39 @@
       }
     ],
     "answer_length": 858
+  },
+  {
+    "timestamp": "2026-08-28T05:13:24.590Z",
+    "response_id": "91c5b9d1-f38a-4ba6-a590-265495b0aef7",
+    "question": "i need to do for the calling and sms for that i need to configure that so give the steps",
+    "question_length": 88,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11885,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 3317
   }
 ]
