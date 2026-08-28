@@ -66,9 +66,11 @@ Export it from `~/.zshrc` or `~/.bashrc`:
 export EXOTEL_AUTH_HEADER="$(security find-generic-password -a "$USER" -s exotel-mcp-auth -w)"
 ```
 
-Reference the env variable in your client config:
+Then point each client at that variable. The syntax is not the same everywhere.
 
-**Cursor** (`~/.cursor/mcp.json`):
+**Cursor** (`~/.cursor/mcp.json`) and **VS Code** (`.vscode/mcp.json`) expand `${env:NAME}` in HTTP headers. Cursor documents this under [config interpolation](https://cursor.com/docs/mcp). VS Code uses the same token.
+
+Cursor:
 
 ```json
 {
@@ -81,7 +83,7 @@ Reference the env variable in your client config:
 }
 ```
 
-**VS Code** (`.vscode/mcp.json`):
+VS Code:
 
 ```json
 {
@@ -95,25 +97,41 @@ Reference the env variable in your client config:
 }
 ```
 
-**Claude Desktop, Claude Code, Windsurf** (`mcp-remote` bridge):
+Restart the app after you change your shell profile. GUI apps do not pick up a new `export` until you relaunch them from that shell, or from the Dock after a logout.
+
+**Claude Code** runs in a terminal, so it inherits `EXOTEL_AUTH_HEADER`. Add the server with the expanded header:
+
+```bash
+claude mcp add --transport http exotel https://mcp.exotel.com/mcp \
+  --header "Authorization: ${EXOTEL_AUTH_HEADER}"
+```
+
+**Claude Desktop and Windsurf** do not expand `${EXOTEL_AUTH_HEADER}` inside `mcp.json`. A Dock-launched app also does not load `~/.zshrc`. Use a wrapper that reads the keychain, then `exec`s `mcp-remote`:
+
+```bash
+#!/bin/sh
+set -e
+AUTH_HEADER="$(security find-generic-password -a "$USER" -s exotel-mcp-auth -w)"
+exec npx -y mcp-remote https://mcp.exotel.com/mcp --header "Authorization:${AUTH_HEADER}"
+```
+
+Save it as `~/.local/bin/exotel-mcp.sh`, then `chmod +x ~/.local/bin/exotel-mcp.sh`. Point the client at the script:
 
 ```json
 {
   "mcpServers": {
     "exotel": {
-      "command": "npx",
-      "args": ["mcp-remote", "https://mcp.exotel.com/mcp", "--header", "Authorization:${AUTH_HEADER}"],
-      "env": { "AUTH_HEADER": "${EXOTEL_AUTH_HEADER}" }
+      "command": "/Users/YOU/.local/bin/exotel-mcp.sh"
     }
   }
 }
 ```
 
-Claude Desktop launched from the macOS Dock does not inherit your shell environment. Either launch it from a terminal (`open -a "Claude"`) so it inherits `EXOTEL_AUTH_HEADER`, or write the value to the user session with `launchctl setenv EXOTEL_AUTH_HEADER "$(security find-generic-password -a "$USER" -s exotel-mcp-auth -w)"` from a `~/Library/LaunchAgents/` script.
+Do not put `"AUTH_HEADER": "${EXOTEL_AUTH_HEADER}"` in the client's `env` block. Claude Desktop and Windsurf pass that string through as a literal.
 
 Non-macOS equivalents for the keychain step:
 
-- **Linux.** Use [`pass`](https://www.passwordstore.org/) (`pass insert exotel-mcp-auth`) or `gnome-keyring` via `secret-tool`.
+- **Linux.** Use [`pass`](https://www.passwordstore.org/) (`pass insert exotel-mcp-auth`) or `gnome-keyring` via `secret-tool`. In the wrapper, replace the `security` line with `AUTH_HEADER="$(pass show exotel-mcp-auth)"`.
 - **Cross-platform.** Use the 1Password CLI (`op read 'op://Private/Exotel MCP/notesPlain'`) or Bitwarden CLI (`bw get notes exotel-mcp-auth`).
 
 ### Alternative: sourced dotenv file
@@ -136,7 +154,14 @@ Source it from your shell profile:
 [ -f ~/.exotel-mcp.env ] && source ~/.exotel-mcp.env
 ```
 
-The client config stays identical to the keychain examples above, with the same `${env:EXOTEL_AUTH_HEADER}` references.
+The client config stays identical to the Cursor and VS Code examples above, with the same `${env:EXOTEL_AUTH_HEADER}` references. For Claude Desktop and Windsurf, keep using the wrapper script. Point the script at the dotenv file instead of the keychain:
+
+```bash
+#!/bin/sh
+set -e
+. "$HOME/.exotel-mcp.env"
+exec npx -y mcp-remote https://mcp.exotel.com/mcp --header "Authorization:${EXOTEL_AUTH_HEADER}"
+```
 
 ### Fallback: inline in client config
 

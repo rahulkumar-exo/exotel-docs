@@ -37,7 +37,11 @@ Every curl on this page uses two placeholders. Both come from your Exotel accoun
 | Placeholder | Where to get it |
 |-------------|-----------------|
 | `<tenant_id>` | Your Exotel account (tenant) ID. Find it in the VoiceBot Dashboard → Settings, or from the URL when you are logged into `my.exotel.com`. |
-| `<your_token>` | The `access_token` cookie set when you log into `my.exotel.com`. Open your browser's devtools → Application → Cookies → `my.exotel.com` → copy the value of `access_token`. This is the same session credential used by the rest of the Exotel API. |
+| `<your_token>` | The `access_token` cookie your browser sets when you log into `my.exotel.com`. Open DevTools → Application → Cookies → `my.exotel.com` → copy `access_token`. |
+
+:::warning This is a session cookie, not an API key
+`access_token` expires when you log out of `my.exotel.com`. Anyone who has it can act as you against the Tools Server until it expires. Do not commit it, paste it into tickets, or share it. The VoiceBot REST APIs use separate API keys (see [Overview → VoiceBot](/docs/mcp-server/overview#voicebot)). The Tools Server still authenticates with this cookie.
+:::
 
 For host, use `https://tools-server.mum1.exotel.com` for production or `https://tools-server-uat.mum1.exotel.com` while testing (per the [Tools Server overview](/docs/voicebot-tools/overview)). The examples below use the UAT host.
 

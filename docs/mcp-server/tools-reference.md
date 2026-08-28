@@ -126,7 +126,7 @@ Return clickable links for audio URLs. Useful with recording URLs returned by vo
 
 | Tool | Description |
 |------|-------------|
-| `exotel_cqa_login` | Authenticate with CQA to obtain a JWT bearer token. |
+| `exotel_cqa_login` | Authenticate with CQA to obtain a JWT bearer token. Do not paste that token into chat, tickets, or logs. Treat it like a password. |
 | `exotel_cqa_create_api_key` | Generate a new API key for data import and analysis. |
 | `exotel_cqa_list_api_keys` | List all active API keys. |
 | `exotel_cqa_revoke_api_key` | Revoke (delete) an API key. |

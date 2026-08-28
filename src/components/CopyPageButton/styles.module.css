@@ -1,7 +1,17 @@
+.anchor {
+  position: relative;
+}
+
+.anchor :global(.markdown > header:first-child),
+.anchor :global(.markdown > h1:first-child) {
+  padding-right: 8rem;
+}
+
 .wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0.75rem;
+  position: absolute;
+  top: 0.2rem;
+  right: 0;
+  z-index: 2;
 }
 
 .container {

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from '@docusaurus/router';
 import { usePluginData } from '@docusaurus/useGlobalData';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import styles from './styles.module.css';
 
 interface SourceData {
@@ -37,16 +36,21 @@ export default function CopyPageButton(): JSX.Element | null {
         setMenuOpen(false);
       }
     };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
     document.addEventListener('mousedown', onDocClick);
-    return () => document.removeEventListener('mousedown', onDocClick);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', onDocClick);
+      document.removeEventListener('keydown', onKeyDown);
+    };
   }, [menuOpen]);
 
-  if (!ExecutionEnvironment.canUseDOM) return null;
-
-  const trimmed = pathname.replace(/\/$/, '');
+  const trimmed = pathname.replace(/\/$/, '') || '/';
   const rawUrl =
     data?.sourceUrlByPermalink?.[trimmed] ??
-    data?.sourceUrlByPermalink?.[trimmed + '/'] ??
+    data?.sourceUrlByPermalink?.[pathname] ??
     null;
 
   if (!rawUrl) return null;
@@ -85,87 +89,87 @@ export default function CopyPageButton(): JSX.Element | null {
 
   return (
     <div className={styles.wrapper}>
-    <div className={styles.container} ref={containerRef}>
-      <button
-        type="button"
-        className={styles.copyBtn}
-        onClick={handleCopy}
-        aria-label="Copy this page as markdown"
-      >
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
+      <div className={styles.container} ref={containerRef}>
+        <button
+          type="button"
+          className={styles.copyBtn}
+          onClick={handleCopy}
+          aria-label="Copy this page as markdown"
         >
-          {state === 'copied' ? (
-            <polyline points="20 6 9 17 4 12" />
-          ) : (
-            <>
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-            </>
-          )}
-        </svg>
-        <span>{label}</span>
-      </button>
-      <button
-        type="button"
-        className={styles.menuBtn}
-        onClick={() => setMenuOpen((o) => !o)}
-        aria-haspopup="menu"
-        aria-expanded={menuOpen}
-        aria-label="More copy options"
-      >
-        <svg
-          width="10"
-          height="10"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            {state === 'copied' ? (
+              <polyline points="20 6 9 17 4 12" />
+            ) : (
+              <>
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </>
+            )}
+          </svg>
+          <span>{label}</span>
+        </button>
+        <button
+          type="button"
+          className={styles.menuBtn}
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-haspopup="menu"
+          aria-expanded={menuOpen}
+          aria-label="More copy options"
         >
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
-      </button>
-      {menuOpen && (
-        <div className={styles.menu} role="menu">
-          <button
-            type="button"
-            role="menuitem"
-            className={styles.menuItem}
-            onClick={() => openInLLM('chatgpt')}
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
           >
-            Open in ChatGPT
-          </button>
-          <button
-            type="button"
-            role="menuitem"
-            className={styles.menuItem}
-            onClick={() => openInLLM('claude')}
-          >
-            Open in Claude
-          </button>
-          <a
-            role="menuitem"
-            href={rawUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.menuItem}
-          >
-            View Markdown
-          </a>
-        </div>
-      )}
-    </div>
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        {menuOpen && (
+          <div className={styles.menu} role="menu">
+            <button
+              type="button"
+              role="menuitem"
+              className={styles.menuItem}
+              onClick={() => openInLLM('chatgpt')}
+            >
+              Open in ChatGPT
+            </button>
+            <button
+              type="button"
+              role="menuitem"
+              className={styles.menuItem}
+              onClick={() => openInLLM('claude')}
+            >
+              Open in Claude
+            </button>
+            <a
+              role="menuitem"
+              href={rawUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.menuItem}
+            >
+              View Markdown
+            </a>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
