@@ -27545,5 +27545,39 @@
       }
     ],
     "answer_length": 739
+  },
+  {
+    "timestamp": "2026-08-28T06:47:07.191Z",
+    "response_id": "e0bc5b2b-f14c-424d-8925-9905ed8c1f9e",
+    "question": "i dont see this in thean applet or call flow.",
+    "question_length": 45,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 7422,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Email Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/email"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 1429
   }
 ]
