@@ -27511,5 +27511,39 @@
       }
     ],
     "answer_length": 3331
+  },
+  {
+    "timestamp": "2026-08-28T06:44:47.450Z",
+    "response_id": "fa9180d6-1489-4c6a-b82f-5f8fba9514d3",
+    "question": "Exotel - Inbound Calls can i able to test this using the trial account ? will webhook recive",
+    "question_length": 92,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 10404,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      }
+    ],
+    "answer_length": 739
   }
 ]
