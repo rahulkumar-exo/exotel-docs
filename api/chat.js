@@ -453,7 +453,7 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
 
     // Call Gemini — try multiple models with fallback
     const genAI = new GoogleGenerativeAI(apiKey);
-    const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite'];
+    const modelsToTry = ['gemini-2.5-flash', 'gemini-3.6-flash', 'gemini-2.5-flash-lite'];
 
     const chatHistory = history.map(msg => ({
       role: msg.role === 'assistant' ? 'model' : 'user',
