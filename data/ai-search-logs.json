@@ -27201,5 +27201,39 @@
       }
     ],
     "answer_length": 5022
+  },
+  {
+    "timestamp": "2026-08-28T05:20:23.376Z",
+    "response_id": "c55b127a-9c38-4ca6-b5e8-d1adfa037be1",
+    "question": "send a message",
+    "question_length": 14,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5579,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Send SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/how-to-send-sms"
+      },
+      {
+        "title": "Send RCS Message",
+        "product": "rcs-omnichannel",
+        "url": "/docs/rcs-omnichannel/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      }
+    ],
+    "answer_length": 3100
   }
 ]
