@@ -27987,5 +27987,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-28T17:07:57.819Z",
+    "response_id": "5e76504b-06de-4f9a-a96a-9821ef4f6c58",
+    "question": "I have an exotel account but it is currently under review of KYC and I have create a Whatsapp account using the virtual number So guide me how can I do so on exotels",
+    "question_length": 165,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6722,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      }
+    ],
+    "answer_length": 176
   }
 ]
