@@ -27919,5 +27919,39 @@
       }
     ],
     "answer_length": 1382
+  },
+  {
+    "timestamp": "2026-08-28T16:15:03.832Z",
+    "response_id": "7f11af53-30a5-4bfd-8d5b-db3ba38e194d",
+    "question": "i would like a martinique phone number",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3205,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 514
   }
 ]
