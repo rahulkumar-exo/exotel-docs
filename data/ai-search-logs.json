@@ -27579,5 +27579,39 @@
       }
     ],
     "answer_length": 1429
+  },
+  {
+    "timestamp": "2026-08-28T07:59:45.232Z",
+    "response_id": "072fb292-870c-4d17-8a2c-56909463caba",
+    "question": "I want to make a qr that lets people call the owner of the vehicle on parking lots without revealing their identity",
+    "question_length": 115,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 17022,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 2391
   }
 ]
