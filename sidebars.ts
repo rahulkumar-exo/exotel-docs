@@ -354,6 +354,10 @@ const sidebars: SidebarsConfig = {
 
   mcpServerSidebar: [
     'mcp-server/overview',
+    'mcp-server/use-cases',
+    'mcp-server/tools-reference',
+    'mcp-server/security',
+    'mcp-server/troubleshooting',
   ],
 
   useCasesSidebar: [

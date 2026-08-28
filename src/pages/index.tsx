@@ -106,6 +106,11 @@ const quickLinks = [
     link: '/docs/voice-v1/quickstart',
   },
   {
+    title: '🤖 Connect AI Clients (MCP)',
+    description: 'Use Exotel from Claude, Cursor, and VS Code',
+    link: '/docs/mcp-server/overview',
+  },
+  {
     title: '🔐 Authentication',
     description: 'API credentials & security',
     link: '/docs/references/authentication',
@@ -280,6 +285,7 @@ function ProductCards() {
           {products.map((product) => (
             <div key={product.title} className={`${styles.productCard} ${!product.available ? styles.productCardDisabled : ''}`}>
               {!product.available && <span className={styles.comingSoon}>Coming Soon</span>}
+              {product.available && (product as any).badge && <span className={styles.comingSoon}>{(product as any).badge}</span>}
               <Heading as="h3" className={styles.productCardTitle}>{product.title}</Heading>
               <p className={styles.productCardDescription}>{product.description}</p>
               {product.available && (
