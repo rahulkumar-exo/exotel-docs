@@ -27031,5 +27031,39 @@
       }
     ],
     "answer_length": 996
+  },
+  {
+    "timestamp": "2026-08-28T05:11:47.595Z",
+    "response_id": "5d34fbcf-e9a3-42fc-ba08-89a3573d09ac",
+    "question": "how to configure the webhook in exotel",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2738,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      }
+    ],
+    "answer_length": 858
   }
 ]
