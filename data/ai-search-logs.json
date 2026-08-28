@@ -27613,5 +27613,39 @@
       }
     ],
     "answer_length": 2391
+  },
+  {
+    "timestamp": "2026-08-28T08:07:50.549Z",
+    "response_id": "9d1c2909-ebe4-4a39-86c6-bea805ad5445",
+    "question": "to test sms what prerequirement i needed currently im on the trial plan in exotel what to do",
+    "question_length": 92,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6440,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 2531
   }
 ]
