@@ -28157,5 +28157,39 @@
       }
     ],
     "answer_length": 1318
+  },
+  {
+    "timestamp": "2026-08-29T06:37:20.810Z",
+    "response_id": "dd1a3ed2-f936-4478-8442-e25deb0e9d39",
+    "question": "dial whom",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4865,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Call Details (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details.mdx"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      },
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer.mdx"
+      }
+    ],
+    "answer_length": 2766
   }
 ]
