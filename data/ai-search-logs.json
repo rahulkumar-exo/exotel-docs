@@ -28275,5 +28275,39 @@
       }
     ],
     "answer_length": 4195
+  },
+  {
+    "timestamp": "2026-08-29T17:17:30.620Z",
+    "response_id": "208c66b0-a279-4bf3-8e2a-3ae10dd77662",
+    "question": "hey i am building an voice agent soo we need exotel integration to provide  numbers to the users so where do we get api",
+    "question_length": 119,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4376,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 655
   }
 ]
