@@ -28241,5 +28241,39 @@
       }
     ],
     "answer_length": 1562
+  },
+  {
+    "timestamp": "2026-08-29T09:41:42.855Z",
+    "response_id": "73de53e4-03f3-43b6-b868-e8a00aa24443",
+    "question": "call detail",
+    "question_length": 11,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12358,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "CDR (Call Detail Records)",
+        "product": "reporting",
+        "url": "/docs/reporting/cdr-reports"
+      }
+    ],
+    "answer_length": 4195
   }
 ]
