@@ -28207,5 +28207,39 @@
     "response_time_ms": 1603,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-08-29T08:42:15.892Z",
+    "response_id": "4111f24d-707a-418b-a8b2-ce0ba6ff526d",
+    "question": "outgoing calls to connect 2 numbers",
+    "question_length": 35,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3554,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Voice v1",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/overview"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      }
+    ],
+    "answer_length": 1562
   }
 ]
