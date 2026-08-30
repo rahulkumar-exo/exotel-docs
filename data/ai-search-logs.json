@@ -28411,5 +28411,39 @@
       }
     ],
     "answer_length": 1376
+  },
+  {
+    "timestamp": "2026-08-30T07:57:02.765Z",
+    "response_id": "398c8c95-fbae-461b-96e0-6bd5b6c60e60",
+    "question": "I want to build a system where client upload data on my platform and BOT will do the called callling and assigns leads according to the response",
+    "question_length": 144,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11668,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 3088
   }
 ]
