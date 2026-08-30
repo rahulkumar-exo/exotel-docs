@@ -28581,5 +28581,39 @@
       }
     ],
     "answer_length": 4815
+  },
+  {
+    "timestamp": "2026-08-30T12:18:47.502Z",
+    "response_id": "1149c1df-2945-45c3-aae1-1a88600a804d",
+    "question": "Without co",
+    "question_length": 10,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4844,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Settings",
+        "product": "chatbot",
+        "url": "/docs/chatbot/settings"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms.mdx"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      }
+    ],
+    "answer_length": 2189
   }
 ]
