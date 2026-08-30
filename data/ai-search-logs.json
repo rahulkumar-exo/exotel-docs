@@ -28445,5 +28445,39 @@
       }
     ],
     "answer_length": 3088
+  },
+  {
+    "timestamp": "2026-08-30T07:58:03.330Z",
+    "response_id": "f80a08f0-9182-41ed-affe-be7a999483d3",
+    "question": "can i use Contact Center API",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6530,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Contact Center APIs v6",
+        "product": "contact-center",
+        "url": "/docs/contact-center/overview"
+      },
+      {
+        "title": "Login",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login.mdx"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts.mdx"
+      }
+    ],
+    "answer_length": 2008
   }
 ]
