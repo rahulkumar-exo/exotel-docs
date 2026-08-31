@@ -106,5 +106,14 @@
     "answer_excerpt": "This looks like something our team can help you with directly. Please write to **hello@exotel.com** with your question and one of our team members will get back to you shortly.",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2026-08-31T07:52:31.565Z",
+    "response_id": "b95601a0-ca76-4aa7-a097-1494bcf26b3a",
+    "vote": "down",
+    "question": "I need to make a call to customer care",
+    "answer_excerpt": "This looks like something our team can help you with directly. Please write to **hello@exotel.com** with your question and one of our team members will get back to you shortly.",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Mobile Safari/537.36"
   }
 ]

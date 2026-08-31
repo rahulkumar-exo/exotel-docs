@@ -256,41 +256,6 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
-  contactCenterSidebar: [
-    'contact-center/overview',
-    {
-      type: 'category',
-      label: 'API Reference',
-      collapsed: false,
-      items: [
-        'contact-center/api-reference/token-generation',
-        'contact-center/api-reference/make-call',
-        'contact-center/api-reference/call-details',
-        'contact-center/api-reference/upload-contacts',
-        'contact-center/api-reference/error-file-retrieval',
-        'contact-center/api-reference/get-all-processes',
-        'contact-center/api-reference/get-all-campaigns',
-        'contact-center/api-reference/get-campaign-leads',
-        'contact-center/api-reference/assign-users-to-lead',
-        'contact-center/api-reference/get-assigned-users',
-      ],
-    },
-  ],
-
-  contactCenterV4Sidebar: [
-    'contact-center-v4/overview',
-    {
-      type: 'category',
-      label: 'API Reference',
-      collapsed: false,
-      items: [
-        'contact-center-v4/api-reference/login',
-        'contact-center-v4/api-reference/manage-users',
-        'contact-center-v4/api-reference/customer-callbacks',
-        'contact-center-v4/api-reference/voicelogs',
-      ],
-    },
-  ],
 
   legsSidebar: [
     'legs/overview',
@@ -339,18 +304,6 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
-  genAiSidebar: [
-    'gen-ai/overview',
-    {
-      type: 'category',
-      label: 'API Reference',
-      collapsed: false,
-      items: [
-        'gen-ai/api-reference/exovoice-analyze',
-        'gen-ai/api-reference/exomind-tasker',
-      ],
-    },
-  ],
 
   agentStreamSidebar: [
     'agentstream/overview',
