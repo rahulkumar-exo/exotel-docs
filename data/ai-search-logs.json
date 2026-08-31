@@ -28887,5 +28887,39 @@
       }
     ],
     "answer_length": 1987
+  },
+  {
+    "timestamp": "2026-08-31T07:25:33.814Z",
+    "response_id": "49e00cc3-3db8-4b37-8b03-ad0e68a460fd",
+    "question": "https://exomind.exotel.com/api/v1/exotasks",
+    "question_length": 42,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3466,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoMind Tasker",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/api-reference/exomind-tasker"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 1380
   }
 ]
