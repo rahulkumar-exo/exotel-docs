@@ -29091,5 +29091,39 @@
       }
     ],
     "answer_length": 2649
+  },
+  {
+    "timestamp": "2026-08-31T14:59:50.977Z",
+    "response_id": "c9c2aac2-d672-4b97-a229-4b5a9d83fdc3",
+    "question": "using mcp tool integartion",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10278,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bring Your Own MCP",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/mcp-integration.mdx"
+      },
+      {
+        "title": "VoiceBot Tools Server",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/overview.mdx"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      }
+    ],
+    "answer_length": 5188
   }
 ]
