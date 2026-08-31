@@ -12,12 +12,27 @@ The Exotel MCP server exposes the following [MCP tools](https://modelcontextprot
 
 ## Setup helpers
 
-Work without any credentials.
+These two tools run even when the `Authorization` header has no product fields.
 
 | Tool | Description |
 |------|-------------|
 | `exotel_setup_guide` | Shows product-by-product setup instructions and which products your current credentials enable. |
-| `exotel_build_config` | Generates a ready-to-paste MCP config for `cursor` or `claude`, scoped to `cpaas`, `voicebot`, and / or `cqa`. |
+| `exotel_build_config` | Prints a ready-to-paste MCP config for `cursor` or `claude`, scoped to `cpaas`, `voicebot`, and / or `cqa`. |
+
+### Build a config for another client
+
+`exotel_build_config` does not connect you. Use it after at least one client can reach the server.
+
+Ask for the client and the products. Do not put the API key, token, or base URL in the prompt.
+
+> Generate a Cursor MCP config for CPaaS only.
+
+The tool takes a client (`cursor` or `claude`) and a product list. It does not take credentials as arguments.
+
+- If the current connection already has an `Authorization` header, the printed config reuses those fields.
+- If the header has no product fields, the output uses placeholders. You fill them in, then paste the block into the other client's config file.
+
+This copies a working setup to another client. It is not a first-time login, and it does not hide secrets. Treat the printed block like any other config file. See [Security](/docs/mcp-server/security).
 
 ## CPaaS
 

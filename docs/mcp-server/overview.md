@@ -1,12 +1,12 @@
 ---
 id: overview
-title: Exotel MCP server
+title: Exotel MCP Server
 description: Let your AI agents interact with Exotel through the Model Context Protocol server. 62 tools covering voice, SMS, VoiceBot, and Conversational Intelligence, available to any MCP-compatible client.
 sidebar_label: Overview
 slug: /mcp-server/overview
 ---
 
-# Exotel MCP server
+# Exotel MCP Server
 
 The Exotel [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server gives AI agents a set of tools they can invoke on your Exotel account. Once you connect a client (Claude, Cursor, VS Code, Windsurf, Claude Code), the agent can place calls, send SMS, manage VoiceBots, pull transcripts, and run Conversational Intelligence.
 
@@ -77,7 +77,11 @@ The minimum-viable JSON auth header (CPaaS only) is:
 {"token":"BASE64_OF_APIKEY_APITOKEN","from_number":"YOUR_EXOTEL_NUMBER","caller_id":"YOUR_EXOTEL_NUMBER","account_sid":"YOUR_ACCOUNT_SID","api_domain":"https://api.in.exotel.com","exotel_portal_url":"https://my.exotel.com"}
 ```
 
+Do not put the API key or token in source code. Store the JSON in an environment variable or a secrets manager. See [Security](/docs/mcp-server/security).
+
 Add VoiceBot or CQA fields to the same JSON when you want those products enabled.
+
+Once one client is connected, you can ask it for a config for another client. See [Tools → Build a config for another client](/docs/mcp-server/tools-reference#build-a-config-for-another-client).
 
 ### Cursor
 

@@ -71,13 +71,33 @@ The `CallSid` is your reference for everything downstream: quality analysis, cal
 
 This assumes you already created a quality profile with `exotel_cqa_create_quality_profile` and an assignment rule that routes inbound customer-support calls to it.
 
-## Other workflows
+## Send a ticket update by SMS
 
-Other patterns people have built as a single prompt:
+A support agent has a closed ticket and needs to tell the customer. They already have a DLT-approved template. They ask the client to send that template to the customer's number.
 
-- Warm-transfer flows where a bot qualifies the caller, then bridges to a human agent based on intent.
-- Weekly quality reports that bulk-ingest calls into CQA, summarize KPI trends, and email the digest.
-- Number reputation checks that pull `exotel_number_get_metadata` before deciding routing.
-- Campaign postmortems that match SMS delivery status against your CRM's response rate.
+**Prompt to your AI client:**
+
+> Send our approved `ticket_update` template to +91XXXXXXXXXX. Set `ticket_id` to TCK-1842. Tell me when Exotel accepts the message.
+
+**What the agent does:**
+
+1. Calls `exotel_sms_send_single` with the template ID, the destination number, and the `ticket_id` value.
+2. Returns the SMS SID if Exotel accepts the request. If DLT rejects it (wrong template, DND, header mismatch), the agent quotes the reason.
+
+If the customer later says the message never arrived, ask the client to check that SMS SID with `exotel_sms_get_delivery_status`.
+
+## Hear the last call with a customer
+
+A customer says an agent promised a refund this morning. Before you call them back, you want to hear that conversation.
+
+**Prompt to your AI client:**
+
+> Find this morning's inbound call from +91XXXXXXXXXX. Tell me how long it lasted and give me a link to play the recording.
+
+**What the agent does:**
+
+1. Calls `exotel_voice_search_callbacks_by_number` or `exotel_voice_get_bulk_call_details` with that number and today's date.
+2. Picks the matching inbound call and calls `exotel_voice_get_single_call_details`.
+3. If a recording exists, wraps the URL with `exotel_audio_play_from_url`.
 
 See the [tools reference](/docs/mcp-server/tools-reference) for the full menu.

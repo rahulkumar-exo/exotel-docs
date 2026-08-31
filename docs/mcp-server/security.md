@@ -8,7 +8,7 @@ sidebar_position: 4
 
 # Security
 
-The MCP server's only authentication is a JSON `Authorization` header carrying your Exotel API credentials. Treat it like any long-lived API secret. Keep it out of source control. Rotate it when a team member leaves. Give each agent only the products it needs.
+The MCP server's only authentication is a JSON `Authorization` header carrying your Exotel API credentials. Treat it like any long-lived API secret. Keep it out of source control. Give each agent only the products it needs.
 
 ## Authentication model
 
@@ -24,7 +24,7 @@ On every request, the server parses the JSON and forwards the relevant credentia
 
 Three limits are worth knowing before you deploy this in production:
 
-- **No OAuth today.** The MCP specification (2025-06-18) recommends OAuth 2.1 for remote servers. Exotel is tracking client-side support and will add OAuth once major MCP clients implement it.
+- **No OAuth today.** Auth is the JSON `Authorization` header. The MCP specification (2025-06-18) defines OAuth 2.1 for HTTP MCP when a server uses the spec's authorization profile. Exotel MCP does not implement that profile.
 - **No scopes or per-tool permissions.** A valid header can call every tool for the products it configures. If you need "SMS-send only" or "read-only VoiceBot" access, use separate Exotel API keys per agent, or separate accounts for dev and prod.
 - **Revocation means rotation.** There is no "disconnect this integration" button. To invalidate a leaked header, rotate the underlying API keys at [my.exotel.com](https://my.exotel.com) and update every client that used them.
 
@@ -228,17 +228,6 @@ Exotel's MCP server routes calls to the standard Exotel APIs: `api.in.exotel.com
 
 For India-hosted accounts, set `api_domain` to `https://api.in.exotel.com` so voice and SMS traffic terminates in Mumbai. For globally-hosted accounts, use `https://api.exotel.com`. VoiceBot and CQA endpoints follow the same pattern.
 
-## Audit trail
-
-Every tool call the MCP server executes lands as an ordinary API call in your Exotel dashboards:
-
-- **Voice calls.** [my.exotel.com](https://my.exotel.com) → Calls → App Details
-- **SMS.** [my.exotel.com](https://my.exotel.com) → SMS → Details
-- **VoiceBot sessions.** VoiceBot Dashboard → Sessions
-- **CQA ingestions and analyses.** CQA Console → Interactions
-
-The dashboards show which API key initiated each action, so per-agent keys give you agent-level audit trails.
-
 ## Reporting security issues
 
-Email [hello@exotel.com](mailto:hello@exotel.com) with the subject **Security disclosure — MCP server**. Do not open a public issue in [github.com/exotel/ExotelMCP](https://github.com/exotel/ExotelMCP).
+Email [hello@exotel.com](mailto:hello@exotel.com) with the subject **Security disclosure — MCP server**.
