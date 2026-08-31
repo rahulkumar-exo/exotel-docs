@@ -28853,5 +28853,39 @@
       }
     ],
     "answer_length": 1159
+  },
+  {
+    "timestamp": "2026-08-31T07:25:20.724Z",
+    "response_id": "78a42b17-9c38-4ec7-b68c-6b88628bd49e",
+    "question": "api.exotel.com/v1/Accounts/",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5075,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoVoiceAnalyze",
+        "product": "gen-ai",
+        "url": "/docs/gen-ai/api-reference/exovoice-analyze"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      },
+      {
+        "title": "Bulk SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/bulk-sms.mdx"
+      }
+    ],
+    "answer_length": 1987
   }
 ]
