@@ -232,7 +232,7 @@ See [Unicode SMS](/docs/sms-support/unicode-sms) for encoding details and charac
 Once a template is approved, use it with the Exotel API by passing the `DltTemplateId`:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "From=EXOTL" \
   -d "To=+919876543210" \
   -d "Body=Your OTP is 456789. It is valid for 10 minutes. Do not share it with anyone. - Exotel" \

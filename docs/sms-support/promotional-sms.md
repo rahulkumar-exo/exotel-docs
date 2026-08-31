@@ -45,7 +45,7 @@ Promotional SMS sent outside the 9 AM -- 9 PM window will be queued by the opera
 Use the [Send SMS API](/docs/sms-api/api-reference/send-sms) with `SmsType=promotional`:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "From=777888" \
   -d "To=+919876543210" \
   -d "Body=Flash Sale! Flat 50% off on all electronics. Shop now at example.com. Reply STOP to opt out." \

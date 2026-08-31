@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import styles from './styles.module.css';
 
 interface ApiParam {
@@ -53,6 +53,46 @@ function hostForRegion(kind: 'api' | 'ccm', mumbai: boolean) {
   return mumbai ? 'api.in.exotel.com' : 'api.exotel.com';
 }
 
+function filledParams(
+  paramValues: Record<string, string>,
+  pathParamNames: string[],
+): [string, string][] {
+  return Object.entries(paramValues).filter(([key, value]) => value !== '' && !pathParamNames.includes(key));
+}
+
+function queryStringFrom(pairs: [string, string][]): string {
+  if (pairs.length === 0) {
+    return '';
+  }
+  return '?' + pairs.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&');
+}
+
+function requestBodyFrom(
+  method: string,
+  contentType: 'form' | 'json',
+  pairs: [string, string][],
+  params: ApiParam[],
+): { jsonBody?: Record<string, unknown>; bodyData?: string; bodyContentType?: string } {
+  if (method === 'GET' || pairs.length === 0) {
+    return {};
+  }
+  if (contentType === 'json') {
+    const jsonBody: Record<string, unknown> = {};
+    pairs.forEach(([key, value]) => {
+      jsonBody[key] = coerceParamValue(params.find((param) => param.name === key), value);
+    });
+    return {
+      jsonBody,
+      bodyData: JSON.stringify(jsonBody),
+      bodyContentType: 'application/json',
+    };
+  }
+  return {
+    bodyData: pairs.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&'),
+    bodyContentType: 'application/x-www-form-urlencoded',
+  };
+}
+
 function coerceParamValue(paramDef: ApiParam | undefined, value: string): unknown {
   if (paramDef?.type === 'number') return Number(value);
   if (paramDef?.type === 'boolean') return value === 'true';
@@ -70,7 +110,12 @@ function coerceParamValue(paramDef: ApiParam | undefined, value: string): unknow
   return value;
 }
 
-export default function ApiConsole({ method, path, params = [], contentType = 'form', host = 'api' }: ApiConsoleProps) {
+export default function ApiConsole(props: ApiConsoleProps) {
+  return <ApiConsoleInner key={`${props.host}-${props.method}-${props.path}`} {...props} />;
+}
+
+function ApiConsoleInner({ method, path, params = [], contentType = 'form', host = 'api' }: ApiConsoleProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [creds, setCreds] = useState<Credentials>(loadCredentials);
   const [showCreds, setShowCreds] = useState(false);
@@ -89,27 +134,28 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
     }
   }, [isOpen]);
 
-  // Listen for "Try it live" banner click to auto-open
+  // Open only the console on this page, not a leftover from the last page.
   useEffect(() => {
-    const handleTryItOpen = () => {
+    const handleTryItOpen = (event: Event) => {
+      const target = (event as CustomEvent<HTMLElement | undefined>).detail;
+      if (target && target !== rootRef.current) {
+        return;
+      }
       setIsOpen(true);
     };
     window.addEventListener('tryit-open', handleTryItOpen);
     return () => window.removeEventListener('tryit-open', handleTryItOpen);
   }, []);
 
-  // Initialize default param values (only once — deps-stable via JSON key)
   const paramsKey = JSON.stringify(params.map((p) => [p.name, p.defaultValue]));
   useEffect(() => {
     const defaults: Record<string, string> = {};
     params.forEach((p) => {
       if (p.defaultValue) defaults[p.name] = p.defaultValue;
     });
-    setParamValues((prev) => {
-      const next = { ...defaults, ...prev };
-      const changed = Object.keys(next).some((k) => next[k] !== prev[k]);
-      return changed ? next : prev;
-    });
+    setParamValues(defaults);
+    setResponse('');
+    setStatusCode(null);
   }, [paramsKey]);
 
   const updateCreds = useCallback((field: keyof Credentials, value: string) => {
@@ -119,6 +165,26 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
       return next;
     });
   }, []);
+
+  useEffect(() => {
+    const onRegion = (event: Event) => {
+      const regionId = (event as CustomEvent<{regionId?: string}>).detail?.regionId;
+      if (regionId !== 'mumbai' && regionId !== 'singapore') {
+        return;
+      }
+      const nextHost = hostForRegion(host, regionId === 'mumbai');
+      setCreds((prev) => {
+        if (hostForRegion(host, isMumbai(prev.subdomain)) === nextHost) {
+          return prev;
+        }
+        const next = { ...prev, subdomain: nextHost };
+        saveCredentials(next);
+        return next;
+      });
+    };
+    window.addEventListener('exotel-region-change', onRegion);
+    return () => window.removeEventListener('exotel-region-change', onRegion);
+  }, [host]);
 
   // Detect which params are URL path params (appear as {param_name} in the path)
   const pathParamNames = (path.match(/\{(\w+)\}/g) || [])
@@ -145,26 +211,15 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
       ? ` \\\n  -u "${creds.apiKey}:${creds.apiToken}"`
       : '';
 
-    // Exclude path params from body/query — they're already in the URL
-    const filledParams = Object.entries(paramValues)
-      .filter(([k, v]) => v !== '' && !pathParamNames.includes(k));
+    const pairs = filledParams(paramValues, pathParamNames);
+    const queryString = method === 'GET' ? queryStringFrom(pairs) : '';
+    const { jsonBody, bodyContentType } = requestBodyFrom(method, contentType, pairs, params);
 
     let body = '';
-    if (method !== 'GET' && filledParams.length > 0) {
-      if (contentType === 'json') {
-        const obj: Record<string, unknown> = {};
-        filledParams.forEach(([k, v]) => {
-          obj[k] = coerceParamValue(params.find((p) => p.name === k), v);
-        });
-        body = ` \\\n  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify(obj, null, 2)}'`;
-      } else {
-        body = filledParams.map(([k, v]) => ` \\\n  -d '${k}=${v}'`).join('');
-      }
-    }
-
-    let queryString = '';
-    if (method === 'GET' && filledParams.length > 0) {
-      queryString = '?' + filledParams.map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
+    if (bodyContentType === 'application/json' && jsonBody) {
+      body = ` \\\n  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify(jsonBody, null, 2)}'`;
+    } else if (bodyContentType === 'application/x-www-form-urlencoded') {
+      body = pairs.map(([key, value]) => ` \\\n  -d '${key}=${value}'`).join('');
     }
 
     return `curl -X ${method} '${url}${queryString}'${authPart}${body}`;
@@ -186,29 +241,10 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
     setActiveTab('response');
 
     try {
-      const filledParams = Object.entries(paramValues)
-        .filter(([k, v]) => v !== '' && !pathParamNames.includes(k));
+      const pairs = filledParams(paramValues, pathParamNames);
       const resolvedPath = resolvePathParams(path, paramValues);
-
-      let queryString = '';
-      let bodyData: string | undefined;
-      let bodyContentType: string | undefined;
-
-      if (method === 'GET' && filledParams.length > 0) {
-        queryString = '?' + filledParams.map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
-      } else if (method !== 'GET' && filledParams.length > 0) {
-        if (contentType === 'json') {
-          const obj: Record<string, unknown> = {};
-          filledParams.forEach(([k, v]) => {
-            obj[k] = coerceParamValue(params.find((p) => p.name === k), v);
-          });
-          bodyData = JSON.stringify(obj);
-          bodyContentType = 'application/json';
-        } else {
-          bodyData = filledParams.map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
-          bodyContentType = 'application/x-www-form-urlencoded';
-        }
-      }
+      const queryString = method === 'GET' ? queryStringFrom(pairs) : '';
+      const { bodyData, bodyContentType } = requestBodyFrom(method, contentType, pairs, params);
 
       const res = await fetch('/api/proxy', {
         method: 'POST',
@@ -224,10 +260,25 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
         }),
       });
 
-      const data = await res.json();
+      const raw = await res.text();
+      let data: { status?: number; body?: string; error?: string };
+      try {
+        data = JSON.parse(raw);
+      } catch {
+        setStatusCode(res.status);
+        setResponse(
+          'The Try It proxy is not available on this page load. Restart the local docs server, or try again on the deployed site.',
+        );
+        return;
+      }
+      if (data.error && data.body === undefined) {
+        setStatusCode(res.status);
+        setResponse(data.error);
+        return;
+      }
       setStatusCode(data.status || res.status);
       try {
-        setResponse(JSON.stringify(JSON.parse(data.body), null, 2));
+        setResponse(JSON.stringify(JSON.parse(data.body || ''), null, 2));
       } catch {
         setResponse(data.body || JSON.stringify(data, null, 2));
       }
@@ -250,7 +301,12 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
   const hasRequiredCreds = creds.apiKey && creds.apiToken && creds.accountSid;
 
   return (
-    <div className={styles.console} id="try-it">
+    <div
+      ref={rootRef}
+      className={styles.console}
+      id={`try-it-${method}-${path.replace(/[^a-zA-Z0-9]+/g, '-')}`}
+      data-try-it-console=""
+    >
       <button
         className={`${styles.toggleBtn} ${isOpen ? styles.toggleBtnOpen : ''}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -308,7 +364,14 @@ export default function ApiConsole({ method, path, params = [], contentType = 'f
                     <label>Subdomain</label>
                     <select
                       value={requestHost}
-                      onChange={(e) => updateCreds('subdomain', e.target.value)}
+                      onChange={(e) => {
+                        updateCreds('subdomain', e.target.value);
+                        window.dispatchEvent(
+                          new CustomEvent('exotel-region-change', {
+                            detail: { regionId: isMumbai(e.target.value) ? 'mumbai' : 'singapore' },
+                          }),
+                        );
+                      }}
                     >
                       <option value={hostForRegion(host, false)}>
                         {hostForRegion(host, false)} (Singapore)

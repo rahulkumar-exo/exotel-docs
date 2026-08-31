@@ -61,12 +61,53 @@ Use `api.exotel.com` (Singapore) for most accounts, or `api.in.exotel.com` (Mumb
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -X POST "https://$EXOTEL_API_KEY:$EXOTEL_API_TOKEN@$EXOTEL_SUBDOMAIN/v1/Accounts/$EXOTEL_ACCOUNT_SID/Sms/send" \
+curl -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v1/Accounts/$EXOTEL_ACCOUNT_SID/Sms/send" \
   -d "From=EXOTEL" \
   -d "To=+919876543210" \
   -d "Body=Hello from Exotel! Your OTP is 123456" \
   -d "DltEntityId=YOUR_DLT_ENTITY_ID" \
   -d "DltTemplateId=YOUR_DLT_TEMPLATE_ID"
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+# send_sms.py
+import os
+import requests
+
+api_key = os.environ['EXOTEL_API_KEY']
+api_token = os.environ['EXOTEL_API_TOKEN']
+account_sid = os.environ['EXOTEL_ACCOUNT_SID']
+subdomain = os.environ.get('EXOTEL_SUBDOMAIN', 'api.exotel.com')
+
+url = f'https://{subdomain}/v1/Accounts/{account_sid}/Sms/send'
+
+data = {
+    'From': 'EXOTEL',
+    'To': '+919876543210',
+    'Body': 'Hello from Exotel! Your OTP is 123456',
+    'DltEntityId': 'YOUR_DLT_ENTITY_ID',
+    'DltTemplateId': 'YOUR_DLT_TEMPLATE_ID',
+}
+
+response = requests.post(url, data=data, auth=(api_key, api_token))
+
+if response.ok:
+    result = response.json()
+    print('SMS sent successfully!')
+    print('SMS SID:', result['SMSMessage']['Sid'])
+    print('Status:', result['SMSMessage']['Status'])
+else:
+    print('Failed:', response.text)
+```
+
+Run with:
+```bash
+pip install requests
+python send_sms.py
 ```
 
 </TabItem>
@@ -123,43 +164,78 @@ node send-sms.js
 ```
 
 </TabItem>
-<TabItem value="python" label="Python">
+<TabItem value="php" label="PHP">
 
-```python
-# send_sms.py
-import os
-import requests
+```php
+<?php
+$apiKey = getenv('EXOTEL_API_KEY');
+$apiToken = getenv('EXOTEL_API_TOKEN');
+$accountSid = getenv('EXOTEL_ACCOUNT_SID');
+$subdomain = getenv('EXOTEL_SUBDOMAIN') ?: 'api.exotel.com';
 
-api_key = os.environ['EXOTEL_API_KEY']
-api_token = os.environ['EXOTEL_API_TOKEN']
-account_sid = os.environ['EXOTEL_ACCOUNT_SID']
-subdomain = os.environ.get('EXOTEL_SUBDOMAIN', 'api.exotel.com')
+$data = array(
+    'From' => 'EXOTEL',
+    'To' => '+919876543210',
+    'Body' => 'Hello from Exotel! Your OTP is 123456',
+    'DltEntityId' => 'YOUR_DLT_ENTITY_ID',
+    'DltTemplateId' => 'YOUR_DLT_TEMPLATE_ID',
+);
 
-url = f'https://{subdomain}/v1/Accounts/{account_sid}/Sms/send'
+$ch = curl_init("https://{$subdomain}/v1/Accounts/{$accountSid}/Sms/send");
+curl_setopt($ch, CURLOPT_USERPWD, "{$apiKey}:{$apiToken}");
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-data = {
-    'From': 'EXOTEL',
-    'To': '+919876543210',
-    'Body': 'Hello from Exotel! Your OTP is 123456',
-    'DltEntityId': 'YOUR_DLT_ENTITY_ID',
-    'DltTemplateId': 'YOUR_DLT_TEMPLATE_ID',
-}
+$response = curl_exec($ch);
+curl_close($ch);
 
-response = requests.post(url, data=data, auth=(api_key, api_token))
-
-if response.ok:
-    result = response.json()
-    print('SMS sent successfully!')
-    print('SMS SID:', result['SMSMessage']['Sid'])
-    print('Status:', result['SMSMessage']['Status'])
-else:
-    print('Failed:', response.text)
+echo $response;
+?>
 ```
 
-Run with:
-```bash
-pip install requests
-python send_sms.py
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "net/url"
+    "os"
+    "strings"
+)
+
+func main() {
+    apiKey := os.Getenv("EXOTEL_API_KEY")
+    apiToken := os.Getenv("EXOTEL_API_TOKEN")
+    accountSid := os.Getenv("EXOTEL_ACCOUNT_SID")
+    subdomain := os.Getenv("EXOTEL_SUBDOMAIN")
+    if subdomain == "" {
+        subdomain = "api.exotel.com"
+    }
+
+    endpoint := fmt.Sprintf("https://%s/v1/Accounts/%s/Sms/send", subdomain, accountSid)
+    data := url.Values{}
+    data.Set("From", "EXOTEL")
+    data.Set("To", "+919876543210")
+    data.Set("Body", "Hello from Exotel! Your OTP is 123456")
+    data.Set("DltEntityId", "YOUR_DLT_ENTITY_ID")
+    data.Set("DltTemplateId", "YOUR_DLT_TEMPLATE_ID")
+
+    req, _ := http.NewRequest("POST", endpoint, strings.NewReader(data.Encode()))
+    req.SetBasicAuth(apiKey, apiToken)
+    req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
 ```
 
 </TabItem>
@@ -200,7 +276,8 @@ A `200` response means the SMS was **accepted**, not **delivered**. The `Status`
 Check if your SMS was delivered using the `Sid` from Step 3:
 
 ```bash
-curl "https://$EXOTEL_API_KEY:$EXOTEL_API_TOKEN@$EXOTEL_SUBDOMAIN/v1/Accounts/$EXOTEL_ACCOUNT_SID/SMS/Messages/YOUR_SMS_SID.json"
+curl -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v1/Accounts/$EXOTEL_ACCOUNT_SID/SMS/Messages/YOUR_SMS_SID.json"
 ```
 
 Look for `"DetailedStatus": "DELIVERED_TO_HANDSET"` in the response.

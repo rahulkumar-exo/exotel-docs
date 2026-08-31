@@ -12,7 +12,7 @@ Analyze call recordings to extract transcripts, summaries, sentiment, and busine
 ## HTTP Request
 
 ```
-POST http://<API_Key>:<API_Token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/<call_sid>/ExoVoiceAnalyze.json
+POST https://api.exotel.com/v1/Accounts/<account_sid>/Calls/<call_sid>/ExoVoiceAnalyze.json
 ```
 
 ## Prerequisites

@@ -102,7 +102,7 @@ Call recording captures audio from both parties (agent and customer) and stores 
 
 ```bash
 # Get call details with recording URL
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>"
 ```
 
 The response includes a `recording_url` field with a time-limited download URL.

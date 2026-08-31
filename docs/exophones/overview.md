@@ -25,7 +25,7 @@ ExoPhones are virtual phone numbers provided by Exotel that enable your business
 | Mumbai | `@api.in.exotel.com` |
 
 ```
-https://<api_key>:<api_token>@<subdomain>/v2_beta/Accounts/<account_sid>/
+https://<subdomain>/v2_beta/Accounts/<account_sid>/
 ```
 
 ## Authentication

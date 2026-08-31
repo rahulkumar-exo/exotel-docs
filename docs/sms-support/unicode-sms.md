@@ -70,7 +70,7 @@ Dear ग्राहक, आपका order #12345 ship हो गया है�
 Set the `EncodingType` parameter to `unicode` when sending via the [Send SMS API](/docs/sms-api/api-reference/send-sms):
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "From=EXOTL" \
   -d "To=+919876543210" \
   -d "Body=आपका OTP 123456 है। इसे किसी के साथ साझा न करें।" \

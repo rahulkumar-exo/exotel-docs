@@ -46,7 +46,7 @@ All calls routed through this Connect applet will now be recorded.
 When making outbound calls using the API, include the `Record` parameter:
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<agent_number>' \
   -d 'To=<customer_number>' \
   -d 'CallerId=<exophone>' \
@@ -80,7 +80,7 @@ Contact your Exotel account manager to enable recording by default for all calls
 Use the [Call Details API](/docs/voice-v1/api-reference/call-details) to fetch the recording URL:
 
 ```bash
-curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/<call_sid>.json'
+curl -u '<api_key>:<api_token>' 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/<call_sid>.json'
 ```
 
 The response includes:
@@ -144,11 +144,11 @@ For compliance scenarios where sensitive information (e.g., credit card numbers)
 
 ```bash
 # Pause recording
-curl -X PUT 'https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>/recording' \
+curl -u '<api_key>:<api_token>' -X PUT 'https://api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>/recording' \
   -d 'Status=paused'
 
 # Resume recording
-curl -X PUT 'https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>/recording' \
+curl -X PUT 'https://api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>/recording' \
   -d 'Status=in-progress'
 ```
 

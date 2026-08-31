@@ -73,7 +73,7 @@ number,first_name,order_id,tracking_url,company_name
 ### Upload the Contact List
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/contacts/csv-upload" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/contacts/csv-upload" \
   -F "list_name=Order_Shipment_Feb" \
   -F "file_name=@contacts.csv" \
   -F "type=static"
@@ -82,7 +82,7 @@ curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_
 For dynamic (personalized) campaigns, set `type=dynamic`:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/contacts/csv-upload" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/contacts/csv-upload" \
   -F "list_name=Personalized_Shipment_Feb" \
   -F "file_name=@contacts.csv" \
   -F "type=dynamic"
@@ -209,7 +209,7 @@ Set up webhook URLs to receive delivery status updates:
 Combine all settings into the API request:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms-campaigns" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns" \
   -H "Content-Type: application/json" \
   -d '{
     "lists": ["list_sid_1"],
@@ -259,13 +259,13 @@ curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_
 ### Check Campaign Status
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>"
 ```
 
 ### Pause the Campaign
 
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "pause"}'
 ```
@@ -273,7 +273,7 @@ curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_s
 ### Resume a Paused Campaign
 
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "resume"}'
 ```

@@ -11,6 +11,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
 # Call Details (v2)
 
@@ -18,18 +19,7 @@ Retrieve detailed information about a specific call made via the Voice v2 (CCM) 
 
 <TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/calls/{call_sid}" />
 
-## Endpoint
-
-```
-GET /v2/accounts/<account_sid>/calls/<call_sid>
-```
-
-### Regional URLs
-
-| Region | URL |
-|--------|-----|
-| Singapore | `https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>` |
-| Mumbai | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>` |
+<RegionalUrls path="/v2/accounts/{account_sid}/calls/{call_sid}" host="ccm" />
 
 ## Path Parameters
 
@@ -43,7 +33,7 @@ GET /v2/accounts/<account_sid>/calls/<call_sid>
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl 'https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>'
+curl -u '<api_key>:<api_token>' 'https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>'
 ```
 
 </TabItem>
@@ -64,14 +54,67 @@ print(response.json())
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const axios = require('axios');
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<account_sid>';
+const callSid = '<call_sid>';
 
-const response = await axios.get(
-  `https://ccm-api.exotel.com/v2/accounts/${accountSid}/calls/${callSid}`,
-  { auth: { username: apiKey, password: apiToken } }
-);
+const url = `https://ccm-api.exotel.com/v2/accounts/${accountSid}/calls/${callSid}`;
 
-console.log(response.data);
+const response = await fetch(url, {
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>",
+  CURLOPT_RETURNTRANSFER => true,
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
 ```
 
 </TabItem>

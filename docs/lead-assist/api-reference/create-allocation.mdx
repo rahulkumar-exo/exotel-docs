@@ -5,6 +5,9 @@ description: Create a VN allocation mapping a-party numbers to b-party numbers u
 sidebar_label: Create Allocation
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Create an Allocation
 
 An allocation request maps a set of numbers (a-party) to another set of numbers (b-party) using a Variable Virtual Number or a GreenVN. Both parties can optionally have pins (any integer number, preferably limited to 6 digits) associated with the allocation to enable new callers (whose numbers were not passed in the allocation request) to join either party at any time by entering the pin when calling for the first time on the VN since it was allocated. If the *usage* parameter is set to *oneway* in the request, only the a-party may call the b-party. For *twoway* usage, both parties can call each other using the GreenVN.
@@ -29,6 +32,9 @@ Replace `<your_sid>` with your tenant ID. The following are the POST parameters:
 | `flow_id` | optional* | A unique identifier of the call flow, which is required to be associated with the VN, at the time of allocation.<br/><br/>*It is required in the allocation request, if there are multiple call flows created at the account level and the expectation is to associate a particular call flow to the allocated VN. |
 
 ## Example Request
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl -X POST \
@@ -61,6 +67,170 @@ curl -X POST \
     }
   }'
 ```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+import json
+
+payload = {
+    "connection_id": "Sample_Connection",
+    "aparty_numbers": ["+91917XXX6528"],
+    "bparty_numbers": ["+9181XXXX6620"],
+    "aparty_pins": [1234],
+    "bparty_pins": [2345],
+    "strictness": "false",
+    "preferences": {"pin_code": "560041"},
+    "usage": "twoway",
+    "flow_id": "44XX8X",
+    "deallocation_policy": {"duration": "600s"},
+}
+
+response = requests.post(
+    'https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn',
+    headers={'Content-Type': 'application/json'},
+    auth=('<username>', '<password>'),
+    data=json.dumps(payload)
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const username = '<username>';
+const password = '<password>';
+const tenantSid = '<your_sid>';
+
+const url = `https://leadassist.exotel.in/v1/tenants/${tenantSid}/greenvn`;
+
+const payload = {
+  connection_id: 'Sample_Connection',
+  aparty_numbers: ['+91917XXX6528'],
+  bparty_numbers: ['+9181XXXX6620'],
+  aparty_pins: [1234],
+  bparty_pins: [2345],
+  strictness: 'false',
+  preferences: { pin_code: '560041' },
+  usage: 'twoway',
+  flow_id: '44XX8X',
+  deallocation_policy: { duration: '600s' },
+};
+
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$payload = json_encode(array(
+  "connection_id" => "Sample_Connection",
+  "aparty_numbers" => array("+91917XXX6528"),
+  "bparty_numbers" => array("+9181XXXX6620"),
+  "aparty_pins" => array(1234),
+  "bparty_pins" => array(2345),
+  "strictness" => "false",
+  "preferences" => array(
+    "pin_code" => "560041"
+  ),
+  "usage" => "twoway",
+  "flow_id" => "44XX8X",
+  "deallocation_policy" => array(
+    "duration" => "600s"
+  )
+));
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => $payload,
+  CURLOPT_HTTPHEADER => array(
+    "Authorization: Basic <your Auth string which is Base64 encoded version of \"username:Password\">",
+    "Content-Type: application/json",
+    "cache-control: no-cache"
+  ),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    url := "https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn"
+    payload := strings.NewReader(`{
+    "connection_id": "Sample_Connection",
+    "aparty_numbers": [
+      "+91917XXX6528"
+    ],
+    "bparty_numbers": [
+      "+9181XXXX6620"
+    ],
+    "aparty_pins": [
+      1234
+    ],
+    "bparty_pins": [
+      2345
+    ],
+    "strictness": "false",
+    "preferences": {
+      "pin_code": "560041"
+    },
+    "usage": "twoway",
+    "flow_id": "44XX8X",
+    "deallocation_policy": {
+      "duration": "600s"
+    }
+  }`)
+
+    req, _ := http.NewRequest("POST", url, payload)
+    req.Header.Add("Authorization", "Basic <your Auth string which is Base64 encoded version of \"username:Password\">")
+    req.Header.Add("Content-Type", "application/json")
+    req.Header.Add("cache-control", "no-cache")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## HTTP Response
 

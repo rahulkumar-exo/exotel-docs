@@ -65,7 +65,7 @@ When using the [Connect Two Numbers API](/docs/voice-v1/api-reference/connect-tw
 
 ```bash
 # Route to sticky agent
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<sticky_agent_number>' \
   -d 'To=<customer_number>' \
   -d 'CallerId=<exophone>'

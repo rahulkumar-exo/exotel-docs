@@ -32,16 +32,16 @@ This API will connect two phone numbers. This API would also mark the user as bu
 
 | Data Center | Base URL                                                                        |
 | ----------- | ------------------------------------------------------------------------------- |
-| Singapore   | `https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>`    |
-| Mumbai      | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v3/accounts/<account_sid>` |
+| Singapore   | `https://ccm-api.exotel.com/v3/accounts/<account_sid>`    |
+| Mumbai      | `https://ccm-api.in.exotel.com/v3/accounts/<account_sid>` |
 
 ## Authentication
 
 All requests require **HTTP Basic Authentication** using your API key and token from the [Exotel Dashboard](https://my.exotel.com) → **Settings → API Settings**.
 
 ```bash
-curl -X GET \
-  'https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
   -H 'Content-Type: application/json'
 ```
 
@@ -49,6 +49,7 @@ curl -X GET \
 
 | API                                                                     | Method | Endpoint                                         | Description                                      |
 | ----------------------------------------------------------------------- | ------ | ------------------------------------------------ | ------------------------------------------------ |
+| [Connect Agent to Customer](/docs/voice-v3/api-reference/make-a-call) | POST   | `/v3/accounts/{account_sid}/calls`                       | Connect a dashboard agent to a customer          |
 | [Connect Two Numbers](/docs/voice-v3/api-reference/connect-two-numbers) | POST   | `/v1/accounts/{account_sid}/Calls/connect`               | Initiate an outbound call connecting two numbers |
 | [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) | GET    | `/v3/accounts/{account_sid}/calls/{call_sid}`            | Get enhanced call details                        |
 | [Active Streams](/docs/voice-v3/api-reference/active-stream-monitoring) | GET    | `/v3/accounts/{account_sid}/calls/active`                | Monitor active call streams                      |

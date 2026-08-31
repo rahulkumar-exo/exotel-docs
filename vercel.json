@@ -48,6 +48,7 @@
 
     { "source": "/docs/voice/click-to-call", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
     { "source": "/docs/voice/make-a-call", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
+    { "source": "/docs/voice-api/api-reference/make-a-call", "destination": "/docs/voice-v3/api-reference/make-a-call", "permanent": true },
     { "source": "/docs/voice/connect-two-numbers", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
     { "source": "/docs/voice/connect-to-flow", "destination": "/docs/voice-v1/api-reference/connect-to-flow", "permanent": true },
     { "source": "/docs/voice/call-details", "destination": "/docs/voice-v1/api-reference/call-details", "permanent": true },
@@ -201,6 +202,9 @@
     { "source": "/api/exotel-mcp", "destination": "/docs/mcp-server/overview", "permanent": true },
     { "source": "/api-console/exotel-mcp-server", "destination": "/docs/mcp-server/overview", "permanent": true },
     { "source": "/api-console/mcp-server", "destination": "/docs/mcp-server/overview", "permanent": true },
+    { "source": "/mcp", "destination": "/docs/mcp-server/overview", "permanent": true },
+    { "source": "/mcp-server", "destination": "/docs/mcp-server/overview", "permanent": true },
+    { "source": "/docs/mcp", "destination": "/docs/mcp-server/overview", "permanent": true },
     { "source": "/api/exomind-tasker", "destination": "/docs/gen-ai/api-reference/exomind-tasker", "permanent": true },
     { "source": "/api/exomind", "destination": "/docs/gen-ai/overview", "permanent": true },
     { "source": "/api/exovoice-analyze-api", "destination": "/docs/gen-ai/api-reference/exovoice-analyze", "permanent": true },

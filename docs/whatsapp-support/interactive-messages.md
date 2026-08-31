@@ -41,7 +41,7 @@ Reply buttons present up to 3 quick-action options. When a customer taps a butto
 ### API Example
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",
@@ -130,7 +130,7 @@ List messages display a scrollable menu organized into sections. Customers tap a
 ### API Example
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",

@@ -9,6 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
 # Send SMS
 
@@ -16,11 +17,7 @@ Send a single SMS message to a phone number.
 
 <TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Sms/send" />
 
-## Endpoint
-
-```
-POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<account_sid>/Sms/send
-```
+<RegionalUrls path="/v1/Accounts/{account_sid}/Sms/send" host="api" />
 
 ## Request Parameters
 
@@ -54,12 +51,35 @@ Without DLT registration, SMS to Indian numbers will be **blocked by telecom ope
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -X POST https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/send \
+curl -u '<api_key>:<api_token>' -X POST https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send \
   -d "From=EXOTEL" \
   -d "To=+919876543210" \
   -d "Body=Your OTP is 123456" \
   -d "DltEntityId=1234567890" \
   -d "DltTemplateId=9876543210"
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+data = {
+    'From': 'EXOTEL',
+    'To': '+919876543210',
+    'Body': 'Your OTP is 123456',
+    'DltEntityId': '1234567890',
+    'DltTemplateId': '9876543210'
+}
+
+response = requests.post(
+    'https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send',
+    auth=('<api_key>', '<api_token>'),
+    data=data
+)
+
+print(response.json())
 ```
 
 </TabItem>
@@ -94,28 +114,6 @@ console.log(data);
 ```
 
 </TabItem>
-<TabItem value="python" label="Python">
-
-```python
-import requests
-
-data = {
-    'From': 'EXOTEL',
-    'To': '+919876543210',
-    'Body': 'Your OTP is 123456',
-    'DltEntityId': '1234567890',
-    'DltTemplateId': '9876543210'
-}
-
-response = requests.post(
-    'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/send',
-    data=data
-)
-
-print(response.json())
-```
-
-</TabItem>
 <TabItem value="php" label="PHP">
 
 ```php
@@ -128,12 +126,55 @@ $data = array(
     'DltTemplateId' => '9876543210'
 );
 
-$response = Requests::post(
-    'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/send',
-    array(),
-    $data
-);
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => 'https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => http_build_query($data),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
 ?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "net/url"
+    "strings"
+)
+
+func main() {
+    endpoint := "https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send"
+    data := url.Values{}
+    data.Set("From", "EXOTEL")
+    data.Set("To", "+919876543210")
+    data.Set("Body", "Your OTP is 123456")
+    data.Set("DltEntityId", "1234567890")
+    data.Set("DltTemplateId", "9876543210")
+
+    req, _ := http.NewRequest("POST", endpoint, strings.NewReader(data.Encode()))
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
 ```
 
 </TabItem>
@@ -143,8 +184,9 @@ $response = Requests::post(
 require 'net/http'
 require 'uri'
 
-uri = URI.parse('https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Sms/send')
+uri = URI.parse('https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send')
 request = Net::HTTP::Post.new(uri)
+request.basic_auth('<api_key>', '<api_token>')
 request.set_form_data(
   'From' => 'EXOTEL',
   'To' => '+919876543210',

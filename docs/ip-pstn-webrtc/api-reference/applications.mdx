@@ -120,6 +120,73 @@ console.log(data);
 ```
 
 </TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://integrationscore.mum1.exotel.com/v2/integrations/app',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS => json_encode(array(
+    'AppName' => 'WebRTC',
+    'ExotelAccountSid' => 'exoteldemo',
+    'ExotelApiKey' => 'your_api_key',
+    'ExotelApiToken' => 'your_api_token',
+    'ExotelDomain' => 'mumbai',
+    'IsActive' => true
+  )),
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: NmUxNGIyN2ItY2YzYy00MzRhLThlNzItYWNjMWFiNWQzY2Vi',
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    url := "https://integrationscore.mum1.exotel.com/v2/integrations/app"
+    payload := strings.NewReader(`{
+   "AppName": "WebRTC",
+   "ExotelAccountSid": "exoteldemo",
+   "ExotelApiKey": "your_api_key",
+   "ExotelApiToken": "your_api_token",
+   "ExotelDomain": "mumbai",
+   "IsActive": true
+}`)
+
+    req, _ := http.NewRequest("POST", url, payload)
+    req.Header.Add("Authorization", "NmUxNGIyN2ItY2YzYy00MzRhLThlNzItYWNjMWFiNWQzY2Vi")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
 </Tabs>
 
 ### Response
@@ -195,6 +262,69 @@ print(response.json())
 ```
 
 </TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const url = 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=app';
+
+const response = await fetch(url, {
+  headers: {
+    'Authorization': '<app_auth_token>',
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=app',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: <app_auth_token>'
+  ),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=app"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.Header.Add("Authorization", "<app_auth_token>")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
 </Tabs>
 
 ### Response
@@ -244,6 +374,85 @@ GET https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer
 ```bash
 curl --location --request GET 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer' \
 --header 'Authorization: <customer_auth_token>'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+url = "https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer"
+
+headers = {
+    'Authorization': '<customer_auth_token>'
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const url = 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer';
+
+const response = await fetch(url, {
+  headers: {
+    'Authorization': '<customer_auth_token>',
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: <customer_auth_token>'
+  ),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://integrationscore.mum1.exotel.com/v2/integrations/app?entity=customer"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.Header.Add("Authorization", "<customer_auth_token>")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
 ```
 
 </TabItem>
@@ -298,6 +507,87 @@ DELETE https://integrationscore.mum1.exotel.com/v2/integrations/app
 ```bash
 curl --location --request DELETE 'https://integrationscore.mum1.exotel.com/v2/integrations/app' \
 --header 'Authorization: <app_auth_token>'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+url = "https://integrationscore.mum1.exotel.com/v2/integrations/app"
+
+headers = {
+    'Authorization': '<app_auth_token>'
+}
+
+response = requests.delete(url, headers=headers)
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const url = 'https://integrationscore.mum1.exotel.com/v2/integrations/app';
+
+const response = await fetch(url, {
+  method: 'DELETE',
+  headers: {
+    'Authorization': '<app_auth_token>',
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://integrationscore.mum1.exotel.com/v2/integrations/app',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_CUSTOMREQUEST => 'DELETE',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: <app_auth_token>'
+  ),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://integrationscore.mum1.exotel.com/v2/integrations/app"
+
+    req, _ := http.NewRequest("DELETE", url, nil)
+    req.Header.Add("Authorization", "<app_auth_token>")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
 ```
 
 </TabItem>

@@ -25,7 +25,7 @@ The Campaign Lists API enables you to create and manage contact lists used in ca
 | Mumbai | `@api.in.exotel.com` |
 
 ```
-https://<api_key>:<api_token>@<subdomain>/v2/accounts/<account_sid>/lists
+https://<subdomain>/v2/accounts/<account_sid>/lists
 ```
 
 ## Authentication

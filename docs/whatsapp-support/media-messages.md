@@ -29,7 +29,7 @@ For the best customer experience, keep images under 1 MB and videos under 5 MB. 
 ### Image Message
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",
@@ -47,7 +47,7 @@ curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<accou
 ### Video Message
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",
@@ -65,7 +65,7 @@ curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<accou
 ### Document Message
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",
@@ -84,7 +84,7 @@ curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<accou
 ### Audio Message
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",
@@ -101,7 +101,7 @@ curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<accou
 ### Sticker Message
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",
@@ -196,7 +196,7 @@ When a customer sends media to your WhatsApp Business number, the webhook payloa
 Use the media ID to download the file via the [Media API](/docs/whatsapp-api/overview):
 
 ```bash
-curl "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/media/<media_id>" \
+curl -u '<api_key>:<api_token>' "https://api.in.exotel.com/v2/accounts/<account_sid>/media/<media_id>" \
   -o downloaded-image.jpg
 ```
 

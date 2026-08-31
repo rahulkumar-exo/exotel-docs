@@ -1,0 +1,320 @@
+---
+id: manage-campaign
+title: Manage Campaign
+description: Get details, pause, resume, complete, archive, and delete campaigns using the Exotel Campaign API. Includes endpoints and request examples.
+sidebar_label: Manage Campaign
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Manage Campaign
+
+Get details, update, pause/resume, and delete campaigns.
+
+<TryItBanner method="PUT" endpoint="/v2/accounts/{account_sid}/campaigns/{campaign_id}" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/campaigns/{campaign_id}" host="api" />
+
+## Get Campaign Details
+
+Returns the full campaign object including current stats.
+
+## Update Campaign Action
+
+Pause, resume, complete, or archive a campaign.
+
+### Request Body
+
+```json
+{ "action": "pause" }
+```
+
+### Allowed Actions
+
+| Action     | From Status       | Description |
+|------------|-------------------|-------------|
+| `pause`    | Created, InProgress | Temporarily stop the campaign |
+| `resume`   | Paused            | Resume a paused campaign |
+| `complete` | Paused            | Force complete — marks remaining calls as failed |
+| `archive`  | Completed         | Archive a completed campaign |
+
+### Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<sid>/campaigns/<campaign_id>" \
+  -H "Content-Type: application/json" \
+  -d '{ "action": "pause" }'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+import json
+
+response = requests.put(
+    'https://api.exotel.com/v2/accounts/<sid>/campaigns/<campaign_id>',
+    auth=('<api_key>', '<api_token>'),
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({'action': 'pause'})
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<sid>';
+const campaignId = '<campaign_id>';
+
+const url = `https://api.exotel.com/v2/accounts/${accountSid}/campaigns/${campaignId}`;
+
+const response = await fetch(url, {
+  method: 'PUT',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ action: 'pause' }),
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$payload = json_encode(array(
+  "action" => "pause"
+));
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://api.exotel.com/v2/accounts/<sid>/campaigns/<campaign_id>",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_CUSTOMREQUEST => "PUT",
+  CURLOPT_POSTFIELDS => $payload,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    url := "https://api.exotel.com/v2/accounts/<sid>/campaigns/<campaign_id>"
+    payload := strings.NewReader(`{ "action": "pause" }`)
+
+    req, _ := http.NewRequest("PUT", url, payload)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Update Campaign Details
+
+Update campaign parameters before the `send_at` time. After `send_at`, only callbacks and `action` can be updated.
+
+Accepts the same parameters as [Create Campaign](/docs/campaigns/api-reference/create-campaign).
+
+**Editable after `send_at`:**
+- `action`
+- `status_callback`
+- `call_status_callback`
+- `call_schedule_callback`
+
+## Delete Campaign
+
+Returns HTTP 200 on success.
+
+---
+
+## List All Campaigns
+
+<RegionalUrls path="/v2/accounts/{account_sid}/campaigns" host="api" />
+
+### Query Parameters
+
+| Parameter | Type    | Default | Description |
+|-----------|---------|---------|-------------|
+| `offset`  | Integer | 0       | Zero-based record position |
+| `limit`   | Integer | 20      | Records per page (max 500) |
+| `name`    | String  | —       | Search by campaign name |
+| `status`  | String  | —       | Filter by comma-separated statuses |
+| `sort_by` | String  | —       | `date_created:asc`, `date_created:desc`, `name:asc`, `name:desc` |
+| `type`    | String  | `trans` | Campaign type |
+
+### Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<sid>/campaigns?limit=10&status=InProgress,Paused&sort_by=date_created:desc"
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+response = requests.get(
+    'https://api.exotel.com/v2/accounts/<sid>/campaigns',
+    auth=('<api_key>', '<api_token>'),
+    params={
+        'limit': 10,
+        'status': 'InProgress,Paused',
+        'sort_by': 'date_created:desc',
+    }
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<sid>';
+
+const params = new URLSearchParams({
+  limit: '10',
+  status: 'InProgress,Paused',
+  sort_by: 'date_created:desc',
+});
+
+const url = `https://api.exotel.com/v2/accounts/${accountSid}/campaigns?${params}`;
+
+const response = await fetch(url, {
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://api.exotel.com/v2/accounts/<sid>/campaigns?limit=10&status=InProgress,Paused&sort_by=date_created:desc",
+  CURLOPT_RETURNTRANSFER => true,
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://api.exotel.com/v2/accounts/<sid>/campaigns?limit=10&status=InProgress,Paused&sort_by=date_created:desc"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Response
+
+```json
+{
+  "request_id": "req_abc123",
+  "http_code": 200,
+  "metadata": {
+    "count": 3,
+    "offset": 0,
+    "total": 138,
+    "limit": 10
+  },
+  "response": [
+    { "...campaign objects..." }
+  ]
+}
+```
+
+## Try It
+
+<ApiConsole
+  method="PUT"
+  path="/v2/accounts/{account_sid}/campaigns/{campaign_id}"
+  contentType="json"
+  params={[
+    { name: 'campaign_id', required: true, type: 'string', description: 'Campaign identifier', placeholder: 'camp_abc123' },
+    { name: 'action', required: true, type: 'select', description: 'Campaign action', options: ['pause', 'resume', 'complete', 'archive'], defaultValue: 'pause' },
+  ]}
+/>

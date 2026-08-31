@@ -1,6 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import copyPageSourcePlugin from './plugins/copy-page-source';
+import tryItProxyPlugin from './plugins/try-it-proxy';
 
 const config: Config = {
   title: 'Exotel Developer Docs',
@@ -9,6 +11,7 @@ const config: Config = {
 
   clientModules: [
     './src/analytics/ga-custom-dimension.js',
+    './src/region/region-sync.js',
   ],
 
   future: {
@@ -68,6 +71,8 @@ const config: Config = {
         },
       };
     },
+    copyPageSourcePlugin,
+    tryItProxyPlugin,
   ],
 
   presets: [
@@ -131,13 +136,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    announcementBar: {
-      id: 'new_portal_2026',
-      content: '🚀 Welcome to the new Exotel Developer Portal! Faster, smarter, and now with AI-powered search. <a href="/docs/getting-started/overview" style="color:#00eac3;font-weight:600;">Explore the docs →</a>',
-      backgroundColor: '#231f20',
-      textColor: '#ffffff',
-      isCloseable: true,
-    },
     metadata: [
       { name: 'keywords', content: 'Exotel API, Voice API, SMS API, WhatsApp API, cloud telephony, CPaaS, developer documentation' },
       { name: 'robots', content: 'index, follow' },
@@ -169,6 +167,7 @@ const config: Config = {
             { type: 'html', value: '<span class="dropdown-section-label">Messaging</span>' },
             { type: 'docSidebar', sidebarId: 'smsApiSidebar', label: 'SMS' },
             { type: 'docSidebar', sidebarId: 'whatsappApiSidebar', label: 'WhatsApp' },
+            { type: 'docSidebar', sidebarId: 'rcsOmnichannelSidebar', label: 'RCS' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
             { type: 'html', value: '<span class="dropdown-section-label">Platform</span>' },
             { type: 'docSidebar', sidebarId: 'exoverifyApiSidebar', label: 'ExoVerify' },
@@ -178,7 +177,6 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'legsSidebar', label: 'Legs' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
             { type: 'html', value: '<span class="dropdown-section-label">Other</span>' },
-            { type: 'docSidebar', sidebarId: 'rcsOmnichannelSidebar', label: 'RCS Omnichannel' },
             { type: 'docSidebar', sidebarId: 'referencesSidebar', label: 'Error Codes & Webhooks' },
           ],
         },
@@ -209,13 +207,12 @@ const config: Config = {
             { type: 'docSidebar', sidebarId: 'leadAssistSettingsSidebar', label: 'Settings' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
             { type: 'html', value: '<span class="dropdown-section-label">SDKs & Integrations</span>' },
+            { type: 'docSidebar', sidebarId: 'mcpServerSidebar', label: 'MCP Server' },
             { type: 'docSidebar', sidebarId: 'ipPstnWebrtcSidebar', label: 'WebRTC SDK' },
             { type: 'docSidebar', sidebarId: 'integrationsSidebar', label: 'Integrations' },
             { type: 'docSidebar', sidebarId: 'whatsappTemplatesSidebar', label: 'WhatsApp Templates' },
             { type: 'docSidebar', sidebarId: 'whatsappOnboardingSidebar', label: 'WhatsApp Onboarding' },
-            { type: 'docSidebar', sidebarId: 'rcsOmnichannelSidebar', label: 'RCS Omnichannel' },
             { type: 'docSidebar', sidebarId: 'urlShorteningSidebar', label: 'URL Shortening' },
-            { type: 'docSidebar', sidebarId: 'mcpServerSidebar', label: 'MCP Server' },
           ],
         },
         // ── Guides ──
@@ -267,6 +264,7 @@ const config: Config = {
             { label: 'Users', to: '/docs/users/overview' },
             { label: 'ExoVerify', to: '/docs/exoverify-api/overview' },
             { label: 'WhatsApp - Messaging API', to: '/docs/whatsapp-api/overview' },
+            { label: 'RCS', to: '/docs/rcs-omnichannel/overview' },
             { label: 'URL Shortening', to: '/docs/sms-api/api-reference/url-shortening' },
             { label: 'Integrations', to: '/docs/integrations/overview' },
           ],
@@ -323,7 +321,7 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Exotel Techcom Pvt Ltd. All rights reserved.`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: prismThemes.nightOwl,
       additionalLanguages: ['bash', 'json', 'php', 'ruby', 'python', 'go', 'ini'],
     },
   } satisfies Preset.ThemeConfig,

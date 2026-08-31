@@ -120,7 +120,7 @@ For detailed template management, see [SMS Campaign Templates](/docs/campaign-gu
 When sending individual SMS via the Exotel API, include DLT parameters:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/sms/send" \
   -H "Content-Type: application/json" \
   -d '{
     "to": "+919876543210",

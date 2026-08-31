@@ -6,13 +6,13 @@ const sidebars: SidebarsConfig = {
     'voice-v1/quickstart',
     {
       type: 'category',
-      label: 'API reference',
+      label: 'API Reference',
       collapsed: false,
       items: [
         'voice-v1/api-reference/connect-two-numbers',
         {
           type: 'doc',
-          id: 'voice-api/api-reference/make-a-call',
+          id: 'voice-v3/api-reference/make-a-call',
           label: 'Connect Agent to Customer',
         },
         {
@@ -354,6 +354,10 @@ const sidebars: SidebarsConfig = {
 
   mcpServerSidebar: [
     'mcp-server/overview',
+    'mcp-server/use-cases',
+    'mcp-server/tools-reference',
+    'mcp-server/security',
+    'mcp-server/troubleshooting',
   ],
 
   useCasesSidebar: [

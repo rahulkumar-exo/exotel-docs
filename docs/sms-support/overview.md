@@ -78,7 +78,7 @@ You can send SMS through Exotel in two ways:
 Use the [Send SMS API](/docs/sms-api/api-reference/send-sms) to send messages programmatically:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "From=EXOTEL" \
   -d "To=+91XXXXXXXXXX" \
   -d "Body=Your OTP is 123456" \

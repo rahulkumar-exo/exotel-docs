@@ -56,7 +56,7 @@ number,first_name,last_name,company_name,email,tag
 **Upload the CSV:**
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/contacts/csv-upload" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/contacts/csv-upload" \
   -F "list_name=January_Promo_List" \
   -F "file_name=@contacts.csv" \
   -F "type=static"
@@ -65,7 +65,7 @@ curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_
 **Check upload status:**
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/csv-status/<upload_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/csv-status/<upload_id>"
 ```
 
 The response shows upload progress including counts for duplicates, successes, and failures.
@@ -216,7 +216,7 @@ Set up webhook URLs to receive real-time campaign and call status updates:
 Combine all configurations into a single API request:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/campaigns" \
   -H "Content-Type: application/json" \
   -d '{
     "lists": ["list_sid_1"],
@@ -270,13 +270,13 @@ Once your campaign is running, you can monitor progress and take actions.
 ### Check Campaign Status
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>"
 ```
 
 ### Pause the Campaign
 
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "pause"}'
 ```
@@ -284,7 +284,7 @@ curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_s
 ### Resume a Paused Campaign
 
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "resume"}'
 ```
@@ -294,7 +294,7 @@ curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_s
 Force-completing a paused campaign marks all remaining unprocessed contacts as `failed`:
 
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "complete"}'
 ```

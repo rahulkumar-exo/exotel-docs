@@ -14,14 +14,8 @@ Common questions about using Exotel APIs, including authentication, rate limits,
 
 ## What authentication method does Exotel use?
 
-All Exotel APIs use **HTTP Basic Authentication** as defined in RFC 7617. You authenticate using your API Key (username) and API Token (password). Credentials can be passed in two ways:
+All Exotel APIs use **HTTP Basic Authentication** as defined in RFC 7617. Use your API Key as the username and your API Token as the password. Send them in the `Authorization` header. Do not put them in the URL.
 
-**In the URL:**
-```
-https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/<resource>
-```
-
-**In the Authorization header:**
 ```
 Authorization: Basic base64(<api_key>:<api_token>)
 ```

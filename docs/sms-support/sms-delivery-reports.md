@@ -47,7 +47,7 @@ Your App → Exotel API → Operator → Handset
 Set the `StatusCallback` parameter when sending an SMS to receive the delivery report at a specific URL:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "From=EXOTL" \
   -d "To=+919876543210" \
   -d "Body=Your OTP is 123456" \
@@ -133,7 +133,7 @@ For the complete list of status codes, see [SMS Status Codes](/docs/sms-support/
 If you prefer to check delivery status on demand, use the [SMS Details API](/docs/sms-api/api-reference/sms-details):
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/Messages/<sms_sid>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/Messages/<sms_sid>"
 ```
 
 Response:

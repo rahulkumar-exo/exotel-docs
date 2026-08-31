@@ -36,7 +36,7 @@ You can also query the health status of a specific ExoPhone:
 ### HTTP Request
 
 ```
-GET https://<api_key>:<api_token>@<subdomain>/v2/accounts/<sid>/incoming-phone-numbers/<exophone_sid>
+GET https://<subdomain>/v2/accounts/<sid>/incoming-phone-numbers/<exophone_sid>
 ```
 
 ### Connectivity Fields in Response

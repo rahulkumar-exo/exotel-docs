@@ -1,0 +1,203 @@
+---
+id: update-greenvn
+title: Update GreenVN in an Allocation
+description: Update the GreenVN assigned to an existing active allocation via the Exotel Lead Assist API.
+sidebar_label: Update GreenVN
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Update GreenVN in an Allocation
+
+This API allows to update GreenVN in an existing **active** allocation.
+
+While placing the request for the new VN, the number and the region can also be provided as a preference. If requested, without a request body, ExoBridge system will allocate an available number from the VN pool.
+
+Other parameters will be inherited from the original allocation and passed in the API response.
+
+:::info Pricing
+The Update API will be charged equivalent to that of a new allocation, as per the price plan. At the time of deallocation, the duration will be computed from the time of original allocation and charged as per the price plan. Deallocation policy can not be overruled with the update API.
+:::
+
+```
+PUT https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn/<greenvn_id>/vn
+```
+
+Replace `<your_sid>` with your tenant ID.
+
+Please refer [Create an Allocation](/docs/lead-assist/api-reference/create-allocation) (POST) API for details on request parameters.
+
+## Example Request
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' --location --request PUT 'https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn/<greenvn_id>/vn' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "strictness": "false",
+    "preferences": {
+      "greenvn": "+917205827365",
+      "region": "KA",
+      "number_type": "landline"
+    }
+  }'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+import json
+
+payload = {
+    "strictness": "false",
+    "preferences": {
+        "greenvn": "+917205827365",
+        "region": "KA",
+        "number_type": "landline",
+    },
+}
+
+response = requests.put(
+    'https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn/<greenvn_id>/vn',
+    auth=('<api_key>', '<api_token>'),
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps(payload)
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<your_api_key>';
+const apiToken = '<your_api_token>';
+const tenantSid = '<your_sid>';
+const greenvnId = '<greenvn_id>';
+
+const url = `https://leadassist.exotel.in/v1/tenants/${tenantSid}/greenvn/${greenvnId}/vn`;
+
+const payload = {
+  strictness: 'false',
+  preferences: {
+    greenvn: '+917205827365',
+    region: 'KA',
+    number_type: 'landline',
+  },
+};
+
+const response = await fetch(url, {
+  method: 'PUT',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$payload = json_encode(array(
+  "strictness" => "false",
+  "preferences" => array(
+    "greenvn" => "+917205827365",
+    "region" => "KA",
+    "number_type" => "landline"
+  )
+));
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn/<greenvn_id>/vn",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_CUSTOMREQUEST => "PUT",
+  CURLOPT_POSTFIELDS => $payload,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    url := "https://leadassist.exotel.in/v1/tenants/<your_sid>/greenvn/<greenvn_id>/vn"
+    payload := strings.NewReader(`{
+    "strictness": "false",
+    "preferences": {
+      "greenvn": "+917205827365",
+      "region": "KA",
+      "number_type": "landline"
+    }
+  }`)
+
+    req, _ := http.NewRequest("PUT", url, payload)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## HTTP Response
+
+- On success, the HTTP response status code will be 200.
+- The `connection_id` is the unique identifier of the original allocation, and it will be referred in HTTP body will contain a JSON similar to the one below.
+
+## Example Response on Success
+
+```json
+{
+  "success": true,
+  "status": 200,
+  "data": {
+    "connection_id": "abcd12345",
+    "aparty_numbers": [
+      "+919176226528", "+911234567891"
+    ],
+    "bparty_numbers": [
+      "+918136966620"
+    ],
+    "usage": "oneway|twoway",
+    "state": "active",
+    "green_vn": "+917205827365",
+    "greenvn_id": "123456"
+  }
+}
+```

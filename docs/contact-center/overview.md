@@ -29,8 +29,8 @@ The Contact Center API is currently in **Beta**.
 
 | Data Center | Base URL |
 |------------|----------|
-| Singapore | `https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<sid>/calls` |
-| Mumbai | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v2/accounts/<sid>/calls` |
+| Singapore | `https://ccm-api.exotel.com/v2/accounts/<sid>/calls` |
+| Mumbai | `https://ccm-api.in.exotel.com/v2/accounts/<sid>/calls` |
 
 ## Authentication
 

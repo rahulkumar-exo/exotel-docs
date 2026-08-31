@@ -26,7 +26,7 @@ Exotel's bulk SMS feature allows you to send messages to hundreds or thousands o
 Use the [Bulk SMS API](/docs/sms-api/api-reference/bulk-sms) to send the same message to up to 100 recipients in a single request:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/Accounts/<account_sid>/Sms/bulksend" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/Accounts/<account_sid>/Sms/bulksend" \
   -H "Content-Type: application/json" \
   -d '{
     "sms": [
@@ -46,7 +46,7 @@ curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/Accounts/<account_
 Send unique messages to different recipients in a single API call:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/Accounts/<account_sid>/Sms/bulksend" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/Accounts/<account_sid>/Sms/bulksend" \
   -H "Content-Type: application/json" \
   -d '{
     "sms": [

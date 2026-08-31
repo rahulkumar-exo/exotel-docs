@@ -58,7 +58,7 @@ Use the Exotel API to register number pairs. When Party A calls the ExoPhone, Ex
 
 ```bash
 # Register a masking pair
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/NumberMasking' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking' \
   -d 'VirtualNumber=<exophone>' \
   -d 'NumberA=<customer_number>' \
   -d 'NumberB=<driver_number>' \
@@ -113,7 +113,7 @@ Lead Assist is Exotel's productized number masking solution designed specificall
 
 ```bash
 # Initiate a Lead Assist call
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<agent_number>' \
   -d 'To=<prospect_number>' \
   -d 'CallerId=<exophone>'
@@ -126,13 +126,13 @@ This uses the standard Connect Two Numbers API but with the ExoPhone as the call
 ### Listing Active Pairs
 
 ```bash
-curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/NumberMasking?VirtualNumber=<exophone>'
+curl -u '<api_key>:<api_token>' 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking?VirtualNumber=<exophone>'
 ```
 
 ### Deleting a Pair
 
 ```bash
-curl -X DELETE 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/NumberMasking/<pair_id>'
+curl -u '<api_key>:<api_token>' -X DELETE 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking/<pair_id>'
 ```
 
 ### Auto-Expiry

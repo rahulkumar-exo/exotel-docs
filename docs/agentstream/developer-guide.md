@@ -55,8 +55,8 @@ Dial a number and connect the answered call directly to your bot. No flow setup 
 ### Request
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<account_sid>/calls/connect' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v1/accounts/<account_sid>/calls/connect' \
   -F 'from=+919876543210' \
   -F 'callerid=08047491899' \
   -F 'streamurl=wss://bot.example.com/media' \
@@ -115,8 +115,8 @@ Don't pass `streamurl` or `streamtype` here — the WebSocket URL is configured 
 ### Request
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<account_sid>/calls/connect' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v1/accounts/<account_sid>/calls/connect' \
   -d 'from=+919876543210' \
   -d 'callerid=08047491899' \
   -d 'url=https://my.exotel.com/<account_sid>/exoml/start_voice/<flow_id>' \
@@ -146,8 +146,8 @@ Full runtime control via Legs API — per-call stream URLs, dynamic routing, gre
 ### Step 1 — Dial the customer
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/legs' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs' \
   -H 'Content-Type: application/json' \
   -d '{
     "contact_uri": "+919876543210",
@@ -162,8 +162,8 @@ Exotel emits: `leg_connecting` → `leg_ringing` → `leg_answered`
 ### Step 2 — Start stream on `leg_answered`
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
   -H 'Content-Type: application/json' \
   -d '{
     "direction": "bidirectional",
@@ -402,8 +402,8 @@ Place immediately after the Voicebot/Stream applet. Exotel sends a **GET** reque
 Check how many streams are live on your account.
 
 ```bash
-curl -X GET \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v1/accounts/<account_sid>/activestreams'
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://api.in.exotel.com/v1/accounts/<account_sid>/activestreams'
 ```
 
 ```json

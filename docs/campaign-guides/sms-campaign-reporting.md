@@ -16,7 +16,7 @@ Every SMS campaign tracks aggregate delivery statistics that update in real time
 ### Retrieving Campaign Stats
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>"
 ```
 
 **Response:**
@@ -80,7 +80,7 @@ Queued --> Submitted --> Delivered
 Retrieve delivery details for individual messages within a campaign:
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>/sms-details?offset=0&limit=50"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>/sms-details?offset=0&limit=50"
 ```
 
 ### SMS Detail Fields
@@ -268,7 +268,7 @@ Track delivery speed by submission time to find optimal send windows:
 For accounts running many campaigns, use the bulk campaign details endpoint to retrieve summary data across multiple campaigns:
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms-campaigns?status=Completed&offset=0&limit=20"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns?status=Completed&offset=0&limit=20"
 ```
 
 > **API Reference:** See [Bulk Campaign Details](/docs/sms-campaigns/api-reference/bulk-campaign-details) for filtering and pagination options.

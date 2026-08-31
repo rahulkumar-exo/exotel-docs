@@ -1,75 +1,65 @@
-/* API Console Container */
+/* API Console container */
 .console {
   margin: 1.5rem 0;
-  border: 1px solid #e2e4ea;
-  border-radius: 8px;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--exotel-radius-lg);
   overflow: hidden;
-  background: #fff;
+  background: var(--exotel-surface-1);
 }
 
-/* Toggle Button */
+/* Toggle button */
 .toggleBtn {
   display: flex;
   align-items: center;
   gap: 8px;
   width: 100%;
   padding: 12px 16px;
-  background: #f8f9fb;
+  background: var(--exotel-surface-2);
   border: none;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  color: #374151;
+  color: var(--exotel-text-1);
   text-align: left;
   transition: background 0.15s;
 }
 
 .toggleBtn:hover {
-  background: #f0f1f5;
+  background: var(--exotel-surface-3);
 }
 
 .toggleBtnOpen {
-  border-bottom: 1px solid #e2e4ea;
+  border-bottom: 1px solid var(--ifm-border-color);
 }
 
 .toggleIcon {
   font-size: 12px;
-  color: #9ca3af;
+  color: var(--exotel-text-3);
   width: 14px;
 }
 
 .methodBadge {
   display: inline-block;
   padding: 2px 8px;
-  border-radius: 4px;
+  border-radius: var(--exotel-radius-sm);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #fff;
 }
 
-.methodBadge[data-method="GET"] {
-  background: #10b981;
-}
-
-.methodBadge[data-method="POST"] {
-  background: #3b82f6;
-}
-
-.methodBadge[data-method="PUT"] {
-  background: #f59e0b;
-}
-
-.methodBadge[data-method="DELETE"] {
-  background: #ef4444;
-}
+.methodBadge[data-method="GET"]    { background: var(--method-get); }
+.methodBadge[data-method="POST"]   { background: var(--method-post); }
+.methodBadge[data-method="PUT"]    { background: var(--method-put); }
+.methodBadge[data-method="PATCH"]  { background: var(--method-patch); }
+.methodBadge[data-method="DELETE"] { background: var(--method-delete); }
 
 /* Panel */
 .panel {
   padding: 16px;
 }
 
-/* Credentials Section */
+/* Credentials section */
 .credsSection {
   margin-bottom: 16px;
 }
@@ -79,11 +69,11 @@
   align-items: center;
   gap: 6px;
   background: none;
-  border: 1px solid #e2e4ea;
-  border-radius: 6px;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--exotel-radius-md);
   padding: 8px 12px;
   font-size: 13px;
-  color: #6b7280;
+  color: var(--exotel-text-2);
   cursor: pointer;
   width: 100%;
   text-align: left;
@@ -91,7 +81,7 @@
 }
 
 .credsToggle:hover {
-  border-color: #9b42f1;
+  border-color: var(--ifm-color-primary);
 }
 
 .credsChevron {
@@ -102,9 +92,9 @@
 .credsForm {
   margin-top: 12px;
   padding: 16px;
-  background: #fafbfc;
-  border-radius: 6px;
-  border: 1px solid #e8eaf3;
+  background: var(--exotel-surface-2);
+  border-radius: var(--exotel-radius-md);
+  border: 1px solid var(--ifm-border-color);
 }
 
 .credsRow {
@@ -122,7 +112,7 @@
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: #4b5563;
+  color: var(--exotel-text-2);
   margin-bottom: 4px;
 }
 
@@ -130,32 +120,32 @@
 .credsField select {
   width: 100%;
   padding: 8px 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--exotel-radius-md);
   font-size: 13px;
-  background: #fff;
+  background: var(--exotel-surface-1);
   box-sizing: border-box;
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .credsField input:focus,
 .credsField select:focus {
-  border-color: #9b42f1;
-  box-shadow: 0 0 0 2px rgba(155, 66, 241, 0.1);
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--exotel-focus-ring);
 }
 
 .credsHint {
   font-size: 12px;
-  color: #9ca3af;
+  color: var(--exotel-text-3);
   margin: 0;
 }
 
 .credsHint a {
-  color: #9b42f1;
+  color: var(--ifm-color-primary);
 }
 
-/* Parameters Section */
+/* Parameters section */
 .paramsSection {
   margin-bottom: 16px;
 }
@@ -163,7 +153,7 @@
 .sectionLabel {
   font-size: 13px;
   font-weight: 700;
-  color: #374151;
+  color: var(--exotel-text-1);
   margin: 0 0 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -177,9 +167,9 @@
 
 .paramRow {
   padding: 12px;
-  background: #fafbfc;
-  border-radius: 6px;
-  border: 1px solid #eef0f4;
+  background: var(--exotel-surface-2);
+  border-radius: var(--exotel-radius-md);
+  border: 1px solid var(--ifm-border-color);
 }
 
 .paramHeader {
@@ -192,28 +182,29 @@
 .paramName {
   font-size: 13px;
   font-weight: 600;
-  color: #1f2937;
-  background: #e8eaf3;
+  color: var(--exotel-text-1);
+  background: var(--exotel-grey-2);
   padding: 1px 6px;
-  border-radius: 4px;
+  border-radius: var(--exotel-radius-sm);
+  font-family: var(--ifm-font-family-monospace);
 }
 
 .requiredBadge {
   font-size: 10px;
   font-weight: 700;
-  color: #dc2626;
+  color: var(--method-delete);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .paramType {
   font-size: 11px;
-  color: #9ca3af;
+  color: var(--exotel-text-3);
 }
 
 .paramDesc {
   font-size: 12px;
-  color: #6b7280;
+  color: var(--exotel-text-2);
   margin: 0 0 8px;
   line-height: 1.4;
 }
@@ -221,19 +212,19 @@
 .paramInput {
   width: 100%;
   padding: 7px 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--exotel-radius-md);
   font-size: 13px;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  background: #fff;
+  font-family: var(--ifm-font-family-monospace);
+  background: var(--exotel-surface-1);
   box-sizing: border-box;
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .paramInput:focus {
-  border-color: #9b42f1;
-  box-shadow: 0 0 0 2px rgba(155, 66, 241, 0.1);
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--exotel-focus-ring);
 }
 
 /* Actions */
@@ -245,10 +236,10 @@
 
 .tryBtn {
   padding: 9px 24px;
-  background: #9b42f1;
+  background: var(--ifm-color-primary);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--exotel-radius-md);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -256,7 +247,7 @@
 }
 
 .tryBtn:hover:not(:disabled) {
-  background: #8231d6;
+  background: var(--ifm-color-primary-darker);
 }
 
 .tryBtn:disabled {
@@ -266,31 +257,31 @@
 
 .clearBtn {
   padding: 9px 16px;
-  background: #fff;
-  color: #6b7280;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  background: var(--exotel-surface-1);
+  color: var(--exotel-text-2);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--exotel-radius-md);
   font-size: 13px;
   cursor: pointer;
   transition: border-color 0.15s;
 }
 
 .clearBtn:hover {
-  border-color: #9ca3af;
+  border-color: var(--exotel-grey-3);
 }
 
-/* Response Section */
+/* Response section */
 .responseSection {
-  border: 1px solid #e2e4ea;
-  border-radius: 6px;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--exotel-radius-md);
   overflow: hidden;
 }
 
 .responseTabs {
   display: flex;
   align-items: center;
-  background: #f3f4f6;
-  border-bottom: 1px solid #e2e4ea;
+  background: var(--exotel-surface-3);
+  border-bottom: 1px solid var(--ifm-border-color);
   padding: 0 4px;
 }
 
@@ -304,51 +295,51 @@
   border-bottom: 2px solid transparent;
   font-size: 13px;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--exotel-text-2);
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
 
 .tab:hover {
-  color: #374151;
+  color: var(--exotel-text-1);
 }
 
 .tabActive {
-  color: #9b42f1;
-  border-bottom-color: #9b42f1;
+  color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary);
 }
 
 .statusBadge {
   font-size: 11px;
   font-weight: 700;
   padding: 1px 6px;
-  border-radius: 4px;
+  border-radius: var(--exotel-radius-sm);
   color: #fff;
 }
 
 .statusBadge[data-status="success"] {
-  background: #10b981;
+  background: var(--method-get);
 }
 
 .statusBadge[data-status="error"] {
-  background: #ef4444;
+  background: var(--method-delete);
 }
 
 .copyBtn {
   margin-left: auto;
   padding: 4px 10px;
   background: none;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--exotel-radius-sm);
   font-size: 12px;
-  color: #6b7280;
+  color: var(--exotel-text-2);
   cursor: pointer;
   transition: border-color 0.15s;
 }
 
 .copyBtn:hover {
-  border-color: #9b42f1;
-  color: #9b42f1;
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
 }
 
 .responseBody {
@@ -362,6 +353,7 @@
   max-height: 400px;
   white-space: pre-wrap;
   word-break: break-word;
+  font-family: var(--ifm-font-family-monospace);
 }
 
 /* Loading animation */
