@@ -164,6 +164,30 @@ function syncPage(dispatch = false) {
   }
 }
 
+function start() {
+  if (typeof document === 'undefined') {
+    return;
+  }
+
+  const run = () => syncPage(true);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+
+  if (!document.body) {
+    return;
+  }
+
+  let timer = 0;
+  const observer = new MutationObserver(() => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => syncPage(false), 50);
+  });
+  observer.observe(document.body, {childList: true, subtree: true});
+}
+
 if (typeof window !== 'undefined') {
   window.addEventListener(EVENT, (event) => {
     const regionId = event.detail?.regionId;
@@ -178,26 +202,12 @@ if (typeof window !== 'undefined') {
     rewriteSamples(regionId);
     syncToggles(regionId);
   });
+  start();
 }
-
-function start() {
-  const run = () => syncPage(true);
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run);
-  } else {
-    run();
-  }
-
-  let timer = 0;
-  const observer = new MutationObserver(() => {
-    window.clearTimeout(timer);
-    timer = window.setTimeout(() => syncPage(false), 50);
-  });
-  observer.observe(document.body, {childList: true, subtree: true});
-}
-
-start();
 
 export function onRouteDidUpdate() {
+  if (typeof document === 'undefined') {
+    return;
+  }
   syncPage(true);
 }

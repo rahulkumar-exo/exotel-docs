@@ -72,13 +72,16 @@ export default function CopyPageButton(): JSX.Element | null {
     }
   };
 
-  const openInLLM = (target: 'chatgpt' | 'claude') => {
+  const openInLLM = (target: 'cursor' | 'chatgpt' | 'claude') => {
     const fullRawUrl = `${window.location.origin}${rawUrl}`;
     const prompt = `Read this Exotel docs page as markdown and be ready to answer questions: ${fullRawUrl}`;
+    const encoded = encodeURIComponent(prompt);
     const url =
-      target === 'chatgpt'
-        ? `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`
-        : `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+      target === 'cursor'
+        ? `https://cursor.com/link/prompt?text=${encoded}`
+        : target === 'chatgpt'
+          ? `https://chatgpt.com/?q=${encoded}`
+          : `https://claude.ai/new?q=${encoded}`;
     window.open(url, '_blank', 'noopener,noreferrer');
     setMenuOpen(false);
   };
@@ -141,6 +144,14 @@ export default function CopyPageButton(): JSX.Element | null {
         </button>
         {menuOpen && (
           <div className={styles.menu} role="menu">
+            <button
+              type="button"
+              role="menuitem"
+              className={styles.menuItem}
+              onClick={() => openInLLM('cursor')}
+            >
+              Open in Cursor
+            </button>
             <button
               type="button"
               role="menuitem"
