@@ -28989,5 +28989,39 @@
       }
     ],
     "answer_length": 674
+  },
+  {
+    "timestamp": "2026-08-31T11:42:01.887Z",
+    "response_id": "b8fff5fe-1a1d-4b22-b99d-4860264911a4",
+    "question": "how much does that 1 pulse ?",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2239,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      }
+    ],
+    "answer_length": 176
   }
 ]
