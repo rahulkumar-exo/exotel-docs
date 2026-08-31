@@ -28819,5 +28819,39 @@
       }
     ],
     "answer_length": 2070
+  },
+  {
+    "timestamp": "2026-08-31T06:59:55.557Z",
+    "response_id": "185a4d01-7b89-4b4c-981c-dd1599719c74",
+    "question": "Does CQA support s3 intergration",
+    "question_length": 32,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7051,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 1159
   }
 ]
