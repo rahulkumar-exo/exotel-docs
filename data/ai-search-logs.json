@@ -29057,5 +29057,39 @@
       }
     ],
     "answer_length": 2113
+  },
+  {
+    "timestamp": "2026-08-31T14:58:48.538Z",
+    "response_id": "73bb2803-7426-4e8c-a51e-162243c67f28",
+    "question": "Exotel Voicebot",
+    "question_length": 15,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5578,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 2649
   }
 ]
