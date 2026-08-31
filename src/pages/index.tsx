@@ -87,12 +87,6 @@ const products = [
     available: true,
   },
   {
-    title: 'Gen AI',
-    description: 'AI-powered call analysis — transcription, sentiment, summarization.',
-    link: '/docs/gen-ai/overview',
-    available: true,
-  },
-  {
     title: 'Heartbeat',
     description: 'Real-time ExoPhone health monitoring with webhook notifications.',
     link: '/docs/heartbeat/overview',

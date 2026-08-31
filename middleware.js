@@ -18,13 +18,19 @@
  *   - WordPress admin path rewrites
  */
 
-import { next } from '@vercel/edge';
+import { next, rewrite } from '@vercel/edge';
+
+const OLD_SITE_ORIGIN = 'http://167.71.226.61';
 
 export const config = {
   matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 };
 
-export default function middleware() {
+export default function middleware(request) {
+  const url = new URL(request.url);
+  if (url.searchParams.get('legacy') === '1') {
+    return rewrite(`${OLD_SITE_ORIGIN}${url.pathname}${url.search}`);
+  }
   const response = next();
   response.headers.set('X-Docs-Variant', 'new');
   return response;
