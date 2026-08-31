@@ -29125,5 +29125,39 @@
       }
     ],
     "answer_length": 1204
+  },
+  {
+    "timestamp": "2026-08-31T08:24:00.517Z",
+    "response_id": "ba20036f-b4fb-41b7-a691-9d073d901960",
+    "question": "so how would the flow be in such a case",
+    "question_length": 39,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5515,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Actions",
+        "product": "chatbot",
+        "url": "/docs/chatbot/actions"
+      }
+    ],
+    "answer_length": 3325
   }
 ]
