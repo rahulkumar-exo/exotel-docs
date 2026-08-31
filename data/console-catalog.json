@@ -1,0 +1,159 @@
+{
+  "version": "2026-08-27.1",
+  "suggested_queries": [
+    "connect two numbers",
+    "send SMS",
+    "OTP verification",
+    "WhatsApp template",
+    "buy a number",
+    "stream audio",
+    "call quality"
+  ],
+  "mcp_pointer": {
+    "id": "voice_mcp",
+    "title": "Voice MCP for AI agents",
+    "url": "https://developer.exotel.com/docs/mcp-server/overview"
+  },
+  "channels": {
+    "voice": {
+      "cards": [
+        {
+          "id": "api_reference",
+          "title": "API Reference",
+          "description": "Make and receive calls with Exotel Programmable Voice APIs.",
+          "icon": "book",
+          "url": "https://developer.exotel.com/docs/voice",
+          "cta": "developer.exotel.com"
+        },
+        {
+          "id": "sdk_quickstarts",
+          "title": "SDK Quickstarts",
+          "description": "Make your first voice call with cURL, Node.js, or Python.",
+          "icon": "code",
+          "url": "https://developer.exotel.com/docs/voice-v1/quickstart",
+          "cta": "developer.exotel.com"
+        },
+        {
+          "id": "exoml_flows",
+          "title": "ExoML & Flows",
+          "description": "Build programmable call flows and stream live call audio.",
+          "icon": "flow",
+          "url": "https://developer.exotel.com/docs/agentstream/developer-guide",
+          "cta": "developer.exotel.com"
+        }
+      ],
+      "cross_sell": [
+        {
+          "id": "messaging",
+          "title": "Send your first SMS",
+          "url": "https://developer.exotel.com/docs/sms-api/quickstart"
+        }
+      ]
+    },
+    "sms": {
+      "cards": [
+        {
+          "id": "api_reference",
+          "title": "API Reference",
+          "description": "Send individual and bulk SMS messages and check delivery status.",
+          "icon": "book",
+          "url": "https://developer.exotel.com/docs/sms-api/overview",
+          "cta": "developer.exotel.com"
+        },
+        {
+          "id": "sdk_quickstarts",
+          "title": "SDK Quickstarts",
+          "description": "Send your first SMS with cURL, Node.js, or Python.",
+          "icon": "code",
+          "url": "https://developer.exotel.com/docs/sms-api/quickstart",
+          "cta": "developer.exotel.com"
+        },
+        {
+          "id": "exoml_flows",
+          "title": "Messaging APIs",
+          "description": "Configure SMS requests, templates, and delivery callbacks.",
+          "icon": "flow",
+          "url": "https://developer.exotel.com/docs/sms-api/api-reference/send-sms",
+          "cta": "developer.exotel.com"
+        }
+      ],
+      "cross_sell": [
+        {
+          "id": "voice",
+          "title": "Make your first call",
+          "url": "https://developer.exotel.com/docs/voice-v1/quickstart"
+        }
+      ]
+    },
+    "whatsapp": {
+      "cards": [
+        {
+          "id": "api_reference",
+          "title": "API Reference",
+          "description": "Send text, media, templates, and interactive WhatsApp messages.",
+          "icon": "book",
+          "url": "https://developer.exotel.com/docs/whatsapp-api/overview",
+          "cta": "developer.exotel.com"
+        },
+        {
+          "id": "sdk_quickstarts",
+          "title": "Message Quickstart",
+          "description": "Send your first WhatsApp message using the Messaging API.",
+          "icon": "code",
+          "url": "https://developer.exotel.com/docs/whatsapp-api/api-reference/send-message",
+          "cta": "developer.exotel.com"
+        },
+        {
+          "id": "exoml_flows",
+          "title": "WhatsApp Flows",
+          "description": "Build interactive, multi-screen experiences inside WhatsApp.",
+          "icon": "flow",
+          "url": "https://developer.exotel.com/docs/whatsapp-api/api-reference/flows",
+          "cta": "developer.exotel.com"
+        }
+      ],
+      "cross_sell": [
+        {
+          "id": "sms",
+          "title": "Send your first SMS",
+          "url": "https://developer.exotel.com/docs/sms-api/quickstart"
+        }
+      ]
+    },
+    "rcs": {
+      "cards": [
+        {
+          "id": "api_reference",
+          "title": "API Reference",
+          "description": "Build rich messaging experiences with RCS Omnichannel.",
+          "icon": "book",
+          "url": "https://developer.exotel.com/docs/rcs-omnichannel/overview",
+          "cta": "developer.exotel.com"
+        },
+        {
+          "id": "sdk_quickstarts",
+          "title": "Message Quickstart",
+          "description": "Send an RCS message with the Omnichannel API.",
+          "icon": "code",
+          "url": "https://developer.exotel.com/docs/rcs-omnichannel/api-reference/send-message",
+          "cta": "developer.exotel.com"
+        },
+        {
+          "id": "exoml_flows",
+          "title": "RCS Messaging",
+          "description": "Explore RCS message capabilities and integration guidance.",
+          "icon": "flow",
+          "url": "https://developer.exotel.com/docs/rcs-omnichannel/overview",
+          "cta": "developer.exotel.com"
+        }
+      ],
+      "cross_sell": [
+        {
+          "id": "whatsapp",
+          "title": "Explore WhatsApp messaging",
+          "url": "https://developer.exotel.com/docs/whatsapp-api/overview"
+        }
+      ]
+    }
+  }
+}

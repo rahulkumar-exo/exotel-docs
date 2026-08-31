@@ -7,6 +7,7 @@
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const crypto = require('crypto');
+const { getRelevantChunks } = require('../lib/search');
 
 // ---------------------------------------------------------------------------
 // In-memory answer cache
@@ -131,110 +132,6 @@ async function logSearchQuery(entry) {
 async function logFeedback(entry) {
   const msg = `ai-chat-feedback: ${entry.vote} on "${(entry.question || '').slice(0, 50)}"`;
   return appendToGitHubFile(FEEDBACK_FILE_PATH, entry, msg, 'AI Feedback Logger');
-}
-
-// API-developer keywords — when present in query, boost API reference docs
-// over end-customer support docs. Devs hitting the AI from the dev portal
-// almost always want API/code answers, not general "how does Exotel work" content.
-const DEV_INTENT_KEYWORDS = [
-  'api', 'endpoint', 'request', 'response', 'curl', 'header', 'param',
-  'parameter', 'body', 'json', 'xml', 'auth', 'token', 'sid', 'webhook',
-  'callback', 'sdk', 'integration', 'integrate', 'code', 'example',
-  'http', 'post', 'get', 'put', 'delete', 'method', 'status code',
-  'rate limit', 'webrtc', 'voicebot', 'applet', 'exoml',
-];
-
-function isDevIntent(query) {
-  const q = query.toLowerCase();
-  return DEV_INTENT_KEYWORDS.some((kw) => q.includes(kw));
-}
-
-function isApiReferenceDoc(doc) {
-  const url = (doc.url || '').toLowerCase();
-  return (
-    url.includes('/api-reference/') ||
-    url.includes('/api/') ||
-    url.endsWith('/quickstart') ||
-    url.endsWith('/quickstart.mdx')
-  );
-}
-
-function isEndCustomerSupportDoc(doc) {
-  const url = (doc.url || '').toLowerCase();
-  // /docs/call-support, /docs/sms-support, /docs/whatsapp-support are written
-  // for end-customers (dashboard users), not for API developers
-  return (
-    url.includes('/call-support/') ||
-    url.includes('/sms-support/') ||
-    url.includes('/whatsapp-support/') ||
-    url.includes('/faqs/')
-  );
-}
-
-// Simple text similarity for finding relevant chunks
-function getRelevantChunks(query, documents, topK = 8) {
-  const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
-  const devIntent = isDevIntent(query);
-
-  const scored = documents.map(doc => {
-    const content = (doc.title + ' ' + doc.content + ' ' + doc.product).toLowerCase();
-    let score = 0;
-
-    for (const word of queryWords) {
-      // Exact word match
-      const regex = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
-      const matches = content.match(regex);
-      if (matches) {
-        score += matches.length * 2;
-      }
-
-      // Partial match
-      if (content.includes(word)) {
-        score += 1;
-      }
-    }
-
-    // Boost title matches
-    const titleLower = doc.title.toLowerCase();
-    for (const word of queryWords) {
-      if (titleLower.includes(word)) {
-        score += 5;
-      }
-    }
-
-    // Boost product name matches
-    const productLower = doc.product.toLowerCase();
-    for (const word of queryWords) {
-      if (productLower.includes(word)) {
-        score += 3;
-      }
-    }
-
-    // ---- Dev-intent re-ranking ----
-    // When the query has dev keywords (api, endpoint, curl, ...), strongly
-    // prefer API reference docs and de-emphasise end-customer support docs.
-    if (devIntent) {
-      if (isApiReferenceDoc(doc)) {
-        score += 15; // strong boost for API ref pages
-      }
-      if (isEndCustomerSupportDoc(doc)) {
-        score = Math.max(0, score - 8); // demote support/faq pages
-      }
-    } else {
-      // Even without explicit dev keywords, mildly prefer API ref pages on
-      // the dev portal since that's the audience.
-      if (isApiReferenceDoc(doc)) {
-        score += 4;
-      }
-    }
-
-    return { ...doc, score };
-  });
-
-  return scored
-    .filter(doc => doc.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, topK);
 }
 
 module.exports = async function handler(req, res) {
