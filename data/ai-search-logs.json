@@ -28751,5 +28751,39 @@
       }
     ],
     "answer_length": 150
+  },
+  {
+    "timestamp": "2026-08-31T04:25:18.889Z",
+    "response_id": "ee1cce70-5376-4c22-8947-a8bb77197078",
+    "question": "completed",
+    "question_length": 9,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5811,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Monitoring & Visualization",
+        "product": "use-cases",
+        "url": "/docs/use-cases/call-monitoring-visualization.mdx"
+      },
+      {
+        "title": "Campaign Guides Overview",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/overview"
+      },
+      {
+        "title": "Campaign Reports & Analytics",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-reporting"
+      },
+      {
+        "title": "Campaign Reports & Analytics",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-reporting"
+      }
+    ],
+    "answer_length": 2269
   }
 ]
