@@ -17,7 +17,7 @@ If you have not placed a call yet, use the [quickstart](/docs/voice-v1/quickstar
 | I want to | Start here |
 |-----------|------------|
 | Connect two phone numbers | [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) |
-| Connect an agent to a customer | [Connect Agent to Customer](/docs/voice-api/api-reference/make-a-call) |
+| Connect an agent to a customer | [Connect Agent to Customer](/docs/voice-v3/api-reference/make-a-call) |
 | Connect a number to an IVR flow | [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow) |
 | Handle a call that comes into my ExoPhone | [Program Incoming Call](/docs/voice-v1/api-reference/incoming-call) |
 | Build an IVR menu | [IVR Menu Applet](/docs/voice-v1/applets/ivr-menu) |
@@ -43,7 +43,7 @@ POST /v1/Accounts/{account_sid}/Calls/connect
 To connect an agent who is already in your dashboard, POST to `ccm-api.exotel.com`:
 
 ```
-POST /v2/accounts/{account_sid}/calls
+POST /v3/accounts/{account_sid}/calls
 ```
 
 The agent needs a device that is on. For queues, processes, and leads, see [Contact Center](/docs/contact-center/overview).
@@ -61,7 +61,7 @@ You can place the call on one URL and read it on the other. Each API page lists 
 | Task | Method | Path |
 |------|--------|------|
 | [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) | POST | `/v1/Accounts/{account_sid}/Calls/connect` |
-| [Connect Agent to Customer](/docs/voice-api/api-reference/make-a-call) | POST | `/v2/accounts/{account_sid}/calls` |
+| [Connect Agent to Customer](/docs/voice-v3/api-reference/make-a-call) | POST | `/v3/accounts/{account_sid}/calls` |
 | [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow) | POST | `/v1/Accounts/{account_sid}/Calls/connect` |
 | [Program Incoming Call](/docs/voice-v1/api-reference/incoming-call) | — | Call flow on the ExoPhone |
 | [Call Details](/docs/voice-v1/api-reference/call-details) | GET | `/v1/Accounts/{account_sid}/Calls/{call_sid}` |

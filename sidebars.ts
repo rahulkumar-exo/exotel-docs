@@ -12,7 +12,7 @@ const sidebars: SidebarsConfig = {
         'voice-v1/api-reference/connect-two-numbers',
         {
           type: 'doc',
-          id: 'voice-api/api-reference/make-a-call',
+          id: 'voice-v3/api-reference/make-a-call',
           label: 'Connect Agent to Customer',
         },
         {

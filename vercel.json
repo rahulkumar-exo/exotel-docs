@@ -48,6 +48,7 @@
 
     { "source": "/docs/voice/click-to-call", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
     { "source": "/docs/voice/make-a-call", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
+    { "source": "/docs/voice-api/api-reference/make-a-call", "destination": "/docs/voice-v3/api-reference/make-a-call", "permanent": true },
     { "source": "/docs/voice/connect-two-numbers", "destination": "/docs/voice-v1/api-reference/connect-two-numbers", "permanent": true },
     { "source": "/docs/voice/connect-to-flow", "destination": "/docs/voice-v1/api-reference/connect-to-flow", "permanent": true },
     { "source": "/docs/voice/call-details", "destination": "/docs/voice-v1/api-reference/call-details", "permanent": true },

@@ -1,9 +1,10 @@
 ---
 id: make-a-call
 title: Connect Agent to Customer
-description: Initiate an outbound agent-to-customer call using the Exotel Voice v2 (CCM) API. The agent is called first, then connected to the customer.
+description: Initiate an outbound agent-to-customer call using the Exotel Voice v3 (CCM) API. The agent is called first, then connected to the customer.
 sidebar_label: Connect Agent to Customer
 sidebar_position: 1
+displayed_sidebar: voiceSidebar
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,13 +17,13 @@ import RegionalUrls from '@site/src/components/RegionalUrls';
 
 Initiate an outbound call connecting an agent (user) to a customer. The agent is called first on their configured device (phone/SIP), then the customer is dialed.
 
-<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/calls" />
+<TryItBanner method="POST" endpoint="/v3/accounts/{account_sid}/calls" />
 
 :::info
 This is a **CCM** (Contact Center Management) API. Use it if you run contact center operations on `my*.exotel.com`. Agents must be added as co-workers in the dashboard and their device must be ON. For calls that connect two phone numbers, see [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers).
 :::
 
-<RegionalUrls path="/v2/accounts/{account_sid}/calls" host="ccm" />
+<RegionalUrls path="/v3/accounts/{account_sid}/calls" host="ccm" />
 
 ## Request Body (JSON)
 
@@ -85,7 +86,7 @@ This is a **CCM** (Contact Center Management) API. Use it if you run contact cen
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<account_sid>/calls' \
+curl -X POST 'https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls' \
   -H 'Content-Type: application/json' \
   -d '{
     "from": {"user_contact_uri": "sip:agent@exotel.com"},
@@ -103,7 +104,7 @@ curl -X POST 'https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<acco
 import requests
 import json
 
-url = "https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls"
+url = "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls"
 
 payload = {
     "from": {"user_contact_uri": "sip:agent@exotel.com"},
@@ -132,7 +133,7 @@ print(response.json())
 const axios = require('axios');
 
 const response = await axios.post(
-  'https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls',
+  'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls',
   {
     from: { user_contact_uri: 'sip:agent@exotel.com' },
     to: { number: '+919876543210' },
@@ -199,7 +200,7 @@ HTTP 200 is **not** a confirmation of successful call placement. Use the StatusC
 
 <ApiConsole
   method="POST"
-  path="/v2/accounts/{account_sid}/calls"
+  path="/v3/accounts/{account_sid}/calls"
   contentType="json"
   host="ccm"
   params={[

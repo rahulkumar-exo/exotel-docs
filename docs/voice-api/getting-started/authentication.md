@@ -47,7 +47,7 @@ https://<api_key>:<api_token>@<ccm_subdomain>/v3/accounts/<account_sid>/
 | Singapore | `ccm-api.exotel.com` |
 | Mumbai | `ccm-api.in.exotel.com` |
 
-Use `api.exotel.com` to place a call, connect to a flow, or read the older call record. Use `ccm-api.exotel.com` to [connect an agent](/docs/voice-api/api-reference/make-a-call) or to fetch the [CCM call record](/docs/voice-v3/api-reference/call-details).
+Use `api.exotel.com` to place a call, connect to a flow, or read the older call record. Use `ccm-api.exotel.com` to [connect an agent](/docs/voice-v3/api-reference/make-a-call) or to fetch the [CCM call record](/docs/voice-v3/api-reference/call-details).
 
 ## Making Authenticated Requests
 
