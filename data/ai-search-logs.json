@@ -29091,5 +29091,39 @@
       }
     ],
     "answer_length": 178
+  },
+  {
+    "timestamp": "2026-08-31T08:21:51.734Z",
+    "response_id": "5d9af0e0-bed9-4c5d-ae1f-8bc8dd31d6f9",
+    "question": "connect two numbers control call duration",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5747,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Voice v1",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/overview"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 1204
   }
 ]
