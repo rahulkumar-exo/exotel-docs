@@ -28921,5 +28921,39 @@
       }
     ],
     "answer_length": 1380
+  },
+  {
+    "timestamp": "2026-08-31T11:37:32.999Z",
+    "response_id": "cf60d47f-4c4a-45f1-b2df-2054a3be7411",
+    "question": "i am a developer and i want an api so that i can make automated ai calls, where can i find that?",
+    "question_length": 96,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9857,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 1174
   }
 ]
