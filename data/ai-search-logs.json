@@ -29159,5 +29159,39 @@
       }
     ],
     "answer_length": 3325
+  },
+  {
+    "timestamp": "2026-08-31T08:24:38.573Z",
+    "response_id": "16848d85-bdda-40c0-ab0b-79d5cb5e9bb7",
+    "question": "so how would the flow be wherein i want to control the call duration",
+    "question_length": 68,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9274,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 2882
   }
 ]
