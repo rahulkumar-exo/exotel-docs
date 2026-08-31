@@ -28989,5 +28989,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-31T07:55:44.355Z",
+    "response_id": "9063164c-a7c4-45ba-8a53-df9f97264a67",
+    "question": "Please give me the complete current pricing for Exotel Voice and SMS. I need the exact rates and billing method for the following:\n\nOutgoing call to an Indian mobile number – per minute / pulse rate\nOutgoing call to an Indian landline – per minute / pulse rate\nIncoming call from an Indian mobile number – per minute / pulse rate\nIncoming call from an Indian landline – per minute / pulse rate\nBrowser/WebRTC/AgentStream call – agent leg and customer PSTN leg pricing separately\nCall recording – pric",
+    "question_length": 1750,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3484,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 176
   }
 ]
