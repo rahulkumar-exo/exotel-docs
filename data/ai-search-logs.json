@@ -28921,5 +28921,39 @@
       }
     ],
     "answer_length": 1380
+  },
+  {
+    "timestamp": "2026-08-31T07:51:37.440Z",
+    "response_id": "b95601a0-ca76-4aa7-a097-1494bcf26b3a",
+    "question": "I need to make a call to customer care",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2226,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Missed Call Solution",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/missed-call"
+      }
+    ],
+    "answer_length": 176
   }
 ]
