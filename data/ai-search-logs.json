@@ -29125,5 +29125,39 @@
       }
     ],
     "answer_length": 5188
+  },
+  {
+    "timestamp": "2026-08-31T15:01:54.878Z",
+    "response_id": "992dce02-6265-4708-9f80-2f2f8b90ae3f",
+    "question": "https://d6f000001oyktuac--uatpartial.sandbox.my.site.com/exotelLeadApi/services/apexrest/exotel/createLead make the post call",
+    "question_length": 125,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5263,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1478
   }
 ]
