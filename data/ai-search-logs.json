@@ -28921,5 +28921,107 @@
       }
     ],
     "answer_length": 1380
+  },
+  {
+    "timestamp": "2026-08-31T11:37:32.999Z",
+    "response_id": "cf60d47f-4c4a-45f1-b2df-2054a3be7411",
+    "question": "i am a developer and i want an api so that i can make automated ai calls, where can i find that?",
+    "question_length": 96,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9857,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 1174
+  },
+  {
+    "timestamp": "2026-08-31T11:41:15.203Z",
+    "response_id": "c612c1fa-cf44-4f4c-9913-30476ad5e435",
+    "question": "in this for that 30 second call they mentioned A 30-second call = 1 pulse charged what is mean by 1 pulse charged?",
+    "question_length": 114,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2512,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 674
+  },
+  {
+    "timestamp": "2026-08-31T11:42:01.887Z",
+    "response_id": "b8fff5fe-1a1d-4b22-b99d-4860264911a4",
+    "question": "how much does that 1 pulse ?",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2239,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      }
+    ],
+    "answer_length": 176
   }
 ]
