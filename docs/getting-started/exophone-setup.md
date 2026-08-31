@@ -61,13 +61,13 @@ Exotel offers different types of virtual numbers depending on your region and us
 **List available numbers:**
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/available-phone-numbers?type=local&region=bangalore"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/available-phone-numbers?type=local&region=bangalore"
 ```
 
 **Purchase a number:**
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/incoming-phone-numbers" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/incoming-phone-numbers" \
   -H "Content-Type: application/json" \
   -d '{
     "phone_number": "+918048XXXXXX",
@@ -99,7 +99,7 @@ If you have not created a call flow yet, see [First Call Flow](/docs/getting-sta
 ### Via API
 
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/incoming-phone-numbers/<exophone_sid>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/incoming-phone-numbers/<exophone_sid>" \
   -H "Content-Type: application/json" \
   -d '{
     "incoming_call_url": "http://my.exotel.com/<account_sid>/exoml/start_voice/<app_id>"
@@ -141,7 +141,7 @@ As your business grows, you may need multiple ExoPhones for different purposes:
 ### List All ExoPhones
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/incoming-phone-numbers"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/incoming-phone-numbers"
 ```
 
 ## ExoPhone Auto-Renewal

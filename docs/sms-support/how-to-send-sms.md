@@ -58,7 +58,7 @@ Save frequently used templates in your dashboard for quick access. You can also 
 Send a single message to one recipient using the [Send SMS API](/docs/sms-api/api-reference/send-sms):
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "From=EXOTEL" \
   -d "To=+919876543210" \
   -d "Body=Your order #12345 has been shipped. Track at https://example.com/track" \
@@ -93,7 +93,7 @@ curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_
 Send the same message to multiple recipients using the [Bulk SMS API](/docs/sms-api/api-reference/bulk-sms):
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/Accounts/<account_sid>/Sms/bulksend" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/Accounts/<account_sid>/Sms/bulksend" \
   -H "Content-Type: application/json" \
   -d '{
     "sms": [
@@ -113,7 +113,7 @@ curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/Accounts/<account_
 Send unique messages to different recipients in a single request (max 100 per call):
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/Accounts/<account_sid>/Sms/bulksend" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/Accounts/<account_sid>/Sms/bulksend" \
   -H "Content-Type: application/json" \
   -d '{
     "sms": [

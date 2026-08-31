@@ -51,14 +51,14 @@ Yes. Active campaigns can be paused and resumed:
 
 **Pause:**
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "pause"}'
 ```
 
 **Resume:**
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "resume"}'
 ```
@@ -114,7 +114,7 @@ See [Retry Configuration](/docs/campaign-guides/campaign-retry-logic) for detail
 ### Via API
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>"
 ```
 
 ### Via Dashboard

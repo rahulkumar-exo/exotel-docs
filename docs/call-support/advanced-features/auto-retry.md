@@ -72,7 +72,7 @@ When setting up a campaign via the dashboard or [Campaigns API](/docs/campaigns/
 #### Via API
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "Payment_Reminders",

@@ -25,7 +25,7 @@ All credentials are available on your [Exotel Dashboard](https://my.exotel.com/a
 ### Place a call, applets, older records
 
 ```
-https://<api_key>:<api_token>@<subdomain>/v1/Accounts/<account_sid>/
+https://<subdomain>/v1/Accounts/<account_sid>/
 ```
 
 | Region | Subdomain |
@@ -38,8 +38,8 @@ https://<api_key>:<api_token>@<subdomain>/v1/Accounts/<account_sid>/
 CCM is Contact Center Management. Use these hosts if you run contact center operations on `my*.exotel.com`.
 
 ```
-https://<api_key>:<api_token>@<ccm_subdomain>/v2/accounts/<account_sid>/
-https://<api_key>:<api_token>@<ccm_subdomain>/v3/accounts/<account_sid>/
+https://<ccm_subdomain>/v2/accounts/<account_sid>/
+https://<ccm_subdomain>/v3/accounts/<account_sid>/
 ```
 
 | Region | CCM Subdomain |
@@ -51,22 +51,16 @@ Use `api.exotel.com` to place a call, connect to a flow, or read the older call 
 
 ## Making Authenticated Requests
 
-### Using URL credentials
+Use HTTP Basic Auth. cURL `-u` sets the `Authorization` header.
 
 ```bash
 # Place a call
-curl https://your_api_key:your_api_token@api.exotel.com/v1/Accounts/your_sid/Calls.json
+curl -u '<api_key>:<api_token>' \
+  https://api.exotel.com/v1/Accounts/<account_sid>/Calls.json
 
 # Agent call or call details
-curl https://your_api_key:your_api_token@ccm-api.exotel.com/v2/accounts/your_sid/calls
-```
-
-### Using Authorization header
-
-```bash
-# Base64 encode "api_key:api_token"
-curl -H 'Authorization: Basic <base64_encoded_credentials>' \
-  https://ccm-api.exotel.com/v2/accounts/your_sid/calls
+curl -u '<api_key>:<api_token>' \
+  https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls
 ```
 
 ## Don't Have Credentials?

@@ -43,7 +43,7 @@ Incoming Call → Greeting → Connect (Forwarding Number)
 Use the [Connect to Flow API](/docs/voice-v1/api-reference/connect-to-flow) to programmatically forward calls:
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<caller_number>' \
   -d 'To=<forwarding_number>' \
   -d 'CallerId=<exophone>'

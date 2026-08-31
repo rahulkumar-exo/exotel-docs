@@ -32,29 +32,34 @@ For inbound calls, attach a call flow to the ExoPhone. Exotel follows that flow 
 
 ## Which URL to call
 
-CCM is Contact Center Management. Use CCM APIs if you run contact center operations on `my*.exotel.com`.
-
-To connect two numbers, POST to `api.exotel.com`:
+Use `api.exotel.com` to connect two numbers, or to connect a number to a flow.
 
 ```
 POST /v1/Accounts/{account_sid}/Calls/connect
 ```
 
-To connect an agent who is already in your dashboard, POST to `ccm-api.exotel.com`:
+Use CCM APIs to connect a number to an agent who is already in your dashboard. The agent needs a device that is on.
 
 ```
 POST /v3/accounts/{account_sid}/calls
 ```
 
-The agent needs a device that is on. For queues, processes, and leads, see [Contact Center](/docs/contact-center/overview).
+CCM is Contact Center Management. CCM hosts start with `ccm-api`.
 
-To read the call after it ends (legs, digits, recordings), GET from `ccm-api.exotel.com`:
+Pick the host for your account region:
+
+| Job | Singapore | Mumbai |
+|-----|-----------|--------|
+| Two numbers, or a number to a flow | `api.exotel.com` | `api.in.exotel.com` |
+| A number to an agent (CCM) | `ccm-api.exotel.com` | `ccm-api.in.exotel.com` |
+
+To read a CCM call after it ends (legs, digits, recordings):
 
 ```
 GET /v3/accounts/{account_sid}/calls/{call_sid}
 ```
 
-You can place the call on one URL and read it on the other. Each API page lists the host and path for that request.
+Each API page lists the host and path for that request.
 
 ## API reference
 
@@ -75,13 +80,6 @@ You can place the call on one URL and read it on the other. Each API page lists 
 ## Applets
 
 Applets are the blocks in a call flow. You use them for greetings, menus, transfers, voicemail, and hangup. See the [Applets](/docs/voice-v1/applets/greeting) list.
-
-## Base URLs
-
-| Job | Singapore | Mumbai |
-|-----|-----------|--------|
-| Place a call, applets, older call records | `api.exotel.com` | `api.in.exotel.com` |
-| Contact Center Management (CCM) | `ccm-api.exotel.com` | `ccm-api.in.exotel.com` |
 
 Auth is HTTP Basic. Use the API key and token from the [dashboard](https://my.exotel.com) under **Settings → API Settings**. See [Authentication](/docs/voice-api/getting-started/authentication).
 

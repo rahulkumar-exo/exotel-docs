@@ -37,43 +37,19 @@ Bookmark the [API Settings page](https://my.exotel.com/apisettings/site#api-cred
 
 ## HTTP Basic Authentication
 
-All Exotel APIs use **HTTP Basic Authentication** as defined in [RFC 7617](https://datatracker.ietf.org/doc/html/rfc7617). Your API Key acts as the username and your API Token acts as the password. The credentials are Base64-encoded and transmitted in the `Authorization` header with every request.
+All Exotel APIs use **HTTP Basic Authentication** as defined in [RFC 7617](https://datatracker.ietf.org/doc/html/rfc7617). Your API Key is the username. Your API Token is the password. Send them in the `Authorization` header. Do not put them in the URL.
 
-### Approach 1: Credentials in the URL
-
-You can embed credentials directly in the request URL:
-
-```
-https://<api_key>:<api_token>@<subdomain>/v1/Accounts/<account_sid>/<resource>
-```
-
-For example:
-
-```
-https://myapikey:myapitoken@api.exotel.com/v1/Accounts/exotel/Calls.json
-```
-
-### Approach 2: Authorization Header
-
-Alternatively, pass credentials via the `Authorization` header. The header value is the word `Basic` followed by a space and the Base64-encoded string `<api_key>:<api_token>`:
+The header value is the word `Basic` followed by a space and the Base64-encoded string `<api_key>:<api_token>`:
 
 ```
 Authorization: Basic base64(<api_key>:<api_token>)
 ```
-
-:::note
-Both approaches are functionally identical. The Authorization header approach is generally preferred in production code because it avoids exposing credentials in URLs, which can appear in server logs and browser history.
-:::
 
 ### Code Examples
 
 #### cURL
 
 ```bash
-# Approach 1: Credentials in URL
-curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls.json'
-
-# Approach 2: Using the -u flag (cURL handles Basic Auth encoding automatically)
 curl -u '<api_key>:<api_token>' \
   'https://api.exotel.com/v1/Accounts/<account_sid>/Calls.json'
 ```

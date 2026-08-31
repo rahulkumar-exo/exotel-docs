@@ -104,8 +104,3 @@ npx @modelcontextprotocol/inspector
 ```
 
 Choose **Streamable HTTP**, set URL to `https://mcp.exotel.com/mcp`, and paste your JSON header into the `Authorization` field.
-
-## Still stuck
-
-- File an issue at [github.com/exotel/ExotelMCP](https://github.com/exotel/ExotelMCP/issues) with your client name, redacted `Authorization` JSON (fields present, values removed), and the error message.
-- Email [hello@exotel.com](mailto:hello@exotel.com) with the subject **MCP server — credential issue** for account-specific credential problems. Include your Account SID. Do not paste raw API keys or tokens.

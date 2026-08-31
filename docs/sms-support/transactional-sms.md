@@ -42,7 +42,7 @@ Transactional SMS is used for time-sensitive, informational messages that are es
 Use the [Send SMS API](/docs/sms-api/api-reference/send-sms) with `SmsType=transactional`:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "From=EXOTL" \
   -d "To=+919876543210" \
   -d "Body=Your OTP is 456789. Valid for 5 minutes. Do not share with anyone." \

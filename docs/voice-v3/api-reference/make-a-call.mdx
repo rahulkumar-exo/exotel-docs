@@ -86,7 +86,7 @@ This is a **CCM** (Contact Center Management) API. Use it if you run contact cen
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls' \
+curl -u '<api_key>:<api_token>' -X POST 'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls' \
   -H 'Content-Type: application/json' \
   -d '{
     "from": {"user_contact_uri": "sip:agent@exotel.com"},
@@ -130,11 +130,19 @@ print(response.json())
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const axios = require('axios');
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<account_sid>';
 
-const response = await axios.post(
-  'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls',
-  {
+const url = `https://ccm-api.exotel.com/v3/accounts/${accountSid}/calls`;
+
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
     from: { user_contact_uri: 'sip:agent@exotel.com' },
     to: { number: '+919876543210' },
     virtual_number: '+911234567890',
@@ -142,14 +150,78 @@ const response = await axios.post(
     status_callback: [
       { event: 'terminal', url: 'https://your-server.com/webhook' }
     ]
-  },
-  {
-    auth: { username: '<api_key>', password: '<api_token>' },
-    headers: { 'Content-Type': 'application/json' }
-  }
-);
+  }),
+});
 
-console.log(response.data);
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$payload = json_encode(array(
+  "from" => array("user_contact_uri" => "sip:agent@exotel.com"),
+  "to" => array("number" => "+919876543210"),
+  "virtual_number" => "+911234567890",
+  "recording" => true,
+  "status_callback" => array(
+    array("event" => "terminal", "url" => "https://your-server.com/webhook")
+  )
+));
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => $payload,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    url := "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls"
+    payload := strings.NewReader(`{
+      "from": {"user_contact_uri": "sip:agent@exotel.com"},
+      "to": {"number": "+919876543210"},
+      "virtual_number": "+911234567890",
+      "recording": true,
+      "status_callback": [{"event": "terminal", "url": "https://your-server.com/webhook"}]
+    }`)
+
+    req, _ := http.NewRequest("POST", url, payload)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
 ```
 
 </TabItem>

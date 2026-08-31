@@ -33,7 +33,7 @@ Voice v2 is deprecated. For new integrations, use [Voice v3](/docs/voice-v3/over
 ## Base URL
 
 ```
-https://<api_key>:<api_token>@<ccm_subdomain>/v2/accounts/<account_sid>/
+https://<ccm_subdomain>/v2/accounts/<account_sid>/
 ```
 
 ### Regional Endpoints

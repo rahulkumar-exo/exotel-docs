@@ -16,7 +16,7 @@ Every campaign tracks aggregate statistics that update in real time as calls are
 ### Retrieving Campaign Stats
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>"
 ```
 
 The response includes a `stats` object:
@@ -69,7 +69,7 @@ CDRs provide granular, per-call information for every attempt in your campaign, 
 Use the Campaign Call Details endpoint to list all call attempts:
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>/call-details?offset=0&limit=50"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>/call-details?offset=0&limit=50"
 ```
 
 > **API Reference:** See [Campaign Call Details](/docs/campaigns/api-reference/campaign-call-details) for complete endpoint documentation.

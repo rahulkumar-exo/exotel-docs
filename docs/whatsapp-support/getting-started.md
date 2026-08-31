@@ -121,15 +121,15 @@ For detailed guidance, see [Creating WhatsApp Templates](/docs/whatsapp-support/
 
 | Region | Endpoint |
 |--------|----------|
-| India | `https://<api_key>:<api_token>@api.in.exotel.com` |
-| Singapore | `https://<api_key>:<api_token>@api.exotel.com` |
+| India | `https://api.in.exotel.com` |
+| Singapore | `https://api.exotel.com` |
 
 ### Step 8: Send Your First Message
 
 Use the [Send Message API](/docs/whatsapp-api/api-reference/send-message) to send a template message:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",

@@ -150,7 +150,7 @@ def handle_missed_call(request):
 Use the API to programmatically initiate a callback after detecting a missed call:
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<customer_number>' \
   -d 'CallerId=<exophone>' \
   -d 'Url=http://my.exotel.com/exoml/start/<callback_flow_id>'

@@ -33,7 +33,7 @@ Append `.json` for JSON response format.
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl "https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Numbers/09876543210.json"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v1/Accounts/<your_sid>/Numbers/09876543210.json"
 ```
 
 </TabItem>
@@ -43,7 +43,8 @@ curl "https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_s
 import requests
 
 response = requests.get(
-    'https://<your_api_key>:<your_api_token>@api.exotel.com/v1/Accounts/<your_sid>/Numbers/09876543210.json'
+    'https://api.exotel.com/v1/Accounts/<your_sid>/Numbers/09876543210.json',
+    auth=('<api_key>', '<api_token>')
 )
 
 print(response.json())
@@ -67,6 +68,52 @@ const response = await fetch(url, {
 
 const data = await response.json();
 console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://api.exotel.com/v1/Accounts/<your_sid>/Numbers/09876543210.json",
+  CURLOPT_RETURNTRANSFER => true,
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://api.exotel.com/v1/Accounts/<your_sid>/Numbers/09876543210.json"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
 ```
 
 </TabItem>

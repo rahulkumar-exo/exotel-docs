@@ -66,7 +66,7 @@ Exotel will first call your agent number, and once the agent answers, it will ca
 Use the [Connect Two Numbers API](/docs/voice-v1/api-reference/connect-two-numbers) to programmatically connect an agent to a customer:
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<agent_number>' \
   -d 'To=<customer_number>' \
   -d 'CallerId=<exophone>'
@@ -85,7 +85,7 @@ curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_
 Use the [Connect to Flow API](/docs/voice-v1/api-reference/connect-to-flow) to call a number and connect them to a call flow (IVR):
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<customer_number>' \
   -d 'CallerId=<exophone>' \
   -d 'Url=http://my.exotel.com/exoml/start/<app_id>'

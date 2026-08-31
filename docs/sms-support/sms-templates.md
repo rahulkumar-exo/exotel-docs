@@ -94,7 +94,7 @@ Each `{#var#}` placeholder can be replaced with any value when sending the SMS. 
 Pass the `DltTemplateId` parameter when sending SMS through the [Send SMS API](/docs/sms-api/api-reference/send-sms):
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "From=EXOTL" \
   -d "To=+919876543210" \
   -d "Body=Your OTP for order ORD123 is 456789. Do not share this with anyone." \

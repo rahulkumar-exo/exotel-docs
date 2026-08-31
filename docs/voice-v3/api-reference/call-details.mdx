@@ -37,8 +37,8 @@ This is a **CCM** (Contact Center Management) API. Use it for calls placed with 
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -X GET \
-  'https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
   -H 'Content-Type: application/json'
 ```
 
@@ -90,7 +90,8 @@ console.log(data);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>",
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
 ));
@@ -115,9 +116,10 @@ import (
 )
 
 func main() {
-    url := "https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>"
+    url := "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>"
 
     req, _ := http.NewRequest("GET", url, nil)
+    req.SetBasicAuth("<api_key>", "<api_token>")
     req.Header.Add("Content-Type", "application/json")
 
     res, _ := http.DefaultClient.Do(req)

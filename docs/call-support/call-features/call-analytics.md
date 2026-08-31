@@ -131,7 +131,7 @@ The call logs table provides a detailed record of every call:
 
 ```bash
 # Fetch call logs for a date range
-curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls.json?StartTime=2025-01-01&EndTime=2025-01-31&PageSize=50'
+curl -u '<api_key>:<api_token>' 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls.json?StartTime=2025-01-01&EndTime=2025-01-31&PageSize=50'
 ```
 
 See: [Call Logs API](/docs/voice-v1/overview)

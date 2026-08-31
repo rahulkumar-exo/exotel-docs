@@ -110,8 +110,8 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: rcs-omnichannel
-    label: "💬 RCS - Omnichannel"
-    description: "📍 docs/rcs-omnichannel/* → developer.exotel.com/docs/rcs-omnichannel/*  •  📂 Navbar: API Reference → Other → RCS Omnichannel"
+    label: "💬 RCS"
+    description: "📍 docs/rcs-omnichannel/* → developer.exotel.com/docs/rcs-omnichannel/*  •  📂 Navbar: API Reference → Messaging → RCS"
     folder: docs/rcs-omnichannel
     preview_path: "docs/rcs-omnichannel/{{slug}}"
     create: true

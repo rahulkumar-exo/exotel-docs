@@ -56,7 +56,7 @@ Do not include trunk prefixes (leading zeros used for domestic dialing) when mak
 ### Making International Calls via API
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls/connect" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/calls/connect" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876543210",
@@ -82,7 +82,7 @@ curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_
 ### Sending International SMS
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/sms/send" \
   -H "Content-Type: application/json" \
   -d '{
     "to": "+6591234567",

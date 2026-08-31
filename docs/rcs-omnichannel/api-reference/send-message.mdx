@@ -1,93 +1,280 @@
 ---
+id: send-message
 title: Send RCS Message
 description: "Send RCS template messages with rich media, carousels, and SMS fallback."
 sidebar_label: Send Message
+sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
-# Send RCS Template Message
+# Send RCS Message
 
 Send an RCS message using a pre-approved template. Supports rich media, suggested actions, and automatic SMS fallback for non-RCS capable devices.
 
-## Endpoint
+<TryItBanner method="POST" endpoint="/v2/accounts/{sid}/messages" />
 
-```
-POST https://<api_key>:<api_token>@<subdomain>/v2/accounts/<your_sid>/messages
-```
+<RegionalUrls path="/v2/accounts/{account_sid}/messages" host="api" />
 
-| Data Center | Subdomain |
-|------------|-----------|
-| Singapore | `api.exotel.com` |
-| Mumbai | `api.in.exotel.com` |
+## Request Parameters
 
-## Authentication
+| Parameter         | Required  | Type   | Description |
+|-------------------|-----------|--------|-------------|
+| `custom_data`     | Optional  | String | Custom metadata passed through to status callbacks |
+| `status_callback` | Optional  | String | Webhook URL for delivery receipt events |
+| `rcs`             | Mandatory | Object | RCS channel configuration (see below) |
 
-HTTP Basic Authentication using your API key and API token from the Exotel Dashboard.
+### RCS Object
 
-## Request Body
+| Parameter  | Required  | Type   | Description |
+|------------|-----------|--------|-------------|
+| `from`     | Mandatory | String | BotID for sending (provided by Exotel) |
+| `to`       | Mandatory | String | Recipient phone in E.164 format (e.g., `+919888888888`) |
+| `content`  | Mandatory | Object | Template message content |
+| `fallback` | Optional  | Object | SMS fallback configuration |
+
+### Content Object
+
+| Parameter   | Required  | Type   | Description |
+|-------------|-----------|--------|-------------|
+| `name`      | Mandatory | String | Pre-approved template identifier |
+| `variables` | Mandatory | Object | Key-value pairs for template variable substitution |
 
 ```json
 {
-  "custom_data": "order_12345",
-  "status_callback": "https://your-server.com/rcs/callback",
-  "rcs": {
-    "from": "your_bot_id",
-    "to": "+919888888888",
-    "content": {
-      "name": "welcome_template",
-      "variables": {
-        "customer_name": "Rahul",
-        "order_id": "ORD-12345"
-      }
-    },
-    "fallback": {
-      "sms": {
-        "from": "ExoSMS",
-        "content": "Hi Rahul, your order ORD-12345 has been confirmed."
-      }
-    }
+  "name": "welcome_template",
+  "variables": {
+    "customer_name": "Rahul",
+    "order_id": "ORD-12345"
   }
 }
 ```
 
-## Request Parameters
-
-### Top-Level
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `custom_data` | String | No | Custom metadata passed through to status callbacks |
-| `status_callback` | String (URL) | No | Webhook URL for delivery receipt events |
-| `rcs` | Object | Yes | RCS channel configuration |
-
-### RCS Object
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `from` | String | Yes | BotID for sending (provided by Exotel) |
-| `to` | String | Yes | Recipient phone in E.164 format (e.g., `+919888888888`) |
-| `content` | Object | Yes | Template message content |
-| `fallback` | Object | No | SMS fallback configuration |
-
-### Content Object
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `name` | String | Yes | Pre-approved template identifier |
-| `variables` | Object | Yes | Key-value pairs for template variable substitution |
-
 ### Fallback Object
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `sms.from` | String | Yes | SMS sender ID |
-| `sms.content` | String | Yes | Fallback SMS text (sent if RCS delivery fails) |
+| Parameter     | Required  | Type   | Description |
+|---------------|-----------|--------|-------------|
+| `sms.from`    | Mandatory | String | SMS sender ID |
+| `sms.content` | Mandatory | String | Fallback SMS text (sent if RCS delivery fails) |
 
-## Sample Response
+## Code Examples
 
-**HTTP 202 — Accepted**
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<your_sid>/messages" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "custom_data": "order_12345",
+    "status_callback": "https://your-server.com/rcs/callback",
+    "rcs": {
+      "from": "your_bot_id",
+      "to": "+919888888888",
+      "content": {
+        "name": "welcome_template",
+        "variables": {
+          "customer_name": "Rahul",
+          "order_id": "ORD-12345"
+        }
+      },
+      "fallback": {
+        "sms": {
+          "from": "ExoSMS",
+          "content": "Hi Rahul, your order ORD-12345 has been confirmed."
+        }
+      }
+    }
+  }'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+import json
+
+payload = {
+    "custom_data": "order_12345",
+    "status_callback": "https://your-server.com/rcs/callback",
+    "rcs": {
+        "from": "your_bot_id",
+        "to": "+919888888888",
+        "content": {
+            "name": "welcome_template",
+            "variables": {
+                "customer_name": "Rahul",
+                "order_id": "ORD-12345"
+            }
+        },
+        "fallback": {
+            "sms": {
+                "from": "ExoSMS",
+                "content": "Hi Rahul, your order ORD-12345 has been confirmed."
+            }
+        }
+    }
+}
+
+response = requests.post(
+    "https://api.exotel.com/v2/accounts/<your_sid>/messages",
+    auth=('<api_key>', '<api_token>'),
+    headers={"Content-Type": "application/json"},
+    data=json.dumps(payload)
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<your_api_key>';
+const apiToken = '<your_api_token>';
+
+const payload = {
+  custom_data: 'order_12345',
+  status_callback: 'https://your-server.com/rcs/callback',
+  rcs: {
+    from: 'your_bot_id',
+    to: '+919888888888',
+    content: {
+      name: 'welcome_template',
+      variables: {
+        customer_name: 'Rahul',
+        order_id: 'ORD-12345'
+      }
+    },
+    fallback: {
+      sms: {
+        from: 'ExoSMS',
+        content: 'Hi Rahul, your order ORD-12345 has been confirmed.'
+      }
+    }
+  }
+};
+
+const response = await fetch(
+  'https://api.exotel.com/v2/accounts/<your_sid>/messages',
+  {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  }
+);
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$payload = json_encode(array(
+  "custom_data" => "order_12345",
+  "status_callback" => "https://your-server.com/rcs/callback",
+  "rcs" => array(
+    "from" => "your_bot_id",
+    "to" => "+919888888888",
+    "content" => array(
+      "name" => "welcome_template",
+      "variables" => array(
+        "customer_name" => "Rahul",
+        "order_id" => "ORD-12345"
+      )
+    ),
+    "fallback" => array(
+      "sms" => array(
+        "from" => "ExoSMS",
+        "content" => "Hi Rahul, your order ORD-12345 has been confirmed."
+      )
+    )
+  )
+));
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://api.exotel.com/v2/accounts/<your_sid>/messages",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => $payload,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    url := "https://api.exotel.com/v2/accounts/<your_sid>/messages"
+    payload := strings.NewReader(`{
+    "custom_data": "order_12345",
+    "status_callback": "https://your-server.com/rcs/callback",
+    "rcs": {
+      "from": "your_bot_id",
+      "to": "+919888888888",
+      "content": {
+        "name": "welcome_template",
+        "variables": {
+          "customer_name": "Rahul",
+          "order_id": "ORD-12345"
+        }
+      },
+      "fallback": {
+        "sms": {
+          "from": "ExoSMS",
+          "content": "Hi Rahul, your order ORD-12345 has been confirmed."
+        }
+      }
+    }
+  }`)
+
+    req, _ := http.NewRequest("POST", url, payload)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+**HTTP 202 Accepted**
 
 ```json
 {
@@ -113,6 +300,18 @@ HTTP Basic Authentication using your API key and API token from the Exotel Dashb
   }
 }
 ```
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| 202  | Message accepted for delivery |
+| 400  | Malformed request |
+| 401  | Authentication failed |
+| 402  | Plan limit exceeded |
+| 403  | Access denied |
+| 404  | Resource not found |
+| 5xx  | Server error — retry the request |
 
 ## Status Callbacks (DLR)
 
@@ -150,28 +349,15 @@ Configure an incoming webhook to receive messages from users. Supported content 
 | **Suggested Reply** | `postback_data`, `text` |
 | **Suggested Action** | `postback_data`, `action_type` |
 
-## Error Responses
+## Try It
 
-| HTTP Code | Description |
-|-----------|-------------|
-| 400 | Malformed request or missing required fields |
-| 401 | Invalid API credentials |
-| 402 | Plan limits exceeded |
-| 403 | Insufficient permissions |
-| 404 | Resource not found |
-| 5xx | Server error — retry with backoff |
-
-<TryItBanner />
 <ApiConsole
   method="POST"
   path="/v2/accounts/{account_sid}/messages"
   contentType="json"
   params={[
-    { name: 'account_sid', required: true, type: 'string', description: 'Your Exotel account SID', placeholder: 'Exotel123abc' },
-    { name: 'rcs.from', required: true, type: 'string', description: 'BotID for sending', placeholder: 'your_bot_id' },
-    { name: 'rcs.to', required: true, type: 'string', description: 'Recipient phone in E.164 format', placeholder: '+919888888888' },
-    { name: 'rcs.content.name', required: true, type: 'string', description: 'Pre-approved template identifier', placeholder: 'template_name' },
-    { name: 'custom_data', required: false, type: 'string', description: 'Custom metadata for callbacks', placeholder: 'order_12345' },
+    { name: 'rcs', required: true, type: 'string', description: 'RCS channel object (JSON string)', placeholder: '{"from":"your_bot_id","to":"+919888888888","content":{"name":"welcome_template","variables":{"customer_name":"Rahul"}}}' },
     { name: 'status_callback', required: false, type: 'string', description: 'Webhook URL for delivery events', placeholder: 'https://your-server.com/rcs/callback' },
+    { name: 'custom_data', required: false, type: 'string', description: 'Custom metadata for callbacks', placeholder: 'order_12345' },
   ]}
 />

@@ -68,7 +68,12 @@
   --ifm-navbar-height: 52px;
   --ifm-navbar-shadow: 0 1px 0 0 var(--exotel-grey-2);
 
-  --docusaurus-highlighted-code-line-bg: rgba(155, 66, 241, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(155, 66, 241, 0.18);
+
+  --exotel-code-ink: #16111f;
+  --exotel-code-bar: #100c16;
+  --exotel-code-edge: rgba(155, 66, 241, 0.22);
+  --exotel-code-muted: #9a93a8;
 }
 
 /* ─── Navbar ─── */
@@ -203,14 +208,209 @@ table th code {
   white-space: nowrap;
 }
 
-/* ─── Code Blocks ─── */
-.prism-code {
-  border-radius: var(--exotel-radius-lg);
-  border: 1px solid var(--ifm-border-color);
-  font-size: 0.875rem;
+/* ─── Code Blocks (Stripe-style card, Exotel ink) ─── */
+.theme-code-block,
+.tabs-container:has(.theme-code-block) {
+  --ifm-pre-background: var(--exotel-code-ink);
+  --prism-background-color: var(--exotel-code-ink);
+  --prism-color: #d6deeb;
+  background: var(--exotel-code-ink);
+  color: #d6deeb;
+  border: 1px solid var(--exotel-code-edge);
+  border-radius: var(--exotel-radius-xl);
+  box-shadow: 0 10px 28px rgba(35, 31, 32, 0.1);
+  overflow: hidden;
 }
 
-code {
+.theme-code-block {
+  margin-bottom: 1.25rem;
+}
+
+.tabs-container:has(.theme-code-block) {
+  position: relative;
+  margin: 1rem 0 1.5rem;
+}
+
+.theme-code-block pre,
+.prism-code {
+  background: transparent !important;
+  color: #d6deeb !important;
+  border: none;
+  border-radius: 0;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  padding: 1rem 1.15rem !important;
+}
+
+.theme-code-block [class*='codeBlockContainer'] {
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.theme-code-block code,
+.prism-code code,
+pre code {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0;
+  padding: 0 !important;
+  color: inherit;
+  font-size: inherit;
+}
+
+.theme-code-block [class*='codeBlockTitle'] {
+  background: var(--exotel-code-bar);
+  color: var(--exotel-code-muted);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+}
+
+/* Copy only on request samples (language tabs). Response JSON does not need it. */
+.theme-code-block [class*='buttonGroup'] {
+  display: none;
+}
+
+.tabs-container .theme-code-block,
+.tabs-container .theme-code-block pre,
+.tabs-container .theme-code-block [class*='codeBlockContainer'],
+.tabs-container .theme-code-block [class*='codeBlockContent'] {
+  position: static !important;
+}
+
+.tabs-container .theme-code-block [class*='buttonGroup'] {
+  display: none;
+}
+
+.tabs-container:has(.theme-code-block) .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0 0.5rem;
+  background: var(--exotel-code-bar);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.exotel-region-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  padding: 0.4rem 1rem 0.5rem;
+  background: var(--exotel-code-bar);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.exotel-region-bar__label {
+  color: var(--exotel-code-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.exotel-region__group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--exotel-radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.exotel-region__btn {
+  margin: 0;
+  border: none;
+  border-radius: var(--exotel-radius-pill);
+  padding: 0.28rem 0.7rem;
+  background: transparent;
+  color: var(--exotel-code-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.exotel-region__btn:hover {
+  color: #fff;
+}
+
+.exotel-region__btn[aria-pressed='true'] {
+  background: rgba(0, 234, 195, 0.16);
+  color: #fff;
+}
+
+.exotel-region-bar__copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--exotel-radius-sm);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+}
+
+.exotel-region-bar__copy:hover {
+  background: rgba(155, 66, 241, 0.4);
+  border-color: rgba(155, 66, 241, 0.55);
+}
+
+.exotel-region-bar__copy svg {
+  width: 12px;
+  height: 12px;
+}
+
+.tabs-container:has(.theme-code-block) .tabs__item {
+  margin: 0;
+  padding: 0.7rem 0.85rem 0.65rem;
+  border: none;
+  border-radius: 0;
+  color: var(--exotel-code-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+.tabs-container:has(.theme-code-block) .tabs__item:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.tabs-container:has(.theme-code-block) .tabs__item--active {
+  background: transparent;
+  color: #fff;
+  box-shadow: inset 0 -2px 0 var(--exotel-teal);
+}
+
+.tabs-container:has(.theme-code-block) .margin-top--md {
+  margin-top: 0 !important;
+}
+
+.tabs-container:has(.theme-code-block) .theme-code-block {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.tabs-container:has(.theme-code-block) .theme-code-block + .theme-code-block {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+:not(pre) > code {
   background: var(--exotel-surface-3);
   border: 1px solid var(--ifm-border-color);
   border-radius: var(--exotel-radius-sm);

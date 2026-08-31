@@ -219,7 +219,7 @@ Monitor your campaign's retry rate in the [Campaign Reports](./campaign-reportin
 After a campaign completes, you can analyze retry effectiveness through the campaign details endpoint:
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>"
 ```
 
 The response includes per-contact status showing how many attempts were made:
@@ -245,7 +245,7 @@ For per-call attempt details, use the `call_status_callback` webhook or the [Cam
 ## Full Example: Campaign with Retry Configuration
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/campaigns" \
   -H "Content-Type: application/json" \
   -d '{
     "lists": ["list_sid_1"],

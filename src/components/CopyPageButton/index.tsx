@@ -73,9 +73,8 @@ export default function CopyPageButton(): JSX.Element | null {
   };
 
   const openInLLM = (target: 'chatgpt' | 'claude') => {
-    const fullPageUrl = `${window.location.origin}${pathname}`;
     const fullRawUrl = `${window.location.origin}${rawUrl}`;
-    const prompt = `I have a question about the Exotel documentation page at ${fullPageUrl}. The markdown source is at ${fullRawUrl}. Please fetch it and be ready to answer questions.`;
+    const prompt = `Read this Exotel docs page as markdown and be ready to answer questions: ${fullRawUrl}`;
     const url =
       target === 'chatgpt'
         ? `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`

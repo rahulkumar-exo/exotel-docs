@@ -36,8 +36,8 @@ Use your API key as the username and API token as the password in HTTP Basic Aut
 ## Example Request
 
 ```bash
-curl -X GET \
-  'https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>' \
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://ccm-api.exotel.com/v2/accounts/<account_sid>/calls/<call_sid>' \
   -H 'Content-Type: application/json'
 ```
 

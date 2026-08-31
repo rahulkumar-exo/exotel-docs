@@ -92,7 +92,7 @@ Hello @@first_name, your appointment is on @@appointment_date at our @@branch br
 ### Upload via API
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/contacts/csv-upload" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/contacts/csv-upload" \
   -F "list_name=February_Promo_List" \
   -F "file_name=@contacts.csv" \
   -F "type=static"
@@ -125,7 +125,7 @@ curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_
 Large files may take several minutes to process. Poll the upload status:
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/csv-status/<upload_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/csv-status/<upload_id>"
 ```
 
 **Response:**
@@ -230,19 +230,19 @@ For detailed NDNC compliance information, see [NDNC/DND Compliance](/docs/faqs/n
 ### List All Contact Lists
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/contact-lists"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/contact-lists"
 ```
 
 ### Get List Details
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/contact-lists/<list_sid>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/contact-lists/<list_sid>"
 ```
 
 ### Delete a Contact List
 
 ```bash
-curl -X DELETE "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/contact-lists/<list_sid>"
+curl -u '<api_key>:<api_token>' -X DELETE "https://api.exotel.com/v2/accounts/<account_sid>/contact-lists/<list_sid>"
 ```
 
 :::warning

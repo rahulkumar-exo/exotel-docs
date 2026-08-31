@@ -32,16 +32,16 @@ This API will connect two phone numbers. This API would also mark the user as bu
 
 | Data Center | Base URL                                                                        |
 | ----------- | ------------------------------------------------------------------------------- |
-| Singapore   | `https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>`    |
-| Mumbai      | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v3/accounts/<account_sid>` |
+| Singapore   | `https://ccm-api.exotel.com/v3/accounts/<account_sid>`    |
+| Mumbai      | `https://ccm-api.in.exotel.com/v3/accounts/<account_sid>` |
 
 ## Authentication
 
 All requests require **HTTP Basic Authentication** using your API key and token from the [Exotel Dashboard](https://my.exotel.com) → **Settings → API Settings**.
 
 ```bash
-curl -X GET \
-  'https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
   -H 'Content-Type: application/json'
 ```
 
