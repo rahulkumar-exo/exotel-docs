@@ -29636,5 +29636,39 @@
       }
     ],
     "answer_length": 1016
+  },
+  {
+    "timestamp": "2026-09-01T06:20:03.349Z",
+    "response_id": "2717ce03-f1aa-4069-a476-93eeefdbe815",
+    "question": "voicebot api in pass text ya voice",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 24061,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      }
+    ],
+    "answer_length": 620
   }
 ]
