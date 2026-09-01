@@ -29602,5 +29602,39 @@
       }
     ],
     "answer_length": 1091
+  },
+  {
+    "timestamp": "2026-09-01T06:06:41.088Z",
+    "response_id": "e98130bf-01b7-4c0a-8b14-38d8b0fb20d7",
+    "question": "Hi Team,\nWe are building a customer support voicebot using Exotel VoiceBot.\n\nOur requirement is that Exotel should handle the customer voice → speech-to-text and text → voice (TTS) part. Our cloud backend will handle the customer's transcript/text → Gemini AI → text response part.\n\nCould you please confirm whether this text-based request/response integration is supported with Exotel VoiceBot?\n\nSpecifically, please share the exact API/webhook format for:\n\nSending the customer's transcript/text fr",
+    "question_length": 901,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 24530,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1016
   }
 ]
