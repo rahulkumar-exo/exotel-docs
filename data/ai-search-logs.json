@@ -28921,5 +28921,822 @@
       }
     ],
     "answer_length": 1380
+  },
+  {
+    "timestamp": "2026-08-31T11:37:32.999Z",
+    "response_id": "cf60d47f-4c4a-45f1-b2df-2054a3be7411",
+    "question": "i am a developer and i want an api so that i can make automated ai calls, where can i find that?",
+    "question_length": 96,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9857,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      }
+    ],
+    "answer_length": 1174
+  },
+  {
+    "timestamp": "2026-08-31T11:41:15.203Z",
+    "response_id": "c612c1fa-cf44-4f4c-9913-30476ad5e435",
+    "question": "in this for that 30 second call they mentioned A 30-second call = 1 pulse charged what is mean by 1 pulse charged?",
+    "question_length": 114,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2512,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 674
+  },
+  {
+    "timestamp": "2026-08-31T11:42:01.887Z",
+    "response_id": "b8fff5fe-1a1d-4b22-b99d-4860264911a4",
+    "question": "how much does that 1 pulse ?",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2239,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-08-31T14:58:16.325Z",
+    "response_id": "7cf4715e-799c-49c3-be10-fc100fa2a099",
+    "question": "how to set the parameters for the tool integrations parameters",
+    "question_length": 62,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5986,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 2113
+  },
+  {
+    "timestamp": "2026-08-31T14:58:48.538Z",
+    "response_id": "73bb2803-7426-4e8c-a51e-162243c67f28",
+    "question": "Exotel Voicebot",
+    "question_length": 15,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5578,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 2649
+  },
+  {
+    "timestamp": "2026-08-31T14:59:50.977Z",
+    "response_id": "c9c2aac2-d672-4b97-a229-4b5a9d83fdc3",
+    "question": "using mcp tool integartion",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10278,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Bring Your Own MCP",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/mcp-integration.mdx"
+      },
+      {
+        "title": "VoiceBot Tools Server",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/overview.mdx"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      }
+    ],
+    "answer_length": 5188
+  },
+  {
+    "timestamp": "2026-08-31T15:01:54.878Z",
+    "response_id": "992dce02-6265-4708-9f80-2f2f8b90ae3f",
+    "question": "https://d6f000001oyktuac--uatpartial.sandbox.my.site.com/exotelLeadApi/services/apexrest/exotel/createLead make the post call",
+    "question_length": 125,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5263,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1478
+  },
+  {
+    "timestamp": "2026-08-31T15:42:51.584Z",
+    "response_id": "4d547ca5-71e6-4f5c-8efe-4a5c7e019601",
+    "question": "voice v2",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5733,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 2356
+  },
+  {
+    "timestamp": "2026-09-01T00:15:36.526Z",
+    "response_id": "c5952069-0f7b-4ea5-9fc0-a19d0a970bf5",
+    "question": "Tell me about Leadassist API",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6026,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details.mdx"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      }
+    ],
+    "answer_length": 2788
+  },
+  {
+    "timestamp": "2026-09-01T05:03:00.829Z",
+    "response_id": "39d593de-eb86-469d-a55e-d24df5c15b26",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6801,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 3953
+  },
+  {
+    "timestamp": "2026-09-01T05:03:40.215Z",
+    "response_id": "9ac408a1-677b-4989-a31c-647810ab3ebf",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart.mdx"
+      }
+    ],
+    "answer_length": 3953,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-01T05:05:03.219Z",
+    "response_id": "d2dc2ff9-1a7a-4773-aa0d-5c7e6020a134",
+    "question": "how can i get 0800 number",
+    "question_length": 25,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1063,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-09-01T05:06:39.342Z",
+    "response_id": "7184b8fc-d618-4245-a113-e2596776172a",
+    "question": "hello@exotel.com i need a 0800 number how can i get it",
+    "question_length": 54,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 12761,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-09-01T05:10:47.120Z",
+    "response_id": "d1299508-54d5-4c18-ab68-0d24543e1a32",
+    "question": "i wanna 0800 number on my website and wants the machine to reply  how can i get number now",
+    "question_length": 90,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10446,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 1106
+  },
+  {
+    "timestamp": "2026-09-01T05:25:37.892Z",
+    "response_id": "69ce983f-b98e-4136-8dc2-533a679f06a7",
+    "question": "lead assist",
+    "question_length": 11,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 8665,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Lead Assist (ExoBridge - GreenPin)",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/overview"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - GreenVN)",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/overview"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - Settings)",
+        "product": "lead-assist-settings",
+        "url": "/docs/lead-assist-settings/overview"
+      },
+      {
+        "title": "Lead Assist (ExoBridge - GreenPin)",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/overview"
+      }
+    ],
+    "answer_length": 2477
+  },
+  {
+    "timestamp": "2026-09-01T05:50:50.826Z",
+    "response_id": "93bc3b14-2e96-4b3c-909c-4868e8e22e3c",
+    "question": "callback API",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 7538,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication.mdx"
+      },
+      {
+        "title": "Customer Callbacks",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/customer-callbacks.mdx"
+      }
+    ],
+    "answer_length": 2006
+  },
+  {
+    "timestamp": "2026-09-01T05:51:22.447Z",
+    "response_id": "00081e0f-3975-46ec-ba41-77dcd6d796a4",
+    "question": "callback API in contact ceneter",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 10031,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      }
+    ],
+    "answer_length": 2325
+  },
+  {
+    "timestamp": "2026-09-01T05:52:05.655Z",
+    "response_id": "8779f422-2c78-4936-a832-e5765895399a",
+    "question": "voicebot api",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 5950,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      }
+    ],
+    "answer_length": 2516
+  },
+  {
+    "timestamp": "2026-09-01T05:53:27.297Z",
+    "response_id": "c22b067a-f928-4259-a887-362c895ecbad",
+    "question": "which type pass in json etc voice ya text",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6167,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 2458
+  },
+  {
+    "timestamp": "2026-09-01T05:58:09.801Z",
+    "response_id": "2c765ffb-9567-494e-8ef8-988b1b204b58",
+    "question": "We want to integrate Gemini as the LLM for our Exotel VoiceBot. Exotel should handle the phone call and voice interaction, while our cloud backend will handle the troubleshooting logic and Gemini response. Can the VoiceBot WebSocket/Voicebot integration support this architecture without requiring a separate paid ASR/TTS provider? Please share the exact integration flow and required WebSocket message format.",
+    "question_length": 410,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 6219,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1091
+  },
+  {
+    "timestamp": "2026-09-01T06:06:41.088Z",
+    "response_id": "e98130bf-01b7-4c0a-8b14-38d8b0fb20d7",
+    "question": "Hi Team,\nWe are building a customer support voicebot using Exotel VoiceBot.\n\nOur requirement is that Exotel should handle the customer voice → speech-to-text and text → voice (TTS) part. Our cloud backend will handle the customer's transcript/text → Gemini AI → text response part.\n\nCould you please confirm whether this text-based request/response integration is supported with Exotel VoiceBot?\n\nSpecifically, please share the exact API/webhook format for:\n\nSending the customer's transcript/text fr",
+    "question_length": 901,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 24530,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1016
+  },
+  {
+    "timestamp": "2026-09-01T06:20:03.349Z",
+    "response_id": "2717ce03-f1aa-4069-a476-93eeefdbe815",
+    "question": "voicebot api in pass text ya voice",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 24061,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Voicebot API",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/voicebot-api.mdx"
+      }
+    ],
+    "answer_length": 620
+  },
+  {
+    "timestamp": "2026-09-01T06:22:18.079Z",
+    "response_id": "03945940-f9aa-4a0d-b895-fc13cb9086eb",
+    "question": "mere quetion ye hai ki jo hum ivr flow me voice bot add karte hai na o udhar websoket dalte haina to use voice bhejna hai ya text bhejna hai ye batao mere ko",
+    "question_length": 157,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 7302,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "IVR Menu Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/ivr-menu"
+      },
+      {
+        "title": "Creating a Voice Campaign",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/creating-voice-campaign"
+      }
+    ],
+    "answer_length": 844
+  },
+  {
+    "timestamp": "2026-09-01T06:35:27.394Z",
+    "response_id": "4e5e6310-9e9f-4511-a29e-458adfd3fb3b",
+    "question": "incoming audio format is audio sent as binary farmes or json messages with base64 audio",
+    "question_length": 87,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 16995,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      }
+    ],
+    "answer_length": 975
   }
 ]
