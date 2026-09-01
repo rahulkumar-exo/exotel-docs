@@ -29704,5 +29704,39 @@
       }
     ],
     "answer_length": 844
+  },
+  {
+    "timestamp": "2026-09-01T06:35:27.394Z",
+    "response_id": "4e5e6310-9e9f-4511-a29e-458adfd3fb3b",
+    "question": "incoming audio format is audio sent as binary farmes or json messages with base64 audio",
+    "question_length": 87,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 16995,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers.mdx"
+      },
+      {
+        "title": "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Call Recording Configuration",
+        "product": "advanced-config",
+        "url": "/docs/advanced-config/call-recording-config"
+      }
+    ],
+    "answer_length": 975
   }
 ]
