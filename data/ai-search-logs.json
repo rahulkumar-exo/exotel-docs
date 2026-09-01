@@ -29670,5 +29670,39 @@
       }
     ],
     "answer_length": 620
+  },
+  {
+    "timestamp": "2026-09-01T06:22:18.079Z",
+    "response_id": "03945940-f9aa-4a0d-b895-fc13cb9086eb",
+    "question": "mere quetion ye hai ki jo hum ivr flow me voice bot add karte hai na o udhar websoket dalte haina to use voice bhejna hai ya text bhejna hai ye batao mere ko",
+    "question_length": 157,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 7302,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "IVR Menu Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/ivr-menu"
+      },
+      {
+        "title": "Creating a Voice Campaign",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/creating-voice-campaign"
+      }
+    ],
+    "answer_length": 844
   }
 ]
