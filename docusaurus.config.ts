@@ -48,7 +48,8 @@ const config: Config = {
         docsRouteBasePath: '/docs',
         highlightSearchTermsOnTargetPage: true,
         searchResultLimits: 8,
-        searchBarShortcutHint: true,
+        searchBarShortcut: false,
+        searchBarShortcutHint: false,
         language: ['en'],
         searchResultContextMaxLength: 50,
         explicitSearchResultPath: true,
@@ -188,7 +189,7 @@ const config: Config = {
           items: [
             { type: 'html', value: '<span class="dropdown-section-label">AI & Advanced</span>' },
             { type: 'docSidebar', sidebarId: 'voicebotToolsSidebar', label: 'VoiceBot Tools' },
-            { type: 'docSidebar', sidebarId: 'cqaSidebar', label: 'CQA — Conversation Quality Analysis' },
+            { type: 'docSidebar', sidebarId: 'cqaSidebar', label: 'Conversational Intelligence (CQA)' },
             { type: 'docSidebar', sidebarId: 'chatbotSidebar', label: 'Chatbot Platform' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
             { type: 'html', value: '<span class="dropdown-section-label">Voice</span>' },
@@ -242,9 +243,16 @@ const config: Config = {
         },
         // ── Right side ──
         {
-          href: 'https://my.exotel.com',
-          label: 'Dashboard',
+          href: 'https://my.exotel.com/auth/register',
+          label: 'Start Building',
           position: 'right',
+          className: 'navbar__link--signin',
+        },
+        {
+          type: 'html',
+          position: 'right',
+          value:
+            '<div class="navbar__find"><button type="button" class="navbar__search-launch" onclick="window.dispatchEvent(new CustomEvent(\'open-docs-search\',{detail:{query:\'\'}}))">Search <kbd>/</kbd></button><button type="button" class="navbar__ask-ai" onclick="window.dispatchEvent(new CustomEvent(\'open-ai-chat\',{detail:{question:\'\'}}))">Ask AI</button></div>',
         },
       ],
     },

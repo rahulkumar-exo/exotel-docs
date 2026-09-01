@@ -1,0 +1,114 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  justify-content: center;
+  padding: 12vh 1rem 2rem;
+  background: rgba(35, 31, 32, 0.28);
+}
+
+.modal {
+  width: min(640px, 100%);
+  max-height: min(72vh, 640px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--exotel-surface-1);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(35, 31, 32, 0.18);
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--ifm-border-color);
+  color: var(--exotel-text-3);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--exotel-text-1);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.input::placeholder {
+  color: var(--exotel-text-3);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border: none;
+  background: transparent;
+  color: var(--exotel-text-2);
+  cursor: pointer;
+}
+
+.body {
+  overflow-y: auto;
+  padding: 0.5rem 0.5rem 0.75rem;
+}
+
+.sectionLabel {
+  padding: 0.65rem 0.7rem 0.3rem;
+  color: var(--exotel-text-3);
+  font-size: var(--exotel-font-label);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 0.65rem 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.row:hover,
+.rowActive {
+  background: rgba(155, 66, 241, 0.08);
+}
+
+.rowTitle {
+  color: var(--exotel-text-1);
+  font-size: var(--exotel-font-ui);
+  font-weight: 600;
+}
+
+.rowPath {
+  margin-top: 0.15rem;
+  color: var(--exotel-text-3);
+  font-size: var(--exotel-font-label);
+}
+
+.empty {
+  margin: 0.5rem 0.75rem 0.25rem;
+  color: var(--exotel-text-2);
+  font-size: var(--exotel-font-ui);
+  line-height: 1.5;
+}
+
+@media (max-width: 996px) {
+  .overlay {
+    padding: 1rem 0.75rem;
+  }
+}

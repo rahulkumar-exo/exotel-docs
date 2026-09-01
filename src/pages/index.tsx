@@ -1,95 +1,92 @@
-import {type ReactNode, useState} from 'react';
+import {type FormEvent, type ReactNode, useEffect, useRef, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import WebMCPTools from '@site/src/components/WebMCP';
+import {openAskAi} from '@site/src/components/AiChat';
 
 import styles from './index.module.css';
+
+const REGISTER_URL = 'https://my.exotel.com/auth/register';
+
+type HeroSample = {
+  id: string;
+  label: string;
+  method: 'POST';
+  href: string;
+  code: string;
+};
 
 const products = [
   {
     title: 'Voicebot API',
     description: 'Build AI voicebots with natural language, manage versions, and pull conversation transcripts & insights.',
     link: '/docs/voicebot-tools/voicebot-api',
-    available: true,
   },
   {
     title: 'AgentStream',
     description: 'Real-time bidirectional audio between live calls and your bot server over WebSocket — three connection methods, full protocol reference.',
     link: '/docs/agentstream/developer-guide',
-    available: true,
   },
   {
     title: 'Contact Center API',
     description: 'Build custom agent interfaces with outbound calling, lead management, and campaign configuration.',
     link: '/docs/contact-center/overview',
-    available: true,
   },
   {
     title: 'Programmable Voice',
     description: 'Make and receive calls, build IVR flows, and manage phone numbers programmatically.',
     link: '/docs/voice',
-    available: true,
   },
   {
     title: 'SMS API',
     description: 'Send single and bulk SMS with DLT compliance, URL shortening, and delivery tracking.',
     link: '/docs/sms-api/overview',
-    available: true,
   },
   {
     title: 'WhatsApp API',
     description: 'Send text, media, templates, and interactive messages via WhatsApp Business.',
     link: '/docs/whatsapp-api/overview',
-    available: true,
   },
   {
-    title: 'Conversation Quality Analysis',
+    title: 'Conversational Intelligence (CQA)',
     description: 'AI-powered quality scoring for contact center interactions — Data Import API, Analysis API, and CSV file schemas.',
     link: '/docs/cqa/overview',
-    available: true,
   },
   {
     title: 'ExoVerify',
     description: 'Verify phone numbers with SMS OTP for secure user authentication.',
     link: '/docs/exoverify-api/overview',
-    available: true,
   },
   {
     title: 'Call Campaigns',
     description: 'Run outbound call campaigns with IVR flows, retries, scheduling, and reporting.',
     link: '/docs/campaigns/overview',
-    available: true,
   },
   {
     title: 'SMS Campaigns',
     description: 'Create and manage bulk SMS campaigns with scheduling and personalization.',
     link: '/docs/sms-campaigns/overview',
-    available: true,
   },
   {
     title: 'ExoPhones',
     description: 'Browse, purchase, and manage virtual phone numbers across countries.',
     link: '/docs/exophones/overview',
-    available: true,
   },
   {
     title: 'Lead Assist',
     description: 'Privacy-protected communication with PIN verification and virtual numbers.',
     link: '/docs/lead-assist/overview',
-    available: true,
   },
   {
     title: 'Users API',
     description: 'Manage contact center agents, devices, roles, and SIP configurations.',
     link: '/docs/users/overview',
-    available: true,
   },
   {
     title: 'Heartbeat',
     description: 'Real-time ExoPhone health monitoring with webhook notifications.',
     link: '/docs/heartbeat/overview',
-    available: true,
   },
 ];
 
@@ -164,67 +161,196 @@ const useCases = [
   },
 ];
 
-function HeroBanner() {
-  const [heroQuery, setHeroQuery] = useState('');
-
-  const askQuestion = (question: string) => {
-    if (!question.trim()) return;
-    setHeroQuery('');
-    window.dispatchEvent(new CustomEvent('open-ai-chat', {
-      detail: { question: question.trim() },
-    }));
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      askQuestion(heroQuery);
+const heroSamples: HeroSample[] = [
+  {
+    id: 'call',
+    label: 'Make a call',
+    method: 'POST',
+    href: '/docs/voice-v1/quickstart',
+    code: `# two numbers, one request
+curl -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \\
+  -X POST "https://api.exotel.com/v1/Accounts/$SID/Calls/connect" \\
+  -d "From=+919876543210" \\
+  -d "To=+919123456789" \\
+  -d "CallerId=YOUR_EXOPHONE"`,
+  },
+  {
+    id: 'stream',
+    label: 'Stream a call',
+    method: 'POST',
+    href: '/docs/agentstream/developer-guide',
+    code: `# send the room to your bot
+curl -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \\
+  -X POST "https://api.in.exotel.com/v1/accounts/$SID/calls/connect" \\
+  -F "from=+919876543210" \\
+  -F "callerid=08047491899" \\
+  -F "streamurl=wss://bot.example.com/media" \\
+  -F "streamtype=bidirectional"`,
+  },
+  {
+    id: 'analyze',
+    label: 'Analyze a call',
+    method: 'POST',
+    href: '/docs/cqa/overview',
+    code: `# score the conversation
+curl -X POST \\
+  "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions" \\
+  -H "X-API-Key: $CQA_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{"channel_type":"VOICE","audio_url":"https://files.example/call.wav","metadata":{"note":"I can hear you"}}'`,
+  },
+  {
+    id: 'message',
+    label: 'Send a Message',
+    method: 'POST',
+    href: '/docs/rcs-omnichannel/api-reference/send-message',
+    code: `# 10 March 1876
+curl -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \\
+  -X POST "https://api.exotel.com/v2/accounts/$SID/messages" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "rcs": {
+      "from": "your_bot_id",
+      "to": "+919888888888",
+      "content": { "name": "welcome_template" },
+      "fallback": {
+        "sms": { "from": "ExoSMS", "content": "Watson, Come here" }
+      }
     }
-  };
+  }'`,
+  },
+];
+
+function highlightCurl(code: string) {
+  return code.split('\n').map((line, index) => {
+    if (line.trimStart().startsWith('#')) {
+      return (
+        <span key={index} className={styles.shellComment}>
+          {line}
+          {'\n'}
+        </span>
+      );
+    }
+
+    const parts = line.split(/("(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*')/g);
+    return (
+      <span key={index}>
+        {parts.map((part, partIndex) => {
+          if (part.startsWith('"') || part.startsWith("'")) {
+            return (
+              <span key={partIndex} className={styles.shellString}>
+                {part}
+              </span>
+            );
+          }
+          return part;
+        })}
+        {'\n'}
+      </span>
+    );
+  });
+}
+
+function HeroDeck() {
+  const [activeId, setActiveId] = useState(heroSamples[0].id);
+  const [copied, setCopied] = useState(false);
+  const copyTimer = useRef<number>();
+  const sample = heroSamples.find((item) => item.id === activeId) ?? heroSamples[0];
+
+  useEffect(() => {
+    return () => window.clearTimeout(copyTimer.current);
+  }, []);
+
+  async function copySample() {
+    try {
+      await navigator.clipboard.writeText(sample.code);
+      setCopied(true);
+      window.clearTimeout(copyTimer.current);
+      copyTimer.current = window.setTimeout(() => setCopied(false), 1600);
+    } catch {
+      setCopied(false);
+    }
+  }
 
   return (
-    <header className={styles.heroBanner}>
-      <div className="container">
-        <Heading as="h1" className={styles.heroTitle}>
-          Exotel for Developers
-        </Heading>
-        <p className={styles.heroSubtitle}>
-          Learn how to get up and running with Exotel through tutorials, APIs, and use-case docs. Happy building.
-        </p>
-        <div className={styles.heroSearchContainer}>
-          <div className={styles.heroSearchBox}>
-            <svg className={styles.heroSearchIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-            <input
-              type="text"
-              className={styles.heroSearchInput}
-              placeholder="Ask AI anything about Exotel APIs..."
-              value={heroQuery}
-              onChange={(e) => setHeroQuery(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
+    <div className={styles.heroDeck}>
+      <div className={styles.deckList}>
+        <p className={styles.deckListLabel}>Start here</p>
+        <div className={styles.deckListItems} role="tablist" aria-label="Sample requests">
+          {heroSamples.map((item) => (
             <button
-              className={styles.heroSearchButton}
-              onClick={() => askQuestion(heroQuery)}
-              disabled={!heroQuery.trim()}
+              key={item.id}
+              type="button"
+              role="tab"
+              aria-selected={item.id === sample.id}
+              className={`${styles.deckItem} ${item.id === sample.id ? styles.deckItemActive : ''}`}
+              onClick={() => setActiveId(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <Link className={styles.deckListFoot} href={REGISTER_URL}>
+          Create an account to load your API keys
+        </Link>
+      </div>
+      <div className={styles.heroShell}>
+        <div className={styles.shellBar}>
+          <span className={styles.shellMethod}>{sample.method}</span>
+          <span className={styles.shellTitle}>{sample.label}</span>
+          <button type="button" className={styles.shellCopy} onClick={copySample}>
+            {copied ? 'Copied' : 'Copy'}
+          </button>
+        </div>
+        <div className={styles.shellBody}>
+          {heroSamples.map((item) => {
+            const isActive = item.id === sample.id;
+            return (
+              <pre
+                key={item.id}
+                className={`${styles.shellCode} ${isActive ? styles.shellCodeActive : ''}`}
+                tabIndex={isActive ? 0 : -1}
+                aria-hidden={!isActive}
+              >
+                <code>{highlightCurl(item.code)}</code>
+              </pre>
+            );
+          })}
+        </div>
+        <Link className={styles.shellDocs} to={sample.href}>
+          Open docs →
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+function HeroBanner() {
+  return (
+    <header className={styles.heroBanner}>
+      <div className={`container ${styles.heroInner}`}>
+        <div className={styles.heroCopy}>
+          <Heading as="h1" className={styles.heroTitle}>
+            Developer Docs
+          </Heading>
+          <p className={styles.heroSubtitle}>
+            Learn how to get up and running with Exotel through tutorials, API
+            references, code samples and use-case docs. Happy building.
+          </p>
+          <div className={styles.heroActions}>
+            <Link className={styles.heroPrimary} href={REGISTER_URL}>
+              Start Building
+            </Link>
+            <button
+              type="button"
+              className={styles.heroAsk}
+              onClick={() => openAskAi()}
             >
               Ask AI
             </button>
           </div>
-
-          <div className={styles.heroSearchHints}>
-            {['How do I make a call?', 'Send SMS via API', 'WhatsApp templates'].map((hint) => (
-              <button
-                key={hint}
-                className={styles.heroSearchHint}
-                onClick={() => askQuestion(hint)}
-              >
-                {hint}
-              </button>
-            ))}
-          </div>
         </div>
+        <HeroDeck />
       </div>
     </header>
   );
@@ -237,8 +363,7 @@ function ProductCards() {
         <Heading as="h2" className={styles.sectionTitle}>Products</Heading>
         <div className={styles.productGrid}>
           {products.map((product) => (
-            <div key={product.title} className={`${styles.productCard} ${!product.available ? styles.productCardDisabled : ''}`}>
-              {!product.available && <span className={styles.comingSoon}>Coming Soon</span>}
+            <div key={product.title} className={styles.productCard}>
               <Heading as="h3" className={styles.productCardTitle}>{product.title}</Heading>
               <p className={styles.productCardDescription}>{product.description}</p>
               {product.available && (
@@ -303,7 +428,7 @@ function NewsletterSignup() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!email.trim() || status === 'loading') return;
 

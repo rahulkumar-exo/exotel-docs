@@ -1,105 +1,61 @@
-/* Floating Chat Button */
-.chatButton {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
-  color: white;
-  border: none;
-  border-radius: var(--exotel-radius-pill);
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: var(--ifm-font-family-base);
-  box-shadow: 0 4px 20px rgba(155, 66, 241, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: slideUp 0.3s ease-out;
-}
-
-.chatButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(155, 66, 241, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(135deg, var(--ifm-color-primary-light) 0%, var(--ifm-color-primary) 100%);
-}
-
-.chatButtonHidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.8);
-}
-
-.chatButtonLabel {
-  letter-spacing: 0.02em;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Chat Panel */
+/* Right drawer. Search stays in the navbar. */
 .chatPanel {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 1001;
-  width: 420px;
-  height: 600px;
-  max-height: calc(100vh - 48px);
+  top: var(--ifm-navbar-height);
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  width: min(400px, 100vw);
   background: var(--exotel-surface-1);
-  border-radius: var(--exotel-radius-2xl);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15), 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: -8px 0 32px rgba(35, 31, 32, 0.1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: panelSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--ifm-border-color);
+  animation: panelSlideIn 0.2s ease-out;
+  border-left: 1px solid var(--ifm-border-color);
 }
 
-@keyframes panelSlideUp {
+@keyframes panelSlideIn {
   from {
     opacity: 0;
-    transform: translateY(20px) scale(0.95);
+    transform: translateX(16px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(0);
   }
 }
 
-/* Header */
+@media (prefers-reduced-motion: reduce) {
+  .chatPanel {
+    animation: none;
+  }
+}
+
 .chatHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
-  color: white;
+  padding: 12px 14px;
+  background: var(--exotel-surface-1);
+  color: var(--exotel-text-1);
+  border-bottom: 1px solid var(--ifm-border-color);
   flex-shrink: 0;
 }
 
 .chatHeaderLeft {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  min-width: 0;
 }
 
 .aiIndicator {
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  width: 28px;
+  height: 28px;
+  background: rgba(155, 66, 241, 0.1);
+  color: var(--ifm-color-primary);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,47 +63,43 @@
 }
 
 .chatTitle {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: var(--exotel-font-ui);
+  font-weight: 600;
   letter-spacing: -0.01em;
+  color: var(--exotel-text-1);
+  line-height: 1.2;
 }
 
 .chatSubtitle {
-  font-size: 11px;
-  opacity: 0.8;
+  font-size: var(--exotel-font-label);
   font-weight: 500;
-  color: inherit;
-  text-decoration: none;
-}
-
-.chatSubtitle:hover {
-  text-decoration: underline;
-  opacity: 1;
+  color: var(--exotel-text-3);
 }
 
 .chatHeaderActions {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .clearButton,
 .closeButton {
-  background: rgba(255, 255, 255, 0.15);
+  background: transparent;
   border: none;
-  color: white;
+  color: var(--exotel-text-2);
   cursor: pointer;
   padding: 6px;
-  border-radius: 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: background 0.15s, color 0.15s;
 }
 
 .clearButton:hover,
 .closeButton:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--exotel-surface-3);
+  color: var(--exotel-text-1);
 }
 
 /* Messages */
@@ -177,50 +129,33 @@
 .welcomeContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px 16px;
-  height: 100%;
-}
-
-.welcomeIcon {
-  margin-bottom: 16px;
-  opacity: 0.9;
-}
-
-.welcomeTitle {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--exotel-text-1);
-  margin: 0 0 8px 0;
-  letter-spacing: -0.02em;
+  padding: 8px 4px;
 }
 
 .welcomeText {
-  font-size: 13px;
+  font-size: var(--exotel-font-ui);
   color: var(--exotel-text-2);
-  margin: 0 0 24px 0;
+  margin: 0 0 12px 0;
   line-height: 1.5;
 }
 
 .suggestedQuestions {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   width: 100%;
 }
 
 .suggestedQuestion {
   background: var(--exotel-surface-3);
   border: 1px solid var(--ifm-border-color);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 13px;
-  color: var(--exotel-text-2);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: var(--exotel-font-ui);
+  color: var(--exotel-text-1);
   cursor: pointer;
   text-align: left;
-  transition: all 0.2s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
   font-family: var(--ifm-font-family-base);
   line-height: 1.4;
 }
@@ -471,21 +406,9 @@
   cursor: not-allowed;
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .chatPanel {
-    width: calc(100vw - 16px);
-    height: calc(100vh - 16px);
-    bottom: 8px;
-    right: 8px;
-    border-radius: var(--exotel-radius-xl);
-  }
-
-  .chatButton {
-    bottom: 16px;
-    right: 16px;
-    padding: 10px 16px;
-    font-size: 13px;
+    width: 100vw;
   }
 }
 

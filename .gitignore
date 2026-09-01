@@ -11,6 +11,7 @@
 # Copy-page-source plugin output
 /static/docs
 /static/llms.txt
+/static/knowledge-base.json
 
 # Misc
 .DS_Store
