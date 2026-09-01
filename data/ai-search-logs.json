@@ -29534,5 +29534,39 @@
       }
     ],
     "answer_length": 2516
+  },
+  {
+    "timestamp": "2026-09-01T05:53:27.297Z",
+    "response_id": "c22b067a-f928-4259-a887-362c895ecbad",
+    "question": "which type pass in json etc voice ya text",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6167,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message.mdx"
+      }
+    ],
+    "answer_length": 2458
   }
 ]
