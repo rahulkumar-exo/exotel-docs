@@ -29466,5 +29466,39 @@
       }
     ],
     "answer_length": 2006
+  },
+  {
+    "timestamp": "2026-09-01T05:51:22.447Z",
+    "response_id": "00081e0f-3975-46ec-ba41-77dcd6d796a4",
+    "question": "callback API in contact ceneter",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 10031,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart.mdx"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance.mdx"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      }
+    ],
+    "answer_length": 2325
   }
 ]
