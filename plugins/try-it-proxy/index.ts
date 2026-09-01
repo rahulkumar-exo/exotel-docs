@@ -28,28 +28,77 @@ function readJsonBody(req: IncomingMessage): Promise<unknown> {
   });
 }
 
-function mountTryItProxy(app: ExpressLike): void {
+function loadLocalEnv(): void {
+  const fs = require('fs') as typeof import('fs');
+  const path = require('path') as typeof import('path');
+  for (const name of ['.env.local', '.env']) {
+    const file = path.join(process.cwd(), name);
+    if (!fs.existsSync(file)) {
+      continue;
+    }
+    for (const line of fs.readFileSync(file, 'utf8').split('\n')) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) {
+        continue;
+      }
+      const eq = trimmed.indexOf('=');
+      if (eq < 1) {
+        continue;
+      }
+      const key = trimmed.slice(0, eq).trim();
+      let value = trimmed.slice(eq + 1).trim();
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
+        value = value.slice(1, -1);
+      }
+      if (!process.env[key]) {
+        process.env[key] = value;
+      }
+    }
+  }
+}
+
+function mountLocalApi(app: ExpressLike): void {
+  loadLocalEnv();
+
   const proxyHandler = require('../../api/proxy.js') as (
-    req: IncomingMessage & { body?: unknown; method?: string },
+    req: IncomingMessage & { body?: unknown; method?: string; query?: Record<string, string> },
+    res: ServerResponse,
+  ) => unknown;
+  const chatHandler = require('../../api/chat.js') as (
+    req: IncomingMessage & { body?: unknown; method?: string; query?: Record<string, string> },
     res: ServerResponse,
   ) => unknown;
 
-  app.post('/api/proxy', (req, res) => {
-    void (async () => {
-      try {
-        req.body = await readJsonBody(req);
-        await proxyHandler(req, res);
-      } catch (err) {
-        res.statusCode = 400;
-        res.setHeader('Content-Type', 'application/json');
-        res.end(
-          JSON.stringify({
-            error: err instanceof Error ? err.message : 'Invalid request body',
-          }),
-        );
-      }
-    })();
-  });
+  const post = (
+    route: string,
+    handler: (
+      req: IncomingMessage & { body?: unknown; method?: string; query?: Record<string, string> },
+      res: ServerResponse,
+    ) => unknown,
+  ) => {
+    app.post(route, (req, res) => {
+      void (async () => {
+        try {
+          req.body = await readJsonBody(req);
+          await handler(req, res);
+        } catch (err) {
+          res.statusCode = 400;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(
+            JSON.stringify({
+              error: err instanceof Error ? err.message : 'Invalid request body',
+            }),
+          );
+        }
+      })();
+    });
+  };
+
+  post('/api/proxy', proxyHandler);
+  post('/api/chat', chatHandler);
 }
 
 export default function tryItProxyPlugin(): Plugin<null> {
@@ -67,7 +116,7 @@ export default function tryItProxyPlugin(): Plugin<null> {
         devServer: {
           setupMiddlewares(middlewares, devServer) {
             if (devServer?.app) {
-              mountTryItProxy(devServer.app as ExpressLike);
+              mountLocalApi(devServer.app as ExpressLike);
             }
             if (typeof previous === 'function') {
               return previous(middlewares, devServer);

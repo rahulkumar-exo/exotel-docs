@@ -7,6 +7,21 @@
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
+
+function loadKnowledgeBase() {
+  const candidates = [
+    path.join(process.cwd(), 'static/knowledge-base.json'),
+    path.join(process.cwd(), 'build/knowledge-base.json'),
+  ];
+  for (const file of candidates) {
+    if (fs.existsSync(file)) {
+      return JSON.parse(fs.readFileSync(file, 'utf8'));
+    }
+  }
+  return null;
+}
 
 // ---------------------------------------------------------------------------
 // In-memory answer cache
@@ -410,14 +425,20 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    // Fetch knowledge base from the static file
-    const siteUrl = process.env.SITE_URL || 'https://exotel-docs.vercel.app';
     let knowledgeBase;
     try {
-      const response = await fetch(`${siteUrl}/knowledge-base.json`);
-      knowledgeBase = await response.json();
+      knowledgeBase = loadKnowledgeBase();
     } catch (e) {
       return res.status(500).json({ error: 'Failed to load knowledge base' });
+    }
+    if (!knowledgeBase) {
+      const siteUrl = process.env.SITE_URL || 'https://exotel-docs.vercel.app';
+      try {
+        const response = await fetch(`${siteUrl}/knowledge-base.json`);
+        knowledgeBase = await response.json();
+      } catch (e) {
+        return res.status(500).json({ error: 'Failed to load knowledge base' });
+      }
     }
 
     // Find relevant chunks
@@ -451,9 +472,17 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
       ? `Based on the following Exotel documentation:\n\n${context}\n\n---\n\nUser question: ${question}`
       : `The user is asking about Exotel APIs. I couldn't find specific documentation for their question, but answer based on general knowledge of Exotel if possible.\n\nUser question: ${question}`;
 
-    // Call Gemini — try multiple models with fallback
+    // Production models stay as they are. GEMINI_MODEL in .env.local is local-only.
+    const defaultModels = ['gemini-2.5-flash', 'gemini-3.6-flash', 'gemini-2.5-flash-lite'];
+    const envModels = (process.env.GEMINI_MODEL || '')
+      .split(',')
+      .map((name) => name.trim())
+      .filter(Boolean);
+    const modelsToTry = [...envModels, ...defaultModels].filter(
+      (name, index, list) => list.indexOf(name) === index,
+    );
+
     const genAI = new GoogleGenerativeAI(apiKey);
-    const modelsToTry = ['gemini-2.5-flash', 'gemini-3.6-flash', 'gemini-2.5-flash-lite'];
 
     const chatHistory = history.map(msg => ({
       role: msg.role === 'assistant' ? 'model' : 'user',
@@ -481,11 +510,18 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
         break; // Success — stop trying
       } catch (modelError) {
         console.error(`Model ${modelName} failed:`, modelError.message);
-        // If it's a rate limit error, try next model
-        if (modelError.message && (modelError.message.includes('429') || modelError.message.includes('quota'))) {
+        const msg = modelError.message || '';
+        const tryNext =
+          modelError.status === 404 ||
+          modelError.status === 429 ||
+          msg.includes('429') ||
+          msg.includes('404') ||
+          msg.includes('quota') ||
+          msg.includes('Not Found') ||
+          msg.includes('no longer available');
+        if (tryNext) {
           continue;
         }
-        // For non-rate-limit errors, throw immediately
         throw modelError;
       }
     }
