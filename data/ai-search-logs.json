@@ -29772,5 +29772,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-09-01T08:49:19.625Z",
+    "response_id": "5386e770-374d-450a-9fa0-27fbdfd122a4",
+    "question": "Webhook for call log real time",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5296,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Campaign Webhooks",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/webhooks"
+      }
+    ],
+    "answer_length": 1426
   }
 ]
