@@ -29840,5 +29840,39 @@
       }
     ],
     "answer_length": 2121
+  },
+  {
+    "timestamp": "2026-09-01T18:16:18.744Z",
+    "response_id": "9986c735-17d8-4141-abda-692cb32f91a9",
+    "question": "i want somethig like on bwoser i clcik call , it then connects to diretcly to end user no in between person who first accept and the forward , web calling to hardphone i mean",
+    "question_length": 174,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6789,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 2364
   }
 ]
