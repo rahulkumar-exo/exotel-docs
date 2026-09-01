@@ -29738,5 +29738,39 @@
       }
     ],
     "answer_length": 975
+  },
+  {
+    "timestamp": "2026-09-01T08:02:00.379Z",
+    "response_id": "97692fb5-3cfc-461d-bd3d-bdb54e9435c9",
+    "question": "can you give the details of credits deduction?",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2133,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 176
   }
 ]
