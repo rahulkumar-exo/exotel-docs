@@ -29568,5 +29568,39 @@
       }
     ],
     "answer_length": 2458
+  },
+  {
+    "timestamp": "2026-09-01T05:58:09.801Z",
+    "response_id": "2c765ffb-9567-494e-8ef8-988b1b204b58",
+    "question": "We want to integrate Gemini as the LLM for our Exotel VoiceBot. Exotel should handle the phone call and voice interaction, while our cloud backend will handle the troubleshooting logic and Gemini response. Can the VoiceBot WebSocket/Voicebot integration support this architecture without requiring a separate paid ASR/TTS provider? Please share the exact integration flow and required WebSocket message format.",
+    "question_length": 410,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 6219,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1091
   }
 ]
