@@ -29330,5 +29330,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-09-01T05:06:39.342Z",
+    "response_id": "7184b8fc-d618-4245-a113-e2596776172a",
+    "question": "hello@exotel.com i need a 0800 number how can i get it",
+    "question_length": 54,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 12761,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Allocation Details",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Number Metadata",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/number-metadata.mdx"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads.mdx"
+      }
+    ],
+    "answer_length": 176
   }
 ]
