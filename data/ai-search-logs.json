@@ -29976,5 +29976,39 @@
       }
     ],
     "answer_length": 1795
+  },
+  {
+    "timestamp": "2026-09-02T07:57:23.696Z",
+    "response_id": "35ad1d64-95d4-4962-a135-aab9af8a7d5a",
+    "question": "wher is websdk link",
+    "question_length": 19,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2903,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Template Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/templates"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      }
+    ],
+    "answer_length": 466
   }
 ]
