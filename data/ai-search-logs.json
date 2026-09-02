@@ -30286,5 +30286,39 @@
       }
     ],
     "answer_length": 4883
+  },
+  {
+    "timestamp": "2026-09-02T20:54:35.213Z",
+    "response_id": "a6ffa3b6-125f-4f66-8cef-11ef94f2e5ff",
+    "question": "Users\nMap users from your application to Exotel accounts for WebRTC/IP-PSTN calling. Each mapping associates your app's user with an Exotel account, agent number, and virtual number. what it means ? does it mean i need to manuallya da very time the reciepnt user number and add it? or its sender number",
+    "question_length": 302,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7688,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 1518
   }
 ]
