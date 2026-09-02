@@ -30320,5 +30320,39 @@
       }
     ],
     "answer_length": 1518
+  },
+  {
+    "timestamp": "2026-09-02T20:56:17.533Z",
+    "response_id": "cd131422-902c-41ef-8962-eac7ccffa4e7",
+    "question": "iwhat is my  client id and client secret  in my trail account",
+    "question_length": 61,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6502,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      },
+      {
+        "title": "Authentication & Security",
+        "product": "references",
+        "url": "/docs/references/authentication"
+      }
+    ],
+    "answer_length": 767
   }
 ]
