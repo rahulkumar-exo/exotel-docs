@@ -30218,5 +30218,39 @@
       }
     ],
     "answer_length": 2568
+  },
+  {
+    "timestamp": "2026-09-02T14:13:44.153Z",
+    "response_id": "26047326-91f0-4364-9446-ab30b6998340",
+    "question": "apis to delete apps websdk",
+    "question_length": 26,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4005,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Delete an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/delete-allocation"
+      },
+      {
+        "title": "Delete User",
+        "product": "users",
+        "url": "/docs/users/api-reference/delete-user"
+      },
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "Customer Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/customer-management"
+      }
+    ],
+    "answer_length": 1219
   }
 ]
