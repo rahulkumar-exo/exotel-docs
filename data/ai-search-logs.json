@@ -30184,5 +30184,39 @@
     ],
     "answer_length": 904,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-02T11:17:23.136Z",
+    "response_id": "542ebda3-d025-484d-bc38-b3aac209e34d",
+    "question": "need to make human to human call",
+    "question_length": 32,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6136,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 2568
   }
 ]
