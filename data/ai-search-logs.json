@@ -29874,5 +29874,39 @@
       }
     ],
     "answer_length": 2364
+  },
+  {
+    "timestamp": "2026-09-02T07:55:19.608Z",
+    "response_id": "8e6574f0-6aff-493c-982e-e394a94c7100",
+    "question": "IP-PSTN Intermix: WebRTC SDK Integration\nIntegrate WebRTC-based calling into your web and mobile applications, enabling browser-to-phone and browser-to-browser calls through Exotel's platform.\n\ndoe sit cover my useacase of my browser on my dahaord i want to clcik a button custom and the call connects via braower to hard phone via api",
+    "question_length": 335,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4308,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "IP-PSTN intermix: WebRTC SDK integration",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/overview"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      }
+    ],
+    "answer_length": 819
   }
 ]
