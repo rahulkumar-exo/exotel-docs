@@ -29908,5 +29908,39 @@
       }
     ],
     "answer_length": 819
+  },
+  {
+    "timestamp": "2026-09-02T07:55:51.963Z",
+    "response_id": "ff4a9c11-591b-49d4-8227-8727792d2be3",
+    "question": "i dont wan to embed a softphone , can a simple button work",
+    "question_length": 58,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2400,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Workflows",
+        "product": "chatbot",
+        "url": "/docs/chatbot/workflows"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 659
   }
 ]
