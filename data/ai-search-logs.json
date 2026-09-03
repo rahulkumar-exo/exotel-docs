@@ -30592,5 +30592,39 @@
       }
     ],
     "answer_length": 1391
+  },
+  {
+    "timestamp": "2026-09-03T11:29:07.081Z",
+    "response_id": "180b44d5-0d3d-46d4-8931-b9788eb9d255",
+    "question": "mere ko aisa chahiye ki call alert means outbound call recive coutomer i am pass text test voice out for example \"motor is on\"",
+    "question_length": 126,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 18178,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 1645
   }
 ]
