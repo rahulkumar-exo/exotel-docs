@@ -30558,5 +30558,39 @@
       }
     ],
     "answer_length": 719
+  },
+  {
+    "timestamp": "2026-09-03T11:10:48.807Z",
+    "response_id": "a604044e-c1db-4a07-9a67-5c652615b514",
+    "question": "mere ko ye chahiye outbounded call your number send call this call recive to only recoderd voice out",
+    "question_length": 100,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 16107,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 1391
   }
 ]
