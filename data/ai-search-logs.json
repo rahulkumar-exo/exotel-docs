@@ -30456,5 +30456,39 @@
       }
     ],
     "answer_length": 2036
+  },
+  {
+    "timestamp": "2026-09-03T06:54:15.581Z",
+    "response_id": "c53b52d2-41ff-47b6-b997-526222e457f4",
+    "question": "why my inbound getting hungup automatically while some getting place what is the issue",
+    "question_length": 86,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1639,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 176
   }
 ]
