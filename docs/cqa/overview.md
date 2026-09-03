@@ -152,13 +152,13 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions
 | `duration_seconds` | Optional | integer | Duration of the interaction in seconds. |
 | `audio_format` | Optional | string | Audio format hint (e.g. `WAV`, `MP3`, `OGG`). |
 | `callback_url` | Optional | string | Webhook URL for status update notifications. |
-| `audio_url` | Mandatory if transcript\_url is not provided | string | Direct URL to the audio recording. |
-| `transcript_url` | Mandatory if audio\_url is not provided | string | Direct URL to the transcript file. |
+| `audio_url` | Mandatory if `transcript_url` or `transcript_text` is not provided | string | Direct URL to the audio recording. |
+| `transcript_url` | Mandatory if `audio_url` or `transcript_text` is not provided | string | Direct URL to the transcript file. |
+| transcript_text | Mandatory if neither `audio_url` nor `transcript_url` is provided | string | Inline transcript/conversation text. If both `transcript_text` and `transcript_url` are sent, **`transcript_url` wins** (inline text is ignored).|
 | `pii_redacted` | Optional | boolean | Whether PII has already been redacted in the provided content. Default: `false`.If you have already redacted PII either by your own means or using the [CQA provided capability](https://docs.exotel.com/conversation-intelligence/administration-and-configuration#46-pii-redaction), set this parameter as `true` (used internally to skip PII redaction again) |
 | `metadata` | Optional | object | Arbitrary key-value pairs for tagging. Maximum 50 keys. Values can be strings, numbers, or booleans. |
 
-### Example Request
-
+### Example Request (VOICE)
 ```bash
 curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions" \
   -H "X-API-Key: {your_api_key}" \
@@ -181,6 +181,36 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactio
     }
   }'
 ```
+
+### Example Request (CHAT with URL)
+```bash
+curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions" \
+  -H "X-API-Key: {your_api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "external_interaction_id": "chat-2026-04-01-001",
+    "channel_type": "CHAT",
+    "source": "whatsapp",
+    "language": "en",
+    "interaction_start_time": "2026-04-01T10:30:00Z",
+    "transcript_url": "https://storage.example.com/messages/chat-001.txt"
+  }'
+```
+
+### Example Request (CHAT with transcript_text)
+```bash
+curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions" \
+  -H "X-API-Key: {your_api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "external_interaction_id": "chat-2026-09-03-001",
+    "channel_type": "CHAT",
+    "source": "web-chat",
+    "language": "en",
+    "transcript_text": "Agent: Hello! How can I help you today?\nCustomer: I need to reset my password.\nAgent: Sure, I can help with that. Let me send you a reset link."
+  }'
+```
+
 
 ### Response
 
@@ -922,5 +952,6 @@ Callbacks that receive `2xx` or `4xx` (other than `429`) responses are **not** r
 | Supported file formats | `csv`, `ndjson` |
 | Supported file URL schemes | `https`, `http`, `s3` (`https` recommended) |
 | Supported channel types | `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP` |
+| Max transcript_text | 100 KB (UTF-8) |
 | Conversation cap (trial accounts) | 300 per month (default when no cap is explicitly configured) |
 
