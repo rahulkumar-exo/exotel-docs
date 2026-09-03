@@ -30524,5 +30524,39 @@
       }
     ],
     "answer_length": 3894
+  },
+  {
+    "timestamp": "2026-09-03T11:07:26.436Z",
+    "response_id": "7119a3e0-c4f7-410e-bf2d-cb8c67e0802e",
+    "question": "oubounded call api",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4461,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details"
+      }
+    ],
+    "answer_length": 719
   }
 ]
