@@ -381,7 +381,6 @@ const sidebars: SidebarsConfig = {
         'faqs/pricing-plans',
         'faqs/number-types',
         'faqs/security-compliance',
-        'faqs/billing-faqs',
         'faqs/troubleshooting',
       ],
     },
@@ -647,18 +646,6 @@ const sidebars: SidebarsConfig = {
     'getting-started/team-management',
     'getting-started/api-credentials',
     'getting-started/testing-guide',
-  ],
-
-  billingSidebar: [
-    'billing/overview',
-    'billing/pricing-model',
-    'billing/plans-comparison',
-    'billing/add-credits',
-    'billing/usage-tracking',
-    'billing/invoices',
-    'billing/refund-policy',
-    'billing/enterprise-billing',
-    'billing/international-rates',
   ],
 
   reportingSidebar: [

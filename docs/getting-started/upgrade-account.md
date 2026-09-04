@@ -125,8 +125,6 @@ All your trial configurations -- call flows, API credentials, team members, and 
 3. Your account remains active until the end of the current billing period
 4. After cancellation, the account reverts to a limited state (no outbound calls/SMS)
 
-See [Refund Policy](/docs/billing/refund-policy) for details on refunds.
-
 ## Frequently Asked Questions
 
 **Can I downgrade my plan?**
@@ -140,6 +138,6 @@ Yes. Contact support to switch from monthly to annual or vice versa. Changes app
 
 ## Next Steps
 
-- [Add credits to your account](/docs/billing/add-credits) to fund voice and SMS usage
+- [Add credits](https://my.exotel.com) to fund voice and SMS usage
 - [Purchase ExoPhones](/docs/getting-started/exophone-setup) for production
 - [Review the go-live checklist](/docs/getting-started/go-live-checklist) before launching
