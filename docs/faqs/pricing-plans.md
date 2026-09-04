@@ -141,7 +141,6 @@ No. All prices listed on the Exotel website and dashboard are exclusive of appli
 
 ## Related Resources
 
-- [Billing FAQs](/docs/faqs/billing-faqs) -- Billing cycles, invoices, payment methods
 - [Account Setup](/docs/faqs/account-setup) -- Account creation and KYC
 - [SMS API Overview](/docs/sms-api/overview) -- SMS capabilities and rate limits
 - [Voice v1 Overview](/docs/voice-v1/overview) -- Voice API capabilities
