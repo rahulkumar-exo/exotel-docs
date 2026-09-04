@@ -30770,5 +30770,39 @@
       }
     ],
     "answer_length": 325
+  },
+  {
+    "timestamp": "2026-09-04T15:46:19.765Z",
+    "response_id": "c134dd8e-6181-4ce8-a3bb-a31c2cf2ddab",
+    "question": "i have few doubts",
+    "question_length": 17,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1337,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      },
+      {
+        "title": "WhatsApp Display Name Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/display-name-guidelines"
+      },
+      {
+        "title": "Token Generation",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/token-generation"
+      },
+      {
+        "title": "Token Generation",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/token-generation"
+      }
+    ],
+    "answer_length": 100
   }
 ]
