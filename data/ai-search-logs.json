@@ -30872,5 +30872,39 @@
       }
     ],
     "answer_length": 1708
+  },
+  {
+    "timestamp": "2026-09-04T17:18:31.971Z",
+    "response_id": "8c84fe0d-46d0-4a31-8d3a-e8e96e102dba",
+    "question": "I want to explain our exact use case, since I got some conflicting information earlier.\n\nWe use a Connect Applet where our webhook receives the inbound call and responds with an EMPTY destination (no numbers to connect to). Based on Exotel's own documented behavior, this should mean Exotel itself silently disconnects the call - no ringing, no announcement, nothing heard by the caller. We've actually confirmed this working on our current trial account, with real call logs showing successful silen",
+    "question_length": 1679,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10504,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      }
+    ],
+    "answer_length": 1722
   }
 ]
