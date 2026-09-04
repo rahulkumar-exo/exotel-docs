@@ -30804,5 +30804,39 @@
       }
     ],
     "answer_length": 100
+  },
+  {
+    "timestamp": "2026-09-04T15:47:33.619Z",
+    "response_id": "223ce5b3-9b11-4ce3-bdbb-f8c3d5715b5d",
+    "question": "i am planning to implement a call flow , a verification process where an incoming call will be charted and once the call is getting connected automatically hanging the call to confirm somone has called.",
+    "question_length": 202,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 16432,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 4435
   }
 ]
