@@ -30838,5 +30838,39 @@
       }
     ],
     "answer_length": 4435
+  },
+  {
+    "timestamp": "2026-09-04T17:17:18.078Z",
+    "response_id": "b788542e-f01a-4f30-b6cd-5b6dd9c6ceb4",
+    "question": "i am planning a workflow - for a call to confirm or validate something. if a needs something to buy then i will give option to call in button for A to my exolinee, when A calls the call shuld start and recive our side and we automatically hang the call and confirms that",
+    "question_length": 270,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13054,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 1708
   }
 ]
