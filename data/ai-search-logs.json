@@ -30668,5 +30668,39 @@
     "response_time_ms": 4598,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-09-04T07:01:27.525Z",
+    "response_id": "23d80f6c-8a86-47b8-9a58-36140b83a995",
+    "question": "Pricing detil",
+    "question_length": 13,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 797,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      },
+      {
+        "title": "Pricing Model",
+        "product": "billing",
+        "url": "/docs/billing/pricing-model"
+      }
+    ],
+    "answer_length": 176
   }
 ]
