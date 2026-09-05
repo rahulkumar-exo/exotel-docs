@@ -31042,5 +31042,39 @@
       }
     ],
     "answer_length": 3570
+  },
+  {
+    "timestamp": "2026-09-05T13:49:52.108Z",
+    "response_id": "932f13ed-c666-4ad0-92c9-7e5ed7c3fdd9",
+    "question": "mcp for claude",
+    "question_length": 14,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3690,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Troubleshooting",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/troubleshooting"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Security",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/security"
+      }
+    ],
+    "answer_length": 2535
   }
 ]
