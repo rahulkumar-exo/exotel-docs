@@ -30940,5 +30940,39 @@
       }
     ],
     "answer_length": 902
+  },
+  {
+    "timestamp": "2026-09-05T10:34:58.259Z",
+    "response_id": "c9acfeb1-a101-4845-a995-9b3899b525d5",
+    "question": "then how can i create single app that handles both incoming and outgoing calls",
+    "question_length": 78,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8958,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "Making Outgoing Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/outgoing-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 2476
   }
 ]
