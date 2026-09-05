@@ -30906,5 +30906,39 @@
       }
     ],
     "answer_length": 1722
+  },
+  {
+    "timestamp": "2026-09-05T10:33:35.716Z",
+    "response_id": "55ab9c53-cda9-4323-b1bc-844e7900942d",
+    "question": "i  hvae created two apps from app bazar an incoming call comes then how do i know which app will receive the call",
+    "question_length": 113,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4725,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 902
   }
 ]
