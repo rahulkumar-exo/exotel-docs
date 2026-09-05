@@ -31008,5 +31008,39 @@
       }
     ],
     "answer_length": 1311
+  },
+  {
+    "timestamp": "2026-09-05T11:24:56.648Z",
+    "response_id": "d9bfdcca-a8d2-493e-bf7c-13ba4a77189a",
+    "question": "suppose i have a exophone this :+919876543210 and now i want to dial or we can say make an outbound call to a customer with number : +917948519165 how do will be the flow helpful here and which api can be used here?",
+    "question_length": 215,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13778,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 3570
   }
 ]
