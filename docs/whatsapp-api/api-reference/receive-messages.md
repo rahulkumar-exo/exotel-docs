@@ -132,46 +132,43 @@ When a customer sends a WhatsApp message, Exotel POST's the following to your `i
 
 ## Status Callback Webhook
 
-Delivery and read status updates are sent to your `status_callback_url`:
+Delivery and read status updates are sent to your `status_callback` URL (set per-message or configured as default during onboarding):
 
 ```json
 {
-  "event": "message_status",
-  "timestamp": "2024-06-15T10:30:05.000Z",
-  "message": {
-    "id": "msg_out_001",
-    "status": "delivered",
-    "recipient": "+919876543210",
-    "timestamp": "2024-06-15T10:30:05.000Z"
+  "whatsapp": {
+    "messages": [
+      {
+        "callback_type": "dlr",
+        "sid": "2FdiiEQUosckPhpZfuVwfjxiSlc16a4",
+        "to": "919876543210",
+        "exo_status_code": 30002,
+        "exo_detailed_status": "EX_MESSAGE_DELIVERED",
+        "description": "Message delivered",
+        "timestamp": "2024-01-15T10:30:05.000+05:30",
+        "custom_data": "Order12"
+      }
+    ]
   }
 }
 ```
 
-### Status Values
+### Callback Fields
 
-| Status | Description |
-|--------|-------------|
-| `sent` | Message sent to WhatsApp servers |
-| `delivered` | Message delivered to recipient's device |
-| `read` | Recipient has read the message |
-| `failed` | Message delivery failed |
+| Field | Description |
+|-------|-------------|
+| `callback_type` | `dlr` for delivery reports, `icm` for incoming messages |
+| `sid` | Unique message identifier |
+| `to` | Recipient phone number |
+| `exo_status_code` | Exotel status code — see [Status Codes](/docs/whatsapp-api/api-reference/status-codes) |
+| `exo_detailed_status` | Status string (e.g., `EX_MESSAGE_DELIVERED`) |
+| `description` | Human-readable description |
+| `timestamp` | ISO 8601 timestamp of the event |
+| `custom_data` | Echoed back from the original API request (if provided) |
 
-### Error Status
-
-```json
-{
-  "event": "message_status",
-  "message": {
-    "id": "msg_out_002",
-    "status": "failed",
-    "recipient": "+919876543210",
-    "errors": [{
-      "code": 131026,
-      "title": "Message failed to send because more than 24 hours have passed since the customer last replied"
-    }]
-  }
-}
-```
+:::note
+If `status_callback` is set both per-message in the API request and as a default, the per-message URL takes precedence. A callback is delivered to only one URL at a time.
+:::
 
 ---
 
