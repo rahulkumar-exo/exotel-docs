@@ -727,13 +727,18 @@ After mapping, `agent` and `campaign` are not canonical, so they automatically b
 ### Example CSV
 
 ```csv
-external_interaction_id,channel_type,audio_url,transcript_url,language,agent,campaign
-call-001,VOICE,https://s3.example.com/rec-001.wav,https://s3.example.com/tr-001.txt,en,agent-42,retention
-call-002,VOICE,https://s3.example.com/rec-002.wav,,hi,agent-15,support
+external_interaction_id,channel_type,audio_url,transcript_url,transcript_text,language,agent,campaign
+call-001,VOICE,https://s3.example.com/rec-001.wav,,,en,agent-42,retention
+call-002,VOICE,https://s3.example.com/rec-002.wav,,,hi,agent-15,support
+chat-001,CHAT,,,Agent: Hello! How can I help you today?\nCustomer: I need to reset my password.,en,agent-42,retention
 call-003,CHAT,,,,agent-42,retention
 ```
 
-> **Note:** Row 3 (`call-003`) would fail validation because it has no content source (no audio, transcript).
+```
+Note:
+- chat-001 is valid via transcript_text
+- call-003 fails because it has no audio_url, transcript_url, or transcript_text.
+
 
 ---
 
