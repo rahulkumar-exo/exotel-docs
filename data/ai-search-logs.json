@@ -31076,5 +31076,39 @@
       }
     ],
     "answer_length": 2535
+  },
+  {
+    "timestamp": "2026-09-06T19:34:49.894Z",
+    "response_id": "1e628495-73ea-44cd-928f-56546b14e180",
+    "question": "do you have mcp",
+    "question_length": 15,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1518,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Security",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/security"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Bring Your Own MCP",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/mcp-integration"
+      }
+    ],
+    "answer_length": 573
   }
 ]
