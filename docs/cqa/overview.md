@@ -155,7 +155,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions
 | `callback_url` | Optional | string | Webhook URL for status update notifications. |
 | `audio_url` | Mandatory if `transcript_url` or `transcript_text` is not provided | string | Direct URL to the audio recording. |
 | `transcript_url` | Mandatory if `audio_url` or `transcript_text` is not provided | string | Direct URL to the transcript file. |
-| transcript_text | Mandatory if neither `audio_url` nor `transcript_url` is provided | string | Inline transcript/conversation text. If both `transcript_text` and `transcript_url` are sent, **`transcript_url` wins** (inline text is ignored).|
+| transcript_text | Mandatory if neither `audio_url` nor `transcript_url` is provided | string | Inline transcript/conversation text. If both `transcript_text` and `transcript_url` are sent, **`transcript_url` wins** (inline text is ignored). Max 100 KB (UTF-8). |
 | `pii_redacted` | Optional | boolean | Whether PII has already been redacted in the provided content. Default: `false`.If you have already redacted PII either by your own means or using the [CQA provided capability](https://docs.exotel.com/conversation-intelligence/administration-and-configuration#46-pii-redaction), set this parameter as `true` (used internally to skip PII redaction again) |
 | `metadata` | Optional | object | Arbitrary key-value pairs for tagging. Maximum 50 keys. Values can be strings, numbers, or booleans. |
 
@@ -297,7 +297,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch
 | `interactions` | Mandatory | array | List of interaction objects, each following the (audio_url or transcript_url or transcript_text [max 100 KB / 102400 bytes]) as the single ingest endpoint. Minimum 1, maximum 100. |
 
 ```
-Note: transcript_text is supported in batch items. Each item can include at most 100 KB (102400 bytes) of transcript_text. If any batch item exceeds this limit, the entire batch request is rejected immediately with 400 VALIDATION_ERRO; no batch job is created.
+Note: transcript_text is supported in batch items. Each item can include at most 100 KB (102400 bytes) of transcript_text. If any batch item exceeds this limit, the entire batch request is rejected immediately with 400 VALIDATION_ERROR; no batch job is created.
 ```
 
 ### Response Fields
