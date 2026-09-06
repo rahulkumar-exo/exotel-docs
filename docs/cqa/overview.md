@@ -293,7 +293,11 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch
 
 | Parameter Name | Mandatory / Optional | Type | Description |
 | --- | --- | --- | --- |
-| `interactions` | Mandatory | array | List of interaction objects, each following the same schema as the single ingest endpoint. Minimum 1, maximum 100. |
+| `interactions` | Mandatory | array | List of interaction objects, each following the (audio_url or transcript_url or transcript_text [max 100 KB / 102400 bytes]) as the single ingest endpoint. Minimum 1, maximum 100. |
+
+```
+Note: transcript_text is supported in batch items. Each item can include at most 100 KB (102400 bytes) of transcript_text. If any batch item exceeds this limit, the entire batch request is rejected immediately with 400 VALIDATION_ERRO; no batch job is created.
+```
 
 ### Response Fields
 
@@ -302,6 +306,14 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch
 | `id` | string | Unique identifier for the batch job. Use this with the batch tracking endpoint. |
 | `type` | string | Always `batch` for this endpoint. |
 | `status` | string | `pending` -- the job has been accepted and is queued for processing. |
+
+```
+Batch submission may return partial acceptance. If some items fail request-time validation while others are valid, the API returns 202 Accepted and may include:
+- message
+- accepted
+- rejected
+- errors
+In this case, valid items are queued for processing and invalid items are rejected immediately.```
 
 ---
 
@@ -326,6 +338,10 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/files
 | `callback_url` | Optional | string | Default callback URL stored per row (same semantics as single ingest; no HTTP callback from ingress). |
 | `column_mapping` | Optional | object | Maps your CSV headers to canonical column names. Keys are your original headers (trimmed, lowercased); values are canonical names. Ignored for NDJSON. See CSV Schema for canonical names. |
 | `metadata` | Optional | object | Default metadata merged into every row. After merge, each row should respect the **50-key** metadata limit enforced for batch/single ingest; avoid large default maps that push merged rows over the limit. |
+
+```
+Note: For file ingestion, invalid rows are processed asynchronously and appear as rejected rows in the file job results.
+```
 
 ### File Processing Limits
 
@@ -678,8 +694,9 @@ The first row of a CSV file must contain column headers. Headers are trimmed and
 | `audio_format` | No | string | Format hint (e.g. `WAV`, `MP3`). |
 | `callback_url` | No | string | Per-row callback URL (stored; no HTTP callback from ingress). |
 | `pii_redacted` | No | boolean | `true` or `false`. |
-| `audio_url` | Yes (Mandatory if transcript\_url is not provided) | string | Audio file URL(s). Supports multiple URLs separated by `;`. |
-| `transcript_url` | Yes (Mandatory if audio\_url is not provided) | string | Transcript file URL(s). Supports multiple URLs separated by `;`. |
+| `audio_url` | Yes (Mandatory if `transcript_url` or `transcript_text` is not provided) | string | Audio file URL(s). Supports multiple URLs separated by `;`. |
+| `transcript_url` | Yes (Mandatory if `audio_url` or `transcript_text` is not provided) | string | Transcript file URL(s). Supports multiple URLs separated by `;`. |
+| `transcript_text` | Yes (Mandatory if audio_url or transcript_url is not provided) | string | Actual transcript text of the conversation. If both transcript_url and  transcript_text are provided, transcript_url wins. |
 | `file_url` | No | string | Generic file URL. Used with `file_type` as a fallback when no `audio_url`/`transcript_url` entries exist. |
 | `file_type` | No | string | File extension for type resolution. Audio extensions: `mp3`, `wav`, `ogg`, `flac`, `m4a`, `aac`, `wma`, `amr`. Transcript extensions: `txt`, `pdf`, `doc`, `docx`, `srt`, `vtt`. |
 
