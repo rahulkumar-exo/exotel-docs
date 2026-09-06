@@ -25,13 +25,14 @@ When you enable URL shortening, Exotel replaces long URLs in your SMS body with 
 
 Add these parameters to any [Send SMS](/docs/sms-api/api-reference/send-sms) request:
 
-| Parameter                                 | Required | Type    | Description |
-|-------------------------------------------|----------|---------|-------------|
-| `ShortenUrl`                              | Yes      | Boolean | `true` to enable URL shortening |
-| `ShortenUrlParams[Header]`                | Yes      | String  | DLT-registered header for the short URL domain |
-| `ShortenUrlParams[Tracking]`              | Optional | Boolean | `true` to enable click tracking analytics |
-| `ShortenUrlParams[ClickTrackingCallbackUrl]` | Optional | String | Webhook URL to receive click events |
-| `ShortenUrlParams[TimeToExpiry]`          | Optional | Integer | Link validity in minutes (after which the link expires) |
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `ShortenUrl` | Yes | Boolean | `true` to enable URL shortening |
+| `ShortenUrlParams[Header]` | Conditional | String | Required for India. The DLT-registered header that is part of the whitelisted Shortened URL on the DLT platform. Must exactly match the header registered on DLT to avoid message failure |
+| `ShortenUrlParams[CustomDomain]` | Optional | String | Custom domain to use for short URLs instead of the default `exo.tl`. If absent or empty, `exo.tl` is used. Note: you must route traffic from your custom domain to `exo.tl` in your DNS settings |
+| `ShortenUrlParams[Tracking]` | Optional | Boolean | `true` to enable click tracking. `ShortenUrl` must also be `true` |
+| `ShortenUrlParams[ClickTrackingCallbackUrl]` | Optional | String | Webhook URL to receive click events when a recipient clicks the shortened URL |
+| `ShortenUrlParams[TimeToExpiry]` | Optional | Integer | Duration in minutes after which the short URL expires. Minimum: 1 minute. Default: 31 days. Maximum: 365 days |
 
 ## Example Request
 
@@ -189,16 +190,35 @@ The long URL in the Body will be replaced with a short link like `https://exo.tl
 
 ## Click Tracking Callback
 
-When a recipient clicks the shortened link, Exotel sends a POST request to your `ClickTrackingCallbackUrl` with:
+When a recipient clicks the shortened link, Exotel sends a POST request to your `ClickTrackingCallbackUrl` with the following parameters:
 
-| Field         | Description |
-|---------------|-------------|
-| `SmsSid`      | The SMS message identifier |
-| `To`          | Recipient phone number |
-| `ShortenedUrl`| The short URL that was clicked |
-| `OriginalUrl` | The original long URL |
-| `ClickedAt`   | Timestamp of the click |
-| `UserAgent`   | Browser/device user agent string |
+| Field | Description |
+|-------|-------------|
+| `sid` | Unique ID of the shortened URL |
+| `short_url` | The complete shortened URL |
+| `short_code` | Key (slug) of the shortened URL |
+| `long_url` | The original URL that was shortened |
+| `Tracking` | Whether tracking is enabled for this URL |
+| `custom_field` | Custom field value passed in the SMS API request |
+| `Expires_at` | DateTime (ISO 8601) when the short link expires |
+| `Created_time` | DateTime (ISO 8601) when the URL was created |
+| `Last_viewed` | DateTime (ISO 8601) when the link was last visited |
+| `Total_clicks` | Total number of times the short URL has been clicked |
+| `Account_sid` | Exotel Account SID |
+| `Country_code` | Country code of the SMS recipient |
+| `Date_created` | DateTime (ISO 8601) when the URL was created |
+| `Sms_sid` | Unique ID of the SMS message, for cross-referencing |
+| `To` | Phone number of the recipient who clicked the link |
+| `city` | City where the link was clicked |
+| `Country` | Country where the link was clicked |
+| `IP` | IP address of the click |
+| `Postal_code` | Postal code of the click location |
+| `Region` | Region where the link was clicked |
+| `Accuracy_radius` | Approximate accuracy radius of the geolocation |
+| `OS_version` | OS version of the device that clicked the link |
+| `OS_name` | OS name of the device |
+| `Device_name` | Device name of the clicker |
+| `Platform_type` | Platform type (mobile, desktop, etc.) |
 
 ## Best Practices
 

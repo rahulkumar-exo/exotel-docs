@@ -155,6 +155,22 @@ func main() {
 | `DateUpdated`        | DateTime | Last status update timestamp |
 | `Price`              | Double   | Amount charged |
 
+## Error Codes
+
+| HTTP Code | API Error Code | Scenario |
+|-----------|---------------|----------|
+| 200 | — | SID not found — returns `"No matching results"` (not a 404) |
+| 429 | 40403 | Too many GET requests |
+| 400 | 40501 | Invalid parameters in the request URL |
+| 403 | 40002 | Account inactive |
+| 401 | — | Auth key or token missing |
+| 401 | 34010 | Invalid auth key or token |
+| 403 | 34009 | Account SID missing or action forbidden on resource |
+
+:::note
+A `200` response with `"No matching results"` means the SID was not found — this is not an error HTTP status code.
+:::
+
 ## Try It
 
 <ApiConsole
