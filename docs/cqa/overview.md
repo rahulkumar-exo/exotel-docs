@@ -453,6 +453,11 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch/{id}
 | `error_message` | string | Top-level error message if the entire job failed. |
 | `completed_at` | string (ISO-8601) | When the job finished processing. |
 
+```
+Note:
+For batch submissions, some request-time validation failures may be returned directly in the initial POST /ingress/interactions/batch response. Use the submit response for request-time rejected items; the tracking endpoint primarily reflects accepted items that entered processing.
+```
+
 ---
 
 # Analysis API
