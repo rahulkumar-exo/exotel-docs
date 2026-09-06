@@ -700,7 +700,7 @@ The first row of a CSV file must contain column headers. Headers are trimmed and
 | `file_url` | No | string | Generic file URL. Used with `file_type` as a fallback when no `audio_url`/`transcript_url` entries exist. |
 | `file_type` | No | string | File extension for type resolution. Audio extensions: `mp3`, `wav`, `ogg`, `flac`, `m4a`, `aac`, `wma`, `amr`. Transcript extensions: `txt`, `pdf`, `doc`, `docx`, `srt`, `vtt`. |
 
-**Content requirement:** Each row must have at least one of `audio_url`, `transcript_url`.
+**Content requirement:** Each row must have at least one of `audio_url`, `transcript_url`, `transcript_text`.
 
 ### Extra Columns Become Metadata
 
