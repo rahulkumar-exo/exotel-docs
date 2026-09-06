@@ -108,6 +108,174 @@ Send pre-approved WhatsApp message templates with dynamic parameter substitution
 }
 ```
 
+## Send Carousel Template
+
+A carousel template sends up to 10 horizontally scrollable cards. Each card has a media header, body text, and 1–2 buttons. Use component `type: "CAROUSEL"` with a `cards` array; each card uses `card_index` (zero-based).
+
+```json
+{
+  "from": "+919876500001",
+  "to": "+919876543210",
+  "content": {
+    "recipient_type": "individual",
+    "type": "template",
+    "template": {
+      "name": "carousel_content",
+      "language": { "code": "en" },
+      "components": [
+        {
+          "type": "BODY",
+          "parameters": [{ "type": "TEXT", "text": "20OFF" }]
+        },
+        {
+          "type": "CAROUSEL",
+          "cards": [
+            {
+              "card_index": 0,
+              "components": [
+                {
+                  "type": "HEADER",
+                  "parameters": [{ "type": "IMAGE", "image": { "link": "https://example.com/card1.jpg" } }]
+                },
+                {
+                  "type": "BODY",
+                  "parameters": [{ "type": "TEXT", "text": "10OFF" }]
+                },
+                {
+                  "type": "BUTTON",
+                  "sub_type": "QUICK_REPLY",
+                  "index": "0",
+                  "parameters": [{ "type": "PAYLOAD", "payload": "CARD1_QR" }]
+                },
+                {
+                  "type": "button",
+                  "sub_type": "URL",
+                  "index": "1",
+                  "parameters": [{ "type": "payload", "payload": "summer_2024" }]
+                }
+              ]
+            },
+            {
+              "card_index": 1,
+              "components": [
+                {
+                  "type": "HEADER",
+                  "parameters": [{ "type": "IMAGE", "image": { "link": "https://example.com/card2.jpg" } }]
+                },
+                {
+                  "type": "BODY",
+                  "parameters": [{ "type": "TEXT", "text": "30OFF" }]
+                },
+                {
+                  "type": "BUTTON",
+                  "sub_type": "QUICK_REPLY",
+                  "index": "0",
+                  "parameters": [{ "type": "PAYLOAD", "payload": "CARD2_QR" }]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+## Send Limited-Time Offer (LTO) Template
+
+LTO templates display an expiration countdown for offer codes. Use the `limited_time_offer` component type with `expiration_time_ms` (UNIX timestamp in milliseconds), a `copy_code` button, and optionally a URL button.
+
+```json
+{
+  "from": "+919876500001",
+  "to": "+919876543210",
+  "content": {
+    "recipient_type": "individual",
+    "type": "template",
+    "template": {
+      "name": "lto_summer_sale",
+      "language": { "code": "en" },
+      "components": [
+        {
+          "type": "header",
+          "parameters": [{ "type": "image", "image": { "link": "https://example.com/sale.jpg" } }]
+        },
+        {
+          "type": "body",
+          "parameters": [
+            { "type": "text", "text": "Rahul" },
+            { "type": "text", "text": "SALE25" }
+          ]
+        },
+        {
+          "type": "limited_time_offer",
+          "parameters": [
+            {
+              "type": "limited_time_offer",
+              "limited_time_offer": { "expiration_time_ms": 1716261112000 }
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "sub_type": "copy_code",
+          "index": "0",
+          "parameters": [{ "type": "coupon_code", "coupon_code": "SALE25" }]
+        },
+        {
+          "type": "button",
+          "sub_type": "url",
+          "index": "1",
+          "parameters": [{ "type": "text", "text": "summer" }]
+        }
+      ]
+    }
+  }
+}
+```
+
+## Send Authentication Template
+
+Authentication templates send OTPs/verification codes. The body text is fixed (`<CODE> is your verification code.`). Supported button sub-types:
+
+| Button type | `sub_type` | Notes |
+|---|---|---|
+| Copy code | `url` with OTP button | User copies code manually |
+| One-tap autofill | `url` with OTP button | Android only; auto-fills the OTP |
+| Zero-tap | No button | App captures OTP via broadcast receiver (Android) |
+
+```json
+{
+  "from": "+919876500001",
+  "to": "+919876543210",
+  "content": {
+    "recipient_type": "individual",
+    "type": "template",
+    "template": {
+      "name": "authentication_template_name",
+      "language": { "code": "en" },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [{ "type": "text", "text": "123456" }]
+        },
+        {
+          "type": "button",
+          "sub_type": "url",
+          "index": "0",
+          "parameters": [{ "type": "text", "text": "123456" }]
+        }
+      ]
+    }
+  }
+}
+```
+
+:::note
+The OTP code must appear twice — once in the body parameters and once in the button parameters.
+:::
+
 ## Code Examples
 
 <Tabs groupId="programming-language">

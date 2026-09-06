@@ -87,6 +87,7 @@ const sidebars: SidebarsConfig = {
         'whatsapp-api/api-reference/bulk-messages',
         'whatsapp-api/api-reference/payment-messages',
         'whatsapp-api/api-reference/flows',
+        'whatsapp-api/api-reference/template-flows',
         'whatsapp-api/api-reference/status-codes',
       ],
     },
