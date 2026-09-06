@@ -148,11 +148,107 @@ When a payment is completed, you receive a webhook:
 | PayU | `type: "payu"` |
 | Zaakpay | `type: "zaakpay"` |
 
+## UPI Intent Example
+
+For UPI-based payments (India only), set `payment_type` to `"upi"` and provide a `payment_configuration` name. Unlike payment gateway mode, payment status updates must be retrieved from your payment gateway (Exotel/Meta does not send native callbacks for UPI Intent).
+
+```json
+{
+  "whatsapp": {
+    "messages": [{
+      "from": "+918047109880",
+      "to": "+919876543210",
+      "content": {
+        "type": "interactive",
+        "interactive": {
+          "type": "order_details",
+          "header": { "type": "image", "image": { "link": "https://example.com/product.jpg" } },
+          "body": { "text": "Click Pay Now to complete your order." },
+          "footer": { "text": "Thank You!" },
+          "action": {
+            "name": "review_and_pay",
+            "parameters": {
+              "type": "digital-goods",
+              "currency": "INR",
+              "reference_id": "ORD-1033",
+              "payment_type": "upi",
+              "payment_configuration": "your_upi_config_name",
+              "total_amount": { "value": 1100, "offset": 100 },
+              "order": {
+                "status": "pending",
+                "items": [{
+                  "retailer_id": "SKU001",
+                  "name": "Premium Plan",
+                  "amount": { "value": 1500, "offset": 100 },
+                  "sale_amount": { "value": 1000, "offset": 100 },
+                  "quantity": 1
+                }],
+                "subtotal": { "value": 1000, "offset": 100 },
+                "tax": { "value": 100, "offset": 100, "description": "GST" },
+                "shipping": { "value": 100, "offset": 100, "description": "Via Postal" },
+                "discount": { "value": 100, "offset": 100, "description": "Premium discount" }
+              }
+            }
+          }
+        }
+      }
+    }]
+  }
+}
+```
+
+## Update Order Status
+
+After receiving a payment signal from the gateway, send an order status update to the user. Use `type: "order_status"` with `action.name: "review_order"`.
+
+```
+POST /v2/accounts/<account_sid>/messages
+```
+
+```json
+{
+  "whatsapp": {
+    "messages": [{
+      "from": "+918047109880",
+      "to": "+919876543210",
+      "content": {
+        "type": "interactive",
+        "interactive": {
+          "type": "order_status",
+          "body": { "text": "Your order has been confirmed!" },
+          "action": {
+            "name": "review_order",
+            "parameters": {
+              "reference_id": "ORD-1033",
+              "order": {
+                "status": "processing",
+                "description": "We are preparing your order."
+              }
+            }
+          }
+        }
+      }
+    }]
+  }
+}
+```
+
+### Order Status Values
+
+| Status | Description |
+|--------|-------------|
+| `pending` | User has not successfully paid yet |
+| `processing` | Payment authorized; fulfilling the order |
+| `partially-shipped` | Some products shipped |
+| `shipped` | All products shipped |
+| `completed` | Order complete; no further action expected |
+| `canceled` | Order canceled (fails if payment is already successful or pending) |
+
 ## HTTP Status Codes
 
 | Code | Description |
 |------|-------------|
-| `200` | Success |
+| `202` | Accepted |
 | `400` | Bad Request — Invalid payment parameters |
 | `401` | Unauthorized |
 | `402` | Payment Gateway not configured |

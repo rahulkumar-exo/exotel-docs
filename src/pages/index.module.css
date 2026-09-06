@@ -84,16 +84,18 @@
 
 .heroDeck {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: min(17.75rem, 44%) 1fr;
+  align-items: start;
   min-width: 0;
   padding-bottom: 0.75rem;
 }
 
 .deckList {
-  grid-area: 1 / 1;
+  grid-column: 1;
+  grid-row: 1;
   z-index: 2;
   align-self: start;
-  width: min(17.75rem, 68%);
+  width: 100%;
   padding: 1rem 1rem 0.85rem;
   background: var(--exotel-surface-1);
   border: 1px solid var(--ifm-border-color);
@@ -159,12 +161,13 @@
 }
 
 .heroShell {
-  grid-area: 1 / 1;
+  grid-column: 2;
+  grid-row: 1;
   z-index: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  margin: 2.35rem 0 0 26%;
+  margin: 2.35rem 0 0 -2rem;
   background: var(--exotel-code-ink);
   border: 1px solid var(--exotel-code-edge);
   border-radius: var(--exotel-radius-xl);

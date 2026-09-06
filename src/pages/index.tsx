@@ -518,8 +518,8 @@ export default function Home(): ReactNode {
       <HeroBanner />
       <main>
         <ProductCards />
-        <QuickLinks />
         <UseCasesSection />
+        <QuickLinks />
         <NewsletterSignup />
       </main>
     </Layout>

@@ -23,16 +23,18 @@ Send a single SMS message to a phone number.
 
 | Parameter        | Required  | Type   | Description |
 |------------------|-----------|--------|-------------|
-| `From`           | Mandatory | String | ExoPhone or approved Sender ID |
+| `From`           | Mandatory | String | ExoPhone or approved Sender ID. If your account has no valid Sender ID matching the SMS body, the API returns HTTP 400 |
 | `To`             | Mandatory | String | Recipient mobile number, preferably E.164 format |
 | `Body`           | Mandatory | String | Message content, max 2000 characters |
-| `EncodingType`   | Optional  | String | `plain` (default) or `unicode` |
-| `StatusCallback` | Optional  | String | URL to receive delivery status notifications |
+| `EncodingType`   | Optional  | String | `plain` (default, auto-detected if not set) or `unicode` |
+| `ShortenUrl`     | Optional  | Boolean | `true` to shorten URLs in the SMS body. Chargeable feature — must be enabled for your account. See [URL Shortening](/docs/sms-api/api-reference/url-shortening) |
+| `StatusCallback` | Optional  | String | URL to receive delivery status notifications (form-encoded POST). Callback fields: `SmsSid`, `To`, `Status`, `SmsUnits`, `DetailedStatus`, `DetailedStatusCode`, `DateSent`, `CustomField` |
 | `DltEntityId`    | Mandatory (India) | String | DLT entity registration ID |
 | `DltTemplateId`  | Optional  | String | DLT-approved template ID |
-| `SmsType`        | Optional  | String | `transactional`, `transactional_opt_in`, or `promotional` |
-| `CustomField`    | Optional  | String | Reference identifier for your application |
-| `Priority`       | Optional  | String | `normal` (default) or `high` |
+| `SmsType`        | Optional  | String | `transactional` (OTP/Service Implicit), `transactional_opt_in` (Service Explicit), or `promotional`. If not set, Exotel looks up the matching template on the dashboard |
+| `CustomField`    | Optional  | String | Custom reference field (e.g., Order ID, Payment ID) |
+| `Priority`       | Optional  | String | `normal` (default) or `high`. Use `high` only for OTP/bank/delivery SMS — misuse may impact delivery |
+| `BindingChainDetails` | Optional | String | For Telemarketer Aggregators in India only. Comma-separated PE and TM details: `<PE_ID>,<YOUR_TM_ID>` |
 
 :::info DLT Compliance (Required for India)
 **DLT (Distributed Ledger Technology)** is a regulatory requirement by TRAI for all SMS sent to Indian phone numbers. You must:
@@ -227,17 +229,23 @@ puts response.body
 
 ## Response Fields
 
-| Field         | Type     | Description |
-|---------------|----------|-------------|
-| `Sid`         | String   | Unique SMS identifier |
-| `AccountSid`  | String   | Your Exotel account SID |
-| `From`        | String   | Sender ID or ExoPhone |
-| `To`          | String   | Recipient number |
-| `Body`        | String   | Message content |
-| `Status`      | String   | Current SMS status (see [Status Codes](/docs/sms-api/api-reference/status-codes)) |
-| `DateCreated` | DateTime | When the request was received |
-| `DateSent`    | DateTime | When the SMS was sent to the operator |
-| `Price`       | Double   | Amount charged |
+| Field | Type | Description |
+|-------|------|-------------|
+| `Sid` | String | Unique SMS identifier |
+| `AccountSid` | String | Your Exotel account SID |
+| `From` | String | Format: `<ExoPhone>/<SenderID>` |
+| `To` | String | Recipient number |
+| `Body` | String | Message content |
+| `Status` | String | High-level status: `queued`, `sending`, `submitted`, `sent`, `failed-dnd`, `failed` |
+| `DetailedStatusCode` | String | Exotel's numeric status code — use for decision logic. See [Status Codes](/docs/sms-api/api-reference/status-codes) |
+| `DetailedStatus` | String | Human-readable status string — log this for debugging |
+| `Direction` | String | `outbound-api` (REST API), `outbound-call` (during call), `outbound-reply` (reply to incoming), `incoming` |
+| `SmsUnits` | Integer | Number of SMS units consumed (null until final state) |
+| `DateCreated` | DateTime | When the request was received (`YYYY-MM-DD HH:mm:ss`) |
+| `DateUpdated` | DateTime | Last status update timestamp |
+| `DateSent` | DateTime | When the SMS was delivered to the recipient |
+| `Price` | Double | Amount charged in INR or USD (if applicable) |
+| `Uri` | String | Path to the SMS resource |
 
 ## HTTP Status Codes
 

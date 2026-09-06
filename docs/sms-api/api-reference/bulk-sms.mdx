@@ -1,7 +1,7 @@
 ---
 id: bulk-sms
 title: Bulk SMS
-description: Send bulk SMS to multiple recipients using the Exotel SMS API. Supports static and dynamic messages in a single API call.
+description: Send bulk SMS to multiple recipients using the Exotel SMS API. Supports static (same message) and dynamic (unique messages) sending in a single API call.
 sidebar_label: Bulk SMS
 sidebar_position: 3
 ---
@@ -16,29 +16,36 @@ import RegionalUrls from '@site/src/components/RegionalUrls';
 
 Send the same message to multiple recipients, or unique messages to different recipients in a single API call.
 
-<TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Sms/bulksend" />
+---
 
 ## Static Bulk SMS (Same Message)
 
-Send an identical message to multiple phone numbers.
+Send an identical message to multiple phone numbers in one request. Uses the same endpoint as Send SMS — pass `To` as a repeated array parameter.
+
+<TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Sms/send" />
 
 <RegionalUrls path="/v1/Accounts/{account_sid}/Sms/send" host="api" />
 
 ### Parameters
 
-Same as [Send SMS](/docs/sms-api/api-reference/send-sms), except `To` accepts comma-separated numbers:
+All [Send SMS](/docs/sms-api/api-reference/send-sms) parameters apply. The key difference is `To`, which must be passed as an array:
 
 | Parameter | Required  | Description |
 |-----------|-----------|-------------|
-| `To`      | Mandatory | Comma-separated phone numbers |
+| `From`    | Mandatory | ExoPhone or approved Sender ID |
+| `To[]`    | Mandatory | Repeat this parameter for each recipient number |
+| `Body`    | Mandatory | Message content (max 2000 characters) |
+
+### Examples
 
 <Tabs groupId="programming-language">
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -u '<api_key>:<api_token>' -X POST https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send \
-  -d "From=EXOTEL" \
-  -d "To=+919876543210,+919876543211,+919876543212" \
+curl -X POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/send \
+  -d "From=0XXXXXX4890" \
+  -d "To[]=+919876543210" \
+  -d "To[]=+919876543211" \
   -d "Body=Flash sale! 50% off all items today." \
   -d "DltEntityId=1234567890"
 ```
@@ -49,16 +56,16 @@ curl -u '<api_key>:<api_token>' -X POST https://api.exotel.com/v1/Accounts/<your
 ```python
 import requests
 
-data = {
-    'From': 'EXOTEL',
-    'To': '+919876543210,+919876543211,+919876543212',
-    'Body': 'Flash sale! 50% off all items today.',
-    'DltEntityId': '1234567890',
-}
+data = [
+    ('From', '0XXXXXX4890'),
+    ('To[]', '+919876543210'),
+    ('To[]', '+919876543211'),
+    ('Body', 'Flash sale! 50% off all items today.'),
+    ('DltEntityId', '1234567890'),
+]
 
 response = requests.post(
-    'https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send',
-    auth=('<api_key>', '<api_token>'),
+    'https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/send',
     data=data
 )
 
@@ -69,26 +76,19 @@ print(response.json())
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const apiKey = '<your_api_key>';
-const apiToken = '<your_api_token>';
-const accountSid = '<your_sid>';
+const url = `https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/send`;
 
-const url = `https://api.exotel.com/v1/Accounts/${accountSid}/Sms/send`;
-
-const params = new URLSearchParams({
-  From: 'EXOTEL',
-  To: '+919876543210,+919876543211,+919876543212',
-  Body: 'Flash sale! 50% off all items today.',
-  DltEntityId: '1234567890',
-});
+const body = new URLSearchParams();
+body.append('From', '0XXXXXX4890');
+body.append('To[]', '+919876543210');
+body.append('To[]', '+919876543211');
+body.append('Body', 'Flash sale! 50% off all items today.');
+body.append('DltEntityId', '1234567890');
 
 const response = await fetch(url, {
   method: 'POST',
-  headers: {
-    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
-    'Content-Type': 'application/x-www-form-urlencoded',
-  },
-  body: params,
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  body: body.toString(),
 });
 
 const data = await response.json();
@@ -100,114 +100,159 @@ console.log(data);
 
 ```php
 <?php
-$data = array(
-    'From' => 'EXOTEL',
-    'To' => '+919876543210,+919876543211,+919876543212',
+$data = http_build_query([
+    'From' => '0XXXXXX4890',
     'Body' => 'Flash sale! 50% off all items today.',
     'DltEntityId' => '1234567890',
-);
+]) . '&To%5B%5D=+919876543210&To%5B%5D=+919876543211';
 
-$ch = curl_init('https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send');
-curl_setopt($ch, CURLOPT_USERPWD, "<api_key>:<api_token>");
+$ch = curl_init('https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/send');
 curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $response = curl_exec($ch);
 curl_close($ch);
-
 echo $response;
 ?>
 ```
 
 </TabItem>
-<TabItem value="go" label="Go">
+</Tabs>
 
-```go
-package main
+### URL Shortening Example
 
-import (
-    "fmt"
-    "io/ioutil"
-    "net/http"
-    "net/url"
-    "strings"
-)
-
-func main() {
-    endpoint := "https://api.exotel.com/v1/Accounts/<your_sid>/Sms/send"
-    data := url.Values{}
-    data.Set("From", "EXOTEL")
-    data.Set("To", "+919876543210,+919876543211,+919876543212")
-    data.Set("Body", "Flash sale! 50% off all items today.")
-    data.Set("DltEntityId", "1234567890")
-
-    req, _ := http.NewRequest("POST", endpoint, strings.NewReader(data.Encode()))
-    req.SetBasicAuth("<api_key>", "<api_token>")
-    req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
-
-    res, _ := http.DefaultClient.Do(req)
-    defer res.Body.Close()
-
-    body, _ := ioutil.ReadAll(res.Body)
-    fmt.Println(string(body))
-}
+```bash
+curl -X POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/send \
+  -d "From=0XXXXXX4890" \
+  -d "To[]=+919876543210" \
+  -d "To[]=+919876543211" \
+  -d "Body=Sale at https://example.com/sale" \
+  -d "ShortenUrl=true" \
+  -d "ShortenUrlParams[Header]=EXOTEL" \
+  -d "ShortenUrlParams[Tracking]=true" \
+  -d "ShortenUrlParams[ClickTrackingCallbackUrl]=https://your-server.com/clicks"
 ```
 
-</TabItem>
-</Tabs>
+### Response
+
+**Success (HTTP 200):** Returns an array of SMSMessage objects, one per recipient.
+
+```json
+[
+  {
+    "SMSMessage": {
+      "Sid": "0f477d60517e6e6a0f6d9a7e9af8630e",
+      "AccountSid": "Exotel",
+      "From": "0XXXXXX4890/WEBDEV",
+      "To": "0XXXXX30240",
+      "DateCreated": "2017-03-03 14:14:20",
+      "DateUpdated": "2017-03-03 14:14:20",
+      "DateSent": null,
+      "Body": "Flash sale! 50% off all items today.",
+      "Direction": "outbound-api",
+      "Uri": "/v1/Accounts/Exotel/SMS/Messages/0f477d60517e6e6a0f6d9a7e9af8630e.json",
+      "ApiVersion": null,
+      "Price": null,
+      "Status": "queued",
+      "DetailedStatusCode": 21010,
+      "DetailedStatus": "PENDING_TO_OPERATOR",
+      "SmsUnits": null
+    }
+  }
+]
+```
+
+**Partial success (HTTP 207):** Returned when some recipients succeeded and others failed. Failed entries have `"Status": "failed"` and null `Sid`.
+
+```json
+[
+  {
+    "SMSMessage": {
+      "Sid": null,
+      "AccountSid": "Exotel",
+      "From": null,
+      "To": null,
+      "DateCreated": null,
+      "DateUpdated": null,
+      "DateSent": null,
+      "Body": "Flash sale! 50% off all items today.",
+      "Direction": null,
+      "Uri": null,
+      "ApiVersion": null,
+      "Price": null,
+      "Status": "failed",
+      "SmsUnits": null,
+      "DetailedStatusCode": 23010,
+      "DetailedStatus": "FAILED_INVALID_DESTINATION_NUMBER"
+    }
+  },
+  {
+    "SMSMessage": {
+      "Sid": "1393e66deb633e7297bcfa9a9da0bb37",
+      "AccountSid": "Exotel",
+      "From": "0XXXXXX4890/WEBDEV",
+      "To": "+919876543211",
+      "DateCreated": "2017-03-03 14:14:20",
+      "DateUpdated": "2017-03-03 14:14:20",
+      "DateSent": null,
+      "Body": "Flash sale! 50% off all items today.",
+      "Direction": "outbound-api",
+      "Uri": "/v1/Accounts/Exotel/SMS/Messages/1393e66deb633e7297bcfa9a9da0bb37.json",
+      "ApiVersion": null,
+      "Price": null,
+      "Status": "queued",
+      "DetailedStatusCode": 21010,
+      "DetailedStatus": "PENDING_TO_OPERATOR",
+      "SmsUnits": null
+    }
+  }
+]
+```
 
 ---
 
 ## Dynamic Bulk SMS (Unique Messages)
 
-Send personalized messages to different recipients in a single request. Maximum **100 messages per request**.
+Send personalized messages to different recipients in a single request. Uses the `/bulksend` endpoint with form-encoded `Messages[]` array. Maximum **100 messages per request**.
+
+<TryItBanner method="POST" endpoint="/v1/Accounts/{sid}/Sms/bulksend" />
 
 <RegionalUrls path="/v1/Accounts/{account_sid}/Sms/bulksend" host="api" />
 
-### Request Body (JSON)
+### Parameters
 
-```json
-{
-  "sms": [
-    {
-      "From": "EXOTEL",
-      "To": "+919876543210",
-      "Body": "Hi Rahul, your order #1234 has shipped.",
-      "DltEntityId": "1234567890"
-    },
-    {
-      "From": "EXOTEL",
-      "To": "+919876543211",
-      "Body": "Hi Priya, your order #5678 has shipped.",
-      "DltEntityId": "1234567890"
-    }
-  ]
-}
-```
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `From` | Optional | Default ExoPhone or Sender ID. Used when `From` is not set in a `Messages` entry. |
+| `Messages` | Mandatory | Array of message objects (max 100). Each object must include `To` and `Body`. |
+| `Messages[N][To]` | Mandatory | Recipient number for message N |
+| `Messages[N][Body]` | Mandatory | Message content for message N (max 2000 chars) |
+| `Messages[N][From]` | Optional | Per-message Sender ID; falls back to outer `From` |
+| `Messages[N][SmsType]` | Optional | Per-message SMS type: `transactional`, `transactional_opt_in`, `promotional` |
+| `Messages[N][DltTemplateId]` | Optional | Per-message DLT Template ID (India) |
+| `EncodingType` | Optional | `plain` or `unicode` |
+| `ShortenUrl` | Optional | `true` to shorten URLs |
+| `ShortenUrlParams[Header]` | Optional | DLT-registered header for the short URL domain |
+| `ShortenUrlParams[Tracking]` | Optional | `true` to enable click tracking |
+| `ShortenUrlParams[ClickTrackingCallbackUrl]` | Optional | Webhook URL for click events |
+| `StatusCallback` | Optional | URL to receive delivery status per message |
+| `DltEntityId` | Optional (Mandatory for India) | DLT Entity ID applied to all messages |
+| `CustomField` | Optional | Custom reference field |
+| `Priority` | Optional | `normal` or `high` |
+
+### Examples
 
 <Tabs groupId="programming-language">
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -u '<api_key>:<api_token>' -X POST https://api.exotel.com/v1/Accounts/<your_sid>/Sms/bulksend \
-  -H "Content-Type: application/json" \
-  -d '{
-    "sms": [
-      {
-        "From": "EXOTEL",
-        "To": "+919876543210",
-        "Body": "Hi Rahul, your order #1234 has shipped.",
-        "DltEntityId": "1234567890"
-      },
-      {
-        "From": "EXOTEL",
-        "To": "+919876543211",
-        "Body": "Hi Priya, your order #5678 has shipped.",
-        "DltEntityId": "1234567890"
-      }
-    ]
-  }'
+curl -X POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/bulksend \
+  -d "From=0XXXXXX4890" \
+  -d "Messages[0][Body]=Hi Rahul, your order #1234 has shipped." \
+  -d "Messages[0][To]=+919876543210" \
+  -d "Messages[1][Body]=Hi Priya, your order #5678 has shipped." \
+  -d "Messages[1][To]=+919876543211"
 ```
 
 </TabItem>
@@ -215,30 +260,18 @@ curl -u '<api_key>:<api_token>' -X POST https://api.exotel.com/v1/Accounts/<your
 
 ```python
 import requests
-import json
 
-payload = {
-    "sms": [
-        {
-            "From": "EXOTEL",
-            "To": "+919876543210",
-            "Body": "Hi Rahul, your order #1234 has shipped.",
-            "DltEntityId": "1234567890"
-        },
-        {
-            "From": "EXOTEL",
-            "To": "+919876543211",
-            "Body": "Hi Priya, your order #5678 has shipped.",
-            "DltEntityId": "1234567890"
-        }
-    ]
-}
+data = [
+    ('From', '0XXXXXX4890'),
+    ('Messages[0][Body]', 'Hi Rahul, your order #1234 has shipped.'),
+    ('Messages[0][To]', '+919876543210'),
+    ('Messages[1][Body]', 'Hi Priya, your order #5678 has shipped.'),
+    ('Messages[1][To]', '+919876543211'),
+]
 
 response = requests.post(
-    'https://api.exotel.com/v1/Accounts/<your_sid>/Sms/bulksend',
-    auth=('<api_key>', '<api_token>'),
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps(payload)
+    'https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/bulksend',
+    data=data
 )
 
 print(response.json())
@@ -248,36 +281,19 @@ print(response.json())
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const apiKey = '<your_api_key>';
-const apiToken = '<your_api_token>';
-const accountSid = '<your_sid>';
+const url = `https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/bulksend`;
 
-const url = `https://api.exotel.com/v1/Accounts/${accountSid}/Sms/bulksend`;
-
-const payload = {
-  sms: [
-    {
-      From: 'EXOTEL',
-      To: '+919876543210',
-      Body: 'Hi Rahul, your order #1234 has shipped.',
-      DltEntityId: '1234567890',
-    },
-    {
-      From: 'EXOTEL',
-      To: '+919876543211',
-      Body: 'Hi Priya, your order #5678 has shipped.',
-      DltEntityId: '1234567890',
-    },
-  ],
-};
+const body = new URLSearchParams();
+body.append('From', '0XXXXXX4890');
+body.append('Messages[0][Body]', 'Hi Rahul, your order #1234 has shipped.');
+body.append('Messages[0][To]', '+919876543210');
+body.append('Messages[1][Body]', 'Hi Priya, your order #5678 has shipped.');
+body.append('Messages[1][To]', '+919876543211');
 
 const response = await fetch(url, {
   method: 'POST',
-  headers: {
-    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(payload),
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  body: body.toString(),
 });
 
 const data = await response.json();
@@ -289,114 +305,146 @@ console.log(data);
 
 ```php
 <?php
-$payload = json_encode(array(
-  "sms" => array(
-    array(
-      "From" => "EXOTEL",
-      "To" => "+919876543210",
-      "Body" => "Hi Rahul, your order #1234 has shipped.",
-      "DltEntityId" => "1234567890"
-    ),
-    array(
-      "From" => "EXOTEL",
-      "To" => "+919876543211",
-      "Body" => "Hi Priya, your order #5678 has shipped.",
-      "DltEntityId" => "1234567890"
-    )
-  )
-));
+$data = http_build_query([
+    'From' => '0XXXXXX4890',
+    'Messages' => [
+        ['Body' => 'Hi Rahul, your order #1234 has shipped.', 'To' => '+919876543210'],
+        ['Body' => 'Hi Priya, your order #5678 has shipped.', 'To' => '+919876543211'],
+    ],
+]);
 
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_USERPWD => "<api_key>:<api_token>",
-  CURLOPT_URL => "https://api.exotel.com/v1/Accounts/<your_sid>/Sms/bulksend",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POST => true,
-  CURLOPT_POSTFIELDS => $payload,
-  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
-));
+$ch = curl_init('https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/bulksend');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-$response = curl_exec($curl);
-curl_close($curl);
-
+$response = curl_exec($ch);
+curl_close($ch);
 echo $response;
 ?>
 ```
 
 </TabItem>
-<TabItem value="go" label="Go">
-
-```go
-package main
-
-import (
-    "fmt"
-    "io/ioutil"
-    "net/http"
-    "strings"
-)
-
-func main() {
-    url := "https://api.exotel.com/v1/Accounts/<your_sid>/Sms/bulksend"
-    payload := strings.NewReader(`{
-    "sms": [
-      {
-        "From": "EXOTEL",
-        "To": "+919876543210",
-        "Body": "Hi Rahul, your order #1234 has shipped.",
-        "DltEntityId": "1234567890"
-      },
-      {
-        "From": "EXOTEL",
-        "To": "+919876543211",
-        "Body": "Hi Priya, your order #5678 has shipped.",
-        "DltEntityId": "1234567890"
-      }
-    ]
-  }`)
-
-    req, _ := http.NewRequest("POST", url, payload)
-    req.SetBasicAuth("<api_key>", "<api_token>")
-    req.Header.Add("Content-Type", "application/json")
-
-    res, _ := http.DefaultClient.Do(req)
-    defer res.Body.Close()
-
-    body, _ := ioutil.ReadAll(res.Body)
-    fmt.Println(string(body))
-}
-```
-
-</TabItem>
 </Tabs>
 
-## Response
+### URL Shortening Example
 
-Returns an array of SMS message objects, one for each recipient:
+```bash
+curl -X POST https://<api_key>:<api_token><subdomain>/v1/Accounts/<your_sid>/Sms/bulksend \
+  -d "From=0XXXXXX4890" \
+  -d "Messages[0][Body]=Hi Rahul, your deal: https://example.com/deal/1234" \
+  -d "Messages[0][To]=+919876543210" \
+  -d "Messages[1][Body]=Hi Priya, your deal: https://example.com/deal/5678" \
+  -d "Messages[1][To]=+919876543211" \
+  -d "ShortenUrl=true" \
+  -d "ShortenUrlParams[Header]=EXOTEL" \
+  -d "ShortenUrlParams[Tracking]=true" \
+  -d "ShortenUrlParams[ClickTrackingCallbackUrl]=https://your-server.com/clicks"
+```
+
+### Response
+
+**Success (HTTP 200):**
 
 ```json
-{
-  "SMSMessages": [
-    {
-      "Sid": "sms_sid_1",
+[
+  {
+    "SMSMessage": {
+      "Sid": "0f477d60517e6e6a0f6d9a7e9af8630e",
+      "AccountSid": "Exotel",
+      "From": "0XXXXXX4890/WEBDEV",
+      "To": "+919876543210",
+      "DateCreated": "2017-03-03 14:14:20",
+      "DateUpdated": "2017-03-03 14:14:20",
+      "DateSent": null,
+      "Body": "Hi Rahul, your order #1234 has shipped.",
+      "Direction": "outbound-api",
+      "Uri": "/v1/Accounts/Exotel/SMS/Messages/0f477d60517e6e6a0f6d9a7e9af8630e.json",
+      "ApiVersion": null,
+      "Price": null,
       "Status": "queued",
-      "To": "+919876543210"
-    },
-    {
-      "Sid": "sms_sid_2",
-      "Status": "queued",
-      "To": "+919876543211"
+      "DetailedStatusCode": 21010,
+      "DetailedStatus": "PENDING_TO_OPERATOR",
+      "SmsUnits": null
     }
-  ]
-}
+  },
+  {
+    "SMSMessage": {
+      "Sid": "1393e66deb633e7297bcfa9a9da0bb37",
+      "AccountSid": "Exotel",
+      "From": "0XXXXXX4890/WEBDEV",
+      "To": "+919876543211",
+      "DateCreated": "2017-03-03 14:14:20",
+      "DateUpdated": "2017-03-03 14:14:20",
+      "DateSent": null,
+      "Body": "Hi Priya, your order #5678 has shipped.",
+      "Direction": "outbound-api",
+      "Uri": "/v1/Accounts/Exotel/SMS/Messages/1393e66deb633e7297bcfa9a9da0bb37.json",
+      "ApiVersion": null,
+      "Price": null,
+      "Status": "queued",
+      "DetailedStatusCode": 21010,
+      "DetailedStatus": "PENDING_TO_OPERATOR",
+      "SmsUnits": null
+    }
+  }
+]
+```
+
+**Partial success (HTTP 207):** Some messages failed. Failed entries have `"Status": "failed"` with a `DetailedStatusCode` and null `Sid`.
+
+```json
+[
+  {
+    "SMSMessage": {
+      "Sid": null,
+      "AccountSid": "Exotel",
+      "From": null,
+      "To": "+919876543210",
+      "DateCreated": null,
+      "DateUpdated": null,
+      "DateSent": null,
+      "Body": "",
+      "Direction": null,
+      "Uri": null,
+      "ApiVersion": null,
+      "Price": null,
+      "Status": "failed",
+      "DetailedStatusCode": 23000,
+      "DetailedStatus": "FAILED_MISSING_BODY",
+      "SmsUnits": null
+    }
+  },
+  {
+    "SMSMessage": {
+      "Sid": "1393e66deb633e7297bcfa9a9da0bb37",
+      "AccountSid": "Exotel",
+      "From": "0XXXXXX4890/WEBDEV",
+      "To": "+919876543211",
+      "DateCreated": "2017-03-03 14:14:20",
+      "DateUpdated": "2017-03-03 14:14:20",
+      "DateSent": null,
+      "Body": "Hi Priya, your order #5678 has shipped.",
+      "Direction": "outbound-api",
+      "Uri": "/v1/Accounts/Exotel/SMS/Messages/1393e66deb633e7297bcfa9a9da0bb37.json",
+      "ApiVersion": null,
+      "Price": null,
+      "Status": "queued",
+      "DetailedStatusCode": 21010,
+      "DetailedStatus": "PENDING_TO_OPERATOR",
+      "SmsUnits": null
+    }
+  }
+]
 ```
 
 ## Limits
 
-| Limit                     | Value          |
-|---------------------------|----------------|
-| Max per dynamic request   | 100 messages   |
-| API rate limit            | 200 requests/min |
+| Limit | Value |
+|-------|-------|
+| Max recipients — static bulk | 100 numbers |
+| Max messages — dynamic bulk | 100 messages |
+| API error code | 40406 (static) / 40400 (dynamic) if exceeded |
 
 :::note
 Each message in a bulk request is processed independently. Individual messages may succeed or fail without affecting others.
@@ -409,8 +457,10 @@ Each message in a bulk request is processed independently. Individual messages m
   path="/v1/Accounts/{account_sid}/Sms/bulksend"
   params={[
     { name: 'From', required: true, type: 'string', description: 'Sender ID or ExoPhone', placeholder: 'EXOTEL' },
-    { name: 'To', required: true, type: 'string', description: 'Comma-separated phone numbers (E.164)', placeholder: '+919876543210,+919876543211' },
-    { name: 'Body', required: true, type: 'string', description: 'Message content', placeholder: 'Flash sale! 50% off all items today.' },
-    { name: 'DltEntityId', required: false, type: 'string', description: 'DLT Entity ID for regulatory compliance', placeholder: '1234567890' },
+    { name: 'Messages[0][To]', required: true, type: 'string', description: 'Recipient number for message 0', placeholder: '+919876543210' },
+    { name: 'Messages[0][Body]', required: true, type: 'string', description: 'Message body for message 0', placeholder: 'Hi Rahul, your order has shipped.' },
+    { name: 'Messages[1][To]', required: false, type: 'string', description: 'Recipient number for message 1', placeholder: '+919876543211' },
+    { name: 'Messages[1][Body]', required: false, type: 'string', description: 'Message body for message 1', placeholder: 'Hi Priya, your order has shipped.' },
+    { name: 'DltEntityId', required: false, type: 'string', description: 'DLT Entity ID for regulatory compliance (India)', placeholder: '1234567890' },
   ]}
 />

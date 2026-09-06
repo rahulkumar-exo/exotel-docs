@@ -1,272 +1,185 @@
 ---
 id: send-message
-title: Send RCS Message
-description: "Send RCS template messages with rich media, carousels, and SMS fallback."
+title: RCS Omnichannel API
+description: "Send RCS template messages with rich media and SMS fallback. Receive delivery reports and incoming messages via webhook."
 sidebar_label: Send Message
 sidebar_position: 1
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
 import RegionalUrls from '@site/src/components/RegionalUrls';
 
-# Send RCS Message
+# RCS Omnichannel API
 
-Send an RCS message using a pre-approved template. Supports rich media, suggested actions, and automatic SMS fallback for non-RCS capable devices.
+RCS transforms business messaging with interactive experiences — images, videos, carousels, and CTAs — beyond traditional SMS and WhatsApp. When RCS is not supported on the recipient's device, an automatic SMS fallback can be configured.
+
+:::info Prerequisites
+To send RCS messages you need to:
+1. Register your Brand with Exotel
+2. Have RCS templates configured for your brand
+3. Get your Brand and bot verified
+
+Contact your Account Manager or fill out the [RCS Early Access form](https://exotel.com/get-rcs-early-access/) to get started.
+:::
 
 <TryItBanner method="POST" endpoint="/v2/accounts/{sid}/messages" />
 
 <RegionalUrls path="/v2/accounts/{account_sid}/messages" host="api" />
 
-## Request Parameters
+## Send RCS Template Message
 
-| Parameter         | Required  | Type   | Description |
-|-------------------|-----------|--------|-------------|
-| `custom_data`     | Optional  | String | Custom metadata passed through to status callbacks |
-| `status_callback` | Optional  | String | Webhook URL for delivery receipt events |
-| `rcs`             | Mandatory | Object | RCS channel configuration (see below) |
-
-### RCS Object
-
-| Parameter  | Required  | Type   | Description |
-|------------|-----------|--------|-------------|
-| `from`     | Mandatory | String | BotID for sending (provided by Exotel) |
-| `to`       | Mandatory | String | Recipient phone in E.164 format (e.g., `+919888888888`) |
-| `content`  | Mandatory | Object | Template message content |
-| `fallback` | Optional  | Object | SMS fallback configuration |
-
-### Content Object
-
-| Parameter   | Required  | Type   | Description |
-|-------------|-----------|--------|-------------|
-| `name`      | Mandatory | String | Pre-approved template identifier |
-| `variables` | Mandatory | Object | Key-value pairs for template variable substitution |
-
-```json
-{
-  "name": "welcome_template",
-  "variables": {
-    "customer_name": "Rahul",
-    "order_id": "ORD-12345"
-  }
-}
 ```
+POST https://<api_key>:<api_token><subdomain>/v2/accounts/<account_sid>/messages
+```
+
+| Subdomain | Region |
+|-----------|--------|
+| `@api.exotel.com` | Singapore |
+| `@api.in.exotel.com` | Mumbai |
+
+### POST Parameters
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `custom_data` | String | Optional | Custom metadata passed at the request level. Returned in callbacks. |
+| `status_callback` | String (URL) | Optional | Webhook URL for delivery status events. |
+| `rcs` | Channel Object | Optional | RCS channel configuration. |
+
+### Channel Object
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `custom_data` | String | Optional | Custom metadata at the channel level. |
+| `status_callback` | String (URL) | Optional | Webhook URL for channel-level delivery events. |
+| `messages` | `[]Message Object` | Mandatory | Array of messages to send. |
+
+### Message Object
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `custom_data` | String | Optional | Custom metadata at the message level. |
+| `status_callback` | String (URL) | Optional | Webhook URL for this specific message. |
+| `from` | String | Mandatory | BotID to send from (provided by Exotel during onboarding). |
+| `to` | String | Mandatory | Recipient phone number in E.164 format (e.g., `+919888888888`). |
+| `content` | Template Message Object | Mandatory | RCS message body. |
+| `fallback` | Fallback Object | Optional | SMS fallback sent if RCS delivery fails. |
+
+### Template Message Object
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `type` | String | Mandatory | Must be `"template"`. |
+| `template` | Object | Mandatory | Template details. |
+| `template.name` | String | Mandatory | Name of the pre-approved RCS template. |
+| `template.variables` | Variables Object | Mandatory | Key-value pairs for template variable substitution. |
+
+### Variables Object
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `TemplateParam1` | String | Optional | Value for the first template variable. |
+| `TemplateParam2` | String | Optional | Value for the second template variable. |
+| `TemplateParam3` | String | Optional | Value for additional template variables. |
 
 ### Fallback Object
 
-| Parameter     | Required  | Type   | Description |
-|---------------|-----------|--------|-------------|
-| `sms.from`    | Mandatory | String | SMS sender ID |
-| `sms.content` | Mandatory | String | Fallback SMS text (sent if RCS delivery fails) |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `from` | String | Mandatory | SMS Sender ID to use for the fallback message. |
+| `content` | SMS Body Object | Mandatory | SMS message body. |
+
+### SMS Body Object
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `text` | String | Mandatory | SMS message body text. |
+| `sms_type` | String | Mandatory | `transactional`, `transactional_opt_in`, or `promotional`. |
+| `dlt_entity_id` | String | Optional (Mandatory for India) | Entity ID registered on the DLT portal (required for Indian business → Indian number SMS). |
+| `dlt_template_id` | String | Optional | DLT Content Template ID for the SMS body. |
+| `encoding_type` | String | Optional | `plain` or `unicode`. |
+| `priority` | String | Optional | `normal` or `high`. Use `high` for OTP SMS only. |
+| `shorten_url` | Boolean | Optional | Whether to shorten URLs in the SMS. Chargeable feature. |
+| `shorten_url_params` | Shorten URL Params Object | Optional | Configuration for URL shortening. |
+
+### Shorten URL Params Object
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `custom_domain` | String | Optional | Custom domain for short URLs (defaults to `exo.tl` if omitted). |
+| `tracking` | Boolean | Optional | Track URL clicks. Requires `shorten_url: true`. |
+| `click_tracking_callback_url` | String (URL) | Optional | Webhook for click events on shortened URLs. |
 
 ## Code Examples
 
 <Tabs groupId="programming-language">
-<TabItem value="curl" label="cURL">
+<TabItem value="curl-rcs" label="cURL — RCS only">
 
 ```bash
-curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<your_sid>/messages" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "custom_data": "order_12345",
-    "status_callback": "https://your-server.com/rcs/callback",
+curl -XPOST "https://<api_key>:<api_token><subdomain>/v2/accounts/<your_sid>/messages" \
+-H "Content-Type: application/json" \
+-d '{
+    "custom_data": "ORDER123456",
+    "status_callback": "https://your-server.com/callback",
     "rcs": {
-      "from": "your_bot_id",
-      "to": "+919888888888",
-      "content": {
-        "name": "welcome_template",
-        "variables": {
-          "customer_name": "Rahul",
-          "order_id": "ORD-12345"
-        }
-      },
-      "fallback": {
-        "sms": {
-          "from": "ExoSMS",
-          "content": "Hi Rahul, your order ORD-12345 has been confirmed."
-        }
-      }
-    }
-  }'
-```
-
-</TabItem>
-<TabItem value="python" label="Python">
-
-```python
-import requests
-import json
-
-payload = {
-    "custom_data": "order_12345",
-    "status_callback": "https://your-server.com/rcs/callback",
-    "rcs": {
-        "from": "your_bot_id",
-        "to": "+919888888888",
-        "content": {
-            "name": "welcome_template",
-            "variables": {
-                "customer_name": "Rahul",
-                "order_id": "ORD-12345"
+        "messages": [
+            {
+                "from": "IifqFxxxxxxx6fp",
+                "to": "+91xxxxxxxxx987",
+                "content": {
+                    "type": "template",
+                    "template": {
+                        "name": "order_confirmation",
+                        "variables": {
+                            "TemplateParam1": "Rahul",
+                            "TemplateParam2": "ORD-12345"
+                        }
+                    }
+                }
             }
-        },
-        "fallback": {
-            "sms": {
-                "from": "ExoSMS",
-                "content": "Hi Rahul, your order ORD-12345 has been confirmed."
-            }
-        }
+        ]
     }
-}
-
-response = requests.post(
-    "https://api.exotel.com/v2/accounts/<your_sid>/messages",
-    auth=('<api_key>', '<api_token>'),
-    headers={"Content-Type": "application/json"},
-    data=json.dumps(payload)
-)
-
-print(response.json())
+}'
 ```
 
 </TabItem>
-<TabItem value="nodejs" label="Node.js">
+<TabItem value="curl-fallback" label="cURL — with SMS Fallback">
 
-```javascript
-const apiKey = '<your_api_key>';
-const apiToken = '<your_api_token>';
-
-const payload = {
-  custom_data: 'order_12345',
-  status_callback: 'https://your-server.com/rcs/callback',
-  rcs: {
-    from: 'your_bot_id',
-    to: '+919888888888',
-    content: {
-      name: 'welcome_template',
-      variables: {
-        customer_name: 'Rahul',
-        order_id: 'ORD-12345'
-      }
-    },
-    fallback: {
-      sms: {
-        from: 'ExoSMS',
-        content: 'Hi Rahul, your order ORD-12345 has been confirmed.'
-      }
-    }
-  }
-};
-
-const response = await fetch(
-  'https://api.exotel.com/v2/accounts/<your_sid>/messages',
-  {
-    method: 'POST',
-    headers: {
-      'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  }
-);
-
-const data = await response.json();
-console.log(data);
-```
-
-</TabItem>
-<TabItem value="php" label="PHP">
-
-```php
-<?php
-$payload = json_encode(array(
-  "custom_data" => "order_12345",
-  "status_callback" => "https://your-server.com/rcs/callback",
-  "rcs" => array(
-    "from" => "your_bot_id",
-    "to" => "+919888888888",
-    "content" => array(
-      "name" => "welcome_template",
-      "variables" => array(
-        "customer_name" => "Rahul",
-        "order_id" => "ORD-12345"
-      )
-    ),
-    "fallback" => array(
-      "sms" => array(
-        "from" => "ExoSMS",
-        "content" => "Hi Rahul, your order ORD-12345 has been confirmed."
-      )
-    )
-  )
-));
-
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_USERPWD => "<api_key>:<api_token>",
-  CURLOPT_URL => "https://api.exotel.com/v2/accounts/<your_sid>/messages",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POST => true,
-  CURLOPT_POSTFIELDS => $payload,
-  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
-));
-
-$response = curl_exec($curl);
-curl_close($curl);
-
-echo $response;
-?>
-```
-
-</TabItem>
-<TabItem value="go" label="Go">
-
-```go
-package main
-
-import (
-    "fmt"
-    "io/ioutil"
-    "net/http"
-    "strings"
-)
-
-func main() {
-    url := "https://api.exotel.com/v2/accounts/<your_sid>/messages"
-    payload := strings.NewReader(`{
-    "custom_data": "order_12345",
-    "status_callback": "https://your-server.com/rcs/callback",
+```bash
+curl -XPOST "https://<api_key>:<api_token><subdomain>/v2/accounts/<your_sid>/messages" \
+-H "Content-Type: application/json" \
+-d '{
+    "custom_data": "ORDER123456",
+    "status_callback": "https://your-server.com/callback",
     "rcs": {
-      "from": "your_bot_id",
-      "to": "+919888888888",
-      "content": {
-        "name": "welcome_template",
-        "variables": {
-          "customer_name": "Rahul",
-          "order_id": "ORD-12345"
-        }
-      },
-      "fallback": {
-        "sms": {
-          "from": "ExoSMS",
-          "content": "Hi Rahul, your order ORD-12345 has been confirmed."
-        }
-      }
+        "messages": [
+            {
+                "from": "IifqFxxxxxxx6fp",
+                "to": "+91xxxxxxxxx987",
+                "content": {
+                    "type": "template",
+                    "template": {
+                        "name": "order_confirmation",
+                        "variables": {
+                            "TemplateParam1": "Rahul",
+                            "TemplateParam2": "ORD-12345"
+                        }
+                    }
+                },
+                "fallback": {
+                    "from": "EXOTEL",
+                    "content": {
+                        "text": "Hi Rahul, your order ORD-12345 has been confirmed.",
+                        "sms_type": "transactional",
+                        "dlt_entity_id": "1234567890",
+                        "dlt_template_id": "0987654321"
+                    }
+                }
+            }
+        ]
     }
-  }`)
-
-    req, _ := http.NewRequest("POST", url, payload)
-    req.SetBasicAuth("<api_key>", "<api_token>")
-    req.Header.Add("Content-Type", "application/json")
-
-    res, _ := http.DefaultClient.Do(req)
-    defer res.Body.Close()
-
-    body, _ := ioutil.ReadAll(res.Body)
-    fmt.Println(string(body))
-}
+}'
 ```
 
 </TabItem>
@@ -278,21 +191,23 @@ func main() {
 
 ```json
 {
-  "request_id": "f3217095-eddc-4ae8-a558-e4db0baef684",
+  "request_id": "b434e927a5844175b23059cd96feea3d",
+  "method": "POST",
   "http_code": 202,
   "metadata": {
+    "failed": 0,
     "total": 1,
-    "success": 1,
-    "failed": 0
+    "success": 1
   },
   "response": {
     "rcs": {
       "messages": [
         {
           "code": 202,
+          "error_data": null,
           "status": "success",
           "data": {
-            "sid": "msg_abc123def456"
+            "sid": "2FdiiEQUosckPhpZfuVwfjxiSlc16a4"
           }
         }
       ]
@@ -301,63 +216,482 @@ func main() {
 }
 ```
 
-## HTTP Status Codes
+### Response Parameters
+
+| Parameter | Type | Description |
+|---|---|---|
+| `request_id` | String | Unique ID of the request. Useful for debugging. |
+| `method` | String | HTTP method (e.g., `POST`). |
+| `http_code` | Integer | HTTP status code (e.g., `202`). |
+| `metadata` | Metadata Object | Count of total, successful, and failed messages. |
+| `response` | Response Object | Per-message response details. |
+
+**Metadata Object:** `total` (Integer), `success` (Integer), `failed` (Integer)
+
+**Response Object:** `rcs` → `ChannelResponseObject` → `messages` → `[]CreateMessageResponseObject`
+
+**CreateMessageResponseObject:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `code` | Integer | HTTP response code for this message. |
+| `error_data` | Error Response Object | Error details (if failed). |
+| `status` | String | `success` or `failure`. |
+| `data.sid` | String | Unique message identifier. |
+
+**Error Response Object:** `code` (Numeric), `message` (String), `description` (String)
+
+## HTTP Error Codes
 
 | Code | Description |
-|------|-------------|
-| 202  | Message accepted for delivery |
-| 400  | Malformed request |
-| 401  | Authentication failed |
-| 402  | Plan limit exceeded |
-| 403  | Access denied |
-| 404  | Resource not found |
-| 5xx  | Server error — retry the request |
+|---|---|
+| 202 | Accepted — request accepted. |
+| 400 | Bad Request — malformed header/body, or more than 100 messages in one request. |
+| 401 | Unauthorized — credentials missing or invalid. |
+| 402 | Payment Required — feature not on your plan or usage limit exceeded. |
+| 403 | Access denied — valid credentials but no access to this resource. |
+| 404 | Not Found — the object does not exist. |
+| 5xx | Server Error — retry the request. |
 
-## Status Callbacks (DLR)
+---
 
-When a `status_callback` URL is provided, Exotel sends delivery events via POST:
+## RCS Status Callback
 
-| Status Code | Event | Description |
-|-------------|-------|-------------|
-| `40001` | `EX_MESSAGE_SENT` | Message transmitted to the user's device |
-| `40002` | `EX_MESSAGE_DELIVERED` | Message received by the device |
-| `40003` | `EX_MESSAGE_SEEN` | User opened/read the message |
-| `40004` | `EX_SYSTEM_ERROR` | Delivery failed due to system error |
+Exotel sends delivery events to the `status_callback` URL provided in the API request (or the default URL configured during onboarding).
 
-### Callback Payload
+- If `status_callback` is set in the API request → callbacks go to that URL.
+- If not set → callbacks go to the default URL (if configured).
+- If SMS fallback was triggered → both `rcs` and `sms` objects appear in the callback.
+
+:::note
+Any callback can be received only at one status callback URL at a time.
+:::
+
+### Callback Parameters
+
+| Parameter | Type | Description |
+|---|---|---|
+| `rcs` | Message DLR Object | Delivery report for the RCS channel. |
+| `sms` | SMS DLR Object | Delivery report for the SMS fallback (present only if fallback was triggered). |
+
+### Message DLR Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `messages` | `[]RCS Message DLR Object` | Delivery reports for each message. |
+
+### RCS Message DLR Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `callback_type` | String | `dlr` or `icm` |
+| `sid` | String | Unique message identifier. |
+| `to` | String | Recipient phone number. |
+| `exo_status_code` | Integer | ExoStatus code (see table below). |
+| `exo_detailed_status` | String | Detailed status name. |
+| `description` | String | Human-readable description of the status. |
+| `timestamp` | String | ISO 8601 timestamp of the event. |
+| `custom_data` | String | Custom data passed in the original API request. |
+
+### SMS DLR Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `messages` | `[]SMS Message DLR Object` | Delivery reports for the SMS fallback. |
+
+### SMS Message DLR Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `callback_type` | String | `dlr` |
+| `sid` | String | Unique identifier of the SMS fallback message. |
+| `channel_sid` | String | SID of the fallback channel. `null` if fallback triggering failed. |
+| `to` | String | Recipient phone number. |
+| `exo_status_code` | Integer | ExoStatus code for the SMS. |
+| `exo_detailed_status` | String | Detailed status name. |
+| `description` | String | Human-readable description. |
+| `sms_units` | Integer | Number of SMS units sent. `null` if fallback triggering failed. |
+| `timestamp` | String | ISO 8601 timestamp of the event. |
+| `custom_data` | String | Custom data from the original request. |
+
+### RCS ExoStatus Codes
+
+| Code | Status | Description |
+|---|---|---|
+| 40001 | `EX_MESSAGE_SENT` | Message transmitted to the user. |
+| 40002 | `EX_MESSAGE_DELIVERED` | Message successfully delivered. |
+| 40003 | `EX_MESSAGE_SEEN` | Message seen/read by the user. |
+| 40004 | `EX_SYSTEM_ERROR` | Delivery failed (auth/permission/service issue). |
+
+For SMS fallback ExoStatus codes, see [SMS API — Status Codes](/docs/sms-api/api-reference/status-codes).
+
+### Callback Samples
+
+<Tabs groupId="rcs-dlr-samples">
+<TabItem value="dlr-delivered" label="RCS Delivered">
 
 ```json
 {
-  "sid": "msg_abc123def456",
-  "to": "+919888888888",
-  "exo_status_code": "40002",
-  "status": "EX_MESSAGE_DELIVERED",
-  "timestamp": "2026-04-17T10:30:00.000Z",
-  "custom_data": "order_12345"
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "dlr",
+        "sid": "2FdiiEQUosckPhpZfuVwfjxiSlc16a4",
+        "to": "+91xxxxxxxxx987",
+        "exo_status_code": 40002,
+        "exo_detailed_status": "EX_MESSAGE_DELIVERED",
+        "description": "Message delivered",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "custom_data": "ORDER123456"
+      }
+    ]
+  }
 }
 ```
 
-## Incoming Messages (Webhook)
+</TabItem>
+<TabItem value="dlr-seen" label="RCS Seen">
 
-Configure an incoming webhook to receive messages from users. Supported content types:
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "dlr",
+        "sid": "2FdiiEQUosckPhpZfuVwfjxiSlc16a4",
+        "to": "+91xxxxxxxxx987",
+        "exo_status_code": 40003,
+        "exo_detailed_status": "EX_MESSAGE_SEEN",
+        "description": "Message seen by user",
+        "timestamp": "2024-12-07T17:01:30.000+05:30",
+        "custom_data": "ORDER123456"
+      }
+    ]
+  }
+}
+```
 
-| Content Type | Fields |
-|-------------|--------|
-| **Text** | `text` — the message body |
-| **File** | `url`, `thumbnail_url`, `mime_type`, `size` |
-| **Location** | `latitude`, `longitude`, `label` |
-| **Suggested Reply** | `postback_data`, `text` |
-| **Suggested Action** | `postback_data`, `action_type` |
+</TabItem>
+<TabItem value="sms-fallback-success" label="SMS Fallback — Success">
 
-## Try It
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "dlr",
+        "sid": "2FdiiEQUosckPhpZfuVwfjxiSlc16a4",
+        "to": "+91xxxxxxxxx987",
+        "exo_status_code": 40004,
+        "exo_detailed_status": "EX_SYSTEM_ERROR",
+        "description": "RCS delivery failed; SMS fallback triggered",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "custom_data": "ORDER123456"
+      }
+    ]
+  },
+  "sms": {
+    "messages": [
+      {
+        "callback_type": "dlr",
+        "sid": "SMSsid123456",
+        "channel_sid": "CHsid123456",
+        "to": "+91xxxxxxxxx987",
+        "exo_status_code": 25002,
+        "exo_detailed_status": "EX_MESSAGE_DELIVERED",
+        "description": "SMS fallback delivered",
+        "sms_units": 1,
+        "timestamp": "2024-12-07T17:00:05.000+05:30",
+        "custom_data": "ORDER123456"
+      }
+    ]
+  }
+}
+```
 
-<ApiConsole
-  method="POST"
-  path="/v2/accounts/{account_sid}/messages"
-  contentType="json"
-  params={[
-    { name: 'rcs', required: true, type: 'string', description: 'RCS channel object (JSON string)', placeholder: '{"from":"your_bot_id","to":"+919888888888","content":{"name":"welcome_template","variables":{"customer_name":"Rahul"}}}' },
-    { name: 'status_callback', required: false, type: 'string', description: 'Webhook URL for delivery events', placeholder: 'https://your-server.com/rcs/callback' },
-    { name: 'custom_data', required: false, type: 'string', description: 'Custom metadata for callbacks', placeholder: 'order_12345' },
-  ]}
-/>
+</TabItem>
+<TabItem value="sms-fallback-failed" label="SMS Fallback — Failed">
+
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "dlr",
+        "sid": "2FdiiEQUosckPhpZfuVwfjxiSlc16a4",
+        "to": "+91xxxxxxxxx987",
+        "exo_status_code": 40004,
+        "exo_detailed_status": "EX_SYSTEM_ERROR",
+        "description": "RCS delivery failed; SMS fallback also failed",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "custom_data": "ORDER123456"
+      }
+    ]
+  },
+  "sms": {
+    "messages": [
+      {
+        "callback_type": "dlr",
+        "sid": null,
+        "channel_sid": null,
+        "to": "+91xxxxxxxxx987",
+        "exo_status_code": 25004,
+        "exo_detailed_status": "EX_SYSTEM_ERROR",
+        "description": "SMS fallback triggering failed",
+        "sms_units": null,
+        "timestamp": "2024-12-07T17:00:05.000+05:30",
+        "custom_data": "ORDER123456"
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+---
+
+## Receive RCS Incoming Message
+
+Configure a webhook to receive messages sent by users (replies or user-initiated messages). Pass the webhook URL in `status_callback` in the send API, or configure a default URL with the Exotel team during onboarding.
+
+- If `status_callback` is set in the send API → user replies go to that URL.
+- If not set → replies go to the default URL.
+- All user-initiated conversations (not replies to a business message) go to the default URL.
+
+:::note
+Any incoming message can be received only at one webhook URL at a time.
+:::
+
+### Webhook Parameter
+
+| Parameter | Type | Description |
+|---|---|---|
+| `rcs` | Message ICM Object | Incoming message callback for RCS. |
+
+### Message ICM Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `messages` | `[]RCS Message ICM Object` | Array of incoming messages. |
+
+### RCS Message ICM Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `callback_type` | String | `incoming_message` |
+| `sid` | String | Unique identifier of the incoming message. |
+| `from` | String | Phone number of the end user. |
+| `to` | String | Business bot ID that received the message. |
+| `timestamp` | String | ISO 8601 timestamp when the message was sent. |
+| `content` | Content Object | Message content. |
+
+### Content Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `type` | String | Message type: `text`, `file`, `location`, `suggested`, or `error`. |
+| `text` | String | Message body. Mandatory when `type` is `text`. |
+| `file` | File ICM Object | Media details. Mandatory when `type` is `file`. |
+| `location` | Location ICM Object | Location details. Mandatory when `type` is `location`. |
+| `suggested` | Suggested ICM Object | Suggested reply/action response. Mandatory when `type` is `suggested`. |
+| `error` | Message ICM Error Object | Error details. Present when `type` is `error`. |
+
+### File ICM Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `url` | String | URL to download the media file. |
+| `name` | String | Filename (for documents). |
+| `type` | String | MIME type of the file. |
+| `size` | Integer | File size in bytes. |
+| `thumbnail_url` | String | URL of the thumbnail (optional). |
+| `thumbnail_type` | String | MIME type of the thumbnail (optional). |
+| `thumbnail_size` | Integer | Size of the thumbnail in bytes (optional). |
+
+### Location ICM Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `latitude` | Float | Latitude of the shared location. |
+| `longitude` | Float | Longitude of the shared location. |
+
+### Suggested ICM Object
+
+| Parameter | Type | Description |
+|---|---|---|
+| `response` | Suggested Response ICM Object | The user's response to a suggested reply or action. |
+
+**Suggested Response ICM Object:** `reply` (Reply Object) or `action` (Action Object)
+
+### Incoming Message Samples
+
+<Tabs groupId="rcs-icm-samples">
+<TabItem value="icm-text" label="Text">
+
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "incoming_message",
+        "sid": "ICM123456",
+        "from": "+91xxxxxxxxx001",
+        "to": "IifqFxxxxxxx6fp",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "content": {
+          "type": "text",
+          "text": "This is a text message from the user"
+        }
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+<TabItem value="icm-file" label="File">
+
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "incoming_message",
+        "sid": "ICM123456",
+        "from": "+91xxxxxxxxx001",
+        "to": "IifqFxxxxxxx6fp",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "content": {
+          "type": "file",
+          "file": {
+            "url": "https://media.exotel.com/rcs/file123.jpg",
+            "name": "photo.jpg",
+            "type": "image/jpeg",
+            "size": 204800,
+            "thumbnail_url": "https://media.exotel.com/rcs/thumb_file123.jpg",
+            "thumbnail_type": "image/jpeg",
+            "thumbnail_size": 4096
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+<TabItem value="icm-location" label="Location">
+
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "incoming_message",
+        "sid": "ICM123456",
+        "from": "+91xxxxxxxxx001",
+        "to": "IifqFxxxxxxx6fp",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "content": {
+          "type": "location",
+          "location": {
+            "latitude": 12.9716,
+            "longitude": 77.5946
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+<TabItem value="icm-suggested-reply" label="Suggested Reply">
+
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "incoming_message",
+        "sid": "ICM123456",
+        "from": "+91xxxxxxxxx001",
+        "to": "IifqFxxxxxxx6fp",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "content": {
+          "type": "suggested",
+          "suggested": {
+            "response": {
+              "reply": {
+                "text": "Yes, confirm my order",
+                "postback_data": "confirm_order_123"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+<TabItem value="icm-suggested-action" label="Suggested Action">
+
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "incoming_message",
+        "sid": "ICM123456",
+        "from": "+91xxxxxxxxx001",
+        "to": "IifqFxxxxxxx6fp",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "content": {
+          "type": "suggested",
+          "suggested": {
+            "response": {
+              "action": {
+                "postback_data": "track_order_123",
+                "action_type": "open_url"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+<TabItem value="icm-error" label="Error">
+
+```json
+{
+  "rcs": {
+    "messages": [
+      {
+        "callback_type": "incoming_message",
+        "sid": "ICM123456",
+        "from": "+91xxxxxxxxx001",
+        "to": "IifqFxxxxxxx6fp",
+        "timestamp": "2024-12-07T17:00:00.000+05:30",
+        "content": {
+          "type": "error",
+          "error": {
+            "code": 40004,
+            "description": "Incoming message could not be processed"
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+</Tabs>
