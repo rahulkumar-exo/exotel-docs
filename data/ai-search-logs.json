@@ -31144,5 +31144,39 @@
       }
     ],
     "answer_length": 964
+  },
+  {
+    "timestamp": "2026-09-07T11:40:16.778Z",
+    "response_id": "45f3f2c2-90e5-457f-bbd8-9463366a5519",
+    "question": "give me the mcp to implement it into proj with the help of claude",
+    "question_length": 65,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3477,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1084
   }
 ]
