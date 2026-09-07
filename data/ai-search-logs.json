@@ -31110,5 +31110,39 @@
       }
     ],
     "answer_length": 573
+  },
+  {
+    "timestamp": "2026-09-07T05:26:50.362Z",
+    "response_id": "4db1ef56-47c0-400c-85e4-73c5238b72f4",
+    "question": "one cal is connected uisng the call flow now i wnat to add another number on that call how can i do",
+    "question_length": 99,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5039,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 964
   }
 ]
