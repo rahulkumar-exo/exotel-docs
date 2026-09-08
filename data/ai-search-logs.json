@@ -31382,5 +31382,39 @@
       }
     ],
     "answer_length": 2699
+  },
+  {
+    "timestamp": "2026-09-08T12:51:10.155Z",
+    "response_id": "edae1fcc-ad63-4df1-bb73-b7b5dec882db",
+    "question": "I need api key and the number",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3023,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 176
   }
 ]
