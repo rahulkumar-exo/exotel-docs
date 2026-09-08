@@ -7,6 +7,7 @@ slug: /agentstream/wss-errors-monitoring
 sidebar_position: 11
 ---
 
+import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
 import RegionalUrls from '@site/src/components/RegionalUrls';
 
@@ -16,9 +17,9 @@ import RegionalUrls from '@site/src/components/RegionalUrls';
 
 Check how many streams are live on your account.
 
-<TryItBanner method="GET" endpoint="/v1/Accounts/{AccountSid}/activestreams" />
+<TryItBanner method="GET" endpoint="/v1/Accounts/{AccountSid}/ActiveStreams" />
 
-<RegionalUrls path="/v1/Accounts/{AccountSid}/activestreams" host="api" />
+<RegionalUrls path="/v1/Accounts/{AccountSid}/ActiveStreams" host="api" />
 
 ### Authentication
 
@@ -28,19 +29,31 @@ HTTP Basic Auth — API Key as username, API Token as password.
 
 ```bash
 curl -u '<api_key>:<api_token>' -X GET \
-  'https://api.in.exotel.com/v1/Accounts/<AccountSid>/activestreams'
+  'https://api.in.exotel.com/v1/Accounts/<AccountSid>/ActiveStreams'
 ```
 
 ### Example response
 
-```json
-{
-  "status": "success",
-  "active_streams": 12,
-  "max_allowed_streams": 100,
-  "account_sid": "<AccountSid>"
-}
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<TwilioResponse>
+  <Stream>
+    <ActiveStreamCount>0</ActiveStreamCount>
+    <ThrottleLimit>100</ThrottleLimit>
+  </Stream>
+</TwilioResponse>
 ```
+
+Path is case-sensitive: use `ActiveStreams` (not `activestreams`).
+
+### Try It
+
+<ApiConsole
+  method="GET"
+  path="/v1/Accounts/{account_sid}/ActiveStreams"
+  host="api"
+  params={[]}
+/>
 
 ---
 

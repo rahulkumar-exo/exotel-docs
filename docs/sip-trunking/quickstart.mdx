@@ -7,6 +7,10 @@ slug: /sip-trunking/quickstart
 sidebar_position: 2
 ---
 
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
 # SIP Trunking quickstart
 
 Get your first **SIP Trunking** calls working using **Dynamic SIP Trunking** APIs.
@@ -32,6 +36,10 @@ export EXOTEL_SUBDOMAIN="api.in.exotel.com"
 
 ## Step 1 — Create SIP trunk
 
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/trunks" host="api" />
+
 ```bash
 curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
   "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks" \
@@ -43,9 +51,25 @@ curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
   }'
 ```
 
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_name', required: true, type: 'string', description: 'Alphanumeric + underscores, max 16 chars', defaultValue: 'my_trunk', placeholder: 'my_trunk' },
+    { name: 'nso_code', required: true, type: 'string', description: 'Use ANY-ANY', defaultValue: 'ANY-ANY', placeholder: 'ANY-ANY' },
+    { name: 'domain_name', required: true, type: 'string', description: '{account_sid}.pstn.exotel.com', placeholder: 'your_account.pstn.exotel.com' },
+  ]}
+/>
+
 Save `trunk_sid`.
 
 ## Step 2 — Map phone number
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/phone-numbers" />
 
 ```bash
 curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
@@ -59,9 +83,25 @@ curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
 
 Default mode is `pstn`. Save the numeric `id` from the response.
 
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks/{trunk_sid}/phone-numbers"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_sid', required: true, type: 'string', description: 'Trunk SID from step 1', placeholder: 'trmum...' },
+    { name: 'phone_number', required: true, type: 'string', description: 'E.164 DID', placeholder: '+919876543210' },
+    { name: 'mode', required: false, type: 'string', description: 'pstn (default) or flow', defaultValue: 'pstn', placeholder: 'pstn' },
+  ]}
+/>
+
 ## Step 3a — Whitelist IP (outbound)
 
 Required when your system has a static egress IP.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted-ips" />
 
 ```bash
 curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
@@ -70,9 +110,25 @@ curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
   -d '{ "ip": "<your_public_ip>", "mask": 32 }'
 ```
 
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted-ips"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_sid', required: true, type: 'string', description: 'Trunk SID', placeholder: 'trmum...' },
+    { name: 'ip', required: true, type: 'string', description: 'Your public IPv4', placeholder: '44.248.146.11' },
+    { name: 'mask', required: false, type: 'number', description: 'CIDR mask', defaultValue: '32', placeholder: '32' },
+  ]}
+/>
+
 ## Step 3b — Digest credentials (optional)
 
 Use for cloud platforms with dynamic IPs.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials" />
 
 ```bash
 curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
@@ -85,7 +141,24 @@ curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
   }'
 ```
 
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_sid', required: true, type: 'string', description: 'Trunk SID', placeholder: 'trmum...' },
+    { name: 'user_name', required: true, type: 'string', description: 'SIP digest username', defaultValue: 'SIP_USER', placeholder: 'SIP_USER' },
+    { name: 'password', required: true, type: 'string', description: 'Strong password', placeholder: 'SIP_PASS' },
+    { name: 'friendly_name', required: false, type: 'string', description: 'Label, max 32 chars', defaultValue: 'voice_ai_platform', placeholder: 'voice_ai_platform' },
+  ]}
+/>
+
 ## Step 4 — Destination URI (inbound)
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/destination-uris" />
 
 ```bash
 # IP (must be whitelisted if using IP auth)
@@ -111,6 +184,19 @@ curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
     ]
   }'
 ```
+
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks/{trunk_sid}/destination-uris"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_sid', required: true, type: 'string', description: 'Trunk SID', placeholder: 'trmum...' },
+    { name: 'destinations', required: true, type: 'string', description: 'JSON array of destination objects', defaultValue: '[{"destination":"sip.yourcompany.com:5061;transport=tls"}]', placeholder: '[{"destination":"44.248.146.11:5061;transport=tls"}]' },
+  ]}
+/>
 
 ## Step 5 — Flow with Connect applet (inbound)
 

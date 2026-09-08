@@ -7,6 +7,7 @@ slug: /agentstream/programmable-voice
 sidebar_position: 6
 ---
 
+import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
 import RegionalUrls from '@site/src/components/RegionalUrls';
 
@@ -21,13 +22,16 @@ Works for **outbound** (`POST /legs`) and **inbound** (Exophone attached to a gR
 HTTP Basic Auth — API Key as username, API Token as password.  
 `Content-Type: application/json`
 
+**Base URL:** `https://cpaas-api.in.exotel.com/v2/accounts/{account_sid}`  
+(Singapore: `cpaas-api.exotel.com`)
+
 ---
 
 ## Create leg (dial)
 
 <TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs" />
 
-<RegionalUrls path="/v2/accounts/{account_sid}/legs" host="api" />
+<RegionalUrls path="/v2/accounts/{account_sid}/legs" host="cpaas" />
 
 ### Request parameters
 
@@ -42,7 +46,7 @@ HTTP Basic Auth — API Key as username, API Token as password.
 
 ```bash
 curl -u '<api_key>:<api_token>' -X POST \
-  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs' \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs' \
   -H 'Content-Type: application/json' \
   -d '{
     "contact_uri": "+919876543210",
@@ -51,6 +55,21 @@ curl -u '<api_key>:<api_token>' -X POST \
     "timeout": 30
   }'
 ```
+
+### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/legs"
+  contentType="json"
+  host="cpaas"
+  params={[
+    { name: 'contact_uri', required: true, type: 'string', description: 'Number to dial (E.164)', placeholder: '+919876543210' },
+    { name: 'exophone', required: true, type: 'string', description: 'Your ExoPhone', placeholder: '08047491899' },
+    { name: 'leg_event_endpoint', required: true, type: 'string', description: 'gRPC endpoint for leg events', placeholder: 'grpc://your-event-server.example.com' },
+    { name: 'timeout', required: false, type: 'number', description: 'Ring timeout in seconds', placeholder: '30' },
+  ]}
+/>
 
 Exotel emits: `leg_connecting` → `leg_ringing` → `leg_answered`
 
@@ -74,7 +93,7 @@ Call on `leg_answered`.
 
 ```bash
 curl -u '<api_key>:<api_token>' -X POST \
-  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
   -H 'Content-Type: application/json' \
   -d '{
     "direction": "bidirectional",
@@ -82,6 +101,21 @@ curl -u '<api_key>:<api_token>' -X POST \
     "content_type": "audio/x-mulaw;rate=8000"
   }'
 ```
+
+### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream"
+  contentType="json"
+  host="cpaas"
+  params={[
+    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID from create leg / events', placeholder: 'leg_xxxxxxxx' },
+    { name: 'direction', required: true, type: 'string', description: 'bidirectional for Voice AI', defaultValue: 'bidirectional', placeholder: 'bidirectional' },
+    { name: 'url', required: true, type: 'string', description: 'Bot WebSocket URL', placeholder: 'wss://bot.example.com/stream' },
+    { name: 'content_type', required: false, type: 'string', description: 'Audio content type', defaultValue: 'audio/x-mulaw;rate=8000', placeholder: 'audio/x-mulaw;rate=8000' },
+  ]}
+/>
 
 ---
 
@@ -95,10 +129,24 @@ Fire with `start_stream` on `leg_answered` to avoid dead air.
 
 ```bash
 curl -u '<api_key>:<api_token>' -X POST \
-  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_say' \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_say' \
   -H 'Content-Type: application/json' \
   -d '{ "text": "Please hold.", "loop": 0 }'
 ```
+
+### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_say"
+  contentType="json"
+  host="cpaas"
+  params={[
+    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID', placeholder: 'leg_xxxxxxxx' },
+    { name: 'text', required: true, type: 'string', description: 'Text to speak', defaultValue: 'Please hold.', placeholder: 'Please hold.' },
+    { name: 'loop', required: false, type: 'number', description: 'Loop count (0 = once)', defaultValue: '0', placeholder: '0' },
+  ]}
+/>
 
 ### Stop say
 
@@ -108,8 +156,20 @@ Call on `stream_started`:
 
 ```bash
 curl -u '<api_key>:<api_token>' -X POST \
-  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_say'
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_say'
 ```
+
+### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/stop_say"
+  contentType="json"
+  host="cpaas"
+  params={[
+    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID', placeholder: 'leg_xxxxxxxx' },
+  ]}
+/>
 
 | Scenario | Use greeting? |
 |----------|---------------|

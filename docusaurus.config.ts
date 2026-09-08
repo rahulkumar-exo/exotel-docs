@@ -167,8 +167,8 @@ const config: Config = {
           items: [
             { type: 'html', value: '<span class="dropdown-section-label">Voice</span>' },
             { type: 'docSidebar', sidebarId: 'voiceSidebar', label: 'Programmable Voice' },
-            { type: 'doc', docId: 'sip-trunking/dynamic-sip-trunking', label: 'Dynamic SIP Trunking API' },
             { type: 'doc', docId: 'agentstream/overview', label: 'AgentStream' },
+            { type: 'doc', docId: 'sip-trunking/dynamic-sip-trunking', label: 'Dynamic SIP Trunking API' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
             { type: 'html', value: '<span class="dropdown-section-label">Messaging</span>' },
             { type: 'docSidebar', sidebarId: 'smsApiSidebar', label: 'SMS' },

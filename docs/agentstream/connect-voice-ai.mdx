@@ -7,6 +7,7 @@ slug: /agentstream/connect-voice-ai
 sidebar_position: 4
 ---
 
+import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
 import RegionalUrls from '@site/src/components/RegionalUrls';
 
@@ -31,6 +32,8 @@ For multi-step journeys, use [Connect with Flow](./connect-voice-ai-flow). For p
 ## Authentication
 
 HTTP Basic Auth — API Key as username, API Token as password ([Dashboard → API credentials](https://my.exotel.com)).
+
+**Base URL:** `https://api.in.exotel.com` (India) · `https://api.exotel.com` (Singapore)
 
 ## Request parameters
 
@@ -97,6 +100,27 @@ curl -u '<api_key>:<api_token>' -X POST \
 ## After connect
 
 On answer, Exotel opens WSS to `StreamUrl`. Implement the [WebSocket protocol](./websocket-protocol) on your bot. Append `?sample-rate=16000` (or `8000` / `24000`) to the URL when needed.
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v1/Accounts/{account_sid}/Calls/connect"
+  contentType="form"
+  host="api"
+  params={[
+    { name: 'From', required: true, type: 'string', description: 'Number to dial (E.164)', placeholder: '+919876543210' },
+    { name: 'CallerId', required: true, type: 'string', description: 'Your ExoPhone / virtual number', placeholder: '0XXXXXXXXXX' },
+    { name: 'StreamUrl', required: true, type: 'string', description: 'Bot WebSocket URL (ws:// or wss://)', placeholder: 'wss://your-bot.example.com/media' },
+    { name: 'StreamType', required: true, type: 'string', description: 'Set to bidirectional for two-way audio', defaultValue: 'bidirectional', placeholder: 'bidirectional' },
+    { name: 'Record', required: false, type: 'boolean', description: 'true to record the call' },
+    { name: 'RecordingChannels', required: false, type: 'string', description: 'single or dual', placeholder: 'single' },
+    { name: 'TimeLimit', required: false, type: 'number', description: 'Max call duration in seconds (max 14400)', placeholder: '300' },
+    { name: 'CustomField', required: false, type: 'string', description: 'Metadata on the call record (max 128 chars)', placeholder: 'campaign_1' },
+    { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://your-server.com/callback' },
+    { name: 'StreamName', required: false, type: 'string', description: 'Optional stream label (max 32 chars)', placeholder: 'outbound-bot' },
+  ]}
+/>
 
 ## Related
 
