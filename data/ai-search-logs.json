@@ -31348,5 +31348,39 @@
       }
     ],
     "answer_length": 3745
+  },
+  {
+    "timestamp": "2026-09-08T11:00:10.924Z",
+    "response_id": "5b6256ac-4c90-4145-93dd-05199c65c138",
+    "question": "I am building an AI missed-call callback system that automatically calls customers back and connects them to an AI voice agent. Which Exotel product/features should I enable?",
+    "question_length": 174,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11742,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Tools",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/tools-reference"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      }
+    ],
+    "answer_length": 2699
   }
 ]
