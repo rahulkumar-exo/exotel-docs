@@ -191,6 +191,22 @@
     { "source": "/docs/vsip/overview", "destination": "/docs/sip-trunking/overview", "permanent": true },
     { "source": "/docs/vsip/:path*", "destination": "/docs/sip-trunking/:path*", "permanent": true },
 
+    { "source": "/docs/agentstream/developer-guide", "destination": "/docs/agentstream/overview", "permanent": true },
+    { "source": "/docs/agentstream/livekit-integration", "destination": "https://docs.exotel.com/exotel-agentstream/voice-ai-ecosystem", "permanent": true },
+    { "source": "/docs/agentstream/elevenlabs-integration", "destination": "https://docs.exotel.com/exotel-agentstream/voice-ai-ecosystem", "permanent": true },
+    { "source": "/docs/agentstream/omnidimension-integration", "destination": "https://docs.exotel.com/exotel-agentstream/voice-ai-ecosystem", "permanent": true },
+    { "source": "/docs/agentstream/manage-exotrunks", "destination": "/docs/sip-trunking/dynamic-sip-trunking", "permanent": true },
+
+    { "source": "/docs/sip-trunking/tcp-integration", "destination": "https://docs.exotel.com/dynamic-sip-trunking/exotel-sip-trunking-tcp-india", "permanent": true },
+    { "source": "/docs/sip-trunking/tls-integration", "destination": "https://docs.exotel.com/dynamic-sip-trunking/exotel-sip-trunking-tls-india", "permanent": true },
+    { "source": "/docs/sip-trunking/fqdn-integration", "destination": "https://docs.exotel.com/dynamic-sip-trunking/exotel-virtual-sip-trunking-fqdn-based", "permanent": true },
+    { "source": "/docs/sip-trunking/flow-integration", "destination": "https://docs.exotel.com/dynamic-sip-trunking/exotel-sip-trunking-to-flow-integration-guide", "permanent": true },
+    { "source": "/docs/sip-trunking/flow-api-configuration", "destination": "https://docs.exotel.com/dynamic-sip-trunking/flow-and-api-configuration-guide-for-voice-ai-and-contact-centre-platforms", "permanent": true },
+    { "source": "/docs/sip-trunking/voicebot-integration", "destination": "/docs/sip-trunking/streamkit-sip", "permanent": true },
+    { "source": "/docs/sip-trunking/master-guide", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/docs/sip-trunking/go-live", "destination": "/docs/sip-trunking/overview", "permanent": true },
+    { "source": "/docs/agentstream/go-live", "destination": "/docs/agentstream/overview", "permanent": true },
+
     { "source": "/api/exoverify-apis", "destination": "/docs/exoverify-api/overview", "permanent": true },
     { "source": "/api-console/exoverify-apis", "destination": "/docs/exoverify-api/overview", "permanent": true },
     { "source": "/api/contact-center-apis", "destination": "/docs/contact-center/overview", "permanent": true },

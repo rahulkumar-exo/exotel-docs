@@ -1,0 +1,644 @@
+---
+id: dynamic-sip-trunking
+title: Dynamic SIP Trunking API
+description: Full REST API reference for Exotel Dynamic SIP Trunking — setup and manage SIP Trunking resources.
+sidebar_label: Dynamic SIP Trunking API
+slug: /sip-trunking/dynamic-sip-trunking
+sidebar_position: 4
+---
+
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Dynamic SIP Trunking API
+
+**SIP Trunking** is the product that connects your PBX, SBC, or SIP platform to Exotel PSTN.  
+**Dynamic SIP Trunking** is the REST API used to create and manage those trunks.
+
+Use these APIs to make outbound calls (SIP → PSTN), receive inbound calls (PSTN → SIP), and integrate with Exotel Flows / StreamKit Voice AI.
+
+**Samples:** [Postman](https://www.postman.com/grey-star-272776/exotel-sip-trunking-apis/collection/14803574-a0c66128-0e2c-4e6d-a06a-03173b9d43cd) · [GitHub](https://github.com/exotel/exotel-vsip-trunk-configuration-api/tree/main)
+
+---
+
+## Base URL and authentication
+
+All APIs use HTTP Basic Auth. Prefix every path with `/v2/accounts/{account_sid}`.
+
+| Region | Base URL |
+|--------|----------|
+| India (Mumbai) | `https://api.in.exotel.com` |
+| Singapore | `https://api.exotel.com` |
+
+| Header | Value |
+|--------|-------|
+| `Authorization` | Basic (`api_key`:`api_token`) |
+| `Content-Type` | `application/json` |
+
+**Rate limit:** 200 requests/minute.
+
+```bash
+export EXOTEL_API_KEY="your_api_key"
+export EXOTEL_API_TOKEN="your_api_token"
+export EXOTEL_ACCOUNT_SID="your_account_sid"
+export EXOTEL_SUBDOMAIN="api.in.exotel.com"   # or api.exotel.com
+```
+
+### Response envelope
+
+Successful calls return this shape (field names exact):
+
+```json
+{
+  "request_id": "10a67da360d446378d5c2b66407b7f18",
+  "method": "POST",
+  "http_code": 200,
+  "response": {
+    "code": 200,
+    "error_data": null,
+    "status": "success",
+    "data": { }
+  }
+}
+```
+
+List endpoints wrap items in `response[]` and may include `metadata` (`page_size`, `first_page_uri`, `prev_page_uri`, `next_page_uri`).
+
+---
+
+## Workflow
+
+```
+Create trunk → Map phone-numbers → whitelisted-ips and/or credentials → destination-uris
+```
+
+| Direction | Requires |
+|-----------|----------|
+| Outbound | Trunk + mapped DID + ACL and/or digest credentials |
+| Inbound | `destination-uris` + Connect applet `sip:<trunk_sid>` |
+
+Number `mode`: `pstn` (default) · `flow` (Voice AI / StreamKit). See [Call directions](./call-directions).
+
+---
+
+## Endpoint index
+
+Paths below are relative to `/v2/accounts/{account_sid}`.
+
+### Setup
+
+| Method | Path | Purpose |
+|--------|------|---------|
+| `POST` | `/trunks` | Create trunk |
+| `POST` | `/trunks/{trunk_sid}/phone-numbers` | Map DID |
+| `POST` | `/trunks/{trunk_sid}/whitelisted-ips` | Add ACL |
+| `POST` | `/trunks/{trunk_sid}/credentials` | Create digest credentials |
+| `POST` | `/trunks/{trunk_sid}/destination-uris` | Map inbound URI |
+
+### Manage & view
+
+| Method | Path | Purpose |
+|--------|------|---------|
+| `GET` | `/trunks` | List trunks |
+| `PUT` | `/trunks/{trunk_sid}` | Update trunk |
+| `DELETE` | `/trunks?trunk_sid=` | Delete trunk |
+| `GET` | `/trunks/{trunk_sid}/phone-numbers` | List mapped numbers |
+| `PUT` | `/trunks/{trunk_sid}/phone-numbers/{id}` | Update `mode` |
+| `DELETE` | `/trunks/{trunk_sid}/phone-numbers?id=` | Unmap number |
+| `GET` | `/trunk-maps?exophone=` | Lookup DID → trunk |
+| `GET` | `/trunks/{trunk_sid}/whitelisted-ips` | List ACLs |
+| `PUT` | `/trunks/{trunk_sid}/whitelisted-ips/{id}` | Update ACL |
+| `DELETE` | `/trunks/{trunk_sid}/whitelisted-ips?id=` | Delete ACL |
+| `GET` | `/trunks/{trunk_sid}/destination-uris` | List URIs |
+| `PUT` | `/trunks/{trunk_sid}/destination-uris/{id}` | Update priority/weight |
+| `DELETE` | `/trunks/{trunk_sid}/destination-uris?id=` | Delete URI |
+| `GET` | `/trunks/{trunk_sid}/credentials` | List credentials |
+| `PUT` | `/trunks/{trunk_sid}/credentials/{id}` | Update credential |
+| `DELETE` | `/trunks/{trunk_sid}/credentials?id=` | Delete credential |
+| `GET` | `/trunks/{trunk_sid}/settings` | List settings |
+| `POST` | `/trunks/{trunk_sid}/settings` | Set caller ID alias |
+| `DELETE` | `/trunks/{trunk_sid}/settings?name=` | Delete setting |
+
+---
+
+## Setup APIs
+
+### Create trunk
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/trunks" host="api" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `trunk_name` | Yes | String | Alphanumeric + underscores only, max 16 chars |
+| `nso_code` | Yes | String | Use `"ANY-ANY"` |
+| `domain_name` | Yes | String | `{account_sid}.pstn.exotel.com` |
+
+#### Example request
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "trunk_name": "outbound_trunk",
+    "nso_code": "ANY-ANY",
+    "domain_name": "'"$EXOTEL_ACCOUNT_SID"'.pstn.exotel.com"
+  }'
+```
+
+#### Example response
+
+```json
+{
+  "request_id": "10a67da360d446378d5c2b66407b7f18",
+  "method": "POST",
+  "http_code": 200,
+  "response": {
+    "code": 200,
+    "error_data": null,
+    "status": "success",
+    "data": {
+      "trunk_sid": "trmum1f708622631150902801a1n",
+      "trunk_name": "outbound_trunk",
+      "status": "active",
+      "domain_name": "ameyo5m.pstn.exotel.com",
+      "auth_type": "IP-WHITELIST",
+      "nso_code": "ANY-ANY",
+      "phone_numbers": "/v2/accounts/ameyo5m/trunks/trmum1f708622631150902801a1n/phone-numbers",
+      "whitelisted_ips": "/v2/accounts/ameyo5m/trunks/trmum1f708622631150902801a1n/whitelisted-ips",
+      "destination_uris": "/v2/accounts/ameyo5m/trunks/trmum1f708622631150902801a1n/destination-uris",
+      "credentials": "/v2/accounts/ameyo5m/trunks/trmum1f708622631150902801a1n/credentials"
+    }
+  }
+}
+```
+
+:::note
+Save `response.data.trunk_sid`. Nested resource URLs in the response already use hyphenated paths — reuse them as-is.
+:::
+
+---
+
+### Map phone number
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/phone-numbers" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `phone_number` | Yes | String | E.164 (`+919876543210`) |
+| `mode` | No | String | `pstn` (default) or `flow` (StreamKit / Voice AI) |
+
+#### Example request
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/phone-numbers" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "phone_number": "+919876543210",
+    "mode": "pstn"
+  }'
+```
+
+#### Example response (`data`)
+
+```json
+{
+  "id": "41512",
+  "phone_number": "+919876543210",
+  "trunk_sid": "trmum1f708622631150902801a1n",
+  "mode": "pstn",
+  "date_created": "2026-01-23T10:26:54Z",
+  "date_updated": "2026-01-23T10:26:54Z"
+}
+```
+
+:::note
+Save numeric mapping `id` for update/delete. Do not pass the E.164 string as the path id.
+:::
+
+---
+
+### Map ACL (whitelisted IP) — outbound
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted-ips" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `ip` | Yes | String | Public IPv4 |
+| `mask` | No | Integer | CIDR mask (default `32`) |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/whitelisted-ips" \
+  -H "Content-Type: application/json" \
+  -d '{ "ip": "44.248.146.11", "mask": 32 }'
+```
+
+---
+
+### Create SIP digest credentials — outbound
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `user_name` | Yes | String | SIP digest username |
+| `password` | Yes | String | Strong password |
+| `friendly_name` | No | String | Label, max 32 chars |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/credentials" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_name": "SIP_USER",
+    "password": "strong_password_here",
+    "friendly_name": "voice_ai_prod"
+  }'
+```
+
+| Scenario | Auth |
+|----------|------|
+| Fixed-IP PBX / SBC | `whitelisted-ips` |
+| Dynamic cloud egress | `credentials` |
+| High security | Both |
+
+---
+
+### Map destination URI — inbound
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/destination-uris" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `destinations` | Yes | Array | List of destination objects |
+| `destinations[].destination` | Yes | String | `<ip_or_fqdn>:<port>;transport=tls` or `tcp` |
+
+Prefer TLS on port `5061`.
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/destination-uris" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "destinations": [
+      { "destination": "44.248.146.11:5061;transport=tls" }
+    ]
+  }'
+```
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/destination-uris" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "destinations": [
+      { "destination": "sip.yourcompany.com:5061;transport=tls" }
+    ]
+  }'
+```
+
+Save destination `id` from `response.data` for update/delete. Inbound Connect applet: [Connect Applet inbound](./connect-applet-inbound).
+
+---
+
+## Manage & view APIs
+
+### List trunks
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/trunks" />
+
+#### Query parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `page_size` | No | Integer | Default `50` |
+| `offset` | No | Integer | Default `0` |
+| `trunk_sid` | No | String | Filter to one trunk |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks?page_size=50&offset=0"
+
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks?trunk_sid=<trunk_sid>"
+```
+
+---
+
+### Update trunk
+
+<TryItBanner method="PUT" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `trunk_name` | No | String | Max 16 chars, alphanumeric + underscores |
+| `auth_type` | No | String | e.g. IP whitelist |
+| `nso_code` | No | String | Use `"ANY-ANY"` |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X PUT \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>" \
+  -H "Content-Type: application/json" \
+  -d '{ "trunk_name": "my_pbx_trunk" }'
+```
+
+---
+
+### Delete trunk
+
+<TryItBanner method="DELETE" endpoint="/v2/accounts/{account_sid}/trunks?trunk_sid={trunk_sid}" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X DELETE \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks?trunk_sid=<trunk_sid>"
+```
+
+:::warning
+Irreversible. Removes phone mappings, ACLs, destination URIs, and credentials on the trunk.
+:::
+
+---
+
+### List phone numbers
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/phone-numbers" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/phone-numbers"
+```
+
+---
+
+### Update phone number mode
+
+<TryItBanner method="PUT" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/phone-numbers/{phone_number_id}" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `phone_number` | Yes | String | E.164 — must match the mapping |
+| `mode` | Yes | String | `pstn` or `flow` |
+
+`phone_number_id` is the numeric mapping id (e.g. `41523`).
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X PUT \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/phone-numbers/41523" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "phone_number": "+919876543210",
+    "mode": "flow"
+  }'
+```
+
+---
+
+### Delete phone number mapping
+
+<TryItBanner method="DELETE" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/phone-numbers?id={phone_number_id}" />
+
+Id is a **query** parameter (`?id=`), not a path segment.
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X DELETE \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/phone-numbers?id=41523"
+```
+
+---
+
+### Trunk map lookup (Exophone → trunk)
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/trunk-maps" />
+
+#### Query parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `exophone` | Yes | String | DID in E.164 |
+| `trunk_sid` | No | String | Optional filter |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunk-maps?exophone=%2B919876543210"
+```
+
+```json
+{
+  "exophone": "+919876543210",
+  "trunk_sid": "trmum1f708622631150902801a1n",
+  "phone_number_id": "41512",
+  "mode": "pstn"
+}
+```
+
+---
+
+### List ACLs
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted-ips" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/whitelisted-ips"
+```
+
+---
+
+### Update whitelisted IP
+
+<TryItBanner method="PUT" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted-ips/{whitelist_entry_id}" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `ip` | Yes | String | IPv4 |
+| `mask` | Yes | Integer | CIDR mask |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X PUT \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/whitelisted-ips/1153" \
+  -H "Content-Type: application/json" \
+  -d '{ "ip": "44.248.146.11", "mask": 32 }'
+```
+
+---
+
+### Delete whitelisted IP
+
+<TryItBanner method="DELETE" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted-ips?id={whitelist_entry_id}" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X DELETE \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/whitelisted-ips?id=1153"
+```
+
+---
+
+### List destination URIs
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/destination-uris" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/destination-uris"
+```
+
+---
+
+### Update destination URI
+
+<TryItBanner method="PUT" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/destination-uris/{destination_id}" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `priority` | No | Integer | Lower = higher priority (default `0`) |
+| `weight` | No | Integer | Higher = more traffic (default `1`) |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X PUT \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/destination-uris/2543" \
+  -H "Content-Type: application/json" \
+  -d '{ "priority": 0, "weight": 5 }'
+```
+
+---
+
+### Delete destination URI
+
+<TryItBanner method="DELETE" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/destination-uris?id={destination_id}" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X DELETE \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/destination-uris?id=2543"
+```
+
+---
+
+### List credentials
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/credentials"
+```
+
+---
+
+### Update SIP credential
+
+<TryItBanner method="PUT" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials/{credential_id}" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `user_name` | No | String | New digest username |
+| `password` | No | String | New password |
+| `friendly_name` | No | String | Label, max 32 chars |
+
+Credential id is in the **path**. Delete uses `?id=` instead.
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X PUT \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/credentials/1234" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "friendly_name": "voice_ai_prod",
+    "password": "replace_with_strong_password"
+  }'
+```
+
+---
+
+### Delete credential
+
+<TryItBanner method="DELETE" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials?id={credential_id}" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X DELETE \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/credentials?id=1234"
+```
+
+---
+
+### List trunk settings
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/settings" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/settings"
+```
+
+---
+
+### Set trunk alias (caller ID)
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/settings" />
+
+#### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `settings` | Yes | Array | Setting objects |
+| `settings[].name` | Yes | String | Use `trunk_external_alias` |
+| `settings[].value` | Yes | String | Caller ID in E.164 |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/settings" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "settings": [
+      { "name": "trunk_external_alias", "value": "+919876543210" }
+    ]
+  }'
+```
+
+---
+
+### Delete trunk setting
+
+<TryItBanner method="DELETE" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/settings?name={setting_name}" />
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X DELETE \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/settings?name=trunk_external_alias"
+```
+
+---
+
+## Network & errors
+
+- [Network & firewall](./network-firewall) → [docs portal](https://docs.exotel.com/dynamic-sip-trunking/network-and-firewall-configuration)
+- [Errors & troubleshooting](./errors-troubleshooting)
+
+## Related
+
+- [SIP Trunking quickstart](./quickstart)
+- [Call directions](./call-directions)
+- [Connect Applet inbound](./connect-applet-inbound)
+- [StreamKit SIP setup](./streamkit-sip)
+- Transport how-tos: [SIP Trunk Configuration](https://docs.exotel.com/dynamic-sip-trunking/sip-trunk-configuration)

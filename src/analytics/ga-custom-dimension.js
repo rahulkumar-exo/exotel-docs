@@ -18,6 +18,16 @@
 if (typeof window !== 'undefined') {
   window.dataLayer = window.dataLayer || [];
 
+  // Docusaurus gtag plugin calls window.gtag on every SPA navigation.
+  // Stub it (standard GA snippet) so local/dev and ad-blockers don't throw
+  // "window.gtag is not a function" and break client-side routing overlays.
+  if (typeof window.gtag !== 'function') {
+    window.gtag = function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer.push(arguments);
+    };
+  }
+
   // 1. User property — sticks for the whole user lifetime (requires User-scoped dim)
   window.dataLayer.push({
     event: 'gtm.js',
@@ -29,9 +39,9 @@ if (typeof window !== 'undefined') {
 
   // 3. Configure once gtag loads (belt-and-braces, doesn't cause double page_view)
   const setGlobalDimension = () => {
-    if (typeof gtag === 'function') {
-      gtag('set', 'user_properties', { site_variant: 'new_portal' });
-      gtag('set', { site_variant: 'new_portal' });
+    if (typeof window.gtag === 'function') {
+      window.gtag('set', 'user_properties', { site_variant: 'new_portal' });
+      window.gtag('set', { site_variant: 'new_portal' });
       return true;
     }
     return false;
@@ -49,9 +59,9 @@ if (typeof window !== 'undefined') {
 }
 
 // Docusaurus lifecycle: fires on every SPA navigation
-export function onRouteDidUpdate({ location }) {
-  if (typeof gtag === 'function') {
-    gtag('event', 'page_view', {
+export function onRouteDidUpdate({location}) {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', 'page_view', {
       page_path: location.pathname + location.search,
       site_variant: 'new_portal',
     });

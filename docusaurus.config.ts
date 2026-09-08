@@ -93,10 +93,15 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-        gtag: {
-          trackingID: 'G-HWCFMYZ4FG',
-          anonymizeIP: true,
-        },
+        // Avoid loading GA (and route-change gtag calls) during local `docusaurus start`.
+        ...(process.env.NODE_ENV === 'production'
+          ? {
+              gtag: {
+                trackingID: 'G-HWCFMYZ4FG',
+                anonymizeIP: true,
+              },
+            }
+          : {}),
       } satisfies Preset.Options,
     ],
   ],
@@ -162,8 +167,8 @@ const config: Config = {
           items: [
             { type: 'html', value: '<span class="dropdown-section-label">Voice</span>' },
             { type: 'docSidebar', sidebarId: 'voiceSidebar', label: 'Programmable Voice' },
-            { type: 'doc', docId: 'sip-trunking/dynamic-sip-trunking', label: 'Dynamic SIP Trunking' },
-            { type: 'doc', docId: 'agentstream/developer-guide', label: 'AgentStream' },
+            { type: 'doc', docId: 'sip-trunking/dynamic-sip-trunking', label: 'Dynamic SIP Trunking API' },
+            { type: 'doc', docId: 'agentstream/overview', label: 'AgentStream' },
             { type: 'html', value: '<span class="dropdown-separator"></span>' },
             { type: 'html', value: '<span class="dropdown-section-label">Messaging</span>' },
             { type: 'docSidebar', sidebarId: 'smsApiSidebar', label: 'SMS' },

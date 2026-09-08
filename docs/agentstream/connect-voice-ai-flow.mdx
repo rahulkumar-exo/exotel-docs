@@ -1,0 +1,84 @@
+---
+id: connect-voice-ai-flow
+title: Connect Voice AI with Flow
+description: Dial a number and run App Bazaar applets (greeting, IVR, Voicebot) before connecting AgentStream.
+sidebar_label: Connect with Flow
+slug: /agentstream/connect-voice-ai-flow
+sidebar_position: 5
+---
+
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Connect Voice AI with Flow
+
+Dial a number and run the call through an Exotel App Bazaar flow — IVR, greetings, DTMF — before reaching your bot.
+
+Uses the same Connect endpoint as Voice / Connect Voice AI. The WebSocket URL is configured on the Voicebot or Stream applet in the flow — do **not** pass `StreamUrl` / `StreamType` here.
+
+<TryItBanner method="POST" endpoint="/v1/Accounts/{AccountSid}/Calls/connect" />
+
+<RegionalUrls path="/v1/Accounts/{AccountSid}/Calls/connect" host="api" />
+
+## When to use
+
+- Compliance greeting → bot
+- IVR / DTMF → bot
+- Bot → Connect (human) or Passthru
+- Unidirectional Stream for assist / transcription
+
+## Authentication
+
+HTTP Basic Auth — API Key as username, API Token as password.
+
+## Request parameters
+
+### Required
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `From` | String | Number to dial. E.164 |
+| `CallerId` | String | Your ExoPhone |
+| `Url` | String | Flow URL: `http://my.exotel.com/{AccountSid}/exoml/start_voice/{app_id}` |
+
+### Optional
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `CallType` | String | `trans` for transactional calls |
+| `TimeLimit` | Integer | Max duration in seconds. Max: `14400` |
+| `TimeOut` | Integer | Ring timeout in seconds |
+| `StatusCallback` | String | Webhook URL for status events |
+| `StatusCallbackEvents` | String | `terminal`, `answered`, or `both` |
+| `CustomField` | String | Available to applets (e.g. Passthru) |
+
+## Example request
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v1/Accounts/<AccountSid>/Calls/connect' \
+  -d 'From=+919876543210' \
+  -d 'CallerId=0XXXXXXXXXX' \
+  -d 'Url=http://my.exotel.com/<AccountSid>/exoml/start_voice/<app_id>' \
+  -d 'StatusCallback=https://your-server.com/callback' \
+  -d 'StatusCallbackEvents=terminal'
+```
+
+## Common flow patterns
+
+| Pattern | Applets |
+|---------|---------|
+| Greeting → bot | Play → Voicebot |
+| IVR menu → bot | Gather (DTMF) → Voicebot |
+| Bot → human agent | Voicebot → Connect |
+| Listen-only (transcription) | Stream → Passthru |
+
+## Configure the Voicebot applet
+
+In App Bazaar, set the Voicebot/Stream applet **URL** to your `wss://` endpoint (or an HTTPS URL that returns `{"url":"wss://..."}`). See [Stream & Voicebot applet](./stream-voicebot-applet).
+
+## Related
+
+- [What to use when](./what-to-use-when)
+- [Passthru applet](./passthru-applet)
+- [Connect Voice AI](./connect-voice-ai)

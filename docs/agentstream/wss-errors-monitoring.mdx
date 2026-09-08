@@ -1,0 +1,79 @@
+---
+id: wss-errors-monitoring
+title: WSS errors and Active Stream Monitoring
+description: AgentStream WebSocket close codes, troubleshooting, and Active Streams API.
+sidebar_label: WSS errors & monitoring
+slug: /agentstream/wss-errors-monitoring
+sidebar_position: 11
+---
+
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# WSS errors and Active Stream Monitoring
+
+## Active Stream Monitoring
+
+Check how many streams are live on your account.
+
+<TryItBanner method="GET" endpoint="/v1/Accounts/{AccountSid}/activestreams" />
+
+<RegionalUrls path="/v1/Accounts/{AccountSid}/activestreams" host="api" />
+
+### Authentication
+
+HTTP Basic Auth — API Key as username, API Token as password.
+
+### Example request
+
+```bash
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://api.in.exotel.com/v1/Accounts/<AccountSid>/activestreams'
+```
+
+### Example response
+
+```json
+{
+  "status": "success",
+  "active_streams": 12,
+  "max_allowed_streams": 100,
+  "account_sid": "<AccountSid>"
+}
+```
+
+---
+
+## WSS close codes
+
+| Code | Meaning | Common cause |
+|------|---------|--------------|
+| `1000` | Normal closure | Clean disconnect |
+| `1001` | Endpoint going away | Server restart |
+| `1002–1003` | Protocol / data error | Malformed frames |
+| `1006` | Abnormal closure | Network drop · TLS failure · server crash |
+| `1007–1009` | Payload / policy / size | Chunk out of bounds |
+| `1011` | Server error | Unhandled exception |
+| `1012–1013` | Restart / retry | Transient — retry |
+
+### `1006` checklist
+
+1. WSS URL reachable from the public internet  
+2. TLS certificate valid for the hostname  
+3. Firewall allows Exotel egress IPs (ask support for the current list)  
+4. Handshake completes within ~10 s  
+
+## Support payload
+
+When opening a ticket, include:
+
+- Account SID  
+- Call SID / Stream SID  
+- Approximate timestamp (IST)  
+- WSS close code and server logs around the failure  
+- `error` / `detailedstatus` from [Passthru](./passthru-applet) if present  
+
+## Related
+
+- [WebSocket protocol](./websocket-protocol)
+- [Passthru applet](./passthru-applet)

@@ -1,0 +1,92 @@
+---
+id: bot-stream-legs-api
+title: Bot stream with Legs API
+description: Start a bidirectional AgentStream bot stream from Legs API with an optional greeting to reduce perceived latency.
+sidebar_label: Bot stream (Legs API)
+slug: /agentstream/bot-stream-legs-api
+sidebar_position: 10
+---
+
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Bot stream with Legs API
+
+Start a bidirectional AgentStream session from Legs actions — with an optional greeting while the bot warms up.
+
+For the full outbound/inbound ExoML path, see [Programmable Voice with AgentStream](./programmable-voice).
+
+## Patterns
+
+| Goal | Pattern |
+|------|---------|
+| Bot-first / tech support | `leg_answered` → `start_stream` |
+| Sales / collections (no dead air) | `leg_answered` → `start_stream` + `start_say` → on `stream_started` → `stop_say` |
+| Per-call stream URL | Decide `url` in your service at runtime |
+
+## Authentication
+
+HTTP Basic Auth. `Content-Type: application/json`
+
+---
+
+## Start stream
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream" host="api" />
+
+### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `direction` | Yes | String | `bidirectional` |
+| `url` | Yes | String | Bot WebSocket URL |
+| `content_type` | No | String | e.g. `audio/x-mulaw;rate=8000` |
+
+### Example request
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "direction": "bidirectional",
+    "url": "wss://bot.example.com/stream",
+    "content_type": "audio/x-mulaw;rate=8000"
+  }'
+```
+
+---
+
+## Parallel greeting
+
+### Start say
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_say" />
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_say' \
+  -H 'Content-Type: application/json' \
+  -d '{ "text": "Connecting you now.", "loop": 0 }'
+```
+
+### Stop say
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/stop_say" />
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_say'
+```
+
+## After stream starts
+
+Your bot receives the same [WebSocket protocol](./websocket-protocol) events as Voicebot applet sessions.
+
+## Related
+
+- [Programmable Voice (ExoML)](./programmable-voice)
+- [Legs API overview](/docs/legs/overview)
+- [What to use when](./what-to-use-when)
