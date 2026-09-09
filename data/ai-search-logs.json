@@ -31450,5 +31450,39 @@
       }
     ],
     "answer_length": 1228
+  },
+  {
+    "timestamp": "2026-09-09T13:17:23.442Z",
+    "response_id": "ea16b3f7-34cf-4297-93ed-38ed9523edab",
+    "question": "User API docs",
+    "question_length": 13,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6320,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Manage Users",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/manage-users"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      }
+    ],
+    "answer_length": 4783
   }
 ]
