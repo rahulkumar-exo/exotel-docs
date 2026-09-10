@@ -31704,5 +31704,39 @@
       }
     ],
     "answer_length": 854
+  },
+  {
+    "timestamp": "2026-09-10T10:21:33.403Z",
+    "response_id": "7949b5a1-9a88-445d-a7bc-86d34fa99156",
+    "question": "then connect me with them",
+    "question_length": 25,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1715,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Connect Agent to Customer",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/make-a-call"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Integrations",
+        "product": "chatbot",
+        "url": "/docs/chatbot/integrations"
+      }
+    ],
+    "answer_length": 176
   }
 ]
