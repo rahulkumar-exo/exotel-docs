@@ -31602,5 +31602,39 @@
       }
     ],
     "answer_length": 1015
+  },
+  {
+    "timestamp": "2026-09-10T10:19:19.594Z",
+    "response_id": "6400ca5c-f9ae-4cf9-b88b-f93268733d70",
+    "question": "do you have something for this",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3109,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 2163
   }
 ]
