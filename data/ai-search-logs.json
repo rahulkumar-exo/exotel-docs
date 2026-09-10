@@ -31568,5 +31568,39 @@
       }
     ],
     "answer_length": 890
+  },
+  {
+    "timestamp": "2026-09-10T10:18:29.199Z",
+    "response_id": "05a6b5b7-6687-41a5-9f3b-d6aef4c84e90",
+    "question": "No. That page does not fix 080 ringback or 140/160 dead air.\n\nStream & Voicebot extension (beta) only tunes the already-open WebSocket: codec/sample rate, inbound vs outbound tracks, custom params, DTMF, and caller silence detection.\n\nSilenceTimeout / SilenceAction fire after streaming has started, when the customer goes quiet (event: silence or hangup). That is turn-taking, not “play music when they pick up.”\n\nNothing there answers the call earlier, kills carrier ringback, or injects audio befo",
+    "question_length": 616,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7878,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 1015
   }
 ]
