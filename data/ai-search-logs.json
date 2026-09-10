@@ -31484,5 +31484,13 @@
       }
     ],
     "answer_length": 4783
+  },
+  {
+    "timestamp": "2026-09-10T04:38:20.298Z",
+    "question": "I want to call a number, then it should route the call to specified number > send back an SMS\nI have a backend which can do this, can you help me with exact API endpoints?",
+    "question_length": 171,
+    "response_time_ms": 2935,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
