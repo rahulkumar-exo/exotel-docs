@@ -31636,5 +31636,39 @@
       }
     ],
     "answer_length": 2163
+  },
+  {
+    "timestamp": "2026-09-10T10:20:22.719Z",
+    "response_id": "61af7e1f-e61b-4995-a1b1-5b82d5968caa",
+    "question": "for removing this ring/ dead silence thing before voicebot is up",
+    "question_length": 64,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4593,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Events Call Backs",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/events-callbacks"
+      }
+    ],
+    "answer_length": 1209
   }
 ]
