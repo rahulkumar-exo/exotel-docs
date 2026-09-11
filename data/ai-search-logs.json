@@ -31772,5 +31772,39 @@
       }
     ],
     "answer_length": 5030
+  },
+  {
+    "timestamp": "2026-09-11T05:14:24.058Z",
+    "response_id": "697a5fa3-a9ec-475c-91ce-5eb3d5b31ab2",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8262,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 3693
   }
 ]
