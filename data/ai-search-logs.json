@@ -31806,5 +31806,39 @@
       }
     ],
     "answer_length": 3693
+  },
+  {
+    "timestamp": "2026-09-11T06:23:40.019Z",
+    "response_id": "499e61a8-f35c-423f-bac3-7f3b1f5e8acc",
+    "question": "how to get templete using postman, give url",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2583,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 342
   }
 ]
