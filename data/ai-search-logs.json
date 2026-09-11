@@ -31840,5 +31840,39 @@
       }
     ],
     "answer_length": 342
+  },
+  {
+    "timestamp": "2026-09-11T06:23:55.267Z",
+    "response_id": "fa2a6710-140c-4b62-9413-b1c15f9d7111",
+    "question": "get lost",
+    "question_length": 8,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1043,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes"
+      }
+    ],
+    "answer_length": 129
   }
 ]
