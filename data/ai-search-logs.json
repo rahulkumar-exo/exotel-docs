@@ -31942,5 +31942,39 @@
       }
     ],
     "answer_length": 1033
+  },
+  {
+    "timestamp": "2026-09-12T07:44:40.132Z",
+    "response_id": "f6ef7cef-3aed-43ca-8398-a530ecf17fa3",
+    "question": "how much is if we sent 4 digit otp to a mobile numn er indai from exotel sms",
+    "question_length": 76,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1187,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "SMS Details",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/sms-details"
+      }
+    ],
+    "answer_length": 176
   }
 ]
