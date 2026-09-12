@@ -31976,5 +31976,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-09-12T07:49:16.131Z",
+    "response_id": "18f09d09-4bbe-4460-8657-1bde61248b19",
+    "question": "i have my otp service i wnat to implemente full anlaysitc siverwview of exotel on that costing and all propelry",
+    "question_length": 111,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1951,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Team Management",
+        "product": "getting-started",
+        "url": "/docs/getting-started/team-management"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use CleverTap via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-native"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      }
+    ],
+    "answer_length": 176
   }
 ]
