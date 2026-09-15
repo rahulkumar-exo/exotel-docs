@@ -32146,5 +32146,39 @@
       }
     ],
     "answer_length": 292
+  },
+  {
+    "timestamp": "2026-09-15T07:29:34.131Z",
+    "response_id": "911ac479-3328-4821-b459-935cb4637fc1",
+    "question": "get me to vapi integration docs",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2432,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes"
+      }
+    ],
+    "answer_length": 330
   }
 ]
