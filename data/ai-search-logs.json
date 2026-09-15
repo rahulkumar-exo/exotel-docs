@@ -32520,5 +32520,39 @@
       }
     ],
     "answer_length": 1636
+  },
+  {
+    "timestamp": "2026-09-15T10:12:58.369Z",
+    "response_id": "66cba9fd-8a89-4d13-82f6-34082edb4957",
+    "question": "useExotelPhone.ts:195 [Exotel WebRTC] Cannot call: Exotel phone client is not ready why this error",
+    "question_length": 98,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3417,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Events Call Backs",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/events-callbacks"
+      }
+    ],
+    "answer_length": 508
   }
 ]
