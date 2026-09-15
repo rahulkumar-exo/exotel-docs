@@ -32350,5 +32350,39 @@
       }
     ],
     "answer_length": 7614
+  },
+  {
+    "timestamp": "2026-09-15T09:06:09.340Z",
+    "response_id": "7ff08d2b-c33d-41fb-a7af-0381ab3eed60",
+    "question": "why is code in nodejs",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1345,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "RCS Omnichannel API",
+        "product": "rcs-omnichannel",
+        "url": "/docs/rcs-omnichannel/api-reference/send-message"
+      }
+    ],
+    "answer_length": 192
   }
 ]
