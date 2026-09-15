@@ -32690,5 +32690,39 @@
       }
     ],
     "answer_length": 434
+  },
+  {
+    "timestamp": "2026-09-15T13:00:59.877Z",
+    "response_id": "270998b9-25f4-45b0-aa24-d1b0426a886d",
+    "question": "what is the price of sms api",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1011,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 176
   }
 ]
