@@ -32248,5 +32248,39 @@
       }
     ],
     "answer_length": 840
+  },
+  {
+    "timestamp": "2026-09-15T07:46:20.925Z",
+    "response_id": "81a196b5-f143-4ebf-b6ca-8490cbe9140a",
+    "question": "how to get exophones?",
+    "question_length": 21,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2190,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns"
+      },
+      {
+        "title": "Get All Processes",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-processes"
+      }
+    ],
+    "answer_length": 220
   }
 ]
