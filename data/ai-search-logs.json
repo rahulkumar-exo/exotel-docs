@@ -32214,5 +32214,39 @@
       }
     ],
     "answer_length": 2156
+  },
+  {
+    "timestamp": "2026-09-15T07:39:26.314Z",
+    "response_id": "f4dcfd45-dcba-48b0-8f25-553c70f2175a",
+    "question": "so integration with vapi is possible",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2656,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Zoho Desk",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-desk"
+      },
+      {
+        "title": "Template Messages with Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/template-flows"
+      },
+      {
+        "title": "Exotel Integration with Freshchat",
+        "product": "integrations",
+        "url": "/docs/integrations/freshchat"
+      }
+    ],
+    "answer_length": 840
   }
 ]
