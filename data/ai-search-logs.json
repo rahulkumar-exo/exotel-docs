@@ -32486,5 +32486,39 @@
       }
     ],
     "answer_length": 2029
+  },
+  {
+    "timestamp": "2026-09-15T09:27:01.972Z",
+    "response_id": "a07ced20-cc5a-45b8-9500-c60edeb9230f",
+    "question": "does SIP trunking have to be done in this",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5276,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel SIP Trunking to SIP-Native Voicebot Integration",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/voicebot-integration"
+      },
+      {
+        "title": "SIP Trunking to Flow Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/flow-integration"
+      },
+      {
+        "title": "SIP Trunking FQDN-based Integration Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/fqdn-integration"
+      },
+      {
+        "title": "SIP Trunking Master Support Guide",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/master-guide"
+      }
+    ],
+    "answer_length": 1636
   }
 ]
