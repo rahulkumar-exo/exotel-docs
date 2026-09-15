@@ -32656,5 +32656,39 @@
       }
     ],
     "answer_length": 1795
+  },
+  {
+    "timestamp": "2026-09-15T12:52:16.653Z",
+    "response_id": "91c0cdf1-bf4c-4c37-ae38-1c49dd9a1b5b",
+    "question": "can i do it from ui",
+    "question_length": 19,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3273,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "DLT Consent Templates",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-consent-template"
+      },
+      {
+        "title": "Update Party Numbers & Pins",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      }
+    ],
+    "answer_length": 434
   }
 ]
