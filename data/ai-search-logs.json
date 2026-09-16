@@ -32978,5 +32978,13 @@
       }
     ],
     "answer_length": 1132
+  },
+  {
+    "timestamp": "2026-09-16T06:57:58.666Z",
+    "question": "Here it is saying, \n\n\" Warning: Recording URLs are time-limited for security. URLs retrieved via the API are valid for 24 hours by default.\"\n\n Request a fresh URL if the link has expired. But it depends on the our exotel tier we have given or what? But for us the call recording is available from the start when we have enabled call recording",
+    "question_length": 342,
+    "response_time_ms": 2477,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
