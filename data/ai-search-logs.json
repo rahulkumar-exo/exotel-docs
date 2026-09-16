@@ -33036,5 +33036,39 @@
       }
     ],
     "answer_length": 594
+  },
+  {
+    "timestamp": "2026-09-16T07:20:35.063Z",
+    "response_id": "bfbb1f85-9746-41d6-9812-d61c2700054a",
+    "question": "in popup webhook how is it decided what to fill in to field",
+    "question_length": 59,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3165,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "App Settings",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/app-settings"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      }
+    ],
+    "answer_length": 655
   }
 ]
