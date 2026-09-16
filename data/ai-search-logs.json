@@ -33104,5 +33104,39 @@
       }
     ],
     "answer_length": 2831
+  },
+  {
+    "timestamp": "2026-09-16T07:41:03.575Z",
+    "response_id": "3958d4aa-5188-4dec-84bf-bdd623b8cade",
+    "question": "can a exophone be linked to a single app in app bazaar",
+    "question_length": 54,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1180,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "App Builder",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/app-builder"
+      },
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      }
+    ],
+    "answer_length": 492
   }
 ]
