@@ -32944,5 +32944,39 @@
       }
     ],
     "answer_length": 1471
+  },
+  {
+    "timestamp": "2026-09-16T06:51:53.049Z",
+    "response_id": "3c76708c-7688-4673-a41d-76e4314f3c59",
+    "question": "How long call recording stays?",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-3.6-flash",
+    "response_time_ms": 5270,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 1132
   }
 ]
