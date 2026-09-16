@@ -33070,5 +33070,39 @@
       }
     ],
     "answer_length": 655
+  },
+  {
+    "timestamp": "2026-09-16T07:21:34.286Z",
+    "response_id": "efb383fc-8d33-43a4-8c5c-641ee6837168",
+    "question": "but if the call receiving user is dynamic then how is it decided what to fill in to field",
+    "question_length": 89,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11348,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 2831
   }
 ]
