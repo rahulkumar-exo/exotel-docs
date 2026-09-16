@@ -32766,5 +32766,13 @@
       }
     ],
     "answer_length": 1409
+  },
+  {
+    "timestamp": "2026-09-16T04:02:39.792Z",
+    "question": "for call and recoeding",
+    "question_length": 22,
+    "response_time_ms": 4024,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
