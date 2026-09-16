@@ -33002,5 +33002,39 @@
     "response_time_ms": 1368,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-09-16T07:15:30.547Z",
+    "response_id": "3e7f2ad9-b5ec-4025-a02b-a437b74a7706",
+    "question": "are the apps in app bazaar same as the applications being referred in web rtc integration",
+    "question_length": 89,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3537,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 594
   }
 ]
