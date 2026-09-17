@@ -33240,5 +33240,39 @@
       }
     ],
     "answer_length": 733
+  },
+  {
+    "timestamp": "2026-09-17T14:52:02.437Z",
+    "response_id": "5bdabb17-aae3-449e-84cc-0a176b7668e3",
+    "question": "curl -X GET 'https://api.in.exotel.com/v3/accounts/customerfirstmktg1m/calls/ad4a17de93fd45681cb7c7ea15701a9h/voice-logs?format=mp3&channel=single' \\\n  -u \"de1c48b50874ee79036b0c746d7c203d0fa4b2ca01a35112:2fad2adf924a960ddffac1b6d733df162d11b9d882edf64e\"\n\n\nERROR\n\nResponse\n400\ncURL\nCopy\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TwilioResponse>\n <RestException>\n  <Status>400</Status>\n  <Message>Exotel API Version v3 not supported. Contact Exotel for details.</Message>\n </RestException>\n</TwilioRespo",
+    "question_length": 504,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12178,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "Call Details (CCM)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details"
+      }
+    ],
+    "answer_length": 1932
   }
 ]
