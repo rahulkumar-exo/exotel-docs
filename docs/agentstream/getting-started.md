@@ -21,25 +21,25 @@ Get audio flowing between a live call and your server in minutes.
 ## Step 1 — Run an echo server
 
 ```python
-# echo.py
+# echo.py — works on Python 3.8+
 import asyncio, json, websockets
 
 async def handle(ws):
     stream_sid = None
     async for msg in ws:
         ev = json.loads(msg)
-        match ev["event"]:
-            case "start":
-                stream_sid = ev["start"]["stream_sid"]
-                print("stream started", stream_sid)
-            case "media":
-                await ws.send(json.dumps({
-                    "event": "media",
-                    "stream_sid": stream_sid,
-                    "media": {"payload": ev["media"]["payload"]},
-                }))
-            case "stop":
-                break
+        event = ev.get("event")
+        if event == "start":
+            stream_sid = ev["start"]["stream_sid"]
+            print("stream started", stream_sid)
+        elif event == "media":
+            await ws.send(json.dumps({
+                "event": "media",
+                "stream_sid": stream_sid,
+                "media": {"payload": ev["media"]["payload"]},
+            }))
+        elif event == "stop":
+            break
 
 async def main():
     async with websockets.serve(handle, "0.0.0.0", 5001):
@@ -53,7 +53,7 @@ asyncio.run(main())
 pip install websockets
 python echo.py
 # expose with ngrok (or similar): ngrok http 5001
-# use the wss:// URL as streamurl
+# use the wss:// URL as StreamUrl
 ```
 
 ## Step 2 — Connect Voice AI (outbound)

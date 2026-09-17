@@ -55,7 +55,7 @@ HTTP Basic Auth — API Key as username, API Token as password ([Dashboard → A
 | `TimeLimit` | Integer | Max call duration in seconds. Max: `14400` |
 | `CustomField` | String | Metadata on the call record (max 128 chars) |
 | `StatusCallback` | String | Webhook URL for call status updates |
-| `StatusCallbackEvents` | Array | `answered`, `terminal`, and/or `ringing` (leg1) |
+| `StatusCallbackEvents` | Array | `answered`, `terminal`, and/or `ringing` (leg1). For `multipart/form-data`, send each value as `StatusCallbackEvents[]=<event>` |
 | `StreamName` | String | Optional stream label, max 32 chars |
 
 ## Example request
