@@ -33138,5 +33138,39 @@
       }
     ],
     "answer_length": 492
+  },
+  {
+    "timestamp": "2026-09-17T05:57:43.110Z",
+    "response_id": "926ff348-c297-4503-92ab-e1afbac76488",
+    "question": "in ip-pstn-webrtc what is the customer id, is it single for a exotel account or is it created per user who is using the exotel account",
+    "question_length": 134,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2084,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 252
   }
 ]
