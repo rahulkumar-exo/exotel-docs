@@ -33172,5 +33172,39 @@
       }
     ],
     "answer_length": 252
+  },
+  {
+    "timestamp": "2026-09-17T06:38:15.265Z",
+    "response_id": "77ff8225-d7ac-4976-84ac-63bf248f3447",
+    "question": "a customer in exotel is basically the owner of exotel account right??",
+    "question_length": 69,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2833,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      }
+    ],
+    "answer_length": 516
   }
 ]
