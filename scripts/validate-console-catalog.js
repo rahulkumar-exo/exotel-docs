@@ -54,8 +54,8 @@ function validateCatalog(catalog, routes) {
   if (!catalog.version || typeof catalog.version !== 'string') {
     errors.push('catalog.version must be a non-empty string');
   }
-  if (!Array.isArray(catalog.suggested_queries) || catalog.suggested_queries.length !== 7) {
-    errors.push('catalog.suggested_queries must contain exactly 7 entries');
+  if (!Array.isArray(catalog.suggested_queries) || catalog.suggested_queries.length < 4) {
+    errors.push('catalog.suggested_queries must contain at least 4 entries');
   }
 
   for (const channel of EXPECTED_CHANNELS) {

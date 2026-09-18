@@ -38,7 +38,7 @@
           "title": "ExoML & Flows",
           "description": "Build programmable call flows and stream live call audio.",
           "icon": "flow",
-          "url": "https://developer.exotel.com/docs/agentstream/developer-guide",
+          "url": "https://developer.exotel.com/docs/agentstream/overview",
           "cta": "developer.exotel.com"
         }
       ],
@@ -141,10 +141,11 @@
         {
           "id": "exoml_flows",
           "title": "RCS Messaging",
-          "description": "Explore RCS message capabilities and integration guidance.",
+          "description": "Send RCS messages and explore Omnichannel API capabilities.",
           "icon": "flow",
-          "url": "https://developer.exotel.com/docs/rcs-omnichannel/overview",
-          "cta": "developer.exotel.com"
+          "url": "https://developer.exotel.com/docs/rcs-omnichannel/api-reference/send-message",
+          "cta": "developer.exotel.com",
+          "todo": "Point to a dedicated RCS messaging/flows guide when published"
         }
       ],
       "cross_sell": [

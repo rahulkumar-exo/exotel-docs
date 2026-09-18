@@ -1,7 +1,17 @@
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const test = require('node:test');
 
 const searchHandler = require('../api/search');
+
+const knowledgeBasePath = path.join(__dirname, '..', 'static', 'knowledge-base.json');
+const hasKnowledgeBase = fs.existsSync(knowledgeBasePath);
+
+/** Skip cases that need the generated knowledge base (produced by `npm run build`). */
+function testWithKb(name, fn) {
+  test(name, { skip: !hasKnowledgeBase && 'Requires static/knowledge-base.json (run npm run build first)' }, fn);
+}
 
 function createResponse() {
   return {
@@ -17,7 +27,6 @@ function createResponse() {
     },
     json(body) {
       this.body = body;
-      return this;
     },
     end() {
       return this;
@@ -47,7 +56,7 @@ test('rejects unsupported filters and limits', () => {
   }
 });
 
-test('returns API-reference results and populated channel groups', () => {
+testWithKb('returns API-reference results and populated channel groups', () => {
   const response = createResponse();
   searchHandler({
     method: 'POST',

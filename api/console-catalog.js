@@ -7,7 +7,7 @@ function buildResponse(channel) {
   return {
     version: catalog.version,
     channel,
-    cards: catalog.channels[channel].cards,
+    cards: catalog.channels[channel].cards.map(({ todo, ...card }) => card),
     cross_sell: catalog.channels[channel].cross_sell,
     mcp_pointer: catalog.mcp_pointer,
     suggested_queries: catalog.suggested_queries,
