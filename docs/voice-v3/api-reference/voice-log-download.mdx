@@ -1,0 +1,191 @@
+---
+id: voice-log-download
+title: Voice Log Download
+description: Download voice recordings and call logs programmatically using the Exotel Voice v3 API. Supports MP3, WAV, and dual-channel formats.
+sidebar_label: Voice Log Download
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Voice Log Download
+
+Download voice recordings for completed calls. This API provides programmatic access to call recordings in various formats.
+
+<TryItBanner method="GET" endpoint="/v3/accounts/{account_sid}/calls/{call_sid}/voice-logs" />
+
+<RegionalUrls path="/v3/accounts/{account_sid}/calls/{call_sid}/voice-logs" host="api" />
+
+## Path Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `account_sid` | String | Your Exotel account SID |
+| `call_sid` | String | Unique identifier of the call |
+
+## Query Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `format` | String | No | Audio format: `mp3` (default) or `wav` |
+| `channel` | String | No | `single` (mixed, default) or `dual` (separate agent/customer tracks) |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>/voice-logs?format=mp3' \
+  -H 'Content-Type: application/json'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+response = requests.get(
+    'https://api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>/voice-logs',
+    auth=('<api_key>', '<api_token>'),
+    headers={'Content-Type': 'application/json'},
+    params={'format': 'mp3'}
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<account_sid>';
+const callSid = '<call_sid>';
+
+const url = `https://api.exotel.com/v3/accounts/${accountSid}/calls/${callSid}/voice-logs?format=mp3`;
+
+const response = await fetch(url, {
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>/voice-logs?format=mp3",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>/voice-logs?format=mp3"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+```json
+{
+  "request_id": "req_log_001",
+  "method": "GET",
+  "http_code": 200,
+  "response": {
+    "voice_log": {
+      "call_sid": "abc123",
+      "recording_url": "https://s3-ap-southeast-1.amazonaws.com/exotelrecordings/your_account_sid/abc123.mp3",
+      "recording_duration": 295,
+      "recording_size_bytes": 472000,
+      "format": "mp3",
+      "channel": "single",
+      "created_at": "2024-06-15T10:35:00.000Z",
+      "expires_at": "2024-09-15T10:35:00.000Z"
+    }
+  }
+}
+```
+
+:::info
+Recording URLs are time-limited signed URLs. They expire after the period shown in `expires_at`. Request a new URL if the link has expired.
+:::
+
+## Recording Status Values
+
+| Status | Description |
+|--------|-------------|
+| `available` | Recording is ready for download |
+| `processing` | Recording is being processed |
+| `not_available` | No recording exists for this call |
+| `expired` | Recording URL has expired; make a new request to get a fresh URL |
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `200` | Success — Recording available |
+| `400` | Bad Request — Invalid parameters |
+| `401` | Unauthorized — Invalid credentials |
+| `404` | Not Found — Call or recording does not exist |
+| `429` | Too Many Requests — Rate limit exceeded |
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v3/accounts/{account_sid}/calls/{call_sid}/voice-logs"
+  params={[
+    { name: 'call_sid', required: true, type: 'string', description: 'Unique identifier of the call', placeholder: 'abc123' },
+    { name: 'format', required: false, type: 'select', description: 'Audio format', options: ['mp3', 'wav'], defaultValue: 'mp3' },
+    { name: 'channel', required: false, type: 'select', description: 'single (mixed) or dual (separate tracks)', options: ['single', 'dual'], defaultValue: 'single' },
+  ]}
+/>

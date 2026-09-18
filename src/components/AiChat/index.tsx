@@ -113,6 +113,18 @@ const SUGGESTED_QUESTIONS = [
   'How to send WhatsApp template messages?',
 ];
 
+type OpenDetail = {
+  question?: string;
+};
+
+export function openAskAi(question?: string): void {
+  window.dispatchEvent(
+    new CustomEvent<OpenDetail>('open-ai-chat', {
+      detail: {question: question?.trim() ?? ''},
+    }),
+  );
+}
+
 export default function AiChat(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -131,32 +143,55 @@ export default function AiChat(): JSX.Element {
   }, [messages, scrollToBottom]);
 
   useEffect(() => {
-    if (isOpen && inputRef.current) {
-      inputRef.current.focus();
+    if (!isOpen) {
+      return;
     }
+    inputRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+    };
   }, [isOpen]);
 
-  // Store sendMessage in a ref so the event listener always has the latest version
   const sendMessageRef = useRef<(q?: string) => void>();
+  const pendingQuestionRef = useRef<string | null>(null);
 
-  // Listen for hero search bar "open-ai-chat" events
   useEffect(() => {
     const handleOpenAiChat = (e: Event) => {
-      const customEvent = e as CustomEvent<{ question: string }>;
-      const question = customEvent.detail?.question;
+      const customEvent = e as CustomEvent<OpenDetail>;
+      const question = customEvent.detail?.question?.trim();
       if (question) {
+        pendingQuestionRef.current = question;
+      }
+      setIsOpen(true);
+    };
+    const handleNavbarClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (target?.closest('.navbar__ask-ai')) {
         setIsOpen(true);
-        // Small delay to ensure panel is rendered
-        setTimeout(() => {
-          sendMessageRef.current?.(question);
-        }, 150);
       }
     };
     window.addEventListener('open-ai-chat', handleOpenAiChat);
+    document.addEventListener('click', handleNavbarClick);
     return () => {
       window.removeEventListener('open-ai-chat', handleOpenAiChat);
+      document.removeEventListener('click', handleNavbarClick);
     };
   }, []);
+
+  useEffect(() => {
+    if (!isOpen || !pendingQuestionRef.current) {
+      return;
+    }
+    const question = pendingQuestionRef.current;
+    pendingQuestionRef.current = null;
+    sendMessageRef.current?.(question);
+  }, [isOpen]);
 
   const sendMessage = async (questionText?: string) => {
     const question = questionText || input.trim();
@@ -178,7 +213,13 @@ export default function AiChat(): JSX.Element {
         }),
       });
 
-      const data = await response.json();
+      const raw = await response.text();
+      let data: { answer?: string; error?: string; sources?: Source[]; response_id?: string };
+      try {
+        data = JSON.parse(raw);
+      } catch {
+        throw new Error(response.status === 404 ? 'LOCAL_UNAVAILABLE' : 'BAD_RESPONSE');
+      }
 
       if (!response.ok || data.error) {
         const errMsg = data.error || `HTTP ${response.status}`;
@@ -200,12 +241,18 @@ export default function AiChat(): JSX.Element {
         setSources(data.sources);
       }
     } catch (error) {
-      const isRateLimit = error instanceof Error && error.message === 'RATE_LIMIT';
+      const code = error instanceof Error ? error.message : '';
+      const errorText =
+        code === 'RATE_LIMIT'
+          ? 'The AI service is temporarily busy. Try again in a minute.'
+          : code.includes('GEMINI_API_KEY') || code.includes('not configured')
+            ? 'Ask AI needs GEMINI_API_KEY in .env.local. Add the key and restart npm start.'
+            : code === 'LOCAL_UNAVAILABLE'
+              ? 'Ask AI is not available on this local server. Restart npm start after the latest plugin change.'
+              : 'Ask AI could not answer this time. Try again.';
       const errorMessage: Message = {
         role: 'assistant',
-        content: isRateLimit
-          ? 'The AI service is temporarily busy due to high usage. Please wait a moment and try again. In the meantime, you can use the **search bar** at the top for keyword-based search.'
-          : 'Sorry, I encountered an error processing your question. Please try again or use the search bar above for keyword-based search.',
+        content: errorText,
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -262,26 +309,8 @@ export default function AiChat(): JSX.Element {
 
   return (
     <>
-      {/* Floating chat button */}
-      <button
-        className={`${styles.chatButton} ${isOpen ? styles.chatButtonHidden : ''}`}
-        onClick={() => setIsOpen(true)}
-        aria-label="Open AI Assistant"
-        title="Ask AI about Exotel APIs"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          <circle cx="9" cy="10" r="1" fill="currentColor" />
-          <circle cx="12" cy="10" r="1" fill="currentColor" />
-          <circle cx="15" cy="10" r="1" fill="currentColor" />
-        </svg>
-        <span className={styles.chatButtonLabel}>Ask AI</span>
-      </button>
-
-      {/* Chat panel */}
       {isOpen && (
-        <div className={styles.chatPanel}>
-          {/* Header */}
+        <div className={styles.chatPanel} role="dialog" aria-label="Assistant">
           <div className={styles.chatHeader}>
             <div className={styles.chatHeaderLeft}>
               <div className={styles.aiIndicator}>
@@ -292,8 +321,8 @@ export default function AiChat(): JSX.Element {
                 </svg>
               </div>
               <div>
-                <div className={styles.chatTitle}>Exotel AI Assistant</div>
-                <a className={styles.chatSubtitle} href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Powered by Gemini</a>
+                <div className={styles.chatTitle}>Assistant</div>
+                <div className={styles.chatSubtitle}>Answers from Exotel docs</div>
               </div>
             </div>
             <div className={styles.chatHeaderActions}>
@@ -314,20 +343,11 @@ export default function AiChat(): JSX.Element {
             </div>
           </div>
 
-          {/* Messages area */}
           <div className={styles.messagesContainer}>
             {messages.length === 0 ? (
               <div className={styles.welcomeContainer}>
-                <div className={styles.welcomeIcon}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--ifm-color-primary)" strokeWidth="1.5">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                    <path d="M2 17l10 5 10-5" />
-                    <path d="M2 12l10 5 10-5" />
-                  </svg>
-                </div>
-                <h3 className={styles.welcomeTitle}>Ask me anything about Exotel APIs</h3>
                 <p className={styles.welcomeText}>
-                  I can help you with Voice, SMS, WhatsApp, ExoVerify, and Call Campaigns APIs.
+                  Ask about Voice, SMS, WhatsApp, ExoVerify, and Campaign APIs.
                 </p>
                 <div className={styles.suggestedQuestions}>
                   {SUGGESTED_QUESTIONS.map((q, i) => (
@@ -413,7 +433,6 @@ export default function AiChat(): JSX.Element {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input area */}
           <div className={styles.inputContainer}>
             <textarea
               ref={inputRef}

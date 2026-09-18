@@ -57,7 +57,7 @@ The Exotel SMS API returns standard HTTP status codes to indicate the result of 
 
 ```bash
 # Correct format
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
+curl -X POST "https://api.exotel.com/v1/Accounts/<account_sid>/Sms/send" \
   -d "..."
 
 # Alternative: Using -u flag
@@ -313,7 +313,7 @@ Verify your API request includes all required parameters and correct formatting:
 
 ```bash
 # Correct example
-curl -v -X POST "https://api_key:api_token@api.exotel.com/v1/Accounts/account_sid/Sms/send" \
+curl -u '<api_key>:<api_token>' -v -X POST "https://api.exotel.com/v1/Accounts/account_sid/Sms/send" \
   -d "From=EXOTL" \
   -d "To=+919876543210" \
   -d "Body=Your OTP is 123456" \

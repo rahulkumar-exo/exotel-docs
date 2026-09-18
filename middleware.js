@@ -29,7 +29,9 @@ export const config = {
 export default function middleware(request) {
   const url = new URL(request.url);
   if (url.searchParams.get('legacy') === '1') {
-    return rewrite(`${OLD_SITE_ORIGIN}${url.pathname}${url.search}`);
+    url.searchParams.delete('legacy');
+    const search = url.searchParams.toString() ? `?${url.searchParams.toString()}` : '';
+    return rewrite(`${OLD_SITE_ORIGIN}${url.pathname}${search}`);
   }
   const response = next();
   response.headers.set('X-Docs-Variant', 'new');

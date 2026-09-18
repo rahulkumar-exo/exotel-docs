@@ -115,5 +115,14 @@
     "answer_excerpt": "This looks like something our team can help you with directly. Please write to **hello@exotel.com** with your question and one of our team members will get back to you shortly.",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Mobile Safari/537.36"
+  },
+  {
+    "timestamp": "2026-09-01T05:07:53.857Z",
+    "response_id": "7184b8fc-d618-4245-a113-e2596776172a",
+    "vote": "down",
+    "question": "hello@exotel.com i need a 0800 number how can i get it",
+    "answer_excerpt": "This looks like something our team can help you with directly. Please write to **hello@exotel.com** with your question and one of our team members will get back to you shortly.",
+    "comment": "i wanna get the number not the story",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
   }
 ]

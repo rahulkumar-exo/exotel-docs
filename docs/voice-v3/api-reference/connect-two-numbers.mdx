@@ -10,6 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
 # Connect Two Numbers
 
@@ -21,20 +22,9 @@ Use the **Voice v1** endpoint (`/v1/Accounts/...`). After the call, use [Call De
 
 <TryItBanner method="POST" endpoint="/v1/Accounts/{account_sid}/Calls/connect" />
 
-## Endpoint
+<RegionalUrls path="/v1/Accounts/{account_sid}/Calls/connect" host="api" />
 
-```
-POST /v1/Accounts/<account_sid>/Calls/connect
-```
-
-**Content-Type:** `application/x-www-form-urlencoded`
-
-### Regional Base URLs
-
-| Region | Base URL |
-|--------|----------|
-| Singapore | `https://<api_key>:<api_token>@api.exotel.com` |
-| Mumbai | `https://<api_key>:<api_token>@api.in.exotel.com` |
+Content-Type is `application/x-www-form-urlencoded`.
 
 ## Prerequisites
 
@@ -85,8 +75,8 @@ Before initiating a call, ensure the following:
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect' \
   -d 'From=+919900XXXXXX' \
   -d 'To=+918800XXXXXX' \
   -d 'CallerId=09XXXXXXXXX' \
@@ -168,7 +158,8 @@ $accountSid = '<your_account_sid>';
 
 $curl = curl_init();
 curl_setopt_array($curl, [
-  CURLOPT_URL            => "https://{$apiKey}:{$apiToken}@api.exotel.com/v1/Accounts/{$accountSid}/Calls/connect",
+  CURLOPT_URL            => "https://api.exotel.com/v1/Accounts/{$accountSid}/Calls/connect",
+  CURLOPT_USERPWD        => "{$apiKey}:{$apiToken}",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_POST           => true,
   CURLOPT_POSTFIELDS     => http_build_query([
@@ -208,8 +199,8 @@ func main() {
     accountSid := "<your_account_sid>"
 
     endpoint := fmt.Sprintf(
-        "https://%s:%s@api.exotel.com/v1/Accounts/%s/Calls/connect",
-        apiKey, apiToken, accountSid,
+        "https://api.exotel.com/v1/Accounts/%s/Calls/connect",
+        accountSid,
     )
 
     data := url.Values{}
@@ -222,6 +213,7 @@ func main() {
     data.Set("StatusCallbackEvents[]", "terminal")
 
     req, _ := http.NewRequest("POST", endpoint, strings.NewReader(data.Encode()))
+    req.SetBasicAuth(apiKey, apiToken)
     req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
     res, _ := http.DefaultClient.Do(req)
@@ -371,8 +363,8 @@ When the call reaches a terminal state (or is answered, if configured), Exotel s
 After placing a call, use the `Call.Sid` from the response to retrieve enhanced reporting via Voice v3:
 
 ```bash
-curl -X GET \
-  'https://<api_key>:<api_token>@ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls/<call_sid>' \
   -H 'Content-Type: application/json'
 ```
 

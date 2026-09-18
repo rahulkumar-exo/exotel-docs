@@ -118,7 +118,7 @@ Voicemail
 Use the [Call Details API](/docs/voice-v1/api-reference/call-details) to retrieve the voicemail recording URL:
 
 ```bash
-curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/<call_sid>.json'
+curl -u '<api_key>:<api_token>' 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/<call_sid>.json'
 ```
 
 The `RecordingUrl` field contains the voicemail audio URL.

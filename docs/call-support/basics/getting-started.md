@@ -109,7 +109,7 @@ Use a phone that is not listed as an agent number to test the full customer expe
 To test outbound calling via the API:
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<agent_number>' \
   -d 'To=<customer_number>' \
   -d 'CallerId=<exophone>'

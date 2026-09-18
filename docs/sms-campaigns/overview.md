@@ -26,7 +26,7 @@ The Exotel SMS Campaigns API enables you to create, manage, and track bulk SMS c
 | Mumbai | `@api.in.exotel.com` |
 
 ```
-https://<api_key>:<api_token>@<subdomain>/v2/accounts/<account_sid>/message-campaigns
+https://<subdomain>/v2/accounts/<account_sid>/message-campaigns
 ```
 
 ## Authentication

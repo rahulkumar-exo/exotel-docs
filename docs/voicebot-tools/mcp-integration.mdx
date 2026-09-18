@@ -1,16 +1,22 @@
 ---
 id: mcp-integration
 title: Bring Your Own MCP
-description: "Integrate external systems with Exotel VoiceBot using MCP (Model Context Protocol) — the default integration path."
+description: "Register your systems as MCP tools that Exotel VoiceBots invoke during a live call."
 sidebar_label: MCP Integration
 sidebar_position: 3
 ---
 
 # Bring Your Own MCP Integration
 
-The Exotel VoiceBot platform uses **MCP (Model Context Protocol)** as the default method to integrate with external systems. Instead of building custom integrations for each platform (Salesforce, Freshdesk, etc.), you create MCP-compliant tools that the VoiceBot discovers and invokes automatically.
+:::note This is not the Exotel MCP Server
+This page covers the **reverse** direction: your systems act as MCP tools that our VoiceBot invokes during a live call.
 
-## How It Works
+If you want your AI client (Claude, Cursor, etc.) to make calls or send SMS through your Exotel account, see the [Exotel MCP Server](/docs/mcp-server/overview) instead.
+:::
+
+The Exotel VoiceBot platform uses **MCP (Model Context Protocol)** as the default way to integrate with external systems. Instead of building a custom integration for every platform (Salesforce, Freshdesk, etc.), you register MCP-compliant tools on the Exotel Tools Server, attach them to a specific assistant, and the bot invokes them during live calls.
+
+## How it works
 
 ```
 ┌─────────────┐     MCP      ┌──────────────┐     API      ┌──────────────┐
@@ -24,9 +30,34 @@ The Exotel VoiceBot platform uses **MCP (Model Context Protocol)** as the defaul
 3. **Your system** receives the API call and returns data
 4. **VoiceBot** uses the response in the conversation
 
-## Creating an MCP-Compatible Tool
+## Prerequisites
 
-### Option 1: OpenAPI Tool (Recommended)
+Every curl on this page uses two placeholders. Both come from your Exotel account, not from Exotel-issued MCP keys:
+
+| Placeholder | Where to get it |
+|-------------|-----------------|
+| `<tenant_id>` | Your Exotel account (tenant) ID. Find it in the VoiceBot Dashboard → Settings, or from the URL when you are logged into `my.exotel.com`. |
+| `<your_token>` | The `access_token` cookie your browser sets when you log into `my.exotel.com`. Open DevTools → Application → Cookies → `my.exotel.com` → copy `access_token`. |
+
+:::warning This is a session cookie, not an API key
+`access_token` expires when you log out of `my.exotel.com`. Anyone who has it can act as you against the Tools Server until it expires. Do not commit it, paste it into tickets, or share it. The VoiceBot REST APIs use separate API keys (see [Overview → VoiceBot](/docs/mcp-server/overview#voicebot)). The Tools Server still authenticates with this cookie.
+:::
+
+For host, use `https://tools-server.mum1.exotel.com` for production or `https://tools-server-uat.mum1.exotel.com` while testing (per the [Tools Server overview](/docs/voicebot-tools/overview)). The examples below use the UAT host.
+
+## Which tool type do I pick?
+
+| I want to... | Use | Why |
+|-------------|-----|-----|
+| Have the bot call an existing external API (CRM, order system, third party) | **OpenAPI** | Self-documenting, reusable, no code |
+| Run custom logic with no existing API (EMI, tax, eligibility scoring) | **Python** | Inline function, typed parameters |
+| Answer FAQ / policy / product questions from documents | **Knowledge Base** | RAG over your document corpus |
+
+For the full comparison and worked schema for each type, see the [Tools Server overview](/docs/voicebot-tools/overview#tool-types).
+
+## Create the tool
+
+### OpenAPI (recommended)
 
 If your system already has an API, define it as an OpenAPI tool:
 
@@ -74,9 +105,9 @@ curl -X POST \
   }'
 ```
 
-### Option 2: Python Tool
+### Python
 
-For custom logic that doesn't have an existing API:
+For custom logic that has no existing API:
 
 ```bash
 curl -X POST \
@@ -99,7 +130,7 @@ curl -X POST \
   }'
 ```
 
-### Option 3: Knowledge Base Tool
+### Knowledge base
 
 For FAQ-style lookups backed by documents:
 
@@ -127,9 +158,9 @@ curl -X POST \
   }'
 ```
 
-## Testing Your Tool
+## Test the tool
 
-Before activating, always test with sample inputs:
+Before activating a tool, test it with sample inputs:
 
 ```bash
 curl -X POST \
@@ -143,7 +174,7 @@ curl -X POST \
   }'
 ```
 
-## Activating Your Tool
+## Activate the tool
 
 Once tested, activate it so VoiceBots can use it:
 
@@ -158,10 +189,86 @@ curl -X PUT \
   }'
 ```
 
-## Best Practices
+## Attach a tool to a voice assistant
 
-1. **Write clear descriptions** — The AI uses the `description` field to decide when to invoke your tool
-2. **Define typed parameters** — Helps the AI extract the right values from conversation
-3. **Test before activating** — Always verify with the test endpoint first
-4. **Version your tools** — Each update creates a new version; activate only tested versions
-5. **Use OpenAPI tools for external APIs** — They're self-documenting and reusable
+Activating a tool does not automatically give every bot access to it. To let a specific assistant invoke your tool, update the assistant to attach it. The same update lets you decide **where each tool parameter gets its value from**.
+
+Every parameter you declared on the tool must be filled from one of three sources:
+
+| Source | Filled from | When to use |
+|--------|-------------|-------------|
+| **LLM** | What the caller says on the phone. The bot's LLM extracts the value from the conversation. | Values only the caller can provide, such as order ID, complaint description, requested date. |
+| **Conversation state** | Call metadata captured at `session_start` (caller ANI, `CallSid`, session id), earlier turns in the same call, or return values from prior tool calls. | Anything already known about the call, such as caller phone number, customer id returned by an earlier lookup, currently selected product. |
+| **Static** | A fixed value baked into the assistant's tool config. | Constants that never change, such as API version, tenant identifier, channel name. |
+
+### Example: attaching `crm_lookup` to an assistant
+
+For the `crm_lookup` tool created above (parameter: `phone_number`), attach it to an assistant and mark `phone_number` as sourced from **conversation state**, specifically the caller's ANI captured at `session_start`. The LLM never needs to ask the caller for it.
+
+For a follow-up tool like `get_order_details` with parameters `phone_number` and `order_id`, source `phone_number` the same way (conversation state) and mark `order_id` as **LLM** so the bot asks the caller for it during the conversation.
+
+For a tool like `create_ticket` that also needs `channel` and `product_family`, set those as **static**. Every ticket created by this assistant goes into the same channel and product family.
+
+The `exotel_voicebot_assistant_push_version` MCP tool schema carries the exact payload shape. Your AI client fills it in for you once you tell it which source you want for each parameter.
+
+## How the bot decides to invoke a tool
+
+The bot's underlying LLM sees your tool's `name`, `description`, and `parameters` schema. At each conversational turn, it decides whether the caller's current utterance matches a tool's purpose.
+
+The `description` field is the primary signal. Write it in plain language, from the caller's perspective, stating both what the tool does and when to use it:
+
+- **Weak.** `"crm lookup by phone"`
+- **Strong.** `"Look up a customer's account details by phone number. Use when the caller asks about an order, wants to check their account, or identifies themselves."`
+
+If the bot never invokes your tool, the description is usually the culprit. The next most common causes are two tools with overlapping descriptions (the LLM cannot tell them apart) or a parameter the LLM cannot extract from natural speech (fix this by adding examples to the parameter description).
+
+## End-to-end example: a live call
+
+Assume you have attached `crm_lookup` to your customer-support assistant with `phone_number` sourced from **conversation state** (the caller's ANI captured at `session_start`).
+
+```
+Caller (calls in from +919876543210)
+Bot:    Hi, this is Acme Support. How can I help you today?
+Caller: I'd like an update on my order.
+```
+
+Between the two bot turns, this is what happens:
+
+1. The bot's LLM recognises the intent (the caller wants an order update) and picks `crm_lookup` from the tools you attached to this assistant, matching on the tool's `description`.
+2. The `phone_number` parameter is filled from conversation state (`+919876543210`, captured at session start). The LLM does not need to ask the caller for it.
+3. The bot invokes the tool. The endpoint your OpenAPI spec declared receives:
+
+```http
+POST https://your-crm-api.example.com/api/customers/lookup
+Content-Type: application/json
+
+{ "phone_number": "+919876543210" }
+```
+
+4. Your CRM responds:
+
+```json
+{
+  "customer_id": "cust_1234",
+  "name": "Sarah",
+  "recent_orders": [
+    { "order_id": "ord_A9F2", "status": "shipped", "eta": "2026-08-30" }
+  ]
+}
+```
+
+5. The bot uses the response in its reply:
+
+```
+Bot: Hi Sarah, your order ord_A9F2 has shipped and should arrive on August 30. Is there anything else I can help you with?
+```
+
+The caller sees none of this. From your side, the tool is just an HTTP endpoint your CRM already had. The bot invokes it exactly the way your OpenAPI spec described, using the parameter sources you configured when attaching the tool.
+
+## Best practices
+
+1. **Write clear descriptions.** The LLM uses the `description` field to decide when to invoke your tool.
+2. **Define typed parameters.** This helps the LLM extract the right values from the conversation.
+3. **Test before activating.** Verify with the test endpoint first.
+4. **Version your tools.** Each update creates a new version. Activate only tested versions.
+5. **Prefer OpenAPI tools for external APIs.** They are self-documenting and reusable.

@@ -22,8 +22,8 @@ The Users API enables management of users and their associated devices in Exotel
 
 | Data Center | Base URL |
 |------------|----------|
-| Singapore | `https://<api_key>:<api_token>@ccm-api.exotel.com/v2/accounts/<sid>/users` |
-| Mumbai | `https://<api_key>:<api_token>@ccm-api.in.exotel.com/v2/accounts/<sid>/users` |
+| Singapore | `https://ccm-api.exotel.com/v2/accounts/<sid>/users` |
+| Mumbai | `https://ccm-api.in.exotel.com/v2/accounts/<sid>/users` |
 
 ## Authentication
 

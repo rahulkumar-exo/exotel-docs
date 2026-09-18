@@ -105,7 +105,7 @@ After the first day's window ends, update the campaign schedule to resume the ne
 **Step 2:** Update the schedule with new times:
 
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{
     "schedule": {

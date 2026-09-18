@@ -18,7 +18,7 @@ The Campaign Contacts API enables bulk contact management for campaign execution
 | Mumbai | `@api.in.exotel.com` |
 
 ```
-https://<api_key>:<api_token>@<subdomain>/v2/accounts/<account_sid>/contacts
+https://<subdomain>/v2/accounts/<account_sid>/contacts
 ```
 
 ## Authentication

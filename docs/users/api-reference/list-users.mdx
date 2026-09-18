@@ -1,0 +1,213 @@
+---
+id: list-users
+title: List Users
+description: Retrieve a paginated list of users in your Exotel account with optional filtering by email, phone number, and device details.
+sidebar_label: List Users
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+
+# List Users
+
+Retrieve a paginated list of users and their device details in your account. Equivalent to **Bulk Get User & Device Details** in the legacy portal.
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/users" />
+
+## HTTP Request
+
+```
+GET /v2/accounts/<account_sid>/users
+```
+
+### Regional Base URLs
+
+| Region | Base URL |
+|--------|----------|
+| Singapore | `https://ccm-api.exotel.com` |
+| Mumbai | `https://ccm-api.in.exotel.com` |
+
+### Example
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://ccm-api.in.exotel.com/v2/accounts/<account_sid>/users?fields=devices&limit=50' \
+  -H 'Content-Type: application/json'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+response = requests.get(
+    'https://ccm-api.in.exotel.com/v2/accounts/<account_sid>/users',
+    auth=('<api_key>', '<api_token>'),
+    headers={'Content-Type': 'application/json'},
+    params={'fields': 'devices', 'limit': 50}
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<account_sid>';
+
+const url = `https://ccm-api.in.exotel.com/v2/accounts/${accountSid}/users?fields=devices&limit=50`;
+
+const response = await fetch(url, {
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://ccm-api.in.exotel.com/v2/accounts/<account_sid>/users?fields=devices&limit=50",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://ccm-api.in.exotel.com/v2/accounts/<account_sid>/users?fields=devices&limit=50"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+:::info
+This API supports JSON response only. Pass `fields=devices` to include device status in the response.
+:::
+
+## Query Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `fields` | Comma-separated additional fields: `devices`, `active_call`, `last_login` |
+| `devices.contact_uri` | Filter by phone number (E.164 format, URL encoded) |
+| `email` | Filter by email address |
+| `offset` | Pagination start position (default: `0`) |
+| `limit` | Records per page (default: `20`, max: `50`) |
+
+## Response
+
+```json
+{
+  "request_id": "string",
+  "method": "GET",
+  "http_code": 200,
+  "metadata": {
+    "total": 45,
+    "count": 20,
+    "offset": 0,
+    "limit": 20
+  },
+  "response": [
+    {
+      "code": 200,
+      "status": "success",
+      "data": {
+        "id": "user_uuid",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john@example.com",
+        "email_verified": true,
+        "role": "user",
+        "active_call": null,
+        "last_login": "2024-01-15T10:30:00Z",
+        "date_created": "2024-01-01T00:00:00Z",
+        "date_updated": "2024-01-15T10:30:00Z",
+        "devices": [
+          {
+            "id": 1,
+            "name": "Agent Phone",
+            "contact_uri": "+919999999999",
+            "type": "tel",
+            "available": true,
+            "verified": true,
+            "status": "free"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+---
+
+## Get Single User
+
+```
+GET /v2/accounts/<account_sid>/users/<user_id>
+```
+
+Returns the same structure as the list response, but for a single user object.
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v2/accounts/{account_sid}/users"
+  contentType="json"
+  host="ccm"
+  params={[
+    { name: 'fields', required: false, type: 'string', description: 'Comma-separated extra fields', placeholder: 'devices', defaultValue: 'devices' },
+    { name: 'limit', required: false, type: 'number', description: 'Records per page (max 50)', placeholder: '20' },
+    { name: 'offset', required: false, type: 'number', description: 'Pagination start position', placeholder: '0' },
+    { name: 'email', required: false, type: 'string', description: 'Filter by email address', placeholder: 'john@example.com' },
+  ]}
+/>

@@ -8,6 +8,21 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const crypto = require('crypto');
 const { getRelevantChunks } = require('../lib/search');
+const fs = require('fs');
+const path = require('path');
+
+function loadKnowledgeBase() {
+  const candidates = [
+    path.join(process.cwd(), 'static/knowledge-base.json'),
+    path.join(process.cwd(), 'build/knowledge-base.json'),
+  ];
+  for (const file of candidates) {
+    if (fs.existsSync(file)) {
+      return JSON.parse(fs.readFileSync(file, 'utf8'));
+    }
+  }
+  return null;
+}
 
 // ---------------------------------------------------------------------------
 // In-memory answer cache
@@ -132,6 +147,110 @@ async function logSearchQuery(entry) {
 async function logFeedback(entry) {
   const msg = `ai-chat-feedback: ${entry.vote} on "${(entry.question || '').slice(0, 50)}"`;
   return appendToGitHubFile(FEEDBACK_FILE_PATH, entry, msg, 'AI Feedback Logger');
+}
+
+// API-developer keywords — when present in query, boost API reference docs
+// over end-customer support docs. Devs hitting the AI from the dev portal
+// almost always want API/code answers, not general "how does Exotel work" content.
+const DEV_INTENT_KEYWORDS = [
+  'api', 'endpoint', 'request', 'response', 'curl', 'header', 'param',
+  'parameter', 'body', 'json', 'xml', 'auth', 'token', 'sid', 'webhook',
+  'callback', 'sdk', 'integration', 'integrate', 'code', 'example',
+  'http', 'post', 'get', 'put', 'delete', 'method', 'status code',
+  'rate limit', 'webrtc', 'voicebot', 'applet', 'exoml',
+];
+
+function isDevIntent(query) {
+  const q = query.toLowerCase();
+  return DEV_INTENT_KEYWORDS.some((kw) => q.includes(kw));
+}
+
+function isApiReferenceDoc(doc) {
+  const url = (doc.url || '').toLowerCase();
+  return (
+    url.includes('/api-reference/') ||
+    url.includes('/api/') ||
+    url.endsWith('/quickstart') ||
+    url.endsWith('/quickstart.mdx')
+  );
+}
+
+function isEndCustomerSupportDoc(doc) {
+  const url = (doc.url || '').toLowerCase();
+  // /docs/call-support, /docs/sms-support, /docs/whatsapp-support are written
+  // for end-customers (dashboard users), not for API developers
+  return (
+    url.includes('/call-support/') ||
+    url.includes('/sms-support/') ||
+    url.includes('/whatsapp-support/') ||
+    url.includes('/faqs/')
+  );
+}
+
+// Simple text similarity for finding relevant chunks
+function getRelevantChunks(query, documents, topK = 8) {
+  const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
+  const devIntent = isDevIntent(query);
+
+  const scored = documents.map(doc => {
+    const content = (doc.title + ' ' + doc.content + ' ' + doc.product).toLowerCase();
+    let score = 0;
+
+    for (const word of queryWords) {
+      // Exact word match
+      const regex = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+      const matches = content.match(regex);
+      if (matches) {
+        score += matches.length * 2;
+      }
+
+      // Partial match
+      if (content.includes(word)) {
+        score += 1;
+      }
+    }
+
+    // Boost title matches
+    const titleLower = doc.title.toLowerCase();
+    for (const word of queryWords) {
+      if (titleLower.includes(word)) {
+        score += 5;
+      }
+    }
+
+    // Boost product name matches
+    const productLower = doc.product.toLowerCase();
+    for (const word of queryWords) {
+      if (productLower.includes(word)) {
+        score += 3;
+      }
+    }
+
+    // ---- Dev-intent re-ranking ----
+    // When the query has dev keywords (api, endpoint, curl, ...), strongly
+    // prefer API reference docs and de-emphasise end-customer support docs.
+    if (devIntent) {
+      if (isApiReferenceDoc(doc)) {
+        score += 15; // strong boost for API ref pages
+      }
+      if (isEndCustomerSupportDoc(doc)) {
+        score = Math.max(0, score - 8); // demote support/faq pages
+      }
+    } else {
+      // Even without explicit dev keywords, mildly prefer API ref pages on
+      // the dev portal since that's the audience.
+      if (isApiReferenceDoc(doc)) {
+        score += 4;
+      }
+    }
+
+    return { ...doc, score };
+  });
+
+  return scored
+    .filter(doc => doc.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK);
 }
 
 module.exports = async function handler(req, res) {
@@ -307,14 +426,20 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    // Fetch knowledge base from the static file
-    const siteUrl = process.env.SITE_URL || 'https://exotel-docs.vercel.app';
     let knowledgeBase;
     try {
-      const response = await fetch(`${siteUrl}/knowledge-base.json`);
-      knowledgeBase = await response.json();
+      knowledgeBase = loadKnowledgeBase();
     } catch (e) {
       return res.status(500).json({ error: 'Failed to load knowledge base' });
+    }
+    if (!knowledgeBase) {
+      const siteUrl = process.env.SITE_URL || 'https://exotel-docs.vercel.app';
+      try {
+        const response = await fetch(`${siteUrl}/knowledge-base.json`);
+        knowledgeBase = await response.json();
+      } catch (e) {
+        return res.status(500).json({ error: 'Failed to load knowledge base' });
+      }
     }
 
     // Find relevant chunks
@@ -348,9 +473,17 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
       ? `Based on the following Exotel documentation:\n\n${context}\n\n---\n\nUser question: ${question}`
       : `The user is asking about Exotel APIs. I couldn't find specific documentation for their question, but answer based on general knowledge of Exotel if possible.\n\nUser question: ${question}`;
 
-    // Call Gemini — try multiple models with fallback
+    // Production models stay as they are. GEMINI_MODEL in .env.local is local-only.
+    const defaultModels = ['gemini-2.5-flash', 'gemini-3.6-flash', 'gemini-2.5-flash-lite'];
+    const envModels = (process.env.GEMINI_MODEL || '')
+      .split(',')
+      .map((name) => name.trim())
+      .filter(Boolean);
+    const modelsToTry = [...envModels, ...defaultModels].filter(
+      (name, index, list) => list.indexOf(name) === index,
+    );
+
     const genAI = new GoogleGenerativeAI(apiKey);
-    const modelsToTry = ['gemini-2.5-flash', 'gemini-3.6-flash', 'gemini-2.5-flash-lite'];
 
     const chatHistory = history.map(msg => ({
       role: msg.role === 'assistant' ? 'model' : 'user',
@@ -378,11 +511,18 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
         break; // Success — stop trying
       } catch (modelError) {
         console.error(`Model ${modelName} failed:`, modelError.message);
-        // If it's a rate limit error, try next model
-        if (modelError.message && (modelError.message.includes('429') || modelError.message.includes('quota'))) {
+        const msg = modelError.message || '';
+        const tryNext =
+          modelError.status === 404 ||
+          modelError.status === 429 ||
+          msg.includes('429') ||
+          msg.includes('404') ||
+          msg.includes('quota') ||
+          msg.includes('Not Found') ||
+          msg.includes('no longer available');
+        if (tryNext) {
           continue;
         }
-        // For non-rate-limit errors, throw immediately
         throw modelError;
       }
     }

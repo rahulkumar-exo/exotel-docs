@@ -30,7 +30,7 @@ Before going live, thoroughly test your Exotel setup to ensure calls route corre
 Before testing any feature, confirm your credentials work:
 
 ```bash
-curl -v "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls?limit=1"
+curl -u '<api_key>:<api_token>' -v "https://api.exotel.com/v2/accounts/<account_sid>/calls?limit=1"
 ```
 
 **Expected result:** HTTP 200 with a JSON response.
@@ -44,7 +44,7 @@ If you get HTTP 401, verify your credentials in **Dashboard > Settings > API Set
 Place a call from your ExoPhone to your own mobile number:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls/connect" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/calls/connect" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876543210",
@@ -106,7 +106,7 @@ Test each path through your IVR flow, including edge cases like invalid inputs a
 ### Send a Test SMS
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms/send" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/sms/send" \
   -H "Content-Type: application/json" \
   -d '{
     "to": "+919876543210",
@@ -158,7 +158,7 @@ Use a webhook inspection tool to capture and examine payloads:
 Make an API call with a webhook URL:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls/connect" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/calls/connect" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876543210",

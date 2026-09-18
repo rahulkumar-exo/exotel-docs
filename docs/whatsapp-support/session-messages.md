@@ -63,7 +63,7 @@ The 24-hour window resets every time the customer sends a message. If a customer
 ### Text Message
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",
@@ -80,7 +80,7 @@ curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<accou
 ### Image Message
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",
@@ -98,7 +98,7 @@ curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<accou
 ### Interactive Reply Buttons
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",

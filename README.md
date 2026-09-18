@@ -16,6 +16,23 @@ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
+### Ask AI (local)
+
+Create `.env.local` in the repo root and set your key:
+
+```bash
+printf 'GEMINI_API_KEY=<your_key>\n' > .env.local
+```
+
+Then build the knowledge base and start the site:
+
+```bash
+node scripts/build-knowledge-base.js
+yarn start
+```
+
+Do not commit `.env.local`. `GEMINI_MODEL` is optional and local-only. Do not set it in production.
+
 ## Build
 
 ```bash
@@ -26,16 +43,7 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
-Using SSH:
+A merge to `main` builds the site and deploys it to Vercel.
 
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- Production: https://developer.exotel.com
+- Origin: https://exotel-docs.vercel.app

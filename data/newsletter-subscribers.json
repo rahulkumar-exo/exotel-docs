@@ -136,5 +136,10 @@
     "email": "testing@example.com����%2527%2522\\'\\\"",
     "subscribedAt": "2026-08-06T02:09:33.998Z",
     "unsubscribeToken": "7e61bd82-b732-4e29-805e-08be0cc4fc4b"
+  },
+  {
+    "email": "shivakanttripathi@exotel.com",
+    "subscribedAt": "2026-09-02T14:19:15.141Z",
+    "unsubscribeToken": "b6330b87-0fa9-40d2-b30b-f77aa38f75cc"
   }
 ]

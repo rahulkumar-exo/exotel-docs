@@ -1,7 +1,7 @@
 ---
 id: overview
 title: FAQs
-description: "Frequently asked questions about Exotel APIs, integration, billing, and troubleshooting."
+description: "Frequently asked questions about Exotel APIs, integration, and troubleshooting."
 sidebar_label: FAQs
 slug: /faqs/overview
 ---

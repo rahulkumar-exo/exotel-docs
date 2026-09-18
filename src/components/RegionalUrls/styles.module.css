@@ -71,3 +71,10 @@
 .copy:hover {
   background: #8429e0;
 }
+
+.authHint {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #5b5168;
+}

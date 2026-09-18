@@ -1,0 +1,497 @@
+---
+id: templates
+title: Template Messages
+description: Send pre-approved WhatsApp message templates with dynamic parameters using the Exotel API. Includes text, media, and interactive templates.
+sidebar_label: Templates
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Template Messages
+
+Send pre-approved WhatsApp message templates with dynamic parameter substitution. Templates must be approved in the WhatsApp Business Manager before use.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/messages" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/messages" host="api" />
+
+## Template Content Object
+
+```json
+{
+  "from": "+919876500001",
+  "to": "+919876543210",
+  "content": {
+    "recipient_type": "individual",
+    "type": "template",
+    "template": {
+      "name": "order_confirmation",
+      "language": {
+        "code": "en",
+        "policy": "deterministic"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            { "type": "text", "text": "Rahul" },
+            { "type": "text", "text": "#ORD-12345" },
+            { "type": "text", "text": "Feb 10, 2024" }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+## Template Parameters
+
+| Field                        | Required  | Description |
+|------------------------------|-----------|-------------|
+| `template.name`              | Mandatory | Approved template name |
+| `template.language.code`     | Mandatory | Language code (e.g., `en`, `hi`, `ta`) |
+| `template.language.policy`   | Mandatory | `deterministic` (recommended) |
+| `template.components`        | Optional  | Array of component objects for dynamic values |
+
+### Component Types
+
+| Type     | Description |
+|----------|-------------|
+| `header` | Template header parameters (text, image, video, document) |
+| `body`   | Template body text parameters |
+| `button` | Button parameters (URL suffix, quick reply payload) |
+
+### Parameter Types
+
+| Type       | Fields | Description |
+|------------|--------|-------------|
+| `text`     | `text` | Dynamic text value |
+| `image`    | `link` | Image URL for header |
+| `video`    | `link` | Video URL for header |
+| `document` | `link`, `filename` | Document URL for header |
+
+## Example: Template with Header Image
+
+```json
+{
+  "from": "+919876500001",
+  "to": "+919876543210",
+  "content": {
+    "recipient_type": "individual",
+    "type": "template",
+    "template": {
+      "name": "promo_with_image",
+      "language": { "code": "en", "policy": "deterministic" },
+      "components": [
+        {
+          "type": "header",
+          "parameters": [
+            { "type": "image", "image": { "link": "https://example.com/promo.jpg" } }
+          ]
+        },
+        {
+          "type": "body",
+          "parameters": [
+            { "type": "text", "text": "50%" },
+            { "type": "text", "text": "Feb 28" }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+## Send Carousel Template
+
+A carousel template sends up to 10 horizontally scrollable cards. Each card has a media header, body text, and 1–2 buttons. Use component `type: "CAROUSEL"` with a `cards` array; each card uses `card_index` (zero-based).
+
+```json
+{
+  "from": "+919876500001",
+  "to": "+919876543210",
+  "content": {
+    "recipient_type": "individual",
+    "type": "template",
+    "template": {
+      "name": "carousel_content",
+      "language": { "code": "en" },
+      "components": [
+        {
+          "type": "BODY",
+          "parameters": [{ "type": "TEXT", "text": "20OFF" }]
+        },
+        {
+          "type": "CAROUSEL",
+          "cards": [
+            {
+              "card_index": 0,
+              "components": [
+                {
+                  "type": "HEADER",
+                  "parameters": [{ "type": "IMAGE", "image": { "link": "https://example.com/card1.jpg" } }]
+                },
+                {
+                  "type": "BODY",
+                  "parameters": [{ "type": "TEXT", "text": "10OFF" }]
+                },
+                {
+                  "type": "BUTTON",
+                  "sub_type": "QUICK_REPLY",
+                  "index": "0",
+                  "parameters": [{ "type": "PAYLOAD", "payload": "CARD1_QR" }]
+                },
+                {
+                  "type": "button",
+                  "sub_type": "URL",
+                  "index": "1",
+                  "parameters": [{ "type": "payload", "payload": "summer_2024" }]
+                }
+              ]
+            },
+            {
+              "card_index": 1,
+              "components": [
+                {
+                  "type": "HEADER",
+                  "parameters": [{ "type": "IMAGE", "image": { "link": "https://example.com/card2.jpg" } }]
+                },
+                {
+                  "type": "BODY",
+                  "parameters": [{ "type": "TEXT", "text": "30OFF" }]
+                },
+                {
+                  "type": "BUTTON",
+                  "sub_type": "QUICK_REPLY",
+                  "index": "0",
+                  "parameters": [{ "type": "PAYLOAD", "payload": "CARD2_QR" }]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+## Send Limited-Time Offer (LTO) Template
+
+LTO templates display an expiration countdown for offer codes. Use the `limited_time_offer` component type with `expiration_time_ms` (UNIX timestamp in milliseconds), a `copy_code` button, and optionally a URL button.
+
+```json
+{
+  "from": "+919876500001",
+  "to": "+919876543210",
+  "content": {
+    "recipient_type": "individual",
+    "type": "template",
+    "template": {
+      "name": "lto_summer_sale",
+      "language": { "code": "en" },
+      "components": [
+        {
+          "type": "header",
+          "parameters": [{ "type": "image", "image": { "link": "https://example.com/sale.jpg" } }]
+        },
+        {
+          "type": "body",
+          "parameters": [
+            { "type": "text", "text": "Rahul" },
+            { "type": "text", "text": "SALE25" }
+          ]
+        },
+        {
+          "type": "limited_time_offer",
+          "parameters": [
+            {
+              "type": "limited_time_offer",
+              "limited_time_offer": { "expiration_time_ms": 1716261112000 }
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "sub_type": "copy_code",
+          "index": "0",
+          "parameters": [{ "type": "coupon_code", "coupon_code": "SALE25" }]
+        },
+        {
+          "type": "button",
+          "sub_type": "url",
+          "index": "1",
+          "parameters": [{ "type": "text", "text": "summer" }]
+        }
+      ]
+    }
+  }
+}
+```
+
+## Send Authentication Template
+
+Authentication templates send OTPs/verification codes. The body text is fixed (`<CODE> is your verification code.`). Supported button sub-types:
+
+| Button type | `sub_type` | Notes |
+|---|---|---|
+| Copy code | `url` with OTP button | User copies code manually |
+| One-tap autofill | `url` with OTP button | Android only; auto-fills the OTP |
+| Zero-tap | No button | App captures OTP via broadcast receiver (Android) |
+
+```json
+{
+  "from": "+919876500001",
+  "to": "+919876543210",
+  "content": {
+    "recipient_type": "individual",
+    "type": "template",
+    "template": {
+      "name": "authentication_template_name",
+      "language": { "code": "en" },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [{ "type": "text", "text": "123456" }]
+        },
+        {
+          "type": "button",
+          "sub_type": "url",
+          "index": "0",
+          "parameters": [{ "type": "text", "text": "123456" }]
+        }
+      ]
+    }
+  }
+}
+```
+
+:::note
+The OTP code must appear twice — once in the body parameters and once in the button parameters.
+:::
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<sid>/messages" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "from": "+919876500001",
+    "to": "+919876543210",
+    "content": {
+      "recipient_type": "individual",
+      "type": "template",
+      "template": {
+        "name": "order_confirmation",
+        "language": { "code": "en", "policy": "deterministic" },
+        "components": [{
+          "type": "body",
+          "parameters": [
+            { "type": "text", "text": "Rahul" },
+            { "type": "text", "text": "#ORD-12345" }
+          ]
+        }]
+      }
+    }
+  }'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+import json
+
+payload = {
+    "from": "+919876500001",
+    "to": "+919876543210",
+    "content": {
+        "recipient_type": "individual",
+        "type": "template",
+        "template": {
+            "name": "order_confirmation",
+            "language": {"code": "en", "policy": "deterministic"},
+            "components": [{
+                "type": "body",
+                "parameters": [
+                    {"type": "text", "text": "Rahul"},
+                    {"type": "text", "text": "#ORD-12345"},
+                ],
+            }],
+        },
+    },
+}
+
+response = requests.post(
+    'https://api.exotel.com/v2/accounts/<sid>/messages',
+    auth=('<api_key>', '<api_token>'),
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps(payload)
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<sid>';
+
+const url = `https://api.exotel.com/v2/accounts/${accountSid}/messages`;
+
+const payload = {
+  from: '+919876500001',
+  to: '+919876543210',
+  content: {
+    recipient_type: 'individual',
+    type: 'template',
+    template: {
+      name: 'order_confirmation',
+      language: { code: 'en', policy: 'deterministic' },
+      components: [{
+        type: 'body',
+        parameters: [
+          { type: 'text', text: 'Rahul' },
+          { type: 'text', text: '#ORD-12345' },
+        ],
+      }],
+    },
+  },
+};
+
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$payload = json_encode(array(
+  "from" => "+919876500001",
+  "to" => "+919876543210",
+  "content" => array(
+    "recipient_type" => "individual",
+    "type" => "template",
+    "template" => array(
+      "name" => "order_confirmation",
+      "language" => array("code" => "en", "policy" => "deterministic"),
+      "components" => array(
+        array(
+          "type" => "body",
+          "parameters" => array(
+            array("type" => "text", "text" => "Rahul"),
+            array("type" => "text", "text" => "#ORD-12345")
+          )
+        )
+      )
+    )
+  )
+));
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://api.exotel.com/v2/accounts/<sid>/messages",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => $payload,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    url := "https://api.exotel.com/v2/accounts/<sid>/messages"
+    payload := strings.NewReader(`{
+    "from": "+919876500001",
+    "to": "+919876543210",
+    "content": {
+      "recipient_type": "individual",
+      "type": "template",
+      "template": {
+        "name": "order_confirmation",
+        "language": { "code": "en", "policy": "deterministic" },
+        "components": [{
+          "type": "body",
+          "parameters": [
+            { "type": "text", "text": "Rahul" },
+            { "type": "text", "text": "#ORD-12345" }
+          ]
+        }]
+      }
+    }
+  }`)
+
+    req, _ := http.NewRequest("POST", url, payload)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+Templates must be approved by Meta before they can be used. Unapproved templates will result in a 400 error. Create and manage templates in the [WhatsApp Business Manager](https://business.facebook.com/wa/manage/message-templates/).
+:::
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/messages"
+  contentType="json"
+  params={[
+    { name: 'from', required: true, type: 'string', description: 'WhatsApp-enabled number (E.164)', placeholder: '+919876500001' },
+    { name: 'to', required: true, type: 'string', description: 'Recipient phone number (E.164)', placeholder: '+919876543210' },
+    { name: 'content', required: true, type: 'string', description: 'Template content object (JSON)', placeholder: '{"recipient_type":"individual","type":"template","template":{"name":"order_confirmation","language":{"code":"en","policy":"deterministic"},"components":[{"type":"body","parameters":[{"type":"text","text":"Rahul"}]}]}}' },
+  ]}
+/>

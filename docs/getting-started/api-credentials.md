@@ -39,23 +39,11 @@ Exotel APIs use HTTP Basic Authentication. Include your API Key and API Token in
 
 ### cURL Format
 
-```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls"
-```
-
-**Concrete example:**
+Use HTTP Basic Auth. cURL `-u` sets the `Authorization` header.
 
 ```bash
-curl "https://2b04c2XXXXXXXXXX:a1b2c3d4XXXXXXXX@api.exotel.com/v2/accounts/exotel/calls"
-```
-
-### Authorization Header Format
-
-Alternatively, use the `Authorization` header with Base64-encoded credentials:
-
-```bash
-curl "https://api.exotel.com/v2/accounts/<account_sid>/calls" \
-  -H "Authorization: Basic $(echo -n '<api_key>:<api_token>' | base64)"
+curl -u '<api_key>:<api_token>' \
+  "https://api.exotel.com/v2/accounts/<account_sid>/calls"
 ```
 
 ### API Endpoint by Region
@@ -74,7 +62,7 @@ Use the correct API base URL for your account region. Requests to the wrong regi
 Verify your credentials work by making a simple API call:
 
 ```bash
-curl -v "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/calls?limit=1"
+curl -u '<api_key>:<api_token>' -v "https://api.exotel.com/v2/accounts/<account_sid>/calls?limit=1"
 ```
 
 | Response | Meaning |

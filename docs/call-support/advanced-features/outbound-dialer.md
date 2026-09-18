@@ -98,7 +98,7 @@ phone_number,name,amount_due,due_date
 #### Via API
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "January_Payment_Reminders",
@@ -198,7 +198,7 @@ The campaign dashboard shows:
 You can add more phone numbers to an active campaign:
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Campaigns/<campaign_id>/Numbers' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns/<campaign_id>/Numbers' \
   -d 'Numbers=+919876543213,+919876543214'
 ```
 

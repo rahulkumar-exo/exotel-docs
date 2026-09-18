@@ -213,7 +213,7 @@ Register your flow using the WhatsApp Flows API or Meta Business Manager:
 Trigger a flow by sending a flow message to the customer:
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/messages" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.in.exotel.com/v2/accounts/<account_sid>/messages" \
   -H "Content-Type: application/json" \
   -d '{
     "from": "+919876500001",

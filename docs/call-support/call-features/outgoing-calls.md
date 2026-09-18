@@ -56,7 +56,7 @@ Exotel calls your agent number first. When you answer, it calls the customer.
 Integrate click-to-call into your CRM, helpdesk, or custom application using the [Connect Two Numbers API](/docs/voice-v1/api-reference/connect-two-numbers):
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<agent_number>' \
   -d 'To=<customer_number>' \
   -d 'CallerId=<exophone>' \
@@ -94,7 +94,7 @@ curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_
 Call a customer and connect them to an IVR flow instead of a live agent. Useful for automated reminders, surveys, and verifications.
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<customer_number>' \
   -d 'CallerId=<exophone>' \
   -d 'Url=http://my.exotel.com/exoml/start/<app_id>'
@@ -126,7 +126,7 @@ For calling large lists of numbers, use the [Campaigns API](/docs/campaigns/over
 
 ```bash
 # Create a campaign via API
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
   -d 'Name=January_Sales_Outreach' \
   -d 'CallFlowId=<flow_id>' \
   -d 'Numbers=+919876543210,+919876543211,+919876543212' \

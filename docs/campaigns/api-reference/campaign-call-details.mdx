@@ -1,0 +1,184 @@
+---
+id: campaign-call-details
+title: Campaign Call Details
+description: Retrieve individual call records for a specific Exotel campaign. Filter by status, paginate results, and sort call details using the Campaign API.
+sidebar_label: Call Details
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Campaign Call Details
+
+Retrieve individual call records for a specific campaign.
+
+<TryItBanner method="GET" endpoint="/v2/accounts/{account_sid}/campaigns/{campaign_id}/call-details" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/campaigns/{campaign_id}/call-details" host="api" />
+
+## Query Parameters
+
+| Parameter | Type    | Default | Description |
+|-----------|---------|---------|-------------|
+| `offset`  | Integer | 0       | Zero-based record position |
+| `limit`   | Integer | 20      | Records per page |
+| `status`  | String  | —       | Filter: `completed`, `failed`, `busy`, `no-answer` |
+| `sort_by` | String  | —       | `date_created:asc` or `date_created:desc` |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<sid>/campaigns/<campaign_id>/call-details?limit=50&status=completed"
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+response = requests.get(
+    'https://api.exotel.com/v2/accounts/<sid>/campaigns/<campaign_id>/call-details',
+    auth=('<api_key>', '<api_token>'),
+    params={'limit': 50, 'status': 'completed'}
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<sid>';
+const campaignId = '<campaign_id>';
+
+const url = `https://api.exotel.com/v2/accounts/${accountSid}/campaigns/${campaignId}/call-details?limit=50&status=completed`;
+
+const response = await fetch(url, {
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://api.exotel.com/v2/accounts/<sid>/campaigns/<campaign_id>/call-details?limit=50&status=completed",
+  CURLOPT_RETURNTRANSFER => true,
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://api.exotel.com/v2/accounts/<sid>/campaigns/<campaign_id>/call-details?limit=50&status=completed"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+```json
+{
+  "request_id": "req_abc123",
+  "http_code": 200,
+  "metadata": {
+    "count": 3,
+    "offset": 0,
+    "total": 150,
+    "limit": 50
+  },
+  "response": [
+    {
+      "number": "+919876543210",
+      "name": "Rahul Kumar",
+      "duration": 45,
+      "date_created": "2024-01-15T09:05:00+05:30",
+      "status": "completed",
+      "digit": "1",
+      "recording_url": "https://s3.amazonaws.com/...",
+      "start_time": "2024-01-15T09:05:02+05:30",
+      "end_time": "2024-01-15T09:05:47+05:30",
+      "caller_id": "0XXXXXX4890",
+      "direction": "Outgoing",
+      "call_sid": "call_abc123"
+    }
+  ]
+}
+```
+
+## Response Fields
+
+| Field          | Type    | Description |
+|----------------|---------|-------------|
+| `number`       | String  | Recipient phone number |
+| `name`         | String  | Contact name (if available from list) |
+| `duration`     | Integer | Call duration in seconds |
+| `date_created` | String  | When the call was initiated |
+| `status`       | String  | `completed`, `failed`, `busy`, `no-answer` |
+| `digit`        | String  | DTMF digit pressed during IVR (if applicable) |
+| `recording_url`| String  | Call recording URL |
+| `start_time`   | String  | When the call started ringing |
+| `end_time`     | String  | When the call ended |
+| `caller_id`    | String  | ExoPhone used |
+| `direction`    | String  | `Outgoing` |
+| `call_sid`     | String  | Unique call identifier |
+
+## Try It
+
+<ApiConsole
+  method="GET"
+  path="/v2/accounts/{account_sid}/campaigns/{campaign_id}/call-details"
+  params={[
+    { name: 'campaign_id', required: true, type: 'string', description: 'Campaign identifier', placeholder: 'camp_abc123' },
+    { name: 'limit', required: false, type: 'number', description: 'Records per page', placeholder: '50' },
+    { name: 'status', required: false, type: 'select', description: 'Filter by call status', options: ['completed', 'failed', 'busy', 'no-answer'] },
+  ]}
+/>

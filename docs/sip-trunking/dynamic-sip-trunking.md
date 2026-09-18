@@ -80,8 +80,8 @@ POST /v2/accounts/{account_sid}/trunks
 | `domain_name` | Yes | `{account_sid}.pstn.exotel.com` |
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks' \
   -H 'Content-Type: application/json' \
   -d '{
     "trunk_name": "outbound_trunk",
@@ -119,8 +119,8 @@ POST /v2/accounts/{account_sid}/trunks/{trunk_sid}/phone_numbers
 | `mode` | No | `pstn` (default) or `flow` (Voice AI) |
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/phone_numbers' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/phone_numbers' \
   -H 'Content-Type: application/json' \
   -d '{
     "phone_number": "+919876543210",
@@ -157,8 +157,8 @@ POST /v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted_ips
 | `mask` | No | CIDR subnet mask (default: `32`) |
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/whitelisted_ips' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/whitelisted_ips' \
   -H 'Content-Type: application/json' \
   -d '{
     "ip": "44.248.146.11",
@@ -193,8 +193,8 @@ POST /v2/accounts/{account_sid}/trunks/{trunk_sid}/destination_uris
 
 ```bash
 # IP-based
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/destination_uris' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/destination_uris' \
   -H 'Content-Type: application/json' \
   -d '{
     "destinations": [
@@ -205,8 +205,8 @@ curl -X POST \
 
 ```bash
 # FQDN-based
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/destination_uris' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/destination_uris' \
   -H 'Content-Type: application/json' \
   -d '{
     "destinations": [
@@ -243,8 +243,8 @@ POST /v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials
 | `friendly_name` | No | Label, max 32 chars |
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/credentials' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/credentials' \
   -H 'Content-Type: application/json' \
   -d '{
     "user_name": "voice_ai_user",
@@ -256,14 +256,14 @@ curl -X POST \
 **List credentials**
 
 ```bash
-curl 'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/credentials'
+curl -u '<api_key>:<api_token>' 'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/credentials'
 ```
 
 **Delete credentials**
 
 ```bash
-curl -X DELETE \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/credentials?id=<credential_id>'
+curl -u '<api_key>:<api_token>' -X DELETE \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/credentials?id=<credential_id>'
 ```
 
 ---
@@ -277,8 +277,8 @@ PUT /v2/accounts/{account_sid}/trunks/{trunk_sid}/phone_numbers/{phone_number_id
 ```
 
 ```bash
-curl -X PUT \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/phone_numbers/41523' \
+curl -u '<api_key>:<api_token>' -X PUT \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/phone_numbers/41523' \
   -H 'Content-Type: application/json' \
   -d '{
     "phone_number": "+919876543210",
@@ -301,8 +301,8 @@ POST /v2/accounts/{account_sid}/trunks/{trunk_sid}/settings
 ```
 
 ```bash
-curl -X POST \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/settings' \
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks/<trunk_sid>/settings' \
   -H 'Content-Type: application/json' \
   -d '{
     "settings": [
@@ -320,8 +320,8 @@ DELETE /v2/accounts/{account_sid}/trunks?trunk_sid={trunk_sid}
 ```
 
 ```bash
-curl -X DELETE \
-  'https://<api_key>:<api_token>@api.in.exotel.com/v2/accounts/<account_sid>/trunks?trunk_sid=<trunk_sid>'
+curl -u '<api_key>:<api_token>' -X DELETE \
+  'https://api.in.exotel.com/v2/accounts/<account_sid>/trunks?trunk_sid=<trunk_sid>'
 ```
 
 :::warning

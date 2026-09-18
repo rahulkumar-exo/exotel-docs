@@ -54,7 +54,7 @@ Unlike agent-assisted calls, automated calls do not involve a human agent. The e
 Use the [Connect to Flow API](/docs/voice-v1/api-reference/connect-to-flow) to call a single number and connect them to an IVR flow:
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
   -d 'From=<customer_number>' \
   -d 'CallerId=<exophone>' \
   -d 'Url=http://my.exotel.com/exoml/start/<app_id>' \
@@ -77,7 +77,7 @@ curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_
 For calling large lists, use the [Campaigns API](/docs/campaigns/overview):
 
 ```bash
-curl -X POST 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "Appointment_Reminders_Jan20",

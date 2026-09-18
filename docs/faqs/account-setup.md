@@ -174,5 +174,4 @@ Account deletion is permanent and irreversible. All data including call logs, re
 
 - [Authentication & Security](/docs/references/authentication) -- API credentials and authentication setup
 - [Users API](/docs/users/overview) -- Manage account users programmatically
-- [Billing FAQs](/docs/faqs/billing-faqs) -- Billing cycles, invoices, and payment questions
 - [Pricing & Plans](/docs/faqs/pricing-plans) -- Plan comparison and pricing details

@@ -1,0 +1,288 @@
+---
+id: make-a-call
+title: Connect Agent to Customer
+description: Initiate an outbound agent-to-customer call using the Exotel Voice v3 (CCM) API. The agent is called first, then connected to the customer.
+sidebar_label: Connect Agent to Customer
+sidebar_position: 1
+displayed_sidebar: voiceSidebar
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Connect Agent to Customer
+
+Initiate an outbound call connecting an agent (user) to a customer. The agent is called first on their configured device (phone/SIP), then the customer is dialed.
+
+<TryItBanner method="POST" endpoint="/v3/accounts/{account_sid}/calls" />
+
+:::info
+This is a **CCM** (Contact Center Management) API. Use it if you run contact center operations on `my*.exotel.com`. Agents must be added as co-workers in the dashboard and their device must be ON. For calls that connect two phone numbers, see [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers).
+:::
+
+<RegionalUrls path="/v3/accounts/{account_sid}/calls" host="ccm" />
+
+## Request Body (JSON)
+
+```json
+{
+  "from": {
+    "user_contact_uri": "sip:agent@exotel.com"
+  },
+  "to": {
+    "number": "+919876543210"
+  },
+  "virtual_number": "+911234567890",
+  "recording": true,
+  "recording_channels": "dual",
+  "custom_field": "ticket_12345",
+  "status_callback": [
+    {
+      "event": "terminal",
+      "url": "https://your-server.com/webhook/call-status"
+    },
+    {
+      "event": "answered",
+      "url": "https://your-server.com/webhook/call-answered"
+    }
+  ]
+}
+```
+
+## Request Parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `from` | Yes | Object | Agent identifier. Use `user_contact_uri` (SIP URI) or `user_id` (UUID from dashboard). |
+| `to` | Yes | Object | Customer phone number in E.164 format: `{"number": "+91XXXXXXXXXX"}` |
+| `virtual_number` | Yes | String | ExoPhone in E.164 format. |
+| `recording` | No | Boolean | Enable call recording. Default: `false`. |
+| `recording_channels` | No | String | `single` (mixed) or `dual` (separate agent/customer). |
+| `wait_audio_url` | No | String | Audio URL (WAV) played to agent while customer is being dialed. Recommended: under 2MB. |
+| `max_time_limit` | No | Integer | Maximum call duration in seconds. |
+| `attempt_time_out` | No | Integer | Time in seconds to ring the called parties (both the agent and customer legs). The timer runs only during ringing and stops once each leg is answered. |
+| `custom_field` | No | String | Application-specific metadata. |
+| `status_callback` | No | Array | Webhook event configurations (see above). |
+
+### From Object Options
+
+```json
+// Option 1: By SIP URI
+{ "user_contact_uri": "sip:agent@exotel.com" }
+
+// Option 2: By user ID
+{ "user_id": "agent-uuid-from-dashboard" }
+
+// Option 3: By phone number
+{ "user_contact_uri": "+919999999999" }
+```
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST 'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "from": {"user_contact_uri": "sip:agent@exotel.com"},
+    "to": {"number": "+919876543210"},
+    "virtual_number": "+911234567890",
+    "recording": true,
+    "status_callback": [{"event": "terminal", "url": "https://your-server.com/webhook"}]
+  }'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+import json
+
+url = "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls"
+
+payload = {
+    "from": {"user_contact_uri": "sip:agent@exotel.com"},
+    "to": {"number": "+919876543210"},
+    "virtual_number": "+911234567890",
+    "recording": True,
+    "status_callback": [
+        {"event": "terminal", "url": "https://your-server.com/webhook"}
+    ]
+}
+
+response = requests.post(
+    url,
+    auth=("<api_key>", "<api_token>"),
+    headers={"Content-Type": "application/json"},
+    data=json.dumps(payload)
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+const accountSid = '<account_sid>';
+
+const url = `https://ccm-api.exotel.com/v3/accounts/${accountSid}/calls`;
+
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    from: { user_contact_uri: 'sip:agent@exotel.com' },
+    to: { number: '+919876543210' },
+    virtual_number: '+911234567890',
+    recording: true,
+    status_callback: [
+      { event: 'terminal', url: 'https://your-server.com/webhook' }
+    ]
+  }),
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$payload = json_encode(array(
+  "from" => array("user_contact_uri" => "sip:agent@exotel.com"),
+  "to" => array("number" => "+919876543210"),
+  "virtual_number" => "+911234567890",
+  "recording" => true,
+  "status_callback" => array(
+    array("event" => "terminal", "url" => "https://your-server.com/webhook")
+  )
+));
+
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => $payload,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    url := "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls"
+    payload := strings.NewReader(`{
+      "from": {"user_contact_uri": "sip:agent@exotel.com"},
+      "to": {"number": "+919876543210"},
+      "virtual_number": "+911234567890",
+      "recording": true,
+      "status_callback": [{"event": "terminal", "url": "https://your-server.com/webhook"}]
+    }`)
+
+    req, _ := http.NewRequest("POST", url, payload)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+```json
+{
+  "request_id": "req_abc123",
+  "method": "POST",
+  "http_code": 200,
+  "response": {
+    "call_sid": "unique_call_identifier",
+    "call_state": "active",
+    "call_status": null,
+    "assigned_agent_details": {
+      "user_id": "agent-uuid",
+      "contact_uri": "sip:agent@exotel.com"
+    },
+    "customer_details": {
+      "number": "+919876543210"
+    },
+    "virtual_number": "+911234567890",
+    "recording": true,
+    "created_time": "2024-06-15T10:30:00.000Z"
+  }
+}
+```
+
+:::note
+HTTP 200 is **not** a confirmation of successful call placement. Use the StatusCallback webhook or [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) to check actual call status.
+:::
+
+## Error Responses
+
+| HTTP Code | Error Code | Description |
+|-----------|-----------|-------------|
+| `401` | `1010` | Authentication failed — check API key/token |
+| `404` | `10731` | User not found — agent must be added in dashboard |
+| `409` | `1012` | User device unavailable — device is OFF |
+| `409` | `10705` | User device unverified |
+| `409` | `10706` | User device busy — agent is on another call |
+| `404` | `10716` | Virtual number not found — check ExoPhone |
+| `500` | `1100` | Internal Server Error |
+
+## Try It
+
+<ApiConsole
+  method="POST"
+  path="/v3/accounts/{account_sid}/calls"
+  contentType="json"
+  host="ccm"
+  params={[
+    { name: 'from', required: true, type: 'string', description: 'Agent identifier object (JSON). E.g. {"user_contact_uri":"sip:agent@exotel.com"}', placeholder: '{"user_contact_uri":"sip:agent@exotel.com"}' },
+    { name: 'to', required: true, type: 'string', description: 'Customer phone number object (JSON). E.g. {"number":"+919876543210"}', placeholder: '{"number":"+919876543210"}' },
+    { name: 'virtual_number', required: true, type: 'string', description: 'ExoPhone in E.164 format', placeholder: '+911234567890' },
+    { name: 'recording', required: false, type: 'boolean', description: 'Enable call recording (default: false)' },
+    { name: 'recording_channels', required: false, type: 'string', description: 'single (mixed) or dual (separate)', placeholder: 'dual' },
+    { name: 'max_time_limit', required: false, type: 'number', description: 'Maximum call duration in seconds', placeholder: '300' },
+    { name: 'attempt_time_out', required: false, type: 'number', description: 'Seconds to ring both agent and customer legs before treating as unanswered. Stops once each leg is answered.', placeholder: '30' },
+    { name: 'custom_field', required: false, type: 'string', description: 'Application-specific metadata', placeholder: 'ticket_12345' },
+  ]}
+/>

@@ -6,13 +6,13 @@ const sidebars: SidebarsConfig = {
     'voice-v1/quickstart',
     {
       type: 'category',
-      label: 'API reference',
+      label: 'API Reference',
       collapsed: false,
       items: [
         'voice-v1/api-reference/connect-two-numbers',
         {
           type: 'doc',
-          id: 'voice-api/api-reference/make-a-call',
+          id: 'voice-v3/api-reference/make-a-call',
           label: 'Connect Agent to Customer',
         },
         {
@@ -87,6 +87,7 @@ const sidebars: SidebarsConfig = {
         'whatsapp-api/api-reference/bulk-messages',
         'whatsapp-api/api-reference/payment-messages',
         'whatsapp-api/api-reference/flows',
+        'whatsapp-api/api-reference/template-flows',
         'whatsapp-api/api-reference/status-codes',
       ],
     },
@@ -354,6 +355,10 @@ const sidebars: SidebarsConfig = {
 
   mcpServerSidebar: [
     'mcp-server/overview',
+    'mcp-server/use-cases',
+    'mcp-server/tools-reference',
+    'mcp-server/security',
+    'mcp-server/troubleshooting',
   ],
 
   useCasesSidebar: [
@@ -377,7 +382,6 @@ const sidebars: SidebarsConfig = {
         'faqs/pricing-plans',
         'faqs/number-types',
         'faqs/security-compliance',
-        'faqs/billing-faqs',
         'faqs/troubleshooting',
       ],
     },
@@ -643,18 +647,6 @@ const sidebars: SidebarsConfig = {
     'getting-started/team-management',
     'getting-started/api-credentials',
     'getting-started/testing-guide',
-  ],
-
-  billingSidebar: [
-    'billing/overview',
-    'billing/pricing-model',
-    'billing/plans-comparison',
-    'billing/add-credits',
-    'billing/usage-tracking',
-    'billing/invoices',
-    'billing/refund-policy',
-    'billing/enterprise-billing',
-    'billing/international-rates',
   ],
 
   reportingSidebar: [

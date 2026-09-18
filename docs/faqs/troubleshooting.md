@@ -75,7 +75,7 @@ HTTP 401 indicates an authentication failure. Check:
 2. **Encoding** -- If using the Authorization header, ensure credentials are properly Base64-encoded
 3. **Regional endpoint** -- Use the correct subdomain for your account region (`api.exotel.com` or `api.in.exotel.com`)
 4. **Account status** -- Suspended or deactivated accounts return 401
-5. **Special characters** -- If your API key or token contains special characters, ensure they are properly URL-encoded when embedded in the URL
+5. **Special characters** -- If you build the `Authorization` header yourself, Base64-encode the raw `api_key:api_token` string. Do not put credentials in the URL.
 
 ```bash
 # Verify credentials with verbose output

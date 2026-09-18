@@ -13,7 +13,7 @@ Create, retrieve, edit, and delete message templates for your WhatsApp Business 
 ## Base URL
 
 ```
-https://<api_key>:<api_token>@<subdomain>/v2/accounts/<account_sid>/templates
+https://<subdomain>/v2/accounts/<account_sid>/templates
 ```
 
 ## Supported Template Types

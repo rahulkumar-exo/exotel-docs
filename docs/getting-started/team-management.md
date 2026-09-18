@@ -60,7 +60,7 @@ Exotel provides three primary roles with different access levels:
 ### Via API
 
 ```bash
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/users" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/users" \
   -H "Content-Type: application/json" \
   -d '{
     "first_name": "Rahul",
@@ -134,7 +134,7 @@ An agent can have multiple devices configured with fallback priority:
 ### Updating User Details
 
 ```bash
-curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/users/<user_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/users/<user_id>" \
   -H "Content-Type: application/json" \
   -d '{
     "phone": "+919876543211",
@@ -145,13 +145,13 @@ curl -X PUT "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_s
 ### Listing All Users
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/users"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/users"
 ```
 
 ### Deactivating a User
 
 ```bash
-curl -X DELETE "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/users/<user_id>"
+curl -u '<api_key>:<api_token>' -X DELETE "https://api.exotel.com/v2/accounts/<account_sid>/users/<user_id>"
 ```
 
 :::warning

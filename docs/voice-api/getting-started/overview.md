@@ -10,7 +10,7 @@ displayed_sidebar: voiceSidebar
 # Voice v2 API (CCM)
 
 :::note
-To connect an agent to a customer, see [Connect Agent to Customer](/docs/voice-api/api-reference/make-a-call). For other Voice work, start at [Voice](/docs/voice).
+To connect an agent to a customer, see [Connect Agent to Customer](/docs/voice-v3/api-reference/make-a-call). For other Voice work, start at [Voice](/docs/voice).
 :::
 
 Voice v2 APIs use the Contact Center Management (CCM) platform to make calls with **agent/user context**. Unlike Voice v1 (which works without user context), Voice v2 requires users to be added as co-workers in the Exotel dashboard.
@@ -33,7 +33,7 @@ Voice v2 is deprecated. For new integrations, use [Voice v3](/docs/voice-v3/over
 ## Base URL
 
 ```
-https://<api_key>:<api_token>@<ccm_subdomain>/v2/accounts/<account_sid>/
+https://<ccm_subdomain>/v2/accounts/<account_sid>/
 ```
 
 ### Regional Endpoints
@@ -58,7 +58,7 @@ HTTP Basic Authentication using your API key and token from **Exotel Dashboard >
 
 | API | Method | Description |
 |-----|--------|-------------|
-| [Connect Agent to Customer](/docs/voice-api/api-reference/make-a-call) | POST | Connect an agent to a customer |
+| [Connect Agent to Customer](/docs/voice-v3/api-reference/make-a-call) | POST | Connect an agent to a customer |
 | [Call Details](/docs/voice-api/api-reference/call-details) | GET | Get call details by call SID |
 
 ## Call States

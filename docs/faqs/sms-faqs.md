@@ -164,7 +164,7 @@ Yes, but keep the following in mind:
 
 ```bash
 # Shorten a URL
-curl -X POST "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/url-shortener" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/url-shortener" \
   -H "Content-Type: application/json" \
   -d '{"url": "https://www.example.com/track/order/ORD-2024-001"}'
 ```
@@ -195,7 +195,7 @@ See [Creating an SMS Campaign](/docs/campaign-guides/creating-sms-campaign) for 
 ### Per-Message Status
 
 ```bash
-curl "https://<api_key>:<api_token>@api.exotel.com/v2/accounts/<account_sid>/sms/<sms_sid>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/sms/<sms_sid>"
 ```
 
 ### Via Webhook

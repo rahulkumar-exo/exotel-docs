@@ -9,6 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
 
 # Call Legs (Beta)
 
@@ -20,36 +21,109 @@ To get the different call legs associated with a call, make an HTTP GET request 
 
 <TryItBanner method="GET" endpoint="/v3/accounts/{account_sid}/calls/{call_sid}/legs" />
 
-## Endpoint
+<RegionalUrls path="/v3/accounts/{account_sid}/calls/{call_sid}/legs" host="ccm" />
 
-```
-GET /v3/accounts/<your_sid>/calls/<call_sid>/legs
-```
+## Path Parameters
 
-### Regional URLs
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `account_sid` | String | Your Exotel account SID |
+| `call_sid` | String | Call SID from [Connect Agent to Customer](/docs/voice-v3/api-reference/make-a-call) |
 
-| Region | URL |
-|--------|-----|
-| Singapore | `https://<your_api_key>:<your_api_token>@ccm-api.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs` |
-| Mumbai | `https://<your_api_key>:<your_api_token>@ccm-api.in.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs` |
-
-### Path Parameters
-
-- Replace `<your_api_key>` and `<your_api_token>` with the API key and token created by you or use [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
-- Replace `<your_sid>` with your **Account SID**.
-- `<subdomain>` of Singapore cluster is `@ccm-api.exotel.com`; Mumbai cluster is `@ccm-api.in.exotel.com`.
-- Replace `<call_sid>` with the Call SID provided during the [Click to Call API](https://developer.exotel.com/api/ccm-make-call-agent-connecting-to-a-number) request.
-- `<your_api_key>`, `<your_api_token>`, and `<your_sid>` are available in the [API settings page](https://my.exotel.com/apisettings/site#api-credentials) of your Exotel Dashboard.
-
-## Code Example
+## Code Examples
 
 <Tabs groupId="programming-language">
 <TabItem value="curl" label="cURL">
 
 ```bash
-curl -X GET \
-  'https://<your_api_key>@ccm-api.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs' \
+curl -u '<api_key>:<api_token>' -X GET \
+  'https://ccm-api.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs' \
   -H 'content-type: application/json'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+response = requests.get(
+    'https://ccm-api.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs',
+    auth=('<api_key>', '<api_token>'),
+    headers={'Content-Type': 'application/json'}
+)
+
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<your_api_key>';
+const apiToken = '<your_api_token>';
+const accountSid = '<your_sid>';
+const callSid = '<call_sid>';
+
+const url = `https://ccm-api.exotel.com/v3/accounts/${accountSid}/calls/${callSid}/legs`;
+
+const response = await fetch(url, {
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_USERPWD => "<api_key>:<api_token>",
+  CURLOPT_URL => "https://ccm-api.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+));
+
+$response = curl_exec($curl);
+curl_close($curl);
+
+echo $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    url := "https://ccm-api.exotel.com/v3/accounts/<your_sid>/calls/<call_sid>/legs"
+
+    req, _ := http.NewRequest("GET", url, nil)
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+    defer res.Body.Close()
+
+    body, _ := ioutil.ReadAll(res.Body)
+    fmt.Println(string(body))
+}
 ```
 
 </TabItem>

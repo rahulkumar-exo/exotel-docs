@@ -18,7 +18,7 @@ Voice v1 APIs work without any user (call centre agent) context — they don't n
 ## Base URL
 
 ```
-https://<api_key>:<api_token>@<subdomain>/v1/Accounts/<account_sid>/
+https://<subdomain>/v1/Accounts/<account_sid>/
 ```
 
 | Data Center | Subdomain |
@@ -31,7 +31,7 @@ https://<api_key>:<api_token>@<subdomain>/v1/Accounts/<account_sid>/
 HTTP Basic Authentication using your API key and token from the [Exotel Dashboard](https://my.exotel.com) → **Settings → API Settings**.
 
 ```bash
-curl 'https://<api_key>:<api_token>@api.exotel.com/v1/Accounts/<your_sid>/Calls.json'
+curl -u '<api_key>:<api_token>' 'https://api.exotel.com/v1/Accounts/<your_sid>/Calls.json'
 ```
 
 ## Rate Limits

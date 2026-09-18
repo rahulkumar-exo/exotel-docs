@@ -27,7 +27,7 @@ The Exotel URL Shortening API converts long URLs into trackable short links, ide
 | Mumbai | `@api.in.exotel.com` |
 
 ```
-https://<api_key>:<api_token>@<subdomain>/v2/accounts/<account_sid>/links
+https://<subdomain>/v2/accounts/<account_sid>/links
 ```
 
 ## Authentication

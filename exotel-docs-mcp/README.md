@@ -1,5 +1,7 @@
 # Exotel Developer Docs — MCP Server
 
+> **Internal tool — not the customer-facing Exotel MCP Server.** This server exposes the **docs repo** to AI clients so Exotel PMs and doc authors can update pages on `developer.exotel.com`. It is not part of the Exotel product surface and is not offered to customers. If you were looking for the customer-facing MCP server that lets your AI place calls and send SMS through Exotel, see [developer.exotel.com/docs/mcp-server/overview](https://developer.exotel.com/docs/mcp-server/overview).
+
 A [Model Context Protocol](https://modelcontextprotocol.io) server that exposes the Exotel Developer Documentation repo (the source of [developer.exotel.com](https://developer.exotel.com)) to any MCP-compatible AI assistant — Claude Code, Cursor, VS Code (Copilot agents), Windsurf, Claude Desktop.
 
 Once configured, you can ask your AI client to:
