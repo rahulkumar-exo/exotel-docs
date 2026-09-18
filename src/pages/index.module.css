@@ -86,6 +86,7 @@
   display: grid;
   grid-template-columns: min(17.75rem, 44%) 1fr;
   align-items: start;
+  column-gap: 1.25rem;
   min-width: 0;
   padding-bottom: 0.75rem;
 }
@@ -93,7 +94,6 @@
 .deckList {
   grid-column: 1;
   grid-row: 1;
-  z-index: 2;
   align-self: start;
   width: 100%;
   padding: 1rem 1rem 0.85rem;
@@ -163,11 +163,10 @@
 .heroShell {
   grid-column: 2;
   grid-row: 1;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  margin: 2.35rem 0 0 -2rem;
+  margin-top: 2.35rem;
   background: var(--exotel-code-ink);
   border: 1px solid var(--exotel-code-edge);
   border-radius: var(--exotel-radius-xl);
