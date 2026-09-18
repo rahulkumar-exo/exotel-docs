@@ -33274,5 +33274,39 @@
       }
     ],
     "answer_length": 1932
+  },
+  {
+    "timestamp": "2026-09-18T06:10:18.144Z",
+    "response_id": "d3553aa6-28db-4e92-b697-d4d82e109918",
+    "question": "Can We Send Automated Messages to Official Groups",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6020,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Template Messages with Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/template-flows"
+      },
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      },
+      {
+        "title": "WhatsApp Session Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/session-messages"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      }
+    ],
+    "answer_length": 428
   }
 ]
