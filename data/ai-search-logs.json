@@ -33308,5 +33308,39 @@
       }
     ],
     "answer_length": 428
+  },
+  {
+    "timestamp": "2026-09-18T06:53:44.585Z",
+    "response_id": "ead6a2d6-b032-43fa-aebe-2724c571ed1a",
+    "question": "real VoIP-delivery mechanism",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3120,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      }
+    ],
+    "answer_length": 444
   }
 ]
