@@ -33410,5 +33410,39 @@
       }
     ],
     "answer_length": 4437
+  },
+  {
+    "timestamp": "2026-09-18T23:12:09.745Z",
+    "response_id": "6791d1cc-9e2b-4785-80fb-122df710fb4a",
+    "question": "how do i integrate my voice AI with Exotel",
+    "question_length": 42,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6191,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 2123
   }
 ]
