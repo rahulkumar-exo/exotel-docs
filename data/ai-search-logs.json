@@ -33444,5 +33444,39 @@
       }
     ],
     "answer_length": 2123
+  },
+  {
+    "timestamp": "2026-09-18T23:16:18.555Z",
+    "response_id": "43a9772f-74c4-4c75-a59a-5561c23785cc",
+    "question": "how much does it cost for each phone number",
+    "question_length": 43,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1705,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      }
+    ],
+    "answer_length": 176
   }
 ]
