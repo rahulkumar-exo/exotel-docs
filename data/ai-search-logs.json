@@ -33546,5 +33546,39 @@
       }
     ],
     "answer_length": 683
+  },
+  {
+    "timestamp": "2026-09-19T05:43:30.749Z",
+    "response_id": "ac0ffde0-7240-447a-b213-bbb7378edab3",
+    "question": "how to contact support team",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3119,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Contact Center APIs v4",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/overview"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      },
+      {
+        "title": "Business Hours",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/business-hours"
+      }
+    ],
+    "answer_length": 176
   }
 ]
