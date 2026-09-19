@@ -33478,5 +33478,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-09-19T05:39:36.397Z",
+    "response_id": "ca9f8533-7325-413e-864e-01e659c69c97",
+    "question": "how to send the custom field sent connect to call flow API in the statuscallback?",
+    "question_length": 81,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6534,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 1027
   }
 ]
