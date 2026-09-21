@@ -1072,5 +1072,40 @@
       }
     ],
     "answer_length": 715
+  },
+  {
+    "timestamp": "2026-09-21T10:39:48.365Z",
+    "response_id": "fffe1e0f-8c6f-4b46-aa52-079bd6a6b948",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Dynamic SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 715,
+    "cache_hit": true
   }
 ]
