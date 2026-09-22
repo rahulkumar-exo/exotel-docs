@@ -1552,5 +1552,39 @@
       }
     ],
     "answer_length": 3453
+  },
+  {
+    "timestamp": "2026-09-22T11:31:08.569Z",
+    "response_id": "e01ba8e3-6512-4104-b7b3-f0ecfbe3d281",
+    "question": "Exophone details",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1853,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoPhone Details",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/number-details"
+      },
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "Call Details",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      }
+    ],
+    "answer_length": 747
   }
 ]
