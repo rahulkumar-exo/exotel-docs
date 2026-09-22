@@ -145,7 +145,7 @@ Share your dashboard configuration with team members:
 
 - **View-only access**: Share a read-only view with stakeholders
 - **Edit access**: Allow team members to modify the dashboard layout
-- **Scheduled email**: Send a dashboard snapshot via email (see [Scheduled Reports](/docs/reporting/scheduled-reports))
+- **Export**: Download a dashboard snapshot as CSV or Excel
 
 ## Exporting Analytics Data
 
@@ -186,4 +186,4 @@ Embedded widgets require authentication. Ensure your internal dashboard can hand
 - [Real-Time Dashboard](/docs/reporting/real-time-dashboard) -- Live call monitoring and agent status
 - [Call Logs](/docs/reporting/call-logs) -- Detailed individual call records
 - [Custom Reports](/docs/reporting/custom-reports) -- Build tailored reports with advanced filters
-- [Scheduled Reports](/docs/reporting/scheduled-reports) -- Automate report delivery
+- [Custom Reports](/docs/reporting/custom-reports) -- Filtered, date-ranged exports
