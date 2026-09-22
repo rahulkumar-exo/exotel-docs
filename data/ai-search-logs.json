@@ -1348,5 +1348,39 @@
       }
     ],
     "answer_length": 4458
+  },
+  {
+    "timestamp": "2026-09-22T09:35:34.511Z",
+    "response_id": "0127e45f-a465-4f3b-a63a-73e189dc6f8f",
+    "question": "get me all the docs for inbound calling to my voicebot agent via livekit setup \nfrom audio streaming to troubleshooting and debugging",
+    "question_length": 133,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4933,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 2093
   }
 ]
