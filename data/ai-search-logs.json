@@ -1280,5 +1280,39 @@
       }
     ],
     "answer_length": 818
+  },
+  {
+    "timestamp": "2026-09-22T07:14:43.402Z",
+    "response_id": "589a5b98-a207-40b9-a4dd-1b3f0f26b376",
+    "question": "KYC Compliance: Even on a trial account, your number might need to be KYC-compliant and whitelisted depending on the type of SMS you are trying to send.\n\nTell me the steps for it",
+    "question_length": 178,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4079,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 1075
   }
 ]
