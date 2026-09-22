@@ -1628,5 +1628,39 @@
       }
     ],
     "answer_length": 855
+  },
+  {
+    "timestamp": "2026-09-22T21:15:06.443Z",
+    "response_id": "6ea98587-9c06-442f-a6ec-c27a92a3a1ec",
+    "question": "How do I make a test outbounding call from exotell free exophone to my personal phone through APIs?",
+    "question_length": 99,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11196,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      }
+    ],
+    "answer_length": 2182
   }
 ]
