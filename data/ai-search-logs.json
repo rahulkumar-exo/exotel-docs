@@ -1518,5 +1518,39 @@
       }
     ],
     "answer_length": 686
+  },
+  {
+    "timestamp": "2026-09-22T09:41:27.502Z",
+    "response_id": "98ae238b-ed9f-46fc-9e1d-bcd59500d71f",
+    "question": "for inbound calling",
+    "question_length": 19,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5440,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      }
+    ],
+    "answer_length": 3453
   }
 ]
