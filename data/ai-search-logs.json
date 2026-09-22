@@ -1416,5 +1416,39 @@
       }
     ],
     "answer_length": 593
+  },
+  {
+    "timestamp": "2026-09-22T09:38:32.373Z",
+    "response_id": "d4b84e16-dd9e-49cf-81e6-859d43c220e2",
+    "question": "get me thoses docs url\n docs related to inbound calling",
+    "question_length": 55,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5419,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      }
+    ],
+    "answer_length": 398
   }
 ]
