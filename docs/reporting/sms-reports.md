@@ -190,7 +190,7 @@ A sudden increase in DLT failure rates usually indicates a template change that 
 
 ### Automated Export
 
-Set up [Scheduled Reports](/docs/reporting/scheduled-reports) to receive daily SMS delivery summaries via email.
+Use the Dashboard export to download daily SMS delivery summaries.
 
 ## Related Resources
 
