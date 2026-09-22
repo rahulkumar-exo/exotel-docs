@@ -56,7 +56,7 @@ Select a predefined range or specify custom dates:
 - **Custom range** -- Specify exact start and end dates
 
 :::warning
-The maximum date range for a single query is **31 days**. For longer periods, run multiple queries or use [Scheduled Reports](/docs/reporting/scheduled-reports).
+The maximum date range for a single query is **31 days**. For longer periods, run multiple queries.
 :::
 
 ### Phone Number Search
@@ -172,7 +172,7 @@ Fetch all records using pagination and write them to your preferred format. See 
 
 ## Best Practices
 
-- **Set up daily exports** -- Use [Scheduled Reports](/docs/reporting/scheduled-reports) to receive daily call logs via email
+- **Export regularly** -- Download call logs from the Dashboard for periodic analysis
 - **Monitor answer rates** -- Track the ratio of `completed` to total calls to measure reachability
 - **Investigate failures** -- Filter by `failed` status to identify number-level or network issues
 - **Use webhooks for real-time** -- Instead of polling call logs, configure [StatusCallback webhooks](/docs/references/webhooks#voice-call-statuscallback) for real-time status updates

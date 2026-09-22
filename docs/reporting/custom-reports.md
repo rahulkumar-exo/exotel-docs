@@ -11,7 +11,7 @@ sidebar_position: 6
 Custom reports let you build tailored views of your Exotel data by combining filters, selecting specific columns, and choosing date ranges that match your analysis needs. Export the results in CSV or Excel format for further processing.
 
 :::tip
-Custom reports are available on Growth and Enterprise plans. For automated recurring reports, see [Scheduled Reports](/docs/reporting/scheduled-reports).
+Custom reports are available on Growth and Enterprise plans.
 :::
 
 ## Creating a Custom Report
@@ -218,5 +218,5 @@ Format: Excel
 
 - [Call Logs](/docs/reporting/call-logs) -- Quick access to call records
 - [CDR Reports](/docs/reporting/cdr-reports) -- Detailed call detail records
-- [Scheduled Reports](/docs/reporting/scheduled-reports) -- Automate report delivery
+- [Analytics Dashboard](/docs/reporting/analytics-dashboard) -- KPIs and trend visualizations
 - [Analytics Dashboard](/docs/reporting/analytics-dashboard) -- Visual KPIs and trends

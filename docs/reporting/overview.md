@@ -18,7 +18,6 @@ Exotel provides a comprehensive reporting suite that gives you full visibility i
 | [CDR Reports](/docs/reporting/cdr-reports) | Detailed call detail records with full metadata | Dashboard export, API |
 | [SMS Reports](/docs/reporting/sms-reports) | SMS delivery status, DLT compliance, error tracking | Dashboard, API |
 | [Real-Time Dashboard](/docs/reporting/real-time-dashboard) | Live call monitoring, agent availability, queue status | Dashboard |
-| [Scheduled Reports](/docs/reporting/scheduled-reports) | Automated email delivery of reports on a recurring basis | Dashboard |
 | [Custom Reports](/docs/reporting/custom-reports) | Filtered, date-ranged exports in CSV/Excel format | Dashboard |
 | [Analytics Dashboard](/docs/reporting/analytics-dashboard) | KPIs, trends, visualizations for business intelligence | Dashboard |
 | [Recording Access](/docs/reporting/recording-access) | Call recording playback, download, and retention management | Dashboard, API |
@@ -97,7 +96,7 @@ When fetching data via the API, always specify date ranges with explicit timesta
 
 1. Use [Call Logs](/docs/reporting/call-logs) to filter by status (`completed`, `no-answer`, `busy`, `failed`)
 2. Calculate answer rate: `completed / total calls * 100`
-3. Set up [Scheduled Reports](/docs/reporting/scheduled-reports) for daily summaries
+3. Review Call Logs daily to track answer rate trends
 
 ### Monitor SMS Delivery
 
