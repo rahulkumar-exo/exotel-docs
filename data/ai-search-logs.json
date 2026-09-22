@@ -1246,5 +1246,39 @@
       }
     ],
     "answer_length": 771
+  },
+  {
+    "timestamp": "2026-09-22T07:12:55.288Z",
+    "response_id": "c98c2eb0-7b35-4ea8-93fc-d9304db3be7b",
+    "question": "But can I not test sms before paid plan?",
+    "question_length": 40,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2217,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      }
+    ],
+    "answer_length": 818
   }
 ]
