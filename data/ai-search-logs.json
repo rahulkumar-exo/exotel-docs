@@ -1212,5 +1212,39 @@
     ],
     "answer_length": 715,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-22T07:11:45.430Z",
+    "response_id": "63145b13-131e-421a-be62-291a2e46a27d",
+    "question": "New account created, kyc is also done, now what is needed to start sending sms?",
+    "question_length": 79,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3058,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      }
+    ],
+    "answer_length": 771
   }
 ]
