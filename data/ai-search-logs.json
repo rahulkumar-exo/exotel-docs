@@ -2110,5 +2110,39 @@
       }
     ],
     "answer_length": 760
+  },
+  {
+    "timestamp": "2026-09-23T14:48:06.066Z",
+    "response_id": "e8d87801-cb46-46c8-86f4-e9956c62a6fb",
+    "question": "cost per usa number?",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 777,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/api-faqs"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      }
+    ],
+    "answer_length": 176
   }
 ]
