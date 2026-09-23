@@ -2008,5 +2008,39 @@
       }
     ],
     "answer_length": 2273
+  },
+  {
+    "timestamp": "2026-09-23T12:21:12.768Z",
+    "response_id": "6aec0fb8-2e9d-42fc-b3a7-b3a5e35c7451",
+    "question": "price of api",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 916,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 176
   }
 ]
