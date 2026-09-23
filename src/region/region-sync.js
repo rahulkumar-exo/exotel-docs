@@ -26,10 +26,12 @@ function readRegion() {
 function applyRegion(text, regionId) {
   if (regionId === 'mumbai') {
     return text
+      .replaceAll('cpaas-api.exotel.com', 'cpaas-api.in.exotel.com')
       .replaceAll('ccm-api.exotel.com', 'ccm-api.in.exotel.com')
       .replaceAll('api.exotel.com', 'api.in.exotel.com');
   }
   return text
+    .replaceAll('cpaas-api.in.exotel.com', 'cpaas-api.exotel.com')
     .replaceAll('ccm-api.in.exotel.com', 'ccm-api.exotel.com')
     .replaceAll('api.in.exotel.com', 'api.exotel.com');
 }
@@ -134,7 +136,9 @@ function mountAll(regionId) {
       !text.includes('api.exotel.com') &&
       !text.includes('api.in.exotel.com') &&
       !text.includes('ccm-api.exotel.com') &&
-      !text.includes('ccm-api.in.exotel.com')
+      !text.includes('ccm-api.in.exotel.com') &&
+      !text.includes('cpaas-api.exotel.com') &&
+      !text.includes('cpaas-api.in.exotel.com')
     ) {
       return;
     }

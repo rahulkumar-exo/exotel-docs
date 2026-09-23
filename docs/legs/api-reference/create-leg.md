@@ -12,7 +12,7 @@ Create a new call leg to an endpoint.
 ## HTTP Request
 
 ```
-POST /v2/accounts/<account_sid>/legs
+POST https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs
 ```
 
 ## Required Parameters

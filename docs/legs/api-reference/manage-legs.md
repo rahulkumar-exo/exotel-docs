@@ -7,10 +7,12 @@ sidebar_label: Manage Legs & Bridges
 
 # Manage Legs & Bridges
 
+Base: `https://cpaas-api.in.exotel.com/v2/accounts/{account_sid}` (Singapore: `cpaas-api.exotel.com`).
+
 ## Get Leg Details
 
 ```
-GET /v2/accounts/<account_sid>/legs/<leg_sid>
+GET https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>
 ```
 
 ### Optional Query Parameters
@@ -45,7 +47,7 @@ GET /v2/accounts/<account_sid>/legs/<leg_sid>
 Connect two or more active legs together.
 
 ```
-POST /v2/accounts/<account_sid>/bridges
+POST https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/bridges
 ```
 
 ### Required Parameters
@@ -78,7 +80,7 @@ POST /v2/accounts/<account_sid>/bridges
 ## Get Bridge Details
 
 ```
-GET /v2/accounts/<account_sid>/bridges/<bridge_sid>
+GET https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/bridges/<bridge_sid>
 ```
 
 Returns bridge state, active legs, and timestamps.
@@ -88,7 +90,7 @@ Returns bridge state, active legs, and timestamps.
 ## Stop Bridge
 
 ```
-PUT /v2/accounts/<account_sid>/bridges/<bridge_sid>
+PUT https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/bridges/<bridge_sid>
 ```
 
 ### Request Body

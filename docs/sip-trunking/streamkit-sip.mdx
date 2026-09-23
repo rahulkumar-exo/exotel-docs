@@ -1,0 +1,183 @@
+---
+id: streamkit-sip
+title: StreamKit Cloud SIP trunking setup
+description: Step-by-step Dynamic SIP APIs to connect contact centre SIP traffic to AgentStream Voice AI via StreamKit.
+sidebar_label: StreamKit SIP setup
+slug: /sip-trunking/streamkit-sip
+sidebar_position: 6
+---
+
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# StreamKit Cloud SIP trunking setup
+
+Use Dynamic SIP Trunking so your contact centre can send SIP to Exotel, and StreamKit bridges media to your AgentStream WebSocket bot.
+
+```
+Customer → CC (SIP) → Exotel StreamKit → AgentStream WSS ↔ bot
+```
+
+Full narrative walkthrough (headers, Passthru escalate, modes): [StreamKit Cloud SIP trunking setup](https://docs.exotel.com/dynamic-sip-trunking/streamkit-cloud-sip-trunking-setup) on the docs portal. AgentStream bridge overview: [StreamKit Cloud](/docs/agentstream/streamkit-cloud).
+
+Map the phone number with `"mode": "flow"` for Voicebot / StreamKit App Bazaar journeys. For Connect-to-SIP only, use `pstn`. See [Call directions](./call-directions).
+
+---
+
+## Step 1 — Create trunk
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/trunks" host="api" />
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `trunk_name` | Yes | String | Alphanumeric + underscores, max 16 chars |
+| `nso_code` | Yes | String | Use `"ANY-ANY"` |
+| `domain_name` | Yes | String | `{account_sid}.pstn.exotel.com` |
+
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_name', required: true, type: 'string', description: 'Alphanumeric + underscores, max 16 chars', placeholder: 'streamkit_trunk' },
+    { name: 'nso_code', required: true, type: 'string', description: 'Use ANY-ANY', defaultValue: 'ANY-ANY', placeholder: 'ANY-ANY' },
+    { name: 'domain_name', required: true, type: 'string', description: '{account_sid}.pstn.exotel.com', placeholder: 'your_account.pstn.exotel.com' },
+  ]}
+/>
+
+Save `response.data.trunk_sid` for the next steps.
+
+---
+
+## Step 2 — Map phone number (`mode: flow`)
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/phone-numbers" />
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `phone_number` | Yes | String | E.164 DID |
+| `mode` | Yes | String | Use `flow` for StreamKit / Voicebot |
+
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks/{trunk_sid}/phone-numbers"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_sid', required: true, type: 'string', description: 'Trunk SID from step 1', placeholder: 'trmum...' },
+    { name: 'phone_number', required: true, type: 'string', description: 'E.164 DID', placeholder: '+919876543210' },
+    { name: 'mode', required: true, type: 'string', description: 'flow for StreamKit / Voice AI', defaultValue: 'flow', placeholder: 'flow' },
+  ]}
+/>
+
+---
+
+## Step 3a — Whitelist IP (outbound)
+
+Required when your system has a static egress IP.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted-ips" />
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `ip` | Yes | String | Public IPv4 of your SBC / PBX |
+| `mask` | No | Integer | CIDR mask (default `32`) |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/whitelisted-ips" \
+  -H "Content-Type: application/json" \
+  -d '{ "ip": "<your_public_ip>", "mask": 32 }'
+```
+
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks/{trunk_sid}/whitelisted-ips"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_sid', required: true, type: 'string', description: 'Trunk SID', placeholder: 'trmum...' },
+    { name: 'ip', required: true, type: 'string', description: 'Public IPv4', placeholder: '44.248.146.11' },
+    { name: 'mask', required: false, type: 'number', description: 'CIDR mask', defaultValue: '32', placeholder: '32' },
+  ]}
+/>
+
+---
+
+## Step 3b — Digest credentials (optional)
+
+Use for cloud platforms with dynamic IPs. You can use ACL, credentials, or both.
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials" />
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `user_name` | Yes | String | SIP digest username |
+| `password` | Yes | String | Strong password |
+| `friendly_name` | No | String | Label, max 32 chars |
+
+```bash
+curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v2/accounts/$EXOTEL_ACCOUNT_SID/trunks/<trunk_sid>/credentials" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_name": "SIP_USER",
+    "password": "SIP_PASS",
+    "friendly_name": "voice_ai_platform"
+  }'
+```
+
+#### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/trunks/{trunk_sid}/credentials"
+  contentType="json"
+  host="api"
+  params={[
+    { name: 'trunk_sid', required: true, type: 'string', description: 'Trunk SID', placeholder: 'trmum...' },
+    { name: 'user_name', required: true, type: 'string', description: 'SIP digest username', placeholder: 'SIP_USER' },
+    { name: 'password', required: true, type: 'string', description: 'Strong password', placeholder: 'SIP_PASS' },
+    { name: 'friendly_name', required: false, type: 'string', description: 'Label, max 32 chars', defaultValue: 'voice_ai_platform', placeholder: 'voice_ai_platform' },
+  ]}
+/>
+
+---
+
+## Step 4 — Firewall
+
+Open Exotel signaling and media IPs on your edge. See [Network & firewall](./network-firewall) and the docs portal [Network and firewall configuration](https://docs.exotel.com/dynamic-sip-trunking/network-and-firewall-configuration).
+
+---
+
+## Step 5 — App Bazaar flow + VoIP Exophone
+
+1. Build a flow: Greeting (recommended) → Voicebot or Stream → optional Passthru / Connect  
+2. Map your VoIP Exophone to that flow  
+
+Deep how-to: [StreamKit Cloud SIP trunking setup](https://docs.exotel.com/dynamic-sip-trunking/streamkit-cloud-sip-trunking-setup) · AgentStream overview: [StreamKit Cloud](/docs/agentstream/streamkit-cloud)
+
+Send SIP INVITE with mandatory `X-Exotel-AccountSid: <Account_SID>`.
+
+---
+
+## Step 6 — Bot WebSocket
+
+Implement the [WebSocket protocol](/docs/agentstream/websocket-protocol) on your `wss://` endpoint.
+
+## Related
+
+- [Dynamic SIP Trunking API](./dynamic-sip-trunking)
+- [Connect Applet inbound](./connect-applet-inbound)
+- [AgentStream overview](/docs/agentstream/overview)
+- Docs portal: [StreamKit Cloud SIP trunking](https://docs.exotel.com/dynamic-sip-trunking/streamkit-cloud-sip-trunking-setup)

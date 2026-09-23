@@ -1,0 +1,193 @@
+---
+id: programmable-voice
+title: Programmable Voice APIs with AgentStream
+description: Control AgentStream streams with ExoML Legs — per-call stream URLs, parallel greetings, and gRPC events.
+sidebar_label: Programmable Voice (ExoML)
+slug: /agentstream/programmable-voice
+sidebar_position: 6
+---
+
+import ApiConsole from '@site/src/components/ApiConsole';
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# Programmable Voice APIs with AgentStream
+
+Full runtime control via Legs API — per-call stream URLs, dynamic routing, and greeting + stream in parallel.
+
+Works for **outbound** (`POST /legs`) and **inbound** (Exophone attached to a gRPC endpoint). See [What to use when](./what-to-use-when).
+
+## Authentication
+
+HTTP Basic Auth — API Key as username, API Token as password.  
+`Content-Type: application/json`
+
+**Base URL:** `https://cpaas-api.in.exotel.com/v2/accounts/{account_sid}`  
+(Singapore: `cpaas-api.exotel.com`)
+
+---
+
+## Create leg (dial)
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/legs" host="cpaas" />
+
+### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `contact_uri` | Yes | String | Number to dial (E.164) |
+| `exophone` | Yes | String | Your ExoPhone |
+| `leg_event_endpoint` | Yes | String | gRPC endpoint for leg events |
+| `timeout` | No | Integer | Ring timeout in seconds |
+
+### Example request
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "contact_uri": "+919876543210",
+    "exophone": "08047491899",
+    "leg_event_endpoint": "grpc://your-event-server.example.com",
+    "timeout": 30
+  }'
+```
+
+### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/legs"
+  contentType="json"
+  host="cpaas"
+  params={[
+    { name: 'contact_uri', required: true, type: 'string', description: 'Number to dial (E.164)', placeholder: '+919876543210' },
+    { name: 'exophone', required: true, type: 'string', description: 'Your ExoPhone', placeholder: '08047491899' },
+    { name: 'leg_event_endpoint', required: true, type: 'string', description: 'gRPC endpoint for leg events', placeholder: 'grpc://your-event-server.example.com' },
+    { name: 'timeout', required: false, type: 'number', description: 'Ring timeout in seconds', placeholder: '30' },
+  ]}
+/>
+
+Exotel emits: `leg_connecting` → `leg_ringing` → `leg_answered`
+
+---
+
+## Start stream
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream" />
+
+Call on `leg_answered`.
+
+### Request parameters
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `direction` | Yes | String | `bidirectional` for Voice AI |
+| `url` | Yes | String | Bot WebSocket URL (`wss://`) |
+| `content_type` | No | String | e.g. `audio/x-mulaw;rate=8000` |
+
+### Example request
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "direction": "bidirectional",
+    "url": "wss://bot.example.com/stream",
+    "content_type": "audio/x-mulaw;rate=8000"
+  }'
+```
+
+### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream"
+  contentType="json"
+  host="cpaas"
+  params={[
+    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID from create leg / events', placeholder: 'leg_xxxxxxxx' },
+    { name: 'direction', required: true, type: 'string', description: 'bidirectional for Voice AI', defaultValue: 'bidirectional', placeholder: 'bidirectional' },
+    { name: 'url', required: true, type: 'string', description: 'Bot WebSocket URL', placeholder: 'wss://bot.example.com/stream' },
+    { name: 'content_type', required: false, type: 'string', description: 'Audio content type', defaultValue: 'audio/x-mulaw;rate=8000', placeholder: 'audio/x-mulaw;rate=8000' },
+  ]}
+/>
+
+---
+
+## Optional — greeting while stream initialises
+
+Fire with `start_stream` on `leg_answered` to avoid dead air.
+
+### Start say
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_say" />
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_say' \
+  -H 'Content-Type: application/json' \
+  -d '{ "text": "Please hold.", "loop": 0 }'
+```
+
+### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_say"
+  contentType="json"
+  host="cpaas"
+  params={[
+    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID', placeholder: 'leg_xxxxxxxx' },
+    { name: 'text', required: true, type: 'string', description: 'Text to speak', defaultValue: 'Please hold.', placeholder: 'Please hold.' },
+    { name: 'loop', required: false, type: 'number', description: 'Loop count (0 = once)', defaultValue: '0', placeholder: '0' },
+  ]}
+/>
+
+### Stop say
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/stop_say" />
+
+Call on `stream_started`:
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_say'
+```
+
+### Try It
+
+<ApiConsole
+  method="POST"
+  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/stop_say"
+  contentType="json"
+  host="cpaas"
+  params={[
+    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID', placeholder: 'leg_xxxxxxxx' },
+  ]}
+/>
+
+| Scenario | Use greeting? |
+|----------|---------------|
+| Inbound IVR / tech support | Usually no |
+| Outbound sales / collections | Yes |
+
+---
+
+## Inbound ExoML
+
+1. Implement a gRPC leg-event endpoint  
+2. Attach the Exophone to that endpoint (not to an App Bazaar flow)  
+3. On inbound `leg_answered`, issue `start_stream` (and optional say/play)
+
+No Voicebot applet required — your service is the flow.
+
+## Related
+
+- [Bot stream Legs API](./bot-stream-legs-api)
+- [Legs API overview](/docs/legs/overview)
+- [WebSocket protocol](./websocket-protocol)

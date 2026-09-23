@@ -17,9 +17,16 @@ The Legs API enables creation and management of individual call legs within the 
 
 ## Base URL
 
+ExoML Legs & Bridges APIs use the CPaaS host:
+
 ```
-https://<base_url>/v2/accounts/<account_sid>/
+https://cpaas-api.in.exotel.com/v2/accounts/{account_sid}
 ```
+
+| Region | Host |
+|--------|------|
+| India (Mumbai) | `cpaas-api.in.exotel.com` |
+| Singapore | `cpaas-api.exotel.com` |
 
 ## Authentication
 

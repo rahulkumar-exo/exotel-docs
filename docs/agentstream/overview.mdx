@@ -1,0 +1,73 @@
+---
+id: overview
+title: AgentStream
+description: Real-time audio streaming between Exotel calls and your bot over WebSocket. Choose a path, connect, and go live.
+sidebar_label: Overview
+slug: /agentstream/overview
+sidebar_position: 1
+---
+
+import PathCards from '@site/src/components/PathCards';
+
+# AgentStream
+
+Stream live call audio to your bot over WebSocket — and send audio back for conversational Voice AI. Same bot protocol whether you dial via Connect API, App Bazaar flow, or ExoML Legs.
+
+```
+Caller ↔ Exotel ↔ wss://your-bot
+```
+
+## Choose your path
+
+<PathCards
+  items={[
+    {
+      title: 'Connect Voice AI API',
+      description: 'Outbound: answer → bot only. Fastest first call.',
+      href: '/docs/agentstream/connect-voice-ai',
+      badge: 'Recommended',
+    },
+    {
+      title: 'What to use when',
+      description: 'Pick Connect, Flow, or ExoML for inbound and outbound.',
+      href: '/docs/agentstream/what-to-use-when',
+    },
+    {
+      title: 'Applets & Flow',
+      description: 'IVR, greeting, DTMF, and agent handoff in App Bazaar.',
+      href: '/docs/agentstream/stream-voicebot-applet',
+    },
+    {
+      title: 'WebSocket protocol',
+      description: 'Events, audio format, and echo server sample.',
+      href: '/docs/agentstream/websocket-protocol',
+      badge: 'API',
+    },
+    {
+      title: 'StreamKit Cloud',
+      description: 'Bridge SIP contact centre traffic to your WSS bot.',
+      href: '/docs/agentstream/streamkit-cloud',
+    },
+  ]}
+/>
+
+## What you can build
+
+| Capability | How |
+|------------|-----|
+| Outbound Voice AI | [Connect Voice AI](./connect-voice-ai) with `StreamUrl` + `StreamType=bidirectional` |
+| Outbound + IVR / handoff | [Connect with Flow](./connect-voice-ai-flow) + Voicebot / Connect applets |
+| Code-owned call control | [Programmable Voice (ExoML)](./programmable-voice) + `start_stream` |
+| Listen-only / assist | [Stream applet](./stream-voicebot-applet) (unidirectional) |
+| SIP ↔ bot bridge | [StreamKit Cloud](./streamkit-cloud) |
+
+## Samples & partner guides
+
+- **Code samples:** [github.com/exotel](https://github.com/exotel) — SDKs and example servers
+- **Partner Voice AI how-tos** (LiveKit, ElevenLabs, and more): stay on the [docs portal ecosystem](https://docs.exotel.com/exotel-agentstream/voice-ai-ecosystem)
+
+## Next
+
+1. [Getting started](./getting-started) — first stream in minutes  
+2. [What to use when](./what-to-use-when) — lock your control plane  
+3. [WebSocket protocol](./websocket-protocol) — build the bot endpoint  
