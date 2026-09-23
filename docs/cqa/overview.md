@@ -142,6 +142,8 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions
 
 **Content requirement:** At least one of `audio_url`, `transcript_url` , `transcript_text`must be provided.
 
+**NOTE**: These URLs (audio_url, transcript_url) must be publicly accessible or use pre-signed URLs (so CQA can fetch the recordings)
+
 | Parameter Name            | Mandatory / Optional                                               | Type              | Description                                                                                                                                                                                                                                                                                                                                                       |
 | ------------------------- | ------------------------------------------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `external_interaction_id` | Mandatory                                                          | string            | Your unique identifier for this interaction. Used for deduplication.                                                                                                                                                                                                                                                                                              |
@@ -708,6 +710,7 @@ The first row of a CSV file must contain column headers. Headers are trimmed and
 | `file_type` | No | string | File extension for type resolution. Audio extensions: `mp3`, `wav`, `ogg`, `flac`, `m4a`, `aac`, `wma`, `amr`. Transcript extensions: `txt`, `pdf`, `doc`, `docx`, `srt`, `vtt`. |
 
 **Content requirement:** Each row must have at least one of `audio_url`, `transcript_url`, `transcript_text`.
+NOTE: These URLs (audio_url, transcript_url) must be publicly accessible or use pre-signed URLs (so CQA can fetch the recordings)
 
 ### Extra Columns Become Metadata
 
