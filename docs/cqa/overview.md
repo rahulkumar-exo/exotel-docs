@@ -22,11 +22,11 @@ Exotel CQA (Conversation Quality Analysis) provides AI-powered quality analysis 
 
 This document covers the public API surface:
 
-- **Data Import API** -- Push interactions into CQA via REST (single, batch, or file-based).
-- **Analysis API** -- Retrieve detailed quality analysis results.
-- **File Schemas** -- CSV format specifications for bulk ingestion.
+* **Data Import API** -- Push interactions into CQA via REST (single, batch, or file-based).
+* **Analysis API** -- Retrieve detailed quality analysis results.
+* **File Schemas** -- CSV format specifications for bulk ingestion.
 
----
+- - -
 
 ## Base URL
 
@@ -36,36 +36,36 @@ All endpoints are served under the CQA context path:
 https://cqa-console.in.exotel.com/
 ```
 
----
+- - -
 
 ## Authentication
 
 All Data Import and Analysis API endpoints authenticate via an API key passed in the `X-API-Key` header.
 
-| API Surface | Auth Method | Header |
-| --- | --- | --- |
-| Data Import API | API Key | `X-API-Key: {key}` |
-| Analysis API | API Key | `X-API-Key: {key}` |
+| API Surface     | Auth Method | Header             |
+| --------------- | ----------- | ------------------ |
+| Data Import API | API Key     | `X-API-Key: {key}` |
+| Analysis API    | API Key     | `X-API-Key: {key}` |
 
 ### API Keys
 
 API keys are scoped to a single account and are used for all programmatic ingestion and analysis retrieval. API keys can be created and managed through the CQA dashboard.
 
----
+- - -
 
 ## Rate Limits
 
 API endpoints are rate-limited per tenant (account).
 
-- Requests that exceed the limit receive `429 Too Many Requests` with error code `**RATE_LIMIT_EXCEEDED**` (see Response Envelope).
-- Too many **concurrent file jobs** is a separate `429` with code `**TOO_MANY_JOBS`\*\*.
+* Requests that exceed the limit receive `429 Too Many Requests` with error code `**RATE_LIMIT_EXCEEDED**` (see Response Envelope).
+* Too many **concurrent file jobs** is a separate `429` with code `**TOO_MANY_JOBS`\*\*.
 
-| Endpoint Pattern | Method | Default tenant limit (typical) |
-| --- | --- | --- |
-| `/ingress/interactions`\* (ingest) | POST | 100 requests per minute |
-| `/ingress/`\*\* (tracking) | GET | 300 requests per minute |
+| Endpoint Pattern                  | Method | Default tenant limit (typical) |
+| --------------------------------- | ------ | ------------------------------ |
+| `/ingress/interactions`* (ingest) | POST   | 100 requests per minute        |
+| `/ingress/`\*\* (tracking)        | GET    | 300 requests per minute        |
 
----
+- - -
 
 ## Response Envelope
 
@@ -94,39 +94,39 @@ All Data Import and Analysis API endpoints return responses in a common envelope
 }
 ```
 
-| Field | Type | Description |
-| --- | --- | --- |
-| `status` | integer | HTTP status code mirrored in the body. |
-| `request_id` | string | Unique request identifier for tracing and support. |
-| `message` | string | Human-readable detail (present on many errors; may be omitted when redundant). |
-| `data` | object | Response payload (present on success). |
-| `error` | object | Present on failure. Contains `**code`\*\* only. |
+| Field        | Type    | Description                                                                    |
+| ------------ | ------- | ------------------------------------------------------------------------------ |
+| `status`     | integer | HTTP status code mirrored in the body.                                         |
+| `request_id` | string  | Unique request identifier for tracing and support.                             |
+| `message`    | string  | Human-readable detail (present on many errors; may be omitted when redundant). |
+| `data`       | object  | Response payload (present on success).                                         |
+| `error`      | object  | Present on failure. Contains `**code`\*\* only.                                |
 
 **Error Codes:**
 
-| Code | HTTP Status | Description |
-| --- | --- | --- |
-| `VALIDATION_ERROR` | 400 | Request failed validation (missing required fields, exceeded limits). |
-| `INVALID_JSON` | 400 | Request body is not valid JSON. |
-| `INVALID_REQUEST` | 400 | Request contains invalid arguments. |
-| `UNAUTHORIZED` | 401 | Missing or invalid API key. |
-| `NOT_FOUND` | 404 | The requested resource was not found. |
-| `DUPLICATE` | 409 | Returned for single-ingest conflict responses (see Ingest a Single Interaction). |
-| `RATE_LIMIT_EXCEEDED` | 429 | Tenant or user rate limit exceeded. |
-| `TOO_MANY_JOBS` | 429 | Too many concurrent file ingestion jobs for this account. |
-| `INTERNAL_ERROR` | 500 | An unexpected server error occurred. |
-| `CONVERSATION_CAP_EXCEEDED` | 429 | Account conversation cap exceeded. Daily, weekly, or monthly interaction limit reached. |
+| Code                        | HTTP Status | Description                                                                             |
+| --------------------------- | ----------- | --------------------------------------------------------------------------------------- |
+| `VALIDATION_ERROR`          | 400         | Request failed validation (missing required fields, exceeded limits).                   |
+| `INVALID_JSON`              | 400         | Request body is not valid JSON.                                                         |
+| `INVALID_REQUEST`           | 400         | Request contains invalid arguments.                                                     |
+| `UNAUTHORIZED`              | 401         | Missing or invalid API key.                                                             |
+| `NOT_FOUND`                 | 404         | The requested resource was not found.                                                   |
+| `DUPLICATE`                 | 409         | Returned for single-ingest conflict responses (see Ingest a Single Interaction).        |
+| `RATE_LIMIT_EXCEEDED`       | 429         | Tenant or user rate limit exceeded.                                                     |
+| `TOO_MANY_JOBS`             | 429         | Too many concurrent file ingestion jobs for this account.                               |
+| `INTERNAL_ERROR`            | 500         | An unexpected server error occurred.                                                    |
+| `CONVERSATION_CAP_EXCEEDED` | 429         | Account conversation cap exceeded. Daily, weekly, or monthly interaction limit reached. |
 
----
+- - -
 
 # Data Import API
 
 The Data Import API is the primary external integration point for pushing interaction data into CQA. It supports three ingestion modes: single, batch, and file-based.
 
-**Base path:** `/api/v1/accounts/{account_id}/ingress`  
+**Base path:** `/api/v1/accounts/{account_id}/ingress`\
 **Auth:** `X-API-Key` header
 
----
+- - -
 
 ## Ingest a Single Interaction
 
@@ -140,25 +140,28 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions
 
 ### Request Parameters (JSON Body)
 
-**Content requirement:** At least one of `audio_url`, `transcript_url` must be provided.
+**Content requirement:** At least one of `audio_url`, `transcript_url` , `transcript_text`must be provided.
 
-| Parameter Name | Mandatory / Optional | Type | Description |
-| --- | --- | --- | --- |
-| `external_interaction_id` | Mandatory | string | Your unique identifier for this interaction. Used for deduplication. |
-| `channel_type` | Mandatory | string | Interaction channel. Recognized values: `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`. Other values are accepted (not rejected). |
-| `source` | Optional | string | Identifies the originating system (e.g. `my-pbx`, `genesys`). |
-| `language` | Optional | string | Language code (e.g. `en`, `hi`, `es`). |
-| `interaction_start_time` | Optional | string (ISO-8601) | When the interaction started (e.g. `2026-04-01T10:30:00Z`). |
-| `duration_seconds` | Optional | integer | Duration of the interaction in seconds. |
-| `audio_format` | Optional | string | Audio format hint (e.g. `WAV`, `MP3`, `OGG`). |
-| `callback_url` | Optional | string | Webhook URL for status update notifications. |
-| `audio_url` | Mandatory if `transcript_url` or `transcript_text` is not provided | string | Direct URL to the audio recording. |
-| `transcript_url` | Mandatory if `audio_url` or `transcript_text` is not provided | string | Direct URL to the transcript file. |
-| transcript_text | Mandatory if neither `audio_url` nor `transcript_url` is provided | string | Inline transcript/conversation text. If both `transcript_text` and `transcript_url` are sent, **`transcript_url` wins** (inline text is ignored).|
-| `pii_redacted` | Optional | boolean | Whether PII has already been redacted in the provided content. Default: `false`.If you have already redacted PII either by your own means or using the [CQA provided capability](https://docs.exotel.com/conversation-intelligence/administration-and-configuration#46-pii-redaction), set this parameter as `true` (used internally to skip PII redaction again) |
-| `metadata` | Optional | object | Arbitrary key-value pairs for tagging. Maximum 50 keys. Values can be strings, numbers, or booleans. |
+**NOTE**: These URLs (audio_url, transcript_url) must be publicly accessible or use pre-signed URLs (so CQA can fetch the recordings)
+
+| Parameter Name            | Mandatory / Optional                                               | Type              | Description                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------- | ------------------------------------------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `external_interaction_id` | Mandatory                                                          | string            | Your unique identifier for this interaction. Used for deduplication.                                                                                                                                                                                                                                                                                              |
+| `channel_type`            | Mandatory                                                          | string            | Interaction channel. Recognized values: `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`. Other values are accepted (not rejected).                                                                                                                                                                                                                                    |
+| `source`                  | Optional                                                           | string            | Identifies the originating system (e.g. `my-pbx`, `genesys`).                                                                                                                                                                                                                                                                                                     |
+| `language`                | Optional                                                           | string            | Language code (e.g. `en`, `hi`, `es`).                                                                                                                                                                                                                                                                                                                            |
+| `interaction_start_time`  | Optional                                                           | string (ISO-8601) | When the interaction started (e.g. `2026-04-01T10:30:00Z`).                                                                                                                                                                                                                                                                                                       |
+| `duration_seconds`        | Optional                                                           | integer           | Duration of the interaction in seconds.                                                                                                                                                                                                                                                                                                                           |
+| `audio_format`            | Optional                                                           | string            | Audio format hint (e.g. `WAV`, `MP3`, `OGG`).                                                                                                                                                                                                                                                                                                                     |
+| `callback_url`            | Optional                                                           | string            | Webhook URL for status update notifications.                                                                                                                                                                                                                                                                                                                      |
+| `audio_url`               | Mandatory if `transcript_url` or `transcript_text` is not provided | string            | Direct URL to the audio recording.                                                                                                                                                                                                                                                                                                                                |
+| `transcript_url`          | Mandatory if `audio_url` or `transcript_text` is not provided      | string            | Direct URL to the transcript file.                                                                                                                                                                                                                                                                                                                                |
+| transcript_text           | Mandatory if neither `audio_url` nor `transcript_url` is provided  | string            | Inline transcript/conversation text. If both `transcript_text` and `transcript_url` are sent, **`transcript_url` wins** (inline text is ignored). Max 100 KB (UTF-8).                                                                                                                                                                                             |
+| `pii_redacted`            | Optional                                                           | boolean           | Whether PII has already been redacted in the provided content. Default: `false`.If you have already redacted PII either by your own means or using the [CQA provided capability](https://docs.exotel.com/conversation-intelligence/administration-and-configuration#46-pii-redaction), set this parameter as `true` (used internally to skip PII redaction again) |
+| `metadata`                | Optional                                                           | object            | Arbitrary key-value pairs for tagging. Maximum 50 keys. Values can be strings, numbers, or booleans.                                                                                                                                                                                                                                                              |
 
 ### Example Request (VOICE)
+
 ```bash
 curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions" \
   -H "X-API-Key: {your_api_key}" \
@@ -183,6 +186,7 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactio
 ```
 
 ### Example Request (CHAT with URL)
+
 ```bash
 curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions" \
   -H "X-API-Key: {your_api_key}" \
@@ -198,6 +202,7 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactio
 ```
 
 ### Example Request (CHAT with transcript_text)
+
 ```bash
 curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions" \
   -H "X-API-Key: {your_api_key}" \
@@ -210,7 +215,6 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactio
     "transcript_text": "Agent: Hello! How can I help you today?\nCustomer: I need to reset my password.\nAgent: Sure, I can help with that. Let me send you a reset link."
   }'
 ```
-
 
 ### Response
 
@@ -270,14 +274,14 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactio
 
 ### Response Fields
 
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| `interaction_id` | string (UUID) | CQA-assigned unique identifier for the interaction. |
-| `external_interaction_id` | string | Your identifier, echoed back. |
-| `status` | string | `queued` on success. |
-| `message` | string | Top-level hint on **201** (e.g. queued). On errors, the detail text is in `message`, not inside `error`. |
+| Parameter Name            | Type          | Description                                                                                              |
+| ------------------------- | ------------- | -------------------------------------------------------------------------------------------------------- |
+| `interaction_id`          | string (UUID) | CQA-assigned unique identifier for the interaction.                                                      |
+| `external_interaction_id` | string        | Your identifier, echoed back.                                                                            |
+| `status`                  | string        | `queued` on success.                                                                                     |
+| `message`                 | string        | Top-level hint on **201** (e.g. queued). On errors, the detail text is in `message`, not inside `error`. |
 
----
+- - -
 
 ## Ingest a Batch of Interactions
 
@@ -291,17 +295,29 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch
 
 ### Request Parameters (JSON Body)
 
-| Parameter Name | Mandatory / Optional | Type | Description |
-| --- | --- | --- | --- |
-| `interactions` | Mandatory | array | List of interaction objects, each following the same schema as the single ingest endpoint. Minimum 1, maximum 100. |
+| Parameter Name | Mandatory / Optional | Type  | Description                                                                                                                                                                          |
+| -------------- | -------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `interactions` | Mandatory            | array | List of interaction objects, each following the (audio_url or transcript_url or transcript_text \[max 100 KB / 102400 bytes]) as the single ingest endpoint. Minimum 1, maximum 100. |
+
+```
+Note: transcript_text is supported in batch items. Each item can include at most 100 KB (102400 bytes) of transcript_text. If any batch item exceeds this limit, the entire batch request is rejected immediately with 400 VALIDATION_ERROR; no batch job is created.
+```
 
 ### Response Fields
 
-| Parameter Name | Type | Description |
-| --- | --- | --- |
-| `id` | string | Unique identifier for the batch job. Use this with the batch tracking endpoint. |
-| `type` | string | Always `batch` for this endpoint. |
-| `status` | string | `pending` -- the job has been accepted and is queued for processing. |
+| Parameter Name | Type   | Description                                                                     |
+| -------------- | ------ | ------------------------------------------------------------------------------- |
+| `id`           | string | Unique identifier for the batch job. Use this with the batch tracking endpoint. |
+| `type`         | string | Always `batch` for this endpoint.                                               |
+| `status`       | string | `pending` -- the job has been accepted and is queued for processing.            |
+
+````
+Batch submission may return partial acceptance. If some items fail request-time validation while others are valid, the API returns 202 Accepted and may include:
+- message
+- accepted
+- rejected
+- errors
+In this case, valid items are queued for processing and invalid items are rejected immediately.```
 
 ---
 
@@ -310,11 +326,11 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch
 Submits a remote CSV file URL for asynchronous ingestion. CQA downloads and processes the file in the background.
 
 POST
+````
 
-```
 https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/files
-```
 
+```
 ### Request Parameters (JSON Body)
 
 | Parameter Name | Mandatory / Optional | Type | Description |
@@ -326,7 +342,11 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/files
 | `callback_url` | Optional | string | Default callback URL stored per row (same semantics as single ingest; no HTTP callback from ingress). |
 | `column_mapping` | Optional | object | Maps your CSV headers to canonical column names. Keys are your original headers (trimmed, lowercased); values are canonical names. Ignored for NDJSON. See CSV Schema for canonical names. |
 | `metadata` | Optional | object | Default metadata merged into every row. After merge, each row should respect the **50-key** metadata limit enforced for batch/single ingest; avoid large default maps that push merged rows over the limit. |
+```
 
+Note: For file ingestion, invalid rows are processed asynchronously and appear as rejected rows in the file job results.
+
+```
 ### File Processing Limits
 
 | Limit | Default Value |
@@ -341,11 +361,11 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/files
 Retrieves the current status and details of an ingested interaction.
 
 GET
-
 ```
+
 https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/{interaction_identifier}
-```
 
+```
 ### Path Parameters
 
 | Parameter Name | Mandatory / Optional | Description |
@@ -401,11 +421,11 @@ Applies to the `status` field in the batch/file 202 response and the `job_status
 Retrieves all interactions for a batch or file job, with pagination and job-level status.
 
 GET
-
 ```
+
 https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch/{id}
-```
 
+```
 ### Path Parameters
 
 | Parameter Name | Mandatory / Optional | Description |
@@ -436,7 +456,12 @@ https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch/{id}
 | `errors` | array | Up to 100 error entries. Each has `line` (row number), `reason`, and `external_interaction_id`. |
 | `error_message` | string | Top-level error message if the entire job failed. |
 | `completed_at` | string (ISO-8601) | When the job finished processing. |
+```
 
+Note:
+For batch submissions, some request-time validation failures may be returned directly in the initial POST /ingress/interactions/batch response. Use the submit response for request-time rejected items; the tracking endpoint primarily reflects accepted items that entered processing.
+
+```
 ---
 
 # Analysis API
@@ -453,11 +478,11 @@ Retrieve detailed quality analysis results for a completed analysis.
 Returns a paginated list of completed analyses matching the given filters. Date filter is mandatory; max range is 31 days.
 
 **POST**
-
 ```
+
 https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit={limit}&offset={offset}
-```
 
+```
 **Query Parameters**
 
 | Parameter Name | Default | Max | Description |
@@ -492,29 +517,29 @@ https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit={limit}&offset={o
 | `value` | Numeric score value. |
 
 **Example Request**
-
 ```
+
 curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit=5&offset=0" \
   -H "X-API-Key: {your_api_key}" \
   -H "Content-Type: application/json" \
   -d '{
-    "other_filters": [
+    "other_filters": \[
       {"field": "date", "operator": "range", "value": {"start_date": "2026-07-01", "end_date": "2026-07-15"}},
       {"field": "score", "operator": "greater_than_or_equal", "value": 9}
     ]
   }'
-```
 
+```
 **Response**
 
 `200 OK`
-
 ```
+
 {
   "status": 200,
   "request_id": "51f6705d-6639-41ed-9029-d6053c5df1c2",
   "data": {
-    "analyses": [
+    "analyses": \[
       {
         "analysis_id": "9f77853f-c4d4-482c-9651-b13394d65020",
         "interaction_id": "a30f0175-2ba0-46d8-8002-5b84667bfb44",
@@ -540,8 +565,8 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit=5&o
     }
   }
 }
-```
 
+```
 **Response Fields**
 
 | Parameter Name | Type | Description |
@@ -583,11 +608,11 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit=5&o
 Returns the full scoring breakdown for a specific analysis, including categories, subcategories, and individual KPI scores.
 
 GET
-
 ```
+
 https://{host}/cqa/api/v1/accounts/{account_id}/analyses/{analysis_id}
-```
 
+````
 ### Path Parameters
 
 | Parameter Name | Mandatory / Optional | Description |
@@ -678,12 +703,14 @@ The first row of a CSV file must contain column headers. Headers are trimmed and
 | `audio_format` | No | string | Format hint (e.g. `WAV`, `MP3`). |
 | `callback_url` | No | string | Per-row callback URL (stored; no HTTP callback from ingress). |
 | `pii_redacted` | No | boolean | `true` or `false`. |
-| `audio_url` | Yes (Mandatory if transcript\_url is not provided) | string | Audio file URL(s). Supports multiple URLs separated by `;`. |
-| `transcript_url` | Yes (Mandatory if audio\_url is not provided) | string | Transcript file URL(s). Supports multiple URLs separated by `;`. |
+| `audio_url` | Yes (Mandatory if `transcript_url` or `transcript_text` is not provided) | string | Audio file URL(s). Supports multiple URLs separated by `;`. |
+| `transcript_url` | Yes (Mandatory if `audio_url` or `transcript_text` is not provided) | string | Transcript file URL(s). Supports multiple URLs separated by `;`. |
+| `transcript_text` | Yes (Mandatory if audio_url or transcript_url is not provided) | string | Actual transcript text of the conversation. If both transcript_url and  transcript_text are provided, transcript_url wins. |
 | `file_url` | No | string | Generic file URL. Used with `file_type` as a fallback when no `audio_url`/`transcript_url` entries exist. |
 | `file_type` | No | string | File extension for type resolution. Audio extensions: `mp3`, `wav`, `ogg`, `flac`, `m4a`, `aac`, `wma`, `amr`. Transcript extensions: `txt`, `pdf`, `doc`, `docx`, `srt`, `vtt`. |
 
-**Content requirement:** Each row must have at least one of `audio_url`, `transcript_url`.
+**Content requirement:** Each row must have at least one of `audio_url`, `transcript_url`, `transcript_text`.
+NOTE: These URLs (audio_url, transcript_url) must be publicly accessible or use pre-signed URLs (so CQA can fetch the recordings)
 
 ### Extra Columns Become Metadata
 
@@ -703,20 +730,25 @@ If your CSV uses non-standard headers, supply a `column_mapping` object in the f
     "recording": "audio_url"
   }
 }
-```
+````
 
 After mapping, `agent` and `campaign` are not canonical, so they automatically become metadata.
 
 ### Example CSV
 
 ```csv
-external_interaction_id,channel_type,audio_url,transcript_url,language,agent,campaign
-call-001,VOICE,https://s3.example.com/rec-001.wav,https://s3.example.com/tr-001.txt,en,agent-42,retention
-call-002,VOICE,https://s3.example.com/rec-002.wav,,hi,agent-15,support
+external_interaction_id,channel_type,audio_url,transcript_url,transcript_text,language,agent,campaign
+call-001,VOICE,https://s3.example.com/rec-001.wav,,,en,agent-42,retention
+call-002,VOICE,https://s3.example.com/rec-002.wav,,,hi,agent-15,support
+chat-001,CHAT,,,Agent: Hello! How can I help you today?\nCustomer: I need to reset my password.,en,agent-42,retention
 call-003,CHAT,,,,agent-42,retention
 ```
 
-> **Note:** Row 3 (`call-003`) would fail validation because it has no content source (no audio, transcript).
+````
+Note:
+- chat-001 is valid via transcript_text
+- call-003 fails because it has no audio_url, transcript_url, or transcript_text.
+
 
 ---
 
@@ -778,7 +810,7 @@ Every callback POST body is a JSON object with these top-level fields:
 {
   "status": "INGESTED"
 }
-```
+````
 
 `INTERACTION_ANALYSIS_IN_PROGRESS`
 
@@ -910,9 +942,9 @@ A complete callback payload for a completed analysis:
 
 Each callback request includes headers for verifying authenticity:
 
-| Header | Description |
-| --- | --- |
-| `X-CQA-Signature` | HMAC-SHA256 signature of the request body, formatted as `sha256=<hex>`. |
+| Header            | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| `X-CQA-Signature` | HMAC-SHA256 signature of the request body, formatted as `sha256=<hex>`.            |
 | `X-CQA-Timestamp` | ISO-8601 timestamp of when the request was sent (e.g. `2026-04-01T10:35:42.123Z`). |
 
 To verify a callback:
@@ -927,31 +959,30 @@ The signing secret is derived from your active API key. It is shared during onbo
 
 If the callback endpoint returns a `5xx` or `429` status code (or the request times out), CQA retries delivery. A total of **3 attempts** are made (1 initial + 2 retries):
 
-| Attempt | Delay before attempt |
-| --- | --- |
-| 1st (initial) | Immediate |
-| 2nd (1st retry) | \~10 seconds |
-| 3rd (2nd retry) | \~30 seconds |
+| Attempt         | Delay before attempt |
+| --------------- | -------------------- |
+| 1st (initial)   | Immediate            |
+| 2nd (1st retry) | ~10 seconds          |
+| 3rd (2nd retry) | ~30 seconds          |
 
 After 3 failed attempts, the delivery is marked as `FAILED`.
 
 Callbacks that receive `2xx` or `4xx` (other than `429`) responses are **not** retried.
 
----
+- - -
 
 # Limits and Constraints
 
-| Constraint | Value |
-| --- | --- |
-| Max interactions per batch | 100 |
-| Max metadata keys per interaction | 50 (enforced on single/batch request bodies; keep merged file-row metadata within this bound) |
-| Max rows per file job | 100,000 |
-| Max file size per file job | 100 MB |
-| Max concurrent file jobs per account | 5 (default) |
-| Batch tracking page size (max) | 100 (silently clamped) |
-| Supported file formats | `csv`, `ndjson` |
-| Supported file URL schemes | `https`, `http`, `s3` (`https` recommended) |
-| Supported channel types | `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP` |
-| Max transcript_text | 100 KB (UTF-8) |
-| Conversation cap (trial accounts) | 300 per month (default when no cap is explicitly configured) |
-
+| Constraint                           | Value                                                                                         |
+| ------------------------------------ | --------------------------------------------------------------------------------------------- |
+| Max interactions per batch           | 100                                                                                           |
+| Max metadata keys per interaction    | 50 (enforced on single/batch request bodies; keep merged file-row metadata within this bound) |
+| Max rows per file job                | 100,000                                                                                       |
+| Max file size per file job           | 100 MB                                                                                        |
+| Max concurrent file jobs per account | 5 (default)                                                                                   |
+| Batch tracking page size (max)       | 100 (silently clamped)                                                                        |
+| Supported file formats               | `csv`, `ndjson`                                                                               |
+| Supported file URL schemes           | `https`, `http`, `s3` (`https` recommended)                                                   |
+| Supported channel types              | `VOICE`, `CHAT`, `EMAIL`, `SMS`, `WHATSAPP`                                                   |
+| Max transcript_text                  | 100 KB (UTF-8)                                                                                |
+| Conversation cap (trial accounts)    | 300 per month (default when no cap is explicitly configured)                                  |
