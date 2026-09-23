@@ -650,7 +650,6 @@ const sidebars: SidebarsConfig = {
     'reporting/cdr-reports',
     'reporting/sms-reports',
     'reporting/real-time-dashboard',
-    'reporting/scheduled-reports',
     'reporting/custom-reports',
     'reporting/analytics-dashboard',
     'reporting/recording-access',
