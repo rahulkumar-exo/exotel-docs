@@ -14,12 +14,7 @@ pipelines:
             - git config user.name "Bitbucket CI"
             - git remote add github https://x-token-auth:${GITHUB_TOKEN}@github.com/rahulkumar-exo/exotel-docs.git
             - git fetch github
-            - git merge github/main --no-edit || (
-                git checkout --theirs -- data/ai-search-logs.json 2>/dev/null || true &&
-                git checkout --theirs -- data/ai-chat-feedback.json 2>/dev/null || true &&
-                git add data/ &&
-                git merge --continue --no-edit
-              )
+            - git merge github/main --no-edit -X theirs
             - git push github HEAD:main
       - step:
           name: Build and Deploy to Vercel
