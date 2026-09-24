@@ -1212,5 +1212,2721 @@
     ],
     "answer_length": 715,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-22T07:11:45.430Z",
+    "response_id": "63145b13-131e-421a-be62-291a2e46a27d",
+    "question": "New account created, kyc is also done, now what is needed to start sending sms?",
+    "question_length": 79,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3058,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      }
+    ],
+    "answer_length": 771
+  },
+  {
+    "timestamp": "2026-09-22T07:12:55.288Z",
+    "response_id": "c98c2eb0-7b35-4ea8-93fc-d9304db3be7b",
+    "question": "But can I not test sms before paid plan?",
+    "question_length": 40,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2217,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      }
+    ],
+    "answer_length": 818
+  },
+  {
+    "timestamp": "2026-09-22T07:14:43.402Z",
+    "response_id": "589a5b98-a207-40b9-a4dd-1b3f0f26b376",
+    "question": "KYC Compliance: Even on a trial account, your number might need to be KYC-compliant and whitelisted depending on the type of SMS you are trying to send.\n\nTell me the steps for it",
+    "question_length": 178,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4079,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 1075
+  },
+  {
+    "timestamp": "2026-09-22T07:46:39.459Z",
+    "response_id": "3611c9c1-2ebe-4aef-b403-76266081a5c7",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7963,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 4458
+  },
+  {
+    "timestamp": "2026-09-22T09:35:34.511Z",
+    "response_id": "0127e45f-a465-4f3b-a63a-73e189dc6f8f",
+    "question": "get me all the docs for inbound calling to my voicebot agent via livekit setup \nfrom audio streaming to troubleshooting and debugging",
+    "question_length": 133,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4933,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Quick Guide to Get Started with Exotel Streaming Services",
+        "product": "agentstream",
+        "url": "/docs/agentstream/getting-started"
+      }
+    ],
+    "answer_length": 2093
+  },
+  {
+    "timestamp": "2026-09-22T09:38:00.668Z",
+    "response_id": "967cde52-f7ef-437a-9d65-8cab5e172544",
+    "question": "get me thoses docs url",
+    "question_length": 22,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2043,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      }
+    ],
+    "answer_length": 593
+  },
+  {
+    "timestamp": "2026-09-22T09:38:32.373Z",
+    "response_id": "d4b84e16-dd9e-49cf-81e6-859d43c220e2",
+    "question": "get me thoses docs url\n docs related to inbound calling",
+    "question_length": 55,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5419,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      }
+    ],
+    "answer_length": 398
+  },
+  {
+    "timestamp": "2026-09-22T09:39:35.676Z",
+    "response_id": "bcf6301d-bbe8-409a-907f-0c30c6a5e77d",
+    "question": "get me the payloads for inbound",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6719,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 3639
+  },
+  {
+    "timestamp": "2026-09-22T09:40:55.853Z",
+    "response_id": "33ae32fa-8f97-45b5-875d-98fb5b458013",
+    "question": "get me the actuall documents url",
+    "question_length": 32,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3531,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 686
+  },
+  {
+    "timestamp": "2026-09-22T09:41:27.502Z",
+    "response_id": "98ae238b-ed9f-46fc-9e1d-bcd59500d71f",
+    "question": "for inbound calling",
+    "question_length": 19,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5440,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Exotel HubSpot Calling Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/hubspot"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      }
+    ],
+    "answer_length": 3453
+  },
+  {
+    "timestamp": "2026-09-22T11:31:08.569Z",
+    "response_id": "e01ba8e3-6512-4104-b7b3-f0ecfbe3d281",
+    "question": "Exophone details",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1853,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoPhone Details",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/number-details"
+      },
+      {
+        "title": "Delete ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/delete-number"
+      },
+      {
+        "title": "Call Details",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      }
+    ],
+    "answer_length": 747
+  },
+  {
+    "timestamp": "2026-09-22T13:23:52.059Z",
+    "question": "this is free or not",
+    "question_length": 19,
+    "response_time_ms": 784,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-09-22T21:14:19.288Z",
+    "response_id": "4f30ffac-0fdc-4f26-ba05-bab5735f50c6",
+    "question": "How do I make a test outbounding call from exotell free exophone to my personal phome?",
+    "question_length": 86,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3868,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 855
+  },
+  {
+    "timestamp": "2026-09-22T21:15:06.443Z",
+    "response_id": "6ea98587-9c06-442f-a6ec-c27a92a3a1ec",
+    "question": "How do I make a test outbounding call from exotell free exophone to my personal phone through APIs?",
+    "question_length": 99,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11196,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      }
+    ],
+    "answer_length": 2182
+  },
+  {
+    "timestamp": "2026-09-23T10:10:06.428Z",
+    "response_id": "8de748dd-34ca-4b15-9a4b-6e55b1645dcf",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2820,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 1005
+  },
+  {
+    "timestamp": "2026-09-23T10:10:07.790Z",
+    "response_id": "e6d259d4-398f-40bc-9072-920fb2cc7fba",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 1005,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T10:10:09.036Z",
+    "response_id": "d9b4aed2-92ad-421d-92fc-d9ddd77fac46",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 1,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 1005,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T10:10:10.260Z",
+    "response_id": "a06c9d92-48b9-4629-8287-2c6744496184",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 1005,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T10:41:06.976Z",
+    "response_id": "a2f58fe8-0e58-4d0f-bcd7-0661d055b38d",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2388,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 652
+  },
+  {
+    "timestamp": "2026-09-23T10:41:08.361Z",
+    "response_id": "1ccf027a-0865-42e3-a6f9-8ea5a503dfe9",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 652,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T10:41:09.720Z",
+    "response_id": "2ae2e246-3d9d-4317-a706-9ef6fae9ceba",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 652,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T10:41:10.904Z",
+    "response_id": "d651fb6c-7144-4cfd-aff4-b0167fdbb7fa",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 652,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T11:21:38.610Z",
+    "response_id": "3d5c6585-7c42-495d-8611-c4a0de2499ef",
+    "question": "svoice a",
+    "question_length": 8,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2047,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 214
+  },
+  {
+    "timestamp": "2026-09-23T11:21:44.873Z",
+    "response_id": "64a5cc47-c410-4277-a21e-aafffaea4818",
+    "question": "voice call",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4174,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      }
+    ],
+    "answer_length": 2273
+  },
+  {
+    "timestamp": "2026-09-23T12:21:12.768Z",
+    "response_id": "6aec0fb8-2e9d-42fc-b3a7-b3a5e35c7451",
+    "question": "price of api",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 916,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-09-23T14:40:07.830Z",
+    "response_id": "a50a662a-322d-481c-9b1b-f675d5aa4c78",
+    "question": "I have bridge calling setup. I want to stream the call in real time instead of downloading it after the call",
+    "question_length": 108,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5353,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      }
+    ],
+    "answer_length": 780
+  },
+  {
+    "timestamp": "2026-09-23T14:40:58.630Z",
+    "response_id": "1d43b735-4679-4e3e-a746-6cf170f24527",
+    "question": "does AgentStream not do this only..?",
+    "question_length": 36,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4497,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Events Call Backs",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/events-callbacks"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 760
+  },
+  {
+    "timestamp": "2026-09-23T14:48:06.066Z",
+    "response_id": "e8d87801-cb46-46c8-86f4-e9956c62a6fb",
+    "question": "cost per usa number?",
+    "question_length": 20,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 777,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "API FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/api-faqs"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "ExoPhone Setup",
+        "product": "getting-started",
+        "url": "/docs/getting-started/exophone-setup"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-09-23T16:43:41.138Z",
+    "response_id": "fc055403-ec8b-4027-986e-91ab84a35314",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2657,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 778
+  },
+  {
+    "timestamp": "2026-09-23T16:43:42.716Z",
+    "response_id": "19c2aaf8-f6a0-43c1-bc48-6d3f02a25a5e",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 778,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T16:43:44.094Z",
+    "response_id": "a1ed32b2-09fc-4917-baaf-8887da3df13c",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 778,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T16:43:46.049Z",
+    "response_id": "439d7460-23b2-41fb-a4e8-0b7cd04e018a",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 778,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T17:37:11.861Z",
+    "response_id": "e3f541b2-75e8-4d09-b4f3-c4056801a21e",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 1,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 778,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T17:37:13.152Z",
+    "response_id": "e48bc17f-902c-4a90-ae34-fcf90f2c6606",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 778,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T17:37:14.571Z",
+    "response_id": "7f23e6fd-4ca4-488c-98c2-9f32bc330408",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 778,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T17:37:15.828Z",
+    "response_id": "7c4b1267-4e2e-4bb4-93b8-523e0d24c5ef",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 778,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T17:46:48.651Z",
+    "response_id": "3225e8e6-23ee-4724-8cd5-f028bfdbd655",
+    "question": "I am interested in authentication without SMS or email",
+    "question_length": 54,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2830,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "SMS Details",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/sms-details"
+      }
+    ],
+    "answer_length": 831
+  },
+  {
+    "timestamp": "2026-09-23T18:58:15.162Z",
+    "response_id": "45d7a0d7-1403-45a1-8c82-acb36fbc43a1",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2030,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755
+  },
+  {
+    "timestamp": "2026-09-23T18:58:16.389Z",
+    "response_id": "1c6724f2-dd7b-443b-b79b-7cb41afd736a",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T18:58:17.629Z",
+    "response_id": "95003b73-8161-4ba8-b0a2-5b8ae437b9f3",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T18:58:18.862Z",
+    "response_id": "327193ca-200a-4897-af8c-2cb2c23144d1",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T19:13:22.646Z",
+    "response_id": "697bce25-0fb0-4eb7-9b7a-e4affeac1491",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 1,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T19:42:22.784Z",
+    "response_id": "aa12754d-0314-40f2-97b8-ef4e8f74a11e",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T19:42:24.496Z",
+    "response_id": "8f46bdd6-ca8d-4ead-a423-0c4be884ff60",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T19:42:25.711Z",
+    "response_id": "10469f49-e736-4b05-b6ba-59d1a63a9983",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T19:57:32.836Z",
+    "response_id": "766cb847-a28a-4f19-a3e3-c1c8705706a6",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T19:57:34.395Z",
+    "response_id": "3acc15c0-aba2-4ab7-9baa-84090a65dfc9",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 755,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T21:01:03.910Z",
+    "response_id": "72c17ee3-2b01-4923-b1b8-e289becf4d71",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3116,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 923
+  },
+  {
+    "timestamp": "2026-09-23T21:16:05.779Z",
+    "response_id": "1ca0eb4e-a7bf-4a0f-8f9c-e4332d7549ab",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 923,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T21:16:07.022Z",
+    "response_id": "ffc26c07-ed70-4c5b-b964-216ded6587bb",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 923,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T21:16:08.312Z",
+    "response_id": "18676723-f1a3-4d41-a5e7-d0944ed93c3e",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 923,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T21:48:59.163Z",
+    "response_id": "7b0f3ece-ec41-4681-9432-49861242e92d",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 923,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T21:49:00.773Z",
+    "response_id": "bc4f70a9-4d9e-49f5-9e75-0a84fc2c6d1b",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 1,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 923,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T22:04:05.013Z",
+    "question": "health check probe",
+    "question_length": 18,
+    "response_time_ms": 581,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-09-23T22:04:08.512Z",
+    "response_id": "e9713c3c-9f37-48b8-af5e-1005eda5744f",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2175,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 915
+  },
+  {
+    "timestamp": "2026-09-23T22:35:12.768Z",
+    "response_id": "40a83838-9539-4457-ad71-95e3f98ea8b4",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2016,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 638
+  },
+  {
+    "timestamp": "2026-09-23T22:35:14.049Z",
+    "response_id": "2c5add61-d34d-4c9a-b412-5857a7e113ed",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 638,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T22:35:15.751Z",
+    "response_id": "d7dd57a4-d3e6-47b9-ba95-4fe71b7d60db",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 638,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T22:35:17.000Z",
+    "response_id": "1fe8f196-1c7d-4510-a854-b57dae82bfc4",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 638,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T22:50:21.011Z",
+    "response_id": "842f970b-d90f-430d-b81d-22caa4db46c0",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 1,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 638,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T23:54:31.552Z",
+    "response_id": "82f18be0-e16f-4087-8e58-694ffe14eb61",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1980,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557
+  },
+  {
+    "timestamp": "2026-09-23T23:54:33.039Z",
+    "response_id": "d20a029c-7067-46b1-80c1-971d8e68d6cc",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T23:54:34.401Z",
+    "response_id": "16516f19-e05a-4cc2-be2a-f702b20894ab",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T23:54:35.602Z",
+    "response_id": "dfb81a81-5ffa-442f-be1f-54073c20f15c",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-23T23:54:36.839Z",
+    "response_id": "7bb9f11c-8d9e-4503-a168-1a8695f12da1",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T00:40:59.114Z",
+    "response_id": "a8cb0131-1e46-49b6-9853-b4dc3c57f441",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T00:41:00.554Z",
+    "response_id": "32920fe3-a30a-4b0c-be10-7984a0de819a",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T00:41:02.393Z",
+    "response_id": "11aae8d9-21e9-43f3-a769-71224c082d99",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T00:41:03.565Z",
+    "response_id": "3d90ed7a-42ec-49ea-9540-153a86edd117",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T00:41:04.965Z",
+    "response_id": "386a6b7d-51ae-4ecf-8c39-444e1d3bad8d",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 557,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T01:40:36.775Z",
+    "response_id": "ad1b7f54-facd-4dee-b134-41ce1747c0e5",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2015,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 584
+  },
+  {
+    "timestamp": "2026-09-24T01:55:41.027Z",
+    "response_id": "503b813b-7734-4416-99d8-cc4379194ead",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 584,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T01:55:42.806Z",
+    "response_id": "55a014fb-ac0f-44a9-8878-105dbd06203f",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 584,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T01:55:44.055Z",
+    "response_id": "b382a01a-9c31-4357-b2d7-8917747d28f0",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 584,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T01:55:45.603Z",
+    "response_id": "21ad839c-435c-40d3-8902-808afff1305f",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 584,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T02:41:46.501Z",
+    "response_id": "349a4cd7-455a-42a7-af4a-433b9d1d255c",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1989,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 780
+  },
+  {
+    "timestamp": "2026-09-24T02:41:47.661Z",
+    "response_id": "89ef65f7-6bb2-4bbe-b0eb-2c69b98da1c8",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 780,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T02:41:49.026Z",
+    "response_id": "61dfb89a-9e7f-472e-bcc4-e8cbc0298cc8",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 780,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T02:41:50.673Z",
+    "response_id": "247d985a-868d-4ffa-816e-1dbaa3387fdd",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 1,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 780,
+    "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-24T02:41:52.155Z",
+    "response_id": "af09f22b-0c3b-4589-a772-9ae3133fa686",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 780,
+    "cache_hit": true
   }
 ]

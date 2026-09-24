@@ -36,7 +36,7 @@ curl -u '<api_key>:<api_token>' 'https://api.exotel.com/v1/Accounts/<your_sid>/C
 
 ## Rate Limits
 
-Voice APIs are limited to **200 calls per minute**. Exceeding this returns HTTP `429`.
+Voice APIs are limited to **20 calls per minute**. Exceeding this returns HTTP `429`.
 
 ## API Reference
 
