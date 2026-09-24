@@ -324,10 +324,8 @@ In this case, valid items are queued for processing and invalid items are reject
 Submits a remote CSV file URL for asynchronous ingestion. CQA downloads and processes the file in the background.
 
 POST
-````
-
+```
 https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/files
-
 ```
 ### Request Parameters (JSON Body)
 
@@ -360,9 +358,7 @@ Retrieves the current status and details of an ingested interaction.
 
 GET
 ```
-
 https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/{interaction_identifier}
-
 ```
 ### Path Parameters
 
@@ -420,9 +416,7 @@ Retrieves all interactions for a batch or file job, with pagination and job-leve
 
 GET
 ```
-
 https://{host}/cqa/api/v1/accounts/{account_id}/ingress/interactions/batch/{id}
-
 ```
 ### Path Parameters
 
@@ -477,9 +471,7 @@ Returns a paginated list of completed analyses matching the given filters. Date 
 
 **POST**
 ```
-
 https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit={limit}&offset={offset}
-
 ```
 **Query Parameters**
 
@@ -515,8 +507,7 @@ https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit={limit}&offset={o
 | `value` | Numeric score value. |
 
 **Example Request**
-```
-
+```bash
 curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit=5&offset=0" \
   -H "X-API-Key: {your_api_key}" \
   -H "Content-Type: application/json" \
@@ -526,13 +517,11 @@ curl -X POST "https://{host}/cqa/api/v1/accounts/{account_id}/analyses?limit=5&o
       {"field": "score", "operator": "greater_than_or_equal", "value": 9}
     ]
   }'
-
 ```
 **Response**
 
 `200 OK`
-```
-
+```json
 {
   "status": 200,
   "request_id": "51f6705d-6639-41ed-9029-d6053c5df1c2",
@@ -607,10 +596,8 @@ Returns the full scoring breakdown for a specific analysis, including categories
 
 GET
 ```
-
 https://{host}/cqa/api/v1/accounts/{account_id}/analyses/{analysis_id}
-
-````
+```
 ### Path Parameters
 
 | Parameter Name | Mandatory / Optional | Description |
