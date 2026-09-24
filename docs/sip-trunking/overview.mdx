@@ -1,0 +1,77 @@
+---
+id: overview
+title: SIP Trunking
+description: Connect your SIP system to Exotel PSTN with Dynamic SIP Trunking APIs — quickstart, network, and error reference.
+sidebar_label: Overview
+slug: /sip-trunking/overview
+sidebar_position: 1
+---
+
+import PathCards from '@site/src/components/PathCards';
+
+# SIP Trunking
+
+Connect your PBX, SBC, or SIP platform to Exotel's PSTN network. Create trunks, map numbers, and route inbound/outbound calls with REST APIs.
+
+```
+Outbound:  Your SIP → Exotel trunk → PSTN
+Inbound:   PSTN → Exotel → Flow (Connect) → trunk → Your SIP
+```
+
+## Choose your path
+
+<PathCards
+  items={[
+    {
+      title: 'Quickstart',
+      description: 'Create a trunk and place your first inbound and outbound call.',
+      href: '/docs/sip-trunking/quickstart',
+      badge: 'Recommended',
+    },
+    {
+      title: 'Dynamic Trunk API',
+      description: 'Full Setup + Manage & view REST APIs for trunks.',
+      href: '/docs/sip-trunking/dynamic-sip-trunking',
+      badge: 'API',
+    },
+    {
+      title: 'Network & firewall',
+      description: 'Why allowlists matter — then follow docs.exotel.com for IPs and ports.',
+      href: '/docs/sip-trunking/network-firewall',
+    },
+    {
+      title: 'Call directions',
+      description: 'Outbound, inbound, and pstn vs flow routing modes.',
+      href: '/docs/sip-trunking/call-directions',
+    },
+    {
+      title: 'Errors & troubleshooting',
+      description: 'SIP and API error codes with fixes.',
+      href: '/docs/sip-trunking/errors-troubleshooting',
+    },
+  ]}
+/>
+
+## What you can build
+
+| Use case | Start here |
+|----------|------------|
+| SIP ↔ PSTN (PBX / SBC) | [Quickstart](./quickstart) |
+| API-managed trunks | [Dynamic SIP Trunking API](./dynamic-sip-trunking) |
+| Inbound to your SIP URI | [Connect Applet inbound](./connect-applet-inbound) |
+| SIP contact centre ↔ Voice AI (WSS) | [StreamKit SIP setup](./streamkit-sip) → [AgentStream StreamKit](/docs/agentstream/streamkit-cloud) |
+
+## Transport how-tos
+
+TCP, TLS, and FQDN integration guides live on the docs portal under [SIP Trunk Configuration](https://docs.exotel.com/dynamic-sip-trunking/sip-trunk-configuration). This developer portal focuses on APIs, network rules, and first-call success.
+
+## Samples
+
+- [github.com/exotel](https://github.com/exotel)
+- Support: hello@exotel.com (include Account SID, trunk transport, Call SIDs, SIP traces)
+
+## Next
+
+1. [Quickstart](./quickstart)  
+2. [Network & firewall](./network-firewall)  
+3. [Dynamic SIP Trunking API](./dynamic-sip-trunking)  

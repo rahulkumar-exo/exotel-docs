@@ -16,7 +16,7 @@ interface ApiConsoleProps {
   path: string; // e.g. "/v1/Accounts/{account_sid}/Calls/connect"
   params: ApiParam[];
   contentType?: 'form' | 'json'; // default: form
-  host?: 'api' | 'ccm';
+  host?: 'api' | 'ccm' | 'cpaas';
 }
 
 interface Credentials {
@@ -46,9 +46,12 @@ function isMumbai(subdomain: string) {
   return subdomain.includes('.in.');
 }
 
-function hostForRegion(kind: 'api' | 'ccm', mumbai: boolean) {
+function hostForRegion(kind: 'api' | 'ccm' | 'cpaas', mumbai: boolean) {
   if (kind === 'ccm') {
     return mumbai ? 'ccm-api.in.exotel.com' : 'ccm-api.exotel.com';
+  }
+  if (kind === 'cpaas') {
+    return mumbai ? 'cpaas-api.in.exotel.com' : 'cpaas-api.exotel.com';
   }
   return mumbai ? 'api.in.exotel.com' : 'api.exotel.com';
 }
@@ -134,11 +137,12 @@ function ApiConsoleInner({ method, path, params = [], contentType = 'form', host
     }
   }, [isOpen]);
 
-  // Open only the console on this page, not a leftover from the last page.
+  // Open only the matching console; close others on the same page.
   useEffect(() => {
     const handleTryItOpen = (event: Event) => {
       const target = (event as CustomEvent<HTMLElement | undefined>).detail;
       if (target && target !== rootRef.current) {
+        setIsOpen(false);
         return;
       }
       setIsOpen(true);

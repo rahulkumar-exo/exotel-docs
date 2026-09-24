@@ -5,7 +5,7 @@
  */
 export default function RegionalUrls(_props?: {
   path?: string;
-  host?: 'api' | 'ccm';
+  host?: 'api' | 'ccm' | 'cpaas';
 }): null {
   return null;
 }

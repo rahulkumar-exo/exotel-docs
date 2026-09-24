@@ -26,7 +26,7 @@ const products = [
   {
     title: 'AgentStream',
     description: 'Real-time bidirectional audio between live calls and your bot server over WebSocket — three connection methods, full protocol reference.',
-    link: '/docs/agentstream/developer-guide',
+    link: '/docs/agentstream/overview',
   },
   {
     title: 'Contact Center API',
@@ -178,7 +178,7 @@ curl -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \\
     id: 'stream',
     label: 'Stream a call',
     method: 'POST',
-    href: '/docs/agentstream/developer-guide',
+    href: '/docs/agentstream/overview',
     code: `# send the room to your bot
 curl -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \\
   -X POST "https://api.in.exotel.com/v1/accounts/$SID/calls/connect" \\

@@ -6,11 +6,26 @@ interface TryItBannerProps {
   endpoint: string;
 }
 
+function findNextConsole(banner: Element): HTMLElement | undefined {
+  const article = banner.closest('article') ?? document.body;
+  const consoles = Array.from(
+    article.querySelectorAll<HTMLElement>('[data-try-it-console]'),
+  );
+  return (
+    consoles.find(
+      (consoleEl) =>
+        !!(banner.compareDocumentPosition(consoleEl) & Node.DOCUMENT_POSITION_FOLLOWING),
+    ) ?? consoles[0]
+  );
+}
+
 export default function TryItBanner({ method, endpoint }: TryItBannerProps) {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const article = event.currentTarget.closest('article') ?? document;
-    const el = article.querySelector<HTMLElement>('[data-try-it-console]');
-    window.dispatchEvent(new CustomEvent('tryit-open', { detail: el ?? undefined }));
+    const banner =
+      event.currentTarget.closest('[data-try-it-banner]') ?? event.currentTarget;
+    const el = findNextConsole(banner);
+
+    window.dispatchEvent(new CustomEvent('tryit-open', { detail: el }));
 
     if (el) {
       setTimeout(() => {
@@ -20,7 +35,7 @@ export default function TryItBanner({ method, endpoint }: TryItBannerProps) {
   };
 
   return (
-    <div className={styles.banner}>
+    <div className={styles.banner} data-try-it-banner>
       <div className={styles.bannerLeft}>
         <span className={styles.methodBadge} data-method={method}>{method}</span>
         <code className={styles.endpoint}>{endpoint}</code>

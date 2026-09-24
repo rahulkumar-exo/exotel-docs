@@ -308,49 +308,44 @@ const sidebars: SidebarsConfig = {
 
   agentStreamSidebar: [
     'agentstream/overview',
+    'agentstream/what-to-use-when',
     'agentstream/getting-started',
-    'agentstream/developer-guide',
     {
       type: 'category',
-      label: 'Applets & Streaming',
+      label: 'Connect paths',
       collapsed: false,
       items: [
-        'agentstream/passthru-applet',
+        'agentstream/connect-voice-ai',
+        'agentstream/connect-voice-ai-flow',
+        'agentstream/programmable-voice',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Protocol & applets',
+      collapsed: false,
+      items: [
+        'agentstream/websocket-protocol',
         'agentstream/stream-voicebot-applet',
         'agentstream/stream-voicebot-extension',
+        'agentstream/passthru-applet',
         'agentstream/bot-stream-legs-api',
+        'agentstream/wss-errors-monitoring',
       ],
     },
-    {
-      type: 'category',
-      label: 'Integrations',
-      collapsed: false,
-      items: [
-        'agentstream/omnidimension-integration',
-        'agentstream/livekit-integration',
-        'agentstream/elevenlabs-integration',
-        'agentstream/manage-exotrunks',
-      ],
-    },
+    'agentstream/streamkit-cloud',
   ],
 
   vsipSidebar: [
     'sip-trunking/overview',
+    'sip-trunking/quickstart',
+    'sip-trunking/call-directions',
     'sip-trunking/dynamic-sip-trunking',
-    'sip-trunking/master-guide',
-    'sip-trunking/flow-api-configuration',
-    {
-      type: 'category',
-      label: 'Integration Guides',
-      collapsed: false,
-      items: [
-        'sip-trunking/tls-integration',
-        'sip-trunking/tcp-integration',
-        'sip-trunking/fqdn-integration',
-        'sip-trunking/flow-integration',
-        'sip-trunking/voicebot-integration',
-      ],
-    },
+    'sip-trunking/network-firewall',
+    'sip-trunking/streamkit-sip',
+    'sip-trunking/connect-applet-inbound',
+    'sip-trunking/errors-troubleshooting',
+    'sip-trunking/faqs',
   ],
 
   mcpServerSidebar: [

@@ -31,6 +31,8 @@ module.exports = async function handler(req, res) {
     'api.in.exotel.com',
     'ccm-api.exotel.com',
     'ccm-api.in.exotel.com',
+    'cpaas-api.exotel.com',
+    'cpaas-api.in.exotel.com',
   ];
   if (!allowedDomains.includes(subdomain)) {
     return res.status(400).json({ error: 'Invalid subdomain' });
