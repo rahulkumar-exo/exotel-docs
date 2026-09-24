@@ -1,17 +1,13 @@
 ---
 id: passthru-applet
-title: Working with Passthru Applet for AgentStream (Beta)
+title: Working with Passthru Applet for AgentStream
 description: Use the Passthru Applet to send call and streaming metadata from Voice Applet flows to your server in AgentStream workflows.
 sidebar_label: Passthru Applet
 slug: /agentstream/passthru-applet
 sidebar_position: 3
 ---
 
-# Working with Passthru Applet for AgentStream (Beta)
-
-:::warning Beta Feature
-The Passthru Applet for AgentStream is currently in Beta. Features and behavior may change.
-:::
+# Working with Passthru Applet for AgentStream
 
 ## Overview
 

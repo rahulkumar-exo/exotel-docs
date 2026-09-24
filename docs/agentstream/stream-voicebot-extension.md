@@ -1,17 +1,13 @@
 ---
 id: stream-voicebot-extension
-title: "Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)"
+title: "Extension guide: Stream and Voicebot Applet"
 description: Comprehensive guide to using Exotel Stream Applet and Voicebot Applet for media streaming with extended configuration options.
-sidebar_label: Extension Guide (Beta)
+sidebar_label: Extension guide
 slug: /agentstream/stream-voicebot-extension
 sidebar_position: 5
 ---
 
-# Updated Extension Guide: Working with the Stream and Voicebot Applet (Beta)
-
-:::warning Beta Feature
-This extension guide covers Beta features for the Stream and Voicebot Applet. Features and behavior may change.
-:::
+# Extension guide: Stream and Voicebot Applet
 
 ## Overview
 

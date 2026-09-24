@@ -1,63 +1,97 @@
 ---
 id: getting-started
-title: Quick Guide to Get Started with Exotel Streaming Services
-description: Learn how to enable and use Exotel AgentStream capabilities via the Voicebot Applet or Stream Applet for real-time audio streaming.
-sidebar_label: Getting Started
+title: Getting started with AgentStream
+description: Make your first AgentStream connection in minutes — prerequisites, echo server, and Connect Voice AI.
+sidebar_label: Getting started
 slug: /agentstream/getting-started
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Quick Guide to Get Started with Exotel Streaming Services
+# Getting started with AgentStream
 
-This guide outlines how to enable and use Exotel's AgentStream capabilities via the Voicebot Applet or Stream Applet. These applets allow real-time audio streaming from calls to your server for processing, voicebot interactions, and more.
-
-## Streaming Modes: Stream Applet vs. Voicebot Applet
-
-Before you begin, choose the streaming mode that fits your use case:
-
-| Mode | Direction | Best For |
-|---|---|---|
-| **Stream Applet** | Unidirectional — audio flows from the call **to your server** | Speech-to-text transcription, call analytics, passive monitoring |
-| **Voicebot Applet** | Bidirectional — your server **sends audio back** into the call | AI voicebots, interactive IVR, real-time voice synthesis |
-
-Both applets deliver audio over a WebSocket connection. The Stream Applet is simpler to implement; the Voicebot Applet requires your server to handle both receiving and sending audio frames.
+Get audio flowing between a live call and your server in minutes.
 
 ## Prerequisites
 
-- An active Exotel account with AgentStream enabled (contact Exotel support if you do not see AgentStream in your dashboard)
-- Access to the Exotel dashboard at [my.exotel.com](https://my.exotel.com)
-- A WebSocket server endpoint that can accept an incoming connection from Exotel
-- For bidirectional (Voicebot) mode: your WebSocket server must be able to send audio back in the expected format (mulaw or PCM, 8 kHz by default)
-- At least one Exotel virtual number to associate with your streaming call flow
+- Exotel account with AgentStream enabled ([sign up](https://my.exotel.com/auth/register))
+- API Key, API Token, Account SID — [Authentication](/docs/references/authentication)
+- An ExoPhone (virtual number)
+- A publicly reachable WebSocket endpoint (`wss://`)
 
-## Setup Steps
+## Step 1 — Run an echo server
 
-1. **Log into the Exotel dashboard.** Go to [my.exotel.com](https://my.exotel.com) and sign in with your account credentials.
+```python
+# echo.py — works on Python 3.8+
+import asyncio, json, websockets
 
-2. **Navigate to ExoTrunks or the App Bazaar.** In the left sidebar, select **ExoPhone → App Bazaar** (or **ExoTrunks** if you are using SIP-based routing). This is where you build and manage call flows using applets.
+async def handle(ws):
+    stream_sid = None
+    async for msg in ws:
+        ev = json.loads(msg)
+        event = ev.get("event")
+        if event == "start":
+            stream_sid = ev["start"]["stream_sid"]
+            print("stream started", stream_sid)
+        elif event == "media":
+            await ws.send(json.dumps({
+                "event": "media",
+                "stream_sid": stream_sid,
+                "media": {"payload": ev["media"]["payload"]},
+            }))
+        elif event == "stop":
+            break
 
-3. **Create a new call flow.** Click **Create New App** (or **New Flow**). Give the flow a descriptive name such as "Voicebot Flow - Support" or "Stream Flow - Transcription".
+async def main():
+    async with websockets.serve(handle, "0.0.0.0", 5001):
+        print("listening on :5001")
+        await asyncio.Future()
 
-4. **Add the Stream Applet or Voicebot Applet.** Drag the **Stream Applet** or **Voicebot Applet** from the applet panel into your call flow canvas.
+asyncio.run(main())
+```
 
-5. **Configure the WebSocket URL.** Click the applet to open its settings. Enter the full WebSocket URL of your server (for example, `wss://yourserver.example.com/stream`). If your server requires authentication headers or custom parameters, add them in the **Custom Parameters** field.
+```bash
+pip install websockets
+python echo.py
+# expose with ngrok (or similar): ngrok http 5001
+# use the wss:// URL as StreamUrl
+```
 
-6. **Add the Passthru Applet before the streaming applet (recommended).** If your WebSocket server needs advance notice before audio starts (for example, to prepare a session or load a model), add a **Passthru Applet** earlier in the flow. It sends an HTTP POST with call metadata to your server before the WebSocket connection opens. See the [Passthru Applet guide](./passthru-applet) for details.
+## Step 2 — Connect Voice AI (outbound)
 
-7. **Assign the call flow to a virtual number.** Save the flow, then go to **ExoPhone → My Numbers**, find your virtual number, and set its inbound call flow to the flow you just created.
+```bash
+export EXOTEL_API_KEY="your_api_key"
+export EXOTEL_API_TOKEN="your_api_token"
+export EXOTEL_ACCOUNT_SID="your_account_sid"
+# India: api.in.exotel.com · Singapore: api.exotel.com
+export EXOTEL_SUBDOMAIN="api.in.exotel.com"
 
-8. **Test with a live call.** Dial your virtual number from any phone. Check your WebSocket server logs to confirm the connection is established and audio frames are arriving. For the Voicebot Applet, also verify that audio sent from your server is audible to the caller.
+curl -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
+  "https://$EXOTEL_SUBDOMAIN/v1/Accounts/$EXOTEL_ACCOUNT_SID/Calls/connect" \
+  -F "From=+919876543210" \
+  -F "CallerId=YOUR_EXOPHONE" \
+  -F "StreamUrl=wss://YOUR_PUBLIC_HOST/media" \
+  -F "StreamType=bidirectional"
+```
 
-## Configuration Notes
+Answer the phone — you should hear your own audio echoed back.
 
-- **Audio format:** The default audio format is mulaw at 8 kHz. If your pipeline requires PCM or 16 kHz audio, configure this in the applet's advanced settings (see the [Extension Guide](./stream-voicebot-extension)).
-- **Latency:** Keep your WebSocket server geographically close to Exotel's infrastructure (India region) to minimize round-trip latency, which matters most in bidirectional voicebot mode.
-- **Connection lifecycle:** Exotel opens the WebSocket connection when the call connects to the applet and closes it when the call ends. Design your server to handle reconnects gracefully.
-- **Firewall:** Ensure your WebSocket server accepts inbound connections from Exotel's IP ranges. Contact Exotel support for the current list of egress IPs if you need to allowlist them.
+## Step 3 — Confirm success
 
-## Related
+| Check | Expected |
+|-------|----------|
+| API response | `call.sid` present, status `queued` / `in-progress` |
+| Server logs | `start` then continuous `media` events |
+| Call audio | Echo (or your TTS) audible |
 
-- [Stream & Voicebot Applet](./stream-voicebot-applet) -- Detailed guide on Stream and Voicebot Applets
-- [Stream & Voicebot Extension Guide](./stream-voicebot-extension) -- Updated extension guide
-- [Passthru Applet](./passthru-applet) -- Working with the Passthru Applet
-- [AgentStream Overview](./overview) -- Platform overview
+## Next paths
+
+| Goal | Go to |
+|------|-------|
+| Unsure which API to use | [What to use when](./what-to-use-when) |
+| IVR / agent handoff | [Connect with Flow](./connect-voice-ai-flow) |
+| Build a real bot | [WebSocket protocol](./websocket-protocol) |
+| Monitor live streams | [WSS errors & monitoring](./wss-errors-monitoring) |
+
+:::tip Samples
+Example servers and SDKs: [github.com/exotel](https://github.com/exotel)
+:::
