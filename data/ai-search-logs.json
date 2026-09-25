@@ -4759,5 +4759,39 @@
     ],
     "answer_length": 892,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-25T13:14:24.038Z",
+    "response_id": "e359e6f2-3d68-444c-badb-d6d02c8bcbe1",
+    "question": "Are these api to create lists for campaigns",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2839,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Campaigns - Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/overview"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "SMS Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/overview"
+      }
+    ],
+    "answer_length": 1480
   }
 ]
