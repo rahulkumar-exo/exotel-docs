@@ -4030,5 +4030,39 @@
       }
     ],
     "answer_length": 807
+  },
+  {
+    "timestamp": "2026-09-25T08:31:40.994Z",
+    "response_id": "6e926dcb-8440-4138-b4c9-481523286f70",
+    "question": "return { url: `wss://${process.env.SERVER}/${callTrackingId}?sample-rate=8000` };\n\nim providing response like this when in stream applet i provide http url",
+    "question_length": 155,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4204,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Details (CCM)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      }
+    ],
+    "answer_length": 1129
   }
 ]
