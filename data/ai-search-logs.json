@@ -3996,5 +3996,39 @@
       }
     ],
     "answer_length": 4503
+  },
+  {
+    "timestamp": "2026-09-25T08:12:54.870Z",
+    "response_id": "7eb382b4-dabd-4a09-8005-0347431925e9",
+    "question": "while response should i give when i trigger stream componenet on incoming call,  i have provided their http url  that return the wss url , but i dont know in which formate i should return",
+    "question_length": 187,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3775,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 807
   }
 ]
