@@ -6970,5 +6970,39 @@
     ],
     "answer_length": 737,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-26T14:23:48.407Z",
+    "response_id": "e9746add-1882-480f-9e07-f5357b1a33e7",
+    "question": "how to integrate in spring boot project?",
+    "question_length": 40,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4018,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Upload Contacts via CSV",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/upload-contacts"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 460
   }
 ]
