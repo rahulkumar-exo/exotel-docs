@@ -7140,5 +7140,39 @@
       }
     ],
     "answer_length": 356
+  },
+  {
+    "timestamp": "2026-09-28T13:12:37.547Z",
+    "response_id": "4f68a1de-94b5-4f74-aabb-4a0bf9ec42a2",
+    "question": "how to do call transfer when call streaming over voicebot applet",
+    "question_length": 64,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1738,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1010
   }
 ]
