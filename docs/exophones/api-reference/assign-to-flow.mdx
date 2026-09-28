@@ -1,0 +1,175 @@
+---
+id: assign-to-flow
+title: Assign to Flow
+description: Assign an ExoPhone to a call or SMS flow using the Exotel API. Update voice and SMS routing URLs and friendly names for your phone numbers.
+sidebar_label: Assign to Flow
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Assign ExoPhone to a Flow
+
+Update an ExoPhone's configuration to route calls or SMS to specific flows.
+
+## HTTP Request
+
+```
+PUT /v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>
+```
+
+## Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `exophone_sid` | The unique SID of the ExoPhone |
+
+## Request Parameters
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `VoiceUrl` | No | Updated flow URL for incoming voice calls |
+| `SMSUrl` | No | Updated flow URL for incoming SMS |
+| `FriendlyName` | No | Updated friendly name |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X PUT 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>' \
+  --data-urlencode 'VoiceUrl=https://my.exotel.com/exoml/start/<flow_id>' \
+  --data-urlencode 'FriendlyName=My Sales Line'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+data = {
+    'VoiceUrl': 'https://my.exotel.com/exoml/start/<flow_id>',
+    'FriendlyName': 'My Sales Line',
+}
+
+response = requests.put(
+    'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>',
+    auth=('<api_key>', '<api_token>'),
+    data=data
+)
+
+print(response.status_code)
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+
+const url = 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>';
+
+const params = new URLSearchParams({
+  VoiceUrl: 'https://my.exotel.com/exoml/start/<flow_id>',
+  FriendlyName: 'My Sales Line',
+});
+
+const response = await fetch(url, {
+  method: 'PUT',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  body: params,
+});
+
+const data = await response.json();
+console.log(response.status, data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$data = array(
+    'VoiceUrl' => 'https://my.exotel.com/exoml/start/<flow_id>',
+    'FriendlyName' => 'My Sales Line',
+);
+
+$ch = curl_init('https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>');
+curl_setopt($ch, CURLOPT_USERPWD, "<api_key>:<api_token>");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+echo $status . "\n" . $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io"
+    "net/http"
+    "net/url"
+    "strings"
+)
+
+func main() {
+    endpoint := "https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>"
+
+    data := url.Values{}
+    data.Set("VoiceUrl", "https://my.exotel.com/exoml/start/<flow_id>")
+    data.Set("FriendlyName", "My Sales Line")
+
+    req, err := http.NewRequest("PUT", endpoint, strings.NewReader(data.Encode()))
+    if err != nil {
+        panic(err)
+    }
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+    res, err := http.DefaultClient.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
+
+    respBody, _ := io.ReadAll(res.Body)
+    fmt.Println(res.StatusCode, string(respBody))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+Returns the updated ExoPhone object with the new configuration.
+
+```json
+{
+  "sid": "9eeafc8ab479a386dc95f854f9d7cd8a",
+  "phone_number": "+91XXXX30240",
+  "friendly_name": "My Sales Line",
+  "voice_url": "https://my.exotel.com/exoml/start/flow_id",
+  "sms_url": "https://my.exotel.com/exoml/start/sms_flow_id",
+  "capabilities": {
+    "voice": true,
+    "sms": true
+  }
+}
+```

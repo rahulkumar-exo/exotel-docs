@@ -4,6 +4,8 @@ title: Available ExoPhones
 description: Search for available ExoPhones by country and type using the Exotel API. Find landline, mobile, and toll-free numbers ready for purchase.
 sidebar_label: Available Numbers
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
 
@@ -33,6 +35,104 @@ GET /v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/<iso_country_code>/<nu
 | `IncomingSMS` | No | Filter numbers that support incoming SMS |
 | `InRegion` | No | Filter by telecom circle (e.g., `IN`, `AP`, `DL`, `KA`) |
 | `Contains` | No | Filter by substring match in the number |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X GET 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/IN/Landline?InRegion=KA'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+response = requests.get(
+    'https://api.exotel.com/v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/IN/Landline',
+    auth=('<api_key>', '<api_token>'),
+    params={'InRegion': 'KA'}
+)
+
+print(response.status_code)
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+
+const url = 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/IN/Landline?InRegion=KA';
+
+const response = await fetch(url, {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+  },
+});
+
+const data = await response.json();
+console.log(response.status, data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$ch = curl_init('https://api.exotel.com/v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/IN/Landline?InRegion=KA');
+curl_setopt($ch, CURLOPT_USERPWD, "<api_key>:<api_token>");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+echo $status . "\n" . $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io"
+    "net/http"
+)
+
+func main() {
+    endpoint := "https://api.exotel.com/v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/IN/Landline?InRegion=KA"
+
+    req, err := http.NewRequest("GET", endpoint, nil)
+    if err != nil {
+        panic(err)
+    }
+    req.SetBasicAuth("<api_key>", "<api_token>")
+
+    res, err := http.DefaultClient.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
+
+    respBody, _ := io.ReadAll(res.Body)
+    fmt.Println(res.StatusCode, string(respBody))
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Response
 

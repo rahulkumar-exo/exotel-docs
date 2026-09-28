@@ -1,0 +1,142 @@
+---
+id: delete-number
+title: Delete ExoPhone
+description: Release and delete an ExoPhone from your Exotel account using the API. Remove phone numbers you no longer need with a single DELETE request.
+sidebar_label: Delete Number
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Delete an ExoPhone
+
+Release an ExoPhone from your account.
+
+## HTTP Request
+
+```
+DELETE /v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>
+```
+
+## Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `exophone_sid` | The unique SID of the ExoPhone to delete |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X DELETE 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+response = requests.delete(
+    'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>',
+    auth=('<api_key>', '<api_token>')
+)
+
+print(response.status_code)
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+
+const url = 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>';
+
+const response = await fetch(url, {
+  method: 'DELETE',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+  },
+});
+
+const data = await response.json();
+console.log(response.status, data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$ch = curl_init('https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>');
+curl_setopt($ch, CURLOPT_USERPWD, "<api_key>:<api_token>");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+echo $status . "\n" . $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io"
+    "net/http"
+)
+
+func main() {
+    endpoint := "https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>"
+
+    req, err := http.NewRequest("DELETE", endpoint, nil)
+    if err != nil {
+        panic(err)
+    }
+    req.SetBasicAuth("<api_key>", "<api_token>")
+
+    res, err := http.DefaultClient.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
+
+    respBody, _ := io.ReadAll(res.Body)
+    fmt.Println(res.StatusCode, string(respBody))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+```json
+{
+  "Status": 202,
+  "Message": "Accepted"
+}
+```
+
+:::warning
+Deleting an ExoPhone is permanent. The number will be released and may be reassigned to another account. Ensure no active flows or campaigns are using this number before deleting.
+:::
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| `202` | Request accepted, ExoPhone will be released |
+| `400` | Bad request |
+| `404` | ExoPhone not found |
