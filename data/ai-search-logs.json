@@ -7492,5 +7492,39 @@
       }
     ],
     "answer_length": 8989
+  },
+  {
+    "timestamp": "2026-09-29T12:37:47.543Z",
+    "response_id": "f56e8fec-1408-4b3c-a0af-85a99b195438",
+    "question": "Does Exotel support all these features: incoming/outgoing calls, agent routing, browser/desktop calling, CRM click-to-call API, incoming/outgoing webhooks, call status & recording APIs, and answering calls directly inside my custom CRM? Also, can I use these features with monthly billing? Please mention the exact Exotel APIs/features for each.",
+    "question_length": 345,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 25829,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Adding Secure Recording Component in Exotel's SFDC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce-secure-recording"
+      }
+    ],
+    "answer_length": 11735
   }
 ]
