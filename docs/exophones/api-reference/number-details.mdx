@@ -1,0 +1,141 @@
+---
+id: number-details
+title: ExoPhone Details
+description: Get detailed configuration and metadata for a specific ExoPhone using the Exotel API. Retrieve capabilities, flow URLs, and number properties.
+sidebar_label: Number Details
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Get ExoPhone Details
+
+Retrieve details for a specific ExoPhone.
+
+## HTTP Request
+
+```
+GET /v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>
+```
+
+## Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `exophone_sid` | The unique SID of the ExoPhone |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X GET 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+response = requests.get(
+    'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>',
+    auth=('<api_key>', '<api_token>')
+)
+
+print(response.status_code)
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+
+const url = 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>';
+
+const response = await fetch(url, {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+  },
+});
+
+const data = await response.json();
+console.log(response.status, data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$ch = curl_init('https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>');
+curl_setopt($ch, CURLOPT_USERPWD, "<api_key>:<api_token>");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+echo $status . "\n" . $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io"
+    "net/http"
+)
+
+func main() {
+    endpoint := "https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers/<exophone_sid>"
+
+    req, err := http.NewRequest("GET", endpoint, nil)
+    if err != nil {
+        panic(err)
+    }
+    req.SetBasicAuth("<api_key>", "<api_token>")
+
+    res, err := http.DefaultClient.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
+
+    respBody, _ := io.ReadAll(res.Body)
+    fmt.Println(res.StatusCode, string(respBody))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+Returns a single ExoPhone object with all configuration details.
+
+```json
+{
+  "sid": "011XXXXXXX1",
+  "phone_number": "+9111XXXXXXX6",
+  "friendly_name": "011XXXXXXX6",
+  "capabilities": {
+    "voice": true,
+    "sms": true
+  },
+  "country": "IN",
+  "region": "DL",
+  "voice_url": "https://my.exotel.com/exoml/start/flow_id",
+  "sms_url": null
+}
+```

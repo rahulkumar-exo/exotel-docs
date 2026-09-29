@@ -1,0 +1,167 @@
+---
+id: update-user
+title: Update User
+description: Update user details such as name and email for an existing user in your Exotel Contact Center account using the Users API.
+sidebar_label: Update User
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Update User
+
+Update details for an existing user.
+
+## HTTP Request
+
+```
+PUT /v2/accounts/<account_sid>/users/<user_id>
+```
+
+## Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `user_id` | The UUID of the user to update |
+
+## Request Parameters
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `first_name` | No | Updated first name (3–20 chars) |
+| `last_name` | No | Updated last name (3–20 chars) |
+| `email` | No | Can only be set if not provided during creation |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X PUT 'https://ccm-api.exotel.com/v2/accounts/<account_sid>/users/<user_id>' \
+  -H 'Content-Type: application/json' \
+  -d '{"first_name": "John", "last_name": "Smith"}'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+payload = {
+    'first_name': 'John',
+    'last_name': 'Smith',
+}
+
+response = requests.put(
+    'https://ccm-api.exotel.com/v2/accounts/<account_sid>/users/<user_id>',
+    auth=('<api_key>', '<api_token>'),
+    json=payload
+)
+
+print(response.status_code)
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+
+const url = 'https://ccm-api.exotel.com/v2/accounts/<account_sid>/users/<user_id>';
+
+const payload = {
+  first_name: 'John',
+  last_name: 'Smith',
+};
+
+const response = await fetch(url, {
+  method: 'PUT',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+});
+
+const data = await response.json();
+console.log(response.status, data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$payload = array(
+    'first_name' => 'John',
+    'last_name' => 'Smith',
+);
+
+$ch = curl_init('https://ccm-api.exotel.com/v2/accounts/<account_sid>/users/<user_id>');
+curl_setopt($ch, CURLOPT_USERPWD, "<api_key>:<api_token>");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+echo $status . "\n" . $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io"
+    "net/http"
+    "strings"
+)
+
+func main() {
+    endpoint := "https://ccm-api.exotel.com/v2/accounts/<account_sid>/users/<user_id>"
+
+    payload := `{"first_name": "John", "last_name": "Smith"}`
+
+    req, err := http.NewRequest("PUT", endpoint, strings.NewReader(payload))
+    if err != nil {
+        panic(err)
+    }
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Set("Content-Type", "application/json")
+
+    res, err := http.DefaultClient.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
+
+    respBody, _ := io.ReadAll(res.Body)
+    fmt.Println(res.StatusCode, string(respBody))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+Returns the updated user object with the same structure as the Create User response.
+
+## Error Codes
+
+| Code | HTTP Status | Description |
+|------|-------------|-------------|
+| `1002` | 400 | Cannot update email (already set) |
+| `10814` | 403 | KYC incomplete |
+| `10815` | 403 | Trial account limitation |

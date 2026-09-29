@@ -1,0 +1,186 @@
+---
+id: purchase-number
+title: Purchase ExoPhone
+description: Purchase a new ExoPhone and add it to your Exotel account using the API. Configure voice and SMS flow URLs during number provisioning.
+sidebar_label: Purchase Number
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Purchase an ExoPhone
+
+Purchase a new ExoPhone and add it to your account.
+
+## HTTP Request
+
+```
+POST /v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers
+```
+
+## Request Parameters
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `PhoneNumber` | Yes | The phone number to purchase (from available numbers list) |
+| `VoiceUrl` | No | Flow URL to handle incoming voice calls |
+| `SMSUrl` | No | Flow URL to handle incoming SMS |
+| `FriendlyName` | No | A friendly identifier for the number |
+
+## Code Examples
+
+<Tabs groupId="programming-language">
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers' \
+  --data-urlencode 'PhoneNumber=+91XXXXXXXXXX' \
+  --data-urlencode 'VoiceUrl=https://my.exotel.com/exoml/start/<flow_id>' \
+  --data-urlencode 'FriendlyName=Support Line'
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import requests
+
+data = {
+    'PhoneNumber': '+91XXXXXXXXXX',
+    'VoiceUrl': 'https://my.exotel.com/exoml/start/<flow_id>',
+    'FriendlyName': 'Support Line',
+}
+
+response = requests.post(
+    'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers',
+    auth=('<api_key>', '<api_token>'),
+    data=data
+)
+
+print(response.status_code)
+print(response.json())
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Node.js">
+
+```javascript
+const apiKey = '<api_key>';
+const apiToken = '<api_token>';
+
+const url = 'https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers';
+
+const params = new URLSearchParams({
+  PhoneNumber: '+91XXXXXXXXXX',
+  VoiceUrl: 'https://my.exotel.com/exoml/start/<flow_id>',
+  FriendlyName: 'Support Line',
+});
+
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + Buffer.from(`${apiKey}:${apiToken}`).toString('base64'),
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  body: params,
+});
+
+const data = await response.json();
+console.log(response.status, data);
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+<?php
+$data = array(
+    'PhoneNumber' => '+91XXXXXXXXXX',
+    'VoiceUrl' => 'https://my.exotel.com/exoml/start/<flow_id>',
+    'FriendlyName' => 'Support Line',
+);
+
+$ch = curl_init('https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers');
+curl_setopt($ch, CURLOPT_USERPWD, "<api_key>:<api_token>");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+echo $status . "\n" . $response;
+?>
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "io"
+    "net/http"
+    "net/url"
+    "strings"
+)
+
+func main() {
+    endpoint := "https://api.exotel.com/v2_beta/Accounts/<account_sid>/IncomingPhoneNumbers"
+
+    data := url.Values{}
+    data.Set("PhoneNumber", "+91XXXXXXXXXX")
+    data.Set("VoiceUrl", "https://my.exotel.com/exoml/start/<flow_id>")
+    data.Set("FriendlyName", "Support Line")
+
+    req, err := http.NewRequest("POST", endpoint, strings.NewReader(data.Encode()))
+    if err != nil {
+        panic(err)
+    }
+    req.SetBasicAuth("<api_key>", "<api_token>")
+    req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+    res, err := http.DefaultClient.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
+
+    respBody, _ := io.ReadAll(res.Body)
+    fmt.Println(res.StatusCode, string(respBody))
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Response
+
+```json
+{
+  "sid": "9eeafc8ab479a386dc95f854f9d7cd8a",
+  "phone_number": "+91XXXX30240",
+  "friendly_name": "XXXXX30240",
+  "capabilities": {
+    "voice": true,
+    "sms": true
+  },
+  "country": "IN",
+  "rental_price": "499.000000",
+  "currency": "INR"
+}
+```
+
+### Response Fields
+
+| Field | Description |
+|-------|-------------|
+| `sid` | Unique ExoPhone identifier |
+| `phone_number` | Purchased phone number |
+| `friendly_name` | Display name |
+| `capabilities` | Voice and SMS support flags |
+| `country` | Country of the number |
+| `rental_price` | Monthly rental cost |
+| `currency` | Price currency |
