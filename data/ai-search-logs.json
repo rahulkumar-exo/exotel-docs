@@ -7560,5 +7560,39 @@
       }
     ],
     "answer_length": 215
+  },
+  {
+    "timestamp": "2026-09-29T15:25:35.093Z",
+    "response_id": "65fa9ede-173e-409b-bff7-ae2afd629b64",
+    "question": "whatsapp api",
+    "question_length": 12,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4718,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      },
+      {
+        "title": "WhatsApp - Messaging API",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/overview"
+      },
+      {
+        "title": "Receive Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/receive-messages"
+      }
+    ],
+    "answer_length": 3502
   }
 ]
