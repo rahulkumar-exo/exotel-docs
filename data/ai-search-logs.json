@@ -7208,5 +7208,39 @@
       }
     ],
     "answer_length": 441
+  },
+  {
+    "timestamp": "2026-09-29T07:53:06.652Z",
+    "response_id": "7c063340-d467-4383-b16c-fe09c6244d80",
+    "question": "curl -X POST 'https://api.exotel.com/v2/accounts/aapnainfotech2/trunks' \\\n  -u \"aapnainfotech2:e4f8b0efdba9c24996b71558f91d38cd6ad7e2a3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n  \"nso_code\": \"ANY-ANY\",\n  \"trunk_name\": \"test_exotel2\",\n  \"domain_name\": \"aapnainfotech2.pstn.exotel.com\"\n}'\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TwilioResponse>\n <RestException>\n  <Status>400</Status>\n  <Message>Exotel API Version v2 not supported. Contact Exotel for details.</Message>\n </RestException>\n</",
+    "question_length": 544,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7126,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      }
+    ],
+    "answer_length": 933
   }
 ]
