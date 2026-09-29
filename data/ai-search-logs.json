@@ -7458,5 +7458,39 @@
     ],
     "answer_length": 1355,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-09-29T12:36:59.080Z",
+    "response_id": "0e701724-fe29-474f-bfe0-82c2396ce745",
+    "question": "I am building a custom CRM using Next.js + Express.js + MySQL. I want to replace MyOperator with Exotel. Please verify from the current Exotel documentation whether Exotel supports ALL of the following requirements:\n\nA customer calls our Exotel virtual/business number → incoming call reaches an available agent.\nAgents can receive incoming calls on a desktop/browser/Web Call, not only on their mobile phone.\nFrom my CRM, an agent clicks a Call button → my backend calls Exotel API → Exotel initiate",
+    "question_length": 2157,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 28686,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 8989
   }
 ]
