@@ -52,9 +52,8 @@ curl -u '<api_key>:<api_token>' -X GET 'https://api.exotel.com/v2_beta/Accounts/
 import requests
 
 response = requests.get(
-    'https://api.exotel.com/v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/IN/Landline',
-    auth=('<api_key>', '<api_token>'),
-    params={'InRegion': 'KA'}
+    'https://api.exotel.com/v2_beta/Accounts/<account_sid>/AvailablePhoneNumbers/IN/Landline?InRegion=KA',
+    auth=('<api_key>', '<api_token>')
 )
 
 print(response.status_code)
