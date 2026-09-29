@@ -7242,5 +7242,39 @@
       }
     ],
     "answer_length": 933
+  },
+  {
+    "timestamp": "2026-09-29T11:35:43.998Z",
+    "response_id": "e497f405-48e9-4993-a5d6-c67fde6285bc",
+    "question": "how do I fetch data from external into a swither",
+    "question_length": 48,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4400,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Data Privacy & Retention",
+        "product": "faqs",
+        "url": "/docs/faqs/data-privacy"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Data Privacy & Retention",
+        "product": "faqs",
+        "url": "/docs/faqs/data-privacy"
+      }
+    ],
+    "answer_length": 1184
   }
 ]
