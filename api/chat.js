@@ -68,6 +68,37 @@ const MAX_QUESTION_LEN = 500; // truncate very long questions
 const MAX_COMMENT_LEN = 1000; // truncate very long feedback comments
 
 /**
+ * Strip credentials users paste into questions before anything is logged.
+ * Logs are committed to a public repo, so this must run on every string.
+ */
+function redactSecrets(str) {
+  return str
+    // https://key:token@host → https://[REDACTED]@host
+    .replace(/(\w+:\/\/)[^\s\/:@"']+:[^\s\/@"']+@/g, '$1[REDACTED]@')
+    // -u key:token / --user key:token
+    .replace(/(\s(?:-u|--user)\s+["']?)[^\s"']+/g, '$1[REDACTED]')
+    // Authorization: Basic|Bearer xxx
+    .replace(/(\b(?:Basic|Bearer)\s+)[A-Za-z0-9._~+\/=-]{8,}/gi, '$1[REDACTED]')
+    // key=value / "key": "value" style secrets
+    .replace(/((?:api[_-]?key|api[_-]?token|auth[_-]?token|access[_-]?token|secret|password|passwd)["']?\s*[:=]\s*["']?)[^\s"',}]{4,}/gi, '$1[REDACTED]')
+    // Known token formats: JWTs, AWS keys, provider keys
+    .replace(/eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}/g, '[REDACTED]')
+    .replace(/\b(?:AKIA|ASIA)[0-9A-Z]{16}\b/g, '[REDACTED]')
+    .replace(/\b(?:AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{36,})\b/g, '[REDACTED]')
+    // Long hex / base64-ish runs (Exotel keys and tokens are 32+ hex chars)
+    .replace(/\b[0-9a-fA-F]{32,}\b/g, '[REDACTED]');
+}
+
+function redactEntry(value) {
+  if (typeof value === 'string') return redactSecrets(value);
+  if (Array.isArray(value)) return value.map(redactEntry);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, redactEntry(v)]));
+  }
+  return value;
+}
+
+/**
  * Generic helper: append a JSON object to a JSON-array file in GitHub.
  * Used by both search-query logging and chat feedback logging.
  *
@@ -79,6 +110,9 @@ const MAX_COMMENT_LEN = 1000; // truncate very long feedback comments
 async function appendToGitHubFile(filePath, entry, commitMsg, botName) {
   const token = (process.env.CMS_GITHUB_TOKEN || process.env.GITHUB_TOKEN || '').trim();
   if (!token) return; // No token configured — skip silently
+
+  entry = redactEntry(entry);
+  commitMsg = redactSecrets(commitMsg);
 
   const headers = {
     Authorization: `Bearer ${token}`,
@@ -136,7 +170,8 @@ async function appendToGitHubFile(filePath, entry, commitMsg, botName) {
  * Append a search query to data/ai-search-logs.json via the GitHub API.
  */
 async function logSearchQuery(entry) {
-  const msg = `ai-search-log: ${entry.question.slice(0, 60)}${entry.question.length > 60 ? '...' : ''}`;
+  const q = redactSecrets(entry.question);
+  const msg = `ai-search-log: ${q.slice(0, 60)}${q.length > 60 ? '...' : ''}`;
   return appendToGitHubFile(LOG_FILE_PATH, entry, msg, 'AI Search Logger');
 }
 
@@ -145,7 +180,7 @@ async function logSearchQuery(entry) {
  * data/ai-chat-feedback.json via the GitHub API.
  */
 async function logFeedback(entry) {
-  const msg = `ai-chat-feedback: ${entry.vote} on "${(entry.question || '').slice(0, 50)}"`;
+  const msg = `ai-chat-feedback: ${entry.vote} on "${redactSecrets(entry.question || '').slice(0, 50)}"`;
   return appendToGitHubFile(FEEDBACK_FILE_PATH, entry, msg, 'AI Feedback Logger');
 }
 
