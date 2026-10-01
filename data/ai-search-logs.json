@@ -7730,5 +7730,39 @@
       }
     ],
     "answer_length": 1388
+  },
+  {
+    "timestamp": "2026-10-01T06:05:28.348Z",
+    "response_id": "16a00655-c6b3-46ea-9be8-b7aab08db343",
+    "question": "what about the ExoVerify SMS OTP",
+    "question_length": 32,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4153,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoVerify",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/overview"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 1594
   }
 ]
