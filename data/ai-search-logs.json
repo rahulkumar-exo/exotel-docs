@@ -7968,5 +7968,39 @@
       }
     ],
     "answer_length": 2636
+  },
+  {
+    "timestamp": "2026-10-01T11:50:36.543Z",
+    "response_id": "49114afb-754f-41aa-a6ff-ea405b5a821a",
+    "question": "32khz dual channel recording",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3620,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording Access",
+        "product": "reporting",
+        "url": "/docs/reporting/recording-access"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 1242
   }
 ]
