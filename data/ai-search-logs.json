@@ -7934,5 +7934,39 @@
       }
     ],
     "answer_length": 1356
+  },
+  {
+    "timestamp": "2026-10-01T08:45:47.318Z",
+    "response_id": "d4620794-3267-4819-b9fe-971274abe0ec",
+    "question": "Voicebot Applet",
+    "question_length": 15,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3627,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Extension guide: Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Extension guide: Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 2636
   }
 ]
