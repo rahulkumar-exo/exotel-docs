@@ -7866,5 +7866,39 @@
       }
     ],
     "answer_length": 239
+  },
+  {
+    "timestamp": "2026-10-01T06:44:29.881Z",
+    "response_id": "029e791f-9ca2-44f5-a450-0b895e9aceae",
+    "question": "hangup call",
+    "question_length": 11,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1190,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Hangup Applet",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/applets/hangup"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 680
   }
 ]
