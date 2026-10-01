@@ -7798,5 +7798,39 @@
       }
     ],
     "answer_length": 609
+  },
+  {
+    "timestamp": "2026-10-01T06:22:54.083Z",
+    "response_id": "bfcf0c4f-1203-41a0-9c85-0ca10d4be91c",
+    "question": "OTP is  4 series or 6 series ?",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2608,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp"
+      },
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp"
+      },
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp"
+      },
+      {
+        "title": "ExoVerify",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/overview"
+      }
+    ],
+    "answer_length": 548
   }
 ]
