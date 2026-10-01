@@ -154,8 +154,8 @@ Never hardcode your API Key or API Token directly in your source code. Hardcoded
 
 ```javascript
 // BAD - credentials are exposed in source code
-const API_KEY = "f81f2a5027e1463d812c4d2b36ea2d7a";
-const API_TOKEN = "9c3e8a1b4f6d2e0a7c5b3d9f1e8a2c4d";
+const API_KEY = "your_api_key_here";
+const API_TOKEN = "your_api_token_here";
 
 // GOOD - credentials are loaded from environment variables
 const API_KEY = process.env.EXOTEL_API_KEY;

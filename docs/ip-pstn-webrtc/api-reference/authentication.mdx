@@ -68,7 +68,7 @@ curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/inte
 --header 'Content-Type: application/json' \
 --data-raw '{
     "Id": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
-    "Secret": "5b8215f7-8595-42c0-9b63-404bcc474f94",
+    "Secret": "<entity_secret>",
     "Entity": "customer"
 }'
 ```
@@ -84,7 +84,7 @@ url = "https://integrationscore.mum1.exotel.com/v2/integrations/token"
 
 payload = json.dumps({
     "Id": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
-    "Secret": "5b8215f7-8595-42c0-9b63-404bcc474f94",
+    "Secret": "<entity_secret>",
     "Entity": "customer"
 })
 
@@ -107,7 +107,7 @@ const response = await fetch(url, {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     Id: '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0',
-    Secret: '5b8215f7-8595-42c0-9b63-404bcc474f94',
+    Secret: '<entity_secret>',
     Entity: 'customer',
   }),
 });
@@ -129,7 +129,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS => json_encode(array(
     'Id' => '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0',
-    'Secret' => '5b8215f7-8595-42c0-9b63-404bcc474f94',
+    'Secret' => '<entity_secret>',
     'Entity' => 'customer'
   )),
   CURLOPT_HTTPHEADER => array(
@@ -160,7 +160,7 @@ func main() {
     url := "https://integrationscore.mum1.exotel.com/v2/integrations/token"
     payload := strings.NewReader(`{
     "Id": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
-    "Secret": "5b8215f7-8595-42c0-9b63-404bcc474f94",
+    "Secret": "<entity_secret>",
     "Entity": "customer"
 }`)
 
@@ -223,7 +223,7 @@ func main() {
   contentType="json"
   params={[
     { name: 'Id', required: true, type: 'string', description: 'Entity identifier -- CustomerID or AppID', placeholder: '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0' },
-    { name: 'Secret', required: true, type: 'string', description: 'Entity credential -- CustomerSecret or AppSecret', placeholder: '5b8215f7-8595-42c0-9b63-404bcc474f94' },
+    { name: 'Secret', required: true, type: 'string', description: 'Entity credential -- CustomerSecret or AppSecret', placeholder: '<entity_secret>' },
     { name: 'Entity', required: true, type: 'string', description: 'customer or app', placeholder: 'customer' },
   ]}
 />
