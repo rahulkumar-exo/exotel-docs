@@ -7764,5 +7764,39 @@
       }
     ],
     "answer_length": 1594
+  },
+  {
+    "timestamp": "2026-10-01T06:08:36.328Z",
+    "response_id": "68179709-ac12-4ce6-bda0-6a1aeb9e53c8",
+    "question": "how to check for my  Exotel account has ExoVerify SMS OTP enabled ?",
+    "question_length": 67,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2392,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "ExoVerify",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/overview"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      }
+    ],
+    "answer_length": 609
   }
 ]
