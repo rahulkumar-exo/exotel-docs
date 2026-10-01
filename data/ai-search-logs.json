@@ -7662,5 +7662,39 @@
       }
     ],
     "answer_length": 3548
+  },
+  {
+    "timestamp": "2026-10-01T05:18:15.844Z",
+    "response_id": "aefb8fba-1fbf-49ca-ac11-6c413759bc64",
+    "question": "Api credentials, DLT Registration, DLT ENTITY ID, DLT TEMPLATE ID, Sender ID   completed.  Now i want to test by Adding a number and send the otp",
+    "question_length": 145,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5943,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "DLT Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/dlt-compliance"
+      },
+      {
+        "title": "SMS Delivery Reports",
+        "product": "reporting",
+        "url": "/docs/reporting/sms-reports"
+      }
+    ],
+    "answer_length": 3213
   }
 ]
