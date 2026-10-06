@@ -8308,5 +8308,39 @@
       }
     ],
     "answer_length": 3149
+  },
+  {
+    "timestamp": "2026-10-06T10:02:52.384Z",
+    "response_id": "7fab0e6d-579f-43f8-a00d-ab855b7304e2",
+    "question": "Add throttle in request as Integer",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4714,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Assign/Unassign Users to Lead",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/assign-users-to-lead"
+      }
+    ],
+    "answer_length": 667
   }
 ]
