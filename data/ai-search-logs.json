@@ -8274,5 +8274,39 @@
       }
     ],
     "answer_length": 854
+  },
+  {
+    "timestamp": "2026-10-06T09:26:26.050Z",
+    "response_id": "a2b86c82-9164-4d03-8015-cd10af5773fb",
+    "question": "How to send WhatsApp template messages?",
+    "question_length": 39,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5190,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/status-codes"
+      },
+      {
+        "title": "WhatsApp Template Messages",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-messages"
+      },
+      {
+        "title": "Template Messages with Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/template-flows"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      }
+    ],
+    "answer_length": 3149
   }
 ]
