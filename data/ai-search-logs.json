@@ -8410,5 +8410,13 @@
       }
     ],
     "answer_length": 2155
+  },
+  {
+    "timestamp": "2026-10-07T04:10:25.374Z",
+    "question": "I want for Inbound calling",
+    "question_length": 26,
+    "response_time_ms": 5722,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
