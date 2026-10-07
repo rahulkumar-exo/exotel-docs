@@ -8486,5 +8486,40 @@
       }
     ],
     "answer_length": 2655
+  },
+  {
+    "timestamp": "2026-10-07T08:52:20.171Z",
+    "response_id": "3c54d923-6d75-42cd-98de-f37a9b1ab31c",
+    "question": "voice",
+    "question_length": 5,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Voice v1",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/overview"
+      }
+    ],
+    "answer_length": 2655,
+    "cache_hit": true
   }
 ]
