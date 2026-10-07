@@ -8691,5 +8691,39 @@
       }
     ],
     "answer_length": 720
+  },
+  {
+    "timestamp": "2026-10-07T12:12:53.039Z",
+    "response_id": "25beff0b-b9ff-44a8-ac17-dd9c6d2691bf",
+    "question": "actually we can interegate can you check that",
+    "question_length": 45,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2829,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Conversion Analytics",
+        "product": "chatbot",
+        "url": "/docs/chatbot/conversion-analytics"
+      },
+      {
+        "title": "WhatsApp Messaging Limits",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/messaging-limits"
+      }
+    ],
+    "answer_length": 939
   }
 ]
