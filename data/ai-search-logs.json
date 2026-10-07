@@ -8657,5 +8657,39 @@
       }
     ],
     "answer_length": 795
+  },
+  {
+    "timestamp": "2026-10-07T12:11:28.164Z",
+    "response_id": "cb7d44f0-442a-4ea3-b6f4-9ad51fdbd2f5",
+    "question": "how we can intergrate to frappe crm",
+    "question_length": 35,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3766,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Integration FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/integration-faqs"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Exotel Integration with Zoho CRM (PSTN & VoIP)",
+        "product": "integrations",
+        "url": "/docs/integrations/zoho-crm"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 720
   }
 ]
