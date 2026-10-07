@@ -8623,5 +8623,39 @@
       }
     ],
     "answer_length": 3140
+  },
+  {
+    "timestamp": "2026-10-07T09:07:18.952Z",
+    "response_id": "48950070-adb1-46d1-af5e-31dbd5e2f9d7",
+    "question": "Can we create user id bulkwise by using api?",
+    "question_length": 44,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3122,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create User",
+        "product": "users",
+        "url": "/docs/users/api-reference/create-user"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create User",
+        "product": "users",
+        "url": "/docs/users/api-reference/create-user"
+      }
+    ],
+    "answer_length": 795
   }
 ]
