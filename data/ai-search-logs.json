@@ -8376,5 +8376,39 @@
       }
     ],
     "answer_length": 2108
+  },
+  {
+    "timestamp": "2026-10-07T04:09:46.508Z",
+    "response_id": "48026b82-409a-4b47-99fd-7b5220dda32f",
+    "question": "after connection call what wil receive in data like CallSid??",
+    "question_length": 61,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6772,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 2155
   }
 ]
