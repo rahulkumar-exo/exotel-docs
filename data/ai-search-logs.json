@@ -8342,5 +8342,39 @@
       }
     ],
     "answer_length": 667
+  },
+  {
+    "timestamp": "2026-10-07T04:07:20.679Z",
+    "response_id": "fde68fc1-109c-4d5c-bc10-3aac848e471e",
+    "question": "Inbound calling flow provide me",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3723,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "Template Messages with Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/template-flows"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Workflows",
+        "product": "chatbot",
+        "url": "/docs/chatbot/workflows"
+      }
+    ],
+    "answer_length": 2108
   }
 ]
