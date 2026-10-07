@@ -8725,5 +8725,13 @@
       }
     ],
     "answer_length": 939
+  },
+  {
+    "timestamp": "2026-10-07T13:09:27.196Z",
+    "question": "how to I push any call inbound received as a JSON to my CRM",
+    "question_length": 59,
+    "response_time_ms": 2325,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
