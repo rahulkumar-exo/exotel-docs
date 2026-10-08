@@ -124,5 +124,14 @@
     "answer_excerpt": "This looks like something our team can help you with directly. Please write to **hello@exotel.com** with your question and one of our team members will get back to you shortly.",
     "comment": "i wanna get the number not the story",
     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2026-10-08T12:23:42.897Z",
+    "response_id": "73e79157-136b-40cb-abc2-db4e7decc885",
+    "vote": "up",
+    "question": "+919876500001 this numbers is dummy number ?",
+    "answer_excerpt": "The provided documentation does not contain information to determine if a specific number like +919876500001 is a \"dummy number.\" The documentation focuses on the types of virtual numbers (ExoPhones) offered by Exotel and how they are used and managed.",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
   }
 ]
