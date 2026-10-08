@@ -67,8 +67,8 @@ If your Exotel account is provisioned in the **Singapore** region and you usuall
 curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/integrations/token' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "Id": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
-    "Secret": "<entity_secret>",
+    "Id": "<your-app-id>",
+    "Secret": "<your-app-secret>",
     "Entity": "customer"
 }'
 ```
@@ -83,8 +83,8 @@ import json
 url = "https://integrationscore.mum1.exotel.com/v2/integrations/token"
 
 payload = json.dumps({
-    "Id": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
-    "Secret": "<entity_secret>",
+    "Id": "<your-app-id>",
+    "Secret": "<your-app-secret>",
     "Entity": "customer"
 })
 
@@ -106,8 +106,8 @@ const response = await fetch(url, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    Id: '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0',
-    Secret: '<entity_secret>',
+    Id: '<your-app-id>',
+    Secret: '<your-app-secret>',
     Entity: 'customer',
   }),
 });
@@ -128,8 +128,8 @@ curl_setopt_array($curl, array(
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS => json_encode(array(
-    'Id' => '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0',
-    'Secret' => '<entity_secret>',
+    'Id' => '<your-app-id>',
+    'Secret' => '<your-app-secret>',
     'Entity' => 'customer'
   )),
   CURLOPT_HTTPHEADER => array(
@@ -159,8 +159,8 @@ import (
 func main() {
     url := "https://integrationscore.mum1.exotel.com/v2/integrations/token"
     payload := strings.NewReader(`{
-    "Id": "99fa98a1-2ce0-457c-9371-0d3a01eb6ef0",
-    "Secret": "<entity_secret>",
+    "Id": "<your-app-id>",
+    "Secret": "<your-app-secret>",
     "Entity": "customer"
 }`)
 
@@ -222,7 +222,7 @@ func main() {
   path="/v2/integrations/token"
   contentType="json"
   params={[
-    { name: 'Id', required: true, type: 'string', description: 'Entity identifier -- CustomerID or AppID', placeholder: '99fa98a1-2ce0-457c-9371-0d3a01eb6ef0' },
+    { name: 'Id', required: true, type: 'string', description: 'Entity identifier -- CustomerID or AppID', placeholder: 'your-app-id' },
     { name: 'Secret', required: true, type: 'string', description: 'Entity credential -- CustomerSecret or AppSecret', placeholder: '<entity_secret>' },
     { name: 'Entity', required: true, type: 'string', description: 'customer or app', placeholder: 'customer' },
   ]}
