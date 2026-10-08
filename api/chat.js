@@ -67,6 +67,32 @@ const FEEDBACK_FILE_PATH = 'data/ai-chat-feedback.json';
 const MAX_QUESTION_LEN = 500; // truncate very long questions
 const MAX_COMMENT_LEN = 1000; // truncate very long feedback comments
 
+// Patterns that look like credentials — redact before writing to the log file.
+// Covers: Exotel API keys/tokens (hex, 24–48 chars), UUIDs used as secrets,
+// base64 auth headers, and generic Bearer/Basic tokens.
+const CREDENTIAL_PATTERNS = [
+  // Exotel-style hex keys/tokens (24–48 hex chars)
+  /\b[0-9a-f]{24,48}\b/gi,
+  // UUID-format secrets
+  /\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b/gi,
+  // Bearer / Basic token values
+  /\b(Bearer|Basic)\s+[A-Za-z0-9+/=]{16,}/g,
+  // Credentials embedded in URLs (?ApiKey=..., ?token=..., :token@)
+  /([?&](api_?key|api_?token|token|key|secret|password|pass|pwd)=)[^&\s"']+/gi,
+  /\/\/[^:@/\s]+:[^@\s]+@/g,
+];
+
+function redactCredentials(text) {
+  if (typeof text !== 'string') return text;
+  let out = text;
+  for (const pattern of CREDENTIAL_PATTERNS) {
+    out = out.replace(pattern, (match, prefix) =>
+      prefix ? prefix + '[REDACTED]' : '[REDACTED]'
+    );
+  }
+  return out;
+}
+
 /**
  * Strip credentials users paste into questions before anything is logged.
  * Logs are committed to a public repo, so this must run on every string.
@@ -329,7 +355,7 @@ module.exports = async function handler(req, res) {
         const logEntry = {
           timestamp: new Date().toISOString(),
           response_id: crypto.randomUUID(),
-          question: question.slice(0, MAX_QUESTION_LEN),
+          question: redactCredentials(question).slice(0, MAX_QUESTION_LEN),
           question_length: question.length,
           has_history: false,
           history_length: 0,
@@ -485,7 +511,7 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
     const logEntry = {
       timestamp: new Date().toISOString(),
       response_id,
-      question: question.slice(0, MAX_QUESTION_LEN),
+      question: redactCredentials(question).slice(0, MAX_QUESTION_LEN),
       question_length: question.length,
       has_history: Array.isArray(history) && history.length > 0,
       history_length: Array.isArray(history) ? history.length : 0,
@@ -516,7 +542,7 @@ IMPORTANT: Only answer questions related to Exotel's APIs and developer document
     if (req.body && req.body.question) {
       const failEntry = {
         timestamp: new Date().toISOString(),
-        question: String(req.body.question).slice(0, MAX_QUESTION_LEN),
+        question: redactCredentials(String(req.body.question)).slice(0, MAX_QUESTION_LEN),
         question_length: String(req.body.question).length,
         response_time_ms: Date.now() - startTime,
         error: error.message || 'unknown',

@@ -54,7 +54,7 @@ POST https://integrationscore.mum1.exotel.com/v2/integrations/app
 
 ```bash
 curl --location --request POST 'https://integrationscore.mum1.exotel.com/v2/integrations/app' \
---header 'Authorization: NmUxNGIyN2ItY2YzYy00MzRhLThlNzItYWNjMWFiNWQzY2Vi' \
+--header 'Authorization: <base64-encoded-app-id:app-secret>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
    "AppName": "WebRTC",
