@@ -8725,5 +8725,39 @@
       }
     ],
     "answer_length": 800
+  },
+  {
+    "timestamp": "2026-10-09T05:57:58.630Z",
+    "response_id": "6631260e-b6ed-431f-8adf-fddca28e3afb",
+    "question": "in whatsapp Coexistence: do they support it, so your number stays in the Business app",
+    "question_length": 85,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3057,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "Getting Started with WhatsApp Business API",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/getting-started"
+      },
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      }
+    ],
+    "answer_length": 809
   }
 ]
