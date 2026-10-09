@@ -8759,5 +8759,39 @@
       }
     ],
     "answer_length": 809
+  },
+  {
+    "timestamp": "2026-10-09T10:24:37.062Z",
+    "response_id": "30aabb23-0e46-4134-982d-4cb33d297d8e",
+    "question": "can you help me with exotel sms delivery tracking api",
+    "question_length": 53,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5633,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      }
+    ],
+    "answer_length": 1682
   }
 ]
