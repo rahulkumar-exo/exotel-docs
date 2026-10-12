@@ -8929,5 +8929,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-12T18:20:24.317Z",
+    "response_id": "dfbf6c51-6789-4954-a98f-8a0d43f10b35",
+    "question": "Can our existing company mobile number be used as the verified outbound caller ID, and can inbound calls to it reach the CRM?\n\n\n\nDoes the account support live browser-based agent audio, not just API-triggered calls to an agent's mobile?\n\n\n\nAre these capabilities available in the trial, and what verification or commercial requirements apply?",
+    "question_length": 342,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6287,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 1852
   }
 ]
