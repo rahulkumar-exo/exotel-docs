@@ -9099,5 +9099,39 @@
       }
     ],
     "answer_length": 2799
+  },
+  {
+    "timestamp": "2026-10-13T20:56:54.719Z",
+    "response_id": "2368d43b-c284-4247-9684-6f387e4f2a96",
+    "question": "How much does it cost to get a number and is there a monthly fee for it? I am looking for indian market first",
+    "question_length": 109,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1062,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 176
   }
 ]
