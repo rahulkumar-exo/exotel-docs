@@ -9031,5 +9031,39 @@
       }
     ],
     "answer_length": 1737
+  },
+  {
+    "timestamp": "2026-10-13T20:54:35.506Z",
+    "response_id": "0bb3e81a-8257-4cfb-b385-8961967fef03",
+    "question": "How to provision a new phone number?",
+    "question_length": 36,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4923,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers"
+      }
+    ],
+    "answer_length": 3112
   }
 ]
