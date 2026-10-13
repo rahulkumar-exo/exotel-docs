@@ -9065,5 +9065,39 @@
       }
     ],
     "answer_length": 3112
+  },
+  {
+    "timestamp": "2026-10-13T20:55:44.595Z",
+    "response_id": "4f5ecdc8-8310-45bc-9873-ecaffafe6f30",
+    "question": "What information needs to be provided before the numbers can be purchased? How long does it take to automatically purchase and assign a number?",
+    "question_length": 143,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7058,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 2799
   }
 ]
