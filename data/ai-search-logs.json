@@ -8963,5 +8963,39 @@
       }
     ],
     "answer_length": 1852
+  },
+  {
+    "timestamp": "2026-10-13T15:11:40.758Z",
+    "response_id": "f63bd6e3-2cfd-4836-8098-a2792b299a6e",
+    "question": "how do I make use of masked calling feature for my business if I use exotel",
+    "question_length": 75,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2416,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use CleverTap via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-generic"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      }
+    ],
+    "answer_length": 427
   }
 ]
