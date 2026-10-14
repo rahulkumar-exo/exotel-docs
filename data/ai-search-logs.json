@@ -9167,5 +9167,13 @@
       }
     ],
     "answer_length": 81766
+  },
+  {
+    "timestamp": "2026-10-14T07:02:04.574Z",
+    "question": "Hello Exotel team,\n\nPlease enable the Voicebot applet (WebSocket voice streaming) for my account SID: moneway2.\n\nI am on the trial plan with KYC approved, and I want to test an AI voice agent on my trial ExoPhone 040-459-02935. Could you also confirm:\n\n1. Does the Voicebot applet work on a trial account?\n2. Is the Connect applet's dynamic URL feature available, and what request and response format does it use?\n3. Which caller ID does the transferred agent see?\n\nThank you,",
+    "question_length": 476,
+    "response_time_ms": 1171,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
