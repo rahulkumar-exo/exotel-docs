@@ -9259,5 +9259,39 @@
       }
     ],
     "answer_length": 1414
+  },
+  {
+    "timestamp": "2026-10-14T12:30:12.507Z",
+    "response_id": "02b8d26f-6ac7-45ba-81cd-c150e837eaea",
+    "question": "I want to use phone to phone calling, through my ai agent. \nMy AI agent will forward the call to actual person \nhow to implement that\nwhat apis will be provided by exotel and what apis should i be providing",
+    "question_length": 206,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 21453,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 4952
   }
 ]
