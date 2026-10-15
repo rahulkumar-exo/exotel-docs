@@ -9335,5 +9335,39 @@
       }
     ],
     "answer_length": 1013
+  },
+  {
+    "timestamp": "2026-10-15T05:36:08.083Z",
+    "response_id": "1ee68595-f910-4441-9433-14953d1d2fe4",
+    "question": "what about authentication",
+    "question_length": 25,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2838,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      }
+    ],
+    "answer_length": 1787
   }
 ]
