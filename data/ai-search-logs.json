@@ -9505,5 +9505,39 @@
       }
     ],
     "answer_length": 903
+  },
+  {
+    "timestamp": "2026-10-15T12:21:15.836Z",
+    "response_id": "d2f550d9-cafc-4553-9178-d55d09572b4c",
+    "question": "in the app can I use exotel for calling a phone number and if that doesn't work can I attempt calling via agent mobile",
+    "question_length": 118,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4079,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 950
   }
 ]
