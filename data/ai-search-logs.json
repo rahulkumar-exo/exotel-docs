@@ -9403,5 +9403,39 @@
       }
     ],
     "answer_length": 965
+  },
+  {
+    "timestamp": "2026-10-15T08:06:36.354Z",
+    "response_id": "b728da38-6b5a-450c-af74-2987749d77a1",
+    "question": "are there any reporting api, i.e entire day reports/data",
+    "question_length": 56,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2943,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 549
   }
 ]
