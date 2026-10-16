@@ -9743,5 +9743,39 @@
       }
     ],
     "answer_length": 874
+  },
+  {
+    "timestamp": "2026-10-16T09:50:08.753Z",
+    "response_id": "25ae1c30-195d-4ad8-a172-1306a7946acb",
+    "question": "https://api.in.exotel.com/v2/accounts/univoedtech1m/trunks/trmum1d1eee7e68000d42e851aa8/phone-numbers?ID=58328\n\nsearch for this api",
+    "question_length": 131,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3515,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 510
   }
 ]
