@@ -9573,5 +9573,39 @@
       }
     ],
     "answer_length": 859
+  },
+  {
+    "timestamp": "2026-10-16T05:29:58.072Z",
+    "response_id": "957ab38f-93ee-444c-98df-5afa74292afa",
+    "question": "hindi m bat kro",
+    "question_length": 15,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1020,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Long SMS (Concatenated Messages)",
+        "product": "sms-support",
+        "url": "/docs/sms-support/long-sms"
+      },
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      },
+      {
+        "title": "Unicode SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/unicode-sms"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 81
   }
 ]
