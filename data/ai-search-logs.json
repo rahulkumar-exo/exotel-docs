@@ -9539,5 +9539,39 @@
       }
     ],
     "answer_length": 950
+  },
+  {
+    "timestamp": "2026-10-16T05:28:22.701Z",
+    "response_id": "fc19a1ec-05de-4c4b-9943-2be52938fd1b",
+    "question": "muje sub ko call krna h or mere pass 1 recoded voice note h jo muje sub ku dena h call p",
+    "question_length": 88,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8788,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 859
   }
 ]
