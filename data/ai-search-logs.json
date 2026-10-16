@@ -9641,5 +9641,39 @@
       }
     ],
     "answer_length": 1462
+  },
+  {
+    "timestamp": "2026-10-16T05:33:15.779Z",
+    "response_id": "cdca48ea-4b98-4c7a-b0ec-22c6ecd1414f",
+    "question": "kha incoming call ka option",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3819,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 1568
   }
 ]
