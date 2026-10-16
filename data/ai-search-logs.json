@@ -9777,5 +9777,39 @@
       }
     ],
     "answer_length": 510
+  },
+  {
+    "timestamp": "2026-10-16T13:19:28.167Z",
+    "response_id": "a9bc0098-fedc-4406-8ac0-ac411c54fada",
+    "question": "LWB api",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2326,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      }
+    ],
+    "answer_length": 259
   }
 ]
