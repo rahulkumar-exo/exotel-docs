@@ -9675,5 +9675,39 @@
       }
     ],
     "answer_length": 1568
+  },
+  {
+    "timestamp": "2026-10-16T05:33:52.294Z",
+    "response_id": "9ced698c-90d5-4c1f-869b-d44d7b410c4d",
+    "question": "step wise kese kru btana",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13132,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "DLT Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-registration"
+      },
+      {
+        "title": "Upgrade from Trial to Paid Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/upgrade-account"
+      },
+      {
+        "title": "SIP Trunking quickstart",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/quickstart"
+      },
+      {
+        "title": "DLT Entity Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-entity-registration"
+      }
+    ],
+    "answer_length": 5405
   }
 ]
