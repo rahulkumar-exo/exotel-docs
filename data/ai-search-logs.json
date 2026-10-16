@@ -9607,5 +9607,39 @@
       }
     ],
     "answer_length": 81
+  },
+  {
+    "timestamp": "2026-10-16T05:31:00.222Z",
+    "response_id": "ed3634f8-bad4-4ee8-bb9c-331122e3d339",
+    "question": "muje call p mere election ka parchar krna h jis m meri recoded voice h jo call krne p sub ko sunai d",
+    "question_length": 100,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5841,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 1462
   }
 ]
