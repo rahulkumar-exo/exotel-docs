@@ -9887,5 +9887,39 @@
       }
     ],
     "answer_length": 3396
+  },
+  {
+    "timestamp": "2026-10-18T21:44:32.301Z",
+    "response_id": "855ed8de-863a-4747-bf0b-ef80f64549f1",
+    "question": "pricing",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 875,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      }
+    ],
+    "answer_length": 176
   }
 ]
