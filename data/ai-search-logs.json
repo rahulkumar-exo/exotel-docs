@@ -10091,5 +10091,39 @@
       }
     ],
     "answer_length": 1057
+  },
+  {
+    "timestamp": "2026-10-19T13:15:23.383Z",
+    "response_id": "ab851acc-18b1-4ce5-8de2-97ab34cd7660",
+    "question": "what is price for take call ?",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1332,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 176
   }
 ]
