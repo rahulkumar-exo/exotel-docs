@@ -9955,5 +9955,39 @@
       }
     ],
     "answer_length": 4276
+  },
+  {
+    "timestamp": "2026-10-19T10:21:08.853Z",
+    "response_id": "e4e087aa-adf2-4eac-8019-9928f93b966c",
+    "question": "are you have the noice cancelaction plane",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2188,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 264
   }
 ]
