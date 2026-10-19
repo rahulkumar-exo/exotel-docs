@@ -10057,5 +10057,39 @@
       }
     ],
     "answer_length": 633
+  },
+  {
+    "timestamp": "2026-10-19T11:59:23.344Z",
+    "response_id": "af5e975c-2cff-47af-b4e7-c0153b82c449",
+    "question": "Voicebot Applet ID for elevan labs",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3686,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Extension guide: Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 1057
   }
 ]
