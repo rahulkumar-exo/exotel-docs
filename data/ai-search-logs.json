@@ -9989,5 +9989,39 @@
       }
     ],
     "answer_length": 264
+  },
+  {
+    "timestamp": "2026-10-19T11:37:13.619Z",
+    "response_id": "642e72b4-0e5d-4fef-9931-dcc2550c4c4b",
+    "question": "When sending Bulk Messages, How much time will it take to get response? If i sent 100 messages, will it take 100 seconds to get the final response of the bulk messages API?",
+    "question_length": 172,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2335,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 328
   }
 ]
