@@ -133,5 +133,14 @@
     "answer_excerpt": "The provided documentation does not contain information to determine if a specific number like +919876500001 is a \"dummy number.\" The documentation focuses on the types of virtual numbers (ExoPhones) offered by Exotel and how they are used and managed.",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2026-10-20T01:02:07.984Z",
+    "response_id": "92374a9b-c288-447c-be27-1b1ed4ebe64a",
+    "vote": "down",
+    "question": "what is the api",
+    "answer_excerpt": "Exotel offers various APIs for different communication services. To help me provide the most relevant information, could you please specify what kind of API you are looking for or what task you are trying to accomplish?\n\nExotel provides APIs for:\n*   **Voice** (e.g., making calls, managing call flows)\n*   **SMS** (e.g., sending SMS, tracking URL clicks)\n*   **WhatsApp** (e.g., sending WhatsApp messages, managing templates)\n*   **ExoVerify** (phone verification)\n*   **Call Campaigns**\n*   **Lead ",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
   }
 ]
