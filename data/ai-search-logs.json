@@ -10329,5 +10329,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-20T15:52:59.772Z",
+    "response_id": "3fc8b62f-c1b0-4c42-a5eb-7629ca034a4a",
+    "question": "campaigns api",
+    "question_length": 13,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7926,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/overview"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "List All Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/bulk-campaign-details"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      }
+    ],
+    "answer_length": 4172
   }
 ]
