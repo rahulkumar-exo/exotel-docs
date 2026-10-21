@@ -10397,5 +10397,39 @@
       }
     ],
     "answer_length": 238
+  },
+  {
+    "timestamp": "2026-10-21T21:53:38.611Z",
+    "response_id": "2908521d-5768-48e0-868e-142d8fbd1b20",
+    "question": "Local Bridge",
+    "question_length": 12,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4709,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Legs & Bridges",
+        "product": "legs",
+        "url": "/docs/legs/api-reference/manage-legs"
+      },
+      {
+        "title": "Manage Legs & Bridges",
+        "product": "legs",
+        "url": "/docs/legs/api-reference/manage-legs"
+      },
+      {
+        "title": "Campaign Best Practices",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-best-practices"
+      },
+      {
+        "title": "Regions & Availability",
+        "product": "getting-started",
+        "url": "/docs/getting-started/regions-availability"
+      }
+    ],
+    "answer_length": 1877
   }
 ]
