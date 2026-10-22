@@ -10667,5 +10667,39 @@
       }
     ],
     "answer_length": 2641
+  },
+  {
+    "timestamp": "2026-10-22T14:20:25.341Z",
+    "response_id": "f7127e25-620c-40e6-aa91-6bbe3a40f7df",
+    "question": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TwilioResponse>\n <RestException>\n  <Status>401</Status>\n  <Message>Unauthorized; </Message>\n  <Code>34010</Code>\n </RestException>\n</TwilioResponse>",
+    "question_length": 188,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6381,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 2185
   }
 ]
