@@ -10507,5 +10507,39 @@
       }
     ],
     "answer_length": 3876
+  },
+  {
+    "timestamp": "2026-10-22T07:11:38.234Z",
+    "response_id": "d5b9b796-9e80-429b-baac-240a07f4089e",
+    "question": "How to connect a phone number for inbound and outbound calls to my AI assistant",
+    "question_length": 79,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10103,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 3567
   }
 ]
