@@ -10473,5 +10473,39 @@
       }
     ],
     "answer_length": 1723
+  },
+  {
+    "timestamp": "2026-10-22T05:07:02.182Z",
+    "response_id": "213b952b-0b9c-4eb6-95fa-cf9b8fe1e9d9",
+    "question": "what are the api's available that i can integrate in my system to automate everything",
+    "question_length": 85,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6601,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 3876
   }
 ]
