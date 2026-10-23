@@ -10913,5 +10913,39 @@
       }
     ],
     "answer_length": 3275
+  },
+  {
+    "timestamp": "2026-10-23T10:32:38.921Z",
+    "response_id": "bdb8df7d-51de-4a4a-9ada-359e72f61b97",
+    "question": "what's the pricing of voice api for my voice ai agent use case to take inbound calls and make outbound calls",
+    "question_length": 108,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1212,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 176
   }
 ]
