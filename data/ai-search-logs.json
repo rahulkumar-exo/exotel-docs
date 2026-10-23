@@ -11015,5 +11015,39 @@
       }
     ],
     "answer_length": 1303
+  },
+  {
+    "timestamp": "2026-10-23T23:04:09.434Z",
+    "response_id": "cf2ce4f5-d1be-43b7-abc1-4cd9542dcd69",
+    "question": "I have only one Exophone virtual number in my account, so how it will be work for my hundreds of customers to help deliver their product",
+    "question_length": 136,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9777,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 1915
   }
 ]
