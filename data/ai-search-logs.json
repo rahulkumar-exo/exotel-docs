@@ -10947,5 +10947,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-23T17:30:31.835Z",
+    "response_id": "60c6eb25-40da-4521-a320-9b7aba54da87",
+    "question": "how programmable voice works, and how can i use in my ecommerce app to connect customer and devlivery partner.",
+    "question_length": 110,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6340,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      },
+      {
+        "title": "Programmable Voice",
+        "product": "voice",
+        "url": "/docs/voice/overview"
+      }
+    ],
+    "answer_length": 2165
   }
 ]
