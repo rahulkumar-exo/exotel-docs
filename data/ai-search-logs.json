@@ -11049,5 +11049,39 @@
       }
     ],
     "answer_length": 1915
+  },
+  {
+    "timestamp": "2026-10-23T23:06:46.515Z",
+    "response_id": "5d1ce90d-7dfc-44e0-a8fc-edb7171244d2",
+    "question": "How a third-party delivery partner connect with the customer of a particular order, which he has to be delivered. How to map the customer mobile number to the delivery partner, mobile number.",
+    "question_length": 191,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14623,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 40562
   }
 ]
