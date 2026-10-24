@@ -11287,5 +11287,39 @@
       }
     ],
     "answer_length": 1007
+  },
+  {
+    "timestamp": "2026-10-24T14:54:04.910Z",
+    "response_id": "a61fdfd4-4d2b-4e40-b351-8bdcf79123e6",
+    "question": "correct but the start packet that u have shown here doesn't have it that's why asking",
+    "question_length": 85,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7741,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1834
   }
 ]
