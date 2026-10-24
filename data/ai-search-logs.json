@@ -11253,5 +11253,39 @@
       }
     ],
     "answer_length": 1191
+  },
+  {
+    "timestamp": "2026-10-24T14:53:09.985Z",
+    "response_id": "c307de36-41f3-4c74-b97d-4d4a17ba153e",
+    "question": "no when connecting the call itself will it carry the data ?",
+    "question_length": 59,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6356,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      }
+    ],
+    "answer_length": 1007
   }
 ]
