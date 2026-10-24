@@ -11117,5 +11117,39 @@
       }
     ],
     "answer_length": 5045
+  },
+  {
+    "timestamp": "2026-10-24T09:53:13.781Z",
+    "response_id": "17190d19-391e-4052-8234-b331f1bb8937",
+    "question": "Is there an api to get call summary or transcript or a call.",
+    "question_length": 60,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8207,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 2276
   }
 ]
