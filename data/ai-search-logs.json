@@ -11457,5 +11457,39 @@
       }
     ],
     "answer_length": 1227
+  },
+  {
+    "timestamp": "2026-10-24T16:32:10.202Z",
+    "response_id": "6ddd4e5d-e3f0-4e2f-91c3-b7040bfb1892",
+    "question": "how can i enable calling from whatsapp",
+    "question_length": 38,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2658,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Commerce",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/commerce"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      }
+    ],
+    "answer_length": 690
   }
 ]
