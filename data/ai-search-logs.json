@@ -11321,5 +11321,39 @@
       }
     ],
     "answer_length": 1834
+  },
+  {
+    "timestamp": "2026-10-24T14:54:53.117Z",
+    "response_id": "6f4ae3bf-6e4e-437a-9b5b-bc279f707b62",
+    "question": "\"start\": {\n    \"stream_sid\": \"<stream_sid>\",\n    \"call_sid\": \"<call_sid>\",\n    \"account_sid\": \"<account_sid>\",\n    \"from\": \"+919876543210\",\n    \"to\": \"+911234567890\",\n    \"custom_parameters\": {\n      \"key1\": \"value1\",\n      \"key2\": \"value2\"\n    },\nin this ?",
+    "question_length": 257,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5220,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Events Call Backs",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/events-callbacks"
+      }
+    ],
+    "answer_length": 1230
   }
 ]
