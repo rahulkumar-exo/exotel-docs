@@ -11491,5 +11491,39 @@
       }
     ],
     "answer_length": 690
+  },
+  {
+    "timestamp": "2026-10-24T17:58:49.903Z",
+    "response_id": "a9ba7e5a-5f08-469c-80be-fed7518522d7",
+    "question": "are there MCP or cli tools available ?",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6214,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Troubleshooting",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/troubleshooting"
+      },
+      {
+        "title": "Security",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/security"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Bring Your Own MCP",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/mcp-integration"
+      }
+    ],
+    "answer_length": 2690
   }
 ]
