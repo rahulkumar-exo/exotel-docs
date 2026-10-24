@@ -142,5 +142,14 @@
     "answer_excerpt": "Exotel offers various APIs for different communication services. To help me provide the most relevant information, could you please specify what kind of API you are looking for or what task you are trying to accomplish?\n\nExotel provides APIs for:\n*   **Voice** (e.g., making calls, managing call flows)\n*   **SMS** (e.g., sending SMS, tracking URL clicks)\n*   **WhatsApp** (e.g., sending WhatsApp messages, managing templates)\n*   **ExoVerify** (phone verification)\n*   **Call Campaigns**\n*   **Lead ",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+  },
+  {
+    "timestamp": "2026-10-24T16:32:22.936Z",
+    "response_id": "6ddd4e5d-e3f0-4e2f-91c3-b7040bfb1892",
+    "vote": "down",
+    "question": "how can i enable calling from whatsapp",
+    "answer_excerpt": "Based on the provided documentation, Exotel's WhatsApp Business API primarily focuses on **messaging, commerce, and payments** features, such as sending text, media, template, and interactive messages, managing product catalogs, shopping carts, and facilitating in-chat payments.\n\nThe documentation does not contain information about enabling or making **voice calls from WhatsApp** through Exotel's APIs or platform. Exotel supports voice, SMS, and WhatsApp as separate communication channels.\n\nIf y",
+    "comment": null,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
   }
 ]
