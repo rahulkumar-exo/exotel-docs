@@ -11219,5 +11219,39 @@
       }
     ],
     "answer_length": 2941
+  },
+  {
+    "timestamp": "2026-10-24T14:52:44.659Z",
+    "response_id": "af5bc33d-b4ef-4d7a-b317-b6780b69fad5",
+    "question": "will i get call direction from the wss directly ? basically if it is an inbound call or outbound call",
+    "question_length": 101,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8112,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 1191
   }
 ]
