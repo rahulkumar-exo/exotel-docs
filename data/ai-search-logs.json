@@ -11423,5 +11423,39 @@
       }
     ],
     "answer_length": 1306
+  },
+  {
+    "timestamp": "2026-10-24T16:31:45.618Z",
+    "response_id": "4622123c-fb15-4541-8406-e1df2ef0cdcb",
+    "question": "whatsapp call flow",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4209,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Your First Call Flow",
+        "product": "getting-started",
+        "url": "/docs/getting-started/first-call-flow"
+      }
+    ],
+    "answer_length": 1227
   }
 ]
