@@ -11661,5 +11661,39 @@
       }
     ],
     "answer_length": 499
+  },
+  {
+    "timestamp": "2026-10-25T17:49:31.102Z",
+    "response_id": "e1623930-b687-4ef4-abc9-9e9caa1289c7",
+    "question": "where i get this Agent identifier object (JSON). E.g. {\"user_contact_uri\":\"sip:agent@exotel.com\"}",
+    "question_length": 97,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2835,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Connect Agent to Customer",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/make-a-call"
+      },
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      }
+    ],
+    "answer_length": 721
   }
 ]
