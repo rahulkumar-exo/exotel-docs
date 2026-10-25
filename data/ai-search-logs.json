@@ -11593,5 +11593,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-25T06:41:04.842Z",
+    "response_id": "72c92412-ea8b-482e-b17c-7fe6bd3b457d",
+    "question": "tis all i need Telecom/DID provider: live inventory, pricing, number purchasing and calling.\n\nAuthorised e-KYC provider: verification sessions and results if your business needs identity verification.\n\nPayment gateway: if customers pay you.\n\nEmail/SMS provider: account verification and status notifications.",
+    "question_length": 308,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8757,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      }
+    ],
+    "answer_length": 176
   }
 ]
