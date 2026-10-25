@@ -11559,5 +11559,39 @@
       }
     ],
     "answer_length": 2657
+  },
+  {
+    "timestamp": "2026-10-25T06:40:17.012Z",
+    "response_id": "d7bab08a-f01f-4c9f-a070-b56f1c2cf654",
+    "question": "i need an api dos forth get numbers price na dbuy and ekyc and all setup",
+    "question_length": 72,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2837,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Update Party Numbers & Pins",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 176
   }
 ]
