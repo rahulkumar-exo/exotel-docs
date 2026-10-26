@@ -11763,5 +11763,39 @@
       }
     ],
     "answer_length": 4272
+  },
+  {
+    "timestamp": "2026-10-26T12:21:52.689Z",
+    "response_id": "bc1ca415-943e-4a36-97a7-e8916aabed44",
+    "question": "how to integrate exotel api in .net application",
+    "question_length": 47,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5437,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 2431
   }
 ]
