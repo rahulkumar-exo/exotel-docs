@@ -11967,5 +11967,39 @@
       }
     ],
     "answer_length": 1109
+  },
+  {
+    "timestamp": "2026-10-27T09:40:47.172Z",
+    "response_id": "5cfcb5b3-bcbe-4189-be83-8e3bb3fc92cc",
+    "question": "make a call payload post adding api key and tested i get curl: (3) URL rejected: Bad hostname\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TwilioResponse>\n <RestException>\n  <Status>401</Status>\n  <Message>Unauthorized; </Message>\n  <Code>34010</Code>\n </RestException>\n</TwilioResponse>\ncurl: (3) URL rejected: Bad hostname\ncurl: (3) URL rejected: Bad hostname\ncurl: (3) URL rejected: Bad hostname\ncurl: (3) URL rejected: Bad hostname",
+    "question_length": 430,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10639,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/overview"
+      }
+    ],
+    "answer_length": 2835
   }
 ]
