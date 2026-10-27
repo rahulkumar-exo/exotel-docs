@@ -12001,5 +12001,39 @@
       }
     ],
     "answer_length": 2835
+  },
+  {
+    "timestamp": "2026-10-27T15:02:00.468Z",
+    "response_id": "ee3bef1b-90b1-4d15-8df8-d4dfe105d84b",
+    "question": "user_contact_uri from where i get it",
+    "question_length": 36,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2937,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Call Legs (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-legs"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns"
+      }
+    ],
+    "answer_length": 403
   }
 ]
