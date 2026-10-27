@@ -11933,5 +11933,39 @@
       }
     ],
     "answer_length": 1961
+  },
+  {
+    "timestamp": "2026-10-27T09:39:12.298Z",
+    "response_id": "142d5b5e-38f9-4524-a4c9-1e18917b62db",
+    "question": "bad hostname error",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3683,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      }
+    ],
+    "answer_length": 1109
   }
 ]
