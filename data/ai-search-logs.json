@@ -12171,5 +12171,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-28T16:38:27.785Z",
+    "response_id": "d7c00647-e770-4f78-b9f1-6268baaf610b",
+    "question": "i was trying this call flow to connect number but i am not able to send statuscallbackevents can you help me with that",
+    "question_length": 118,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6178,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 985
   }
 ]
