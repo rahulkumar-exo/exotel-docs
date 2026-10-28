@@ -12137,5 +12137,39 @@
       }
     ],
     "answer_length": 1842
+  },
+  {
+    "timestamp": "2026-10-28T14:27:43.759Z",
+    "response_id": "b1d75038-6f95-4021-ad96-4c3f2ca2378f",
+    "question": "how to increase rate limit",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4369,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 176
   }
 ]
