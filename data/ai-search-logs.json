@@ -12493,5 +12493,39 @@
       }
     ],
     "answer_length": 1336
+  },
+  {
+    "timestamp": "2026-10-29T16:03:46.342Z",
+    "response_id": "b8d4801b-33b1-473f-a842-d061c0be064e",
+    "question": "i have to build voice bot which will handle calls to my indian number is there api exists which will help me to connect with call and give call streaming data",
+    "question_length": 158,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9442,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1900
   }
 ]
