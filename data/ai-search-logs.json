@@ -12315,5 +12315,39 @@
       }
     ],
     "answer_length": 2214
+  },
+  {
+    "timestamp": "2026-10-29T04:07:03.521Z",
+    "response_id": "4f8fe10a-a63e-41b7-8878-5a9d1c7a2f57",
+    "question": "for sms sending without dlt from number can't we send?",
+    "question_length": 54,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3978,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Creating an SMS Campaign",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/creating-sms-campaign"
+      },
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "SMS Delivery Reports",
+        "product": "reporting",
+        "url": "/docs/reporting/sms-reports"
+      }
+    ],
+    "answer_length": 847
   }
 ]
