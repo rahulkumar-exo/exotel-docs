@@ -12459,5 +12459,39 @@
       }
     ],
     "answer_length": 1020
+  },
+  {
+    "timestamp": "2026-10-29T08:42:35.392Z",
+    "response_id": "4c23afbf-90ab-425f-a0d0-f17e0d754e66",
+    "question": "but you are saying dlt is mandatory even if we have number why?",
+    "question_length": 63,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2958,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "DLT Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/dlt-compliance"
+      }
+    ],
+    "answer_length": 1336
   }
 ]
