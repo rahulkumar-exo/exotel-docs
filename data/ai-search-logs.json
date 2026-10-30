@@ -12561,5 +12561,13 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-30T07:02:41.486Z",
+    "question": "how to set max retries to 0 for an automated call to a number? so that only 1 call is triggered",
+    "question_length": 95,
+    "response_time_ms": 7096,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
