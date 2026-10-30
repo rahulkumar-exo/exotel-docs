@@ -12671,5 +12671,39 @@
       }
     ],
     "answer_length": 3999
+  },
+  {
+    "timestamp": "2026-10-30T08:46:49.012Z",
+    "response_id": "b26f7a0f-447e-4567-a70b-582fb0970ea8",
+    "question": "already our system has a webcall functionality, how to replace this with your inbound call?",
+    "question_length": 91,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4111,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      }
+    ],
+    "answer_length": 747
   }
 ]
