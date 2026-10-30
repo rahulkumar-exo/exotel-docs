@@ -8657,5 +8657,3985 @@
       }
     ],
     "answer_length": 795
+  },
+  {
+    "timestamp": "2026-10-08T12:23:31.637Z",
+    "response_id": "73e79157-136b-40cb-abc2-db4e7decc885",
+    "question": "+919876500001 this numbers is dummy number ?",
+    "question_length": 44,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2779,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 252
+  },
+  {
+    "timestamp": "2026-10-08T12:24:36.683Z",
+    "response_id": "ee9bf225-25a5-42bf-b6ed-662197038885",
+    "question": "+919876500001 this number",
+    "question_length": 25,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5712,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 800
+  },
+  {
+    "timestamp": "2026-10-09T05:57:58.630Z",
+    "response_id": "6631260e-b6ed-431f-8adf-fddca28e3afb",
+    "question": "in whatsapp Coexistence: do they support it, so your number stays in the Business app",
+    "question_length": 85,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3057,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "Getting Started with WhatsApp Business API",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/getting-started"
+      },
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      }
+    ],
+    "answer_length": 809
+  },
+  {
+    "timestamp": "2026-10-09T10:24:37.062Z",
+    "response_id": "30aabb23-0e46-4134-982d-4cb33d297d8e",
+    "question": "can you help me with exotel sms delivery tracking api",
+    "question_length": 53,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5633,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      }
+    ],
+    "answer_length": 1682
+  },
+  {
+    "timestamp": "2026-10-09T11:36:26.564Z",
+    "response_id": "c67eb38e-b808-4d8a-a3bd-53fd97b6ed70",
+    "question": "Do you have mcp?",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1655,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Greeting Messages",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/greeting-message"
+      },
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      }
+    ],
+    "answer_length": 290
+  },
+  {
+    "timestamp": "2026-10-10T05:57:38.506Z",
+    "response_id": "b5d6dff9-2277-4d09-b8c1-f0f0f3f0a4b4",
+    "question": "how do I use StatusCallbackEvents, its throwing 400 for me for Call/connect api",
+    "question_length": 79,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6252,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 1735
+  },
+  {
+    "timestamp": "2026-10-11T16:27:54.593Z",
+    "response_id": "9edf73e1-98c5-4308-83d9-3993069eeb16",
+    "question": "api to notify to exotel to cut the current call and transfer to another person",
+    "question_length": 78,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3311,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 425
+  },
+  {
+    "timestamp": "2026-10-12T06:03:25.698Z",
+    "response_id": "65b91449-7d08-4cbf-bd6f-ce845899d806",
+    "question": "what is pricing for whatsapp",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3467,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "WhatsApp Business API Overview",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/overview"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-12T18:20:24.317Z",
+    "response_id": "dfbf6c51-6789-4954-a98f-8a0d43f10b35",
+    "question": "Can our existing company mobile number be used as the verified outbound caller ID, and can inbound calls to it reach the CRM?\n\n\n\nDoes the account support live browser-based agent audio, not just API-triggered calls to an agent's mobile?\n\n\n\nAre these capabilities available in the trial, and what verification or commercial requirements apply?",
+    "question_length": 342,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6287,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 1852
+  },
+  {
+    "timestamp": "2026-10-13T15:11:40.758Z",
+    "response_id": "f63bd6e3-2cfd-4836-8098-a2792b299a6e",
+    "question": "how do I make use of masked calling feature for my business if I use exotel",
+    "question_length": 75,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2416,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use CleverTap via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-generic"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      }
+    ],
+    "answer_length": 427
+  },
+  {
+    "timestamp": "2026-10-13T17:57:56.764Z",
+    "response_id": "041ad72f-22c7-4df2-9531-f548491828bf",
+    "question": "how to iuse this via the salesforce",
+    "question_length": 35,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3253,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      }
+    ],
+    "answer_length": 1737
+  },
+  {
+    "timestamp": "2026-10-13T20:54:35.506Z",
+    "response_id": "0bb3e81a-8257-4cfb-b385-8961967fef03",
+    "question": "How to provision a new phone number?",
+    "question_length": 36,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4923,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers"
+      }
+    ],
+    "answer_length": 3112
+  },
+  {
+    "timestamp": "2026-10-13T20:55:44.595Z",
+    "response_id": "4f5ecdc8-8310-45bc-9873-ecaffafe6f30",
+    "question": "What information needs to be provided before the numbers can be purchased? How long does it take to automatically purchase and assign a number?",
+    "question_length": 143,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7058,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 2799
+  },
+  {
+    "timestamp": "2026-10-13T20:56:54.719Z",
+    "response_id": "2368d43b-c284-4247-9684-6f387e4f2a96",
+    "question": "How much does it cost to get a number and is there a monthly fee for it? I am looking for indian market first",
+    "question_length": 109,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1062,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-14T05:14:01.305Z",
+    "response_id": "bb0dab61-a7d0-41da-b95d-d86ec671c42f",
+    "question": "Continue building my student absentee notification software. Provider preference: Recommend suitable calling and SMS providers for India. Excel reporting: Daily. Notification rule: Once per day per absent student. Provide the next implementation steps and necessary code.",
+    "question_length": 271,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 29389,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Use MoEngage via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/moengage"
+      }
+    ],
+    "answer_length": 81766
+  },
+  {
+    "timestamp": "2026-10-14T07:02:04.574Z",
+    "question": "Hello Exotel team,\n\nPlease enable the Voicebot applet (WebSocket voice streaming) for my account SID: moneway2.\n\nI am on the trial plan with KYC approved, and I want to test an AI voice agent on my trial ExoPhone 040-459-02935. Could you also confirm:\n\n1. Does the Voicebot applet work on a trial account?\n2. Is the Connect applet's dynamic URL feature available, and what request and response format does it use?\n3. Which caller ID does the transferred agent see?\n\nThank you,",
+    "question_length": 476,
+    "response_time_ms": 1171,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-14T07:30:18.791Z",
+    "response_id": "842c9356-0c27-4081-bcab-1ad3cbdaadf4",
+    "question": "Do you have Postman API collection",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2615,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      }
+    ],
+    "answer_length": 358
+  },
+  {
+    "timestamp": "2026-10-14T09:00:51.976Z",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "response_time_ms": 1768,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-14T09:01:03.374Z",
+    "question": "call to an applet",
+    "question_length": 17,
+    "response_time_ms": 1133,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-14T11:47:36.188Z",
+    "response_id": "3d33afdd-b35e-4429-9839-2066a4b049d2",
+    "question": "Bulk call detail APIs?",
+    "question_length": 22,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9908,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      }
+    ],
+    "answer_length": 1414
+  },
+  {
+    "timestamp": "2026-10-14T12:30:12.507Z",
+    "response_id": "02b8d26f-6ac7-45ba-81cd-c150e837eaea",
+    "question": "I want to use phone to phone calling, through my ai agent. \nMy AI agent will forward the call to actual person \nhow to implement that\nwhat apis will be provided by exotel and what apis should i be providing",
+    "question_length": 206,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 21453,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 4952
+  },
+  {
+    "timestamp": "2026-10-14T13:38:45.952Z",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "response_time_ms": 861,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-14T18:05:27.489Z",
+    "response_id": "56b1afe1-4c0b-41db-a5cb-85d382a0f7e7",
+    "question": "what could be the issue id in dashborad call status says \"client hang-up before connecting to user\"",
+    "question_length": 99,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5050,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Terminologies",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/terminologies"
+      }
+    ],
+    "answer_length": 1013
+  },
+  {
+    "timestamp": "2026-10-15T05:36:08.083Z",
+    "response_id": "1ee68595-f910-4441-9433-14953d1d2fe4",
+    "question": "what about authentication",
+    "question_length": 25,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2838,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      }
+    ],
+    "answer_length": 1787
+  },
+  {
+    "timestamp": "2026-10-15T05:38:57.527Z",
+    "response_id": "63a8c761-3215-4b13-86d5-5cc94eee4cf7",
+    "question": "for the same contact two number",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5732,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 965
+  },
+  {
+    "timestamp": "2026-10-15T08:06:36.354Z",
+    "response_id": "b728da38-6b5a-450c-af74-2987749d77a1",
+    "question": "are there any reporting api, i.e entire day reports/data",
+    "question_length": 56,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2943,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 549
+  },
+  {
+    "timestamp": "2026-10-15T11:05:37.261Z",
+    "response_id": "8b953b47-95ea-4f22-b79c-4ee99b8faf55",
+    "question": "call charges",
+    "question_length": 12,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1368,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-15T12:20:33.410Z",
+    "response_id": "ac730381-aa50-4d86-ad8c-ed067f2b2c5e",
+    "question": "can exotel or mobile be used interchangeably",
+    "question_length": 44,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3249,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 903
+  },
+  {
+    "timestamp": "2026-10-15T12:21:15.836Z",
+    "response_id": "d2f550d9-cafc-4553-9178-d55d09572b4c",
+    "question": "in the app can I use exotel for calling a phone number and if that doesn't work can I attempt calling via agent mobile",
+    "question_length": 118,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4079,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 950
+  },
+  {
+    "timestamp": "2026-10-16T05:28:22.701Z",
+    "response_id": "fc19a1ec-05de-4c4b-9943-2be52938fd1b",
+    "question": "muje sub ko call krna h or mere pass 1 recoded voice note h jo muje sub ku dena h call p",
+    "question_length": 88,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8788,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 859
+  },
+  {
+    "timestamp": "2026-10-16T05:29:58.072Z",
+    "response_id": "957ab38f-93ee-444c-98df-5afa74292afa",
+    "question": "hindi m bat kro",
+    "question_length": 15,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1020,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Long SMS (Concatenated Messages)",
+        "product": "sms-support",
+        "url": "/docs/sms-support/long-sms"
+      },
+      {
+        "title": "Passthru Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/passthru-applet-guide"
+      },
+      {
+        "title": "Unicode SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/unicode-sms"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 81
+  },
+  {
+    "timestamp": "2026-10-16T05:31:00.222Z",
+    "response_id": "ed3634f8-bad4-4ee8-bb9c-331122e3d339",
+    "question": "muje call p mere election ka parchar krna h jis m meri recoded voice h jo call krne p sub ko sunai d",
+    "question_length": 100,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5841,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 1462
+  },
+  {
+    "timestamp": "2026-10-16T05:33:15.779Z",
+    "response_id": "cdca48ea-4b98-4c7a-b0ec-22c6ecd1414f",
+    "question": "kha incoming call ka option",
+    "question_length": 27,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3819,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 1568
+  },
+  {
+    "timestamp": "2026-10-16T05:33:52.294Z",
+    "response_id": "9ced698c-90d5-4c1f-869b-d44d7b410c4d",
+    "question": "step wise kese kru btana",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13132,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "DLT Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-registration"
+      },
+      {
+        "title": "Upgrade from Trial to Paid Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/upgrade-account"
+      },
+      {
+        "title": "SIP Trunking quickstart",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/quickstart"
+      },
+      {
+        "title": "DLT Entity Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-entity-registration"
+      }
+    ],
+    "answer_length": 5405
+  },
+  {
+    "timestamp": "2026-10-16T06:36:31.461Z",
+    "response_id": "39909ed0-15d7-4ac5-a07d-7480b38acd65",
+    "question": "how to get open url recording ?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8252,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Voice Log Download",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/voice-log-download"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 874
+  },
+  {
+    "timestamp": "2026-10-16T09:50:08.753Z",
+    "response_id": "25ae1c30-195d-4ad8-a172-1306a7946acb",
+    "question": "https://api.in.exotel.com/v2/accounts/univoedtech1m/trunks/trmum1d1eee7e68000d42e851aa8/phone-numbers?ID=58328\n\nsearch for this api",
+    "question_length": 131,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3515,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 510
+  },
+  {
+    "timestamp": "2026-10-16T13:19:28.167Z",
+    "response_id": "a9bc0098-fedc-4406-8ac0-ac411c54fada",
+    "question": "LWB api",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2326,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      }
+    ],
+    "answer_length": 259
+  },
+  {
+    "timestamp": "2026-10-17T09:00:13.257Z",
+    "question": "is ther any feature for creating sub account from one single main account? and docs for virtual number is from sub accounts, not from main account??",
+    "question_length": 148,
+    "response_time_ms": 1374,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-17T09:02:02.978Z",
+    "response_id": "8321fcb9-9612-4fba-8293-a857a2d540a8",
+    "question": "document needed for virtual number?",
+    "question_length": 35,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4793,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Multi-Level IVR",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/multi-level-ivr"
+      }
+    ],
+    "answer_length": 2773
+  },
+  {
+    "timestamp": "2026-10-18T01:30:50.285Z",
+    "response_id": "4b64d280-0948-4c73-a42b-b987c3e6cf4a",
+    "question": "How to send an SMS via API?",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5918,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      }
+    ],
+    "answer_length": 3396
+  },
+  {
+    "timestamp": "2026-10-18T21:44:32.301Z",
+    "response_id": "855ed8de-863a-4747-bf0b-ef80f64549f1",
+    "question": "pricing",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 875,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "SMS Pricing",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-pricing"
+      },
+      {
+        "title": "Pricing & Plans FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/pricing-plans"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-19T09:13:46.232Z",
+    "response_id": "72495244-23e9-4dd7-9e25-0c750819780b",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7407,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 4276
+  },
+  {
+    "timestamp": "2026-10-19T10:21:08.853Z",
+    "response_id": "e4e087aa-adf2-4eac-8019-9928f93b966c",
+    "question": "are you have the noice cancelaction plane",
+    "question_length": 41,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2188,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 264
+  },
+  {
+    "timestamp": "2026-10-19T11:37:13.619Z",
+    "response_id": "642e72b4-0e5d-4fef-9931-dcc2550c4c4b",
+    "question": "When sending Bulk Messages, How much time will it take to get response? If i sent 100 messages, will it take 100 seconds to get the final response of the bulk messages API?",
+    "question_length": 172,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2335,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 328
+  },
+  {
+    "timestamp": "2026-10-19T11:58:56.824Z",
+    "response_id": "2a4627ab-091a-4ab0-94cf-44e71731e944",
+    "question": "Voicebot Applet ID",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4010,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with the Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-applet"
+      },
+      {
+        "title": "Extension guide: Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Extension guide: Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 633
+  },
+  {
+    "timestamp": "2026-10-19T11:59:23.344Z",
+    "response_id": "af5e975c-2cff-47af-b4e7-c0153b82c449",
+    "question": "Voicebot Applet ID for elevan labs",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3686,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Working with Passthru Applet for AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/passthru-applet"
+      },
+      {
+        "title": "Extension guide: Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      }
+    ],
+    "answer_length": 1057
+  },
+  {
+    "timestamp": "2026-10-19T13:15:23.383Z",
+    "response_id": "ab851acc-18b1-4ce5-8de2-97ab34cd7660",
+    "question": "what is price for take call ?",
+    "question_length": 29,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1332,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-19T16:20:21.750Z",
+    "response_id": "ffb20609-1e68-4bbe-9d10-49f75c966ef8",
+    "question": "How does ExoVerify phone verification work?",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1915,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoVerify",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/overview"
+      },
+      {
+        "title": "Start Verification",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/start-verification"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 504
+  },
+  {
+    "timestamp": "2026-10-19T16:20:54.792Z",
+    "response_id": "2f454449-38be-4815-bb0b-d7837c87251d",
+    "question": "do you have any job openings in your company ?",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 725,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "Create Your Exotel Account",
+        "product": "getting-started",
+        "url": "/docs/getting-started/create-account"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-20T01:01:42.482Z",
+    "response_id": "92374a9b-c288-447c-be27-1b1ed4ebe64a",
+    "question": "what is the api",
+    "question_length": 15,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2270,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 980
+  },
+  {
+    "timestamp": "2026-10-20T08:09:54.986Z",
+    "response_id": "1d2ea277-db57-4ca7-897e-4b4244bd133f",
+    "question": "is there any api for kyc verification ?",
+    "question_length": 39,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2565,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "KYC Verification",
+        "product": "getting-started",
+        "url": "/docs/getting-started/kyc-verification"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      }
+    ],
+    "answer_length": 478
+  },
+  {
+    "timestamp": "2026-10-20T08:11:28.810Z",
+    "response_id": "3918a353-ff56-4d0e-9c13-fe73edc7590c",
+    "question": "i have 100 agent and that have seprate login and i want this all use my softwre so for this have any",
+    "question_length": 100,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2917,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 1179
+  },
+  {
+    "timestamp": "2026-10-20T10:32:11.873Z",
+    "response_id": "9969face-d317-4cf2-a10c-0a62cadc99dd",
+    "question": "price?",
+    "question_length": 6,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1195,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-20T15:52:59.772Z",
+    "response_id": "3fc8b62f-c1b0-4c42-a5eb-7629ca034a4a",
+    "question": "campaigns api",
+    "question_length": 13,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7926,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SMS Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/overview"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "List All Campaigns",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/bulk-campaign-details"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      }
+    ],
+    "answer_length": 4172
+  },
+  {
+    "timestamp": "2026-10-21T21:52:58.509Z",
+    "response_id": "bbc9073f-4577-4a07-83e5-884c2af3f630",
+    "question": "cliniko",
+    "question_length": 7,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1308,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 238
+  },
+  {
+    "timestamp": "2026-10-21T21:53:38.611Z",
+    "response_id": "2908521d-5768-48e0-868e-142d8fbd1b20",
+    "question": "Local Bridge",
+    "question_length": 12,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4709,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage Legs & Bridges",
+        "product": "legs",
+        "url": "/docs/legs/api-reference/manage-legs"
+      },
+      {
+        "title": "Manage Legs & Bridges",
+        "product": "legs",
+        "url": "/docs/legs/api-reference/manage-legs"
+      },
+      {
+        "title": "Campaign Best Practices",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/campaign-best-practices"
+      },
+      {
+        "title": "Regions & Availability",
+        "product": "getting-started",
+        "url": "/docs/getting-started/regions-availability"
+      }
+    ],
+    "answer_length": 1877
+  },
+  {
+    "timestamp": "2026-10-22T05:06:19.716Z",
+    "question": "what are the api's available that i can integrate in my system to automate everything",
+    "question_length": 85,
+    "response_time_ms": 2701,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-22T05:06:38.046Z",
+    "response_id": "4f915b54-1f7f-4fd6-a8f3-1070ab6326f2",
+    "question": "why ?",
+    "question_length": 5,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3815,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "WhatsApp Template Guidelines",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/template-guidelines"
+      },
+      {
+        "title": "Troubleshooting FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/troubleshooting"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      }
+    ],
+    "answer_length": 1723
+  },
+  {
+    "timestamp": "2026-10-22T05:07:02.182Z",
+    "response_id": "213b952b-0b9c-4eb6-95fa-cf9b8fe1e9d9",
+    "question": "what are the api's available that i can integrate in my system to automate everything",
+    "question_length": 85,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6601,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 3876
+  },
+  {
+    "timestamp": "2026-10-22T07:11:38.234Z",
+    "response_id": "d5b9b796-9e80-429b-baac-240a07f4089e",
+    "question": "How to connect a phone number for inbound and outbound calls to my AI assistant",
+    "question_length": 79,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10103,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 3567
+  },
+  {
+    "timestamp": "2026-10-22T07:12:39.910Z",
+    "response_id": "9277be3f-949b-4df9-85a8-f3ba310f9af9",
+    "question": "what is the pricing per minute for the numbers",
+    "question_length": 46,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1033,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-22T07:24:47.902Z",
+    "question": "pricings of calls in india and is it postpaid or prepaid",
+    "question_length": 56,
+    "response_time_ms": 879,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-22T10:08:02.986Z",
+    "response_id": "f83b1185-dd46-4627-b87c-5e5f9f8103fd",
+    "question": "what is the cost",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1010,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-22T10:28:52.572Z",
+    "question": "app flow ivr api",
+    "question_length": 16,
+    "response_time_ms": 2722,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-22T10:29:22.222Z",
+    "question": "call campaigns api",
+    "question_length": 18,
+    "response_time_ms": 866,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-22T14:18:01.676Z",
+    "response_id": "73486d02-59f8-4060-a1b5-5a44c0631c05",
+    "question": "getting 403 for API click to call",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6387,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      }
+    ],
+    "answer_length": 2641
+  },
+  {
+    "timestamp": "2026-10-22T14:20:25.341Z",
+    "response_id": "f7127e25-620c-40e6-aa91-6bbe3a40f7df",
+    "question": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TwilioResponse>\n <RestException>\n  <Status>401</Status>\n  <Message>Unauthorized; </Message>\n  <Code>34010</Code>\n </RestException>\n</TwilioResponse>",
+    "question_length": 188,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6381,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 2185
+  },
+  {
+    "timestamp": "2026-10-22T17:18:07.664Z",
+    "response_id": "c0464486-9ccd-446c-a92e-5625dc02cfbf",
+    "question": "are you from exotel",
+    "question_length": 19,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 834,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 110
+  },
+  {
+    "timestamp": "2026-10-22T17:18:21.034Z",
+    "response_id": "96840236-e2d5-4ab8-aa83-ba4e9d9682a5",
+    "question": "could you help me with the pricing details",
+    "question_length": 42,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 912,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-23T07:22:47.675Z",
+    "response_id": "b59be514-bdf1-4a3d-963c-043875b4d5f0",
+    "question": "How to send an SMS via API?",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6391,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      }
+    ],
+    "answer_length": 4632
+  },
+  {
+    "timestamp": "2026-10-23T10:05:24.922Z",
+    "question": "emudra",
+    "question_length": 6,
+    "response_time_ms": 1055,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-23T10:05:44.627Z",
+    "response_id": "50f732da-d38a-4830-baaf-00ae1b9a57a3",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6262,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 3390
+  },
+  {
+    "timestamp": "2026-10-23T10:06:06.675Z",
+    "response_id": "5165a6e3-46b8-45d2-8e25-9e2411c46e64",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5720,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 3476
+  },
+  {
+    "timestamp": "2026-10-23T10:06:18.743Z",
+    "response_id": "c1adf515-4c79-45d1-aa6b-8faf73909238",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6239,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 3275
+  },
+  {
+    "timestamp": "2026-10-23T10:32:38.921Z",
+    "response_id": "bdb8df7d-51de-4a4a-9ada-359e72f61b97",
+    "question": "what's the pricing of voice api for my voice ai agent use case to take inbound calls and make outbound calls",
+    "question_length": 108,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1212,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Voice v2",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/overview"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-23T17:30:31.835Z",
+    "response_id": "60c6eb25-40da-4521-a320-9b7aba54da87",
+    "question": "how programmable voice works, and how can i use in my ecommerce app to connect customer and devlivery partner.",
+    "question_length": 110,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6340,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "App Bazaar Overview",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/overview"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      },
+      {
+        "title": "Programmable Voice",
+        "product": "voice",
+        "url": "/docs/voice/overview"
+      }
+    ],
+    "answer_length": 2165
+  },
+  {
+    "timestamp": "2026-10-23T18:24:51.695Z",
+    "response_id": "c74dd41f-29e9-47e3-8a6d-67dd15c7a104",
+    "question": "do you support call forwarding?",
+    "question_length": 31,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4488,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 1303
+  },
+  {
+    "timestamp": "2026-10-23T23:04:09.434Z",
+    "response_id": "cf2ce4f5-d1be-43b7-abc1-4cd9542dcd69",
+    "question": "I have only one Exophone virtual number in my account, so how it will be work for my hundreds of customers to help deliver their product",
+    "question_length": 136,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9777,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 1915
+  },
+  {
+    "timestamp": "2026-10-23T23:06:46.515Z",
+    "response_id": "5d1ce90d-7dfc-44e0-a8fc-edb7171244d2",
+    "question": "How a third-party delivery partner connect with the customer of a particular order, which he has to be delivered. How to map the customer mobile number to the delivery partner, mobile number.",
+    "question_length": 191,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 14623,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 40562
+  },
+  {
+    "timestamp": "2026-10-24T07:43:19.244Z",
+    "response_id": "7b8f7ba8-1cb7-423b-8dd2-0143569f6222",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9981,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 5045
+  },
+  {
+    "timestamp": "2026-10-24T09:53:13.781Z",
+    "response_id": "17190d19-391e-4052-8234-b331f1bb8937",
+    "question": "Is there an api to get call summary or transcript or a call.",
+    "question_length": 60,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8207,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 2276
+  },
+  {
+    "timestamp": "2026-10-24T12:28:26.867Z",
+    "response_id": "05df4dea-f08d-48e7-89c9-08521ca3dcf1",
+    "question": "how do i make outbound call via voicebot using api",
+    "question_length": 50,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6749,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 3209
+  },
+  {
+    "timestamp": "2026-10-24T12:29:34.578Z",
+    "response_id": "5faacd75-e581-4bef-af3c-c9cb23d6a0e8",
+    "question": "make call from voicebot using api",
+    "question_length": 33,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9663,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details",
+        "product": "Voice API",
+        "url": "/docs/voice-api/api-reference/call-details"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Call Legs (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-legs"
+      }
+    ],
+    "answer_length": 2941
+  },
+  {
+    "timestamp": "2026-10-24T14:52:44.659Z",
+    "response_id": "af5bc33d-b4ef-4d7a-b317-b6780b69fad5",
+    "question": "will i get call direction from the wss directly ? basically if it is an inbound call or outbound call",
+    "question_length": 101,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8112,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 1191
+  },
+  {
+    "timestamp": "2026-10-24T14:53:09.985Z",
+    "response_id": "c307de36-41f3-4c74-b97d-4d4a17ba153e",
+    "question": "no when connecting the call itself will it carry the data ?",
+    "question_length": 59,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6356,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      }
+    ],
+    "answer_length": 1007
+  },
+  {
+    "timestamp": "2026-10-24T14:54:04.910Z",
+    "response_id": "a61fdfd4-4d2b-4e40-b351-8bdcf79123e6",
+    "question": "correct but the start packet that u have shown here doesn't have it that's why asking",
+    "question_length": 85,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7741,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 1834
+  },
+  {
+    "timestamp": "2026-10-24T14:54:53.117Z",
+    "response_id": "6f4ae3bf-6e4e-437a-9b5b-bc279f707b62",
+    "question": "\"start\": {\n    \"stream_sid\": \"<stream_sid>\",\n    \"call_sid\": \"<call_sid>\",\n    \"account_sid\": \"<account_sid>\",\n    \"from\": \"+919876543210\",\n    \"to\": \"+911234567890\",\n    \"custom_parameters\": {\n      \"key1\": \"value1\",\n      \"key2\": \"value2\"\n    },\nin this ?",
+    "question_length": 257,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5220,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Events Call Backs",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/events-callbacks"
+      }
+    ],
+    "answer_length": 1230
+  },
+  {
+    "timestamp": "2026-10-24T14:55:31.795Z",
+    "response_id": "a469b515-412d-416d-b7b7-72801029006f",
+    "question": "not webrtc for websocket",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9386,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      },
+      {
+        "title": "Events Call Backs",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/events-callbacks"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 1099
+  },
+  {
+    "timestamp": "2026-10-24T14:56:45.548Z",
+    "response_id": "850e1294-ce1d-4ba8-9f80-54ec735650fd",
+    "question": "pstn is websocket ?",
+    "question_length": 19,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4021,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "IP-PSTN intermix: WebRTC SDK integration",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/overview"
+      },
+      {
+        "title": "Call directions and routing modes",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/call-directions"
+      },
+      {
+        "title": "LSQ IP-PSTN Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-ip-pstn"
+      }
+    ],
+    "answer_length": 1306
+  },
+  {
+    "timestamp": "2026-10-24T16:31:45.618Z",
+    "response_id": "4622123c-fb15-4541-8406-e1df2ef0cdcb",
+    "question": "whatsapp call flow",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4209,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Setting Up a Call Flow",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/setting-up-call-flow"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Your First Call Flow",
+        "product": "getting-started",
+        "url": "/docs/getting-started/first-call-flow"
+      }
+    ],
+    "answer_length": 1227
+  },
+  {
+    "timestamp": "2026-10-24T16:32:10.202Z",
+    "response_id": "6ddd4e5d-e3f0-4e2f-91c3-b7040bfb1892",
+    "question": "how can i enable calling from whatsapp",
+    "question_length": 38,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2658,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Commerce",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/commerce"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      },
+      {
+        "title": "Bulk WhatsApp Messages",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/bulk-messages"
+      }
+    ],
+    "answer_length": 690
+  },
+  {
+    "timestamp": "2026-10-24T17:58:49.903Z",
+    "response_id": "a9ba7e5a-5f08-469c-80be-fed7518522d7",
+    "question": "are there MCP or cli tools available ?",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6214,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Troubleshooting",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/troubleshooting"
+      },
+      {
+        "title": "Security",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/security"
+      },
+      {
+        "title": "Exotel MCP Server",
+        "product": "mcp-server",
+        "url": "/docs/mcp-server/overview"
+      },
+      {
+        "title": "Bring Your Own MCP",
+        "product": "voicebot-tools",
+        "url": "/docs/voicebot-tools/mcp-integration"
+      }
+    ],
+    "answer_length": 2690
+  },
+  {
+    "timestamp": "2026-10-25T04:33:35.543Z",
+    "response_id": "edcef6fe-45fa-40e8-a801-adb4f5125f01",
+    "question": "How to send an SMS via API?",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5162,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      }
+    ],
+    "answer_length": 2657
+  },
+  {
+    "timestamp": "2026-10-25T06:40:17.012Z",
+    "response_id": "d7bab08a-f01f-4c9f-a070-b56f1c2cf654",
+    "question": "i need an api dos forth get numbers price na dbuy and ekyc and all setup",
+    "question_length": 72,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2837,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Update Party Numbers & Pins",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "Trial Account Features and Limitations",
+        "product": "getting-started",
+        "url": "/docs/getting-started/trial-account"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-25T06:41:04.842Z",
+    "response_id": "72c92412-ea8b-482e-b17c-7fe6bd3b457d",
+    "question": "tis all i need Telecom/DID provider: live inventory, pricing, number purchasing and calling.\n\nAuthorised e-KYC provider: verification sessions and results if your business needs identity verification.\n\nPayment gateway: if customers pay you.\n\nEmail/SMS provider: account verification and status notifications.",
+    "question_length": 308,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8757,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-25T13:57:45.143Z",
+    "response_id": "6120f978-432b-437a-9c41-a7ae76b9f094",
+    "question": "how to change region to mumbal?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1871,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dynamic Caller ID Campaigns",
+        "product": "use-cases",
+        "url": "/docs/use-cases/dynamic-caller-id-campaigns"
+      },
+      {
+        "title": "Regions & Availability",
+        "product": "getting-started",
+        "url": "/docs/getting-started/regions-availability"
+      },
+      {
+        "title": "Regions & Availability",
+        "product": "getting-started",
+        "url": "/docs/getting-started/regions-availability"
+      },
+      {
+        "title": "Dynamic Caller ID Campaigns",
+        "product": "use-cases",
+        "url": "/docs/use-cases/dynamic-caller-id-campaigns"
+      }
+    ],
+    "answer_length": 499
+  },
+  {
+    "timestamp": "2026-10-25T17:49:31.102Z",
+    "response_id": "e1623930-b687-4ef4-abc9-9e9caa1289c7",
+    "question": "where i get this Agent identifier object (JSON). E.g. {\"user_contact_uri\":\"sip:agent@exotel.com\"}",
+    "question_length": 97,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2835,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Progressive Dialer using APIs",
+        "product": "use-cases",
+        "url": "/docs/use-cases/progressive-dialer"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Connect Agent to Customer",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/make-a-call"
+      },
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      }
+    ],
+    "answer_length": 721
+  },
+  {
+    "timestamp": "2026-10-26T05:51:26.703Z",
+    "response_id": "a41860e1-c348-4ee2-940e-0ec69e51a9c5",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7962,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 3958
+  },
+  {
+    "timestamp": "2026-10-26T12:19:59.195Z",
+    "response_id": "002e44f1-7691-459f-9a54-96b707dcc283",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8441,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 4272
+  },
+  {
+    "timestamp": "2026-10-26T12:21:52.689Z",
+    "response_id": "bc1ca415-943e-4a36-97a7-e8916aabed44",
+    "question": "how to integrate exotel api in .net application",
+    "question_length": 47,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5437,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Exotel LeadSquared UTC Connector",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-utc"
+      },
+      {
+        "title": "Authentication",
+        "product": "Voice API",
+        "url": "/docs/voice-api/getting-started/authentication"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 2431
+  },
+  {
+    "timestamp": "2026-10-26T12:23:38.471Z",
+    "response_id": "bb83c078-2ceb-4682-88ab-415ff2bbd4d0",
+    "question": "inbound call with ivr number",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4313,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1760
+  },
+  {
+    "timestamp": "2026-10-26T19:53:41.997Z",
+    "response_id": "36e33644-7a13-4fca-a78f-9e85f1455304",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7356,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 3923
+  },
+  {
+    "timestamp": "2026-10-27T08:33:54.064Z",
+    "response_id": "612d1cd0-ac69-4031-b91f-b9aaf2123efb",
+    "question": "How to send an SMS via API?",
+    "question_length": 27,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 11621,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      }
+    ],
+    "answer_length": 4719
+  },
+  {
+    "timestamp": "2026-10-27T09:17:48.401Z",
+    "response_id": "8ba6b6d0-c8af-4799-ac2f-a377b3a0f8ae",
+    "question": "api documents",
+    "question_length": 13,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5375,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      },
+      {
+        "title": "WebRTC Token Generation API — Authentication",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/authentication"
+      }
+    ],
+    "answer_length": 1961
+  },
+  {
+    "timestamp": "2026-10-27T09:39:12.298Z",
+    "response_id": "142d5b5e-38f9-4524-a4c9-1e18917b62db",
+    "question": "bad hostname error",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3683,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Common SMS API Errors",
+        "product": "sms-support",
+        "url": "/docs/sms-support/sms-api-errors"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      }
+    ],
+    "answer_length": 1109
+  },
+  {
+    "timestamp": "2026-10-27T09:40:47.172Z",
+    "response_id": "5cfcb5b3-bcbe-4189-be83-8e3bb3fc92cc",
+    "question": "make a call payload post adding api key and tested i get curl: (3) URL rejected: Bad hostname\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TwilioResponse>\n <RestException>\n  <Status>401</Status>\n  <Message>Unauthorized; </Message>\n  <Code>34010</Code>\n </RestException>\n</TwilioResponse>\ncurl: (3) URL rejected: Bad hostname\ncurl: (3) URL rejected: Bad hostname\ncurl: (3) URL rejected: Bad hostname\ncurl: (3) URL rejected: Bad hostname",
+    "question_length": 430,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10639,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "Shorten URL",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/api-reference/shorten-url"
+      },
+      {
+        "title": "URL Shortening",
+        "product": "url-shortening",
+        "url": "/docs/url-shortening/overview"
+      }
+    ],
+    "answer_length": 2835
+  },
+  {
+    "timestamp": "2026-10-27T15:02:00.468Z",
+    "response_id": "ee3bef1b-90b1-4d15-8df8-d4dfe105d84b",
+    "question": "user_contact_uri from where i get it",
+    "question_length": 36,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2937,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Call Legs (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-legs"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads"
+      },
+      {
+        "title": "Get All Campaigns",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-all-campaigns"
+      }
+    ],
+    "answer_length": 403
+  },
+  {
+    "timestamp": "2026-10-27T18:30:47.559Z",
+    "response_id": "d03a84d9-2154-484d-a77e-909453558517",
+    "question": "How do i configure mcp?",
+    "question_length": 23,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2501,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 179
+  },
+  {
+    "timestamp": "2026-10-28T09:11:42.385Z",
+    "response_id": "c325d66c-1b41-4635-be72-ffde4bf80053",
+    "question": "how many concurrent call i can make in one number",
+    "question_length": 49,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2487,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 322
+  },
+  {
+    "timestamp": "2026-10-28T14:27:06.364Z",
+    "response_id": "ff2000e8-a9c0-4311-9fc0-1f64503532ed",
+    "question": "rate limit",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4847,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 1842
+  },
+  {
+    "timestamp": "2026-10-28T14:27:43.759Z",
+    "response_id": "b1d75038-6f95-4021-ad96-4c3f2ca2378f",
+    "question": "how to increase rate limit",
+    "question_length": 26,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4369,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-28T16:38:27.785Z",
+    "response_id": "d7c00647-e770-4f78-b9f1-6268baaf610b",
+    "question": "i was trying this call flow to connect number but i am not able to send statuscallbackevents can you help me with that",
+    "question_length": 118,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6178,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 985
+  },
+  {
+    "timestamp": "2026-10-28T16:39:27.274Z",
+    "question": "i am talking about connect number to call flow",
+    "question_length": 46,
+    "response_time_ms": 2541,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-28T16:40:59.665Z",
+    "response_id": "ae97c1fd-d858-4030-aa90-f75afd47c290",
+    "question": "i am asking about connect number to call flow , in this a request parameter is statuscallbackevents how can i use that i tried btut its not working for me",
+    "question_length": 154,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2901,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 589
+  },
+  {
+    "timestamp": "2026-10-28T16:41:41.282Z",
+    "response_id": "e00af083-3437-4c08-a88f-838b09eb31ee",
+    "question": "From\tYes\tString\tThe phone number to call first.\nCallerId\tYes\tString\tYour ExoPhone/virtual number.\nUrl\tYes\tString\tFlow URL: http://my.exotel.com/{your_sid}/exoml/start_voice/{app_id}\nCallType\tNo\tString\ttrans for transactional calls.\nTimeLimit\tNo\tInteger\tMax call duration in seconds. Max: 14400 (4 hours).\nTimeOut\tNo\tInteger\tTime in seconds to ring the called party before treating the call as unanswered. The timer runs only during ringing and stops once the call is answered.\nStatusCallback\tNo\tStrin",
+    "question_length": 724,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6100,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 2314
+  },
+  {
+    "timestamp": "2026-10-28T16:42:46.907Z",
+    "response_id": "7090f98b-5c7b-403f-9cea-4a127fa8e158",
+    "question": "can you give me the curl",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7656,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 2214
+  },
+  {
+    "timestamp": "2026-10-29T04:07:03.521Z",
+    "response_id": "4f8fe10a-a63e-41b7-8878-5a9d1c7a2f57",
+    "question": "for sms sending without dlt from number can't we send?",
+    "question_length": 54,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3978,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Creating an SMS Campaign",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/creating-sms-campaign"
+      },
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "SMS Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/sms-applet-guide"
+      },
+      {
+        "title": "SMS Delivery Reports",
+        "product": "reporting",
+        "url": "/docs/reporting/sms-reports"
+      }
+    ],
+    "answer_length": 847
+  },
+  {
+    "timestamp": "2026-10-29T04:07:39.022Z",
+    "question": "by buying number also we can not?",
+    "question_length": 33,
+    "response_time_ms": 2003,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-29T04:07:50.818Z",
+    "response_id": "0452ea65-ea7e-442d-a5bd-2d109f945869",
+    "question": "by buying number also we can not?",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3908,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 955
+  },
+  {
+    "timestamp": "2026-10-29T04:35:38.758Z",
+    "response_id": "e1d652d0-c33d-47b3-b9df-38235e5b5d5c",
+    "question": "How do I make an outbound call?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8110,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      }
+    ],
+    "answer_length": 3711
+  },
+  {
+    "timestamp": "2026-10-29T08:39:36.849Z",
+    "response_id": "d767d34e-77c4-4fb1-9419-700f4c77a9d3",
+    "question": "buying virtual number from exotel and sending from that is not possible?",
+    "question_length": 72,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3424,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Exotel Shopify Integration - Verify Customer Number & Confirm Orders",
+        "product": "integrations",
+        "url": "/docs/integrations/shopify"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 1020
+  },
+  {
+    "timestamp": "2026-10-29T08:42:35.392Z",
+    "response_id": "4c23afbf-90ab-425f-a0d0-f17e0d754e66",
+    "question": "but you are saying dlt is mandatory even if we have number why?",
+    "question_length": 63,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2958,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "What Is DLT?",
+        "product": "sms-support",
+        "url": "/docs/sms-support/what-is-dlt"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "DLT Compliance",
+        "product": "faqs",
+        "url": "/docs/faqs/dlt-compliance"
+      }
+    ],
+    "answer_length": 1336
+  },
+  {
+    "timestamp": "2026-10-29T16:03:46.342Z",
+    "response_id": "b8d4801b-33b1-473f-a842-d061c0be064e",
+    "question": "i have to build voice bot which will handle calls to my indian number is there api exists which will help me to connect with call and give call streaming data",
+    "question_length": 158,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9442,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 1900
+  },
+  {
+    "timestamp": "2026-10-29T16:05:11.781Z",
+    "response_id": "7683eda9-8782-4ece-92b5-f477f5d53f46",
+    "question": "give me cost for this",
+    "question_length": 21,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 953,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-30T07:02:41.486Z",
+    "question": "how to set max retries to 0 for an automated call to a number? so that only 1 call is triggered",
+    "question_length": 95,
+    "response_time_ms": 7096,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
+  },
+  {
+    "timestamp": "2026-10-30T07:20:06.147Z",
+    "response_id": "e6fb4dac-ebce-4f35-ab3e-80db160c180f",
+    "question": "How do I fetch the App id?",
+    "question_length": 26,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5677,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 1015
+  },
+  {
+    "timestamp": "2026-10-30T07:20:40.516Z",
+    "response_id": "93ed4294-3be1-44de-9bfc-657613b59075",
+    "question": "How do I fetch from the exotel dashboard?",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4739,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Exotel Integration with Salesforce",
+        "product": "integrations",
+        "url": "/docs/integrations/salesforce"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1236
   }
 ]
