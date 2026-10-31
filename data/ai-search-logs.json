@@ -12739,5 +12739,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-10-31T15:42:28.112Z",
+    "response_id": "ab3f9ce5-3419-49ac-829d-5da7b72129ac",
+    "question": "How do i get a virtual no. for my AI which i can connect to?",
+    "question_length": 60,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4884,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      },
+      {
+        "title": "Get Assigned Users",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-assigned-users"
+      }
+    ],
+    "answer_length": 1964
   }
 ]
