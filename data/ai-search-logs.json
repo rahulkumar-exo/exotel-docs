@@ -12841,5 +12841,39 @@
       }
     ],
     "answer_length": 4079
+  },
+  {
+    "timestamp": "2026-11-01T17:09:50.181Z",
+    "response_id": "1bae0da4-d97b-48bb-b2e1-064fe6d52ff9",
+    "question": "where to adhttps://ctiapp.exotel.com/api/v1/getorderamounthttps://ctiapp.exotel.com/api/v1/getordernumberd the",
+    "question_length": 110,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6395,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 715
   }
 ]
