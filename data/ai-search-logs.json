@@ -12951,5 +12951,39 @@
       }
     ],
     "answer_length": 329
+  },
+  {
+    "timestamp": "2026-11-02T07:15:28.034Z",
+    "response_id": "9c65c7c9-fcc3-4b40-b518-81bef73e36d7",
+    "question": "Concurrent Inbound calls status per sec APi",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3328,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "SMS Status Codes",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/status-codes"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      }
+    ],
+    "answer_length": 416
   }
 ]
