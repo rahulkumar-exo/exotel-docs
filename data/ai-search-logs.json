@@ -13137,5 +13137,39 @@
     "response_time_ms": 896,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-11-02T09:15:04.365Z",
+    "response_id": "f811d7be-0c5d-46a9-9b3d-cd93131e69ac",
+    "question": "where can i find exoml",
+    "question_length": 22,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3810,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 766
   }
 ]
