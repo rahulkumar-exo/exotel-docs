@@ -13239,5 +13239,39 @@
       }
     ],
     "answer_length": 1151
+  },
+  {
+    "timestamp": "2026-11-02T10:49:02.425Z",
+    "response_id": "1d78c622-3271-4bc7-9533-e2f978bc06fd",
+    "question": "can extel understand from IOS?Android dialphoen +919123456789;324/+919123456789,324 324 as extension numenr?",
+    "question_length": 108,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4004,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "DLT Consent Templates",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-consent-template"
+      },
+      {
+        "title": "Update Party Numbers & Pins",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      }
+    ],
+    "answer_length": 927
   }
 ]
