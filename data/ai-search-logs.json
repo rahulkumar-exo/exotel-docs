@@ -13375,5 +13375,39 @@
       }
     ],
     "answer_length": 680
+  },
+  {
+    "timestamp": "2026-11-02T16:33:43.857Z",
+    "response_id": "32955076-c40e-46d6-b91f-51a3e4e930a6",
+    "question": "can't find exoml indashboard",
+    "question_length": 28,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3009,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Assign to Flow",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/assign-to-flow"
+      },
+      {
+        "title": "Assign to Flow",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/assign-to-flow"
+      },
+      {
+        "title": "Assign to Flow",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/assign-to-flow"
+      },
+      {
+        "title": "Purchase ExoPhone",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/purchase-number"
+      }
+    ],
+    "answer_length": 816
   }
 ]
