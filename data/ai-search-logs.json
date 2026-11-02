@@ -12875,5 +12875,39 @@
       }
     ],
     "answer_length": 715
+  },
+  {
+    "timestamp": "2026-11-02T06:34:42.860Z",
+    "response_id": "7d4fac45-7f85-45e9-958c-e0e72ada9a3a",
+    "question": "From exotel the call are forwarded to the sales engineers number and they recive the call from the masked number so is there any API that we can call to get the acutqla number or caller details",
+    "question_length": 193,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 13416,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 2611
   }
 ]
