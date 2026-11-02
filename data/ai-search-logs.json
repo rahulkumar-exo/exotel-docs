@@ -13095,5 +13095,39 @@
       }
     ],
     "answer_length": 3584
+  },
+  {
+    "timestamp": "2026-11-02T09:11:16.648Z",
+    "response_id": "eb3c2f21-e7cc-4a9b-9abf-90d7646518b1",
+    "question": "can't find agentstream in dashboard",
+    "question_length": 35,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4547,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Analytics Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/analytics-dashboard"
+      },
+      {
+        "title": "AgentStream — what to use when",
+        "product": "agentstream",
+        "url": "/docs/agentstream/what-to-use-when"
+      },
+      {
+        "title": "Real-Time Dashboard",
+        "product": "reporting",
+        "url": "/docs/reporting/real-time-dashboard"
+      },
+      {
+        "title": "Dashboard Overview",
+        "product": "getting-started",
+        "url": "/docs/getting-started/dashboard-overview"
+      }
+    ],
+    "answer_length": 1018
   }
 ]
