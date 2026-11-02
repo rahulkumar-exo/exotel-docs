@@ -12985,5 +12985,39 @@
       }
     ],
     "answer_length": 416
+  },
+  {
+    "timestamp": "2026-11-02T07:15:40.597Z",
+    "response_id": "9e0becd6-724b-431a-8ab1-ddf1fd5cce76",
+    "question": "ICICIsecurities1m Set up",
+    "question_length": 24,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3229,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      }
+    ],
+    "answer_length": 176
   }
 ]
