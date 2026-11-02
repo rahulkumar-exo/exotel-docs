@@ -12909,5 +12909,13 @@
       }
     ],
     "answer_length": 2611
+  },
+  {
+    "timestamp": "2026-11-02T07:08:45.375Z",
+    "question": "https://api.exotel.com/v1/Accounts/docsapp1/Calls/connect.json point me to API doc",
+    "question_length": 82,
+    "response_time_ms": 1448,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
