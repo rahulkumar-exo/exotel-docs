@@ -13205,5 +13205,39 @@
       }
     ],
     "answer_length": 1010
+  },
+  {
+    "timestamp": "2026-11-02T10:45:23.226Z",
+    "response_id": "d60c078b-3ec1-457c-86ae-3bd16432e475",
+    "question": "+919123456789;123 like call can we done like twilio?",
+    "question_length": 52,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3443,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Recording",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-recording"
+      }
+    ],
+    "answer_length": 1151
   }
 ]
