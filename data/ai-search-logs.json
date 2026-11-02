@@ -13341,5 +13341,39 @@
       }
     ],
     "answer_length": 458
+  },
+  {
+    "timestamp": "2026-11-02T16:31:52.739Z",
+    "response_id": "5a8b4f14-9341-4560-aaa9-dc4ab3416d73",
+    "question": "how does i find exoml in my dashboard",
+    "question_length": 37,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4274,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Connect Number to Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/connect-to-flow"
+      },
+      {
+        "title": "Outgoing Call to a Call Flow",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/outgoing-call-to-flow"
+      },
+      {
+        "title": "Dashboard Overview",
+        "product": "getting-started",
+        "url": "/docs/getting-started/dashboard-overview"
+      }
+    ],
+    "answer_length": 680
   }
 ]
