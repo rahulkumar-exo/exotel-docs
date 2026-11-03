@@ -13443,5 +13443,39 @@
       }
     ],
     "answer_length": 2573
+  },
+  {
+    "timestamp": "2026-11-03T10:11:21.833Z",
+    "response_id": "7b36e6ba-33ca-446f-b31e-8cfe0f3415b0",
+    "question": "When do I get a 408 error on Exotel?",
+    "question_length": 36,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2321,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "RCS Omnichannel API",
+        "product": "rcs-omnichannel",
+        "url": "/docs/rcs-omnichannel/api-reference/send-message"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Error File Retrieval",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/error-file-retrieval"
+      },
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      }
+    ],
+    "answer_length": 367
   }
 ]
