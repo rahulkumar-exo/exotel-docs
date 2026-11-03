@@ -13477,5 +13477,39 @@
       }
     ],
     "answer_length": 367
+  },
+  {
+    "timestamp": "2026-11-03T10:11:56.261Z",
+    "response_id": "4c20538f-7bf8-4786-9c62-ed758462d68a",
+    "question": "how do I connect my bot over websocket",
+    "question_length": 38,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5644,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "AgentStream",
+        "product": "agentstream",
+        "url": "/docs/agentstream/overview"
+      },
+      {
+        "title": "Connect Voice AI with Flow",
+        "product": "agentstream",
+        "url": "/docs/agentstream/connect-voice-ai-flow"
+      },
+      {
+        "title": "Connect Voice AI API",
+        "product": "agentstream",
+        "url": "/docs/agentstream/connect-voice-ai"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      }
+    ],
+    "answer_length": 2307
   }
 ]
