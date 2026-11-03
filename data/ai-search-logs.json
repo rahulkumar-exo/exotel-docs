@@ -13409,5 +13409,39 @@
       }
     ],
     "answer_length": 816
+  },
+  {
+    "timestamp": "2026-11-03T04:36:45.938Z",
+    "response_id": "c7f23887-ab68-4471-bdc3-0ecb8a852b7f",
+    "question": "Where to get sid",
+    "question_length": 16,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8343,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Get Details of an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/get-allocation"
+      },
+      {
+        "title": "Get Campaign Details",
+        "product": "sms-campaigns",
+        "url": "/docs/sms-campaigns/api-reference/campaign-details"
+      },
+      {
+        "title": "Get Campaign Leads",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/get-campaign-leads"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      }
+    ],
+    "answer_length": 2573
   }
 ]
