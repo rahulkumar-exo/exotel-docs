@@ -13545,5 +13545,39 @@
       }
     ],
     "answer_length": 887
+  },
+  {
+    "timestamp": "2026-11-03T17:22:38.157Z",
+    "response_id": "82d3b055-9bcc-45a9-90d9-cbb5a932c5d9",
+    "question": "I couldn't find how to whitelist my number",
+    "question_length": 42,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6506,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Masking",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/number-masking"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 764
   }
 ]
