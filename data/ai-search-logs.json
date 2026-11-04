@@ -13681,5 +13681,39 @@
       }
     ],
     "answer_length": 120
+  },
+  {
+    "timestamp": "2026-11-04T11:32:17.438Z",
+    "response_id": "09a38af4-f190-41cd-9247-fd0e94bacdb3",
+    "question": "I want to know exotel call details API response sample data",
+    "question_length": 59,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10972,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Details (CCM)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-details"
+      },
+      {
+        "title": "Campaign Call Details",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/campaign-call-details"
+      },
+      {
+        "title": "Call Details",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/call-details"
+      }
+    ],
+    "answer_length": 2180
   }
 ]
