@@ -13935,5 +13935,39 @@
       }
     ],
     "answer_length": 626
+  },
+  {
+    "timestamp": "2026-11-06T11:12:57.719Z",
+    "response_id": "f164bcbc-3313-4c32-b803-73d41b16054c",
+    "question": "Hello! I am building a B2B SaaS platform called PACIFIC Autopilot.\n\nOur platform allows multiple businesses to register and use AI-powered outbound calling.\n\nHere is our business model:\n\n1. Each business registers on our website.\n2. Each business enters its company details.\n3. Each business selects and rents its own dedicated business calling number.\n4. Each business creates an AI voice agent.\n5. Businesses purchase credits from PACIFIC and use them to make AI-powered calls.\n6. PACIFIC manages a",
+    "question_length": 2154,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 20722,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 9912
   }
 ]
