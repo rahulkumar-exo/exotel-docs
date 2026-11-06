@@ -13969,5 +13969,39 @@
       }
     ],
     "answer_length": 9912
+  },
+  {
+    "timestamp": "2026-11-06T13:10:29.076Z",
+    "response_id": "a8441a3d-ee0c-40f6-b63a-d637114e7d6c",
+    "question": "webhook docx for missed call",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3518,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Missed Call Solution",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/missed-call"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      }
+    ],
+    "answer_length": 793
   }
 ]
