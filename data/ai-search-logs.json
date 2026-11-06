@@ -13859,5 +13859,39 @@
       }
     ],
     "answer_length": 1234
+  },
+  {
+    "timestamp": "2026-11-06T09:34:53.636Z",
+    "response_id": "c448acca-5918-4445-8f79-2cf1341f5b64",
+    "question": "But where do I share which Endpoint I want you to share Call backs on?",
+    "question_length": 70,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3426,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Events Call Backs",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/events-callbacks"
+      },
+      {
+        "title": "Program Incoming Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/incoming-call"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      }
+    ],
+    "answer_length": 674
   }
 ]
