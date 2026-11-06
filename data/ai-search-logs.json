@@ -13901,5 +13901,39 @@
     "response_time_ms": 1671,
     "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 ] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
     "failed": true
+  },
+  {
+    "timestamp": "2026-11-06T09:42:49.512Z",
+    "response_id": "16dc8142-c9ed-4afd-9409-75129c5999aa",
+    "question": "how to check whitelisted IP in our trunk",
+    "question_length": 40,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2105,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Dynamic SIP Trunking API",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "Dynamic SIP Trunking API",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      }
+    ],
+    "answer_length": 626
   }
 ]
