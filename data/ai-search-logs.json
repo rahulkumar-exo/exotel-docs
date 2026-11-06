@@ -13825,5 +13825,39 @@
       }
     ],
     "answer_length": 1026
+  },
+  {
+    "timestamp": "2026-11-06T09:33:44.940Z",
+    "response_id": "a381aeee-44ed-4a59-8801-f4c0a3201330",
+    "question": "I'm using Lead Assist Green VN Solution. I do I configure Call Backs so that Exotel updates my Endpoint for any event/Call",
+    "question_length": 122,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5283,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Events Call Backs",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/events-callbacks"
+      }
+    ],
+    "answer_length": 1234
   }
 ]
