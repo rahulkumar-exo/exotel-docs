@@ -13791,5 +13791,39 @@
       }
     ],
     "answer_length": 528
+  },
+  {
+    "timestamp": "2026-11-06T07:08:43.869Z",
+    "response_id": "73457c20-5762-4992-a1e0-0d68620d027b",
+    "question": "hw to build chatbot",
+    "question_length": 19,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2808,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Chatbot Platform",
+        "product": "chatbot",
+        "url": "/docs/chatbot/overview"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      },
+      {
+        "title": "Chatbot Platform",
+        "product": "chatbot",
+        "url": "/docs/chatbot/overview"
+      },
+      {
+        "title": "Flow Builder",
+        "product": "chatbot",
+        "url": "/docs/chatbot/flow-builder"
+      }
+    ],
+    "answer_length": 1026
   }
 ]
