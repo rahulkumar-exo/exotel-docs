@@ -14415,5 +14415,39 @@
       }
     ],
     "answer_length": 1778
+  },
+  {
+    "timestamp": "2026-11-09T07:49:36.166Z",
+    "response_id": "17c1c472-213c-4142-8b89-b735a87d0222",
+    "question": "i need to buy subscription right?",
+    "question_length": 33,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3368,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "Token Generation",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/token-generation"
+      },
+      {
+        "title": "Verify OTP",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/verify-otp"
+      },
+      {
+        "title": "Application Management",
+        "product": "ip-pstn-webrtc",
+        "url": "/docs/ip-pstn-webrtc/api-reference/applications"
+      }
+    ],
+    "answer_length": 744
   }
 ]
