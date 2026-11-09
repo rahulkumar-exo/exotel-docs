@@ -14381,5 +14381,39 @@
     ],
     "answer_length": 758,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-09T07:48:45.339Z",
+    "response_id": "adb5b08e-fe33-402b-99dd-d50e13c4db4b",
+    "question": "how do i get sIP trunk number ?",
+    "question_length": 31,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4660,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "SIP Trunking quickstart",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/quickstart"
+      },
+      {
+        "title": "SIP Trunking quickstart",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/quickstart"
+      },
+      {
+        "title": "Dynamic SIP Trunking API",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/dynamic-sip-trunking"
+      }
+    ],
+    "answer_length": 1778
   }
 ]
