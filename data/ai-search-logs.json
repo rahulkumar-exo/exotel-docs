@@ -14759,5 +14759,39 @@
     ],
     "answer_length": 1137,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-10T09:24:54.970Z",
+    "response_id": "33d4d475-733f-4ad6-a99c-e571f4ca3083",
+    "question": "I want full api free keys",
+    "question_length": 25,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3837,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Team Management",
+        "product": "getting-started",
+        "url": "/docs/getting-started/team-management"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      }
+    ],
+    "answer_length": 176
   }
 ]
