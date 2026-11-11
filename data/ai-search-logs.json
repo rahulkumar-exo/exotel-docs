@@ -15309,5 +15309,39 @@
       }
     ],
     "answer_length": 300
+  },
+  {
+    "timestamp": "2026-11-11T09:00:29.710Z",
+    "response_id": "1f46c0a3-2502-48c9-a78c-40770d8dce33",
+    "question": "check https://docs.exotel.com/exotel-agentstream/connect-exotel-sip-trunk-to-livekit",
+    "question_length": 84,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2486,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Connect Agent to Customer",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/make-a-call"
+      }
+    ],
+    "answer_length": 271
   }
 ]
