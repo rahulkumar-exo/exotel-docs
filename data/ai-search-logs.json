@@ -15241,5 +15241,39 @@
     ],
     "answer_length": 1109,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-11T08:59:11.136Z",
+    "response_id": "fcb25f27-cbe7-4791-89fc-9d38a36b8f20",
+    "question": "how to connect livekit agent",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1704,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      }
+    ],
+    "answer_length": 300
   }
 ]
