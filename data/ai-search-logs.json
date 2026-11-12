@@ -15963,5 +15963,39 @@
       }
     ],
     "answer_length": 3599
+  },
+  {
+    "timestamp": "2026-11-12T05:43:47.124Z",
+    "response_id": "59fa9500-ef2d-4af5-b05f-61829a36bb97",
+    "question": "2. Using Different Numbers for Masking (Virtual Number Allocations): what will be the priceing for this",
+    "question_length": 103,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1001,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 176
   }
 ]
