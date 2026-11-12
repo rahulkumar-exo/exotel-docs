@@ -16303,5 +16303,39 @@
       }
     ],
     "answer_length": 568
+  },
+  {
+    "timestamp": "2026-11-12T11:34:30.860Z",
+    "response_id": "582193b2-4411-4463-9d17-09fe8aac6285",
+    "question": "do we have for 1600 number registration process in tata",
+    "question_length": 55,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6103,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "DLT Registration",
+        "product": "sms-support",
+        "url": "/docs/sms-support/dlt-registration"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 605
   }
 ]
