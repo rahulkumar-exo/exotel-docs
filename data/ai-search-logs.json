@@ -16269,5 +16269,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-11-12T10:54:15.734Z",
+    "response_id": "3336e41d-9c90-4bdc-9ef6-ba4b2c2ea1ea",
+    "question": "can that same number have whatapp integrations as well",
+    "question_length": 54,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2821,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      },
+      {
+        "title": "Update Party Numbers & Pins",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      }
+    ],
+    "answer_length": 568
   }
 ]
