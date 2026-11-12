@@ -15929,5 +15929,39 @@
     ],
     "answer_length": 761,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-12T05:40:02.236Z",
+    "response_id": "f9785ca1-2b65-47b6-bc7b-470ec6d008be",
+    "question": "i want to use exotel to integrate into my crm so tha tthe calls that i make will get masked ,with different numbers everytime so that my nymbers wont go into spam",
+    "question_length": 162,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12986,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Update Party Numbers & Pins",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      }
+    ],
+    "answer_length": 3599
   }
 ]
