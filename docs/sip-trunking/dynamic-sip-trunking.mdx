@@ -163,16 +163,16 @@ curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
     "error_data": null,
     "status": "success",
     "data": {
-      "trunk_sid": "trmum1f708622631150902801a1n",
+      "trunk_sid": "<trunk_sid>",
       "trunk_name": "outbound_trunk",
       "status": "active",
-      "domain_name": "ameyo5m.pstn.exotel.com",
+      "domain_name": "<account_sid>.pstn.exotel.com",
       "auth_type": "IP-WHITELIST",
       "nso_code": "ANY-ANY",
-      "phone_numbers": "/v2/accounts/ameyo5m/trunks/trmum1f708622631150902801a1n/phone-numbers",
-      "whitelisted_ips": "/v2/accounts/ameyo5m/trunks/trmum1f708622631150902801a1n/whitelisted-ips",
-      "destination_uris": "/v2/accounts/ameyo5m/trunks/trmum1f708622631150902801a1n/destination-uris",
-      "credentials": "/v2/accounts/ameyo5m/trunks/trmum1f708622631150902801a1n/credentials"
+      "phone_numbers": "/v2/accounts/<account_sid>/trunks/<trunk_sid>/phone-numbers",
+      "whitelisted_ips": "/v2/accounts/<account_sid>/trunks/<trunk_sid>/whitelisted-ips",
+      "destination_uris": "/v2/accounts/<account_sid>/trunks/<trunk_sid>/destination-uris",
+      "credentials": "/v2/accounts/<account_sid>/trunks/<trunk_sid>/credentials"
     }
   }
 }
@@ -227,7 +227,7 @@ curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" -X POST \
 {
   "id": "41512",
   "phone_number": "+919876543210",
-  "trunk_sid": "trmum1f708622631150902801a1n",
+  "trunk_sid": "<trunk_sid>",
   "mode": "pstn",
   "date_created": "2026-01-23T10:26:54Z",
   "date_updated": "2026-01-23T10:26:54Z"
@@ -595,7 +595,7 @@ curl -s -u "$EXOTEL_API_KEY:$EXOTEL_API_TOKEN" \
 ```json
 {
   "exophone": "+919876543210",
-  "trunk_sid": "trmum1f708622631150902801a1n",
+  "trunk_sid": "<trunk_sid>",
   "phone_number_id": "41512",
   "mode": "pstn"
 }
