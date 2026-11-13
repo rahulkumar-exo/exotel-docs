@@ -209,7 +209,7 @@ Set up webhook URLs to receive delivery status updates:
 Combine all settings into the API request:
 
 ```bash
-curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/message-campaigns" \
   -H "Content-Type: application/json" \
   -d '{
     "lists": ["list_sid_1"],
@@ -259,13 +259,13 @@ curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<acc
 ### Check Campaign Status
 
 ```bash
-curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/message-campaigns/<campaign_id>"
 ```
 
 ### Pause the Campaign
 
 ```bash
-curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/message-campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "pause"}'
 ```
@@ -273,7 +273,7 @@ curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<acco
 ### Resume a Paused Campaign
 
 ```bash
-curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/sms-campaigns/<campaign_id>" \
+curl -u '<api_key>:<api_token>' -X PUT "https://api.exotel.com/v2/accounts/<account_sid>/message-campaigns/<campaign_id>" \
   -H "Content-Type: application/json" \
   -d '{"action": "resume"}'
 ```

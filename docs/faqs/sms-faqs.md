@@ -164,7 +164,7 @@ Yes, but keep the following in mind:
 
 ```bash
 # Shorten a URL
-curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/url-shortener" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/links" \
   -H "Content-Type: application/json" \
   -d '{"url": "https://www.example.com/track/order/ORD-2024-001"}'
 ```
