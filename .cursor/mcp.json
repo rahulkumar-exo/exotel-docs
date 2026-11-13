@@ -2,10 +2,15 @@
   "mcpServers": {
     "exotel-docs": {
       "command": "node",
-      "args": ["${workspaceFolder}/exotel-docs-mcp/index.js"],
+      "args": [
+        "${workspaceFolder}/exotel-docs-mcp/index.js"
+      ],
       "env": {
         "DOCS_REPO_ROOT": "${workspaceFolder}"
       }
+    },
+    "prodengg": {
+      "url": "https://mcp.prod.cc.exotel.com/mcp"
     }
   }
 }
