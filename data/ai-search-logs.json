@@ -17317,5 +17317,39 @@
     ],
     "answer_length": 1021,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-13T12:02:55.890Z",
+    "response_id": "626c8102-c9f8-4780-9319-16c505cb624c",
+    "question": "How does ExoVerify phone verification work?",
+    "question_length": 43,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2436,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoVerify",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/overview"
+      },
+      {
+        "title": "Start Verification",
+        "product": "ExoVerify",
+        "url": "/docs/exoverify-api/api-reference/start-verification"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 719
   }
 ]
