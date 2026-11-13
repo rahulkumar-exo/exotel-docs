@@ -30,14 +30,17 @@ This is a **CCM** (Contact Center Management) API. Use it if you run contact cen
 ```json
 {
   "from": {
-    "user_contact_uri": "sip:agent@exotel.com"
+    "contact_uri": "sip:agent@exotel.com"
   },
   "to": {
     "number": "+919876543210"
   },
   "virtual_number": "+911234567890",
-  "recording": true,
-  "recording_channels": "dual",
+  "recording": {
+    "record": true,
+    "format": "mp3",
+    "channels": "dual"
+  },
   "custom_field": "ticket_12345",
   "status_callback": [
     {
@@ -56,11 +59,10 @@ This is a **CCM** (Contact Center Management) API. Use it if you run contact cen
 
 | Parameter | Required | Type | Description |
 |-----------|----------|------|-------------|
-| `from` | Yes | Object | Agent identifier. Use `user_contact_uri` (SIP URI) or `user_id` (UUID from dashboard). |
+| `from` | Yes | Object | Agent identifier. Use `contact_uri` (SIP URI) or `user_uuid` (UUID from dashboard). |
 | `to` | Yes | Object | Customer phone number in E.164 format: `{"number": "+91XXXXXXXXXX"}` |
 | `virtual_number` | Yes | String | ExoPhone in E.164 format. |
-| `recording` | No | Boolean | Enable call recording. Default: `false`. |
-| `recording_channels` | No | String | `single` (mixed) or `dual` (separate agent/customer). |
+| `recording` | No | Object | Recording config. E.g. `{"record": true, "format": "mp3", "channels": "dual"}`. |
 | `wait_audio_url` | No | String | Audio URL (WAV) played to agent while customer is being dialed. Recommended: under 2MB. |
 | `max_time_limit` | No | Integer | Maximum call duration in seconds. |
 | `attempt_time_out` | No | Integer | Time in seconds to ring the called parties (both the agent and customer legs). The timer runs only during ringing and stops once each leg is answered. |
@@ -71,13 +73,13 @@ This is a **CCM** (Contact Center Management) API. Use it if you run contact cen
 
 ```json
 // Option 1: By SIP URI
-{ "user_contact_uri": "sip:agent@exotel.com" }
+{ "contact_uri": "sip:agent@exotel.com" }
 
-// Option 2: By user ID
-{ "user_id": "agent-uuid-from-dashboard" }
+// Option 2: By user UUID
+{ "user_uuid": "agent-uuid-from-dashboard" }
 
 // Option 3: By phone number
-{ "user_contact_uri": "+919999999999" }
+{ "contact_uri": "+919999999999" }
 ```
 
 ## Code Examples
@@ -89,10 +91,10 @@ This is a **CCM** (Contact Center Management) API. Use it if you run contact cen
 curl -u '<api_key>:<api_token>' -X POST 'https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls' \
   -H 'Content-Type: application/json' \
   -d '{
-    "from": {"user_contact_uri": "sip:agent@exotel.com"},
+    "from": {"contact_uri": "sip:agent@exotel.com"},
     "to": {"number": "+919876543210"},
     "virtual_number": "+911234567890",
-    "recording": true,
+    "recording": {"record": true, "format": "mp3", "channels": "dual"},
     "status_callback": [{"event": "terminal", "url": "https://your-server.com/webhook"}]
   }'
 ```
@@ -107,10 +109,10 @@ import json
 url = "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls"
 
 payload = {
-    "from": {"user_contact_uri": "sip:agent@exotel.com"},
+    "from": {"contact_uri": "sip:agent@exotel.com"},
     "to": {"number": "+919876543210"},
     "virtual_number": "+911234567890",
-    "recording": True,
+    "recording": {"record": True, "format": "mp3", "channels": "dual"},
     "status_callback": [
         {"event": "terminal", "url": "https://your-server.com/webhook"}
     ]
@@ -143,10 +145,10 @@ const response = await fetch(url, {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    from: { user_contact_uri: 'sip:agent@exotel.com' },
+    from: { contact_uri: 'sip:agent@exotel.com' },
     to: { number: '+919876543210' },
     virtual_number: '+911234567890',
-    recording: true,
+    recording: { record: true, format: 'mp3', channels: 'dual' },
     status_callback: [
       { event: 'terminal', url: 'https://your-server.com/webhook' }
     ]
@@ -163,10 +165,10 @@ console.log(data);
 ```php
 <?php
 $payload = json_encode(array(
-  "from" => array("user_contact_uri" => "sip:agent@exotel.com"),
+  "from" => array("contact_uri" => "sip:agent@exotel.com"),
   "to" => array("number" => "+919876543210"),
   "virtual_number" => "+911234567890",
-  "recording" => true,
+  "recording" => array("record" => true, "format" => "mp3", "channels" => "dual"),
   "status_callback" => array(
     array("event" => "terminal", "url" => "https://your-server.com/webhook")
   )
@@ -205,10 +207,10 @@ import (
 func main() {
     url := "https://ccm-api.exotel.com/v3/accounts/<account_sid>/calls"
     payload := strings.NewReader(`{
-      "from": {"user_contact_uri": "sip:agent@exotel.com"},
+      "from": {"contact_uri": "sip:agent@exotel.com"},
       "to": {"number": "+919876543210"},
       "virtual_number": "+911234567890",
-      "recording": true,
+      "recording": {"record": true, "format": "mp3", "channels": "dual"},
       "status_callback": [{"event": "terminal", "url": "https://your-server.com/webhook"}]
     }`)
 
