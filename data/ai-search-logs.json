@@ -16835,5 +16835,39 @@
       }
     ],
     "answer_length": 1804
+  },
+  {
+    "timestamp": "2026-11-13T05:54:37.237Z",
+    "response_id": "761c6b59-42d2-480c-9ded-5365cc2d00c2",
+    "question": "i want to send whatsapp message with an option",
+    "question_length": 46,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4825,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/status-codes"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      }
+    ],
+    "answer_length": 2269
   }
 ]
