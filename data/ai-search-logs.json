@@ -16801,5 +16801,39 @@
     ],
     "answer_length": 413,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-13T05:53:30.278Z",
+    "response_id": "dcf93d4b-d529-44fa-a877-86ef24467c69",
+    "question": "i want to send whatsapp message with Get Authentication code option",
+    "question_length": 67,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4394,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Send WhatsApp Message",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/send-message"
+      },
+      {
+        "title": "Template Messages with Flows",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/template-flows"
+      }
+    ],
+    "answer_length": 1804
   }
 ]
