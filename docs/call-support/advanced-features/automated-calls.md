@@ -77,27 +77,23 @@ curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<acc
 For calling large lists, use the [Campaigns API](/docs/campaigns/overview):
 
 ```bash
-curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v2/accounts/<account_sid>/campaigns' \
   -H 'Content-Type: application/json' \
   -d '{
-    "name": "Appointment_Reminders_Jan20",
     "caller_id": "<exophone>",
-    "call_flow_id": "<flow_id>",
-    "type": "automated",
-    "numbers": [
-      "+919876543210",
-      "+919876543211",
-      "+919876543212"
-    ],
+    "from": "+919876543210,+919876543211,+919876543212",
+    "url": "http://my.exotel.com/<account_sid>/exoml/start_voice/<app_id>",
+    "name": "Appointment_Reminders_Jan20",
+    "retries": {
+      "number_of_retries": 2,
+      "interval_mins": 60,
+      "mechanism": "Linear",
+      "on_status": ["busy", "no-answer", "failed"]
+    },
     "schedule": {
-      "start_time": "2025-01-20T09:00:00+05:30",
-      "end_time": "2025-01-20T18:00:00+05:30"
-    },
-    "retry": {
-      "max_attempts": 2,
-      "interval_minutes": 60
-    },
-    "concurrency": 10
+      "send_at": "2025-01-20T09:00:00+05:30",
+      "end_at": "2025-01-20T18:00:00+05:30"
+    }
   }'
 ```
 
