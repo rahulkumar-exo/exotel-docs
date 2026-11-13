@@ -32,7 +32,6 @@ const sidebars: SidebarsConfig = {
           label: 'Call Details (CCM)',
         },
         'voice-v3/api-reference/call-legs',
-        'voice-v3/api-reference/voice-log-download',
         'voice-v1/api-reference/number-metadata',
         'voice-v1/api-reference/balance',
         'voice-v1/api-reference/status-callback',

@@ -52,8 +52,6 @@ curl -u '<api_key>:<api_token>' -X GET \
 | [Connect Agent to Customer](/docs/voice-v3/api-reference/make-a-call) | POST   | `/v3/accounts/{account_sid}/calls`                       | Connect a dashboard agent to a customer          |
 | [Connect Two Numbers](/docs/voice-v3/api-reference/connect-two-numbers) | POST   | `/v1/accounts/{account_sid}/Calls/connect`               | Initiate an outbound call connecting two numbers |
 | [Call Details (CCM)](/docs/voice-v3/api-reference/call-details) | GET    | `/v3/accounts/{account_sid}/calls/{call_sid}`            | Get enhanced call details                        |
-| [Active Streams](/docs/voice-v3/api-reference/active-stream-monitoring) | GET    | `/v3/accounts/{account_sid}/calls/active`                | Monitor active call streams                      |
-| [Voice Logs](/docs/voice-v3/api-reference/voice-log-download)           | GET    | `/v3/accounts/{account_sid}/calls/{call_sid}/voice-logs` | Download voice recordings                        |
 
 ## Outbound & Inbound Call APIs
 
