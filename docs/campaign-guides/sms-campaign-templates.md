@@ -221,7 +221,7 @@ Multi-part SMS messages are billed as multiple messages. A 320-character GSM mes
 Long URLs in SMS consume valuable character space. Use Exotel's URL shortening feature to reduce URL length:
 
 ```bash
-curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/url-shortener" \
+curl -u '<api_key>:<api_token>' -X POST "https://api.exotel.com/v2/accounts/<account_sid>/links" \
   -H "Content-Type: application/json" \
   -d '{"url": "https://www.example.com/track/order/ORD-2024-001"}'
 ```
