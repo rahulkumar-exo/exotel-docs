@@ -230,19 +230,19 @@ For detailed NDNC compliance information, see [NDNC/DND Compliance](/docs/faqs/n
 ### List All Contact Lists
 
 ```bash
-curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/contact-lists"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/lists"
 ```
 
 ### Get List Details
 
 ```bash
-curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/contact-lists/<list_sid>"
+curl -u '<api_key>:<api_token>' "https://api.exotel.com/v2/accounts/<account_sid>/lists/<list_sid>"
 ```
 
 ### Delete a Contact List
 
 ```bash
-curl -u '<api_key>:<api_token>' -X DELETE "https://api.exotel.com/v2/accounts/<account_sid>/contact-lists/<list_sid>"
+curl -u '<api_key>:<api_token>' -X DELETE "https://api.exotel.com/v2/accounts/<account_sid>/lists/<list_sid>"
 ```
 
 :::warning
