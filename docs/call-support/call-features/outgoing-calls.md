@@ -126,11 +126,18 @@ For calling large lists of numbers, use the [Campaigns API](/docs/campaigns/over
 
 ```bash
 # Create a campaign via API
-curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
-  -d 'Name=January_Sales_Outreach' \
-  -d 'CallFlowId=<flow_id>' \
-  -d 'Numbers=+919876543210,+919876543211,+919876543212' \
-  -d 'Schedule=2025-01-20T09:00:00'
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v2/accounts/<account_sid>/campaigns' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "caller_id": "<exophone>",
+    "from": "+919876543210,+919876543211,+919876543212",
+    "url": "http://my.exotel.com/<account_sid>/exoml/start_voice/<app_id>",
+    "name": "January_Sales_Outreach",
+    "schedule": {
+      "send_at": "2025-01-20T09:00:00+05:30",
+      "end_at": "2025-01-20T18:00:00+05:30"
+    }
+  }'
 ```
 
 See: [Outbound Dialer](/docs/call-support/advanced-features/outbound-dialer)

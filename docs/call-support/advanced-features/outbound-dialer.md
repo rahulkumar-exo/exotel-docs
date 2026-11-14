@@ -98,25 +98,22 @@ phone_number,name,amount_due,due_date
 #### Via API
 
 ```bash
-curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns' \
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v2/accounts/<account_sid>/campaigns' \
   -H 'Content-Type: application/json' \
   -d '{
-    "name": "January_Payment_Reminders",
     "caller_id": "<exophone>",
-    "call_flow_id": "<flow_id>",
-    "type": "automated",
-    "numbers": [
-      "+919876543210",
-      "+919876543211",
-      "+919876543212"
-    ],
-    "schedule": {
-      "start_time": "2025-01-20T09:00:00+05:30",
-      "end_time": "2025-01-20T18:00:00+05:30"
+    "from": "+919876543210,+919876543211,+919876543212",
+    "url": "http://my.exotel.com/<account_sid>/exoml/start_voice/<app_id>",
+    "name": "January_Payment_Reminders",
+    "retries": {
+      "number_of_retries": 3,
+      "interval_mins": 60,
+      "mechanism": "Linear",
+      "on_status": ["busy", "no-answer", "failed"]
     },
-    "retry": {
-      "max_attempts": 3,
-      "interval_minutes": 60
+    "schedule": {
+      "send_at": "2025-01-20T09:00:00+05:30",
+      "end_at": "2025-01-20T18:00:00+05:30"
     }
   }'
 ```
@@ -195,12 +192,7 @@ The campaign dashboard shows:
 
 ### Adding Numbers Mid-Campaign
 
-You can add more phone numbers to an active campaign:
-
-```bash
-curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Campaigns/<campaign_id>/Numbers' \
-  -d 'Numbers=+919876543213,+919876543214'
-```
+You can add more phone numbers to an active campaign via the Exotel dashboard. See the [Campaigns API reference](/docs/campaigns/api-reference/manage-campaign) for API-based campaign management options.
 
 ## Campaign Reporting
 
