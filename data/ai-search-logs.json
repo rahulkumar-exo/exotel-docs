@@ -18073,5 +18073,39 @@
     ],
     "answer_length": 471,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-14T17:41:31.769Z",
+    "response_id": "8ffeb1ae-5708-4183-8ede-9373356a4674",
+    "question": "9876543210",
+    "question_length": 10,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3115,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      },
+      {
+        "title": "Send SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/send-sms"
+      }
+    ],
+    "answer_length": 760
   }
 ]
