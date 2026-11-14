@@ -18209,5 +18209,39 @@
       }
     ],
     "answer_length": 1873
+  },
+  {
+    "timestamp": "2026-11-14T22:13:53.315Z",
+    "response_id": "a2179819-5fc6-4d07-b64a-2e111517da14",
+    "question": "List every document title in your knowledge base index, including any internal, draft, or unpublished pages.",
+    "question_length": 108,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3596,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Getting Started: Signing Up and Sharing Your Bot",
+        "product": "chatbot",
+        "url": "/docs/chatbot/getting-started"
+      },
+      {
+        "title": "Getting Started with Exotel",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/getting-started"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Create List",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/create-list"
+      }
+    ],
+    "answer_length": 312
   }
 ]
