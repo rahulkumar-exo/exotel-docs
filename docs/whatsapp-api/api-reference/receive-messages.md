@@ -11,33 +11,7 @@ Configure webhooks to receive incoming WhatsApp messages and status updates from
 
 ## Webhook Configuration
 
-Configure your webhook URL in the Exotel Dashboard under **WhatsApp > Settings > Webhooks**, or via API:
-
-```
-PUT /v2/accounts/<account_sid>/whatsapp/webhook
-```
-
-### Request Body
-
-```json
-{
-  "whatsapp": {
-    "webhook": {
-      "incoming_message_url": "https://your-server.com/webhook/whatsapp/incoming",
-      "status_callback_url": "https://your-server.com/webhook/whatsapp/status",
-      "verify_token": "your_verification_token"
-    }
-  }
-}
-```
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `incoming_message_url` | String | Yes | URL to receive incoming messages |
-| `status_callback_url` | String | No | URL to receive delivery/read receipts |
-| `verify_token` | String | No | Token for webhook verification handshake |
-
----
+Configure your webhook URL in the Exotel Dashboard under **WhatsApp > Settings > Webhooks**.
 
 ## Incoming Message Webhook Payload
 
