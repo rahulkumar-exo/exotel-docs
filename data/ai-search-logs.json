@@ -18823,5 +18823,39 @@
     ],
     "answer_length": 156,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-14T22:19:59.668Z",
+    "response_id": "8e14d558-f0b6-4b5c-bb90-4e7471d6ff4a",
+    "question": "What is the capital of France?",
+    "question_length": 30,
+    "has_history": true,
+    "history_length": 1,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 910,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 168
   }
 ]
