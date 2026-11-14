@@ -191,15 +191,6 @@ When a customer sends media to your WhatsApp Business number, the webhook payloa
 }
 ```
 
-### Downloading Inbound Media
-
-Use the media ID to download the file via the [Media API](/docs/whatsapp-api/overview):
-
-```bash
-curl -u '<api_key>:<api_token>' "https://api.in.exotel.com/v2/accounts/<account_sid>/media/<media_id>" \
-  -o downloaded-image.jpg
-```
-
 ## Media Message Use Cases
 
 | Use Case | Media Type | Example |
