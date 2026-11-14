@@ -160,5 +160,14 @@
     "answer_excerpt": "Yes, Exotel can be integrated into your CRM for call masking, and you can manage virtual number allocations to potentially use different numbers.\n\nHere's how:\n\n1.  **CRM Integration & Call Masking:**\n    Exotel offers \"Click to Call\" functionality that can be integrated into your CRM, app, or website. When a call is made using this method, Exotel first dials your agent (From number) and then connects them to the customer (To number) through your ExoPhone (virtual number). This ensures the custom",
     "comment": null,
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+  },
+  {
+    "timestamp": "2026-11-14T22:13:55.126Z",
+    "response_id": "00000000-0000-0000-0000-000000000000",
+    "vote": "up",
+    "question": "test",
+    "answer_excerpt": "test",
+    "comment": "test",
+    "user_agent": "curl/8.7.1"
   }
 ]
