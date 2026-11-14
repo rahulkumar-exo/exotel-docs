@@ -17763,5 +17763,39 @@
       }
     ],
     "answer_length": 495
+  },
+  {
+    "timestamp": "2026-11-14T06:25:40.802Z",
+    "response_id": "1a149eeb-b9d1-4270-8c88-09ff5b5ead2f",
+    "question": "Tell me more about \"ExoPhones for calls/SMS\" and how many virtual phone numbers you would give me",
+    "question_length": 97,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4109,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "Number Types & Virtual Numbers FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/number-types"
+      }
+    ],
+    "answer_length": 701
   }
 ]
