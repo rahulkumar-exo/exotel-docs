@@ -17729,5 +17729,39 @@
       }
     ],
     "answer_length": 408
+  },
+  {
+    "timestamp": "2026-11-14T06:24:30.206Z",
+    "response_id": "0a45f842-bd07-4485-87ad-90b96d322ebb",
+    "question": "Okay if I own a restaurant and I wanted to collect information from each table would I need a block of numbers ?",
+    "question_length": 112,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12164,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Number Requirements",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/number-requirements"
+      },
+      {
+        "title": "Update Party Numbers & Pins",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      }
+    ],
+    "answer_length": 495
   }
 ]
