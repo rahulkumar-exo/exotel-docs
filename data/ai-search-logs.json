@@ -18857,5 +18857,39 @@
       }
     ],
     "answer_length": 168
+  },
+  {
+    "timestamp": "2026-11-14T22:20:11.040Z",
+    "response_id": "1be9fc95-875b-432b-bc21-8fa40ad3f6a2",
+    "question": "What is the voice API?",
+    "question_length": 22,
+    "has_history": true,
+    "history_length": 50,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1516,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 683
   }
 ]
