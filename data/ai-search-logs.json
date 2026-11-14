@@ -18685,5 +18685,39 @@
       }
     ],
     "answer_length": 282
+  },
+  {
+    "timestamp": "2026-11-14T22:19:43.896Z",
+    "response_id": "b0408a25-4b5e-4169-8bf3-56307885bcc6",
+    "question": "What is the SMS API endpoint?",
+    "question_length": 29,
+    "has_history": true,
+    "history_length": 1,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1944,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 407
   }
 ]
