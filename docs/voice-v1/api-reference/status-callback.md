@@ -120,6 +120,43 @@ Individual call legs can have the following statuses:
 }
 ```
 
+## Answering Machine Detection Callback
+
+When a call is created with `MachineDetection=Enable`, the AMD result is delivered to the `AsyncAmdStatusCallback` URL you provide — not to `StatusCallback`. This is a separate webhook that fires when AMD completes, regardless of whether the call is still active.
+
+### Payload Fields
+
+| Field | Type | Description |
+|---|---|---|
+| `CallSid` | String | Call SID |
+| `AccountSid` | String | Account SID |
+| `AnsweredBy` | String | `HUMAN`, `MACHINE`, or `NOTSURE` |
+| `AmdCause` | String | Detector cause string (e.g. `HUMAN`, `LONGGREETING-1500-1600`). Empty string when not provided. Numbers inside `AmdCause` (e.g. `2500` in `INITIALSILENCE-2500-2500`) are detector thresholds in milliseconds — not the duration. |
+| `MachineDetectionDuration` | String | Total AMD detection time in seconds. Empty string when not provided. |
+| `CallStatus` | String | Call state at time AMD completed (e.g. `in-progress`, `completed`). |
+
+Content-Type defaults to `multipart/form-data`. To receive JSON, pass `StatusCallbackContentType=application/json` when creating the call.
+
+### Example payload (multipart/form-data)
+
+```
+CallSid=abc123
+AccountSid=ex105
+AnsweredBy=MACHINE
+AmdCause=LONGGREETING-1500-1600
+MachineDetectionDuration=4
+CallStatus=in-progress
+```
+
+### Behaviour notes
+
+- Fires even if the call has already ended when AMD completes
+- AMD runs on the first (`From`) leg only; dial-leg AMD events are ignored
+- Callback failure does not affect the call
+- The platform does not auto-hangup on machine detection — your server must call `PUT .../Legs/{leg_sid} Action=hangup` after receiving the callback
+
+See [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) for the AMD request parameters (`MachineDetection`, `AsyncAmd`, `AsyncAmdStatusCallback`).
+
 ## Usage Notes
 
 - Additional StatusCallback fields (event-specific parameters) require both `From` and `To` parameters in the original call request
