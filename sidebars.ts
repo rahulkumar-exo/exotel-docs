@@ -54,6 +54,29 @@ const sidebars: SidebarsConfig = {
         'voice-v1/applets/email',
       ],
     },
+    {
+      type: 'category',
+      label: 'ExoML',
+      collapsed: false,
+      items: [
+        'exoml/overview',
+        {
+          type: 'category',
+          label: 'Verbs',
+          collapsed: false,
+          items: [
+            'exoml/verbs/say',
+            'exoml/verbs/play',
+            'exoml/verbs/gather',
+            'exoml/verbs/dial',
+            'exoml/verbs/record',
+            'exoml/verbs/hangup',
+            'exoml/verbs/hold',
+            'exoml/verbs/stream',
+          ],
+        },
+      ],
+    },
   ],
 
   smsApiSidebar: [
