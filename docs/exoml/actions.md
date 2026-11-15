@@ -96,6 +96,13 @@ Converts text to speech and plays it on the leg. Supports Polly and Google TTS e
 <Flow><StopSay></StopSay></Flow>
 ```
 
+### Events
+
+| Event name | Description |
+|---|---|
+| `say_completed` | TTS finished playing |
+| `say_failed_to_start` | TTS could not be started |
+
 ### Play + Say sequence (`<PlaySequence>`)
 
 Play an audio file followed by a TTS message in a single action:
@@ -270,6 +277,8 @@ Puts the leg on hold with music-on-hold (MOH).
 |---|---|
 | `hold_success` | Leg is on hold |
 | `hold_failed` | Hold failed |
+| `unhold_success` | Leg resumed from hold |
+| `unhold_failed` | Unhold failed |
 
 ---
 
