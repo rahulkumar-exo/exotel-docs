@@ -131,11 +131,35 @@ When a call is created with `MachineDetection=Enable`, the AMD result is deliver
 | `CallSid` | String | Call SID |
 | `AccountSid` | String | Account SID |
 | `AnsweredBy` | String | `HUMAN`, `MACHINE`, or `NOTSURE` |
-| `AmdCause` | String | Cause string from the AMD engine. Empty string when not provided. |
-| `MachineDetectionDuration` | String | Total AMD detection time in seconds. Empty string when not provided. |
-| `CallStatus` | String | Call state at the time AMD completed. |
+| `AmdCause` | String | Cause string from the AMD engine (e.g. `HUMAN`, `INITIALSILENCE-2500-2500`). Numbers inside `AmdCause` are detector thresholds in milliseconds, not the detection duration. Empty string when not provided. |
+| `MachineDetectionDuration` | String | AMD detection duration in integer seconds as a string (e.g. `4`). `0` when AMD completes within the same second. Empty string when not provided. |
+| `CallStatus` | String | Call state at the time AMD completed (e.g. `in-progress`, `completed`). This handler does not change the call state. |
 
 Content-Type defaults to `multipart/form-data`. To receive JSON, pass `StatusCallbackContentType=application/json` when creating the call.
+
+### Example payload
+
+```
+CallSid=amdtest0911T15514314660dTCD011
+AccountSid=ex105
+AnsweredBy=HUMAN
+AmdCause=HUMAN
+MachineDetectionDuration=123
+CallStatus=in-progress
+```
+
+When cause and duration are absent (Hermix sent `AnsweredBy` only):
+
+```json
+{
+  "CallSid": "amdtest0911T15514314660dTCD021",
+  "AccountSid": "ex105",
+  "AnsweredBy": "MACHINE",
+  "AmdCause": "",
+  "MachineDetectionDuration": "",
+  "CallStatus": "completed"
+}
+```
 
 ### Behaviour notes
 
