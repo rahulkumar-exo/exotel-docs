@@ -11,37 +11,25 @@ displayed_sidebar: voiceSidebar
 
 Pipes live call audio to a WebSocket endpoint in real time. Used for AI transcription, voicebots, and sentiment analysis.
 
-## StartStream
+## StartStream / StopStream
 
-Opens a WebSocket connection and begins sending audio from the leg.
-
-```bash
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "direction": "bidirectional",
-    "url": "wss://your-ai-server.example.com/stream",
-    "content_type": "audio/x-mulaw;rate=8000"
-  }'
-```
-
-### Parameters
-
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `url` | Yes | WebSocket URL (`wss://`) to receive audio |
-| `direction` | Yes | `unidirectional` (send only) or `bidirectional` (send + receive) |
-| `content_type` | No | Audio format. Default: `audio/x-mulaw;rate=8000` |
-
-### ExoML equivalent
+On an active leg, send the verb as ExoML to the Legs actions endpoint, `POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions`, in the `exoml` field (optional `action_custom_param` is echoed in the events). There are no per-action paths such as `/actions/{name}`.
 
 ```bash
+# Start a bidirectional stream
 curl -u '<api_key>:<api_token>' -X POST \
   'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
   -H 'Content-Type: application/json' \
   -d '{
-    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StartStream streamType=\"bidirectional\" url=\"wss://your-ai-server.example.com/stream\" contentType=\"audio/x-mulaw;rate=8000\"/></Flow>"
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StartStream streamType=\"bidirectional\" streamUrl=\"wss://your-ai-server.example.com/stream\"></StartStream></Flow>"
+  }'
+
+# Stop it (streamSid optional; without it the active stream stops)
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StopStream streamSid=\"<stream_sid>\"></StopStream></Flow>"
   }'
 ```
 
@@ -49,20 +37,16 @@ curl -u '<api_key>:<api_token>' -X POST \
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
-| `url` | Yes | WebSocket URL |
-| `streamType` | Yes | `unidirectional` or `bidirectional` |
-| `contentType` | No | Audio content type (default: `audio/x-mulaw;rate=8000`) |
+| `streamType` | Yes | `unidirectional` (send only) or `bidirectional` (send + receive) |
+| `streamUrl` | Yes | WebSocket URL (`wss://`). Up to 25 custom query parameters, 800 characters in total; write `&` as `&amp;` |
+| `sourceDirection` | No | `in`, `out` or `both` (default). Unidirectional streams only |
+| `secureDtmf` | No | `true` sends caller DTMF encrypted. Bidirectional streams only |
 
-## StopStream
+### StopStream XML attributes
 
-Closes the WebSocket connection and stops audio delivery.
-
-```bash
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_stream' \
-  -H 'Content-Type: application/json' \
-  -d '{}'
-```
+| Attribute | Required | Description |
+|-----------|----------|-------------|
+| `streamSid` | No | Stream to stop. If omitted, the active stream on the leg is stopped |
 
 ## WebSocket message format
 
@@ -109,8 +93,11 @@ Send audio back to play to the caller:
 
 | Event | Description |
 |-------|-------------|
+| `stream_initiated` | Stream action accepted |
 | `stream_started` | WebSocket connected; audio flowing |
 | `stream_stopped` | Stream closed |
+| `stream_failed` | Stream failed to start |
+| `stream_failed_to_stop` | `StopStream` did not complete |
 
 ## Example — bidirectional AI voicebot
 

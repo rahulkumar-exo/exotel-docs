@@ -52,39 +52,38 @@ Exotel's TTS engine supports a subset of SSML for controlling speech:
 </Say>
 ```
 
-## Legs API — StartSay / StopSay
+## Legs API — Say / StopSay
 
-For mid-call text-to-speech on an active leg, use the Legs API actions:
-
-```bash
-# Start TTS on an active leg
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_say' \
-  -H 'Content-Type: application/json' \
-  -d '{"text": "Please hold while we connect you.", "loop": 0}'
-
-# Stop TTS
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_say'
-```
-
-Or using ExoML in a Legs API action:
+On an active leg, send the verb as ExoML to the Legs actions endpoint, `POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions`, in the `exoml` field (optional `action_custom_param` is echoed in the events). There are no per-action paths such as `/actions/{name}`.
 
 ```bash
+# Speak text on an active leg
 curl -u '<api_key>:<api_token>' -X POST \
   'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
   -H 'Content-Type: application/json' \
   -d '{
-    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StartSay>Please hold while we connect you.</StartSay></Flow>"
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><Say>Please hold while we connect you.</Say></Flow>"
+  }'
+
+# Stop it
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StopSay></StopSay></Flow>"
   }'
 ```
 
-### StartSay parameters
+### Say attributes (Legs API)
 
-| Parameter | Required | Description |
+| Attribute | Required | Description |
 |-----------|----------|-------------|
-| `text` | Yes | Text to speak. Plain text or SSML. |
-| `loop` | No | Repeat count (`0` = once, `-1` = indefinitely) |
+| inner text | Yes | Text to speak. Plain text or SSML. |
+| `loop` | No | Number of times to play. Default `0` |
+| `language` | No | Default `en` |
+| `preferredTTSEngine` | No | `polly` (default) or `googletts` |
+| `pollyVoiceId` | No | Amazon Polly voice ID |
+| `googlettsVoiceName` | No | Google TTS voice, when the engine is `googletts` |
 
 ### Events emitted
 
@@ -92,10 +91,12 @@ curl -u '<api_key>:<api_token>' -X POST \
 |-------|-------------|
 | `say_started` | TTS playback has begun |
 | `say_completed` | TTS playback finished |
-| `say_stopped` | TTS playback stopped early via `stop_say` |
+| `say_interrupted` | Stopped by `StopSay` or another action |
+| `say_failed_to_start` | TTS could not start |
+| `say_failed_to_stop` | `StopSay` did not complete |
 
 ## Best practices
 
 - Keep messages under 30 seconds — callers lose focus on long prompts
-- Use `loop: 0` for hold music equivalents, then call `stop_say` when ready to proceed
+- Use `loop: 0` for hold music equivalents, then send `StopSay` when ready to proceed
 - For multilingual deployments, detect the caller's language from your CRM before returning the greeting verb

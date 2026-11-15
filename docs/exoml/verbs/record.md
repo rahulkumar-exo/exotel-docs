@@ -58,31 +58,23 @@ When recording finishes, Exotel POSTs to `action`:
 
 ## Legs API — StartRecording / StopRecording
 
-For mid-call recording on an active leg:
+On an active leg, send the verb as ExoML to the Legs actions endpoint, `POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions`, in the `exoml` field (optional `action_custom_param` is echoed in the events). There are no per-action paths such as `/actions/{name}`.
 
 ```bash
-# Start recording
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_recording' \
-  -H 'Content-Type: application/json' \
-  -d '{}'
-
-# Stop recording
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_recording' \
-  -H 'Content-Type: application/json' \
-  -d '{}'
-```
-
-Using ExoML in a Legs API action:
-
-```bash
-# Start recording with silence detection
+# Start recording, stopping after 5 s of silence or 300 s
 curl -u '<api_key>:<api_token>' -X POST \
   'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
   -H 'Content-Type: application/json' \
   -d '{
-    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StartRecording silenceInSec=\"5\" maxDuration=\"300\"/></Flow>"
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StartRecording silenceInSec=\"5\" timeoutInSec=\"300\"></StartRecording></Flow>"
+  }'
+
+# Stop recording
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StopRecording></StopRecording></Flow>"
   }'
 ```
 
@@ -90,15 +82,20 @@ curl -u '<api_key>:<api_token>' -X POST \
 
 | Attribute | Required | Default | Description |
 |-----------|----------|---------|-------------|
+| `direction` | No | `both` | `in`, `out` or `both` |
+| `format` | No | `mp3` | `mp3` or `wav` |
+| `channel` | No | `mono` | `mono` or `stereo` (stereo needs `direction="both"`) |
 | `silenceInSec` | No | — | Stop recording after N seconds of silence |
-| `maxDuration` | No | — | Maximum recording duration in seconds |
-| `storageType` | No | `exotel` | Storage backend: `exotel` or `https` (custom URL) |
-| `storageUrl` | No | — | Custom storage URL when `storageType="https"` |
+| `timeoutInSec` | No | — | Maximum recording duration in seconds |
+| `storageType` | No | `s3` | `s3` (Exotel storage) or `https` (your server) |
+| `storageURL`, `storageURLKey`, `storageURLToken` | When `storageType="https"` | — | Upload URL and its Basic-auth key and token |
 
 ### Events emitted
 
 | Event | Description |
 |-------|-------------|
 | `recording_started` | Recording has begun |
-| `recording_completed` | Recording finished; URL in event payload |
-| `recording_stopped` | Recording stopped early via `stop_recording` |
+| `recording_stopped` | Recording stopped |
+| `recording_available` | Recording file uploaded; URL in event payload |
+| `recording_failed_to_start` | Recording could not start |
+| `recording_failed_to_stop` | `StopRecording` did not complete |

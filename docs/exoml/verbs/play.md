@@ -57,28 +57,23 @@ For best quality and lowest transcoding latency, use **8000 Hz Mono WAV**.
 
 ## Legs API — StartPlay / StopPlay
 
-For mid-call audio playback on an active leg, use the Legs API actions:
+On an active leg, send the verb as ExoML to the Legs actions endpoint, `POST /v2/accounts/{account_sid}/legs/{leg_sid}/actions`, in the `exoml` field (optional `action_custom_param` is echoed in the events). There are no per-action paths such as `/actions/{name}`.
 
 ```bash
 # Play a file on an active leg
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_play' \
-  -H 'Content-Type: application/json' \
-  -d '{"url": "sound://https://cdn.example.com/hold-music.wav", "loop": -1}'
-
-# Stop playback
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_play'
-```
-
-Or using ExoML in a Legs API action:
-
-```bash
 curl -u '<api_key>:<api_token>' -X POST \
   'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
   -H 'Content-Type: application/json' \
   -d '{
     "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StartPlay>sound://https://cdn.example.com/hold-music.wav</StartPlay></Flow>"
+  }'
+
+# Stop playback
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StopPlay></StopPlay></Flow>"
   }'
 ```
 
@@ -93,7 +88,9 @@ In Legs API ExoML, the URL must have a `sound://` prefix before the `http://` or
 |-------|-------------|
 | `play_started` | Audio playback has begun |
 | `play_completed` | Audio file played to completion |
-| `play_stopped` | Playback stopped early via `stop_play` |
+| `play_interrupted` | Stopped by `StopPlay` or another action |
+| `play_failed_to_start` | Playback could not start |
+| `play_failed_to_stop` | `StopPlay` did not complete |
 
 ## Best practices
 

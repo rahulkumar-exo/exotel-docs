@@ -16,7 +16,7 @@ Your bot WebSocket (AgentStream) is the same either way. Choose the **telephony 
 | Model | How call logic is defined | Typical entry |
 |-------|---------------------------|---------------|
 | **Flow (App Bazaar)** | Dashboard applets (Voicebot, Stream, Connect, Passthru, Gather, Greeting) | Exophone → App Bazaar flow |
-| **ExoML (Programmable Voice)** | Your code reacts to gRPC leg events and issues leg actions (`start_stream`, `start_say`, …) | Number on gRPC endpoint (inbound), or `POST /legs` (outbound) |
+| **ExoML (Programmable Voice)** | Your code reacts to gRPC leg events and issues ExoML leg actions (`StartStream`, `Say`, …) on `POST /legs/{leg_sid}/actions` | Number on gRPC endpoint (inbound), or `POST /legs` (outbound) |
 
 ## Quick chooser
 
@@ -54,12 +54,12 @@ Your API → dial → answer → App Bazaar → Voicebot/Stream → WSS ↔ bot
 
 ### 3. ExoML (Programmable Legs) — outbound in code
 
-`POST /legs`, receive gRPC events, then `start_stream` (optional `start_say` / `start_play` while the bot warms).
+`POST /legs`, receive gRPC events, then `StartStream` (optional `Say` / `StartPlay` while the bot warms).
 
 **Use when:** per-call stream URL, parallel filler, application-owned routing.
 
 ```
-POST /legs → gRPC events → start_stream (+ say/play) → WSS ↔ bot
+POST /legs → gRPC events → StartStream (+ Say/StartPlay) → WSS ↔ bot
 ```
 
 ## Inbound
@@ -70,7 +70,7 @@ Customer dials Exophone linked to a flow. Voicebot opens AgentStream.
 
 ### B. ExoML programmable (no App Bazaar flow)
 
-Exophone attached to a gRPC endpoint. Your app issues leg actions including `start_stream`.
+Exophone attached to a gRPC endpoint. Your app issues leg actions including `StartStream`.
 
 ## Side-by-side
 
@@ -78,7 +78,7 @@ Exophone attached to a gRPC endpoint. Your app issues leg actions including `sta
 |--|------------------|----------------|--------------|--------------|---------------|
 | Direction | Outbound | Outbound | Both | Inbound | Inbound |
 | Control plane | Connect API | App Bazaar | gRPC + leg actions | App Bazaar | gRPC + leg actions |
-| Where WSS URL is set | API `StreamUrl` | Voicebot/Stream applet | `start_stream` | Voicebot/Stream applet | `start_stream` |
+| Where WSS URL is set | API `StreamUrl` | Voicebot/Stream applet | `StartStream` | Voicebot/Stream applet | `StartStream` |
 | Best for | Simple outbound bot | Multi-step outbound | Code-first | Dashboard journeys | Code-first inbound |
 
 ## Decision tree
