@@ -2,7 +2,7 @@
 id: overview
 title: Programmable Voice
 description: Make and receive phone calls with the Exotel Voice API.
-sidebar_label: Overview
+sidebar_label: Programmable Voice
 slug: /voice
 ---
 
