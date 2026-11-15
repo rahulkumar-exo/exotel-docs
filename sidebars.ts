@@ -9,7 +9,29 @@ const sidebars: SidebarsConfig = {
       label: 'API Reference',
       collapsed: false,
       items: [
+        {
+          type: 'category',
+          label: 'ExoML',
+          collapsed: false,
+          items: [
+            'exoml/overview',
+            'exoml/quickstart',
+            'exoml/event-endpoint',
+            'exoml/actions',
+          ],
+        },
         'voice-v1/api-reference/connect-two-numbers',
+        {
+          type: 'doc',
+          id: 'voice-v3/api-reference/make-a-call',
+          label: 'Connect Agent to Customer',
+        },
+        {
+          type: 'doc',
+          id: 'voice-v1/api-reference/connect-to-flow',
+          label: 'Connect Number to Call Flow',
+        },
+        'voice-v1/api-reference/incoming-call',
         {
           type: 'doc',
           id: 'voice-v1/api-reference/call-details',
@@ -23,37 +45,8 @@ const sidebars: SidebarsConfig = {
         'voice-v3/api-reference/call-legs',
         'voice-v1/api-reference/number-metadata',
         'voice-v1/api-reference/balance',
-        'voice-api/getting-started/authentication',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Programmable Voice',
-      collapsed: false,
-      items: [
-        {
-          type: 'category',
-          label: 'ExoML',
-          collapsed: false,
-          items: [
-            'exoml/overview',
-            'exoml/quickstart',
-            'exoml/event-endpoint',
-            'exoml/actions',
-          ],
-        },
-        {
-          type: 'doc',
-          id: 'voice-v3/api-reference/make-a-call',
-          label: 'Connect Agent to Customer',
-        },
-        {
-          type: 'doc',
-          id: 'voice-v1/api-reference/connect-to-flow',
-          label: 'Connect Customer to Flow',
-        },
-        'voice-v1/api-reference/incoming-call',
         'voice-v1/api-reference/status-callback',
+        'voice-api/getting-started/authentication',
       ],
     },
     {
