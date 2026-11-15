@@ -37,24 +37,24 @@ Exotel waits up to ~1 second per delivery attempt. Acknowledge quickly and do he
 
 ```json
 {
-  "event_sid": "3IgzDXwxdn1ylY5cGVFvYxnHEZo00000",
+  "event_sid": "<event_sid>",
   "event_type": "leg_action_event",
   "event_name": "leg_answered",
-  "event_timestamp": "2026-08-31T18:28:00.529Z",
-  "action_sid": "optional-when-action-produced-this-event",
+  "event_timestamp": "2024-01-15T10:30:00.529Z",
+  "action_sid": "<action_sid>",
   "action_custom_parameter": "your-tracking-value",
   "event_data": {
     "data": {},
     "error": null
   },
   "data": {
-    "leg_sid": "3IgzDZXUHsK9k67utaeupEgVNaI00000",
-    "account_sid": "exotel60",
-    "contact_uri": "09163816621",
-    "exophone": "08030752400",
+    "leg_sid": "<leg_sid>",
+    "account_sid": "<account_sid>",
+    "contact_uri": "+91XXXXXXXXXX",
+    "exophone": "+91YYYYYYYYYY",
     "state": "active",
-    "start_time": "2026-08-31T18:28:00.312Z",
-    "date_created": "2026-08-31T18:28:00.339Z"
+    "start_time": "2024-01-15T10:29:59.312Z",
+    "date_created": "2024-01-15T10:29:59.339Z"
   }
 }
 ```
@@ -129,8 +129,8 @@ app.post('/exotel/events', async (req, res) => {
 POST /v2/accounts/{account_sid}/legs
 
 {
-  "contact_uri": "09163816621",
-  "exophone": "08030752400",
+  "contact_uri": "+91XXXXXXXXXX",
+  "exophone": "+91YYYYYYYYYY",
   "leg_event_endpoint": "https://voice.example.com/exotel/events"
 }
 ```

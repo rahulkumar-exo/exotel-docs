@@ -75,8 +75,8 @@ curl -u "<api_key>:<api_token>" \
   -X POST \
   "https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs" \
   -d '{
-    "contact_uri": "09163816621",
-    "exophone": "08030752400",
+    "contact_uri": "+91XXXXXXXXXX",
+    "exophone": "+91YYYYYYYYYY",
     "leg_event_endpoint": "https://your-server.example.com/events"
   }'
 ```
@@ -85,10 +85,10 @@ curl -u "<api_key>:<api_token>" \
 ```json
 {
   "data": {
-    "leg_sid": "2QmhdBwpjKMhia9mgY5fiFCAPmh00000",
+    "leg_sid": "<leg_sid>",
     "state": "initiated",
-    "contact_uri": "09163816621",
-    "exophone": "08030752400"
+    "contact_uri": "+91XXXXXXXXXX",
+    "exophone": "+91YYYYYYYYYY"
   }
 }
 ```

@@ -1,13 +1,13 @@
 ---
 id: overview
-title: ExoML Overview
+title: ExoML
 description: ExoML (Exotel Markup Language) is Exotel's programmatic call control API. Build dynamic IVRs, leg-level media control, and AI voice flows entirely in code.
 sidebar_label: Overview
 sidebar_position: 1
 displayed_sidebar: voiceSidebar
 ---
 
-# ExoML — Programmable Voice
+# ExoML
 
 ExoML (Exotel Markup Language) is Exotel's event-driven call control API. Instead of building flows in the dashboard, you write code that responds to live call events and issues XML actions to control each call leg in real time.
 
@@ -35,7 +35,7 @@ Exotel executes the action (play audio, gather DTMF, dial, record, …)
 Exotel POSTs the result event to your endpoint
 ```
 
-The key difference from TwiML/Plivo XML: **your HTTP response is just an acknowledgement**. The next call instruction is a separate REST API call, not the response body.
+Your HTTP response to Exotel is just an acknowledgement — return HTTP 200 immediately. The next call instruction is a separate REST API call you make after the ack, not the response body.
 
 ## When to use ExoML vs dashboard applets
 
