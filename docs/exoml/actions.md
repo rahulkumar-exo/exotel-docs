@@ -173,8 +173,8 @@ Dials a second phone number and bridges both legs together.
 ```xml
 <Flow>
   <Dial
-    contactUri="09163816623"
-    exophone="08030752400"
+    contactUri="+91XXXXXXXXXX"
+    exophone="+91YYYYYYYYYY"
     networkType="pstn"
     absorbDtmf="true">
   </Dial>
@@ -345,7 +345,7 @@ Pipes real-time audio from the leg to a WebSocket server for AI processing or li
 ```xml
 <!-- Start streaming to your WebSocket server -->
 <Flow>
-  <StartStream url="wss://ai.example.com/stream" track="both"></StartStream>
+  <StartStream url="wss://ai.example.com/stream" streamType="bidirectional" contentType="audio/x-mulaw;rate=8000"></StartStream>
 </Flow>
 
 <!-- Stop streaming -->
@@ -378,6 +378,6 @@ Transfers a bridge participant to another number while keeping the remaining par
 
 ```xml
 <Flow>
-  <Refer contactUri="09163816624" exophone="08030752400"></Refer>
+  <Refer contactUri="+91XXXXXXXXXX" exophone="+91YYYYYYYYYY"></Refer>
 </Flow>
 ```
