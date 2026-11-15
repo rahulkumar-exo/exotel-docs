@@ -17,21 +17,8 @@ Exotel delivers live call events to a public HTTPS endpoint you host. Your serve
 |---|---|
 | Method | POST |
 | Content-Type | `application/json` |
-| TLS | HTTPS required |
+| Endpoint | Must be HTTPS |
 | Success ack | Any HTTP 2xx (response body is ignored) |
-| Retries | Up to 3 attempts for 408, 429, 5xx, timeouts, and connection errors |
-
-Exotel waits up to ~1 second per delivery attempt. Acknowledge quickly and do heavy work (CRM lookups, LLM calls) asynchronously after the ack.
-
-## Request headers
-
-| Header | Value |
-|---|---|
-| `Content-Type` | `application/json` |
-| `User-Agent` | `Exotel-Hermix/<version>` |
-| `X-Exotel-Event-Sid` | Same as `event_sid` in the body |
-| `X-Exotel-Request-Id` | `<event_sid>-<attempt_number>` (1–3) |
-| `Authorization` | `Basic …` when Basic Auth is configured |
 
 ## Payload fields
 
