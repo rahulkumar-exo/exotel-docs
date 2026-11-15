@@ -49,9 +49,10 @@ The key difference from TwiML/Plivo XML: **your HTTP response is just an acknowl
 
 ## Base URL
 
-```
-https://cpaas-api.in.exotel.com/v2/accounts/{account_sid}
-```
+| Data Center | Base URL |
+|---|---|
+| Singapore | `https://cpaas-api.exotel.com/v2/accounts/{account_sid}` |
+| Mumbai | `https://cpaas-api.in.exotel.com/v2/accounts/{account_sid}` |
 
 ## Authentication
 
