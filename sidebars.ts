@@ -18,6 +18,16 @@ const sidebars: SidebarsConfig = {
             'exoml/quickstart',
             'exoml/event-endpoint',
             'exoml/actions',
+            {
+              type: 'category',
+              label: 'Legs & Bridges',
+              collapsed: false,
+              items: [
+                'legs/overview',
+                'legs/api-reference/create-leg',
+                'legs/api-reference/manage-legs',
+              ],
+            },
           ],
         },
         'voice-v1/api-reference/connect-two-numbers',
