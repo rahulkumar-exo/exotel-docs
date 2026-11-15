@@ -2,8 +2,27 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   voiceSidebar: [
-    'voice/overview',
-    'voice-v1/quickstart',
+    {
+      type: 'doc',
+      id: 'voice/overview',
+      label: 'Programmable Voice',
+    },
+    {
+      type: 'doc',
+      id: 'voice-v1/quickstart',
+      label: 'Getting Started',
+    },
+    {
+      type: 'category',
+      label: 'ExoML',
+      collapsed: false,
+      items: [
+        'exoml/overview',
+        'exoml/quickstart',
+        'exoml/event-endpoint',
+        'exoml/actions',
+      ],
+    },
     {
       type: 'category',
       label: 'API Reference',

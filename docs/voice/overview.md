@@ -2,7 +2,7 @@
 id: overview
 title: Programmable Voice
 description: Make and receive phone calls with the Exotel Voice API.
-sidebar_label: Overview
+sidebar_label: Programmable Voice
 slug: /voice
 ---
 
@@ -21,6 +21,8 @@ If you have not placed a call yet, use the [quickstart](/docs/voice-v1/quickstar
 | Connect a number to an IVR flow | [Connect Number to Call Flow](/docs/voice-v1/api-reference/connect-to-flow) |
 | Handle a call that comes into my ExoPhone | [Program Incoming Call](/docs/voice-v1/api-reference/incoming-call) |
 | Build an IVR menu | [IVR Menu Applet](/docs/voice-v1/applets/ivr-menu) |
+| Build a dynamic IVR in code (no dashboard) | [ExoML overview](/docs/exoml/overview) |
+| Control a live call leg (hold, play, gather) | [ExoML actions](/docs/exoml/actions) |
 | Look up a call after it ends | [Call Details](/docs/voice-v1/api-reference/call-details) |
 | Download a recording | [Voice Log Download](/docs/voice-v3/api-reference/voice-log-download) |
 
@@ -77,9 +79,13 @@ Each API page lists the host and path for that request.
 | [Account balance](/docs/voice-v1/api-reference/balance) | GET | `/v1/Accounts/{account_sid}/Balance.json` |
 | [Status callback](/docs/voice-v1/api-reference/status-callback) | — | Webhook on your server |
 
+## ExoML — Programmable Voice
+
+[ExoML](/docs/exoml/overview) is for building call flows entirely in code, without using the dashboard. Exotel posts events to your server as the call progresses; your server issues XML actions (play audio, gather DTMF, dial, record, hang up) via REST. Use ExoML when you need dynamic routing, leg-level control, or AI/streaming integration.
+
 ## Applets
 
-Applets are the blocks in a call flow. You use them for greetings, menus, transfers, voicemail, and hangup. See the [Applets](/docs/voice-v1/applets/greeting) list.
+Applets are the blocks in a dashboard call flow. You use them for greetings, menus, transfers, voicemail, and hangup. See the [Applets](/docs/voice-v1/applets/greeting) list.
 
 Auth is HTTP Basic. Use the API key and token from the [dashboard](https://my.exotel.com) under **Settings → API Settings**. See [Authentication](/docs/voice-api/getting-started/authentication).
 

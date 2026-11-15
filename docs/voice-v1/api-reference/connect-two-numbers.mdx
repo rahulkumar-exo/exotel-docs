@@ -39,7 +39,52 @@ Make an outbound call that connects two phone numbers. The platform calls the `F
 | `StartPlaybackValueNew`     | No       | String  | Audio URL for pre-call playback.                                |
 | `StatusCallback`            | No       | String  | Webhook URL for call status updates.                            |
 | `StatusCallbackEvents`      | No       | Array   | `terminal`, `answered`, or both.                                |
-| `StatusCallbackContentType` | No       | String  | `multipart/form-data` or `application/json`.                    |
+| `StatusCallbackContentType` | No       | String  | `multipart/form-data` (default) or `application/json`. Applies to both `StatusCallback` and `AsyncAmdStatusCallback`. |
+| `MachineDetection`          | No       | String  | Enable answering machine detection: `Enable` or `Disable` (default). Case-insensitive. Omitting the parameter is treated as `Disable`. Empty string is invalid and returns 400. |
+| `AsyncAmd`                  | No       | String  | Required when `MachineDetection=Enable`. Must be `true`. Any other value returns 400. Synchronous AMD is not supported. |
+| `AsyncAmdStatusCallback`    | No       | String  | Required when `AsyncAmd=true`. Absolute `http` or `https` URL to receive the AMD result. Hostnames with underscores are rejected.  |
+
+## Answering Machine Detection
+
+When `MachineDetection=Enable`, the platform runs AMD in parallel with the call after Leg 1 (the `From` leg) answers. It does not auto-hangup. Your server receives the result at `AsyncAmdStatusCallback` and decides whether to hang up.
+
+**Validation rules**
+
+| Condition | Result |
+|---|---|
+| `MachineDetection` omitted | Treated as `Disable`; AMD params ignored |
+| `MachineDetection=Disable` | AMD params present but ignored; no 400 |
+| `MachineDetection=Enable`, valid `AsyncAmd=true` and `AsyncAmdStatusCallback` | AMD enabled |
+| `MachineDetection=Enable`, missing or invalid `AsyncAmd` or `AsyncAmdStatusCallback` | 400 |
+| `MachineDetection=` (empty string) | 400 |
+
+**`AsyncAmdStatusCallback` payload**
+
+Exotel POSTs to your URL when AMD completes. This fires even if the call has already ended.
+
+| Field | Type | Description |
+|---|---|---|
+| `CallSid` | String | Call SID |
+| `AccountSid` | String | Account SID |
+| `AnsweredBy` | String | `HUMAN`, `MACHINE`, or `NOTSURE` |
+| `AmdCause` | String | Cause string from the AMD engine (e.g. `HUMAN`, `INITIALSILENCE-2500-2500`). Numbers inside `AmdCause` are detector thresholds in milliseconds, not the detection duration. Empty string when not provided. |
+| `MachineDetectionDuration` | String | AMD detection duration in integer seconds as a string (e.g. `4`). `0` when AMD completes within the same second. Empty string when not provided. |
+| `CallStatus` | String | Call state at the time AMD completed (e.g. `in-progress`, `completed`). This field reflects the state at time of result; it does not change the call. |
+
+Content-Type defaults to `multipart/form-data`. Pass `StatusCallbackContentType=application/json` on the original request to receive JSON instead.
+
+**Hanging up after AMD**
+
+The platform does not auto-hangup. Use the Call Details API to find the leg SID, then call the hangup action:
+
+```bash
+# 1. Get the active leg SID
+GET /v1/Accounts/{account_sid}/Calls/{call_sid}/ActiveLegs
+
+# 2. Hang up that leg
+PUT /v1/Accounts/{account_sid}/Calls/{call_sid}/Legs/{leg_sid}
+    Action=hangup
+```
 
 ## Code Examples
 

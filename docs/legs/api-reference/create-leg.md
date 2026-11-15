@@ -21,7 +21,7 @@ POST https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs
 |-----------|------|-------------|
 | `contact_uri` | String | Phone number or SIP URI |
 | `exophone` | String | Outbound number/SIP URI |
-| `leg_event_endpoint` | String | gRPC endpoint for events |
+| `leg_event_endpoint` | String | HTTPS endpoint to receive call events |
 
 ## Optional Parameters
 

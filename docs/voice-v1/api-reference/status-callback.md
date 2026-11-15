@@ -120,6 +120,56 @@ Individual call legs can have the following statuses:
 }
 ```
 
+## Answering Machine Detection Callback
+
+When a call is created with `MachineDetection=Enable`, the AMD result is delivered to the `AsyncAmdStatusCallback` URL you provide — not to `StatusCallback`. This is a separate webhook that fires when AMD completes, regardless of whether the call is still active.
+
+### Payload Fields
+
+| Field | Type | Description |
+|---|---|---|
+| `CallSid` | String | Call SID |
+| `AccountSid` | String | Account SID |
+| `AnsweredBy` | String | `HUMAN`, `MACHINE`, or `NOTSURE` |
+| `AmdCause` | String | Cause string from the AMD engine (e.g. `HUMAN`, `INITIALSILENCE-2500-2500`). Numbers inside `AmdCause` are detector thresholds in milliseconds, not the detection duration. Empty string when not provided. |
+| `MachineDetectionDuration` | String | AMD detection duration in integer seconds as a string (e.g. `4`). `0` when AMD completes within the same second. Empty string when not provided. |
+| `CallStatus` | String | Call state at the time AMD completed (e.g. `in-progress`, `completed`). This handler does not change the call state. |
+
+Content-Type defaults to `multipart/form-data`. To receive JSON, pass `StatusCallbackContentType=application/json` when creating the call.
+
+### Example payload
+
+```
+CallSid=amdtest0911T15514314660dTCD011
+AccountSid=ex105
+AnsweredBy=HUMAN
+AmdCause=HUMAN
+MachineDetectionDuration=123
+CallStatus=in-progress
+```
+
+When cause and duration are absent (Hermix sent `AnsweredBy` only):
+
+```json
+{
+  "CallSid": "amdtest0911T15514314660dTCD021",
+  "AccountSid": "ex105",
+  "AnsweredBy": "MACHINE",
+  "AmdCause": "",
+  "MachineDetectionDuration": "",
+  "CallStatus": "completed"
+}
+```
+
+### Behaviour notes
+
+- Fires even if the call has already ended when AMD completes
+- AMD runs on the first (`From`) leg only; dial-leg AMD events are ignored
+- Callback failure does not affect the call
+- The platform does not auto-hangup on machine detection — your server must call `PUT .../Legs/{leg_sid} Action=hangup` after receiving the callback
+
+See [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers) for the AMD request parameters (`MachineDetection`, `AsyncAmd`, `AsyncAmdStatusCallback`).
+
 ## Usage Notes
 
 - Additional StatusCallback fields (event-specific parameters) require both `From` and `To` parameters in the original call request
