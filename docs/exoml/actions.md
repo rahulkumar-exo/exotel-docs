@@ -41,7 +41,7 @@ Plays a WAV or MP3 file from a URL on the leg.
 <!-- Play a WAV from an HTTPS URL -->
 <Flow>
   <StartPlay username="abc123" password="securepass">
-    https://exotel.s3.mum-1.amazonaws.com/123.wav
+    https://cdn.example.com/audio.wav
   </StartPlay>
 </Flow>
 

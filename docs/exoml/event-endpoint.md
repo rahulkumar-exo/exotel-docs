@@ -157,4 +157,3 @@ If you restrict inbound traffic by IP, allow these Exotel callback source addres
 98.130.5.99
 ```
 
-If your server is behind ABIX or a similar network-level filter, contact your Exotel Customer Success Manager for additional configuration.
