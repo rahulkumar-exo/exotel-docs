@@ -19,8 +19,8 @@ Exotel delivers live call events to a public HTTPS endpoint you host. Your serve
 | Content-Type | `application/json` |
 | Endpoint | Must be HTTPS |
 | Success ack | Any HTTP 2xx (response body is ignored) |
-| Retries | Up to 3 attempts for 408, 429, 5xx, timeouts, and connection errors |
-| Per-attempt timeout | 1 second |
+| Retries | Up to 3 attempts for 408, 429, 5xx, timeouts, and connection errors. Other 4xx responses are not retried; event is dropped after the final attempt. |
+| Per-attempt timeout | ~1 second |
 
 ## Request headers
 
@@ -39,21 +39,22 @@ Exotel delivers live call events to a public HTTPS endpoint you host. Your serve
   "event_sid": "<event_sid>",
   "event_type": "leg_action_event",
   "event_name": "leg_answered",
-  "event_timestamp": "2024-01-15T10:30:00.529Z",
+  "event_timestamp": "2026-01-15T10:30:00.529Z",
   "action_sid": "<action_sid>",
   "action_custom_parameter": "your-tracking-value",
   "event_data": {
-    "data": {},
-    "error": null
+    "data": {}
   },
   "data": {
     "leg_sid": "<leg_sid>",
     "account_sid": "<account_sid>",
     "contact_uri": "+91XXXXXXXXXX",
     "exophone": "+91YYYYYYYYYY",
-    "state": "active",
-    "start_time": "2024-01-15T10:29:59.312Z",
-    "date_created": "2024-01-15T10:29:59.339Z"
+    "state": "in-progress",
+    "start_time": "2026-01-15T10:29:59.312Z",
+    "end_time": null,
+    "date_created": "2026-01-15T10:29:59.339Z",
+    "date_updated": "2026-01-15T10:30:00.112Z"
   }
 }
 ```

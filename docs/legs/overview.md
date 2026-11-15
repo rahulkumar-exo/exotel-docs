@@ -41,7 +41,7 @@ HTTP Basic Authentication using your API key and token.
 
 ## Leg Events
 
-Events are delivered via gRPC to your configured endpoint:
+Events are delivered via HTTPS to your configured endpoint. For ExoML-driven calls, see [Event Endpoint](/docs/exoml/event-endpoint).
 
 | Event | Description |
 |-------|-------------|
