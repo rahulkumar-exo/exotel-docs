@@ -131,22 +131,11 @@ When a call is created with `MachineDetection=Enable`, the AMD result is deliver
 | `CallSid` | String | Call SID |
 | `AccountSid` | String | Account SID |
 | `AnsweredBy` | String | `HUMAN`, `MACHINE`, or `NOTSURE` |
-| `AmdCause` | String | Detector cause string (e.g. `HUMAN`, `LONGGREETING-1500-1600`). Empty string when not provided. Numbers inside `AmdCause` (e.g. `2500` in `INITIALSILENCE-2500-2500`) are detector thresholds in milliseconds — not the duration. |
+| `AmdCause` | String | Cause string from the AMD engine. Empty string when not provided. |
 | `MachineDetectionDuration` | String | Total AMD detection time in seconds. Empty string when not provided. |
-| `CallStatus` | String | Call state at time AMD completed (e.g. `in-progress`, `completed`). |
+| `CallStatus` | String | Call state at the time AMD completed. |
 
 Content-Type defaults to `multipart/form-data`. To receive JSON, pass `StatusCallbackContentType=application/json` when creating the call.
-
-### Example payload (multipart/form-data)
-
-```
-CallSid=abc123
-AccountSid=ex105
-AnsweredBy=MACHINE
-AmdCause=LONGGREETING-1500-1600
-MachineDetectionDuration=4
-CallStatus=in-progress
-```
 
 ### Behaviour notes
 

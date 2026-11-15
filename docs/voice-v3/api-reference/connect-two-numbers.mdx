@@ -95,9 +95,9 @@ Exotel POSTs to your URL when AMD completes. This fires even if the call has alr
 | `CallSid` | String | Call SID |
 | `AccountSid` | String | Account SID |
 | `AnsweredBy` | String | `HUMAN`, `MACHINE`, or `NOTSURE` |
-| `AmdCause` | String | Detector cause string (e.g. `HUMAN`, `LONGGREETING-1500-1600`). Empty string when not provided. |
+| `AmdCause` | String | Cause string from the AMD engine. Empty string when not provided. |
 | `MachineDetectionDuration` | String | AMD detection duration in seconds. Empty string when not provided. |
-| `CallStatus` | String | Call state at the time AMD completed (e.g. `in-progress`, `completed`). |
+| `CallStatus` | String | Call state at the time AMD completed. |
 
 Content-Type defaults to `multipart/form-data`. Pass `StatusCallbackContentType=application/json` on the original request to receive JSON instead.
 
