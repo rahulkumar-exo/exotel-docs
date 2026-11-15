@@ -149,10 +149,4 @@ on every POST. Validate this header on your server and reject requests without v
 
 ## IP allowlist
 
-If you restrict inbound traffic by IP, allow these Exotel callback source addresses:
-
-```
-35.154.174.161
-13.233.217.51
-98.130.5.99
-```
+If you restrict inbound traffic by IP, contact your Exotel Customer Success Manager for the current list of callback source IP addresses.

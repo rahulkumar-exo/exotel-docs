@@ -4,6 +4,8 @@ const sidebars: SidebarsConfig = {
   voiceSidebar: [
     'voice/overview',
     'voice-v1/quickstart',
+    'exoml/overview',
+    'exoml/quickstart',
     {
       type: 'category',
       label: 'API Reference',
@@ -14,20 +16,8 @@ const sidebars: SidebarsConfig = {
           label: 'ExoML',
           collapsed: false,
           items: [
-            'exoml/overview',
-            'exoml/quickstart',
             'exoml/event-endpoint',
             'exoml/actions',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Legs & Bridges',
-          collapsed: false,
-          items: [
-            'legs/overview',
-            'legs/api-reference/create-leg',
-            'legs/api-reference/manage-legs',
           ],
         },
         'voice-v1/api-reference/connect-two-numbers',
