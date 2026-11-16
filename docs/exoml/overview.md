@@ -44,8 +44,8 @@ Your HTTP response to Exotel is just an acknowledgement — return HTTP 200 imme
 | Dynamic IVR built from code / git | ExoML |
 | Leg-level control (hold one party, talk to another) | ExoML |
 | AI voicebot / streaming | ExoML |
-| Simple fixed call flow, no code dependency | Dashboard Applets |
-| Click-to-call with a fixed IVR | Dashboard Applets + Voice V1 |
+| Simple fixed call flow, no code dependency | Applets |
+| Click-to-call with a fixed IVR | Applets + Voice V1 |
 
 ## Base URL
 
@@ -103,7 +103,7 @@ The `<Flow>` element is the root wrapper. Inside it goes one action verb.
 | Dial | `<Dial>` | Dial another number and bridge the legs |
 | Record | `<StartRecording>` / `<StopRecording>` | Record the leg audio |
 | Hold | `<Hold>` / `<UnHold>` | Put the leg on hold with music |
-| Mute | `<Mute>` / `<Unmute>` | Mute/unmute audio direction |
+| Mute | `<Mute>` / `<UnMute>` | Mute/unmute audio direction |
 | Join bridge | `<JoinBridge>` | Add this leg to a conference bridge |
 | Leave bridge | `<LeaveBridge>` | Remove from conference bridge |
 | Hang up | `<Hangup>` | End the leg |

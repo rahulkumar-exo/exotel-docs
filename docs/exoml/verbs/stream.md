@@ -17,41 +17,20 @@ Opens a WebSocket connection and begins sending audio from the leg.
 
 ```bash
 curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "direction": "bidirectional",
-    "url": "wss://your-ai-server.example.com/stream",
-    "content_type": "audio/x-mulaw;rate=8000"
-  }'
-```
-
-### Parameters
-
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `url` | Yes | WebSocket URL (`wss://`) to receive audio |
-| `direction` | Yes | `unidirectional` (send only) or `bidirectional` (send + receive) |
-| `content_type` | No | Audio format. Default: `audio/x-mulaw;rate=8000` |
-
-### ExoML equivalent
-
-```bash
-curl -u '<api_key>:<api_token>' -X POST \
   'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
   -H 'Content-Type: application/json' \
   -d '{
-    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StartStream streamType=\"bidirectional\" url=\"wss://your-ai-server.example.com/stream\" contentType=\"audio/x-mulaw;rate=8000\"/></Flow>"
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StartStream streamType=\"bidirectional\" streamUrl=\"wss://your-ai-server.example.com/stream\" contentType=\"audio/x-mulaw;rate=8000\"/></Flow>"
   }'
 ```
 
-### StartStream XML attributes
+### `<StartStream>` attributes
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
-| `url` | Yes | WebSocket URL |
-| `streamType` | Yes | `unidirectional` or `bidirectional` |
-| `contentType` | No | Audio content type (default: `audio/x-mulaw;rate=8000`) |
+| `streamUrl` | Yes | WebSocket URL (`wss://`) to receive audio |
+| `streamType` | Yes | `unidirectional` (send only) or `bidirectional` (send + receive) |
+| `contentType` | No | Audio format. Default: `audio/x-mulaw;rate=8000` |
 
 ## StopStream
 
@@ -59,9 +38,11 @@ Closes the WebSocket connection and stops audio delivery.
 
 ```bash
 curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_stream' \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
   -H 'Content-Type: application/json' \
-  -d '{}'
+  -d '{
+    "exoml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Flow><StopStream/></Flow>"
+  }'
 ```
 
 ## WebSocket message format

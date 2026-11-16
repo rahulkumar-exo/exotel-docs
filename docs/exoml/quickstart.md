@@ -44,9 +44,9 @@ app.post('/events', async (req, res) => {
       {
         exoml: `<?xml version="1.0" encoding="UTF-8"?>
           <Flow>
-            <StartSay language="en" preferredTTSEngine="polly">
+            <Say language="en" preferredTTSEngine="polly">
               Hello! This is a test call from Exotel. Goodbye.
-            </StartSay>
+            </Say>
           </Flow>`
       },
       { auth: { username: API_KEY, password: API_TOKEN } }

@@ -37,6 +37,12 @@ On caller action (keypress, dial end) → Exotel POSTs to next webhook
 Loop until <Hangup/>
 ```
 
+:::note
+This document covers the **Voice V1 webhook pattern**, where Exotel POSTs to your server and your server returns ExoML XML in the HTTP response body. Exotel executes the returned XML to control the call.
+
+This is distinct from the [Legs API (ExoML)](/docs/exoml/overview) pattern, where your server returns HTTP 200 immediately and issues control instructions via separate `POST /legs/{leg_sid}/actions` requests.
+:::
+
 ## Quickstart
 
 ### 1. Expose a webhook endpoint

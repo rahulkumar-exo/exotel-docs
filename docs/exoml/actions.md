@@ -30,7 +30,7 @@ Plays a WAV or MP3 file from a URL on the leg.
 
 | Attribute | Required | Type | Default | Description |
 |---|---|---|---|---|
-| `loop` | Optional | integer | 0 (infinite) | Times to repeat. Max 10. |
+| `loop` | Optional | integer | 0 | Number of additional repeats after the first play. `0` plays the audio once. Max 10. |
 | `username` | Optional | string | — | Basic auth username for HTTPS URLs |
 | `password` | Optional | string | — | Basic auth password for HTTPS URLs |
 | (inner text) | **Required** | URL | — | File URL to play. Use prefix `sound:` for Exotel default sounds. |
@@ -68,11 +68,11 @@ Converts text to speech and plays it on the leg. Supports Polly and Google TTS e
 
 | Attribute | Required | Type | Default | Description |
 |---|---|---|---|---|
-| `loop` | Optional | integer | 0 (infinite) | Times to repeat. Max 10. |
+| `loop` | Optional | integer | 0 | Number of additional repeats after the first play. `0` plays the audio once. Max 10. |
 | `preferredTTSEngine` | Optional | `polly` \| `googletts` | `polly` | TTS engine |
-| `language` | Optional | string | `en` | Language code. All regional languages supported. |
+| `language` | Optional | string | `en` | BCP 47 language tag (e.g. `en`, `hi`, `ta`). Supported values depend on the selected TTS engine. |
 | `pollyVoiceId` | Optional | string | `Raveena` | Polly voice ID. See [AWS Polly voices](https://docs.aws.amazon.com/polly/latest/dg/voicelist.html). |
-| `googlettsVoiceName` | Optional | string | ssml gender female | Google TTS voice name |
+| `googlettsVoiceName` | Optional | string | — | Google TTS voice name (e.g. `en-US-Standard-A`). See [Google Cloud TTS voice list](https://cloud.google.com/text-to-speech/docs/voices). |
 | (inner text) | **Required** | string | — | Text or SSML markup to speak |
 
 ### Examples
@@ -282,7 +282,7 @@ Puts the leg on hold with music-on-hold (MOH).
 
 ---
 
-## Mute / Unmute — `<Mute>` / `<Unmute>`
+## Mute / Unmute — `<Mute>` / `<UnMute>`
 
 Mutes a specific audio direction on the leg.
 
@@ -299,7 +299,7 @@ Mutes a specific audio direction on the leg.
 <Flow><Mute direction="in"></Mute></Flow>
 
 <!-- Unmute -->
-<Flow><Unmute></Unmute></Flow>
+<Flow><UnMute></UnMute></Flow>
 ```
 
 ---
@@ -354,7 +354,7 @@ Pipes real-time audio from the leg to a WebSocket server for AI processing or li
 ```xml
 <!-- Start streaming to your WebSocket server -->
 <Flow>
-  <StartStream url="wss://ai.example.com/stream" streamType="bidirectional" contentType="audio/x-mulaw;rate=8000"></StartStream>
+  <StartStream streamUrl="wss://ai.example.com/stream" streamType="bidirectional" contentType="audio/x-mulaw;rate=8000"></StartStream>
 </Flow>
 
 <!-- Stop streaming -->
