@@ -20958,5 +20958,39 @@
       }
     ],
     "answer_length": 3233
+  },
+  {
+    "timestamp": "2026-11-17T11:26:27.174Z",
+    "response_id": "890cb798-fd37-40a2-b7f8-bda966bb47f5",
+    "question": "how can my backend get agent phone number",
+    "question_length": 41,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10963,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Available ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/api-reference/available-numbers"
+      }
+    ],
+    "answer_length": 3466
   }
 ]
