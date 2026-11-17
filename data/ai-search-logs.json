@@ -21163,5 +21163,39 @@
     ],
     "answer_length": 1017,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-17T11:40:01.089Z",
+    "response_id": "07ad0f6c-3324-443f-ac3d-33b9d1c1560b",
+    "question": "difference between connect two numbers and agent to customer",
+    "question_length": 60,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4475,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Agent to Customer",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/make-a-call"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      }
+    ],
+    "answer_length": 2688
   }
 ]
