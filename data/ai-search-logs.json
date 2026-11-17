@@ -21265,5 +21265,39 @@
       }
     ],
     "answer_length": 1334
+  },
+  {
+    "timestamp": "2026-11-17T12:15:52.996Z",
+    "response_id": "75b583b4-1e44-469c-ad19-a77da16d9178",
+    "question": "Mobile phone dialer opens with the Exotel number and code already appended. and makes call exotel extracts that number and send over connect applet",
+    "question_length": 147,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5847,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Exotel LeadSquared Mobile App Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-mobile"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      }
+    ],
+    "answer_length": 1155
   }
 ]
