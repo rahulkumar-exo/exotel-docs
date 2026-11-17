@@ -21026,5 +21026,39 @@
       }
     ],
     "answer_length": 2871
+  },
+  {
+    "timestamp": "2026-11-17T11:34:16.891Z",
+    "response_id": "d9fc3d85-a021-4141-bafd-cdf93177425c",
+    "question": "connect agent to cutomer means",
+    "question_length": 30,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2005,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Sticky Agent",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/sticky-agent"
+      },
+      {
+        "title": "Connect Applet Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/connect-applet-guide"
+      },
+      {
+        "title": "Call Forwarding",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-forwarding"
+      }
+    ],
+    "answer_length": 531
   }
 ]
