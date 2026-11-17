@@ -20924,5 +20924,39 @@
       }
     ],
     "answer_length": 1106
+  },
+  {
+    "timestamp": "2026-11-17T11:25:36.553Z",
+    "response_id": "6f99440e-2eed-4cb1-b221-3c65f4d16a76",
+    "question": "no then connect two numbers will not work tell me some thing when user clicks on call the call goes to exotel number and get connected to correct client how can i do this",
+    "question_length": 170,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 15685,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 3233
   }
 ]
