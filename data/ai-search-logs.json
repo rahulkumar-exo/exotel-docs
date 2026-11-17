@@ -20856,5 +20856,39 @@
     ],
     "answer_length": 1012,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-17T11:22:09.198Z",
+    "response_id": "0a84209b-311e-4304-9ab4-8dc8362ceb0d",
+    "question": "my project is mern i want exotel call where webpage has client contact number where a person clicks on call option the client calls happen it is for all clients how can i achieve in exotel",
+    "question_length": 188,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 12977,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      }
+    ],
+    "answer_length": 6796
   }
 ]
