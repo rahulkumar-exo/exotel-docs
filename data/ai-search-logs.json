@@ -21231,5 +21231,39 @@
       }
     ],
     "answer_length": 176
+  },
+  {
+    "timestamp": "2026-11-17T12:14:50.821Z",
+    "response_id": "b8b3c5fc-0e33-47c9-aecc-b5c7e088448a",
+    "question": "Mobile phone dialer opens with the Exotel number and PIN already appended. can this be acieve",
+    "question_length": 93,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5781,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 1334
   }
 ]
