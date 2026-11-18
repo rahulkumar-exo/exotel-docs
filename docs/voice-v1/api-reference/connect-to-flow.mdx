@@ -32,6 +32,10 @@ Call a phone number and connect them to an applet/IVR flow after they answer. Un
 | `StatusCallback` | No | String | Webhook URL for call status updates. |
 | `StatusCallbackEvents` | No | Array | `terminal`, `answered`, or both. |
 | `CustomField` | No | String | Metadata passed to the applet via Passthru. |
+| `MachineDetection` | No | String | `Enable` or `Disable` (default). Enables answering machine detection on Leg 1 (the `From` leg). Case-insensitive; omitting the parameter is treated as `Disable`. Empty string is invalid and returns 400. |
+| `AsyncAmd` | No | String | Required when `MachineDetection=Enable`. Must be `true` — synchronous AMD is not supported. Any other value returns 400. |
+| `AsyncAmdStatusCallback` | No | String | Required when `AsyncAmd=true`. Absolute `http` or `https` URL that receives the AMD result. |
+| `StatusCallbackContentType` | No | String | `multipart/form-data` (default) or `application/json`. Applies to both `StatusCallback` and `AsyncAmdStatusCallback`. |
 
 :::info
 The `Url` parameter should point to a call flow (applet) configured in your Exotel dashboard. The `app_id` is the flow ID found in **App Bazaar > My Apps**.
@@ -198,6 +202,48 @@ func main() {
 When using a flow URL, the `To` field in the response will be `null` since the destination is a flow rather than a phone number. The call proceeds to the applet after the `From` party answers.
 :::
 
+## Answering Machine Detection (AMD)
+
+When `MachineDetection=Enable`, AMD runs in parallel with the call after Leg 1 (the `From` leg) answers. It classifies who picked up — a human or an answering machine / voicemail — without ending the call. The result is delivered to your `AsyncAmdStatusCallback` **mid-call** (not on `StatusCallback`), so you can act on it while the call is still live. AMD does not auto-hangup; your application decides what to do next.
+
+### Validation rules
+
+| Condition | Result |
+|---|---|
+| `MachineDetection` omitted | Treated as `Disable`; AMD params ignored |
+| `MachineDetection=Disable` | AMD params present but ignored; no 400 |
+| `MachineDetection=Enable`, valid `AsyncAmd=true` and `AsyncAmdStatusCallback` | AMD enabled |
+| `MachineDetection=Enable`, missing or invalid `AsyncAmd` or `AsyncAmdStatusCallback` | 400 |
+| `MachineDetection=` (empty string) | 400 |
+
+### `AsyncAmdStatusCallback` payload
+
+Exotel POSTs to your URL when AMD completes. This can fire even if the call has already ended.
+
+| Field | Type | Description |
+|---|---|---|
+| `CallSid` | String | Call SID |
+| `AccountSid` | String | Account SID |
+| `AnsweredBy` | String | `HUMAN`, `MACHINE`, or `NOTSURE` |
+| `AmdCause` | String | Cause string from the AMD engine (e.g. `HUMAN`, `INITIALSILENCE-2500-2500`). Numbers inside the cause are detector thresholds in milliseconds, not the detection duration. Empty string when not provided. |
+| `MachineDetectionDuration` | String | AMD detection time in whole seconds, as a string (e.g. `4`). `0` when AMD completes within the same second. Empty string when not provided. |
+| `CallStatus` | String | Call state at the time AMD completed (e.g. `in-progress`, `completed`). Reflects the state at the time of the result; it does not change the call. |
+
+Content-Type defaults to `multipart/form-data`. Pass `StatusCallbackContentType=application/json` on the original request to receive JSON instead.
+
+### Acting on the result
+
+AMD reports the outcome; your application decides the next step. When you receive a `MACHINE` verdict at your `AsyncAmdStatusCallback`, common patterns are:
+
+- **Hang up the call** — stop engaging a voicemail or IVR, so you don't spend time (and, in a voicebot flow, tokens) on a machine.
+- **Drop a voicemail, then hang up** — play a pre-recorded message for the machine, then end the call.
+
+Call control — ending the call or playing audio on a live leg — is performed through the [Legs &amp; Bridges API](/docs/legs/overview) (for example, the ExoML [Hangup](/docs/exoml/verbs/hangup) action). AMD itself never hangs up the call.
+
+:::note
+`AnsweredBy` is always one of `HUMAN`, `MACHINE`, or `NOTSURE`. `AmdCause` and `MachineDetectionDuration` are passed through from the telephony layer and may be empty for a given call.
+:::
+
 ## Try It
 
 <ApiConsole
@@ -212,5 +258,9 @@ When using a flow URL, the `To` field in the response will be `null` since the d
     { name: 'TimeOut', required: false, type: 'number', description: 'Seconds to ring before treating the call as unanswered. Stops once the call is answered.', placeholder: '30' },
     { name: 'StatusCallback', required: false, type: 'string', description: 'Webhook URL for call status updates', placeholder: 'https://yoururl.com/callback' },
     { name: 'CustomField', required: false, type: 'string', description: 'Metadata passed to the applet via Passthru', placeholder: 'order_123' },
+    { name: 'MachineDetection', required: false, type: 'string', description: 'Enable AMD on Leg 1: Enable or Disable (default)', placeholder: 'Enable' },
+    { name: 'AsyncAmd', required: false, type: 'string', description: 'Must be true when MachineDetection=Enable', placeholder: 'true' },
+    { name: 'AsyncAmdStatusCallback', required: false, type: 'string', description: 'URL to receive the AMD result (required when AsyncAmd=true)', placeholder: 'https://yoururl.com/amd-callback' },
+    { name: 'StatusCallbackContentType', required: false, type: 'string', description: 'multipart/form-data (default) or application/json', placeholder: 'application/json' },
   ]}
 />
