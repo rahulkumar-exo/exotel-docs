@@ -22761,5 +22761,39 @@
     ],
     "answer_length": 968,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-19T10:10:24.060Z",
+    "response_id": "25dea006-660e-4d3c-94a4-c5e82fd57677",
+    "question": "Hi, I'm integrating Exotel's Voice API (India account, api.in.exotel.com) and need to confirm how per-call costs work, so I can store each call's cost automatically.\n\n1. Price field: GET /v1/Accounts/{account_sid}/Calls/{CallSid}.json returns a \"Price\" field (for example \"1.500\"). What exactly does Price include: the full call charge for both legs, or only one leg? Does it include GST?\n\n2. Currency: Price has no currency field. For an Indian account, is Price always in INR? Can it ever be in USD",
+    "question_length": 2533,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3716,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      }
+    ],
+    "answer_length": 176
   }
 ]
