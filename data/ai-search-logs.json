@@ -22375,5 +22375,13 @@
     ],
     "answer_length": 489,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-19T05:34:08.509Z",
+    "question": "health check probe",
+    "question_length": 18,
+    "response_time_ms": 926,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 ] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
