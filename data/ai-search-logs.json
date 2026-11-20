@@ -23936,5 +23936,39 @@
       }
     ],
     "answer_length": 214
+  },
+  {
+    "timestamp": "2026-11-20T13:42:41.233Z",
+    "response_id": "a4ed180d-a889-4a33-a85d-c84ec9d60a2b",
+    "question": "how can i get masking api integration",
+    "question_length": 37,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3938,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      },
+      {
+        "title": "Session ID Authentication - Login API",
+        "product": "contact-center-v4",
+        "url": "/docs/contact-center-v4/api-reference/login"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 252
   }
 ]
