@@ -23697,5 +23697,39 @@
     ],
     "answer_length": 950,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-20T11:32:51.473Z",
+    "response_id": "3fe35fb1-c7d7-4a42-8ec5-4799ca59529d",
+    "question": "in call time meta status like if that failed",
+    "question_length": 44,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5032,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      }
+    ],
+    "answer_length": 1445
   }
 ]
