@@ -23594,5 +23594,39 @@
       }
     ],
     "answer_length": 631
+  },
+  {
+    "timestamp": "2026-11-20T10:29:18.747Z",
+    "response_id": "6864b94f-4383-4d3c-8ec4-c17e4a05a364",
+    "question": "how about this https://developer.exotel.com/docs/integrations/webrtc-sdk?",
+    "question_length": 73,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1531,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Call Legs (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/call-legs"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 289
   }
 ]
