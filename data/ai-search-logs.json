@@ -23526,5 +23526,39 @@
       }
     ],
     "answer_length": 485
+  },
+  {
+    "timestamp": "2026-11-20T10:08:50.589Z",
+    "response_id": "9e1a9da9-1960-45e1-9859-7312a0929966",
+    "question": "update user details api explain can mobile number be changed ?",
+    "question_length": 62,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 3789,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Update Party Numbers & Pins",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-allocation"
+      },
+      {
+        "title": "Update User",
+        "product": "users",
+        "url": "/docs/users/api-reference/update-user"
+      },
+      {
+        "title": "Update GreenVN in an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/update-greenvn"
+      },
+      {
+        "title": "Incoming Call – Connecting Customer and User (Beta)",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/incoming-call"
+      }
+    ],
+    "answer_length": 1206
   }
 ]
