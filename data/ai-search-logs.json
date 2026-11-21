@@ -24072,5 +24072,39 @@
       }
     ],
     "answer_length": 662
+  },
+  {
+    "timestamp": "2026-11-21T10:15:34.286Z",
+    "response_id": "ef0ba8d3-9ab5-4d1d-b5e9-a84ff4c993d3",
+    "question": "is there any ip restriction?",
+    "question_length": 28,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2352,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Calling Hour Restrictions",
+        "product": "faqs",
+        "url": "/docs/faqs/calling-hours"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      }
+    ],
+    "answer_length": 782
   }
 ]
