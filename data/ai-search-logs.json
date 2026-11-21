@@ -24038,5 +24038,39 @@
       }
     ],
     "answer_length": 639
+  },
+  {
+    "timestamp": "2026-11-21T07:24:09.323Z",
+    "response_id": "88187dfc-5f8e-442d-beb1-7d0eab62f34b",
+    "question": "give api key",
+    "question_length": 12,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2138,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      },
+      {
+        "title": "API Credentials",
+        "product": "getting-started",
+        "url": "/docs/getting-started/api-credentials"
+      }
+    ],
+    "answer_length": 662
   }
 ]
