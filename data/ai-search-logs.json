@@ -24106,5 +24106,39 @@
       }
     ],
     "answer_length": 782
+  },
+  {
+    "timestamp": "2026-11-21T10:16:11.622Z",
+    "response_id": "cd124ef4-a84b-482d-b796-b2957da53473",
+    "question": "make call working in local but not working in deployed applicaton",
+    "question_length": 65,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2613,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "How to Make or Receive Calls",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/make-receive-calls"
+      },
+      {
+        "title": "Call Details",
+        "product": "contact-center",
+        "url": "/docs/contact-center/api-reference/call-details"
+      }
+    ],
+    "answer_length": 176
   }
 ]
