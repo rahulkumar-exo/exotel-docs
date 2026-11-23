@@ -24553,5 +24553,39 @@
     ],
     "answer_length": 706,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-23T07:48:29.675Z",
+    "response_id": "29679af9-2847-4250-b03f-59a8a50ce930",
+    "question": "I am creating a state-wise campaign and using webhooks to get live call data using webhooks, there is a problem if copying a campaign from old one the webhook for the current state is missing. For this issue, the data was inconsistent. I want to make a common webhook, but the data will be saved in different tables according to the state. How to identity the each response get from webhook in a campaign? There are multiple flows and multiple responses",
+    "question_length": 453,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 10564,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "API",
+        "product": "chatbot",
+        "url": "/docs/chatbot/api"
+      }
+    ],
+    "answer_length": 2069
   }
 ]
