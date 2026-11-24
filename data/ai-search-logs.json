@@ -25774,5 +25774,39 @@
       }
     ],
     "answer_length": 4459
+  },
+  {
+    "timestamp": "2026-11-24T13:24:18.324Z",
+    "response_id": "aa18912a-e67b-4479-ba6d-b7b892ac918d",
+    "question": "When I am accessing call details by API /calls endpoint with sid but the recording url i am getting is like https://recordings.exotel.com/exotelrecordings/{acc_sid}/{sid}.mp3 but when opening this in browser, getting bad request",
+    "question_length": 228,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6532,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      }
+    ],
+    "answer_length": 176
   }
 ]
