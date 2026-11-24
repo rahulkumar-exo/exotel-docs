@@ -25910,5 +25910,39 @@
       }
     ],
     "answer_length": 1872
+  },
+  {
+    "timestamp": "2026-11-24T15:23:54.481Z",
+    "response_id": "a7bd79e5-b535-4ffc-bda8-5330390d11de",
+    "question": "is there any customer care no to call a human",
+    "question_length": 45,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 878,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Connect Two Numbers",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/api-reference/connect-two-numbers"
+      },
+      {
+        "title": "Call Logs",
+        "product": "reporting",
+        "url": "/docs/reporting/call-logs"
+      },
+      {
+        "title": "Missed Call Solution",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/missed-call"
+      },
+      {
+        "title": "Call Analytics",
+        "product": "call-support",
+        "url": "/docs/call-support/call-features/call-analytics"
+      }
+    ],
+    "answer_length": 176
   }
 ]
