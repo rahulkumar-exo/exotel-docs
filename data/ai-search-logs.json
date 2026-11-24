@@ -25842,5 +25842,39 @@
       }
     ],
     "answer_length": 4995
+  },
+  {
+    "timestamp": "2026-11-24T15:21:13.774Z",
+    "response_id": "860e6e1c-7805-471b-b381-6f2b4a2522f9",
+    "question": "i am unable to search nos",
+    "question_length": 25,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 9667,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage Lists",
+        "product": "campaign-lists",
+        "url": "/docs/campaign-lists/api-reference/manage-lists"
+      },
+      {
+        "title": "Manage Campaign",
+        "product": "Call Campaigns",
+        "url": "/docs/campaigns/api-reference/manage-campaign"
+      },
+      {
+        "title": "Manage Contacts",
+        "product": "campaigns-contacts",
+        "url": "/docs/campaigns-contacts/api-reference/manage-contacts"
+      }
+    ],
+    "answer_length": 2203
   }
 ]
