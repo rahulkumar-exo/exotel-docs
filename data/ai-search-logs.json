@@ -26682,5 +26682,39 @@
       }
     ],
     "answer_length": 1213
+  },
+  {
+    "timestamp": "2026-11-26T04:35:52.179Z",
+    "response_id": "e93c9ce8-002a-4a20-87f5-07bb9b2f92fd",
+    "question": "in the ai voice bot database if a open any tables which i created it throws me network error and when i inspected it it was 403",
+    "question_length": 127,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4803,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "URL Shortening & Click Tracking",
+        "product": "SMS API",
+        "url": "/docs/sms-api/api-reference/url-shortening"
+      }
+    ],
+    "answer_length": 1200
   }
 ]
