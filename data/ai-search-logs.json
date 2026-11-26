@@ -26955,5 +26955,13 @@
       }
     ],
     "answer_length": 541
+  },
+  {
+    "timestamp": "2026-11-26T05:40:23.824Z",
+    "question": "But, this integration would allow us to do everything right? record calls, route calls etc etc",
+    "question_length": 94,
+    "response_time_ms": 14958,
+    "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 ] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "failed": true
   }
 ]
