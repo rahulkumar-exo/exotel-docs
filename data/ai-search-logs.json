@@ -26887,5 +26887,39 @@
     ],
     "answer_length": 613,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-26T04:58:22.284Z",
+    "response_id": "56c4d2ab-94d7-4b6b-86de-ed563e787a21",
+    "question": "I’m building a hospital appointment bot using Exotel Intelligent Voice Agents and Data Tables.\n\nIssues:\n1. A GET request to a data table returns HTTP 200 OK with empty records, although I expect records.\n2. Previously, a records request returned 403 Forbidden.\n3. Rescheduling appears successful, but a later call retrieves the old appointment.\n\nAn earlier request was:\nhttps://voicebot-te.in.exotel.com/voicebot/api/v1/accounts/genai3/data-tables/448[REDACTED]/records?limit=10&offset=0&sort_by=crea",
+    "question_length": 1376,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8783,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1432
   }
 ]
