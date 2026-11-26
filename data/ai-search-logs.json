@@ -26784,5 +26784,39 @@
       }
     ],
     "answer_length": 3099
+  },
+  {
+    "timestamp": "2026-11-26T04:39:24.197Z",
+    "response_id": "a9d82b2c-9a19-472f-952f-8e35064848cb",
+    "question": "for the ai voice bots",
+    "question_length": 21,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 22622,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Voice v3",
+        "product": "voice-v3",
+        "url": "/docs/voice-v3/overview"
+      }
+    ],
+    "answer_length": 1770
   }
 ]
