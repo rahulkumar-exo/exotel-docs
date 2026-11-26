@@ -26750,5 +26750,39 @@
       }
     ],
     "answer_length": 1181
+  },
+  {
+    "timestamp": "2026-11-26T04:38:16.114Z",
+    "response_id": "ca1f1d55-2d93-49bb-b1df-9ee4b6805baf",
+    "question": "where to use it",
+    "question_length": 15,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 6745,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      },
+      {
+        "title": "Use CleverTap via Exotel Generic SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/clevertap-generic"
+      },
+      {
+        "title": "Use WebEngage via Exotel Native SMS Plugin",
+        "product": "integrations",
+        "url": "/docs/integrations/webengage"
+      },
+      {
+        "title": "Use Cases & Implementation Guides",
+        "product": "use-cases",
+        "url": "/docs/use-cases/overview"
+      }
+    ],
+    "answer_length": 3099
   }
 ]
