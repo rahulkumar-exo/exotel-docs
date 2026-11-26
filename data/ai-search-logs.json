@@ -26716,5 +26716,39 @@
       }
     ],
     "answer_length": 1200
+  },
+  {
+    "timestamp": "2026-11-26T04:37:35.773Z",
+    "response_id": "fa677863-39c7-42f3-83cd-6642aeb063d8",
+    "question": "do i need to set any api key  for it to work?",
+    "question_length": 45,
+    "has_history": true,
+    "history_length": 6,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4297,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Quickstart: Send Your First SMS",
+        "product": "SMS API",
+        "url": "/docs/sms-api/quickstart"
+      },
+      {
+        "title": "Quickstart: Make Your First Call",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/quickstart"
+      },
+      {
+        "title": "CQA API Reference",
+        "product": "cqa",
+        "url": "/docs/cqa/overview"
+      },
+      {
+        "title": "Account Balance API",
+        "product": "voice-v1",
+        "url": "/docs/voice-v1/api-reference/balance"
+      }
+    ],
+    "answer_length": 1181
   }
 ]
