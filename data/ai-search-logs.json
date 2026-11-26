@@ -27356,5 +27356,39 @@
       }
     ],
     "answer_length": 4254
+  },
+  {
+    "timestamp": "2026-11-26T10:13:42.843Z",
+    "response_id": "1879b2a6-d2f2-4287-a6c5-a552e8eed9ec",
+    "question": "not exotal ai, i have my own ai agent?",
+    "question_length": 38,
+    "has_history": true,
+    "history_length": 4,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7034,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Download Reports",
+        "product": "chatbot",
+        "url": "/docs/chatbot/download-reports"
+      },
+      {
+        "title": "Testing Guide",
+        "product": "getting-started",
+        "url": "/docs/getting-started/testing-guide"
+      },
+      {
+        "title": "WhatsApp Status Codes",
+        "product": "WhatsApp API",
+        "url": "/docs/whatsapp-api/api-reference/status-codes"
+      },
+      {
+        "title": "Your First Call Flow",
+        "product": "getting-started",
+        "url": "/docs/getting-started/first-call-flow"
+      }
+    ],
+    "answer_length": 3879
   }
 ]
