@@ -26606,5 +26606,39 @@
       }
     ],
     "answer_length": 1896
+  },
+  {
+    "timestamp": "2026-11-26T04:29:38.923Z",
+    "response_id": "bfc16341-f24f-4368-ac5a-5bc937c38cb3",
+    "question": "guide me through how to resolve it",
+    "question_length": 34,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 7131,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Extension guide: Stream and Voicebot Applet",
+        "product": "agentstream",
+        "url": "/docs/agentstream/stream-voicebot-extension"
+      },
+      {
+        "title": "Flow Builder Guide",
+        "product": "app-bazaar",
+        "url": "/docs/app-bazaar/flow-builder-guide"
+      },
+      {
+        "title": "Campaign Guides Overview",
+        "product": "campaign-guides",
+        "url": "/docs/campaign-guides/overview"
+      },
+      {
+        "title": "How to Send SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/how-to-send-sms"
+      }
+    ],
+    "answer_length": 1425
   }
 ]
