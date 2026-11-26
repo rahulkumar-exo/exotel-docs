@@ -73,18 +73,15 @@ Exotel POSTs to your URL when AMD completes. This fires even if the call has alr
 
 Content-Type defaults to `multipart/form-data`. Pass `StatusCallbackContentType=application/json` on the original request to receive JSON instead.
 
-**Hanging up after AMD**
+**Acting on the AMD result**
 
-The platform does not auto-hangup. Use the Call Details API to find the leg SID, then call the hangup action:
+When your `AsyncAmdStatusCallback` fires, use the `AnsweredBy` value to decide the next step:
 
-```bash
-# 1. Get the active leg SID
-GET /v1/Accounts/{account_sid}/Calls/{call_sid}/ActiveLegs
+- **`MACHINE`** — hang up to avoid engaging a voicemail, or drop a pre-recorded message then hang up. Call control requires a `leg_sid`, which you can capture from your `StatusCallback` or event endpoint when the leg answers.
+- **`HUMAN`** — let the call proceed. Log the result in your system; no call action needed.
+- **`NOTSURE`** — treat conservatively as `MACHINE`, or let the call continue.
 
-# 2. Hang up that leg
-PUT /v1/Accounts/{account_sid}/Calls/{call_sid}/Legs/{leg_sid}
-    Action=hangup
-```
+For leg-level control (hangup, play audio), use the [Legs &amp; Bridges API](/docs/legs/overview).
 
 ## Code Examples
 

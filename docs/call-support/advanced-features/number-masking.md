@@ -52,28 +52,11 @@ Purchase a dedicated ExoPhone for number masking. This number will be displayed 
 For high-volume masking, you may need multiple ExoPhones. Each ExoPhone can handle a limited number of concurrent calls. Contact your Exotel account manager for capacity planning.
 :::
 
-### Step 2: Create Masking Pairs via API
+### Step 2: Configure Masking Pairs
 
-Use the Exotel API to register number pairs. When Party A calls the ExoPhone, Exotel looks up the mapping and connects to Party B.
+Configure number pairs through the Exotel dashboard. When Party A calls the ExoPhone, Exotel looks up the mapping and connects to Party B.
 
-```bash
-# Register a masking pair
-curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking' \
-  -d 'VirtualNumber=<exophone>' \
-  -d 'NumberA=<customer_number>' \
-  -d 'NumberB=<driver_number>' \
-  -d 'ExpiresIn=3600'
-```
-
-**Parameters:**
-
-| Parameter | Required | Description |
-|---|---|---|
-| `VirtualNumber` | Yes | The ExoPhone used for masking |
-| `NumberA` | Yes | First party's phone number |
-| `NumberB` | Yes | Second party's phone number |
-| `ExpiresIn` | No | Time in seconds before the pair expires (e.g., 3600 = 1 hour) |
-| `CallbackUrl` | No | URL to receive call status updates |
+Contact your Exotel account manager or use the Exotel dashboard to register masking pairs. Each pair maps a VirtualNumber (ExoPhone) to NumberA and NumberB, with an optional expiry time.
 
 ### Step 3: Share the ExoPhone with Both Parties
 
@@ -121,21 +104,7 @@ curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<acc
 
 This uses the standard Connect Two Numbers API but with the ExoPhone as the caller ID, effectively masking both numbers.
 
-## Masking Pair Management
-
-### Listing Active Pairs
-
-```bash
-curl -u '<api_key>:<api_token>' 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking?VirtualNumber=<exophone>'
-```
-
-### Deleting a Pair
-
-```bash
-curl -u '<api_key>:<api_token>' -X DELETE 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking/<pair_id>'
-```
-
-### Auto-Expiry
+## Auto-Expiry
 
 Set `ExpiresIn` when creating pairs to auto-delete them after a time period. This is essential for temporary interactions:
 

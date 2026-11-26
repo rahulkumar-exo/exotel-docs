@@ -7,7 +7,6 @@ slug: /agentstream/bot-stream-legs-api
 sidebar_position: 10
 ---
 
-import ApiConsole from '@site/src/components/ApiConsole';
 import TryItBanner from '@site/src/components/TryItBanner';
 import RegionalUrls from '@site/src/components/RegionalUrls';
 
@@ -21,110 +20,75 @@ For the full outbound/inbound ExoML path, see [Programmable Voice with AgentStre
 
 | Goal | Pattern |
 |------|---------|
-| Bot-first / tech support | `leg_answered` → `start_stream` |
-| Sales / collections (no dead air) | `leg_answered` → `start_stream` + `start_say` → on `stream_started` → `stop_say` |
-| Per-call stream URL | Decide `url` in your service at runtime |
+| Bot-first / tech support | `leg_answered` → `StartStream` |
+| Sales / collections (no dead air) | `leg_answered` → `StartStream` + `Say` → on `stream_started` → `StopSay` |
+| Per-call stream URL | Decide `streamUrl` in your service at runtime |
 
 ## Authentication
 
 HTTP Basic Auth. `Content-Type: application/json`
 
-**Base URL:** `https://cpaas-api.in.exotel.com/v2/accounts/{account_sid}`  
-(Singapore: `cpaas-api.exotel.com`)
+**Base URL:** `https://cpaas-api.in.exotel.com/v2/accounts/{account_sid}`
 
 ---
 
-## Start stream
+## Actions
 
-<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream" />
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions" />
 
-<RegionalUrls path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream" host="cpaas" />
+<RegionalUrls path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions" host="cpaas" />
 
-### Request parameters
-
-| Parameter | Required | Type | Description |
-|-----------|----------|------|-------------|
-| `direction` | Yes | String | `bidirectional` |
-| `url` | Yes | String | Bot WebSocket URL |
-| `content_type` | No | String | e.g. `audio/x-mulaw;rate=8000` |
-
-### Example request
-
-```bash
-curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_stream' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "direction": "bidirectional",
-    "url": "wss://bot.example.com/stream",
-    "content_type": "audio/x-mulaw;rate=8000"
-  }'
-```
-
-### Try It
-
-<ApiConsole
-  method="POST"
-  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_stream"
-  contentType="json"
-  host="cpaas"
-  params={[
-    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID', placeholder: 'leg_xxxxxxxx' },
-    { name: 'direction', required: true, type: 'string', description: 'bidirectional', defaultValue: 'bidirectional', placeholder: 'bidirectional' },
-    { name: 'url', required: true, type: 'string', description: 'Bot WebSocket URL', placeholder: 'wss://bot.example.com/stream' },
-    { name: 'content_type', required: false, type: 'string', description: 'Audio content type', defaultValue: 'audio/x-mulaw;rate=8000', placeholder: 'audio/x-mulaw;rate=8000' },
-  ]}
-/>
+Post JSON with an `exoml` field. The ExoML string is an XML document with a `<Flow>` root element.
 
 ---
 
-## Parallel greeting
+### Start stream
 
-### Start say
-
-<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_say" />
+Starts a bidirectional audio stream to your bot's WebSocket.
 
 ```bash
 curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/start_say' \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
   -H 'Content-Type: application/json' \
-  -d '{ "text": "Connecting you now.", "loop": 0 }'
+  -d '{"exoml": "<Flow><StartStream streamUrl=\"wss://bot.example.com/stream\" streamType=\"bidirectional\"/></Flow>"}'
 ```
 
-### Try It
+| Attribute | Required | Description |
+|-----------|----------|-------------|
+| `streamUrl` | Yes | Bot WebSocket URL |
+| `streamType` | Yes | `bidirectional` or `unidirectional` |
 
-<ApiConsole
-  method="POST"
-  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/start_say"
-  contentType="json"
-  host="cpaas"
-  params={[
-    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID', placeholder: 'leg_xxxxxxxx' },
-    { name: 'text', required: true, type: 'string', description: 'Text to speak', defaultValue: 'Connecting you now.', placeholder: 'Connecting you now.' },
-    { name: 'loop', required: false, type: 'number', description: 'Loop count (0 = once)', defaultValue: '0', placeholder: '0' },
-  ]}
-/>
+---
 
-### Stop say
+### Say
 
-<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/stop_say" />
+Plays text-to-speech audio on the leg while the bot warms up.
 
 ```bash
 curl -u '<api_key>:<api_token>' -X POST \
-  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions/stop_say'
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
+  -H 'Content-Type: application/json' \
+  -d '{"exoml": "<Flow><Say language=\"en\">Connecting you now.</Say></Flow>"}'
 ```
 
-### Try It
+| Attribute | Required | Description |
+|-----------|----------|-------------|
+| `language` | No | BCP-47 language code (e.g. `en`). Default: `en`. |
+| `preferredTTSEngine` | No | TTS engine preference (e.g. `polly`, `googletts`) |
+| `loop` | No | Repeat count. Default: `0` (play once). |
 
-<ApiConsole
-  method="POST"
-  path="/v2/accounts/{account_sid}/legs/{leg_sid}/actions/stop_say"
-  contentType="json"
-  host="cpaas"
-  params={[
-    { name: 'leg_sid', required: true, type: 'string', description: 'Leg SID', placeholder: 'leg_xxxxxxxx' },
-  ]}
-/>
+---
+
+### StopSay
+
+Stops any in-progress `Say` playback.
+
+```bash
+curl -u '<api_key>:<api_token>' -X POST \
+  'https://cpaas-api.in.exotel.com/v2/accounts/<account_sid>/legs/<leg_sid>/actions' \
+  -H 'Content-Type: application/json' \
+  -d '{"exoml": "<Flow><StopSay/></Flow>"}'
+```
 
 ## After stream starts
 
