@@ -28609,5 +28609,39 @@
       }
     ],
     "answer_length": 309
+  },
+  {
+    "timestamp": "2026-11-27T12:51:51.217Z",
+    "response_id": "fed434fb-334a-4198-a2cb-7e287ca55f87",
+    "question": "how to create a sip trunk via ui ?",
+    "question_length": 34,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1096,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "SIP Trunking",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/overview"
+      },
+      {
+        "title": "Call directions and routing modes",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/call-directions"
+      },
+      {
+        "title": "SIP Trunking quickstart",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/quickstart"
+      },
+      {
+        "title": "SIP Trunking quickstart",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/quickstart"
+      }
+    ],
+    "answer_length": 317
   }
 ]
