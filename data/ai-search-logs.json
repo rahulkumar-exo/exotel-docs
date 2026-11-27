@@ -28162,5 +28162,39 @@
       }
     ],
     "answer_length": 1494
+  },
+  {
+    "timestamp": "2026-11-27T06:55:48.149Z",
+    "response_id": "49810491-89eb-4f6b-9bf3-b7f2c4f39123",
+    "question": "outbound only?",
+    "question_length": 14,
+    "has_history": true,
+    "history_length": 2,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 5481,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Two-Way SMS",
+        "product": "sms-support",
+        "url": "/docs/sms-support/two-way-sms"
+      },
+      {
+        "title": "Outbound Dialer",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/outbound-dialer"
+      },
+      {
+        "title": "AgentStream — what to use when",
+        "product": "agentstream",
+        "url": "/docs/agentstream/what-to-use-when"
+      },
+      {
+        "title": "Browser & Network Requirements",
+        "product": "getting-started",
+        "url": "/docs/getting-started/browser-requirements"
+      }
+    ],
+    "answer_length": 1770
   }
 ]
