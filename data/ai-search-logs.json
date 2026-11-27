@@ -28094,5 +28094,39 @@
       }
     ],
     "answer_length": 1345
+  },
+  {
+    "timestamp": "2026-11-27T06:38:57.796Z",
+    "response_id": "9079c10a-3aac-48dc-a8ea-4b2bd2a52d10",
+    "question": "is Business KYC required to purchase a Phone number and make a call?",
+    "question_length": 68,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 1852,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      },
+      {
+        "title": "WhatsApp Business Verification",
+        "product": "whatsapp-support",
+        "url": "/docs/whatsapp-support/business-verification"
+      },
+      {
+        "title": "What is an ExoPhone (Virtual Number)?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/virtual-numbers"
+      },
+      {
+        "title": "Account Setup & KYC FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/account-setup"
+      }
+    ],
+    "answer_length": 444
   }
 ]
