@@ -28060,5 +28060,39 @@
     ],
     "answer_length": 751,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-27T06:38:17.783Z",
+    "response_id": "ef9fe042-1e79-4610-a580-36051164605b",
+    "question": "I am an individual developer building a Voice AI IVR Agent using Pipecat and AWS Bedrock AgentCore hosted in the Mumbai region.\n\nI want to purchase a single Indian virtual phone number (ExoPhone), initiate outbound calls using Exotel's REST API, and connect live call audio to my custom AI agent using AgentStream (bidirectional WebSocket streaming).\n\nAll calls will be made strictly for internal development, testing and demonstration purposes. No real customers, commercial campaigns or production-",
+    "question_length": 1558,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 8506,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      }
+    ],
+    "answer_length": 1345
   }
 ]
