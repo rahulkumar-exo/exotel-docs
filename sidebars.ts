@@ -81,6 +81,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'whatsapp-api/api-reference/send-message',
+        'whatsapp-api/api-reference/direct-send',
         'whatsapp-api/api-reference/receive-messages',
         'whatsapp-api/api-reference/templates',
         'whatsapp-api/api-reference/bulk-messages',

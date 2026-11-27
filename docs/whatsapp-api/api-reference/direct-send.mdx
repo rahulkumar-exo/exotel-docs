@@ -1,0 +1,316 @@
+---
+id: direct-send
+title: WhatsApp Direct Send
+description: "Send utility and authentication messages outside the 24-hour customer service window without a pre-approved template."
+sidebar_label: Direct Send
+sidebar_position: 2
+---
+
+import TryItBanner from '@site/src/components/TryItBanner';
+import RegionalUrls from '@site/src/components/RegionalUrls';
+
+# WhatsApp Direct Send
+
+Direct Send lets you send utility and authentication messages as plain text outside the 24-hour customer service window. You do not need a pre-approved template.
+
+Use the existing Send Message endpoint. Add the optional `content.category` field to a standard text message request.
+
+:::info
+`content.category` is not case-sensitive. Use `utility` or `authentication`.
+:::
+
+A bulk request can mix valid and invalid messages. Exotel accepts the valid ones and returns an error per invalid item (HTTP 207).
+
+Delivery callbacks include `template_category` set to `utility` or `authentication`.
+
+---
+
+## Prerequisites
+
+- **Cloud API number only.** Direct Send does not support on-prem WhatsApp numbers.
+- **WABA eligibility.** Meta controls eligibility per business portfolio or WABA. Check WhatsApp Manager for a banner that shows whether your account is eligible.
+  - **Utility:** Generally available to business portfolios with a messaging limit of 100,000 or unlimited. If your account is not eligible, express interest with Meta.
+  - **Authentication:** In alpha at Meta. Only accounts Meta has enrolled can use it. Express interest with Meta to be considered.
+- **Exotel credentials.** Get your API key, API token, and Account SID from the Exotel Dashboard.
+
+---
+
+## Send a utility message
+
+<TryItBanner method="POST" endpoint="/v2/accounts/{account_sid}/messages" />
+
+<RegionalUrls path="/v2/accounts/{account_sid}/messages" host="api" />
+
+:::caution
+Do not put offers or discounts in a utility message. Meta can limit or block Direct Send for your WABA. Send promotions on approved marketing templates.
+:::
+
+```bash
+curl -sS -u "<API_KEY>:<API_TOKEN>" \
+  -H "Content-Type: application/json" \
+  -X POST "https://api.exotel.com/v2/accounts/<ACCOUNT_SID>/messages" \
+  --data-binary @- <<'EOF'
+{
+  "whatsapp": {
+    "messages": [
+      {
+        "from": "+91XXXXXXXXXX",
+        "to": "+91YYYYYYYYYY",
+        "status_callback": "https://your-domain.com/whatsapp/webhook",
+        "custom_data": "order-4821-shipped",
+        "content": {
+          "recipient_type": "individual",
+          "type": "text",
+          "category": "utility",
+          "text": {
+            "body": "Your order 4821 has shipped. Reference 4821."
+          }
+        }
+      }
+    ]
+  }
+}
+EOF
+```
+
+Exotel returns HTTP 202 and a `sid`. A 202 means Exotel queued the message — not that it was delivered. Delivery status arrives at your `status_callback` URL.
+
+```json
+{
+  "request_id": "b434e927a5844175b23059cd96feea3d",
+  "method": "POST",
+  "http_code": 202,
+  "metadata": { "total": 1, "success": 1, "failed": 0 },
+  "response": {
+    "whatsapp": {
+      "messages": [
+        {
+          "code": 202,
+          "error_data": null,
+          "status": "success",
+          "data": { "sid": "2FdiiEQUosckPhpZfuVwfjxiSlc16a4" }
+        }
+      ]
+    }
+  }
+}
+```
+
+---
+
+## Send an authentication message
+
+:::note
+Confirm that Meta enrolled your WABA in the authentication alpha before proceeding.
+:::
+
+:::caution
+Do not put the passcode in `custom_data`. Exotel returns `custom_data` in every callback and GET response.
+:::
+
+Send the same request structure as utility, with `content.category` set to `authentication`. Use `to` as the recipient phone number in E.164 format — not a WhatsApp user ID.
+
+```bash
+curl -sS -u "<API_KEY>:<API_TOKEN>" \
+  -H "Content-Type: application/json" \
+  -X POST "https://api.exotel.com/v2/accounts/<ACCOUNT_SID>/messages" \
+  --data-binary @- <<'EOF'
+{
+  "whatsapp": {
+    "messages": [
+      {
+        "from": "+91XXXXXXXXXX",
+        "to": "+91YYYYYYYYYY",
+        "status_callback": "https://your-domain.com/whatsapp/webhook",
+        "custom_data": "login-req-1234",
+        "content": {
+          "recipient_type": "individual",
+          "type": "text",
+          "category": "authentication",
+          "text": {
+            "body": "482913 is your verification code. Do not share it with anyone."
+          }
+        }
+      }
+    ]
+  }
+}
+EOF
+```
+
+---
+
+## Send multiple messages in one request
+
+Add each message as an item in `whatsapp.messages`. Exotel returns HTTP 207 Multi-Status. Each valid item gets a `sid`; each invalid item gets its own error code.
+
+```bash
+curl -sS -u "<API_KEY>:<API_TOKEN>" \
+  -H "Content-Type: application/json" \
+  -X POST "https://api.exotel.com/v2/accounts/<ACCOUNT_SID>/messages" \
+  --data-binary @- <<'EOF'
+{
+  "whatsapp": {
+    "messages": [
+      {
+        "from": "+91XXXXXXXXXX",
+        "to": "+91YYYYYYYYYY",
+        "status_callback": "https://your-domain.com/whatsapp/webhook",
+        "custom_data": "bulk-valid",
+        "content": {
+          "recipient_type": "individual",
+          "type": "text",
+          "category": "utility",
+          "text": {
+            "body": "Your appointment moved to 3 PM."
+          }
+        }
+      },
+      {
+        "from": "+91XXXXXXXXXX",
+        "to": "+91YYYYYYYYYY",
+        "status_callback": "https://your-domain.com/whatsapp/webhook",
+        "content": {
+          "recipient_type": "individual",
+          "type": "text",
+          "category": "marketing",
+          "text": {
+            "body": "Big sale today!"
+          }
+        }
+      }
+    ]
+  }
+}
+EOF
+```
+
+In this example, item 1 gets a `sid`. Item 2 returns error code 1002 because `marketing` is not a supported category.
+
+---
+
+## Check message status
+
+```bash
+curl -sS -u "<API_KEY>:<API_TOKEN>" \
+  "https://api.exotel.com/v2/accounts/<ACCOUNT_SID>/messages/<MESSAGE_SID>" \
+  | jq '.response | {sid, custom_data, status}'
+```
+
+---
+
+## Reference
+
+### Endpoint
+
+All requests use HTTP Basic Auth (`api_key:api_token`) over HTTPS.
+
+```
+POST /v2/accounts/{account_sid}/messages
+```
+
+| Region | Base URL |
+|--------|----------|
+| Singapore (SGP) | `https://api.exotel.com` |
+| Mumbai (MUM) | `https://api.in.exotel.com` |
+
+### Top-level message object
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `from` | String | Yes | Your WhatsApp Cloud API number in E.164 format |
+| `to` | String | Yes | Recipient phone number in E.164 format |
+| `content` | Object | Yes | Message content object — see below |
+| `status_callback` | String | No | URL that receives delivery status updates |
+| `custom_data` | String | No | Your own metadata; returned in callbacks and GET responses |
+
+### Content object
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `recipient_type` | String | Yes | Must be `"individual"` |
+| `type` | String | Yes | Must be `"text"` for Direct Send. Media types are not supported. |
+| `category` | String | No | `"utility"` or `"authentication"` (not case-sensitive). Omit for a standard session message. |
+| `text.body` | String | Yes | Message text. 1–1,024 characters. |
+| `text.preview_url` | Boolean | No | Must not be `true` for Direct Send. Use `false` or omit. |
+
+### Messages without category
+
+A request without `content.category` sends a standard WhatsApp session message. A session text needs an open 24-hour customer window and reports `template_category: "service"`. Approved `type: "template"` messages work as before.
+
+### Delivery callback
+
+Exotel posts to `status_callback` for each status change. The payload includes `template_category` and returns `custom_data` as sent.
+
+```json
+{
+  "whatsapp": {
+    "messages": [
+      {
+        "callback_type": "dlr",
+        "sid": "2FdiiEQUosckPhpZfuVwfjxiSlc16a4",
+        "from": "+919876500001",
+        "to": "+919876543210",
+        "exo_status_code": 30002,
+        "exo_detailed_status": "EX_MESSAGE_DELIVERED",
+        "description": "Message delivered",
+        "timestamp": "2026-10-26T13:05:11.000+05:30",
+        "custom_data": "order-4821",
+        "template_category": "utility"
+      }
+    ]
+  }
+}
+```
+
+---
+
+## Limits and rules
+
+- Body limit is 1–1,024 **characters**, not bytes. An emoji or a Hindi character counts as one.
+- Direct Send supports text messages only. Media types are not supported.
+- Direct Send has no separate fee. Exotel charges each message at your current utility or authentication rate matching the category.
+- Do not add `content.category` to `type: "template"` messages. Any non-blank category triggers the Direct Send path, and Exotel rejects a template with a category (error 1002). Templates carry their own category from WhatsApp Manager.
+- Do not delete templates named `auto_generated_…` from your template list. Meta creates these from your Direct Send messages. This is expected behaviour.
+
+---
+
+## Error reference
+
+### Rejected immediately (HTTP 400 or 207)
+
+Exotel does not queue the message and does not issue a `sid`. In bulk requests, Exotel returns HTTP 207 with an error for each failing item.
+
+| Code | Error message | Cause and resolution |
+|------|--------------|----------------------|
+| 1002 | `content.category must be utility or authentication` | Category value not supported (e.g. `"marketing"`). Use `"utility"` or `"authentication"`. |
+| 1002 | `Direct Send requires content.type=text` | `content.category` is set but type is not `"text"` (e.g. image, template). Set `type: "text"`, or remove `content.category` to send a template. |
+| 1002 | `Direct Send does not support preview_url=true` | `text.preview_url` is `true`. Remove it or set it to `false`. |
+| 1002 | `Direct Send requires cloud WhatsApp number` | `from` is an on-prem number. Use a WhatsApp Cloud API number. |
+| 1002 | `authentication Direct Send requires phone to` | Authentication message addressed by WhatsApp user ID. Set `to` to the recipient phone number. |
+| 1012 | `Direct Send body must be 1-1024 characters` | `text.body` is empty or longer than 1,024 characters. |
+| 1012 | `Direct Send body is required` | `text.body` is missing. |
+| HTTP 500 | `Could not verify the WhatsApp number for Direct Send, please retry` | Temporary error in Exotel while checking the `from` number. Retry the request. |
+
+### Reported on the callback
+
+Exotel accepts these messages (HTTP 202 with a `sid`). The failure arrives at your `status_callback` URL.
+
+| Code | Detailed status | Description | Cause and resolution |
+|------|----------------|-------------|----------------------|
+| 30006 | `EX_SETUP_ERROR` | "The 'category' value requires Direct Send, which isn't enabled for this account." | Meta has not enabled Direct Send for your WABA. Use an approved template, or request enablement from Meta. |
+| 30018 | `EX_REENGAGEMENT_ERROR` | "More than 24 hours passed" | For `category: "authentication"`: your WABA is not in the Meta authentication alpha. Meta ignores the category and treats the message as a session text, which requires an active 24-hour window. |
+| 30022 | `EX_TEMPLATE_ERROR` | Generated template paused by Meta | Meta paused the auto-generated template due to quality or policy signals. Check WABA health and message content, then retry. |
+| 30008 | `EX_RATE_LIMIT_HIT` | "Spam Rate of number breached" | Meta rate-limited the number for spam (Meta error 131048). Remove offers from utility text. Send promotions on approved marketing templates. |
+
+---
+
+## Troubleshooting
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| Exotel returns 202 but message does not arrive | A 202 means Exotel queued the message; a failure can still arrive on the callback. | Read the callback for the `sid`. Use the error code tables above. |
+| Authentication message fails with 30018 | WABA is not in the Meta authentication alpha. | Ask Meta to enrol your WABA, or send an approved authentication template. |
+| Utility messages fail with 30008 or 30022 | Meta flagged the content or traffic as marketing, or paused the generated template. | Remove offers from utility messages. Send promotions on approved marketing templates. |
+| A template message fails with 1002 | The request includes `content.category`. | Remove `content.category` from template messages. |
+| Exotel returns HTTP 500 | Temporary error in Exotel. | Retry the request. |
