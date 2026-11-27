@@ -28472,5 +28472,39 @@
     ],
     "answer_length": 815,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-27T11:35:47.611Z",
+    "response_id": "0242a76b-dcb2-4e8d-91cf-00a1434113ed",
+    "question": "Programmable Voice\nMake and receive calls, build IVR flows, and manage phone numbers programmatically.",
+    "question_length": 102,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 4550,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "ExoPhones",
+        "product": "exophones",
+        "url": "/docs/exophones/overview"
+      },
+      {
+        "title": "Programmable Voice",
+        "product": "voice",
+        "url": "/docs/voice/overview"
+      },
+      {
+        "title": "How Does Exotel Work?",
+        "product": "call-support",
+        "url": "/docs/call-support/basics/how-exotel-works"
+      },
+      {
+        "title": "IP-PSTN Intermix - Customer Onboarding and WebRTC SDK Integration",
+        "product": "integrations",
+        "url": "/docs/integrations/webrtc-sdk"
+      }
+    ],
+    "answer_length": 2650
   }
 ]
