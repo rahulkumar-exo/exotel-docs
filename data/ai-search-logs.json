@@ -28712,5 +28712,39 @@
     ],
     "answer_length": 1076,
     "cache_hit": true
+  },
+  {
+    "timestamp": "2026-11-27T17:20:27.137Z",
+    "response_id": "8e08871d-c5b5-474f-b330-7f7392b4f34c",
+    "question": "are their any free tiers to use to ? and does it can be used for whatsapp ?",
+    "question_length": 75,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-2.5-flash",
+    "response_time_ms": 2519,
+    "relevant_chunks_found": 8,
+    "source_pages": [
+      {
+        "title": "Create an Allocation",
+        "product": "lead-assist",
+        "url": "/docs/lead-assist/api-reference/create-allocation"
+      },
+      {
+        "title": "Manage VN Allocations",
+        "product": "lead-assist-greenvn",
+        "url": "/docs/lead-assist-greenvn/api-reference/manage-allocations"
+      },
+      {
+        "title": "Configure Exotel's WhatsApp Cloud Integration with LeadSquared",
+        "product": "integrations",
+        "url": "/docs/integrations/leadsquared-whatsapp"
+      },
+      {
+        "title": "WhatsApp Business FAQs",
+        "product": "faqs",
+        "url": "/docs/faqs/whatsapp-faqs"
+      }
+    ],
+    "answer_length": 176
   }
 ]
