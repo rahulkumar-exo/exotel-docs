@@ -28230,5 +28230,40 @@
       }
     ],
     "answer_length": 1266
+  },
+  {
+    "timestamp": "2026-11-27T07:37:24.655Z",
+    "response_id": "ed2c4bfb-3c55-4357-933e-4ff837747d9a",
+    "question": "health check probe",
+    "question_length": 18,
+    "has_history": false,
+    "history_length": 0,
+    "model_used": "gemini-3.6-flash (cached)",
+    "response_time_ms": 0,
+    "relevant_chunks_found": 4,
+    "source_pages": [
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "Go-Live Checklist",
+        "product": "getting-started",
+        "url": "/docs/getting-started/go-live-checklist"
+      },
+      {
+        "title": "SIP error codes and troubleshooting",
+        "product": "sip-trunking",
+        "url": "/docs/sip-trunking/errors-troubleshooting"
+      },
+      {
+        "title": "Smart Routing",
+        "product": "call-support",
+        "url": "/docs/call-support/advanced-features/smart-routing"
+      }
+    ],
+    "answer_length": 1266,
+    "cache_hit": true
   }
 ]
