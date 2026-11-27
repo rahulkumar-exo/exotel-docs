@@ -13,22 +13,24 @@ Number masking connects two parties (e.g., a customer and a delivery agent, a bu
 ## How Number Masking Works
 
 ```
-Party A (Customer: +91-98765XXXXX)
-        |
-        calls ExoPhone (+91-80-4712XXXX)
+Your app triggers a connect (Party A, Party B, CallerId = ExoPhone)
         |
         v
-Exotel looks up the masking pair
+Exotel calls Party A, showing the ExoPhone
         |
         v
-Exotel connects to Party B (Driver: +91-98761XXXXX)
+Party A answers; Exotel calls Party B, showing the ExoPhone
         |
         v
+Both legs are bridged
 Party B sees ExoPhone as caller ID (not Customer's number)
 Party A sees ExoPhone as caller ID (not Driver's number)
 ```
 
 Neither party sees the other's personal phone number. Both see the ExoPhone.
+
+The A-to-B relationship lives in your application, not in Exotel — there is no
+pair-registration API. Each masked conversation is a connect request.
 
 ## Common Use Cases
 
@@ -52,28 +54,27 @@ Purchase a dedicated ExoPhone for number masking. This number will be displayed 
 For high-volume masking, you may need multiple ExoPhones. Each ExoPhone can handle a limited number of concurrent calls. Contact your Exotel account manager for capacity planning.
 :::
 
-### Step 2: Create Masking Pairs via API
+### Step 2: Connect the Two Parties
 
-Use the Exotel API to register number pairs. When Party A calls the ExoPhone, Exotel looks up the mapping and connects to Party B.
+There is no pair-registration API. Masking is done per call: your application
+calls [Connect Two Numbers](/docs/voice-v1/api-reference/connect-two-numbers)
+with the ExoPhone as `CallerId`, so neither party sees the other's number.
 
 ```bash
-# Register a masking pair
-curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking' \
-  -d 'VirtualNumber=<exophone>' \
-  -d 'NumberA=<customer_number>' \
-  -d 'NumberB=<driver_number>' \
-  -d 'ExpiresIn=3600'
+curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<account_sid>/Calls/connect.json' \
+  -d 'From=<party_a_number>' \
+  -d 'To=<party_b_number>' \
+  -d 'CallerId=<exophone>'
 ```
 
-**Parameters:**
+Your application holds the A-to-B relationship (trip, order, booking) in its own
+database and supplies both numbers at call time.
 
-| Parameter | Required | Description |
-|---|---|---|
-| `VirtualNumber` | Yes | The ExoPhone used for masking |
-| `NumberA` | Yes | First party's phone number |
-| `NumberB` | Yes | Second party's phone number |
-| `ExpiresIn` | No | Time in seconds before the pair expires (e.g., 3600 = 1 hour) |
-| `CallbackUrl` | No | URL to receive call status updates |
+:::note
+Standing A-to-B mappings that let either party dial the ExoPhone and be routed
+automatically are a managed setup, not self-serve. Talk to your Exotel account
+manager if you need that rather than per-call connects.
+:::
 
 ### Step 3: Share the ExoPhone with Both Parties
 
@@ -84,18 +85,14 @@ Instead of sharing personal numbers, share the ExoPhone:
 
 ### Step 4: Handle the Call
 
-When Party A dials the ExoPhone:
+When your application triggers the connect:
 
-1. Exotel identifies Party A by their phone number.
-2. Exotel looks up the masking pair to find Party B.
-3. Exotel connects Party A to Party B.
-4. Both parties see the ExoPhone as the caller ID.
+1. Exotel calls Party A and shows the ExoPhone as the caller ID.
+2. When Party A answers, Exotel calls Party B, also showing the ExoPhone.
+3. Both legs are bridged. Neither party sees the other's number.
 
-When Party B dials the ExoPhone:
-
-1. Exotel identifies Party B and looks up the pair.
-2. Exotel connects Party B to Party A.
-3. Bidirectional masking works in both directions.
+If you need Party B to be able to call back, trigger a fresh connect from your
+application. An inbound call to the ExoPhone will not route to Party B on its own.
 
 ## Lead Assist (Exotel Feature)
 
@@ -121,35 +118,6 @@ curl -u '<api_key>:<api_token>' -X POST 'https://api.exotel.com/v1/Accounts/<acc
 
 This uses the standard Connect Two Numbers API but with the ExoPhone as the caller ID, effectively masking both numbers.
 
-## Masking Pair Management
-
-### Listing Active Pairs
-
-```bash
-curl -u '<api_key>:<api_token>' 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking?VirtualNumber=<exophone>'
-```
-
-### Deleting a Pair
-
-```bash
-curl -u '<api_key>:<api_token>' -X DELETE 'https://api.exotel.com/v1/Accounts/<account_sid>/NumberMasking/<pair_id>'
-```
-
-### Auto-Expiry
-
-Set `ExpiresIn` when creating pairs to auto-delete them after a time period. This is essential for temporary interactions:
-
-| Scenario | Recommended Expiry |
-|---|---|
-| **Ride-hailing trip** | 30 minutes after trip completion |
-| **Food delivery** | 1 hour after delivery confirmation |
-| **Real estate viewing** | 24 hours after scheduled viewing |
-| **E-commerce order** | 48 hours after delivery |
-
-:::warning
-Always set an expiry for masking pairs. Orphaned pairs consume ExoPhone capacity and may allow unintended calls between parties long after the interaction is complete.
-:::
-
 ## Number Pool Management
 
 For high-volume masking, you need a pool of ExoPhones:
@@ -163,10 +131,10 @@ For high-volume masking, you need a pool of ExoPhones:
 
 ### Pool Allocation Logic
 
-When creating a masking pair, select an ExoPhone from the pool that:
+When starting a masked interaction, select an ExoPhone from the pool that:
 
 1. Is not already at maximum concurrent call capacity.
-2. Is not already assigned to a pair involving either number.
+2. Is not already in use for an interaction involving either number.
 3. Has the appropriate region or caller ID type.
 
 Implement this logic on your server or contact Exotel for managed pool allocation.
@@ -179,7 +147,7 @@ Call recording works normally with number masking. Enable recording to:
 - Resolve disputes between parties
 - Comply with regulatory requirements
 
-Configure recording in the masking pair setup or at the account level.
+Enable recording on the connect request or at the account level.
 
 ## Privacy Compliance
 
@@ -194,22 +162,21 @@ Number masking helps with regulatory compliance:
 
 ## Best Practices
 
-- **Always set expiry times** -- Clean up masking pairs after the interaction is complete.
 - **Use dedicated ExoPhones** -- Do not mix masking ExoPhones with your regular incoming call ExoPhones.
-- **Monitor pair utilization** -- Track how many active pairs you have and plan ExoPhone capacity accordingly.
+- **Monitor ExoPhone utilisation** -- Track concurrent masked calls per ExoPhone and plan capacity accordingly.
 - **Handle edge cases** -- Define what happens when a number calls the ExoPhone but has no active pair (play an error message or route to support).
-- **Log everything** -- Store masking pair creation/deletion events, call logs, and recordings for audit purposes.
-- **Implement bidirectional masking** -- Ensure both Party A and Party B can call each other through the ExoPhone.
+- **Log everything** -- Store the A-to-B mapping your application used, call logs, and recordings for audit purposes.
+- **Trigger call-backs from your application** -- An inbound call to the ExoPhone is not routed to the other party automatically.
 
 ## Troubleshooting
 
 | Issue | Cause | Solution |
 |---|---|---|
-| Call not connecting | Masking pair expired | Check pair status and recreate if needed |
-| Wrong party connected | Number mapped to wrong pair | Verify pair configuration |
-| Caller hears error message | No active pair for this number | Create a masking pair before the call |
+| Call not connecting | Party A did not answer, so leg 2 was never placed | Check the call status callback for the first leg |
+| Wrong party connected | Your application supplied the wrong `To` | Verify the A-to-B mapping in your own database |
+| Caller hears an error on dialling the ExoPhone | Inbound calls are not routed to the other party | Trigger a connect from your application instead |
 | ExoPhone capacity exceeded | Too many concurrent masked calls | Add more ExoPhones to the pool |
-| One-directional only | Pair not set up for bidirectional | Ensure both numbers are registered in the pair |
+| Party B sees Party A's number | `CallerId` was not set to the ExoPhone | Set `CallerId` to the masking ExoPhone on every connect |
 
 ## Related
 
